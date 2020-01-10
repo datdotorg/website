@@ -1,6 +1,11 @@
 # DatDot
 a p2p solution for hosting files with Dat protocol ([...more](https://github.com/playproject-io/datdot-substrate/issues/12))
 
+**related repositories**
+* https://github.com/playproject-io/datdot-substrate
+* https://github.com/playproject-io/datdot-service
+* https://github.com/playproject-io/datdot-research
+
 # community
 * follow us on [twitter](https://twitter.com/datdotorg)
 * join us on [telegram](https://t.me/joinchat/CgTftxXJvp6iYayqDjP7lQ)
