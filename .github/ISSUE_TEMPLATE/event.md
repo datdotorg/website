@@ -7,6 +7,10 @@ about: plan a synchronous event with people attending at the same time in one lo
 * https://talky.io/datdot
 * https://gitter.im/playproject-io/community
 
+| [**place:**][3] | Honolulu  | Ottawa   | Berlin     |  Chiang Mai   |    Taipei  | 
+|----------------:|-----------|----------|------------|---------------|------------|
+| **local time:** | `7:00 am` |`12:00 pm`| `6:00 pm`  |   `12:00 am`  | `1:00 am`  |
+
 # AGENDA
 1. What was done since last meeting?
     * @nickname1
@@ -23,3 +27,7 @@ about: plan a synchronous event with people attending at the same time in one lo
 
 [1]: https://github.com/playproject-io/datdot/issues/1
 [2]: https://github.com/playproject-io/datdot/issues/new?template=event.md
+[3]: https://timezoneninja.com/
+
+# notes
+...
