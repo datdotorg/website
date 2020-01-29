@@ -1,15 +1,15 @@
 ---
 name: event
 about: plan a synchronous event with people attending at the same time in one location
-
 ---
+
 ## `location` + [time zone converter](https://www.worldtimeserver.com/convert_time_in_UTC.aspx)
 * https://talky.io/datdot
 * https://gitter.im/playproject-io/community
 
-| [**place:**][3] | Honolulu  | Ottawa   | Berlin     |  Chiang Mai   |    Taipei  | 
-|----------------:|-----------|----------|------------|---------------|------------|
-| **local time:** | `7:00 am` |`12:00 pm`| `6:00 pm`  |   `12:00 am`  | `1:00 am`  |
+| [**place:**][3] | Honolulu  | Vancouver | Ottawa   | Berlin      |    Taipei    | 
+|----------------:|-----------|-----------|----------|-------------|--------------|
+| **local time:** | `10:00am` | `12:00pm` | `15:00pm`|  `9:00pm`   |   `4:00am`   |
 
 # AGENDA
 1. What was done since last meeting?
@@ -29,5 +29,5 @@ about: plan a synchronous event with people attending at the same time in one lo
 [2]: https://github.com/playproject-io/datdot/issues/new?template=event.md
 [3]: https://timezoneninja.com/
 
-# notes
-...
+# minutes
+`no recordings`
