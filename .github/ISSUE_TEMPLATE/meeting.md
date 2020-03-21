@@ -1,15 +1,15 @@
 ---
-name: event
-about: plan a synchronous event with people attending at the same time in one location
+name: sync meeting
+about: plan a synchronous meeting with people attending at the same time in a virtual location
 ---
 
-## `location` + [time zone converter](https://www.worldtimeserver.com/convert_time_in_UTC.aspx)
+## `location` + [time zone letters][4]
 * https://talky.io/datdot
 * https://gitter.im/playproject-io/community
 
-| [**place:**][3] | Honolulu  | Vancouver | Ottawa   | Berlin      |    Taipei    | 
-|----------------:|-----------|-----------|----------|-------------|--------------|
-| **local time:** | `10:00am` | `12:00pm` | `15:00pm`|  `9:00pm`   |   `4:00am`   |
+| [**place:**][3]      | Honolulu  | Vancouver | Ottawa   | Berlin      |    Taipei    | 
+|---------------------:|-----------|-----------|----------|-------------|--------------|
+| [**local time:**][5] | `10:00am` | `12:00pm` | `15:00pm`|  `9:00pm`   |   `4:00am`   |
 
 # AGENDA
 1. What was done since last meeting?
@@ -26,8 +26,10 @@ about: plan a synchronous event with people attending at the same time in one lo
     * => **[`????.??.??-12:00pm UTC-0#??`](https://github.com/playproject-io/datdot/issues/??)**
 
 [1]: https://github.com/playproject-io/datdot/issues/1
-[2]: https://github.com/playproject-io/datdot/issues/new?template=event.md
+[2]: https://github.com/playproject-io/datdot/issues/new?template=meeting.md
 [3]: https://timezoneninja.com/
+[4]: https://en.wikipedia.org/wiki/List_of_military_time_zones
+[5]: https://www.worldtimeserver.com/convert_time_in_UTC.aspx
 
 # minutes
 `no recordings`
