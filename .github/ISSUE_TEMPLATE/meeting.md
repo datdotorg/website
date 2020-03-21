@@ -3,13 +3,15 @@ name: sync meeting
 about: plan a synchronous meeting with people attending at the same time in a virtual location
 ---
 
-## `location` + [time zone letters][4]
+## `location`
+**space**
 * https://talky.io/datdot
 * https://gitter.im/playproject-io/community
 
-| [**place:**][3]      | Honolulu  | Vancouver | Ottawa   | Berlin      |    Taipei    | 
-|---------------------:|-----------|-----------|----------|-------------|--------------|
-| [**local time:**][5] | `10:00am` | `12:00pm` | `15:00pm`|  `9:00pm`   |   `4:00am`   |
+**time**
+| [**place:**][3]      | Honolulu   | Vancouver  | Ottawa    | Berlin      |    Taipei    | 
+|---------------------:|------------|------------|-----------|-------------|--------------|
+| [**local time:**][4] | `10:00amW` | `12:00pmU` | `15:00pmQ`| `09:00pmA`  | `04:00amH`   |
 
 # AGENDA
 1. What was done since last meeting?
