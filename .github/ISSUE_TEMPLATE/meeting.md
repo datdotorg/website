@@ -1,6 +1,6 @@
 ---
 name: sync meeting
-about: plan a synchronous meeting with people attending at the same time in a virtual location
+about: plan a synchronous meeting with people attending at the same time in a (virtual) location
 ---
 
 ## `location`
@@ -9,23 +9,23 @@ about: plan a synchronous meeting with people attending at the same time in a vi
 * https://gitter.im/playproject-io/community
 
 **time**
-| [**place:**][3]      | Honolulu   | Vancouver  | Ottawa    | Berlin      |    Taipei    | 
-|---------------------:|------------|------------|-----------|-------------|--------------|
-| [**local time:**][4] | `10:00amW` | `12:00pmU` | `15:00pmQ`| `09:00pmA`  | `04:00amH`   |
+| [**place:**][3]      | Honolulu   | Ottawa     | London     | Berlin      |    Taipei    | 
+|---------------------:|------------|------------|------------|-------------|--------------|
+| [**local time:**][4] | `09:00amW` | `15:00pmQ` | `20:00pmQ` | `21:00pmA`  | `03:00amH`   |
 
 # AGENDA
 1. What was done since last meeting?
-    * @nickname1
-        1. [ ] [`reponame#X1` issue name](#)
-        2. [ ] [`reponame#X1` issue name](#)
-        3. [ ] [`reponame#X1` issue name](#)
-    * @nickname2
-        1. [ ] [`reponame#X1` issue name](#)
-        2. [ ] [`reponame#X1` issue name](#)
-        3. [ ] [`reponame#X1` issue name](#)
+  * @nickname1
+    * [ ] [`reponame#X1` issue name](#)
+    * [ ] [`reponame#X2` issue name](#)
+    * [ ] [`reponame#X3` issue name](#)
+  * @nickname2
+    * [ ] [`reponame#X4` issue name](#)
+    * [ ] [`reponame#X5` issue name](#)
+    * [ ] [`reponame#X6` issue name](#)
 2. [How do **roadmapping priorities** currently look like?][1]
 3. [Create new meeting and plan what issues we will do until then][2]
-    * => **[`????.??.??-12:00pm UTC-0#??`](https://github.com/playproject-io/datdot/issues/??)**
+  * => **[`datdot#??`????.??.??-12:00pm UTC-0](https://github.com/playproject-io/datdot/issues/??)**
 
 [1]: https://github.com/playproject-io/datdot/issues/1
 [2]: https://github.com/playproject-io/datdot/issues/new?template=meeting.md
