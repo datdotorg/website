@@ -11,7 +11,7 @@ about: plan a synchronous meeting with people attending at the same time in a (v
 [**time:**][5]
 | [**place:**][3]      | Honolulu   | Ottawa     | London     | Berlin      |    Taipei    | 
 |---------------------:|------------|------------|------------|-------------|--------------|
-| [**local time:**][4] | `09:00amW` | `15:00pmQ` | `20:00pmQ` | `21:00pmA`  | `03:00amH`   |
+| [**local time:**][4] | `09:00amW` | `15:00pmQ` | `20:00pmA` | `21:00pmB`  | `03:00amH`   |
 
 # `agenda`
 1. What was done since last meeting?
