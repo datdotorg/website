@@ -3,17 +3,17 @@ name: sync meeting
 about: plan a synchronous meeting with people attending at the same time in a (virtual) location
 ---
 
-## `location`
-**space**
+# `location`
+**space:**
 * https://talky.io/datdot
 * https://gitter.im/playproject-io/community
 
-**time**
+[**time:**][5]
 | [**place:**][3]      | Honolulu   | Ottawa     | London     | Berlin      |    Taipei    | 
 |---------------------:|------------|------------|------------|-------------|--------------|
 | [**local time:**][4] | `09:00amW` | `15:00pmQ` | `20:00pmQ` | `21:00pmA`  | `03:00amH`   |
 
-# AGENDA
+# `agenda`
 1. What was done since last meeting?
   * @nickname1
     * [ ] [`reponame#X1` issue name](#)
@@ -31,7 +31,7 @@ about: plan a synchronous meeting with people attending at the same time in a (v
 [2]: https://github.com/playproject-io/datdot/issues/new?template=meeting.md
 [3]: https://timezoneninja.com/
 [4]: https://en.wikipedia.org/wiki/List_of_military_time_zones
-[5]: https://www.worldtimeserver.com/convert_time_in_UTC.aspx
+[5]: https://www.thetimezoneconverter.com/
 
-# minutes
-`no recordings`
+# `minutes`
+> no recordings
