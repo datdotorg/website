@@ -1,0 +1,29 @@
+{
+  "name": "datdot.org",
+  "version": "1.0.0",
+  "description": "DatDot.org official website",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "budo demo/demo.js:bundle.js --dir ./ --live --open",
+    "build": "browserify demo/demo.js -o bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fionataeyang/datdot.org.github.io.git"
+  },
+  "keywords": [
+    "datdot",
+    "blockchain"
+  ],
+  "author": "DatDot.org",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fionataeyang/datdot.org.github.io/issues"
+  },
+  "homepage": "https://github.com/fionataeyang/datdot.org.github.io#readme",
+  "dependencies": {
+    "bel": "^6.0.0",
+    "budo": "^11.6.3",
+    "csjs-inject": "^1.0.1"
+  }
+}
