@@ -6,6 +6,9 @@ const theme = require('theme')
 const el = (err, loadPage) => {
     const vars = theme
     const styles = csjs`
+    * {
+        box-sizing: border-box;
+    }
     html {
         font-size: 62.5%;
     }
@@ -19,6 +22,11 @@ const el = (err, loadPage) => {
     img {
         width: 100%;
         height: auto;
+    }
+    button {
+        border: none;
+        background: none;
+        cursor: pointer;
     }
     `
     document.body.style = styles
@@ -44,26 +52,52 @@ function updateTheme (vars) {
 main({theme}, el)
 },{"../":27,"csjs-inject":7,"theme":2}],2:[function(require,module,exports){
 const defines = {
-    fonts: {
+    font: {
         arial: 'Arial, Helvetica, sans-serif',
         courier: '"Courier New", Courier, monospace'
     },
-    colors: {
+    size: {
+        'xx-small'      : '1.2rem',
+        'x-small'       : '1.3rem',
+        small           : '1.4rem',
+        medium          : '1.6rem',
+        large           : '2rem',
+        'x-large'       : '3rem',
+        'xx-large'      : '4rem',
+        'xxx-large'     : '5rem',
+    },
+    color: {
         white: '#fff',
         black: '#000',
         greyD9: '#d9d9d9',
         grey88: '#888',
-        grey70: '#707070'
+        grey70: '#707070',
+        blue: 'blue',
+        red: 'red',
+        orange: 'orange',
     }
     
 }
 
-const { fonts, colors } = defines
+const { font, size, color } = defines
 
 const theme = {
-    bodyFont: fonts.arial,
-    bodyFontSize: '1.6rem',
-    bodyColor: colors.black,
+    '// Body setting' : '---------------------',
+    bodyFont: font.arial,
+    bodyFontSize: size.medium,
+    bodyColor: color.black,
+    '// Desktop app list setting' : '---------------------',
+    appNameFontSize: size['xx-small'],
+    appNameColor: color.black,
+    appHoverColor: color.blue,
+    '// OpenWindow setting' : '---------------------',
+    panelBodyBgColor: color.white,
+    panelHeaderBgColor: color.white,
+    panelHeaderTitleColor: color.grey70,
+    panelHeaderTitleSize: size['xx-small'],
+    panelBorder: '4px',
+    panelBorderColor: color.grey70,
+    panelBodyBgColor: color.white,
 }
 
 module.exports = theme
@@ -1142,15 +1176,344 @@ module.exports = function (css, options) {
 },{}],27:[function(require,module,exports){
 const bel = require('bel')
 const csjs = require('csjs-inject')
+const Desktop = require('Desktop')
+const OpenWindow = require('OpenWindow')
 
 function main(opts, done) {
     const { theme } = opts
     const css = style
-    const loadPage = bel`<h1>Hello world</h1>`
+    const icons = [
+        {
+            id: 1,
+            name: css.software,
+            title: 'DatDot.install',
+            url: './src/node_modules/assets/svg/software.svg'
+        },
+        {
+            id: 2,
+            name: css.software1,
+            title: 'Long name app Long name app Long name app Long name app',
+            url: './src/node_modules/assets/svg/software.svg'
+        },
+        {
+            id: 3,
+            name: css.software2,
+            title: 'App1',
+            url: './src/node_modules/assets/svg/software.svg'
+        },
+        {
+            id: 4,
+            name: css.software1,
+            title: 'App2',
+            url: './src/node_modules/assets/svg/software.svg'
+        },
+        {
+            id: 5,
+            name: css.software2,
+            title: 'App3',
+            url: './src/node_modules/assets/svg/software.svg'
+        },
+        {
+            id: 6,
+            name: css.software1,
+            title: 'App4',
+            url: './src/node_modules/assets/svg/software.svg'
+        },
+        {
+            id: 7,
+            name: css.software2,
+            title: 'App5',
+            url: './src/node_modules/assets/svg/software.svg'
+        },
+        {
+            id: 8,
+            name: css.software1,
+            title: 'App6',
+            url: './src/node_modules/assets/svg/software.svg'
+        },
+        {
+            id: 9,
+            name: css.software2,
+            title: 'App7',
+            url: './src/node_modules/assets/svg/software.svg'
+        },
+        {
+            id: 10,
+            name: css.software1,
+            title: 'App8',
+            url: './src/node_modules/assets/svg/software.svg'
+        },
+        {
+            id: 11,
+            name: css.software2,
+            title: 'App9',
+            url: './src/node_modules/assets/svg/software.svg'
+        }
+    ]
+
+    const loadPage = bel`${Desktop(icons, openTarget)}`
     return done(null, loadPage)
+
+    function loadContent(el) {
+        return bel`${el}`
+    }
+
+    function openTarget(app) {
+        return loadPage.appendChild( OpenWindow(app, loadContent) )
+    }
+
 }
 const style =  csjs`
-
+.software {}
+.software1 {}
+.software2 {}
 `
 module.exports = main
-},{"bel":4,"csjs-inject":7}]},{},[1]);
+},{"Desktop":28,"OpenWindow":30,"bel":4,"csjs-inject":7}],28:[function(require,module,exports){
+const bel = require('bel')
+const csjs = require('csjs-inject')
+// widgets
+const Graphic = require('Graphic')
+
+function Desktop(icons, tartget) {
+    const csjs = require('csjs-inject')
+    const css = style
+
+    const desktop  = bel`<main class=${css.desktop} role="desktop"></main>`
+    const el = bel`
+        <div class=${css["app-list"]}>
+        ${icons.map( icon => {
+            return bel`
+                <div class="${css.app} ${icon.name}" onclick=${()=>tartget(icon)}>
+                    ${Graphic(icon.url)}
+                    <span class=${css.appName}>${icon.title}</span>
+                </div>`
+            }
+        )}
+        </div>
+    `
+
+    desktop.appendChild(el)
+
+    document.addEventListener('DOMContentLoaded', ()=>{
+        desktop.clientHeight = '500px'
+    })
+
+    return desktop
+}
+
+
+const style = csjs`
+.desktop {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: calc(100vh - 43px) 43px;
+}
+.app-list {
+    padding: 20px 20px 0 20px;
+    display: grid;
+    grid-template-columns: repeat(15, 88px);
+    grid-template-rows: repeat(8, 88px);
+    gap: 0px 22px;
+    grid-auto-flow: column;
+}
+.app {
+    display: grid;
+    grid-template: 60px auto / auto;
+    justify-self: center;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+}
+.appName {
+    font-size: var(--appNameFontSize);
+    color: var(--appNameColor);
+    word-break: break-word;
+}
+.app:hover div svg g path {
+    fill: var(--appHoverColor);
+}
+.app:hover div svg g rect {
+    fill: var(--appHoverColor);
+}
+.app:hover .appName {
+    color: var(--appHoverColor);
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 2560px) and (max-height: 1600px) {
+    .app-list { 
+        grid-template-columns: repeat(22, 88px);
+        grid-template-rows: repeat(14, 88px);
+        gap: 20px 28px;
+    }
+}
+@media screen and (max-width: 1920px) and (max-height: 1080px) {
+    .app-list { 
+        grid-template-columns: repeat(17, 88px);
+        grid-template-rows: repeat(11, 88px);
+        gap: 0px 24px;
+    }
+}
+@media screen and (max-width: 1680px) and (max-height: 1080px) {
+    .app-list { 
+        grid-template-columns: repeat(15, 88px);
+        grid-template-rows: repeat(9, 88px);
+        gap: 0px 23px;
+    }
+}
+@media screen and (max-width: 1440px) and (max-height: 900px) {
+    .app-list { 
+        grid-template-columns: repeat(13, 88px);
+        gap: 0px 22px;
+    }
+}
+@media screen and (max-width: 1366px) and (max-height: 768px) {
+    .app-list { 
+        grid-template-columns: repeat(12, 88px);
+        grid-template-rows: repeat(6, 88px);
+        gap: 20px 24px;
+    }
+}
+@media screen and (max-width: 1280px) and (max-height: 720px) {
+    .app-list { 
+        grid-template-columns: repeat(11, 88px);
+        grid-template-rows: repeat(7, 88px);
+        gap: 0px 27px;
+    }
+}
+@media screen and (max-width: 1024px)  and (max-height: 768px) {
+    .app-list { 
+        grid-template-columns: repeat(9, 88px);
+        gap: 20px 23px;
+    }
+}
+`
+
+module.exports = Desktop
+},{"Graphic":29,"bel":4,"csjs-inject":7}],29:[function(require,module,exports){
+const loadSVG = require('loadSVG')
+
+function Graphic(url, className) {
+    let el = document.createElement('div')
+    if (className) {
+        el.classList.add(className)
+    }
+    loadSVG(url, (err, svg) => {
+        if (err) return console.error(err)
+        el.append(svg)
+    })
+
+    return el
+}   
+
+module.exports = Graphic
+},{"loadSVG":31}],30:[function(require,module,exports){
+const bel = require('bel')
+const csjs = require('csjs-inject')
+// widgets
+const Graphic = require('Graphic')
+
+function OpenWindow(app, protocol) {
+    const css = style
+
+    let close = Graphic('./src/node_modules/assets/svg/close.svg', css.icon)
+    let maximize = Graphic('./src/node_modules/assets/svg/maximize.svg', css.icon)
+
+    const el = bel`
+    <div class=${css.window}>
+        <header class=${css["panel-header"]}>
+            <span class=${css["panel-title"]}>${app.title}</span>
+            <div class=${css["panel-nav"]}>
+                <button class="${css.btn} ${css.maximize}" onclick=${() => panelNav("maximize")}>${maximize}</button>
+                <button class="${css.btn} ${css.close}" onclick=${() => panelNav("close")}>${close}</button>
+            </div>
+        </header>
+        <div class=${css["panel-body"]}></div>
+    </div>
+    `
+
+    function panelNav(el) {
+        if (el === 'close') {
+            const panel = document.querySelector(`.${css.window}`)
+            panel.remove()
+        }
+        
+    }
+
+    return protocol(el)
+}
+
+
+
+const style = csjs`
+.window {
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    top: 50%;
+    width: 960px;
+    height: 768px;
+    transform: translate(-50%, -50%);
+    background-color: #d9d9d9;
+    display: grid;
+    grid-template: 29px auto / auto;
+}
+.panel-header {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto 65px;
+    border: var(--panelBorder) solid var(--panelBorderColor);
+    background-color: white;
+    align-items: center;
+}
+.panel-nav {
+    display: grid;
+    grid-template: auto;
+    grid-auto-flow: column;
+    align-items: center;
+}
+.panel-title {
+    font-size: var(--panelHeaderTitleSize);
+    color: var(--panelHeaderTitleColor);
+    text-align: center;
+}
+.panel-body {
+    background-color: var(--panelBodyBgColor);
+    border: var(--panelBorder) solid var(--panelBorderColor);
+    border-top: 0;
+}
+.btn {
+}
+.icon {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+.icon svg {
+    width: 100%;
+    height: auto;
+}
+.maximize {
+
+}
+.close {
+
+}
+`
+
+module.exports = OpenWindow
+},{"Graphic":29,"bel":4,"csjs-inject":7}],31:[function(require,module,exports){
+async function loadSVG (url, done) { 
+    const parser = document.createElement('div')
+    let response = await fetch(url)
+    if (response.status == 200) {
+      let svg = await response.text()
+      parser.innerHTML = svg
+      return done(null, parser.children[0])
+    }
+    throw new Error(response.status)
+}
+
+module.exports = loadSVG
+},{}]},{},[1]);

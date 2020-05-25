@@ -5,6 +5,9 @@ const theme = require('theme')
 const el = (err, loadPage) => {
     const vars = theme
     const styles = csjs`
+    * {
+        box-sizing: border-box;
+    }
     html {
         font-size: 62.5%;
     }
@@ -18,6 +21,11 @@ const el = (err, loadPage) => {
     img {
         width: 100%;
         height: auto;
+    }
+    button {
+        border: none;
+        background: none;
+        cursor: pointer;
     }
     `
     document.body.style = styles
