@@ -69,7 +69,10 @@ const defines = {
     color: {
         white: '#fff',
         black: '#000',
+        greyCC: '#ccc',
         greyD9: '#d9d9d9',
+        greyDD: '#DDDDDD',
+        greyEA: '#EAEAEA',
         grey88: '#888',
         grey70: '#707070',
         blue: 'blue',
@@ -98,6 +101,13 @@ const theme = {
     panelBorder: '4px',
     panelBorderColor: color.grey70,
     panelBodyBgColor: color.white,
+    '// AppInfo setting' : '---------------------',
+    appInfoSidebarBgColor: color.greyEA,
+    appInfoSidebarFontSize: size['xx-small'],
+    appInfoSidebarColor: color.black,
+    appInfoSidebarNavCurrentBgColor: color.white,
+    appInfoSidebarShrinkBgColor: color.greyDD,
+    appInfoSidebarShrinkHoverBgColor: color.greyCC,
 }
 
 module.exports = theme
@@ -1178,88 +1188,175 @@ const bel = require('bel')
 const csjs = require('csjs-inject')
 const Desktop = require('Desktop')
 const OpenWindow = require('OpenWindow')
+const AppInfo = require('AppInfo')
 
 function main(opts, done) {
     const { theme } = opts
     const css = style
-    const icons = [
+    let apps = [
         {
             id: 1,
             name: css.software,
             title: 'DatDot.install',
-            url: './src/node_modules/assets/svg/software.svg'
+            url: './src/node_modules/assets/svg/software.svg',
+            open: false,
         },
         {
             id: 2,
             name: css.software1,
             title: 'Long name app Long name app Long name app Long name app',
-            url: './src/node_modules/assets/svg/software.svg'
+            url: './src/node_modules/assets/svg/software.svg',
+            open: false,
         },
         {
             id: 3,
             name: css.software2,
             title: 'App1',
-            url: './src/node_modules/assets/svg/software.svg'
+            url: './src/node_modules/assets/svg/software.svg',
+            open: false,
         },
         {
             id: 4,
             name: css.software1,
             title: 'App2',
-            url: './src/node_modules/assets/svg/software.svg'
+            url: './src/node_modules/assets/svg/software.svg',
+            open: false,
         },
         {
             id: 5,
             name: css.software2,
             title: 'App3',
-            url: './src/node_modules/assets/svg/software.svg'
+            url: './src/node_modules/assets/svg/software.svg',
+            open: false,
         },
         {
             id: 6,
             name: css.software1,
             title: 'App4',
-            url: './src/node_modules/assets/svg/software.svg'
+            url: './src/node_modules/assets/svg/software.svg',
+            open: false,
         },
         {
             id: 7,
             name: css.software2,
             title: 'App5',
-            url: './src/node_modules/assets/svg/software.svg'
+            url: './src/node_modules/assets/svg/software.svg',
+            open: false,
         },
         {
             id: 8,
             name: css.software1,
             title: 'App6',
-            url: './src/node_modules/assets/svg/software.svg'
+            url: './src/node_modules/assets/svg/software.svg',
+            open: false,
         },
         {
             id: 9,
             name: css.software2,
             title: 'App7',
-            url: './src/node_modules/assets/svg/software.svg'
+            url: './src/node_modules/assets/svg/software.svg',
+            open: false,
         },
         {
             id: 10,
             name: css.software1,
             title: 'App8',
-            url: './src/node_modules/assets/svg/software.svg'
+            url: './src/node_modules/assets/svg/software.svg',
+            open: false,
         },
         {
             id: 11,
             name: css.software2,
             title: 'App9',
-            url: './src/node_modules/assets/svg/software.svg'
+            url: './src/node_modules/assets/svg/software.svg',
+            open: false,
+        },
+        {
+            id: 12,
+            name: css.software1,
+            title: 'App10',
+            url: './src/node_modules/assets/svg/software.svg',
+            open: false,
+        },
+        {
+            id: 13,
+            name: css.software2,
+            title: 'App11',
+            url: './src/node_modules/assets/svg/software.svg',
+            open: false,
+        },
+        {
+            id: 14,
+            name: css.software1,
+            title: 'App12',
+            url: './src/node_modules/assets/svg/software.svg',
+            open: false,
+        },
+        {
+            id: 15,
+            name: css.software2,
+            title: 'App13',
+            url: './src/node_modules/assets/svg/software.svg',
+            open: false,
+        },
+        {
+            id: 16,
+            name: css.software1,
+            title: 'App14',
+            url: './src/node_modules/assets/svg/software.svg',
+            open: false,
+        },
+        {
+            id: 17,
+            name: css.software2,
+            title: 'App15',
+            url: './src/node_modules/assets/svg/software.svg',
+            open: false,
+        },
+        {
+            id: 18,
+            name: css.software1,
+            title: 'App16',
+            url: './src/node_modules/assets/svg/software.svg',
+            open: false,
+        },
+        {
+            id: 19,
+            name: css.software2,
+            title: 'App17',
+            url: './src/node_modules/assets/svg/software.svg',
+            open: false,
+        },
+        {
+            id: 20,
+            name: css.software1,
+            title: 'App88',
+            url: './src/node_modules/assets/svg/software.svg',
+            open: false,
+        },
+        {
+            id: 21,
+            name: css.software2,
+            title: 'App89',
+            url: './src/node_modules/assets/svg/software.svg',
+            open: false,
         }
     ]
 
-    const loadPage = bel`${Desktop(icons, openTarget)}`
+    const loadPage = bel`${Desktop(apps, openTarget)}`
     return done(null, loadPage)
 
-    function loadContent(el) {
+    function loadAppContent(el, app) {
         return bel`${el}`
     }
 
     function openTarget(app) {
-        return loadPage.appendChild( OpenWindow(app, loadContent) )
+        if (app.open) return
+        const newApps = [...apps]
+        newApps.map( obj => app.id === obj.id ? obj.open = true : obj )
+        apps = newApps
+        // console.log(apps)
+        return loadPage.appendChild( OpenWindow(app, AppInfo, loadAppContent) )
     }
 
 }
@@ -1269,24 +1366,136 @@ const style =  csjs`
 .software2 {}
 `
 module.exports = main
-},{"Desktop":28,"OpenWindow":30,"bel":4,"csjs-inject":7}],28:[function(require,module,exports){
+},{"AppInfo":28,"Desktop":29,"OpenWindow":31,"bel":4,"csjs-inject":7}],28:[function(require,module,exports){
 const bel = require('bel')
 const csjs = require('csjs-inject')
 // widgets
 const Graphic = require('Graphic')
 
-function Desktop(icons, tartget) {
+
+function AppInfo(app, protocol) {
+    const css = style
+    let info = Graphic('./src/node_modules/assets/svg/info.svg', css.icon)
+    let doc = Graphic('./src/node_modules/assets/svg/doc.svg', css.icon)
+    let settings = Graphic('./src/node_modules/assets/svg/settings.svg', css.icon)
+    let news = Graphic('./src/node_modules/assets/svg/news.svg', css.icon)
+    let about = Graphic('./src/node_modules/assets/svg/about.svg', css.icon)
+    let chat = Graphic('./src/node_modules/assets/svg/chat.svg', css.icon)
+    let supplyTree = Graphic('./src/node_modules/assets/svg/supply-tree.svg', css.icon)
+    let shrink = Graphic('./src/node_modules/assets/svg/double-arrow.svg', css.icon)
+
+    const nav = bel` 
+    <nav class=${css.nav}>
+        <a href="#info" class=${css.current} onclick=${()=>switchPageHandler('#info')}>${info} Introduction</a>
+        <a href="#doc" onclick=${()=>switchPageHandler('#doc')}>${doc} Documentation</a>
+        <a href="#settings" onclick=${()=>switchPageHandler('#settings')}>${settings} Settings</a>
+        <a href="#news" onclick=${()=>switchPageHandler('#news')}>${news} News</a>
+        <a href="#about" onclick=${()=>switchPageHandler('#about')}>${about} About</a>
+        <a href="#chat" onclick=${()=>switchPageHandler('#chat')}>${chat} Support Chat</a>
+        <a href="#supplyTree" onclick=${()=>switchPageHandler('#supplyTree')}>${supplyTree} Supply tree</a>
+    </nav>`
+
+    const el = bel`
+    <div class=${css.container}>
+        <div class=${css.sidebar}>
+           ${nav}
+            <button class="${css.btn} ${css.shrink}">${shrink}</button>
+        </div>
+        <div class=${css.content}></div>
+    </div>
+    `
+    return el
+
+    function switchPageHandler(target) {
+        // get all a tag name from nav
+        const pages = nav.querySelectorAll('a')
+        // switch current page
+        pages.forEach( page => { 
+            page.getAttribute('href') === target
+            ? page.classList.add(css.current) 
+            : page.classList.remove(css.current) } ) 
+        }
+}
+
+
+
+const style = csjs`
+.container {
+    display: grid;
+    grid-template: 1fr / 150px auto;
+    height: 100%;
+}
+.sidebar {
+    display: grid;
+    grid-template-columns: 150px;
+    grid-template-rows: auto 30px;
+    grid-template-areas: 
+    'nav'
+    'shrink';
+    background-color: var(--appInfoSidebarBgColor);
+}
+.nav {
+    grid-area: nav;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fit, 44px);
+    grid-auto-flow: column;
+}
+.nav a {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 38px auto;
+    align-items: center;
+    font-size: var(--appInfoSidebarFontSize);
+    color: var(--appInfoSidebarColor);
+    text-decoration: none;
+}
+/* current page info */
+.current {
+    background-color: var(--appInfoSidebarNavCurrentBgColor);
+}
+.icon {
+    justify-self: center;
+}
+.btn {
+   outline: none;
+}
+.btn:hover {
+    background-color: var(--appInfoSidebarShrinkHoverBgColor);
+}
+.shrink {
+    grid-area: shrink;
+    display: block;
+    text-align: right;
+    background-color: var(--appInfoSidebarShrinkBgColor);
+}
+/* App info */
+.content {
+
+}
+
+`
+
+module.exports = AppInfo
+},{"Graphic":30,"bel":4,"csjs-inject":7}],29:[function(require,module,exports){
+const bel = require('bel')
+const csjs = require('csjs-inject')
+// widgets
+const Graphic = require('Graphic')
+
+function Desktop(apps, tartget) {
     const csjs = require('csjs-inject')
     const css = style
 
     const desktop  = bel`<main class=${css.desktop} role="desktop"></main>`
     const el = bel`
         <div class=${css["app-list"]}>
-        ${icons.map( icon => {
+        ${apps.map( app => {
+            if (app.open) return
             return bel`
-                <div class="${css.app} ${icon.name}" onclick=${()=>tartget(icon)}>
-                    ${Graphic(icon.url)}
-                    <span class=${css.appName}>${icon.title}</span>
+                <div class="${css.app} ${app.name}" onclick=${()=>tartget(app)}>
+                    ${Graphic(app.url)}
+                    <span class=${css.appName}>${app.title}</span>
                 </div>`
             }
         )}
@@ -1294,10 +1503,6 @@ function Desktop(icons, tartget) {
     `
 
     desktop.appendChild(el)
-
-    document.addEventListener('DOMContentLoaded', ()=>{
-        desktop.clientHeight = '500px'
-    })
 
     return desktop
 }
@@ -1312,15 +1517,15 @@ const style = csjs`
 .app-list {
     padding: 20px 20px 0 20px;
     display: grid;
-    grid-template-columns: repeat(15, 88px);
-    grid-template-rows: repeat(8, 88px);
-    gap: 0px 22px;
+    grid-template-columns: repeat(auto-fit, minmax(auto, 88px));
+    grid-template-rows: repeat(auto-fit, minmax(auto, 88px));
+    gap: 5px 22px;
     grid-auto-flow: column;
+    justify-items: center;
 }
 .app {
     display: grid;
     grid-template: 60px auto / auto;
-    justify-self: center;
     text-align: center;
     cursor: pointer;
     overflow: hidden;
@@ -1340,58 +1545,10 @@ const style = csjs`
     color: var(--appHoverColor);
     text-decoration: underline;
 }
-
-@media screen and (max-width: 2560px) and (max-height: 1600px) {
-    .app-list { 
-        grid-template-columns: repeat(22, 88px);
-        grid-template-rows: repeat(14, 88px);
-        gap: 20px 28px;
-    }
-}
-@media screen and (max-width: 1920px) and (max-height: 1080px) {
-    .app-list { 
-        grid-template-columns: repeat(17, 88px);
-        grid-template-rows: repeat(11, 88px);
-        gap: 0px 24px;
-    }
-}
-@media screen and (max-width: 1680px) and (max-height: 1080px) {
-    .app-list { 
-        grid-template-columns: repeat(15, 88px);
-        grid-template-rows: repeat(9, 88px);
-        gap: 0px 23px;
-    }
-}
-@media screen and (max-width: 1440px) and (max-height: 900px) {
-    .app-list { 
-        grid-template-columns: repeat(13, 88px);
-        gap: 0px 22px;
-    }
-}
-@media screen and (max-width: 1366px) and (max-height: 768px) {
-    .app-list { 
-        grid-template-columns: repeat(12, 88px);
-        grid-template-rows: repeat(6, 88px);
-        gap: 20px 24px;
-    }
-}
-@media screen and (max-width: 1280px) and (max-height: 720px) {
-    .app-list { 
-        grid-template-columns: repeat(11, 88px);
-        grid-template-rows: repeat(7, 88px);
-        gap: 0px 27px;
-    }
-}
-@media screen and (max-width: 1024px)  and (max-height: 768px) {
-    .app-list { 
-        grid-template-columns: repeat(9, 88px);
-        gap: 20px 23px;
-    }
-}
 `
 
 module.exports = Desktop
-},{"Graphic":29,"bel":4,"csjs-inject":7}],29:[function(require,module,exports){
+},{"Graphic":30,"bel":4,"csjs-inject":7}],30:[function(require,module,exports){
 const loadSVG = require('loadSVG')
 
 function Graphic(url, className) {
@@ -1408,40 +1565,48 @@ function Graphic(url, className) {
 }   
 
 module.exports = Graphic
-},{"loadSVG":31}],30:[function(require,module,exports){
+},{"loadSVG":32}],31:[function(require,module,exports){
 const bel = require('bel')
 const csjs = require('csjs-inject')
 // widgets
 const Graphic = require('Graphic')
 
-function OpenWindow(app, protocol) {
+function OpenWindow(app, content, protocol) {
+    app.open = true
+
     const css = style
-
     let close = Graphic('./src/node_modules/assets/svg/close.svg', css.icon)
-    let maximize = Graphic('./src/node_modules/assets/svg/maximize.svg', css.icon)
-
+    let minmax = Graphic('./src/node_modules/assets/svg/minmax.svg', css.icon)
     const el = bel`
-    <div class=${css.window}>
+    <div class="${css.window} app_${app.id}">
         <header class=${css["panel-header"]}>
             <span class=${css["panel-title"]}>${app.title}</span>
             <div class=${css["panel-nav"]}>
-                <button class="${css.btn} ${css.maximize}" onclick=${() => panelNav("maximize")}>${maximize}</button>
-                <button class="${css.btn} ${css.close}" onclick=${() => panelNav("close")}>${close}</button>
+                <button class="${css.btn} ${css.minmax}" onclick=${() => panelNav(event, "minmax")}>${minmax}</button>
+                <button class="${css.btn} ${css.close}" onclick=${() => panelNav(event, "close")}>${close}</button>
             </div>
         </header>
-        <div class=${css["panel-body"]}></div>
+        <div class=${css["panel-body"]}>
+            ${content()}
+        </div>
     </div>
     `
 
-    function panelNav(el) {
-        if (el === 'close') {
-            const panel = document.querySelector(`.${css.window}`)
-            panel.remove()
+    function panelNav(event, status) {
+        event.preventDefault()
+        if (status === 'close') {
+            el.remove()
+            app.open = false
+            return protocol(el, app)
         }
-        
+        if (status === 'minmax') {
+            el.classList.contains(css.fullscreen) 
+            ? el.classList.remove(css.fullscreen)
+            : el.classList.add(css.fullscreen)
+        }
     }
-
-    return protocol(el)
+    
+    return protocol(el, app)
 }
 
 
@@ -1449,11 +1614,13 @@ function OpenWindow(app, protocol) {
 const style = csjs`
 .window {
     position: absolute;
-    z-index: 3;
+    z-index: 2;
     left: 50%;
     top: 50%;
     width: 960px;
     height: 768px;
+    max-width: 100vw;
+    max-height: 100vh;
     transform: translate(-50%, -50%);
     background-color: #d9d9d9;
     display: grid;
@@ -1482,6 +1649,7 @@ const style = csjs`
     background-color: var(--panelBodyBgColor);
     border: var(--panelBorder) solid var(--panelBorderColor);
     border-top: 0;
+    height: 100%;
 }
 .btn {
 }
@@ -1494,16 +1662,26 @@ const style = csjs`
     width: 100%;
     height: auto;
 }
-.maximize {
+.minmax {
 
+}
+.fullscreen {
+    width: 100vw;
+    height: 100vh;
 }
 .close {
 
 }
+@media screen and (max-width: 1024px) {
+    .window {
+        width: 100vw;
+        height: 100vh
+    }
+}
 `
 
 module.exports = OpenWindow
-},{"Graphic":29,"bel":4,"csjs-inject":7}],31:[function(require,module,exports){
+},{"Graphic":30,"bel":4,"csjs-inject":7}],32:[function(require,module,exports){
 async function loadSVG (url, done) { 
     const parser = document.createElement('div')
     let response = await fetch(url)
