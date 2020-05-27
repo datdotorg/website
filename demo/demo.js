@@ -4,7 +4,7 @@ const theme = require('theme')
 
 const el = (err, loadPage) => {
     const vars = theme
-    const styles = csjs`
+    const styles = csjs `
     * {
         box-sizing: border-box;
     }
@@ -27,6 +27,34 @@ const el = (err, loadPage) => {
         background: none;
         cursor: pointer;
     }
+    pre {
+        margin-bottom: 0;
+        word-break: normal;
+        font-size: 1.6rem;
+        font-family: var(--codeFont);
+        line-height: 1.45;
+    }
+    code {
+        word-break: break-all;
+        word-break: break-word;
+        /* Non standard for webkit */
+        -webkit-hyphens: auto;
+        -moz-hyphens: auto;
+        hyphens: auto;
+        white-space: pre-wrap; 
+    }
+    table {
+        border-spacing: 0;
+        border-collapse: collapse;
+    }
+    td, th {
+        padding: 0;
+    }
+    iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
     `
     document.body.style = styles
 
@@ -38,14 +66,14 @@ const el = (err, loadPage) => {
     }
 
     updateTheme(vars)
-} 
+}
 
-function updateTheme (vars) {
+function updateTheme(vars) {
     Object.keys(vars).forEach(name => {
-      document.body.style.setProperty(`--${name}`, vars[name])
+        document.body.style.setProperty(`--${name}`, vars[name])
     })
 }
 
 
 
-main({theme}, el)
+main({ theme }, el)
