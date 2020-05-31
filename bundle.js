@@ -32986,7 +32986,7 @@ function main(opts, done) {
     let packages = [
         { 
             id: 1,
-            url: '../packages/datdot/package.json',
+            url: 'https://raw.githubusercontent.com/fionataeyang/datdot/master/packages/datdot/package.json',
             version: '1.0.0',
             status: {
                 open: false,
