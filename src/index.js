@@ -7,176 +7,89 @@ const AppInfo = require('AppInfo')
 function main(opts, done) {
     const { theme } = opts
     const css = style
-    let apps = [
-        {
+    let packages = [
+        { 
             id: 1,
-            name: css.software,
-            title: 'DatDot.install',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
+            url: '../packages/datdot/package.json',
+            version: '1.0.0',
+            status: {
+                open: false,
+                pin: true,
+            }
         },
-        {
+        { 
             id: 2,
-            name: css.software1,
-            title: 'Long name app Long name app Long name app Long name app',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
+            url: 'https://seekdecor.com/demo-package/package1/package.json',
+            version: '1.1.0',
+            status: {
+                open: false,
+                pin: true,
+            }
         },
-        {
-            id: 3,
-            name: css.software2,
-            title: 'App1',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
-        },
-        {
-            id: 4,
-            name: css.software1,
-            title: 'App2',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
-        },
-        {
-            id: 5,
-            name: css.software2,
-            title: 'App3',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
-        },
-        {
-            id: 6,
-            name: css.software1,
-            title: 'App4',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
-        },
-        {
-            id: 7,
-            name: css.software2,
-            title: 'App5',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
-        },
-        {
-            id: 8,
-            name: css.software1,
-            title: 'App6',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
-        },
-        {
-            id: 9,
-            name: css.software2,
-            title: 'App7',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
-        },
-        {
-            id: 10,
-            name: css.software1,
-            title: 'App8',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
-        },
-        {
-            id: 11,
-            name: css.software2,
-            title: 'App9',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
-        },
-        {
-            id: 12,
-            name: css.software1,
-            title: 'App10',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
-        },
-        {
-            id: 13,
-            name: css.software2,
-            title: 'App11',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
-        },
-        {
-            id: 14,
-            name: css.software1,
-            title: 'App12',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
-        },
-        {
-            id: 15,
-            name: css.software2,
-            title: 'App13',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
-        },
-        {
-            id: 16,
-            name: css.software1,
-            title: 'App14',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
-        },
-        {
-            id: 17,
-            name: css.software2,
-            title: 'App15',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
-        },
-        {
-            id: 18,
-            name: css.software1,
-            title: 'App16',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
-        },
-        {
-            id: 19,
-            name: css.software2,
-            title: 'App17',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
-        },
-        {
-            id: 20,
-            name: css.software1,
-            title: 'App88',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
-        },
-        {
-            id: 21,
-            name: css.software2,
-            title: 'App89',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
-        }
     ]
 
-    const loadPage = bel`${Desktop(apps, openTarget)}`
-    return done(null, loadPage)
+    const desktop  = bel`<main class=${css.desktop} role="desktop"></main>`
+    const applist = bel`<div class=${css["app-list"]}></div>`
+    
+    // applist load
+    desktopLoad()
+    
+    desktop.appendChild(applist)
+    return done(null, desktop)
+    
 
     function loadAppContent(el, app) {
         return bel`${el}`
     }
 
     function openTarget(app) {
-        if (app.open) return
-        const newApps = [...apps]
+        if (app.status.open) return
+        const newApps = [...packages]
         newApps.map( obj => app.id === obj.id ? obj.open = true : obj )
-        apps = newApps
-        // console.log(apps)
-        return loadPage.appendChild( OpenWindow(app, AppInfo, loadAppContent) )
+        packages = newApps
+        return document.body.appendChild( OpenWindow(app, AppInfo, loadAppContent) )
+    }
+
+    // load the applist on the desktop
+    function desktopLoad() {
+        packages.map( async package => {
+            // package's status is not pin on the desktop
+            if (!package.status.pin) return 
+    
+            const cors = "https://cors-anywhere.herokuapp.com/"
+            const regex = /^http/
+            // for localhost using
+            const url = package.url.match(regex) ? `${cors}${package.url}` : `${package.url}`
+            // find the current path
+            const path = url.slice(0, url.lastIndexOf('/'))
+            const app = await fetch(url).then( res => res.json() ).catch(err => console.log(err))
+            const version = await fetch(`${path}/dist/${package.version}/version.json`).then( res => res.json() ).catch(err => console.log(err))
+            // make a new obj
+            let obj = { app, version }
+            applist.appendChild(  Desktop(package, {title: app.title, icon: `${path}/dist/${package.version}/${version.icon}` } , openTarget )  )
+        })
     }
 
 }
-const style =  csjs`
-.software {}
-.software1 {}
-.software2 {}
+
+let style = csjs`
+svg {
+    width: 100%;
+}
+.desktop {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: calc(100vh - 43px) 43px;
+}
+.app-list {
+    padding: 20px 20px 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(auto, 90px));
+    grid-template-rows: repeat(auto-fit, minmax(auto, 94px));
+    gap: 5px 22px;
+    grid-auto-flow: column;
+    justify-items: center;
+}
 `
+
 module.exports = main

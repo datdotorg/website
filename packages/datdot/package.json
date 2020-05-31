@@ -1,0 +1,22 @@
+{
+    "title": "DatDot",
+    "logo": "logo-datdot.png",
+    "chat": "https://gitter.im/wizardamigosinstitute/program/~embed",
+    "news": "doc/news.md",
+    "about": {
+      "wallet": "https://opencollective.com/wwcodeatl/donate",
+      "maintainer": "path/to/maintainer.json",
+      "info": "doc/about.md"
+    },
+    "versions": {
+        "latest": "1.0.0",
+        "all": [
+            "1.1.0",
+            "1.0.1",
+            "1.0.0",
+            "0.4.0",
+            "0.1.2",
+            "0.0.0"
+        ]  
+    }
+  }

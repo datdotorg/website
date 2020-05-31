@@ -1,0 +1,25 @@
+{
+    "icon": "images/icon-datdot.svg",
+    "exports": {
+      "main": "index.js"
+    },
+    "contributors": [
+      "contributors/alexander_praetorius.json",
+      "contributors/nina_breznik.json",
+      "contributors/fiona_ye.json",
+      "contributors/joshua_mir.json"
+    ],
+    "license": "...",
+    "bugs": "https://github.com/playproject-io/datdot/issues",
+    "keywords": ["datdot", "dat protocol"],
+    "intro": "doc/intro.md",
+    "doc": "doc/v1.0.0.md",
+    "supplytree": {
+      "dependencies": {
+        "package1": "https://github.com/fionataeyang/datdot/packages/dist/1.0.0"
+      }
+    },
+    "settings": {
+      
+    }
+  }

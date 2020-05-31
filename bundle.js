@@ -32983,183 +32983,96 @@ const AppInfo = require('AppInfo')
 function main(opts, done) {
     const { theme } = opts
     const css = style
-    let apps = [
-        {
+    let packages = [
+        { 
             id: 1,
-            name: css.software,
-            title: 'DatDot.install',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
+            url: '../packages/datdot/package.json',
+            version: '1.0.0',
+            status: {
+                open: false,
+                pin: true,
+            }
         },
-        {
+        { 
             id: 2,
-            name: css.software1,
-            title: 'Long name app Long name app Long name app Long name app',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
+            url: 'https://seekdecor.com/demo-package/package1/package.json',
+            version: '1.1.0',
+            status: {
+                open: false,
+                pin: true,
+            }
         },
-        {
-            id: 3,
-            name: css.software2,
-            title: 'App1',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
-        },
-        {
-            id: 4,
-            name: css.software1,
-            title: 'App2',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
-        },
-        {
-            id: 5,
-            name: css.software2,
-            title: 'App3',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
-        },
-        {
-            id: 6,
-            name: css.software1,
-            title: 'App4',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
-        },
-        {
-            id: 7,
-            name: css.software2,
-            title: 'App5',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
-        },
-        {
-            id: 8,
-            name: css.software1,
-            title: 'App6',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
-        },
-        {
-            id: 9,
-            name: css.software2,
-            title: 'App7',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
-        },
-        {
-            id: 10,
-            name: css.software1,
-            title: 'App8',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
-        },
-        {
-            id: 11,
-            name: css.software2,
-            title: 'App9',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
-        },
-        {
-            id: 12,
-            name: css.software1,
-            title: 'App10',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
-        },
-        {
-            id: 13,
-            name: css.software2,
-            title: 'App11',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
-        },
-        {
-            id: 14,
-            name: css.software1,
-            title: 'App12',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
-        },
-        {
-            id: 15,
-            name: css.software2,
-            title: 'App13',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
-        },
-        {
-            id: 16,
-            name: css.software1,
-            title: 'App14',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
-        },
-        {
-            id: 17,
-            name: css.software2,
-            title: 'App15',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
-        },
-        {
-            id: 18,
-            name: css.software1,
-            title: 'App16',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
-        },
-        {
-            id: 19,
-            name: css.software2,
-            title: 'App17',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
-        },
-        {
-            id: 20,
-            name: css.software1,
-            title: 'App88',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
-        },
-        {
-            id: 21,
-            name: css.software2,
-            title: 'App89',
-            url: './src/node_modules/assets/svg/software.svg',
-            open: false,
-        }
     ]
 
-    const loadPage = bel`${Desktop(apps, openTarget)}`
-    return done(null, loadPage)
+    const desktop  = bel`<main class=${css.desktop} role="desktop"></main>`
+    const applist = bel`<div class=${css["app-list"]}></div>`
+    
+    // applist load
+    desktopLoad()
+    
+    desktop.appendChild(applist)
+    return done(null, desktop)
+    
 
     function loadAppContent(el, app) {
         return bel`${el}`
     }
 
     function openTarget(app) {
-        if (app.open) return
-        const newApps = [...apps]
+        if (app.status.open) return
+        const newApps = [...packages]
         newApps.map( obj => app.id === obj.id ? obj.open = true : obj )
-        apps = newApps
-        // console.log(apps)
-        return loadPage.appendChild( OpenWindow(app, AppInfo, loadAppContent) )
+        packages = newApps
+        return document.body.appendChild( OpenWindow(app, AppInfo, loadAppContent) )
+    }
+
+    // load the applist on the desktop
+    function desktopLoad() {
+        packages.map( async package => {
+            // package's status is not pin on the desktop
+            if (!package.status.pin) return 
+    
+            const cors = "https://cors-anywhere.herokuapp.com/"
+            const regex = /^http/
+            // for localhost using
+            const url = package.url.match(regex) ? `${cors}${package.url}` : `${package.url}`
+            // find the current path
+            const path = url.slice(0, url.lastIndexOf('/'))
+            const app = await fetch(url).then( res => res.json() ).catch(err => console.log(err))
+            const version = await fetch(`${path}/dist/${package.version}/version.json`).then( res => res.json() ).catch(err => console.log(err))
+            // make a new obj
+            let obj = { app, version }
+            applist.appendChild(  Desktop(package, {title: app.title, icon: `${path}/dist/${package.version}/${version.icon}` } , openTarget )  )
+        })
     }
 
 }
-const style =  csjs`
-.software {}
-.software1 {}
-.software2 {}
+
+let style = csjs`
+svg {
+    width: 100%;
+}
+.desktop {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: calc(100vh - 43px) 43px;
+}
+.app-list {
+    padding: 20px 20px 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(auto, 90px));
+    grid-template-rows: repeat(auto-fit, minmax(auto, 94px));
+    gap: 5px 22px;
+    grid-auto-flow: column;
+    justify-items: center;
+}
 `
+
 module.exports = main
 },{"AppInfo":283,"Desktop":284,"OpenWindow":286,"bel":4,"csjs-inject":7}],283:[function(require,module,exports){
 const bel = require('bel')
 const csjs = require('csjs-inject')
-    // widgets
+// widgets
 const Graphic = require('Graphic')
 const md = require('markdown-it')()
     .use(require('markdown-it-highlightjs'), {
@@ -33169,7 +33082,7 @@ const md = require('markdown-it')()
 
 function AppInfo(app, protocol) {
     const css = style
-        // icons
+    // icons
     let info = Graphic('./src/node_modules/assets/svg/info.svg', css.icon)
     let doc = Graphic('./src/node_modules/assets/svg/doc.svg', css.icon)
     let settings = Graphic('./src/node_modules/assets/svg/settings.svg', css.icon)
@@ -33190,24 +33103,38 @@ function AppInfo(app, protocol) {
     </aside>
     `
 
-    const appInfo = async (path, page) => {
-        fetch(path)
-        .then(res => res.text())
-        .then(text => {
-            const result = md.render(text)
-            const hljsStyle = bel `<link href="./assets/hljs.css" rel='stylesheet' type='text/css'>`
-            let article = bel`<article class=${css['app-info']}></article>`
-            document.head.appendChild(hljsStyle)
-            if (page === '#info') {
-                article.appendChild(actions)
-            }
-            article.innerHTML += result
-            content.appendChild(article)
-        })
+    const appInfo = async (path, page, done) => {
+        try {
+            const result = await fetch(path).then(res => res.text())
+            return done(null, page, result)
+        } catch (error) {
+            done(error)
+        }
+        
     }
     
-    appInfo('./src/node_modules/assets/md/markdownit-demo.md', '#info')
+    appInfo('./src/node_modules/assets/md/markdownit-demo.md', '#info', loadPage)
     
+
+    function loadPage(err, page, data) {
+        // console.log({data})
+        if (err) return console.log(err)
+        // page content start
+        const result = md.render(data)
+        // if page includes below conditions, add hljs.css into head
+        if (page === '#info' || page === '#doc') {
+            const hljsStyle = bel `<link href="./src/node_modules/assets/css/hljs.css" rel='stylesheet' type='text/css'>`
+            document.head.appendChild(hljsStyle)
+        }
+        
+        let article = bel`<article class=${css['app-info']}></article>`
+        
+        if (page === '#info') {
+            article.appendChild(actions)
+        }
+        article.innerHTML += result
+        content.appendChild(article)
+    }
 
     const nav = bel ` 
     <nav class=${css.nav}>
@@ -33272,7 +33199,7 @@ function AppInfo(app, protocol) {
         } else if (target === '#doc') {
             console.log("#doc page");
             content.innerHTML = ''
-            appInfo('./src/node_modules/assets/md/githubusercontent.md', target)
+            appInfo('./src/node_modules/assets/md/githubusercontent.md', target, loadPage)
         }
         else if (target === '#settings') {
             console.log("#settings page");
@@ -33293,7 +33220,7 @@ function AppInfo(app, protocol) {
         else {
             console.log("#info page");
             content.innerHTML = ''
-            appInfo('./src/node_modules/assets/md/markdownit-demo.md', target)
+            appInfo('./src/node_modules/assets/md/markdownit-demo.md', target, loadPage)
         }
     }
 }
@@ -33412,54 +33339,43 @@ const csjs = require('csjs-inject')
 // widgets
 const Graphic = require('Graphic')
 
-function Desktop(apps, tartget) {
-    const csjs = require('csjs-inject')
+function Desktop(app, { title, icon }, tartget) {
     const css = style
+    const cors = "https://cors-anywhere.herokuapp.com/"
+    const regex = /^http/
+    const path = icon.split("/")
+    let filter = path[path.length - 1]
 
-    const desktop  = bel`<main class=${css.desktop} role="desktop"></main>`
+    if ( filter.includes('svg') ) {
+        var appicon = Graphic(icon, css.icon)
+    } else {
+        var url = icon.split(cors).join('')
+        var appicon = bel`<div class=${css.icon}><img src=${url}></div>`
+    }
     const el = bel`
-        <div class=${css["app-list"]}>
-        ${apps.map( app => {
-            if (app.open) return
-            return bel`
-                <div class="${css.app} ${app.name}" onclick=${()=>tartget(app)}>
-                    ${Graphic(app.url)}
-                    <span class=${css.appName}>${app.title}</span>
-                </div>`
-            }
-        )}
+        <div class="${css.app} ${title}" onclick=${ () => tartget(app) }>
+            ${appicon}      
+            <span class=${css['app-name']}>${title}</span>
         </div>
     `
 
-    desktop.appendChild(el)
+    return el
 
-    return desktop
 }
 
 
 const style = csjs`
-.desktop {
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: calc(100vh - 43px) 43px;
-}
-.app-list {
-    padding: 20px 20px 0 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(auto, 88px));
-    grid-template-rows: repeat(auto-fit, minmax(auto, 88px));
-    gap: 5px 22px;
-    grid-auto-flow: column;
-    justify-items: center;
-}
 .app {
     display: grid;
-    grid-template: 60px auto / auto;
+    grid-template-rows: 60px auto;
     text-align: center;
+    justify-items: center;
     cursor: pointer;
     overflow: hidden;
+    grid-gap: 7px 0;
+    width: 100%;
 }
-.appName {
+.app-name {
     font-size: var(--appNameFontSize);
     color: var(--appNameColor);
     word-break: break-word;
@@ -33470,9 +33386,12 @@ const style = csjs`
 .app:hover div svg g rect {
     fill: var(--appHoverColor);
 }
-.app:hover .appName {
+.app:hover .app-name {
     color: var(--appHoverColor);
     text-decoration: underline;
+}
+.icon {
+    width: 60px;
 }
 `
 
