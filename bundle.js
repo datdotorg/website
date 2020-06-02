@@ -32981,6 +32981,8 @@ const OpenWindow = require('OpenWindow')
 const AppInfo = require('AppInfo')
 
 function main(opts, done) {
+    // catch screen size
+    // alert(`${window.innerWidth}x${window.innerHeight}`);
     const { theme } = opts
     const css = style
     let packages = [
@@ -32995,7 +32997,7 @@ function main(opts, done) {
         },
         { 
             id: 2,
-            url: 'https://seekdecor.com/demo-package/package1/package.json',
+            url: 'https://www.seekdecor.com/demo-package/package1/package.json',
             version: '1.1.0',
             status: {
                 open: false,
@@ -33095,6 +33097,15 @@ function AppInfo(app, protocol) {
     // elements
     const shrinkAction = bel`<button class="${css.btn} ${css.shrink}">${shrink}</button>`
     const content = bel`<div class=${css.content}></div>`
+    const w = window.innerWidth
+    const h = window.innerHeight
+
+    if (w > 1024) {
+        content.style.height = `${h - 240 - 32}px`
+    } else {
+        content.style.height = `${h - 32}px`
+    }
+    
     
     let actions = bel`
     <aside class=${css.actions}>
@@ -33226,7 +33237,6 @@ function AppInfo(app, protocol) {
 }
 
 
-
 const style = csjs `
 .container {
     display: grid;
@@ -33283,9 +33293,13 @@ const style = csjs `
     display: block;
     text-align: right;
     background-color: var(--appInfoSidebarShrinkBgColor);
+    border-radius: 0;
 }
 .shrink:hover {
     background-color: var(--appInfoSidebarShrinkHoverBgColor);
+}
+.shrink .icon {
+    display: inline-block;
 }
 .shrink .icon svg {
     transform: rotate(-180deg);
@@ -33295,7 +33309,6 @@ const style = csjs `
 }
 /* App info */
 .content {
-    max-height: 735px;
     overflow: hidden;
     overflow-y: auto;
 }
@@ -33328,6 +33341,9 @@ const style = csjs `
     background-color: #f6f8fa;
 }
 .actions {
+
+}
+@media screen and (max-width: 812px) {
 
 }
 `
@@ -33421,7 +33437,8 @@ const Graphic = require('Graphic')
 
 function OpenWindow(app, content, protocol) {
     app.open = true
-
+    let w = window.innerWidth
+    let h = window.innerHeight
     const css = style
     let close = Graphic('./src/node_modules/assets/svg/close.svg', css.icon)
     let minmax = Graphic('./src/node_modules/assets/svg/minmax.svg', css.icon)
@@ -33439,6 +33456,12 @@ function OpenWindow(app, content, protocol) {
         </div>
     </div>
     `
+    if (w > 1024) {
+        el.style.height = `${h - 240}px`
+    } else {
+        el.style.height = `100vh`
+    }
+    
 
     function panelNav(event, status) {
         event.preventDefault()
@@ -33448,9 +33471,19 @@ function OpenWindow(app, content, protocol) {
             return protocol(el, app)
         }
         if (status === 'minmax') {
-            el.classList.contains(css.fullscreen) 
-            ? el.classList.remove(css.fullscreen)
-            : el.classList.add(css.fullscreen)
+
+            let content = document.querySelector("[class^='content'")
+            let h = window.innerHeight
+            
+            if (el.classList.contains(css.fullscreen)) {
+                el.classList.remove(css.fullscreen)
+                el.style.height = `${el.clientHeight - 240}px`
+                content.style.height = `${el.clientHeight - 240 - 32}px`
+            } else {
+                el.classList.add(css.fullscreen)
+                el.style.height = "100vh"
+                content.style.height = "100%"
+            }
         }
     }
     
@@ -33466,9 +33499,8 @@ const style = csjs`
     left: 50%;
     top: 50%;
     width: 960px;
-    height: 768px;
-    max-width: 100vw;
-    max-height: 100vh;
+    max-width: 100%;
+    max-height: 100%;
     transform: translate(-50%, -50%);
     background-color: #d9d9d9;
     display: grid;
@@ -33484,7 +33516,6 @@ const style = csjs`
 }
 .panel-nav {
     display: grid;
-    grid-template: auto;
     grid-auto-flow: column;
     align-items: center;
 }
@@ -33500,30 +33531,28 @@ const style = csjs`
     height: 100%;
 }
 .btn {
+    padding: 0;
+    align-items: center;
+    justify-items: center;
 }
 .icon {
-    display: grid;
-    align-items: center;
-    justify-content: center;
-}
-.icon svg {
-    width: 100%;
-    height: auto;
-}
-.minmax {
-
+    
 }
 .fullscreen {
     width: 100vw;
     height: 100vh;
 }
+.minmax {
+}
 .close {
-
 }
 @media screen and (max-width: 1024px) {
     .window {
-        width: 100vw;
-        height: 100vh
+        width: 100%;
+        height: 100%;
+    }
+    .panel-header {
+        grid-template-columns: auto 30px;
     }
 }
 `

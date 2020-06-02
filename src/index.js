@@ -5,6 +5,8 @@ const OpenWindow = require('OpenWindow')
 const AppInfo = require('AppInfo')
 
 function main(opts, done) {
+    // catch screen size
+    // alert(`${window.innerWidth}x${window.innerHeight}`);
     const { theme } = opts
     const css = style
     let packages = [
@@ -19,7 +21,7 @@ function main(opts, done) {
         },
         { 
             id: 2,
-            url: 'https://seekdecor.com/demo-package/package1/package.json',
+            url: 'https://www.seekdecor.com/demo-package/package1/package.json',
             version: '1.1.0',
             status: {
                 open: false,
