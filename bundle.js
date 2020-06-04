@@ -32991,7 +32991,7 @@ function main(opts, done) {
     let packages = [
         { 
             id: 1,
-            url: 'https://raw.githubusercontent.com/fionataeyang/datdot/master/packages/datdot/package.json',
+            url: '../packages/datdot/package.json',
             version: '1.0.0',
             status: {
                 open: false,
@@ -33124,6 +33124,7 @@ function AppInfo(package, protocol) {
     `
 
     const appInfo = async (path, page, done) => {
+        console.log(path);
         const cors = "https://cors-anywhere.herokuapp.com/"
         const regex = /^http/
         // for localhost using
@@ -33460,6 +33461,7 @@ const csjs = require('csjs-inject')
 const Graphic = require('Graphic')
 
 function OpenWindow(package, content, protocol) {
+    console.log(package);
     const { app } = package.sources
     let w = window.innerWidth
     let h = window.innerHeight
