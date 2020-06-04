@@ -1,5 +1,5 @@
 {
-    "icon": "images/icon-datdot.svg",
+    "icon": "images/clock-icon.svg",
     "exports": {
       "main": "index.js"
     },
@@ -16,7 +16,7 @@
     "doc": "blob/v1.0.0.md",
     "supplytree": {
       "dependencies": {
-        "package1": "https://github.com/fionataeyang/datdot/packages/dist/1.0.0/version.json"
+        "package1": "https://github.com/fionataeyang/datdot/packages/dist/1.0.0"
       }
     },
     "settings": {

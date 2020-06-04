@@ -1,5 +1,5 @@
 {
-    "title": "DatDot",
+    "title": "Packman",
     "logo": "logo-datdot.png",
     "chat": "https://gitter.im/wizardamigosinstitute/program/~embed",
     "news": "blob/news.md",
@@ -9,7 +9,7 @@
       "info": "blob/about.md"
     },
     "versions": {
-        "latest": "1.0.0",
+        "latest": "1.1.0",
         "all": [
             "1.1.0",
             "1.0.1",

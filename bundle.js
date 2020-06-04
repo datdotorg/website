@@ -32991,7 +32991,7 @@ function main(opts, done) {
     let packages = [
         { 
             id: 1,
-            url: '../packages/datdot/package.json',
+            url: 'https://raw.githubusercontent.com/fionataeyang/datdot/master/packages/datdot/package.json',
             version: '1.0.0',
             status: {
                 open: false,
@@ -33001,7 +33001,7 @@ function main(opts, done) {
         },
         { 
             id: 2,
-            url: 'https://www.seekdecor.com/demo-package/package1/package.json',
+            url: 'https://www.seekdecor.com/demo-package/game/package.json',
             version: '1.1.0',
             status: {
                 open: false,
@@ -33009,6 +33009,16 @@ function main(opts, done) {
                 install: true
             }
         },
+        {
+            id: 3,
+            url: 'https://distracted-bhaskara-c0ba0e.netlify.app/package.json',
+            version: '1.0.0',
+            status: {
+                open: false,
+                pin: true,
+                install: true
+            }
+        }
     ]
 
     const desktop  = bel`<main class=${css.desktop} role="desktop"></main>`
@@ -33025,16 +33035,29 @@ function main(opts, done) {
         return bel`${el}`
     }
 
-    function openTarget(title) {
+    function openTarget(title, packages) {
         const newApps = [...packages]
         newApps.map( item => { 
-            if (item.status.open) return
+            
             if (title === item.sources.app.title) {
-                item.status.open = true
-                packages = newApps
-                return document.body.appendChild( OpenWindow(item, AppInfo, loadAppContent) )
+                // set all windows's level back to default
+                let all = document.querySelectorAll("[class*='app_']")
+                all.forEach ( i => i.style.zIndex = '2')
+
+                if (item.status.open ) {
+                    // bring window's level up to top
+                    let switchWindow = document.querySelector(`.app_${item.id}`)
+                    switchWindow.style.zIndex = "9"
+                    return
+                } else {
+                    item.status.open = true
+                    packages = newApps
+                    return document.body.appendChild( OpenWindow(item, AppInfo, loadAppContent) )
+                }
+                
             } else {
-               return item
+                
+                return item
             }
             
         })
@@ -33099,7 +33122,6 @@ const md = require('markdown-it')()
     })
 
 function AppInfo(package, protocol) {
-    console.log(package);
     const {app, version } = package
     const css = style
     // icons
@@ -33111,7 +33133,7 @@ function AppInfo(package, protocol) {
     let chat = Graphic('./src/node_modules/assets/svg/chat.svg', css.icon)
     let supplyTree = Graphic('./src/node_modules/assets/svg/supply-tree.svg', css.icon)
     let shrink = Graphic('./src/node_modules/assets/svg/double-arrow.svg', css.icon)
-
+    
     // elements
     const shrinkAction = bel`<button class="${css.btn} ${css.shrink}">${shrink}</button>`
     const content = bel`<div class=${css.content}></div>`
@@ -33124,7 +33146,6 @@ function AppInfo(package, protocol) {
     `
 
     const appInfo = async (path, page, done) => {
-        console.log(path);
         const cors = "https://cors-anywhere.herokuapp.com/"
         const regex = /^http/
         // for localhost using
@@ -33133,10 +33154,25 @@ function AppInfo(package, protocol) {
         const link = url.slice(0, url.lastIndexOf('/'))
         // const version = await fetch(`${path}/dist/${package.version}/version.json`).then( res => res.json() ).catch(err => console.log(err))
         
+        
         try {
-            const result = await fetch(`${link}/dist/${version}/${path}`).then(res => res.text())
-            console.log(result);
-            // return done(null, page, result)
+
+            if (page === "#info" || page === "#doc" ) {
+                var fullLink = `${link}/dist/${version}/`
+                var result = await fetch(`${fullLink}${path}`).then(res => res.text())
+            } else if (page === "#supplyTree") {
+                var fullLink = `${link}/dist/${version}/`
+                var result = await fetch(`${fullLink}${path}`)
+            } else {
+                var fullLink = `${link}/`
+                var result = await fetch(`${fullLink}${path}`).then(res => res.text())
+            }
+
+           
+            // console.log(result);
+            return done(null, page, result)
+
+
         } catch (error) {
             done(error)
         }
@@ -33147,12 +33183,15 @@ function AppInfo(package, protocol) {
     
 
     function loadPage(err, page, data) {
+        const currentWindow = document.querySelector(`.app_${package.id}`)
+        const content = currentWindow.querySelector(`.${css.content}`)
+        // console.log(currentWindow);
         // console.log({data})
         if (err) return console.log(err)
         // page content start
         const result = md.render(data)
         // if page includes below conditions, add hljs.css into head
-        if (page === '#info' || page === '#doc') {
+        if (page === '#info' || page === '#doc' || page === '#about') {
             const hljsStyle = bel `<link href="./src/node_modules/assets/css/hljs.css" rel='stylesheet' type='text/css'>`
             document.head.appendChild(hljsStyle)
         }
@@ -33163,6 +33202,7 @@ function AppInfo(package, protocol) {
             article.appendChild(actions)
         }
         article.innerHTML += result
+        content.innerHTML = ''
         content.appendChild(article)
     }
 
@@ -33179,9 +33219,8 @@ function AppInfo(package, protocol) {
 
 
     shrinkAction.addEventListener('click', (e) => {
-        const window = document.querySelector(`.app_${app.id}`)
-        const container = window.querySelector(`.${css.container}`)
-        
+        const currentWindow = document.querySelector(`.app_${package.id}`)
+        const container = currentWindow.querySelector(`.${css.container}`)
         container.classList.toggle(css.collapse)
     })
 
@@ -33220,7 +33259,7 @@ function AppInfo(package, protocol) {
         } else if (target === '#doc') {
             console.log("#doc page");
             content.innerHTML = ''
-            appInfo('./src/node_modules/assets/md/githubusercontent.md', target, loadPage)
+            appInfo(package.sources.version.doc, target, loadPage)
         }
         else if (target === '#settings') {
             console.log("#settings page");
@@ -33229,19 +33268,22 @@ function AppInfo(package, protocol) {
         else if (target === '#news') {
             console.log("#news page");
             content.innerHTML = ''
+            appInfo(package.sources.app.news, target, loadPage)
         }
         else if (target === '#about') {
             console.log("#about page");
             content.innerHTML = ''
+            appInfo(package.sources.app.about.info, target, loadPage)
         }
         else if (target === '#supplyTree') {
             console.log("#supplyTree page");
-            content.innerHTML = ''
+            content.innerHTML = '<h1>Suppy Tree</h1>'
+            appInfo(package.sources.version.supplytree.dependencies, target, loadPage)
         }
         else {
             console.log("#info page");
             content.innerHTML = ''
-            appInfo('./src/node_modules/assets/md/markdownit-demo.md', target, loadPage)
+            appInfo(package.sources.version.intro, target, loadPage)
         }
     }
 }
@@ -33380,7 +33422,7 @@ const csjs = require('csjs-inject')
 // widgets
 const Graphic = require('Graphic')
 
-function Desktop(app, { title, icon }, protocol) {
+function Desktop(packages, { title, icon }, protocol) {
     const css = style
     const cors = "https://cors-anywhere.herokuapp.com/"
     const regex = /^http/
@@ -33394,7 +33436,7 @@ function Desktop(app, { title, icon }, protocol) {
         var appicon = bel`<div class=${css.icon}><img src=${url}></div>`
     }
     const el = bel`
-        <div class="${css.app} ${title}" onclick=${ () => protocol(title, app) }>
+        <div class="${css["app-icon"]} ${title}" onclick=${ () => protocol(title, packages) }>
             ${appicon}      
             <span class=${css['app-name']}>${title}</span>
         </div>
@@ -33406,7 +33448,7 @@ function Desktop(app, { title, icon }, protocol) {
 
 
 const style = csjs`
-.app {
+.app-icon {
     display: grid;
     grid-template-rows: 60px auto;
     text-align: center;
@@ -33421,13 +33463,13 @@ const style = csjs`
     color: var(--appNameColor);
     word-break: break-word;
 }
-.app:hover div svg g path {
+.app-icon:hover div svg g path {
     fill: var(--appHoverColor);
 }
-.app:hover div svg g rect {
+.app-icon:hover div svg g rect {
     fill: var(--appHoverColor);
 }
-.app:hover .app-name {
+.app-icon:hover .app-name {
     color: var(--appHoverColor);
     text-decoration: underline;
 }
@@ -33511,7 +33553,7 @@ function OpenWindow(package, content, protocol) {
 const style = csjs`
 .window {
     position: absolute;
-    z-index: 2;
+    z-index: 9;
     left: 50%;
     top: 50%;
     width: 960px;

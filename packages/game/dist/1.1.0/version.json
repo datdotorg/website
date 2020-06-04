@@ -1,5 +1,5 @@
 {
-    "icon": "images/icon-datdot.svg",
+    "icon": "images/play@4x.png",
     "exports": {
       "main": "index.js"
     },

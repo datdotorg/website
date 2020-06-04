@@ -14,7 +14,7 @@ function main(opts, done) {
     let packages = [
         { 
             id: 1,
-            url: '../packages/datdot/package.json',
+            url: 'https://raw.githubusercontent.com/fionataeyang/datdot/master/packages/datdot/package.json',
             version: '1.0.0',
             status: {
                 open: false,
@@ -24,7 +24,7 @@ function main(opts, done) {
         },
         { 
             id: 2,
-            url: 'https://www.seekdecor.com/demo-package/package1/package.json',
+            url: 'https://www.seekdecor.com/demo-package/game/package.json',
             version: '1.1.0',
             status: {
                 open: false,
@@ -32,6 +32,16 @@ function main(opts, done) {
                 install: true
             }
         },
+        {
+            id: 3,
+            url: 'https://distracted-bhaskara-c0ba0e.netlify.app/package.json',
+            version: '1.0.0',
+            status: {
+                open: false,
+                pin: true,
+                install: true
+            }
+        }
     ]
 
     const desktop  = bel`<main class=${css.desktop} role="desktop"></main>`
@@ -48,16 +58,29 @@ function main(opts, done) {
         return bel`${el}`
     }
 
-    function openTarget(title) {
+    function openTarget(title, packages) {
         const newApps = [...packages]
         newApps.map( item => { 
-            if (item.status.open) return
+            
             if (title === item.sources.app.title) {
-                item.status.open = true
-                packages = newApps
-                return document.body.appendChild( OpenWindow(item, AppInfo, loadAppContent) )
+                // set all windows's level back to default
+                let all = document.querySelectorAll("[class*='app_']")
+                all.forEach ( i => i.style.zIndex = '2')
+
+                if (item.status.open ) {
+                    // bring window's level up to top
+                    let switchWindow = document.querySelector(`.app_${item.id}`)
+                    switchWindow.style.zIndex = "9"
+                    return
+                } else {
+                    item.status.open = true
+                    packages = newApps
+                    return document.body.appendChild( OpenWindow(item, AppInfo, loadAppContent) )
+                }
+                
             } else {
-               return item
+                
+                return item
             }
             
         })
