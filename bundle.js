@@ -145,6 +145,7 @@ const theme = {
     appInfoSidebarShrinkHoverBgColor: color.greyCC,
     '// Code snippet': '---------------------',
     codeFont: font.courier,
+    contentHeight: '75vh - 29px - 8px'
 }
 
 module.exports = theme
@@ -32985,6 +32986,8 @@ function main(opts, done) {
     // alert(`${window.innerWidth}x${window.innerHeight}`);
     const { theme } = opts
     const css = style
+
+
     let packages = [
         { 
             id: 1,
@@ -32993,7 +32996,8 @@ function main(opts, done) {
             status: {
                 open: false,
                 pin: true,
-            }
+                install: true,
+            },
         },
         { 
             id: 2,
@@ -33002,6 +33006,7 @@ function main(opts, done) {
             status: {
                 open: false,
                 pin: true,
+                install: true
             }
         },
     ]
@@ -33020,12 +33025,21 @@ function main(opts, done) {
         return bel`${el}`
     }
 
-    function openTarget(app) {
-        if (app.status.open) return
+    function openTarget(title) {
         const newApps = [...packages]
-        newApps.map( obj => app.id === obj.id ? obj.open = true : obj )
-        packages = newApps
-        return document.body.appendChild( OpenWindow(app, AppInfo, loadAppContent) )
+        newApps.map( item => { 
+            if (item.status.open) return
+            if (title === item.sources.app.title) {
+                item.status.open = true
+                packages = newApps
+                return document.body.appendChild( OpenWindow(item, AppInfo, loadAppContent) )
+            } else {
+               return item
+            }
+            
+        })
+        
+        
     }
 
     // load the applist on the desktop
@@ -33033,7 +33047,7 @@ function main(opts, done) {
         packages.map( async package => {
             // package's status is not pin on the desktop
             if (!package.status.pin) return 
-    
+           
             const cors = "https://cors-anywhere.herokuapp.com/"
             const regex = /^http/
             // for localhost using
@@ -33044,7 +33058,9 @@ function main(opts, done) {
             const version = await fetch(`${path}/dist/${package.version}/version.json`).then( res => res.json() ).catch(err => console.log(err))
             // make a new obj
             let obj = { app, version }
-            applist.appendChild(  Desktop(package, {title: app.title, icon: `${path}/dist/${package.version}/${version.icon}` } , openTarget )  )
+            package.sources = obj
+            applist.appendChild(  Desktop(packages, {title: app.title, icon: `${path}/dist/${package.version}/${version.icon}` }, openTarget )  )
+            
         })
     }
 
@@ -33082,7 +33098,9 @@ const md = require('markdown-it')()
         code: true
     })
 
-function AppInfo(app, protocol) {
+function AppInfo(package, protocol) {
+    console.log(package);
+    const {app, version } = package
     const css = style
     // icons
     let info = Graphic('./src/node_modules/assets/svg/info.svg', css.icon)
@@ -33097,15 +33115,6 @@ function AppInfo(app, protocol) {
     // elements
     const shrinkAction = bel`<button class="${css.btn} ${css.shrink}">${shrink}</button>`
     const content = bel`<div class=${css.content}></div>`
-    const w = window.innerWidth
-    const h = window.innerHeight
-
-    if (w > 1024) {
-        content.style.height = `${h - 240 - 32}px`
-    } else {
-        content.style.height = `${h - 32}px`
-    }
-    
     
     let actions = bel`
     <aside class=${css.actions}>
@@ -33115,16 +33124,25 @@ function AppInfo(app, protocol) {
     `
 
     const appInfo = async (path, page, done) => {
+        const cors = "https://cors-anywhere.herokuapp.com/"
+        const regex = /^http/
+        // for localhost using
+        const url = package.url.match(regex) ? `${cors}${package.url}` : `${package.url}`
+        // find the current path
+        const link = url.slice(0, url.lastIndexOf('/'))
+        // const version = await fetch(`${path}/dist/${package.version}/version.json`).then( res => res.json() ).catch(err => console.log(err))
+        
         try {
-            const result = await fetch(path).then(res => res.text())
-            return done(null, page, result)
+            const result = await fetch(`${link}/dist/${version}/${path}`).then(res => res.text())
+            console.log(result);
+            // return done(null, page, result)
         } catch (error) {
             done(error)
         }
         
     }
     
-    appInfo('./src/node_modules/assets/md/markdownit-demo.md', '#info', loadPage)
+    appInfo(package.sources.version.intro, '#info', loadPage)
     
 
     function loadPage(err, page, data) {
@@ -33159,20 +33177,11 @@ function AppInfo(app, protocol) {
     </nav>`
 
 
-    shrinkAction.addEventListener('click', () => {
-        const container = document.querySelector(`.${css.container}`)
-        const sidebar = document.querySelector(`.${css.sidebar}`)
-        shrinkAction.classList.toggle(css.on)
-        if (shrinkAction.classList.contains(css.on)) {
-            container.style.gridTemplateColumns = '38px auto'
-            sidebar.style.gridTemplateColumns = '38px'
-            sidebar.style.overflow = 'hidden'
-        } else {
-            container.style.gridTemplateColumns = '150px auto'
-            sidebar.style.gridTemplateColumns = '150px'
-            sidebar.style.overflow = 'auto'
-        }
-
+    shrinkAction.addEventListener('click', (e) => {
+        const window = document.querySelector(`.app_${app.id}`)
+        const container = window.querySelector(`.${css.container}`)
+        
+        container.classList.toggle(css.collapse)
     })
 
 
@@ -33253,6 +33262,13 @@ const style = csjs `
     'shrink';
     background-color: var(--appInfoSidebarBgColor);
 }
+.collapse {
+    grid-template-columns: 38px auto;
+}
+.collapse .sidebar {
+    grid-template-columns: 38px;
+    overflow: hidden;
+}
 .nav {
     grid-area: nav;
     display: grid;
@@ -33274,7 +33290,7 @@ const style = csjs `
     background-color: var(--appInfoSidebarNavCurrentBgColor);
 }
 .icon {
-    justify-self: center;
+    
 }
 .btn {
    outline: none;
@@ -33290,25 +33306,33 @@ const style = csjs `
 }
 .shrink {
     grid-area: shrink;
-    display: block;
-    text-align: right;
     background-color: var(--appInfoSidebarShrinkBgColor);
     border-radius: 0;
+    padding: 5px 0;
+    margin: 0;
 }
 .shrink:hover {
     background-color: var(--appInfoSidebarShrinkHoverBgColor);
 }
 .shrink .icon {
-    display: inline-block;
+    display: grid;
+    grid-template-columns: auto 30px;
 }
 .shrink .icon svg {
     transform: rotate(-180deg);
+    grid-column-start: 2;
 }
-.on .icon svg {
+.collapse .shrink .icon {
+    grid-template-columns: auto;
+}
+.collapse .shrink .icon svg {
     transform: rotate(0deg);
+    grid-column-start: 1;
+    grid-column-end: 2;
 }
 /* App info */
 .content {
+    height: calc( var(--contentHeight) );
     overflow: hidden;
     overflow-y: auto;
 }
@@ -33355,7 +33379,7 @@ const csjs = require('csjs-inject')
 // widgets
 const Graphic = require('Graphic')
 
-function Desktop(app, { title, icon }, tartget) {
+function Desktop(app, { title, icon }, protocol) {
     const css = style
     const cors = "https://cors-anywhere.herokuapp.com/"
     const regex = /^http/
@@ -33369,7 +33393,7 @@ function Desktop(app, { title, icon }, tartget) {
         var appicon = bel`<div class=${css.icon}><img src=${url}></div>`
     }
     const el = bel`
-        <div class="${css.app} ${title}" onclick=${ () => tartget(app) }>
+        <div class="${css.app} ${title}" onclick=${ () => protocol(title, app) }>
             ${appicon}      
             <span class=${css['app-name']}>${title}</span>
         </div>
@@ -33435,15 +33459,15 @@ const csjs = require('csjs-inject')
 // widgets
 const Graphic = require('Graphic')
 
-function OpenWindow(app, content, protocol) {
-    app.open = true
+function OpenWindow(package, content, protocol) {
+    const { app } = package.sources
     let w = window.innerWidth
     let h = window.innerHeight
     const css = style
     let close = Graphic('./src/node_modules/assets/svg/close.svg', css.icon)
     let minmax = Graphic('./src/node_modules/assets/svg/minmax.svg', css.icon)
     const el = bel`
-    <div class="${css.window} app_${app.id}">
+    <div class="${css.window} app_${package.id}">
         <header class=${css["panel-header"]}>
             <span class=${css["panel-title"]}>${app.title}</span>
             <div class=${css["panel-nav"]}>
@@ -33452,36 +33476,26 @@ function OpenWindow(app, content, protocol) {
             </div>
         </header>
         <div class=${css["panel-body"]}>
-            ${content()}
+            ${content(package, protocol)}
         </div>
     </div>
     `
-    if (w > 1024) {
-        el.style.height = `${h - 240}px`
-    } else {
-        el.style.height = `100vh`
-    }
-    
 
     function panelNav(event, status) {
         event.preventDefault()
         if (status === 'close') {
             el.remove()
-            app.open = false
-            return protocol(el, app)
+            package.status.open = false
+            return protocol(el, package)
         }
         if (status === 'minmax') {
-
             let content = document.querySelector("[class^='content'")
-            let h = window.innerHeight
             
             if (el.classList.contains(css.fullscreen)) {
                 el.classList.remove(css.fullscreen)
-                el.style.height = `${el.clientHeight - 240}px`
-                content.style.height = `${el.clientHeight - 240 - 32}px`
+                content.style.height = "calc( var(--contentHeight) )"
             } else {
                 el.classList.add(css.fullscreen)
-                el.style.height = "100vh"
                 content.style.height = "100%"
             }
         }
@@ -33499,6 +33513,7 @@ const style = csjs`
     left: 50%;
     top: 50%;
     width: 960px;
+    height: 75vh;
     max-width: 100%;
     max-height: 100%;
     transform: translate(-50%, -50%);
@@ -33548,11 +33563,8 @@ const style = csjs`
 }
 @media screen and (max-width: 1024px) {
     .window {
-        width: 100%;
-        height: 100%;
-    }
-    .panel-header {
-        grid-template-columns: auto 30px;
+        width: 100vh;
+        height: 100vw;
     }
 }
 `

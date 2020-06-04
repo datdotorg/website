@@ -2,11 +2,11 @@
     "title": "DatDot",
     "logo": "logo-datdot.png",
     "chat": "https://gitter.im/wizardamigosinstitute/program/~embed",
-    "news": "doc/news.md",
+    "news": "blob/news.md",
     "about": {
       "wallet": "https://opencollective.com/wwcodeatl/donate",
       "maintainer": "path/to/maintainer.json",
-      "info": "doc/about.md"
+      "info": "blob/about.md"
     },
     "versions": {
         "latest": "1.0.0",

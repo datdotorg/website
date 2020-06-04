@@ -9,6 +9,8 @@ function main(opts, done) {
     // alert(`${window.innerWidth}x${window.innerHeight}`);
     const { theme } = opts
     const css = style
+
+
     let packages = [
         { 
             id: 1,
@@ -17,7 +19,8 @@ function main(opts, done) {
             status: {
                 open: false,
                 pin: true,
-            }
+                install: true,
+            },
         },
         { 
             id: 2,
@@ -26,6 +29,7 @@ function main(opts, done) {
             status: {
                 open: false,
                 pin: true,
+                install: true
             }
         },
     ]
@@ -44,12 +48,21 @@ function main(opts, done) {
         return bel`${el}`
     }
 
-    function openTarget(app) {
-        if (app.status.open) return
+    function openTarget(title) {
         const newApps = [...packages]
-        newApps.map( obj => app.id === obj.id ? obj.open = true : obj )
-        packages = newApps
-        return document.body.appendChild( OpenWindow(app, AppInfo, loadAppContent) )
+        newApps.map( item => { 
+            if (item.status.open) return
+            if (title === item.sources.app.title) {
+                item.status.open = true
+                packages = newApps
+                return document.body.appendChild( OpenWindow(item, AppInfo, loadAppContent) )
+            } else {
+               return item
+            }
+            
+        })
+        
+        
     }
 
     // load the applist on the desktop
@@ -57,7 +70,7 @@ function main(opts, done) {
         packages.map( async package => {
             // package's status is not pin on the desktop
             if (!package.status.pin) return 
-    
+           
             const cors = "https://cors-anywhere.herokuapp.com/"
             const regex = /^http/
             // for localhost using
@@ -68,7 +81,9 @@ function main(opts, done) {
             const version = await fetch(`${path}/dist/${package.version}/version.json`).then( res => res.json() ).catch(err => console.log(err))
             // make a new obj
             let obj = { app, version }
-            applist.appendChild(  Desktop(package, {title: app.title, icon: `${path}/dist/${package.version}/${version.icon}` } , openTarget )  )
+            package.sources = obj
+            applist.appendChild(  Desktop(packages, {title: app.title, icon: `${path}/dist/${package.version}/${version.icon}` }, openTarget )  )
+            
         })
     }
 
