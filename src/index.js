@@ -73,6 +73,7 @@ function main(opts, done) {
                     switchWindow.style.zIndex = "9"
                     return
                 } else {
+                    // create new window
                     item.status.open = true
                     packages = newApps
                     return document.body.appendChild( OpenWindow(item, AppInfo, loadAppContent) )
@@ -104,7 +105,8 @@ function main(opts, done) {
             const version = await fetch(`${path}/dist/${package.version}/version.json`).then( res => res.json() ).catch(err => console.log(err))
             // make a new obj
             let obj = { app, version }
-            package.sources = obj
+            // always update the newest data from author, this would be fixed the issue on cache when load the data 
+            package.sources = { ...obj }
             applist.appendChild(  Desktop(packages, {title: app.title, icon: `${path}/dist/${package.version}/${version.icon}` }, openTarget )  )
             
         })

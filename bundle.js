@@ -145,7 +145,7 @@ const theme = {
     appInfoSidebarShrinkHoverBgColor: color.greyCC,
     '// Code snippet': '---------------------',
     codeFont: font.courier,
-    contentHeight: '75vh - 29px - 8px'
+    contentHeight: '75vh - 29px - 4px'
 }
 
 module.exports = theme
@@ -33050,6 +33050,7 @@ function main(opts, done) {
                     switchWindow.style.zIndex = "9"
                     return
                 } else {
+                    // create new window
                     item.status.open = true
                     packages = newApps
                     return document.body.appendChild( OpenWindow(item, AppInfo, loadAppContent) )
@@ -33081,7 +33082,8 @@ function main(opts, done) {
             const version = await fetch(`${path}/dist/${package.version}/version.json`).then( res => res.json() ).catch(err => console.log(err))
             // make a new obj
             let obj = { app, version }
-            package.sources = obj
+            // always update the newest data from author, this would be fixed the issue on cache when load the data 
+            package.sources = { ...obj }
             applist.appendChild(  Desktop(packages, {title: app.title, icon: `${path}/dist/${package.version}/${version.icon}` }, openTarget )  )
             
         })
@@ -33122,8 +33124,17 @@ const md = require('markdown-it')()
     })
 
 function AppInfo(package, protocol) {
-    const {app, version } = package
     const css = style
+    const {app, version} = package.sources
+
+    let imgUrl = package.url.slice(0, package.url.lastIndexOf("/"))
+    // switch logo type
+    if (app.logo.includes("svg")) {
+        var img = Graphic(`https://cors-anywhere.herokuapp.com/${imgUrl}/${app.logo}`, css["intro-logo"])
+    } else {
+        var img = bel`<img src="${imgUrl}/${app.logo}" alt=${app.title} />`
+    }
+    
     // icons
     let info = Graphic('./src/node_modules/assets/svg/info.svg', css.icon)
     let doc = Graphic('./src/node_modules/assets/svg/doc.svg', css.icon)
@@ -33137,6 +33148,11 @@ function AppInfo(package, protocol) {
     // elements
     const shrinkAction = bel`<button class="${css.btn} ${css.shrink}">${shrink}</button>`
     const content = bel`<div class=${css.content}></div>`
+    const introHeader = bel`
+    <div class=${css["intro-header"]}>
+        ${img}
+        <h4 class=${css["intro-title"]}>${app.title}</h4>
+    </div>`
     
     let actions = bel`
     <aside class=${css.actions}>
@@ -33158,10 +33174,10 @@ function AppInfo(package, protocol) {
         try {
 
             if (page === "#info" || page === "#doc" ) {
-                var fullLink = `${link}/dist/${version}/`
+                var fullLink = `${link}/dist/${package.version}/`
                 var result = await fetch(`${fullLink}${path}`).then(res => res.text())
             } else if (page === "#supplyTree") {
-                var fullLink = `${link}/dist/${version}/`
+                var fullLink = `${link}/dist/${package.version}/`
                 var result = await fetch(`${fullLink}${path}`)
             } else {
                 var fullLink = `${link}/`
@@ -33186,7 +33202,6 @@ function AppInfo(package, protocol) {
         const currentWindow = document.querySelector(`.app_${package.id}`)
         const content = currentWindow.querySelector(`.${css.content}`)
         // console.log(currentWindow);
-        // console.log({data})
         if (err) return console.log(err)
         // page content start
         const result = md.render(data)
@@ -33199,6 +33214,7 @@ function AppInfo(package, protocol) {
         let article = bel`<article class=${css['app-info']}></article>`
         
         if (page === '#info') {
+            article.appendChild(introHeader)
             article.appendChild(actions)
         }
         article.innerHTML += result
@@ -33259,7 +33275,7 @@ function AppInfo(package, protocol) {
         } else if (target === '#doc') {
             console.log("#doc page");
             content.innerHTML = ''
-            appInfo(package.sources.version.doc, target, loadPage)
+            appInfo(version.doc, target, loadPage)
         }
         else if (target === '#settings') {
             console.log("#settings page");
@@ -33268,22 +33284,21 @@ function AppInfo(package, protocol) {
         else if (target === '#news') {
             console.log("#news page");
             content.innerHTML = ''
-            appInfo(package.sources.app.news, target, loadPage)
+            appInfo(app.news, target, loadPage)
         }
         else if (target === '#about') {
             console.log("#about page");
             content.innerHTML = ''
-            appInfo(package.sources.app.about.info, target, loadPage)
+            appInfo(app.about.info, target, loadPage)
         }
         else if (target === '#supplyTree') {
             console.log("#supplyTree page");
             content.innerHTML = '<h1>Suppy Tree</h1>'
-            appInfo(package.sources.version.supplytree.dependencies, target, loadPage)
         }
         else {
             console.log("#info page");
             content.innerHTML = ''
-            appInfo(package.sources.version.intro, target, loadPage)
+            appInfo(version.intro, target, loadPage)
         }
     }
 }
@@ -33410,8 +33425,19 @@ const style = csjs `
 .actions {
 
 }
-@media screen and (max-width: 812px) {
+.intro-header {
 
+}
+.intro-title {
+
+}
+.intro-logo {
+
+}
+@media screen and (max-width: 1024px) {
+    .content {
+        height: calc( 100vh - 29px - 4px);
+    }
 }
 `
 
@@ -33503,7 +33529,6 @@ const csjs = require('csjs-inject')
 const Graphic = require('Graphic')
 
 function OpenWindow(package, content, protocol) {
-    console.log(package);
     const { app } = package.sources
     let w = window.innerWidth
     let h = window.innerHeight
@@ -33607,8 +33632,8 @@ const style = csjs`
 }
 @media screen and (max-width: 1024px) {
     .window {
-        width: 100vh;
-        height: 100vw;
+        width: 100vw;
+        height: 100vh;
     }
 }
 `
