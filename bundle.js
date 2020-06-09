@@ -33053,7 +33053,7 @@ function main(opts, done) {
                 url: `${url.slice(0, url.lastIndexOf("/"))}/dist/${text.versions.latest}`
              }
              
-            Desktop({data: result.data , url: result.url, title: result.data.title, opts: version }, openTarget, desktopLoaded )
+            Desktop({data: result.data , url: result.url, opts: version }, openTarget, desktopLoaded )
         })
 
     })
@@ -33061,49 +33061,32 @@ function main(opts, done) {
     return done(null, desktop)
     
 
+    // load app content
     function loadAppContent(el, app) {
         return bel`${el}`
     }
 
-    function openTarget(url, app) {
-        return OpenWindow(url, app, AppInfo, loadAppContent)
-        // newApps.map( item => { 
-        //     if (title === item.sources.app.title) {
-        //         // set all windows's level back to default
-        //         let all = document.querySelectorAll("[class*='app_']")
-        //         all.forEach ( i => i.style.zIndex = '2')
+    // open window
+    function openTarget(url, title, app) {
+        let panel = document.querySelector(`.app_${title}`)
+        if (panel) {
+            // set all windows's level back to default
+            let all = document.querySelectorAll("[class*='app_']")
+            all.forEach ( i => i.style.zIndex = '2')
+            panel.style.zIndex = "9"
+            return
+        } 
+           
+        return document.body.appendChild( OpenWindow(url, app, AppInfo, loadAppContent) )
 
-        //         if (item.status.open ) {
-        //             // bring window's level up to top
-        //             let switchWindow = document.querySelector(`.app_${item.id}`)
-        //             switchWindow.style.zIndex = "9"
-        //             return
-        //         } else {
-        //             // create new window
-        //             item.status.open = true
-        //             packages = newApps
-        //             return document.body.appendChild( OpenWindow(item, AppInfo, loadAppContent) )
-        //         }
-                
-        //     } else {
-                
-        //         return item
-        //     }
-            
-        // })
-        
-        
     }
 
     
-
     // load the applist on desktop
     function desktopLoaded(err, el) {
         if (err) return console.log(err)
         return applist.appendChild(el)
     }
-
-
 
 }
 
@@ -33454,7 +33437,7 @@ const csjs = require('csjs-inject')
 const Graphic = require('Graphic')
 const fetchFromGithub = require('fetchFromGithub')
 
-function Desktop({data, url, title, opts }, protocol, done) {
+function Desktop({data, url, opts }, protocol, done) {
     let css = style
 
     fetchFromGithub(opts, (err, data) => {
@@ -33465,6 +33448,7 @@ function Desktop({data, url, title, opts }, protocol, done) {
     
     function fetchResult(result) {
         const obj = Object.assign({}, data, result)
+        const title = data.title.split(' ').join('').toLowerCase()
 
         if ( result.icon.includes('svg') ) {
             var icon = Graphic(`${url}/${result.icon}`, css.icon)
@@ -33473,7 +33457,7 @@ function Desktop({data, url, title, opts }, protocol, done) {
         }
 
         const el = bel`
-        <div class="${css["app-icon"]} ${title}" onclick=${ () => protocol(url, obj) }>
+        <div class="${css["app-icon"]} ${title}" onclick=${ () => protocol(url, title, obj) }>
             ${icon}      
             <span class=${css['app-name']}>${title}</span>
         </div>
@@ -33545,8 +33529,10 @@ function OpenWindow(url, package, content, protocol) {
     const css = style
     let close = Graphic('./src/node_modules/assets/svg/close.svg', css.icon)
     let minmax = Graphic('./src/node_modules/assets/svg/minmax.svg', css.icon)
+    let title = package.title.split(' ').join('').toLowerCase()
+    
     const el = bel`
-    <div class="${css.window} app_${package.title}">
+    <div class="${css.window} app_${title}">
         <header class=${css["panel-header"]}>
             <span class=${css["panel-title"]}>${package.title}</span>
             <div class=${css["panel-nav"]}>
@@ -33562,22 +33548,21 @@ function OpenWindow(url, package, content, protocol) {
 
     function panelNav(event, status) {
         event.preventDefault()
-        // if (status === 'close') {
-        //     el.remove()
-        //     package.status.open = false
-        //     return protocol(el, package)
-        // }
-        // if (status === 'minmax') {
-        //     let content = document.querySelector("[class^='content'")
+        if (status === 'close') {
+            el.remove()
+            return protocol(el, package)
+        }
+        if (status === 'minmax') {
+            let content = document.querySelector("[class^='content'")
             
-        //     if (el.classList.contains(css.fullscreen)) {
-        //         el.classList.remove(css.fullscreen)
-        //         content.style.height = "calc( var(--contentHeight) )"
-        //     } else {
-        //         el.classList.add(css.fullscreen)
-        //         content.style.height = "100%"
-        //     }
-        // }
+            if (el.classList.contains(css.fullscreen)) {
+                el.classList.remove(css.fullscreen)
+                content.style.height = "calc( var(--contentHeight) )"
+            } else {
+                el.classList.add(css.fullscreen)
+                content.style.height = "100%"
+            }
+        }
     }
     
     return protocol(el, package)

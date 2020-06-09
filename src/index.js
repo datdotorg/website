@@ -76,7 +76,7 @@ function main(opts, done) {
                 url: `${url.slice(0, url.lastIndexOf("/"))}/dist/${text.versions.latest}`
              }
              
-            Desktop({data: result.data , url: result.url, title: result.data.title, opts: version }, openTarget, desktopLoaded )
+            Desktop({data: result.data , url: result.url, opts: version }, openTarget, desktopLoaded )
         })
 
     })
@@ -84,49 +84,32 @@ function main(opts, done) {
     return done(null, desktop)
     
 
+    // load app content
     function loadAppContent(el, app) {
         return bel`${el}`
     }
 
-    function openTarget(url, app) {
-        return OpenWindow(url, app, AppInfo, loadAppContent)
-        // newApps.map( item => { 
-        //     if (title === item.sources.app.title) {
-        //         // set all windows's level back to default
-        //         let all = document.querySelectorAll("[class*='app_']")
-        //         all.forEach ( i => i.style.zIndex = '2')
+    // open window
+    function openTarget(url, title, app) {
+        let panel = document.querySelector(`.app_${title}`)
+        if (panel) {
+            // set all windows's level back to default
+            let all = document.querySelectorAll("[class*='app_']")
+            all.forEach ( i => i.style.zIndex = '2')
+            panel.style.zIndex = "9"
+            return
+        } 
+           
+        return document.body.appendChild( OpenWindow(url, app, AppInfo, loadAppContent) )
 
-        //         if (item.status.open ) {
-        //             // bring window's level up to top
-        //             let switchWindow = document.querySelector(`.app_${item.id}`)
-        //             switchWindow.style.zIndex = "9"
-        //             return
-        //         } else {
-        //             // create new window
-        //             item.status.open = true
-        //             packages = newApps
-        //             return document.body.appendChild( OpenWindow(item, AppInfo, loadAppContent) )
-        //         }
-                
-        //     } else {
-                
-        //         return item
-        //     }
-            
-        // })
-        
-        
     }
 
     
-
     // load the applist on desktop
     function desktopLoaded(err, el) {
         if (err) return console.log(err)
         return applist.appendChild(el)
     }
-
-
 
 }
 
