@@ -33065,9 +33065,8 @@ function main(opts, done) {
         return bel`${el}`
     }
 
-    function openTarget(title, data) {
-        const newApps = [...data]
-        console.log('open:', title);
+    function openTarget(url, app) {
+        return OpenWindow(url, app, AppInfo, loadAppContent)
         // newApps.map( item => { 
         //     if (title === item.sources.app.title) {
         //         // set all windows's level back to default
@@ -33140,17 +33139,16 @@ const md = require('markdown-it')()
         code: true
     })
 
-function AppInfo(package, protocol) {
+function AppInfo(url, package, protocol) {
     const css = style
-    const {app, version} = package.sources
-    let cors = 'https://cors-anywhere.herokuapp.com/'
-    let path = package.url.slice(0, package.url.lastIndexOf("/"))
+    let path = url.slice(0, url.lastIndexOf("/dist"))
+    console.log(path);
 
     // switch image type
-    if (app.logo.includes("svg")) {
-        var img = Graphic(`${cors}${path}/${app.logo}`, css["intro-logo"])
+    if (package.logo.includes("svg")) {
+        var img = Graphic(`${path}/${package.logo}`, css["intro-logo"])
     } else {
-        var img = bel`<img src="${path}/${app.logo}" alt=${app.title} />`
+        var img = bel`<img src="${path}/${package.logo}" alt=${package.title} />`
     }
     
     // icons
@@ -33169,7 +33167,7 @@ function AppInfo(package, protocol) {
     const introHeader = bel`
     <div class=${css["intro-header"]}>
         ${img}
-        <h4 class=${css["intro-title"]}>${app.title}</h4>
+        <h4 class=${css["intro-title"]}>${package.title}</h4>
     </div>`
     
     let actions = bel`
@@ -33180,102 +33178,53 @@ function AppInfo(package, protocol) {
     `
 
     const appInfo = async (path, page, done) => {
-        const cors = "https://cors-anywhere.herokuapp.com/"
-        const regex = /^http/
-        // for localhost using
-        const url = package.url.match(regex) ? `${cors}${package.url}` : `${package.url}`
-        // find the current path
-        const link = url.slice(0, url.lastIndexOf('/'))
-        const link1 = package.url.slice(0, package.url.lastIndexOf('/'))
+        // try {
 
-        let intro = {
-            title: app.title,
-            logo: app.logo,
-            version: app.versions.latest,
-            versions: app.versions.all,
-            content: `${link}/dist/${app.versions.latest}/${version.intro}`,
-            maintainer: `${link1}/${app.about.maintainer}`
-        }
+        //     if (page === "#info" || page === "#doc" ) {
+        //         var result = await fetch(`${url}/${path}`).then(res => res.text())
+        //         let maintainerRes = await fetch(intro.maintainer).then(res => res.json())
+        //         console.log(maintainerRes.name, maintainerRes.url);
 
-        console.log(intro.maintainer);
-    
-        let docs = {
-            version: app.versions.latest,
-            versions: app.versions.all,
-            content: `${link}/dist/${intro.version}/${version.intro}`
-        }
-    
-        let news = {
-            content: `${link}/dist/${intro.version}/${version.news}`
-        }
-    
-        let settings = {
-            content: ''
-        }
-    
-        let about = {
-            title: intro.title,
-            content: `${link}/${app.about.info}`,
-            contributors: `${link}/dist/${intro.version}/${version.contributors}`,
-            wallet: app.about.wallet
-        }
-    
-        let supplytree = {
-            dependencies: version.supplytree.dependencies
-        }
+        //     } else if (page === "#supplyTree") {
+        //         var result = await fetch(`${url}/${path}`)
+        //     } else {
+        //         var result = await fetch(`${path}/${path}`).then(res => res.text())
+        //     }
 
-       
-
-        try {
-
-            if (page === "#info" || page === "#doc" ) {
-                var fullLink = `${link}/dist/${package.version}/`
-                var result = await fetch(`${fullLink}${path}`).then(res => res.text())
-                let maintainerRes = await fetch(intro.maintainer).then(res => res.json())
-                console.log(maintainerRes.name, maintainerRes.url);
-
-            } else if (page === "#supplyTree") {
-                var fullLink = `${link}/dist/${package.version}/`
-                var result = await fetch(`${fullLink}${path}`)
-            } else {
-                var fullLink = `${link}/`
-                var result = await fetch(`${fullLink}${path}`).then(res => res.text())
-            }
-
-            // console.log(result);
-            return done(null, page, result)
+        //     // console.log(result);
+        //     return done(null, page, result)
 
 
-        } catch (error) {
-            done(error)
-        }
+        // } catch (error) {
+        //     done(error)
+        // }
         
     }
     
-    appInfo(version.intro, '#info', loadPage)
+    appInfo(package.intro, '#info', loadPage)
 
     function loadPage(err, page, data) {
-        const currentWindow = document.querySelector(`.app_${package.id}`)
-        const content = currentWindow.querySelector(`.${css.content}`)
-        // console.log(currentWindow);
-        if (err) return console.log(err)
-        // page content start
-        const result = md.render(data)
-        // if page includes below conditions, add hljs.css into head
-        if (page === '#info' || page === '#doc' || page === '#about') {
-            const hljsStyle = bel `<link href="./src/node_modules/assets/css/hljs.css" rel='stylesheet' type='text/css'>`
-            document.head.appendChild(hljsStyle)
-        }
+        // const currentWindow = document.querySelector(`.app_${package.id}`)
+        // const content = currentWindow.querySelector(`.${css.content}`)
+        // // console.log(currentWindow);
+        // if (err) return console.log(err)
+        // // page content start
+        // const result = md.render(data)
+        // // if page includes below conditions, add hljs.css into head
+        // if (page === '#info' || page === '#doc' || page === '#about') {
+        //     const hljsStyle = bel `<link href="./src/node_modules/assets/css/hljs.css" rel='stylesheet' type='text/css'>`
+        //     document.head.appendChild(hljsStyle)
+        // }
         
-        let article = bel`<article class=${css['app-info']}></article>`
+        // let article = bel`<article class=${css['app-info']}></article>`
         
-        if (page === '#info') {
-            article.appendChild(introHeader)
-            article.appendChild(actions)
-        }
-        article.innerHTML += result
-        content.innerHTML = ''
-        content.appendChild(article)
+        // if (page === '#info') {
+        //     article.appendChild(introHeader)
+        //     article.appendChild(actions)
+        // }
+        // article.innerHTML += result
+        // content.innerHTML = ''
+        // content.appendChild(article)
     }
 
     const nav = bel ` 
@@ -33331,7 +33280,7 @@ function AppInfo(package, protocol) {
         } else if (target === '#doc') {
             console.log("#doc page");
             content.innerHTML = ''
-            appInfo(version.doc, target, loadPage)
+            appInfo(package.doc, target, loadPage)
         }
         else if (target === '#settings') {
             console.log("#settings page");
@@ -33340,12 +33289,12 @@ function AppInfo(package, protocol) {
         else if (target === '#news') {
             console.log("#news page");
             content.innerHTML = ''
-            appInfo(app.news, target, loadPage)
+            appInfo(package.news, target, loadPage)
         }
         else if (target === '#about') {
             console.log("#about page");
             content.innerHTML = ''
-            appInfo(app.about.info, target, loadPage)
+            appInfo(package.about.info, target, loadPage)
         }
         else if (target === '#supplyTree') {
             console.log("#supplyTree page");
@@ -33354,7 +33303,7 @@ function AppInfo(package, protocol) {
         else {
             console.log("#info page");
             content.innerHTML = ''
-            appInfo(version.intro, target, loadPage)
+            appInfo(package.intro, target, loadPage)
         }
     }
 }
@@ -33508,22 +33457,23 @@ const fetchFromGithub = require('fetchFromGithub')
 function Desktop({data, url, title, opts }, protocol, done) {
     let css = style
 
-    console.log( title );
     fetchFromGithub(opts, (err, data) => {
         if (err) return console.error(err)
         let result = JSON.parse(data)
         return fetchResult(result)
     })
     
-    function fetchResult(data) {
-        if ( data.icon.includes('svg') ) {
-            var icon = Graphic(`${url}/${data.icon}`, css.icon)
+    function fetchResult(result) {
+        const obj = Object.assign({}, data, result)
+
+        if ( result.icon.includes('svg') ) {
+            var icon = Graphic(`${url}/${result.icon}`, css.icon)
         } else {
-            var icon = bel`<div class=${css.icon}><img src="${url}/${data.icon}"></div>`
+            var icon = bel`<div class=${css.icon}><img src="${url}/${result.icon}"></div>`
         }
 
         const el = bel`
-        <div class="${css["app-icon"]} ${title}" onclick=${ () => protocol(title, data) }>
+        <div class="${css["app-icon"]} ${title}" onclick=${ () => protocol(url, obj) }>
             ${icon}      
             <span class=${css['app-name']}>${title}</span>
         </div>
@@ -33591,49 +33541,46 @@ const csjs = require('csjs-inject')
 // widgets
 const Graphic = require('Graphic')
 
-function OpenWindow(package, content, protocol) {
-    const { app } = package.sources
-    let w = window.innerWidth
-    let h = window.innerHeight
+function OpenWindow(url, package, content, protocol) {
     const css = style
     let close = Graphic('./src/node_modules/assets/svg/close.svg', css.icon)
     let minmax = Graphic('./src/node_modules/assets/svg/minmax.svg', css.icon)
     const el = bel`
-    <div class="${css.window} app_${package.id}">
+    <div class="${css.window} app_${package.title}">
         <header class=${css["panel-header"]}>
-            <span class=${css["panel-title"]}>${app.title}</span>
+            <span class=${css["panel-title"]}>${package.title}</span>
             <div class=${css["panel-nav"]}>
                 <button class="${css.btn} ${css.minmax}" onclick=${() => panelNav(event, "minmax")}>${minmax}</button>
                 <button class="${css.btn} ${css.close}" onclick=${() => panelNav(event, "close")}>${close}</button>
             </div>
         </header>
         <div class=${css["panel-body"]}>
-            ${content(package, protocol)}
+            ${content(url, package, protocol)}
         </div>
     </div>
     `
 
     function panelNav(event, status) {
         event.preventDefault()
-        if (status === 'close') {
-            el.remove()
-            package.status.open = false
-            return protocol(el, package)
-        }
-        if (status === 'minmax') {
-            let content = document.querySelector("[class^='content'")
+        // if (status === 'close') {
+        //     el.remove()
+        //     package.status.open = false
+        //     return protocol(el, package)
+        // }
+        // if (status === 'minmax') {
+        //     let content = document.querySelector("[class^='content'")
             
-            if (el.classList.contains(css.fullscreen)) {
-                el.classList.remove(css.fullscreen)
-                content.style.height = "calc( var(--contentHeight) )"
-            } else {
-                el.classList.add(css.fullscreen)
-                content.style.height = "100%"
-            }
-        }
+        //     if (el.classList.contains(css.fullscreen)) {
+        //         el.classList.remove(css.fullscreen)
+        //         content.style.height = "calc( var(--contentHeight) )"
+        //     } else {
+        //         el.classList.add(css.fullscreen)
+        //         content.style.height = "100%"
+        //     }
+        // }
     }
     
-    return protocol(el, app)
+    return protocol(el, package)
 }
 
 

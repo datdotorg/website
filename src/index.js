@@ -88,9 +88,8 @@ function main(opts, done) {
         return bel`${el}`
     }
 
-    function openTarget(title, data) {
-        const newApps = [...data]
-        console.log('open:', title);
+    function openTarget(url, app) {
+        return OpenWindow(url, app, AppInfo, loadAppContent)
         // newApps.map( item => { 
         //     if (title === item.sources.app.title) {
         //         // set all windows's level back to default
