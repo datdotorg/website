@@ -33052,7 +33052,8 @@ function main(opts, done) {
                 data: text,
                 url: `${url.slice(0, url.lastIndexOf("/"))}/dist/${text.versions.latest}`
              }
-            Desktop({data: result.data , url: result.url, title: result.title, opts: version }, openTarget, desktopLoaded )
+             
+            Desktop({data: result.data , url: result.url, title: result.data.title, opts: version }, openTarget, desktopLoaded )
         })
 
     })
@@ -33507,6 +33508,7 @@ const fetchFromGithub = require('fetchFromGithub')
 function Desktop({data, url, title, opts }, protocol, done) {
     let css = style
 
+    console.log( title );
     fetchFromGithub(opts, (err, data) => {
         if (err) return console.error(err)
         let result = JSON.parse(data)
@@ -33521,7 +33523,7 @@ function Desktop({data, url, title, opts }, protocol, done) {
         }
 
         const el = bel`
-        <div class="${css["app-icon"]} ${title}" onclick=${ () => protocol(title, packages) }>
+        <div class="${css["app-icon"]} ${title}" onclick=${ () => protocol(title, data) }>
             ${icon}      
             <span class=${css['app-name']}>${title}</span>
         </div>

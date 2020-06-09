@@ -75,7 +75,8 @@ function main(opts, done) {
                 data: text,
                 url: `${url.slice(0, url.lastIndexOf("/"))}/dist/${text.versions.latest}`
              }
-            Desktop({data: result.data , url: result.url, title: result.title, opts: version }, openTarget, desktopLoaded )
+             
+            Desktop({data: result.data , url: result.url, title: result.data.title, opts: version }, openTarget, desktopLoaded )
         })
 
     })
