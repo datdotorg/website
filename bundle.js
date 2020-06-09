@@ -33122,10 +33122,10 @@ const md = require('markdown-it')()
         code: true
     })
 
-function AppInfo(url, package, protocol) {
+function AppInfo(url, title, package, protocol) {
     const css = style
     let path = url.slice(0, url.lastIndexOf("/dist"))
-    console.log(path);
+    console.log(title);
 
     // switch image type
     if (package.logo.includes("svg")) {
@@ -33222,8 +33222,8 @@ function AppInfo(url, package, protocol) {
     </nav>`
 
 
-    shrinkAction.addEventListener('click', (e) => {
-        const currentWindow = document.querySelector(`.app_${package.id}`)
+    shrinkAction.addEventListener('click', () => {
+        const currentWindow = document.querySelector(`.app_${title}`)
         const container = currentWindow.querySelector(`.${css.container}`)
         container.classList.toggle(css.collapse)
     })
@@ -33541,7 +33541,7 @@ function OpenWindow(url, package, content, protocol) {
             </div>
         </header>
         <div class=${css["panel-body"]}>
-            ${content(url, package, protocol)}
+            ${content(url, title, package, protocol)}
         </div>
     </div>
     `
