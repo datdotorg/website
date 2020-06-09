@@ -1,21 +1,22 @@
 const bel = require('bel')
 const csjs = require('csjs-inject')
+// widgets
 const Desktop = require('Desktop')
 const OpenWindow = require('OpenWindow')
 const AppInfo = require('AppInfo')
+const fetchFromGithub = require('fetchFromGithub')
 
 function main(opts, done) {
-    // catch screen size
-    // alert(`${window.innerWidth}x${window.innerHeight}`);
     const { theme } = opts
     const css = style
-
 
     let packages = [
         { 
             id: 1,
-            url: 'https://raw.githubusercontent.com/fionataeyang/datdot/master/packages/datdot/package.json',
-            version: '1.0.0',
+            name: 'fionataeyang',
+            repo: 'datdot',
+            path: 'packages/datdot/package.json',
+            version: 'packages/datdot/dist/1.0.0/version.json',
             status: {
                 open: false,
                 pin: true,
@@ -24,8 +25,10 @@ function main(opts, done) {
         },
         { 
             id: 2,
-            url: 'https://www.seekdecor.com/demo-package/game/package.json',
-            version: '1.1.0',
+            name: 'fionataeyang',
+            repo: 'datdot',
+            path: 'packages/game/package.json',
+            version: 'packages/game/dist/1.0.0/version.json',
             status: {
                 open: false,
                 pin: true,
@@ -34,8 +37,10 @@ function main(opts, done) {
         },
         {
             id: 3,
-            url: 'https://distracted-bhaskara-c0ba0e.netlify.app/package.json',
-            version: '1.0.0',
+            name: 'fionataeyang',
+            repo: 'datdot',
+            path: 'packages/alarm-clock/package.json',
+            version: 'packages/alarm-clock/dist/1.0.0/version.json',
             status: {
                 open: false,
                 pin: true,
@@ -47,10 +52,34 @@ function main(opts, done) {
     const desktop  = bel`<main class=${css.desktop} role="desktop"></main>`
     const applist = bel`<div class=${css["app-list"]}></div>`
     
-    // applist load
-    desktopLoad()
     
     desktop.appendChild(applist)
+
+
+    packages.map( package => {
+        // package's status is not pin on the desktop
+        if (!package.status.pin) return 
+        let app = {name: package.name, repo: package.repo, path: package.path}
+        let version = {name: package.name, repo: package.repo, path: package.version}
+
+        fetchFromGithub(app, (err, data) => {
+            if (err) return console.error(err)
+            
+            const url = location.origin.includes('localhost') || location.port === '9966' ?
+            `${location.protocol}//${location.host}/${app.path}`
+            : `https://raw.githubusercontent.com/${app.name}/${app.repo}/master/${app.path}`
+
+            const text = JSON.parse(data)
+
+            const result = { 
+                data: text,
+                url: `${url.slice(0, url.lastIndexOf("/"))}/dist/${text.versions.latest}`
+             }
+            Desktop({data: result.data , url: result.url, title: result.title, opts: version }, openTarget, desktopLoaded )
+        })
+
+    })
+
     return done(null, desktop)
     
 
@@ -58,59 +87,46 @@ function main(opts, done) {
         return bel`${el}`
     }
 
-    function openTarget(title, packages) {
-        const newApps = [...packages]
-        newApps.map( item => { 
-            
-            if (title === item.sources.app.title) {
-                // set all windows's level back to default
-                let all = document.querySelectorAll("[class*='app_']")
-                all.forEach ( i => i.style.zIndex = '2')
+    function openTarget(title, data) {
+        const newApps = [...data]
+        console.log('open:', title);
+        // newApps.map( item => { 
+        //     if (title === item.sources.app.title) {
+        //         // set all windows's level back to default
+        //         let all = document.querySelectorAll("[class*='app_']")
+        //         all.forEach ( i => i.style.zIndex = '2')
 
-                if (item.status.open ) {
-                    // bring window's level up to top
-                    let switchWindow = document.querySelector(`.app_${item.id}`)
-                    switchWindow.style.zIndex = "9"
-                    return
-                } else {
-                    // create new window
-                    item.status.open = true
-                    packages = newApps
-                    return document.body.appendChild( OpenWindow(item, AppInfo, loadAppContent) )
-                }
+        //         if (item.status.open ) {
+        //             // bring window's level up to top
+        //             let switchWindow = document.querySelector(`.app_${item.id}`)
+        //             switchWindow.style.zIndex = "9"
+        //             return
+        //         } else {
+        //             // create new window
+        //             item.status.open = true
+        //             packages = newApps
+        //             return document.body.appendChild( OpenWindow(item, AppInfo, loadAppContent) )
+        //         }
                 
-            } else {
+        //     } else {
                 
-                return item
-            }
+        //         return item
+        //     }
             
-        })
+        // })
         
         
     }
 
-    // load the applist on the desktop
-    function desktopLoad() {
-        packages.map( async package => {
-            // package's status is not pin on the desktop
-            if (!package.status.pin) return 
-           
-            const cors = "https://cors-anywhere.herokuapp.com/"
-            const regex = /^http/
-            // for localhost using
-            const url = package.url.match(regex) ? `${cors}${package.url}` : `${package.url}`
-            // find the current path
-            const path = url.slice(0, url.lastIndexOf('/'))
-            const app = await fetch(url).then( res => res.json() ).catch(err => console.log(err))
-            const version = await fetch(`${path}/dist/${package.version}/version.json`).then( res => res.json() ).catch(err => console.log(err))
-            // make a new obj
-            let obj = { app, version }
-            // always update the newest data from author, this would be fixed the issue on cache when load the data 
-            package.sources = { ...obj }
-            applist.appendChild(  Desktop(packages, {title: app.title, icon: `${path}/dist/${package.version}/${version.icon}` }, openTarget )  )
-            
-        })
+    
+
+    // load the applist on desktop
+    function desktopLoaded(err, el) {
+        if (err) return console.log(err)
+        return applist.appendChild(el)
     }
+
+
 
 }
 

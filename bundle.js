@@ -32977,22 +32977,23 @@ module.exports=/[\0-\uD7FF\uE000-\uFFFF]|[\uD800-\uDBFF][\uDC00-\uDFFF]|[\uD800-
 },{}],282:[function(require,module,exports){
 const bel = require('bel')
 const csjs = require('csjs-inject')
+// widgets
 const Desktop = require('Desktop')
 const OpenWindow = require('OpenWindow')
 const AppInfo = require('AppInfo')
+const fetchFromGithub = require('fetchFromGithub')
 
 function main(opts, done) {
-    // catch screen size
-    // alert(`${window.innerWidth}x${window.innerHeight}`);
     const { theme } = opts
     const css = style
-
 
     let packages = [
         { 
             id: 1,
-            url: 'https://raw.githubusercontent.com/fionataeyang/datdot/master/packages/datdot/package.json',
-            version: '1.0.0',
+            name: 'fionataeyang',
+            repo: 'datdot',
+            path: 'packages/datdot/package.json',
+            version: 'packages/datdot/dist/1.0.0/version.json',
             status: {
                 open: false,
                 pin: true,
@@ -33001,8 +33002,10 @@ function main(opts, done) {
         },
         { 
             id: 2,
-            url: 'https://www.seekdecor.com/demo-package/game/package.json',
-            version: '1.1.0',
+            name: 'fionataeyang',
+            repo: 'datdot',
+            path: 'packages/game/package.json',
+            version: 'packages/game/dist/1.0.0/version.json',
             status: {
                 open: false,
                 pin: true,
@@ -33011,8 +33014,10 @@ function main(opts, done) {
         },
         {
             id: 3,
-            url: 'https://distracted-bhaskara-c0ba0e.netlify.app/package.json',
-            version: '1.0.0',
+            name: 'fionataeyang',
+            repo: 'datdot',
+            path: 'packages/alarm-clock/package.json',
+            version: 'packages/alarm-clock/dist/1.0.0/version.json',
             status: {
                 open: false,
                 pin: true,
@@ -33024,10 +33029,34 @@ function main(opts, done) {
     const desktop  = bel`<main class=${css.desktop} role="desktop"></main>`
     const applist = bel`<div class=${css["app-list"]}></div>`
     
-    // applist load
-    desktopLoad()
     
     desktop.appendChild(applist)
+
+
+    packages.map( package => {
+        // package's status is not pin on the desktop
+        if (!package.status.pin) return 
+        let app = {name: package.name, repo: package.repo, path: package.path}
+        let version = {name: package.name, repo: package.repo, path: package.version}
+
+        fetchFromGithub(app, (err, data) => {
+            if (err) return console.error(err)
+            
+            const url = location.origin.includes('localhost') || location.port === '9966' ?
+            `${location.protocol}//${location.host}/${app.path}`
+            : `https://raw.githubusercontent.com/${app.name}/${app.repo}/master/${app.path}`
+
+            const text = JSON.parse(data)
+
+            const result = { 
+                data: text,
+                url: `${url.slice(0, url.lastIndexOf("/"))}/dist/${text.versions.latest}`
+             }
+            Desktop({data: result.data , url: result.url, title: result.title, opts: version }, openTarget, desktopLoaded )
+        })
+
+    })
+
     return done(null, desktop)
     
 
@@ -33035,59 +33064,46 @@ function main(opts, done) {
         return bel`${el}`
     }
 
-    function openTarget(title, packages) {
-        const newApps = [...packages]
-        newApps.map( item => { 
-            
-            if (title === item.sources.app.title) {
-                // set all windows's level back to default
-                let all = document.querySelectorAll("[class*='app_']")
-                all.forEach ( i => i.style.zIndex = '2')
+    function openTarget(title, data) {
+        const newApps = [...data]
+        console.log('open:', title);
+        // newApps.map( item => { 
+        //     if (title === item.sources.app.title) {
+        //         // set all windows's level back to default
+        //         let all = document.querySelectorAll("[class*='app_']")
+        //         all.forEach ( i => i.style.zIndex = '2')
 
-                if (item.status.open ) {
-                    // bring window's level up to top
-                    let switchWindow = document.querySelector(`.app_${item.id}`)
-                    switchWindow.style.zIndex = "9"
-                    return
-                } else {
-                    // create new window
-                    item.status.open = true
-                    packages = newApps
-                    return document.body.appendChild( OpenWindow(item, AppInfo, loadAppContent) )
-                }
+        //         if (item.status.open ) {
+        //             // bring window's level up to top
+        //             let switchWindow = document.querySelector(`.app_${item.id}`)
+        //             switchWindow.style.zIndex = "9"
+        //             return
+        //         } else {
+        //             // create new window
+        //             item.status.open = true
+        //             packages = newApps
+        //             return document.body.appendChild( OpenWindow(item, AppInfo, loadAppContent) )
+        //         }
                 
-            } else {
+        //     } else {
                 
-                return item
-            }
+        //         return item
+        //     }
             
-        })
+        // })
         
         
     }
 
-    // load the applist on the desktop
-    function desktopLoad() {
-        packages.map( async package => {
-            // package's status is not pin on the desktop
-            if (!package.status.pin) return 
-           
-            const cors = "https://cors-anywhere.herokuapp.com/"
-            const regex = /^http/
-            // for localhost using
-            const url = package.url.match(regex) ? `${cors}${package.url}` : `${package.url}`
-            // find the current path
-            const path = url.slice(0, url.lastIndexOf('/'))
-            const app = await fetch(url).then( res => res.json() ).catch(err => console.log(err))
-            const version = await fetch(`${path}/dist/${package.version}/version.json`).then( res => res.json() ).catch(err => console.log(err))
-            // make a new obj
-            let obj = { app, version }
-            // always update the newest data from author, this would be fixed the issue on cache when load the data 
-            package.sources = { ...obj }
-            applist.appendChild(  Desktop(packages, {title: app.title, icon: `${path}/dist/${package.version}/${version.icon}` }, openTarget )  )
-            
-        })
+    
+
+    // load the applist on desktop
+    function desktopLoaded(err, el) {
+        if (err) return console.log(err)
+        return applist.appendChild(el)
     }
+
+
 
 }
 
@@ -33112,7 +33128,7 @@ svg {
 `
 
 module.exports = main
-},{"AppInfo":283,"Desktop":284,"OpenWindow":286,"bel":4,"csjs-inject":7}],283:[function(require,module,exports){
+},{"AppInfo":283,"Desktop":284,"OpenWindow":286,"bel":4,"csjs-inject":7,"fetchFromGithub":287}],283:[function(require,module,exports){
 const bel = require('bel')
 const csjs = require('csjs-inject')
 // widgets
@@ -33126,27 +33142,28 @@ const md = require('markdown-it')()
 function AppInfo(package, protocol) {
     const css = style
     const {app, version} = package.sources
+    let cors = 'https://cors-anywhere.herokuapp.com/'
+    let path = package.url.slice(0, package.url.lastIndexOf("/"))
 
-    let imgUrl = package.url.slice(0, package.url.lastIndexOf("/"))
-    // switch logo type
+    // switch image type
     if (app.logo.includes("svg")) {
-        var img = Graphic(`https://cors-anywhere.herokuapp.com/${imgUrl}/${app.logo}`, css["intro-logo"])
+        var img = Graphic(`${cors}${path}/${app.logo}`, css["intro-logo"])
     } else {
-        var img = bel`<img src="${imgUrl}/${app.logo}" alt=${app.title} />`
+        var img = bel`<img src="${path}/${app.logo}" alt=${app.title} />`
     }
     
     // icons
-    let info = Graphic('./src/node_modules/assets/svg/info.svg', css.icon)
-    let doc = Graphic('./src/node_modules/assets/svg/doc.svg', css.icon)
-    let settings = Graphic('./src/node_modules/assets/svg/settings.svg', css.icon)
-    let news = Graphic('./src/node_modules/assets/svg/news.svg', css.icon)
-    let about = Graphic('./src/node_modules/assets/svg/about.svg', css.icon)
-    let chat = Graphic('./src/node_modules/assets/svg/chat.svg', css.icon)
-    let supplyTree = Graphic('./src/node_modules/assets/svg/supply-tree.svg', css.icon)
-    let shrink = Graphic('./src/node_modules/assets/svg/double-arrow.svg', css.icon)
+    let icon_info = Graphic('./src/node_modules/assets/svg/info.svg', css.icon)
+    let icon_doc = Graphic('./src/node_modules/assets/svg/doc.svg', css.icon)
+    let icon_settings = Graphic('./src/node_modules/assets/svg/settings.svg', css.icon)
+    let icon_news = Graphic('./src/node_modules/assets/svg/news.svg', css.icon)
+    let icon_about = Graphic('./src/node_modules/assets/svg/about.svg', css.icon)
+    let icon_chat = Graphic('./src/node_modules/assets/svg/chat.svg', css.icon)
+    let icon_supplyTree = Graphic('./src/node_modules/assets/svg/supply-tree.svg', css.icon)
+    let icon_shrink = Graphic('./src/node_modules/assets/svg/double-arrow.svg', css.icon)
     
     // elements
-    const shrinkAction = bel`<button class="${css.btn} ${css.shrink}">${shrink}</button>`
+    const shrinkAction = bel`<button class="${css.btn} ${css.shrink}">${icon_shrink}</button>`
     const content = bel`<div class=${css.content}></div>`
     const introHeader = bel`
     <div class=${css["intro-header"]}>
@@ -33168,14 +33185,54 @@ function AppInfo(package, protocol) {
         const url = package.url.match(regex) ? `${cors}${package.url}` : `${package.url}`
         // find the current path
         const link = url.slice(0, url.lastIndexOf('/'))
-        // const version = await fetch(`${path}/dist/${package.version}/version.json`).then( res => res.json() ).catch(err => console.log(err))
-        
-        
+        const link1 = package.url.slice(0, package.url.lastIndexOf('/'))
+
+        let intro = {
+            title: app.title,
+            logo: app.logo,
+            version: app.versions.latest,
+            versions: app.versions.all,
+            content: `${link}/dist/${app.versions.latest}/${version.intro}`,
+            maintainer: `${link1}/${app.about.maintainer}`
+        }
+
+        console.log(intro.maintainer);
+    
+        let docs = {
+            version: app.versions.latest,
+            versions: app.versions.all,
+            content: `${link}/dist/${intro.version}/${version.intro}`
+        }
+    
+        let news = {
+            content: `${link}/dist/${intro.version}/${version.news}`
+        }
+    
+        let settings = {
+            content: ''
+        }
+    
+        let about = {
+            title: intro.title,
+            content: `${link}/${app.about.info}`,
+            contributors: `${link}/dist/${intro.version}/${version.contributors}`,
+            wallet: app.about.wallet
+        }
+    
+        let supplytree = {
+            dependencies: version.supplytree.dependencies
+        }
+
+       
+
         try {
 
             if (page === "#info" || page === "#doc" ) {
                 var fullLink = `${link}/dist/${package.version}/`
                 var result = await fetch(`${fullLink}${path}`).then(res => res.text())
+                let maintainerRes = await fetch(intro.maintainer).then(res => res.json())
+                console.log(maintainerRes.name, maintainerRes.url);
+
             } else if (page === "#supplyTree") {
                 var fullLink = `${link}/dist/${package.version}/`
                 var result = await fetch(`${fullLink}${path}`)
@@ -33184,7 +33241,6 @@ function AppInfo(package, protocol) {
                 var result = await fetch(`${fullLink}${path}`).then(res => res.text())
             }
 
-           
             // console.log(result);
             return done(null, page, result)
 
@@ -33195,8 +33251,7 @@ function AppInfo(package, protocol) {
         
     }
     
-    appInfo(package.sources.version.intro, '#info', loadPage)
-    
+    appInfo(version.intro, '#info', loadPage)
 
     function loadPage(err, page, data) {
         const currentWindow = document.querySelector(`.app_${package.id}`)
@@ -33224,13 +33279,13 @@ function AppInfo(package, protocol) {
 
     const nav = bel ` 
     <nav class=${css.nav}>
-        <a href="#info" class=${css.current} onclick=${()=>switchPageHandler('#info')}>${info} Introduction</a>
-        <a href="#doc" onclick=${()=>switchPageHandler('#doc')}>${doc} Documentation</a>
-        <a href="#settings" onclick=${()=>switchPageHandler('#settings')}>${settings} Settings</a>
-        <a href="#news" onclick=${()=>switchPageHandler('#news')}>${news} News</a>
-        <a href="#about" onclick=${()=>switchPageHandler('#about')}>${about} About</a>
-        <a href="#chat" onclick=${()=>switchPageHandler('#chat')}>${chat} Support Chat</a>
-        <a href="#supplyTree" onclick=${()=>switchPageHandler('#supplyTree')}>${supplyTree} Supply tree</a>
+        <a href="#info" class=${css.current} onclick=${()=>switchPageHandler('#info')}>${icon_info} Introduction</a>
+        <a href="#doc" onclick=${()=>switchPageHandler('#doc')}>${icon_doc} Documentation</a>
+        <a href="#settings" onclick=${()=>switchPageHandler('#settings')}>${icon_settings} Settings</a>
+        <a href="#news" onclick=${()=>switchPageHandler('#news')}>${icon_news} News</a>
+        <a href="#about" onclick=${()=>switchPageHandler('#about')}>${icon_about} About</a>
+        <a href="#chat" onclick=${()=>switchPageHandler('#chat')}>${icon_chat} Support Chat</a>
+        <a href="#supplyTree" onclick=${()=>switchPageHandler('#supplyTree')}>${icon_supplyTree} Supply tree</a>
     </nav>`
 
 
@@ -33447,30 +33502,36 @@ const bel = require('bel')
 const csjs = require('csjs-inject')
 // widgets
 const Graphic = require('Graphic')
+const fetchFromGithub = require('fetchFromGithub')
 
-function Desktop(packages, { title, icon }, protocol) {
-    const css = style
-    const cors = "https://cors-anywhere.herokuapp.com/"
-    const regex = /^http/
-    const path = icon.split("/")
-    let filter = path[path.length - 1]
+function Desktop({data, url, title, opts }, protocol, done) {
+    let css = style
 
-    if ( filter.includes('svg') ) {
-        var appicon = Graphic(icon, css.icon)
-    } else {
-        var url = icon.split(cors).join('')
-        var appicon = bel`<div class=${css.icon}><img src=${url}></div>`
-    }
-    const el = bel`
+    fetchFromGithub(opts, (err, data) => {
+        if (err) return console.error(err)
+        let result = JSON.parse(data)
+        return fetchResult(result)
+    })
+    
+    function fetchResult(data) {
+        if ( data.icon.includes('svg') ) {
+            var icon = Graphic(`${url}/${data.icon}`, css.icon)
+        } else {
+            var icon = bel`<div class=${css.icon}><img src="${url}/${data.icon}"></div>`
+        }
+
+        const el = bel`
         <div class="${css["app-icon"]} ${title}" onclick=${ () => protocol(title, packages) }>
-            ${appicon}      
+            ${icon}      
             <span class=${css['app-name']}>${title}</span>
         </div>
-    `
+        `
 
-    return el
+        return  done(null, el)
+    }
 
 }
+
 
 
 const style = csjs`
@@ -33505,7 +33566,7 @@ const style = csjs`
 `
 
 module.exports = Desktop
-},{"Graphic":285,"bel":4,"csjs-inject":7}],285:[function(require,module,exports){
+},{"Graphic":285,"bel":4,"csjs-inject":7,"fetchFromGithub":287}],285:[function(require,module,exports){
 const loadSVG = require('loadSVG')
 
 function Graphic(url, className) {
@@ -33522,7 +33583,7 @@ function Graphic(url, className) {
 }   
 
 module.exports = Graphic
-},{"loadSVG":287}],286:[function(require,module,exports){
+},{"loadSVG":288}],286:[function(require,module,exports){
 const bel = require('bel')
 const csjs = require('csjs-inject')
 // widgets
@@ -33640,6 +33701,20 @@ const style = csjs`
 
 module.exports = OpenWindow
 },{"Graphic":285,"bel":4,"csjs-inject":7}],287:[function(require,module,exports){
+async function fetchFromGithub ({name, repo, path} = {}, done) {
+  const url = location.origin.includes('localhost') || location.port === '9966' ?
+    `${location.protocol}//${location.host}/${path}`
+    : `https://raw.githubusercontent.com/${name}/${repo}/master/${path}`
+  try {
+    const result = await fetch(url).then(x => x.text())
+    done(null, result)
+  } catch (error) {
+    done(error)
+  }
+}
+
+module.exports = fetchFromGithub
+},{}],288:[function(require,module,exports){
 async function loadSVG (url, done) { 
     const parser = document.createElement('div')
     let response = await fetch(url)
