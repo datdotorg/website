@@ -55,6 +55,12 @@ const el = (err, loadPage) => {
         height: 100%;
         border: none;
     }
+    a {
+        color: var(--linkColor);
+    }
+    a:hover {
+        color: var(--linkHoverColor);
+    }
     `
     document.body.style = styles
 

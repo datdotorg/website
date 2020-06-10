@@ -56,29 +56,36 @@ function main(opts, done) {
     desktop.appendChild(applist)
 
 
-    packages.map( package => {
+    packages.map( async (package, index) => {
         // package's status is not pin on the desktop
         if (!package.status.pin) return 
         let app = {name: package.name, repo: package.repo, path: package.path}
         let version = {name: package.name, repo: package.repo, path: package.version}
 
-        fetchFromGithub(app, (err, data) => {
-            if (err) return console.error(err)
+        try {
+            let getApp = await fetchFromGithub(app)
+            let getVersion = await fetchFromGithub(version)
             
+            // conver to JSON type
+            const appRes = JSON.parse(getApp)
+            const versionRes = JSON.parse(getVersion)
+
+            // catch url
             const url = location.origin.includes('localhost') || location.port === '9966' ?
             `${location.protocol}//${location.host}/${app.path}`
             : `https://raw.githubusercontent.com/${app.name}/${app.repo}/master/${app.path}`
 
-            const text = JSON.parse(data)
+            const link = url.slice(0, url.lastIndexOf('/'))
+            
+            // make full result
+            const result = { id: index, link, ...appRes, ...versionRes }
 
-            const result = { 
-                data: text,
-                url: `${url.slice(0, url.lastIndexOf("/"))}/dist/${text.versions.latest}`
-             }
-             
-            Desktop({data: result.data , url: result.url, opts: version }, openTarget, desktopLoaded )
-        })
+            Desktop(result, openTarget, desktopLoaded )
 
+        } catch(err) {
+            return console.error(err)
+        }
+        
     })
 
     return done(null, desktop)
@@ -90,7 +97,7 @@ function main(opts, done) {
     }
 
     // open window
-    function openTarget(url, title, app) {
+    function openTarget({url, title}, app) {
         let panel = document.querySelector(`.app_${title}`)
         if (panel) {
             // set all windows's level back to default

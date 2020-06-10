@@ -56,6 +56,12 @@ const el = (err, loadPage) => {
         height: 100%;
         border: none;
     }
+    a {
+        color: var(--linkColor);
+    }
+    a:hover {
+        color: var(--linkHoverColor);
+    }
     `
     document.body.style = styles
 
@@ -104,7 +110,7 @@ const defines = {
         greyEA: '#EAEAEA',
         grey88: '#888',
         grey70: '#707070',
-        blue: 'blue',
+        blue: '#1a0dab',
         red: 'red',
         orange: 'orange',
     }
@@ -114,6 +120,9 @@ const defines = {
 const { font, size, color } = defines
 
 const theme = {
+    '// default setting': '---------------------',
+    linkColor: color.black,
+    linkHoverColor: color.blue,
     '// Button setting': '---------------------',
     btnFontSize: size.small,
     btnColor: color.black,
@@ -145,7 +154,8 @@ const theme = {
     appInfoSidebarShrinkHoverBgColor: color.greyCC,
     '// Code snippet': '---------------------',
     codeFont: font.courier,
-    contentHeight: '75vh - 29px - 4px'
+    contentHeight: '75vh - 29px - 4px',
+    
 }
 
 module.exports = theme
@@ -33033,29 +33043,36 @@ function main(opts, done) {
     desktop.appendChild(applist)
 
 
-    packages.map( package => {
+    packages.map( async (package, index) => {
         // package's status is not pin on the desktop
         if (!package.status.pin) return 
         let app = {name: package.name, repo: package.repo, path: package.path}
         let version = {name: package.name, repo: package.repo, path: package.version}
 
-        fetchFromGithub(app, (err, data) => {
-            if (err) return console.error(err)
+        try {
+            let getApp = await fetchFromGithub(app)
+            let getVersion = await fetchFromGithub(version)
             
+            // conver to JSON type
+            const appRes = JSON.parse(getApp)
+            const versionRes = JSON.parse(getVersion)
+
+            // catch url
             const url = location.origin.includes('localhost') || location.port === '9966' ?
             `${location.protocol}//${location.host}/${app.path}`
             : `https://raw.githubusercontent.com/${app.name}/${app.repo}/master/${app.path}`
 
-            const text = JSON.parse(data)
+            const link = url.slice(0, url.lastIndexOf('/'))
+            
+            // make full result
+            const result = { id: index, link, ...appRes, ...versionRes }
 
-            const result = { 
-                data: text,
-                url: `${url.slice(0, url.lastIndexOf("/"))}/dist/${text.versions.latest}`
-             }
-             
-            Desktop({data: result.data , url: result.url, opts: version }, openTarget, desktopLoaded )
-        })
+            Desktop(result, openTarget, desktopLoaded )
 
+        } catch(err) {
+            return console.error(err)
+        }
+        
     })
 
     return done(null, desktop)
@@ -33067,7 +33084,7 @@ function main(opts, done) {
     }
 
     // open window
-    function openTarget(url, title, app) {
+    function openTarget({url, title}, app) {
         let panel = document.querySelector(`.app_${title}`)
         if (panel) {
             // set all windows's level back to default
@@ -33124,13 +33141,21 @@ const md = require('markdown-it')()
 
 function AppInfo(url, title, package, protocol) {
     const css = style
-    let path = url.slice(0, url.lastIndexOf("/dist"))
+    const path  = `${url}/dist/${package.versions.latest}`
+    const version = package.versions.all.map( v => bel`<option>${v}</option>`)
+    const selectVersion = bel`
+    <div class=${css.select}>
+        <label>Version: </label>    
+        <select>
+            ${version}
+        </select>
+    </div>`
 
     // switch image type
     if (package.logo.includes("svg")) {
-        var img = Graphic(`${path}/${package.logo}`, css["intro-logo"])
+        var img = Graphic(`${url}/${package.logo}`, css["intro-logo"])
     } else {
-        var img = bel`<img class=${css["intro-logo"]} src="${path}/${package.logo}" alt=${package.title} />`
+        var img = bel`<img class=${css["intro-logo"]} src="${url}/${package.logo}" alt=${package.title} />`
     }
     
     // icons
@@ -33142,6 +33167,7 @@ function AppInfo(url, title, package, protocol) {
     let icon_chat = Graphic('./src/node_modules/assets/svg/chat.svg', css.icon)
     let icon_supplyTree = Graphic('./src/node_modules/assets/svg/supply-tree.svg', css.icon)
     let icon_shrink = Graphic('./src/node_modules/assets/svg/double-arrow.svg', css.icon)
+    let icon_download = Graphic('./src/node_modules/assets/svg/download.svg', css.icon)
     
     // elements
     const shrinkAction = bel`<button class="${css.btn} ${css.shrink}">${icon_shrink}</button>`
@@ -33149,8 +33175,11 @@ function AppInfo(url, title, package, protocol) {
     const introHeader = bel`<section class=${css["intro-header"]}></section>`
     let actions = bel`
     <aside class=${css.actions}>
-        <button class="${css.btn} ${css.install}"> Install</button>
-        <button class="${css.btn} ${css.remove}"> Rmove forever</button>
+        ${selectVersion}
+        <button class="${css.btn} ${css.download}" onclick="${() => console.log('clicked')}">${icon_download}Download</button>
+        <button class="${css.btn} ${css.remove}">Launch</button>
+        <button class="${css.btn} ${css.remove}">Pin to quick launch</button>
+        <button class="${css.btn} ${css.remove}">Remove</button>
     </aside>
     `
 
@@ -33158,15 +33187,15 @@ function AppInfo(url, title, package, protocol) {
         try {
             if (page === "intro") {
                 var result = {
-                    intro: await fetch(`${url}/${file}`).then(res => res.text()),
-                    maintainer: await fetch(`${path}/${package.about.maintainer}`).then(res => res.json())
+                    intro: await fetch(`${path}/${file}`).then(res => res.text()),
+                    maintainer: await fetch(`${url}/${package.about.maintainer}`).then(res => res.json())
                 }
             } else if (page === "doc" ) {
-                var result = await fetch(`${url}/${file}`).then(res => res.text())
+                var result = await fetch(`${path}/${file}`).then(res => res.text())
             } else if (page === "supplyTree") {
                 var result = await fetch(`${path}/${file}`)
             } else {
-                var result = await fetch(`${path}/${file}`).then(res => res.text())
+                var result = await fetch(`${url}/${file}`).then(res => res.text())
             }
             
             return done(null, page, result)
@@ -33235,6 +33264,8 @@ function AppInfo(url, title, package, protocol) {
         const container = currentWindow.querySelector(`.${css.container}`)
         container.classList.toggle(css.collapse)
     })
+
+
 
 
     const el = bel `
@@ -33335,6 +33366,7 @@ const style = csjs `
    font-size: var(--btnFontSize);
    color: var(--btnColor);
    background-color: var(--btnBgColor);
+   margin-bottom: 10px;
 }
 .btn:hover {
     color: var(--btnHoverColor);
@@ -33375,8 +33407,11 @@ const style = csjs `
 .app-info {
     padding: 0 20px;
 }
-.install {
+.download {
 
+}
+.download:hover svg {
+    fill: white;
 }
 .remove {
 
@@ -33401,10 +33436,21 @@ const style = csjs `
     background-color: #f6f8fa;
 }
 .actions {
-
+    display: grid;
+}
+.actions .btn {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px 8px;
+    height: 30px;
 }
 .intro-header {
-
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: auto 163px;
+    padding-top: 30px;
 }
 .intro-info {
     
@@ -33418,7 +33464,10 @@ const style = csjs `
 }
 .website {
     font-size: 1.2rem;
-    color: black;
+}
+.select {
+    justify-self: flex-end;
+    margin-bottom: 13px;
 }
 @media screen and (max-width: 1024px) {
     .content {
@@ -33435,35 +33484,25 @@ const csjs = require('csjs-inject')
 const Graphic = require('Graphic')
 const fetchFromGithub = require('fetchFromGithub')
 
-function Desktop({data, url, opts }, protocol, done) {
+function Desktop(data, protocol, done) {
     let css = style
+    const title = data.title.split(' ').join('').toLowerCase()
+    const url  = `${data.link}/dist/${data.versions.latest}`
 
-    fetchFromGithub(opts, (err, data) => {
-        if (err) return console.error(err)
-        let result = JSON.parse(data)
-        return fetchResult(result)
-    })
-    
-    function fetchResult(result) {
-        const obj = Object.assign({}, data, result)
-        const title = data.title.split(' ').join('').toLowerCase()
-
-        if ( result.icon.includes('svg') ) {
-            var icon = Graphic(`${url}/${result.icon}`, css.icon)
-        } else {
-            var icon = bel`<div class=${css.icon}><img src="${url}/${result.icon}"></div>`
-        }
-
-        const el = bel`
-        <div class="${css["app-icon"]} ${title}" onclick=${ () => protocol(url, title, obj) }>
-            ${icon}      
-            <span class=${css['app-name']}>${title}</span>
-        </div>
-        `
-
-        return  done(null, el)
+    if ( data.icon.includes('svg') ) {
+        var icon = Graphic(`${url}/${data.icon}`, css.icon)
+    } else {
+        var icon = bel`<div class=${css.icon}><img src="${url}/${data.icon}"></div>`
     }
 
+    const el = bel`
+    <div class="${css["app-icon"]} ${title}" onclick=${ () => protocol({ url: data.link, title }, data) }>
+        ${icon}      
+        <span class=${css['app-name']}>${title}</span>
+    </div>
+        `
+
+    return  done(null, el)
 }
 
 
@@ -33633,16 +33672,11 @@ const style = csjs`
 
 module.exports = OpenWindow
 },{"Graphic":285,"bel":4,"csjs-inject":7}],287:[function(require,module,exports){
-async function fetchFromGithub ({name, repo, path} = {}, done) {
+function fetchFromGithub ({name, repo, path} = {}) {
   const url = location.origin.includes('localhost') || location.port === '9966' ?
     `${location.protocol}//${location.host}/${path}`
     : `https://raw.githubusercontent.com/${name}/${repo}/master/${path}`
-  try {
-    const result = await fetch(url).then(x => x.text())
-    done(null, result)
-  } catch (error) {
-    done(error)
-  }
+  return fetch(url).then(x => x.text())
 }
 
 module.exports = fetchFromGithub
