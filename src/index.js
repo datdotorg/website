@@ -61,7 +61,7 @@ function main(opts, done) {
         if (!package.status.pin) return 
         let app = {name: package.name, repo: package.repo, path: package.path}
         let version = {name: package.name, repo: package.repo, path: package.version}
-        
+
         try {
             let getApp = await fetchFromGithub(app)
             let getVersion = await fetchFromGithub(version)
@@ -123,6 +123,7 @@ function main(opts, done) {
 let style = csjs`
 svg {
     width: 100%;
+    height: auto;
 }
 .desktop {
     display: grid;

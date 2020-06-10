@@ -33048,7 +33048,7 @@ function main(opts, done) {
         if (!package.status.pin) return 
         let app = {name: package.name, repo: package.repo, path: package.path}
         let version = {name: package.name, repo: package.repo, path: package.version}
-        
+
         try {
             let getApp = await fetchFromGithub(app)
             let getVersion = await fetchFromGithub(version)
@@ -33110,6 +33110,7 @@ function main(opts, done) {
 let style = csjs`
 svg {
     width: 100%;
+    height: auto;
 }
 .desktop {
     display: grid;
@@ -33170,6 +33171,18 @@ function AppInfo(url, title, package, protocol) {
     const introHeader = bel`<section class=${css["intro-header"]}></section>`
     const markdown = bel`<div class="markdown"></div>`
 
+    // sidebar menu
+    const nav = bel ` 
+    <nav class=${css.nav}>
+        <a href="#intro" class=${css.current} onclick=${()=>switchPageHandler('#intro')}>${icon_info} Introduction</a>
+        <a href="#doc" onclick=${()=>switchPageHandler('#doc')}>${icon_doc} Documentation</a>
+        <a href="#settings" onclick=${()=>switchPageHandler('#settings')}>${icon_settings} Settings</a>
+        <a href="#news" onclick=${()=>switchPageHandler('#news')}>${icon_news} News</a>
+        <a href="#about" onclick=${()=>switchPageHandler('#about')}>${icon_about} About</a>
+        <a href="#chat" onclick=${()=>switchPageHandler('#chat')}>${icon_chat} Support Chat</a>
+        <a href="#supplyTree" onclick=${()=>switchPageHandler('#supplyTree')}>${icon_supplyTree} Supply tree</a>
+    </nav>`
+
     // button actions
     let actions = bel`
     <aside class=${css.actions}>
@@ -33179,7 +33192,7 @@ function AppInfo(url, title, package, protocol) {
         <button class="${css.btn} ${css.remove}" onclick=${() => actionHandler(css.remove)}>Remove</button>
     </aside>`
 
-    // selector for versions
+    // versions selector
     const selectVersion = bel`
     <div class=${css.selector} onclick=${() => selectorHandler(selectVersion)}>
         <label>Version: </label>    
@@ -33190,6 +33203,7 @@ function AppInfo(url, title, package, protocol) {
 
     selectVersion.children[1].value = package.versions.latest
 
+    // get version
     function selectorHandler(target) {
         const selector = target.children[1]
         
@@ -33199,17 +33213,69 @@ function AppInfo(url, title, package, protocol) {
         })
     }
 
+    // load intro version
     async function loadIntroVers(vers) {
         const path = `${url}/dist/${vers}/${package.intro}`
         const file = await fetch(path).then(res => res.text())
         var result = md.render(file)
         markdown.innerHTML = result
     }
+    
+    // display default page
+    getInfo(package.intro, 'intro', loadPage)
+
+    // collapse button
+    shrinkAction.addEventListener('click', () => {
+        const currentWindow = document.querySelector(`.app_${title}`)
+        const container = currentWindow.querySelector(`.${css.container}`)
+        container.classList.toggle(css.collapse)
+    })
+
+    const el = bel `
+    <div class=${css.container}>
+        <div class=${css.sidebar}>
+            ${nav}
+            ${shrinkAction}
+        </div>
+        ${content}
+    </div>
+    `
+    return el
 
 
+    // switch page
+    function switchPageHandler(href) {
+        // get all a tag name from nav
+        const pages = nav.querySelectorAll('a')
+        // switch current page
+        pages.forEach(page => {
+            if (page.getAttribute('href') === href) {
+                page.classList.add(css.current)
+                const target = href.split("#").slice(1).join('').toString()
+                pageHandler(target)
+            } else {
+                page.classList.remove(css.current)
+            }
+        })
+    }
 
-    const getInfo = async (file, page, done) => {
-        
+    function pageHandler(i) {
+        console.log(`${i} page loaded`);
+        // clear content to add new contnet
+        content.innerHTML = ''
+
+        if (i === 'chat' ) {
+            content.innerHTML = '<iframe src="https://gitter.im/wizardamigosinstitute/program/~embed" frameborder="0" allowfullscreen="allowfullscreen"></iframe>'
+        } else if (i === 'about') {
+            getInfo(package.about.info, i, loadPage)
+        } else if (i === 'settings') {
+        } else if (i === 'supplyTree') {
+        } else {
+            getInfo(package[i], i, loadPage)
+        }
+    }
+
+    async function getInfo(file, page, done) {
         try {
             if (page === "intro") {
                 var result = {
@@ -33229,11 +33295,7 @@ function AppInfo(url, title, package, protocol) {
         } catch (error) {
             done(error)
         }
-        
     }
-    
-    // display default page
-    getInfo(package.intro, 'intro', loadPage)
 
     function loadPage(err, page, data) {
         const currentWindow = document.querySelector(`.app_${title}`)
@@ -33272,67 +33334,6 @@ function AppInfo(url, title, package, protocol) {
         article.append(markdown)
         content.innerHTML = ''
         content.appendChild(article)
-    }
-
-    const nav = bel ` 
-    <nav class=${css.nav}>
-        <a href="#intro" class=${css.current} onclick=${()=>switchPageHandler('#intro')}>${icon_info} Introduction</a>
-        <a href="#doc" onclick=${()=>switchPageHandler('#doc')}>${icon_doc} Documentation</a>
-        <a href="#settings" onclick=${()=>switchPageHandler('#settings')}>${icon_settings} Settings</a>
-        <a href="#news" onclick=${()=>switchPageHandler('#news')}>${icon_news} News</a>
-        <a href="#about" onclick=${()=>switchPageHandler('#about')}>${icon_about} About</a>
-        <a href="#chat" onclick=${()=>switchPageHandler('#chat')}>${icon_chat} Support Chat</a>
-        <a href="#supplyTree" onclick=${()=>switchPageHandler('#supplyTree')}>${icon_supplyTree} Supply tree</a>
-    </nav>`
-
-
-    shrinkAction.addEventListener('click', () => {
-        const currentWindow = document.querySelector(`.app_${title}`)
-        const container = currentWindow.querySelector(`.${css.container}`)
-        container.classList.toggle(css.collapse)
-    })
-
-    const el = bel `
-    <div class=${css.container}>
-        <div class=${css.sidebar}>
-            ${nav}
-            ${shrinkAction}
-        </div>
-        ${content}
-    </div>
-    `
-    return el
-
-
-    // switch page
-    function switchPageHandler(href) {
-        // get all a tag name from nav
-        const pages = nav.querySelectorAll('a')
-        // switch current page
-        pages.forEach(page => {
-            if (page.getAttribute('href') === href) {
-                page.classList.add(css.current)
-                const target = href.split("#").slice(1).join('').toString()
-                pageHandler(target)
-            } else {
-                page.classList.remove(css.current)
-            }
-        })
-    }
-
-    function pageHandler(i) {
-        // clear content to add new contnet
-        console.log(`${i} page loaded`);
-        content.innerHTML = ''
-        if (i === 'chat' ) {
-            content.innerHTML = '<iframe src="https://gitter.im/wizardamigosinstitute/program/~embed" frameborder="0" allowfullscreen="allowfullscreen"></iframe>'
-        } else if (i === 'about') {
-            getInfo(package.about.info, i, loadPage)
-        } else if (i === 'settings') {
-        } else if (i === 'supplyTree') {
-        } else {
-            getInfo(package[i], i, loadPage)
-        }
     }
 }
 
@@ -33376,15 +33377,17 @@ const style = csjs `
     color: var(--appInfoSidebarColor);
     text-decoration: none;
 }
-.nav a:hover svg [class="b"], .nav a:hover svg [class="c"] {
+.nav a:hover svg [class="b"], .nav a:hover svg [class="c"], .nav a:hover svg [class="a"]
+{
     stroke: var(--linkHoverColor);
 }
 /* current page info */
 .current {
     background-color: var(--appInfoSidebarNavCurrentBgColor);
 }
-.icon {
-    
+.nav .icon {
+    width: 18px;
+    justify-self: center;
 }
 .btn {
    outline: none;
@@ -33411,14 +33414,16 @@ const style = csjs `
 }
 .shrink .icon {
     display: grid;
-    grid-template-columns: auto 30px;
+    grid-template-columns: auto 20px;
 }
 .shrink .icon svg {
     transform: rotate(-180deg);
     grid-column-start: 2;
+    width: 16px;
 }
 .collapse .shrink .icon {
     grid-template-columns: auto;
+    justify-items: center;
 }
 .collapse .shrink .icon svg {
     transform: rotate(0deg);
@@ -33682,6 +33687,9 @@ const style = csjs`
     display: grid;
     grid-auto-flow: column;
     align-items: center;
+}
+.panel-nav .icon svg {
+    width: 20px;
 }
 .panel-title {
     font-size: var(--panelHeaderTitleSize);
