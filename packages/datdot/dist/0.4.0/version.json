@@ -13,7 +13,7 @@
     "bugs": "https://github.com/playproject-io/datdot/issues",
     "keywords": ["datdot", "dat protocol"],
     "intro": "blob/intro.md",
-    "doc": "blob/v1.0.0.md",
+    "doc": "blob/v0.4.0.md",
     "supplytree": {
       "dependencies": {
         "package1": "https://github.com/fionataeyang/datdot/packages/dist/1.0.0"

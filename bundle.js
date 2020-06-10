@@ -33003,7 +33003,7 @@ function main(opts, done) {
             name: 'fionataeyang',
             repo: 'datdot',
             path: 'packages/datdot/package.json',
-            version: 'packages/datdot/dist/1.0.0/version.json',
+            version: 'packages/datdot/dist/1.1.0/version.json',
             status: {
                 open: false,
                 pin: true,
@@ -33048,7 +33048,7 @@ function main(opts, done) {
         if (!package.status.pin) return 
         let app = {name: package.name, repo: package.repo, path: package.path}
         let version = {name: package.name, repo: package.repo, path: package.version}
-
+        
         try {
             let getApp = await fetchFromGithub(app)
             let getVersion = await fetchFromGithub(version)
@@ -33141,15 +33141,10 @@ const md = require('markdown-it')()
 
 function AppInfo(url, title, package, protocol) {
     const css = style
-    const path  = `${url}/dist/${package.versions.latest}`
+    // load first version form data
+    let vers  = package.versions.latest
+    const path  = `${url}/dist/${vers}`
     const version = package.versions.all.map( v => bel`<option>${v}</option>`)
-    const selectVersion = bel`
-    <div class=${css.select}>
-        <label>Version: </label>    
-        <select>
-            ${version}
-        </select>
-    </div>`
 
     // switch image type
     if (package.logo.includes("svg")) {
@@ -33173,17 +33168,48 @@ function AppInfo(url, title, package, protocol) {
     const shrinkAction = bel`<button class="${css.btn} ${css.shrink}">${icon_shrink}</button>`
     const content = bel`<div class=${css.content}></div>`
     const introHeader = bel`<section class=${css["intro-header"]}></section>`
+    const markdown = bel`<div class="markdown"></div>`
+
+    // button actions
     let actions = bel`
     <aside class=${css.actions}>
-        ${selectVersion}
-        <button class="${css.btn} ${css.download}" onclick="${() => console.log('clicked')}">${icon_download}Download</button>
-        <button class="${css.btn} ${css.remove}">Launch</button>
-        <button class="${css.btn} ${css.remove}">Pin to quick launch</button>
-        <button class="${css.btn} ${css.remove}">Remove</button>
-    </aside>
-    `
+        <button class="${css.btn} ${css.download}" onclick=${() => actionHandler(css.download)}>${icon_download}Download</button>
+        <button class="${css.btn} ${css.launch}" onclick=${() => actionHandler(css.launch)}>Launch</button>
+        <button class="${css.btn} ${css.pin}" onclick=${() => actionHandler(css.pin)}>Pin to desktop</button>
+        <button class="${css.btn} ${css.remove}" onclick=${() => actionHandler(css.remove)}>Remove</button>
+    </aside>`
+
+    // selector for versions
+    const selectVersion = bel`
+    <div class=${css.selector} onclick=${() => selectorHandler(selectVersion)}>
+        <label>Version: </label>    
+        <select>
+            ${version}
+        </select>
+    </div>`
+
+    selectVersion.children[1].value = package.versions.latest
+
+    function selectorHandler(target) {
+        const selector = target.children[1]
+        
+        selector.addEventListener('change', () => {
+           vers = target.children[1].value
+           return loadIntroVers(vers)
+        })
+    }
+
+    async function loadIntroVers(vers) {
+        const path = `${url}/dist/${vers}/${package.intro}`
+        const file = await fetch(path).then(res => res.text())
+        var result = md.render(file)
+        markdown.innerHTML = result
+    }
+
+
 
     const getInfo = async (file, page, done) => {
+        
         try {
             if (page === "intro") {
                 var result = {
@@ -33191,7 +33217,7 @@ function AppInfo(url, title, package, protocol) {
                     maintainer: await fetch(`${url}/${package.about.maintainer}`).then(res => res.json())
                 }
             } else if (page === "doc" ) {
-                var result = await fetch(`${path}/${file}`).then(res => res.text())
+                var result = await fetch(`${url}/dist/${vers}/blob/v${vers}.md`).then(res => res.text())
             } else if (page === "supplyTree") {
                 var result = await fetch(`${path}/${file}`)
             } else {
@@ -33220,20 +33246,21 @@ function AppInfo(url, title, package, protocol) {
         if (page === 'intro') {
             const { intro, maintainer } = data
             var result = md.render(intro)
-            // info
-            const el = bel`
+            markdown.innerHTML = result
+            // info 
+            const info = bel`
             <div class=${css["intro-info"]}>
                 ${img}
                 <h4 class=${css["intro-title"]}>${package.title}</h4>
                 <a class=${css.website} href="${maintainer.url}" target="_blank">${maintainer.name}</a>
             </div>`
             introHeader.innerHTML = ''
-            introHeader.appendChild(el)
-            introHeader.appendChild(actions)
+            introHeader.append(info, selectVersion, actions)
             article.appendChild(introHeader)
 
         } else {
             var result = md.render(data)
+            markdown.innerHTML = result
         }
 
         // if page includes below conditions, add hljs.css into head
@@ -33242,7 +33269,7 @@ function AppInfo(url, title, package, protocol) {
             document.head.appendChild(hljsStyle)
         }
         
-        article.innerHTML += result
+        article.append(markdown)
         content.innerHTML = ''
         content.appendChild(article)
     }
@@ -33264,9 +33291,6 @@ function AppInfo(url, title, package, protocol) {
         const container = currentWindow.querySelector(`.${css.container}`)
         container.classList.toggle(css.collapse)
     })
-
-
-
 
     const el = bel `
     <div class=${css.container}>
@@ -33352,6 +33376,9 @@ const style = csjs `
     color: var(--appInfoSidebarColor);
     text-decoration: none;
 }
+.nav a:hover svg [class="b"], .nav a:hover svg [class="c"] {
+    stroke: var(--linkHoverColor);
+}
 /* current page info */
 .current {
     background-color: var(--appInfoSidebarNavCurrentBgColor);
@@ -33410,10 +33437,13 @@ const style = csjs `
 .download {
 
 }
-.download:hover svg {
-    fill: white;
-}
 .remove {
+
+}
+.launch {
+
+}
+.pin {
 
 }
 .content table {
@@ -33436,38 +33466,56 @@ const style = csjs `
     background-color: #f6f8fa;
 }
 .actions {
-    display: grid;
+    grid-area: actions;
+    display: inline-grid;
+    grid-template-columns: repeat(auto-fit, minmax(auto, 162px));
+    grid-gap: 6px;
+    justify-content: right;
+    margin-top: 15px;
 }
 .actions .btn {
     display: grid;
     grid-auto-flow: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 0px 8px;
-    height: 30px;
+    padding: 6px 8px;
+}
+.actions .btn:hover svg {
+    fill: white;
 }
 .intro-header {
     display: grid;
-    grid-template-rows: 1fr;
+    grid-template-rows: 1fr auto;
     grid-template-columns: auto 163px;
+    grid-template-areas: "info selector"
+                         "actions actions";
     padding-top: 30px;
 }
 .intro-info {
-    
+    grid-area: info;
+    display: grid;
+    grid-template: auto / 40px auto;
+    grid-gap: 0px 10px;
 }
 .intro-title {
     margin: 0;
     font-weight: normal;
+    font-size: 1.8rem;
+    align-self: center;
 }
 .intro-logo {
     width: 40px;
+
 }
 .website {
     font-size: 1.2rem;
+    grid-row-start: 2;
+    grid-column-start: 2;
 }
-.select {
-    justify-self: flex-end;
-    margin-bottom: 13px;
+.selector {
+    grid-area: selector;
+    justify-self: right;
+    padding-top: 10px;
 }
 @media screen and (max-width: 1024px) {
     .content {
@@ -33498,7 +33546,7 @@ function Desktop(data, protocol, done) {
     const el = bel`
     <div class="${css["app-icon"]} ${title}" onclick=${ () => protocol({ url: data.link, title }, data) }>
         ${icon}      
-        <span class=${css['app-name']}>${title}</span>
+        <span class=${css['app-name']}>${data.title}</span>
     </div>
         `
 
