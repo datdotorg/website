@@ -33283,7 +33283,17 @@ function AppInfo(url, title, package, protocol) {
                     maintainer: await fetch(`${url}/${package.about.maintainer}`).then(res => res.json())
                 }
             } else if (page === "doc" ) {
-                var result = await fetch(`${url}/dist/${vers}/blob/v${vers}.md`).then(res => res.text())
+                var data
+                if (vers === package.versions.latest) {
+                    data = package.doc.includes('hackmd') 
+                        ? package.doc
+                        : `${url}/dist/${vers}/blob/v${vers}.md`
+                    var result = await fetch(data).then(res => res.text())
+                } else {
+                    data = `${url}/dist/${vers}/blob/v${vers}.md`
+                    var result = await fetch(data).then(res => res.text())
+                }
+                
             } else if (page === "supplyTree") {
                 var result = await fetch(`${path}/${file}`)
             } else {
@@ -33494,7 +33504,7 @@ const style = csjs `
     grid-template-columns: auto 163px;
     grid-template-areas: "info selector"
                          "actions actions";
-    padding-top: 30px;
+    padding-top: 20px;
 }
 .intro-info {
     grid-area: info;
