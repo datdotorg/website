@@ -95,6 +95,7 @@ const defines = {
         'x-small': '1.3rem',
         small: '1.4rem',
         medium: '1.6rem',
+        big: '1.8rem',
         large: '2rem',
         'x-large': '3rem',
         'xx-large': '4rem',
@@ -111,7 +112,7 @@ const defines = {
         grey88: '#888',
         grey70: '#707070',
         blue: '#1a0dab',
-        red: 'red',
+        red: '#FF6464',
         orange: 'orange',
     }
 
@@ -129,6 +130,13 @@ const theme = {
     btnBgColor: color.greyDE,
     btnHoverColor: color.white,
     btnHoverBgColor: color.blue,
+    '// Action button setting': '---------------------',
+    actionBtnFontSize: size['xx-small'],
+    actionRemoveBgColor: color.red,
+    actionCancelHoverColor: color.black,
+    actionCancelHoverBgColor: color.grey70,
+    '// Dialog setting': '---------------------',
+    dialogBtnFontSize: size.small,
     '// Body setting': '---------------------',
     bodyFont: font.arial,
     bodyFontSize: size.medium,
@@ -152,9 +160,12 @@ const theme = {
     appInfoSidebarNavCurrentBgColor: color.white,
     appInfoSidebarShrinkBgColor: color.greyDD,
     appInfoSidebarShrinkHoverBgColor: color.greyCC,
+    appInfoSelectorFontSize: size.small,
+    appInfoIntroTitleFontSize: size.big,
+    appInfoLinkFontSize: size['xx-small'],
     '// Code snippet': '---------------------',
     codeFont: font.courier,
-    contentHeight: '75vh - 29px - 4px',
+    contentHeight: '75vh - 29px',
     
 }
 
@@ -33129,11 +33140,12 @@ svg {
 `
 
 module.exports = main
-},{"AppInfo":283,"Desktop":284,"OpenWindow":286,"bel":4,"csjs-inject":7,"fetchFromGithub":287}],283:[function(require,module,exports){
+},{"AppInfo":283,"Desktop":284,"OpenWindow":287,"bel":4,"csjs-inject":7,"fetchFromGithub":289}],283:[function(require,module,exports){
 const bel = require('bel')
 const csjs = require('csjs-inject')
 // widgets
 const Graphic = require('Graphic')
+const actions = require('actions')
 const md = require('markdown-it')()
     .use(require('markdown-it-highlightjs'), {
         auto: true,
@@ -33153,7 +33165,7 @@ function AppInfo(url, title, package, protocol) {
     } else {
         var img = bel`<img class=${css["intro-logo"]} src="${url}/${package.logo}" alt=${package.title} />`
     }
-    
+
     // icons
     let icon_info = Graphic('./src/node_modules/assets/svg/info.svg', css.icon)
     let icon_doc = Graphic('./src/node_modules/assets/svg/doc.svg', css.icon)
@@ -33163,13 +33175,13 @@ function AppInfo(url, title, package, protocol) {
     let icon_chat = Graphic('./src/node_modules/assets/svg/chat.svg', css.icon)
     let icon_supplyTree = Graphic('./src/node_modules/assets/svg/supply-tree.svg', css.icon)
     let icon_shrink = Graphic('./src/node_modules/assets/svg/double-arrow.svg', css.icon)
-    let icon_download = Graphic('./src/node_modules/assets/svg/download.svg', css.icon)
     
     // elements
     const shrinkAction = bel`<button class="${css.btn} ${css.shrink}">${icon_shrink}</button>`
     const content = bel`<div class=${css.content}></div>`
     const introHeader = bel`<section class=${css["intro-header"]}></section>`
     const markdown = bel`<div class="markdown"></div>`
+    const buttons = actions({title, vers, url, package})
 
     // sidebar menu
     const nav = bel ` 
@@ -33183,20 +33195,11 @@ function AppInfo(url, title, package, protocol) {
         <a href="#supplyTree" onclick=${()=>switchPageHandler('#supplyTree')}>${icon_supplyTree} Supply tree</a>
     </nav>`
 
-    // button actions
-    let actions = bel`
-    <aside class=${css.actions}>
-        <button class="${css.btn} ${css.download}" onclick=${() => actionHandler(css.download)}>${icon_download}Download</button>
-        <button class="${css.btn} ${css.launch}" onclick=${() => actionHandler(css.launch)}>Launch</button>
-        <button class="${css.btn} ${css.pin}" onclick=${() => actionHandler(css.pin)}>Pin to desktop</button>
-        <button class="${css.btn} ${css.remove}" onclick=${() => actionHandler(css.remove)}>Remove</button>
-    </aside>`
-
     // versions selector
     const selectVersion = bel`
-    <div class=${css.selector} onclick=${() => selectorHandler(selectVersion)}>
+    <div class=${css.selector}>
         <label>Version: </label>    
-        <select>
+        <select onchange=${() => selectorHandler(event)}>
             ${version}
         </select>
     </div>`
@@ -33204,20 +33207,21 @@ function AppInfo(url, title, package, protocol) {
     selectVersion.children[1].value = package.versions.latest
 
     // get version
-    function selectorHandler(target) {
-        const selector = target.children[1]
-        
-        selector.addEventListener('change', () => {
-           vers = target.children[1].value
-           return loadIntroVers(vers)
-        })
+    function selectorHandler(event) {
+           const x = event.target.value
+           vers = x
+           return loadIntroVers(x)
     }
 
     // load intro version
-    async function loadIntroVers(vers) {
-        const path = `${url}/dist/${vers}/${package.intro}`
+    async function loadIntroVers(x) {
+        const currentPanel = document.querySelector(`.app_${title}`)
+        const currentActions = currentPanel.querySelector(`.${buttons.classList[0]}`)
+        const path = `${url}/dist/${x}/${package.intro}`
         const file = await fetch(path).then(res => res.text())
         var result = md.render(file)
+        currentActions.remove()
+        introHeader.append( actions({title, vers, url, package}) )
         markdown.innerHTML = result
     }
     
@@ -33241,7 +33245,6 @@ function AppInfo(url, title, package, protocol) {
     </div>
     `
     return el
-
 
     // switch page
     function switchPageHandler(href) {
@@ -33311,7 +33314,6 @@ function AppInfo(url, title, package, protocol) {
         const currentWindow = document.querySelector(`.app_${title}`)
         const content = currentWindow.querySelector(`.${css.content}`)
         let article = bel`<article class=${css['app-info']}></article>`
-
         if (err) return console.log(err)
 
         // page content start
@@ -33323,11 +33325,14 @@ function AppInfo(url, title, package, protocol) {
             const info = bel`
             <div class=${css["intro-info"]}>
                 ${img}
-                <h4 class=${css["intro-title"]}>${package.title}</h4>
-                <a class=${css.website} href="${maintainer.url}" target="_blank">${maintainer.name}</a>
+                <div class=${css["intro-content"]}>
+                    <h4 class=${css["intro-title"]}>${package.title}</h4>
+                    <a class=${css.link} href="${maintainer.url}" target="_blank">${maintainer.name}</a>
+                </div>
             </div>`
+
             introHeader.innerHTML = ''
-            introHeader.append(info, selectVersion, actions)
+            introHeader.append(info, selectVersion, buttons)
             article.appendChild(introHeader)
 
         } else {
@@ -33345,6 +33350,7 @@ function AppInfo(url, title, package, protocol) {
         content.innerHTML = ''
         content.appendChild(article)
     }
+
 }
 
 
@@ -33369,18 +33375,16 @@ const style = csjs `
 }
 .collapse .sidebar {
     grid-template-columns: 38px;
-    overflow: hidden;
 }
 .nav {
     grid-area: nav;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(auto-fit, 44px);
-    grid-auto-flow: column;
+    overflow: hidden;
+    overflow-y: auto;
+    max-height: calc( 75vh - 30px - 29px );
 }
 .nav a {
     display: grid;
-    grid-template-rows: 1fr;
+    grid-template-rows: 44px;
     grid-template-columns: 38px auto;
     align-items: center;
     font-size: var(--appInfoSidebarFontSize);
@@ -33398,19 +33402,6 @@ const style = csjs `
 .nav .icon {
     width: 18px;
     justify-self: center;
-}
-.btn {
-   outline: none;
-   padding: 8px 10px;
-   border-radius: 4px;
-   font-size: var(--btnFontSize);
-   color: var(--btnColor);
-   background-color: var(--btnBgColor);
-   margin-bottom: 10px;
-}
-.btn:hover {
-    color: var(--btnHoverColor);
-    background-color: var(--btnHoverBgColor);
 }
 .shrink {
     grid-area: shrink;
@@ -33447,6 +33438,8 @@ const style = csjs `
     overflow-y: auto;
 }
 .app-info {
+    position: relative;
+    height: 100%;
     padding: 0 20px;
 }
 .download {
@@ -33480,24 +33473,6 @@ const style = csjs `
 .content table tr:nth-child(2n) {
     background-color: #f6f8fa;
 }
-.actions {
-    grid-area: actions;
-    display: inline-grid;
-    grid-template-columns: repeat(auto-fit, minmax(auto, 162px));
-    grid-gap: 6px;
-    justify-content: right;
-    margin-top: 15px;
-}
-.actions .btn {
-    display: grid;
-    grid-auto-flow: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 6px 8px;
-}
-.actions .btn:hover svg {
-    fill: white;
-}
 .intro-header {
     display: grid;
     grid-template-rows: 1fr auto;
@@ -33509,28 +33484,35 @@ const style = csjs `
 .intro-info {
     grid-area: info;
     display: grid;
-    grid-template: auto / 40px auto;
+    grid-template: auto / 48px auto;
     grid-gap: 0px 10px;
+}
+.intro-content {
+    grid-row-start: 1;
+    grid-column-start: 2;
+    padding-top: 5px;
 }
 .intro-title {
     margin: 0;
     font-weight: normal;
-    font-size: 1.8rem;
+    font-size: var(--appInfoIntroTitleFontSize);
     align-self: center;
 }
 .intro-logo {
-    width: 40px;
 
 }
-.website {
-    font-size: 1.2rem;
-    grid-row-start: 2;
-    grid-column-start: 2;
+.link {
+    font-size: var(--appInfoLinkFontSize);
 }
 .selector {
     grid-area: selector;
     justify-self: right;
-    padding-top: 10px;
+    align-self: start;
+}
+.selector label {
+    font-size: var(--appInfoSelectorFontSize);
+}
+select {
 }
 @media screen and (max-width: 1024px) {
     .content {
@@ -33540,7 +33522,7 @@ const style = csjs `
 `
 
 module.exports = AppInfo
-},{"Graphic":285,"bel":4,"csjs-inject":7,"markdown-it":218,"markdown-it-highlightjs":217}],284:[function(require,module,exports){
+},{"Graphic":286,"actions":288,"bel":4,"csjs-inject":7,"markdown-it":218,"markdown-it-highlightjs":217}],284:[function(require,module,exports){
 const bel = require('bel')
 const csjs = require('csjs-inject')
 // widgets
@@ -33602,7 +33584,104 @@ const style = csjs`
 `
 
 module.exports = Desktop
-},{"Graphic":285,"bel":4,"csjs-inject":7,"fetchFromGithub":287}],285:[function(require,module,exports){
+},{"Graphic":286,"bel":4,"csjs-inject":7,"fetchFromGithub":289}],285:[function(require,module,exports){
+const bel = require('bel')
+const csjs = require('csjs-inject')
+
+function Dialog(protocol) {
+    const css = style
+
+    const cancel = bel`<button  class="${css.btn} ${css.cancel}" 
+                                onclick=${() => actionHandler('cancel')}>
+                                Cancel
+                        </button>`
+                        
+    const submit = bel`<button  class="${css.btn} ${css.submit}" 
+                                onclick=${() => actionHandler('submit')}>
+                                I understand the consequences, delete this version from package
+                        </button>`
+
+    const el = bel`
+    <div class=${css.overlay}>
+        <div class=${css.dialog}>
+            <h1 class=${css.title}>Warning!</h1>
+            <p class=${css.message}>This version will be removed from package.</p>
+            <div class=${css.actions}>
+                ${cancel}
+                ${submit}
+            </div>
+        </div>
+    </div>
+    `
+    return el
+
+    function actionHandler(target) {
+        el.remove()
+        if (target === 'submit') {
+            protocol()
+        }
+    }
+}
+
+const style = csjs`
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, 0.8);
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+.dialog {
+    width: 60%;
+    background-color: white;
+    padding: 2vh 4vh 4vh 4vh;
+    border-radius: 6px;
+}
+.title {
+    text-align: center;
+    color: red;
+}
+.message {
+    text-align: center;
+}
+.actions {
+    text-align: center;
+}
+.btn {
+    display: inline-flex;
+    align-items: center;
+    outline: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: var(--dialogBtnFontSize);
+    color: var(--btnColor);
+    background-color: var(--btnBgColor);
+    margin: 5px 5px 0 0;
+ }
+ .btn:hover {
+     color: var(--btnHoverColor);
+     background-color: var(--btnHoverBgColor);
+ }
+ .btn:hover svg {
+    fill: white;
+}
+.cancel:hover {
+    background-color: var(--actionCancelHoverBgColor);
+}
+.submit:hover {
+    color: #fff;
+    background-color: var(--actionRemoveBgColor);
+}
+
+`
+
+module.exports = Dialog
+},{"bel":4,"csjs-inject":7}],286:[function(require,module,exports){
 const loadSVG = require('loadSVG')
 
 function Graphic(url, className) {
@@ -33619,7 +33698,7 @@ function Graphic(url, className) {
 }   
 
 module.exports = Graphic
-},{"loadSVG":288}],286:[function(require,module,exports){
+},{"loadSVG":290}],287:[function(require,module,exports){
 const bel = require('bel')
 const csjs = require('csjs-inject')
 // widgets
@@ -33721,8 +33800,8 @@ const style = csjs`
     
 }
 .fullscreen {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
 }
 .minmax {
 }
@@ -33730,14 +33809,164 @@ const style = csjs`
 }
 @media screen and (max-width: 1024px) {
     .window {
-        width: 100vw;
-        height: 100vh;
+        width: 100%;
+        height: 100%;
     }
 }
 `
 
 module.exports = OpenWindow
-},{"Graphic":285,"bel":4,"csjs-inject":7}],287:[function(require,module,exports){
+},{"Graphic":286,"bel":4,"csjs-inject":7}],288:[function(require,module,exports){
+const bel = require('bel')
+const csjs = require('csjs-inject')
+// widgets
+const Graphic = require('Graphic')
+const Dialog = require('Dialog')
+
+function actions({title, vers, package, url}) {
+    let css = style
+
+    // icons
+    let icon_download = Graphic('./src/node_modules/assets/svg/download.svg', css.icon)
+    let icon_launch = Graphic('./src/node_modules/assets/svg/launch.svg', css.icon)
+    let icon_shortcut = Graphic('./src/node_modules/assets/svg/shortcut.svg', css.icon)
+    let icon_remove = Graphic('./src/node_modules/assets/svg/remove.svg', css.icon)
+    let icon_stop = Graphic('./src/node_modules/assets/svg/forcestop.svg', css.icon)
+
+    // button actions
+    let download = bel`<button  class="${css.btn} ${css.download}" 
+                                onclick=${() => actionHandler(download)}>
+                                ${icon_download}Download
+                        </button>`
+
+    let launch = bel`<button    class="${css.btn} ${css.launch}" 
+                                onclick=${() => actionHandler(launch)}>
+                                ${icon_launch}Launch
+                    </button>`
+
+    let shortcut = bel`<button  class="${css.btn} ${css.shortcut}" 
+                                onclick=${() => actionHandler(shortcut)}>
+                                ${icon_shortcut}Shortcut
+                        </button>`
+
+    let remove = bel`<button    class="${css.btn} ${css.remove}" 
+                                onclick=${() => actionHandler(remove)}>
+                                ${icon_remove}Remove
+                    </button>`
+
+    let stop = bel`<button      class="${css.btn} ${css.stop}" 
+                                onclick=${() => actionHandler(stop)}>
+                                ${icon_stop}Force stop
+                    </button>`
+
+    let v = bel`<span class=${css.vers}>${vers}</span>`
+    
+    let el = bel`<aside class=${css.actions}>${download}</aside>`
+
+    return el
+
+    // actions
+    function actionHandler(el) {
+        const currentPanel = document.querySelector(`.app_${title}`)
+        const currentActions = currentPanel.querySelector(`.${css.actions}`)
+        
+        
+        if (el.classList[1].includes('download')) {
+            console.log(title, ' installed');
+            currentActions.firstChild.remove()
+            remove.append(v)
+            currentActions.append(launch, shortcut, remove)
+        }
+
+        if (el.classList[1].includes('launch')) {
+            console.log(title, 'is running');
+            el.remove(launch)
+            currentActions.insertBefore(stop, shortcut)
+        }
+
+        if (el.classList[1].includes('stop')) {
+            console.log(title, 'is stopped')
+        }
+
+        if (el.classList[1].includes('shortcut')) {
+            console.log(title, 'is pinned to desktop');
+        }
+
+        if (el.classList[1].includes('remove')) {
+            console.log('remove ', title);
+
+            document.body.append( Dialog(removeHandler) )
+        }
+
+        function removeHandler() {
+            currentActions.innerHTML = ''
+            currentActions.append(download)
+        }
+        
+    }
+    
+
+
+    
+}
+
+const style = csjs`
+.actions {
+    grid-area: actions;
+    margin-top: 15px;
+}
+.btn {
+    display: inline-flex;
+    align-items: center;
+    outline: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: var(--actionBtnFontSize);
+    color: var(--btnColor);
+    background-color: var(--btnBgColor);
+    margin: 5px 5px 0 0;
+ }
+ .btn:hover {
+     color: var(--btnHoverColor);
+     background-color: var(--btnHoverBgColor);
+ }
+ .btn:hover svg {
+    fill: white;
+}
+.icon {
+    margin-right: 5px;
+    width: 20px;
+}
+.download {
+
+}
+.launch {
+
+}
+.shortcut {
+
+}
+.remove:hover {
+    background-color: var(--actionRemoveBgColor);
+}
+.update {
+
+}
+.stop {
+
+}
+.vers {
+    font-size: 1.2rem;
+    color: black;
+    background-color: white;
+    padding: 4px 6px;
+    margin-left: 5px;
+    border-radius: 4px;
+}
+`
+
+module.exports = actions
+},{"Dialog":285,"Graphic":286,"bel":4,"csjs-inject":7}],289:[function(require,module,exports){
 function fetchFromGithub ({name, repo, path} = {}) {
   const url = location.origin.includes('localhost') || location.port === '9966' ?
     `${location.protocol}//${location.host}/${path}`
@@ -33746,7 +33975,7 @@ function fetchFromGithub ({name, repo, path} = {}) {
 }
 
 module.exports = fetchFromGithub
-},{}],288:[function(require,module,exports){
+},{}],290:[function(require,module,exports){
 async function loadSVG (url, done) { 
     const parser = document.createElement('div')
     let response = await fetch(url)
