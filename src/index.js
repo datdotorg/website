@@ -98,22 +98,36 @@ function main(opts, done) {
 
     // open window
     function openTarget({url, title}, app) {
-        let panel = document.querySelector(`.app_${title}`)
-        if (panel) {
-            // set all windows's level back to default
-            let all = document.querySelectorAll("[class*='app_']")
-            all.forEach ( i => i.style.zIndex = '2')
-            panel.style.zIndex = "9"
-            return
-        } 
-           
-        return document.body.appendChild( OpenWindow(url, app, AppInfo, loadAppContent) )
+        let all = document.querySelectorAll("[class*='app_']")
+        let excApp = document.querySelector(`.app_${title}`)
 
+        if ( !excApp )  {
+            // set all windows's level back to default
+            all.forEach ( i => { 
+                i.classList.remove(css.current)
+            })
+
+            document.body.appendChild( OpenWindow(css.current, url, app, AppInfo, loadAppContent) )
+            let excApp = document.querySelector(`.app_${title}`)
+            excApp.classList.add(css.current)
+
+        }  else {
+        
+            all.forEach ( i => { 
+                i.classList.remove(css.current)
+
+                if ( i.classList.contains(`app_${title}`) ) {
+                    i.classList.add(css.current)
+                } 
+            })
+
+        }
+        
     }
 
     
     // load the applist on desktop
-    function desktopLoaded(err, el) {
+    function desktopLoaded(err, el, title) {
         if (err) return console.log(err)
         return applist.appendChild(el)
     }
@@ -138,6 +152,16 @@ svg {
     gap: 5px 22px;
     grid-auto-flow: column;
     justify-items: center;
+}
+.current {
+    z-index: 9;
+}
+.current [class*='body'] {
+    border-color: var(--panelCurrentBorderColor);
+}
+.current [class*='header'] {
+    border-color: var(--panelCurrentBorderColor);
+    background-color: var(--panelCurrentHeaderBgColor);
 }
 `
 
