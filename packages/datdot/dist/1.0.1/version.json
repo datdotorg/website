@@ -3,20 +3,22 @@
     "exports": {
       "main": "index.js"
     },
-    "contributors": [
-      "contributors/alexander_praetorius.json",
-      "contributors/nina_breznik.json",
-      "contributors/fiona_ye.json",
-      "contributors/joshua_mir.json"
-    ],
     "license": "...",
     "bugs": "https://github.com/playproject-io/datdot/issues",
     "keywords": ["datdot", "dat protocol"],
     "intro": "blob/intro.md",
     "doc": "blob/v1.0.1.md",
     "supplytree": {
+      "share": "12%",
+      "contributors": [
+        { "share": "3%", "url": "contributors/alexander_praetorius.json" },
+        { "share": "3%", "url": "contributors/nina_breznik.json" },
+        { "share": "3%", "url": "contributors/fiona_ye.json" },
+        { "share": "3%", "url": "contributors/joshua_mir.json" }
+      ],
       "dependencies": {
-        "package1": "https://github.com/fionataeyang/datdot/packages/dist/1.0.0"
+        "pacman": { "url": "./packages/game/package.json", "share": "60%" },
+        "alarmclock": { "url": "./packages/alarm-clock/package.json", "share": "40%" }
       }
     },
     "settings": {
