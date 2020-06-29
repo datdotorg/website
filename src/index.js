@@ -5,6 +5,9 @@ const Desktop = require('Desktop')
 const OpenWindow = require('OpenWindow')
 const AppInfo = require('AppInfo')
 const fetchFromGithub = require('fetchFromGithub')
+// widgets
+const updateApp = require('updateApp')
+const removeApp = require('removeApp')
 
 function main(opts, done) {
     const { theme } = opts
@@ -18,21 +21,27 @@ function main(opts, done) {
             path: 'packages/datdot/package.json',
             version: 'packages/datdot/dist/1.1.0/version.json',
             status: {
-                open: false,
+                open: true,
                 pin: true,
-                install: true,
+                app: {
+                    version: null,
+                    install: false
+                }
             },
         },
         { 
             id: 2,
             name: 'fionataeyang',
             repo: 'datdot',
-            path: 'packages/game/package.json',
-            version: 'packages/game/dist/1.0.0/version.json',
+            path: 'packages/pacman/package.json',
+            version: 'packages/pacman/dist/1.0.0/version.json',
             status: {
                 open: false,
                 pin: true,
-                install: true
+                app: {
+                    version: null,
+                    install: false
+                }
             }
         },
         {
@@ -44,18 +53,22 @@ function main(opts, done) {
             status: {
                 open: false,
                 pin: true,
-                install: true
+                app: {
+                    version: null,
+                    install: false
+                }
             }
         }
     ]
 
+    // store installed app to here
+    let installedApp = []
+
     const desktop  = bel`<main class=${css.desktop} role="desktop"></main>`
     const applist = bel`<div class=${css["app-list"]}></div>`
     
-    
     desktop.appendChild(applist)
-
-
+    
     packages.map( async (package, index) => {
         // package's status is not pin on the desktop
         if (!package.status.pin) return 
@@ -78,7 +91,11 @@ function main(opts, done) {
             const link = url.slice(0, url.lastIndexOf('/'))
             
             // make full result
-            const result = { id: index, link, ...appRes, ...versionRes }
+            const result = { id: index, link, ...appRes, ...versionRes, status: package.status }
+
+            if ( package.status.open ) {
+                document.body.append( OpenWindow(css.current, link, result, AppInfo, loadAppContent) )
+            }
 
             Desktop(result, openTarget, desktopLoaded )
 
@@ -88,12 +105,31 @@ function main(opts, done) {
         
     })
 
+    document.addEventListener('DOMContentLoaded', () => {
+        console.log('hello world');
+        // ! cannot get all window elements
+        let allWindows =  document.body.querySelector("[class^='window']")
+        console.log(allWindows);
+    })
+
     return done(null, desktop)
-    
 
     // load app content
-    function loadAppContent(el, app) {
-        return bel`${el}`
+    function loadAppContent({item, app, update, remove}) {
+
+        if (update !== undefined && typeof update === 'object') {
+            updateApp(packages, update)
+            // push installed package's data into installedApp
+            installedApp.push(update)
+        } 
+
+        if (remove !== undefined && installedApp.length > 0) {
+            removeApp(packages, remove, installedApp)
+            console.log('update installed:', installedApp);
+            console.log('update packages', packages)
+        }
+
+        return bel`${item}`
     }
 
     // open window

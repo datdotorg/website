@@ -67,11 +67,10 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
     if (err) {
         document.body.style = `color: red; font-size: 1.6rem; text-align:center; background-color: #d9d9d9;`
-        document.body.innerHTML = `<p>${err.stack}</p>`
-    } else {
-        document.body.appendChild(loadPage)
+        return document.body.innerHTML = `<p>${err.stack}</p>`
     }
-
+    
+    document.body.appendChild(loadPage)
     updateTheme(vars)
 }
 

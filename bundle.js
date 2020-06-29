@@ -68,11 +68,10 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
     if (err) {
         document.body.style = `color: red; font-size: 1.6rem; text-align:center; background-color: #d9d9d9;`
-        document.body.innerHTML = `<p>${err.stack}</p>`
-    } else {
-        document.body.appendChild(loadPage)
+        return document.body.innerHTML = `<p>${err.stack}</p>`
     }
-
+    
+    document.body.appendChild(loadPage)
     updateTheme(vars)
 }
 
@@ -48798,6 +48797,9 @@ const Desktop = require('Desktop')
 const OpenWindow = require('OpenWindow')
 const AppInfo = require('AppInfo')
 const fetchFromGithub = require('fetchFromGithub')
+// widgets
+const updateApp = require('updateApp')
+const removeApp = require('removeApp')
 
 function main(opts, done) {
     const { theme } = opts
@@ -48811,21 +48813,27 @@ function main(opts, done) {
             path: 'packages/datdot/package.json',
             version: 'packages/datdot/dist/1.1.0/version.json',
             status: {
-                open: false,
+                open: true,
                 pin: true,
-                install: true,
+                app: {
+                    version: null,
+                    install: false
+                }
             },
         },
         { 
             id: 2,
             name: 'fionataeyang',
             repo: 'datdot',
-            path: 'packages/game/package.json',
-            version: 'packages/game/dist/1.0.0/version.json',
+            path: 'packages/pacman/package.json',
+            version: 'packages/pacman/dist/1.0.0/version.json',
             status: {
                 open: false,
                 pin: true,
-                install: true
+                app: {
+                    version: null,
+                    install: false
+                }
             }
         },
         {
@@ -48837,18 +48845,22 @@ function main(opts, done) {
             status: {
                 open: false,
                 pin: true,
-                install: true
+                app: {
+                    version: null,
+                    install: false
+                }
             }
         }
     ]
 
+    // store installed app to here
+    let installedApp = []
+
     const desktop  = bel`<main class=${css.desktop} role="desktop"></main>`
     const applist = bel`<div class=${css["app-list"]}></div>`
     
-    
     desktop.appendChild(applist)
-
-
+    
     packages.map( async (package, index) => {
         // package's status is not pin on the desktop
         if (!package.status.pin) return 
@@ -48871,7 +48883,11 @@ function main(opts, done) {
             const link = url.slice(0, url.lastIndexOf('/'))
             
             // make full result
-            const result = { id: index, link, ...appRes, ...versionRes }
+            const result = { id: index, link, ...appRes, ...versionRes, status: package.status }
+
+            if ( package.status.open ) {
+                document.body.append( OpenWindow(css.current, link, result, AppInfo, loadAppContent) )
+            }
 
             Desktop(result, openTarget, desktopLoaded )
 
@@ -48881,12 +48897,31 @@ function main(opts, done) {
         
     })
 
+    document.addEventListener('DOMContentLoaded', () => {
+        console.log('hello world');
+        // ! cannot get all window elements
+        let allWindows =  document.body.querySelector("[class^='window']")
+        console.log(allWindows);
+    })
+
     return done(null, desktop)
-    
 
     // load app content
-    function loadAppContent(el, app) {
-        return bel`${el}`
+    function loadAppContent({item, app, update, remove}) {
+
+        if (update !== undefined && typeof update === 'object') {
+            updateApp(packages, update)
+            // push installed package's data into installedApp
+            installedApp.push(update)
+        } 
+
+        if (remove !== undefined && installedApp.length > 0) {
+            removeApp(packages, remove, installedApp)
+            console.log('update installed:', installedApp);
+            console.log('update packages', packages)
+        }
+
+        return bel`${item}`
     }
 
     // open window
@@ -48959,7 +48994,7 @@ svg {
 `
 
 module.exports = main
-},{"AppInfo":544,"Desktop":545,"OpenWindow":548,"bel":5,"csjs-inject":14,"fetchFromGithub":551}],544:[function(require,module,exports){
+},{"AppInfo":544,"Desktop":545,"OpenWindow":548,"bel":5,"csjs-inject":14,"fetchFromGithub":551,"removeApp":556,"updateApp":557}],544:[function(require,module,exports){
 const bel = require('bel')
 const csjs = require('csjs-inject')
 // widgets
@@ -48974,8 +49009,10 @@ const mdTocConvert = require('mdTocConvert')
 
 function AppInfo(styl, url, title, package, protocol) {
     const css = style
-    // load first version form data
-    let vers  = package.versions.latest
+    /* if version is installed then show current installed version, 
+       otherwise show latest version 
+    */
+    let vers = package.status.app.version ? package.status.app.version : package.versions.latest
     const path  = `${url}/dist/${vers}`
 
     // switch image type
@@ -48995,19 +49032,18 @@ function AppInfo(styl, url, title, package, protocol) {
     const introHeader = bel`<section class=${css["intro-header"]}></section>`
     const markdown = bel`<div class=${css.markdown}></div>`
     const download = bel`<button  class="${css.btn} ${css.download}" 
-                                onclick=${(e) => installHandler(e, download)} type="button" value=${vers}>
+                                onclick=${(e) => installHandler(e)} type="button" value=${vers}>
                                 ${icon_download}Download
                         </button>`
-
     let options = bel`<ul class=${css["show-version"]}></ul>`
     let displayVersion = bel`<span class=${css.text}>${vers}</span>`
     let triggerBtn = bel`<span class=${css.trigger} onclick=${() => selectorHandler(displayVersion)}></span>`
-    const selected = bel`<div class=${css.selected}>
-    ${triggerBtn}
-    ${displayVersion}
-    ${icon_arrow_down}
+    const selected = bel`
+    <div class=${css.selected}>
+        ${triggerBtn}
+        ${displayVersion}
+        ${icon_arrow_down}
     </div>`
-
 
     // versions selector
     const selectVersion = bel`
@@ -49017,6 +49053,7 @@ function AppInfo(styl, url, title, package, protocol) {
         ${options}
     </div>`
 
+    let buttons = actions({styl, title, ver: vers, selector: selectVersion, url, package}, clearVers)
 
     selectVersion.children[1].value = package.versions.latest
 
@@ -49074,23 +49111,33 @@ function AppInfo(styl, url, title, package, protocol) {
 
         options.innerHTML = ''
         newList.map( item => options.append(item) )
-        icon_arrow_down.classList.toggle(css.up)
+        icon_arrow_down.classList.remove(css.up)
         options.classList.remove(css.on)
         
     }
 
     // install init goes here
-    function installHandler(event, el) {
+    async function installHandler(event, el) {
         event.stopPropagation()
+
+        let obj = Object.assign({}, package)
+        obj.status.app.install = true;
+        obj.status.app.version = vers
+        obj.status.app.data = await fetch(`${package.link}/dist/${vers}/version.json`).then( res => res.json() )
+        
         console.log(`${title} v${vers} is installed`);
+
         selectVersion.remove()
         introHeader.append( actions({styl, title, ver: vers, selector: selectVersion, url, package}, clearVers) )
+        
+        return protocol({update: obj})
     }
 
     // clear select version via remove action
-    function clearVers(v) {
-        vers = v
-        return displayVersion.innerText = v
+    function clearVers(latest, removeVersion) {
+        vers = latest
+        displayVersion.innerText = latest
+        return protocol({remove: removeVersion})
     }
 
     // switch page
@@ -49178,7 +49225,15 @@ function AppInfo(styl, url, title, package, protocol) {
 
             const title = bel`<h1 class=${css["package-title"]}>About ${package.title}</h1>`
             introHeader.innerHTML = ''
-            introHeader.append(info, selectVersion)
+            
+            introHeader.append(info)
+
+            package.status.app.install 
+            // if page is not installed, show default action button
+            ? introHeader.append( buttons )
+            // if package is installed, show action buttons(launch, shortcut, settings, remove...etc)
+            : introHeader.append( selectVersion )
+
             article.append(introHeader, title, markdown)
 
         } else if ( page === "doc") {
@@ -49565,21 +49620,31 @@ const csjs = require('csjs-inject')
 // widgets
 const Graphic = require('Graphic')
 
-function Desktop(data, protocol, done) {
+function Desktop(package, protocol, done) {
+    // console.log(package);
     let css = style
-    const title = data.title.split(' ').join('').toLowerCase()
-    const url  = `${data.link}/dist/${data.versions.latest}`
+    // title is for window's css using
+    const title = package.title.split(' ').join('').toLowerCase()
+    const url  = `${package.link}/dist/${package.versions.latest}`
+    // appTitle is for desktop app list using
+    var appTitle = package.title 
+    // icon default 
+    var icon = bel`<div class=${css.icon}><img src="${url}/${package.icon}"></div>`
 
-    if ( data.icon.includes('svg') ) {
-        var icon = Graphic(`${url}/${data.icon}`, css.icon)
-    } else {
-        var icon = bel`<div class=${css.icon}><img src="${url}/${data.icon}"></div>`
+    if ( package.icon.includes('svg') ) {
+        icon = Graphic(`${url}/${package.icon}`, css.icon)
     }
 
+    // Only app is not installed 
+    if (package.status.app.install === false) {
+        icon =  Graphic('./src/node_modules/assets/svg/application.svg', css.icon)
+        appTitle = `${package.title}.install`
+    }
+    
     const el = bel`
-    <div class="${css["app-icon"]} ${title}" onclick=${ () => protocol({ url: data.link, title }, data) }>
+    <div class="${css["app-icon"]} ${title}" onclick=${ () => protocol({ url: package.link, title}, package) }>
         ${icon}      
-        <span class=${css['app-name']}>${data.title}</span>
+        <span class=${css['app-name']}>${appTitle}</span>
     </div>
         `
 
@@ -49603,12 +49668,6 @@ const style = csjs`
     font-size: var(--appNameFontSize);
     color: var(--appNameColor);
     word-break: break-word;
-}
-.app-icon:hover div svg g path {
-    fill: var(--appHoverColor);
-}
-.app-icon:hover div svg g rect {
-    fill: var(--appHoverColor);
 }
 .app-icon:hover .app-name {
     color: var(--appHoverColor);
@@ -49800,7 +49859,7 @@ function OpenWindow(styl, url, package, content, protocol) {
     let minmax = Graphic('./src/node_modules/assets/svg/minmax.svg', css.icon)
     
     const el = bel`
-    <div class="${css.window} app_${title}" onclick=${ ()=> windowLevel(el)}>
+    <div class="${css.window} app_${title} ${styl}" onclick=${ ()=> windowLevel(el)}>
         <header class=${css["panel-header"]}>
             <span class=${css["panel-title"]}>${package.title}</span>
             <div class=${css["panel-nav"]}>
@@ -49814,24 +49873,17 @@ function OpenWindow(styl, url, package, content, protocol) {
     </div>
     `
 
-    return protocol(el, package)
+    return protocol({item: el, app: package})
 
     function panelNav(event, status) {
         event.preventDefault()
+
         if (status === 'close') {
             el.remove()
-            return protocol(el, package)
         }
+
         if (status === 'minmax') {
-            let content = document.querySelector("[class^='content'")
-            
-            if (el.classList.contains(css.fullscreen)) {
-                el.classList.remove(css.fullscreen)
-                content.style.height = "calc( var(--contentHeight) )"
-            } else {
-                el.classList.add(css.fullscreen)
-                content.style.height = "100%"
-            }
+            el.classList.toggle(css.fullscreen)
         }
     }
 
@@ -50036,12 +50088,6 @@ const Graphic = require('Graphic')
 const Dialog = require('Dialog')
 
 function actions({styl, title, ver, selector, url, package}, protocol) {
-    // console.log('css:', styl)
-    // console.log('title:', title)
-    // console.log('version:', ver)
-    // console.log('button:', button)
-    // console.log('url:', url)
-    // console.log('package:', package)
     let css = style
 
     // icons
@@ -50132,7 +50178,12 @@ function actions({styl, title, ver, selector, url, package}, protocol) {
             currentPanel.classList.add(styl)
             currentActions.remove()
             info.append(selector)
-            protocol(package.versions.latest)
+
+            let removeApp = {
+                title: package.title,
+                version: ver
+            }
+            protocol(package.versions.latest, removeApp )
         }
         
     }
@@ -50430,4 +50481,98 @@ const style = csjs`
 `
 
 module.exports = packageSidebar
+},{"Graphic":547,"bel":5,"csjs-inject":14}],556:[function(require,module,exports){
+const bel = require('bel')
+const csjs = require('csjs-inject')
+// widgets
+const Graphic = require('Graphic')
+
+
+function removeApp(packages, remove, arr) {
+
+    let css = style
+    let appName = remove.title.toLowerCase()
+    // elements
+    let el = document.querySelector(`.${appName}`)
+    let appicon = el.querySelector('[class^="icon"]')
+    let name = el.querySelector('[class^="app-name"]')
+
+    packages.map( package => {
+        if ( package.path.includes(appName) ) {
+            package.status.app.install = false
+            package.status.app.version = ''
+        }
+        return package
+    })
+
+    // update icon afeter removed
+    let icon =  Graphic('./src/node_modules/assets/svg/application.svg', css.icon)
+    // remove install icon
+    appicon.remove()
+    // update app icon
+    el.insertBefore(icon, el.firstChild)
+    // update app name
+    name.innerHTML = `${remove.title}.install`
+
+    return arr.splice(arr.indexOf(remove.title), 1)
+}
+
+let style = csjs`
+.icon {
+    width: 60px;
+}
+`
+
+module.exports = removeApp
+},{"Graphic":547,"bel":5,"csjs-inject":14}],557:[function(require,module,exports){
+const bel = require('bel')
+const csjs = require('csjs-inject')
+// widgets
+const Graphic = require('Graphic')
+
+function updateApp(packages, app) {
+    console.log(packages);
+    let css = style
+    let appName = app.title.toLowerCase()
+    // elements
+    let el = document.querySelector(`.${appName}`)
+    let appicon = el.querySelector('[class^="icon"]')
+    let name = el.querySelector('[class^="app-name"]')
+
+    packages.map( package => {
+        if ( package.path.includes(appName) ) {
+            package.status = app.status
+            // set package url
+            let url = `${app.link}/dist/${app.status.app.version}`
+            // set new icon
+            let icon = package.status.app.data.icon
+            
+            if ( icon.includes('svg') ) {
+                var newicon = Graphic(`${url}/${icon}`, css.icon)
+            } else {
+                var newicon = bel`<div class=${css.icon}><img src="${url}/${icon}"></div>`
+            }
+            console.log(app.title);
+            // remove install icon
+            appicon.remove()
+            // update app icon
+            el.insertBefore(newicon, el.firstChild)
+             // update app name
+            name.innerHTML = app.title
+        }
+
+        return package
+    })
+
+   
+
+}
+
+let style = csjs`
+.icon {
+    width: 60px;
+}
+`
+
+module.exports = updateApp
 },{"Graphic":547,"bel":5,"csjs-inject":14}]},{},[1]);

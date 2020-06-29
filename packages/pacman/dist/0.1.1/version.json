@@ -1,13 +1,13 @@
 {
-    "icon": "images/icon-datdot.svg",
+    "icon": "images/pacman.svg",
     "exports": {
       "main": "index.js"
     },
     "license": "...",
     "bugs": "https://github.com/playproject-io/datdot/issues",
     "keywords": ["datdot", "dat protocol"],
-    "intro": "doc/intro.md",
-    "doc": "doc/v0.1.1.md",
+    "intro": "blob/intro.md",
+    "doc": "blob/v0.1.1.md",
     "supplytree": {
       "share": "12%",
       "contributors": [
