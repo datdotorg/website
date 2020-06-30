@@ -419,7 +419,7 @@ module.exports = hyperx(belCreateElement, {comments: true})
 module.exports.default = module.exports
 module.exports.createElement = belCreateElement
 
-},{"./appendChild":4,"hyperx":126}],6:[function(require,module,exports){
+},{"./appendChild":4,"hyperx":315}],6:[function(require,module,exports){
 'use strict'
 
 module.exports = ccount
@@ -924,7 +924,7 @@ function csjsInserter() {
 module.exports = csjsInserter;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"csjs":17,"insert-css":128}],13:[function(require,module,exports){
+},{"csjs":17,"insert-css":317}],13:[function(require,module,exports){
 'use strict';
 
 module.exports = require('csjs/get-css');
@@ -1436,7 +1436,7 @@ module.exports = function (props/*, options*/) {
 	return map(props, function (desc, name) { return define(name, desc, options); });
 };
 
-},{"es5-ext/object/copy":51,"es5-ext/object/map":59,"es5-ext/object/normalize-options":60,"type/plain-function/ensure":514,"type/value/ensure":518,"type/value/is":519}],32:[function(require,module,exports){
+},{"es5-ext/object/copy":51,"es5-ext/object/map":59,"es5-ext/object/normalize-options":60,"type/plain-function/ensure":513,"type/value/ensure":517,"type/value/is":518}],32:[function(require,module,exports){
 "use strict";
 
 var isValue         = require("type/value/is")
@@ -1500,7 +1500,7 @@ d.gs = function (dscr, get, set/*, options*/) {
 	return !options ? desc : assign(normalizeOpts(options), desc);
 };
 
-},{"es5-ext/object/assign":48,"es5-ext/object/normalize-options":60,"es5-ext/string/#/contains":67,"type/plain-function/is":515,"type/value/is":519}],33:[function(require,module,exports){
+},{"es5-ext/object/assign":48,"es5-ext/object/normalize-options":60,"es5-ext/string/#/contains":67,"type/plain-function/is":514,"type/value/is":518}],33:[function(require,module,exports){
 'use strict'
 
 module.exports = detab
@@ -1548,12 +1548,9 @@ function detab(value, size) {
   return results.join('')
 }
 
-},{"repeat-string":495}],34:[function(require,module,exports){
-"use strict";
-
-module.exports = function () {
-  // https://mths.be/emoji
-  return /\uD83C\uDFF4\uDB40\uDC67\uDB40\uDC62(?:\uDB40\uDC65\uDB40\uDC6E\uDB40\uDC67|\uDB40\uDC73\uDB40\uDC63\uDB40\uDC74|\uDB40\uDC77\uDB40\uDC6C\uDB40\uDC73)\uDB40\uDC7F|\uD83D\uDC68(?:\uD83C\uDFFC\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68\uD83C\uDFFB|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFF\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFE])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFE\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFD])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFD\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB\uDFFC])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\u200D(?:\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83D\uDC68|(?:\uD83D[\uDC68\uDC69])\u200D(?:\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67]))|\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67])|(?:\uD83D[\uDC68\uDC69])\u200D(?:\uD83D[\uDC66\uDC67])|[\u2695\u2696\u2708]\uFE0F|\uD83D[\uDC66\uDC67]|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|(?:\uD83C\uDFFB\u200D[\u2695\u2696\u2708]|\uD83C\uDFFF\u200D[\u2695\u2696\u2708]|\uD83C\uDFFE\u200D[\u2695\u2696\u2708]|\uD83C\uDFFD\u200D[\u2695\u2696\u2708]|\uD83C\uDFFC\u200D[\u2695\u2696\u2708])\uFE0F|\uD83C\uDFFB\u200D(?:\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C[\uDFFB-\uDFFF])|(?:\uD83E\uDDD1\uD83C\uDFFB\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFC\u200D\uD83E\uDD1D\u200D\uD83D\uDC69)\uD83C\uDFFB|\uD83E\uDDD1(?:\uD83C\uDFFF\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1(?:\uD83C[\uDFFB-\uDFFF])|\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1)|(?:\uD83E\uDDD1\uD83C\uDFFE\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFF\u200D\uD83E\uDD1D\u200D(?:\uD83D[\uDC68\uDC69]))(?:\uD83C[\uDFFB-\uDFFE])|(?:\uD83E\uDDD1\uD83C\uDFFC\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFD\u200D\uD83E\uDD1D\u200D\uD83D\uDC69)(?:\uD83C[\uDFFB\uDFFC])|\uD83D\uDC69(?:\uD83C\uDFFE\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFD\uDFFF])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFC\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB\uDFFD-\uDFFF])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFB\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFC-\uDFFF])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFD\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB\uDFFC\uDFFE\uDFFF])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\u200D(?:\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D(?:\uD83D[\uDC68\uDC69])|\uD83D[\uDC68\uDC69])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFF\u200D(?:\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD]))|\uD83D\uDC69\u200D\uD83D\uDC69\u200D(?:\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67]))|(?:\uD83E\uDDD1\uD83C\uDFFD\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFE\u200D\uD83E\uDD1D\u200D\uD83D\uDC69)(?:\uD83C[\uDFFB-\uDFFD])|\uD83D\uDC69\u200D\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC69\u200D\uD83D\uDC69\u200D(?:\uD83D[\uDC66\uDC67])|(?:\uD83D\uDC41\uFE0F\u200D\uD83D\uDDE8|\uD83D\uDC69(?:\uD83C\uDFFF\u200D[\u2695\u2696\u2708]|\uD83C\uDFFE\u200D[\u2695\u2696\u2708]|\uD83C\uDFFC\u200D[\u2695\u2696\u2708]|\uD83C\uDFFB\u200D[\u2695\u2696\u2708]|\uD83C\uDFFD\u200D[\u2695\u2696\u2708]|\u200D[\u2695\u2696\u2708])|(?:(?:\u26F9|\uD83C[\uDFCB\uDFCC]|\uD83D\uDD75)\uFE0F|\uD83D\uDC6F|\uD83E[\uDD3C\uDDDE\uDDDF])\u200D[\u2640\u2642]|(?:\u26F9|\uD83C[\uDFCB\uDFCC]|\uD83D\uDD75)(?:\uD83C[\uDFFB-\uDFFF])\u200D[\u2640\u2642]|(?:\uD83C[\uDFC3\uDFC4\uDFCA]|\uD83D[\uDC6E\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4-\uDEB6]|\uD83E[\uDD26\uDD37-\uDD39\uDD3D\uDD3E\uDDB8\uDDB9\uDDCD-\uDDCF\uDDD6-\uDDDD])(?:(?:\uD83C[\uDFFB-\uDFFF])\u200D[\u2640\u2642]|\u200D[\u2640\u2642])|\uD83C\uDFF4\u200D\u2620)\uFE0F|\uD83D\uDC69\u200D\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67])|\uD83C\uDFF3\uFE0F\u200D\uD83C\uDF08|\uD83D\uDC15\u200D\uD83E\uDDBA|\uD83D\uDC69\u200D\uD83D\uDC66|\uD83D\uDC69\u200D\uD83D\uDC67|\uD83C\uDDFD\uD83C\uDDF0|\uD83C\uDDF4\uD83C\uDDF2|\uD83C\uDDF6\uD83C\uDDE6|[#\*0-9]\uFE0F\u20E3|\uD83C\uDDE7(?:\uD83C[\uDDE6\uDDE7\uDDE9-\uDDEF\uDDF1-\uDDF4\uDDF6-\uDDF9\uDDFB\uDDFC\uDDFE\uDDFF])|\uD83C\uDDF9(?:\uD83C[\uDDE6\uDDE8\uDDE9\uDDEB-\uDDED\uDDEF-\uDDF4\uDDF7\uDDF9\uDDFB\uDDFC\uDDFF])|\uD83C\uDDEA(?:\uD83C[\uDDE6\uDDE8\uDDEA\uDDEC\uDDED\uDDF7-\uDDFA])|\uD83E\uDDD1(?:\uD83C[\uDFFB-\uDFFF])|\uD83C\uDDF7(?:\uD83C[\uDDEA\uDDF4\uDDF8\uDDFA\uDDFC])|\uD83D\uDC69(?:\uD83C[\uDFFB-\uDFFF])|\uD83C\uDDF2(?:\uD83C[\uDDE6\uDDE8-\uDDED\uDDF0-\uDDFF])|\uD83C\uDDE6(?:\uD83C[\uDDE8-\uDDEC\uDDEE\uDDF1\uDDF2\uDDF4\uDDF6-\uDDFA\uDDFC\uDDFD\uDDFF])|\uD83C\uDDF0(?:\uD83C[\uDDEA\uDDEC-\uDDEE\uDDF2\uDDF3\uDDF5\uDDF7\uDDFC\uDDFE\uDDFF])|\uD83C\uDDED(?:\uD83C[\uDDF0\uDDF2\uDDF3\uDDF7\uDDF9\uDDFA])|\uD83C\uDDE9(?:\uD83C[\uDDEA\uDDEC\uDDEF\uDDF0\uDDF2\uDDF4\uDDFF])|\uD83C\uDDFE(?:\uD83C[\uDDEA\uDDF9])|\uD83C\uDDEC(?:\uD83C[\uDDE6\uDDE7\uDDE9-\uDDEE\uDDF1-\uDDF3\uDDF5-\uDDFA\uDDFC\uDDFE])|\uD83C\uDDF8(?:\uD83C[\uDDE6-\uDDEA\uDDEC-\uDDF4\uDDF7-\uDDF9\uDDFB\uDDFD-\uDDFF])|\uD83C\uDDEB(?:\uD83C[\uDDEE-\uDDF0\uDDF2\uDDF4\uDDF7])|\uD83C\uDDF5(?:\uD83C[\uDDE6\uDDEA-\uDDED\uDDF0-\uDDF3\uDDF7-\uDDF9\uDDFC\uDDFE])|\uD83C\uDDFB(?:\uD83C[\uDDE6\uDDE8\uDDEA\uDDEC\uDDEE\uDDF3\uDDFA])|\uD83C\uDDF3(?:\uD83C[\uDDE6\uDDE8\uDDEA-\uDDEC\uDDEE\uDDF1\uDDF4\uDDF5\uDDF7\uDDFA\uDDFF])|\uD83C\uDDE8(?:\uD83C[\uDDE6\uDDE8\uDDE9\uDDEB-\uDDEE\uDDF0-\uDDF5\uDDF7\uDDFA-\uDDFF])|\uD83C\uDDF1(?:\uD83C[\uDDE6-\uDDE8\uDDEE\uDDF0\uDDF7-\uDDFB\uDDFE])|\uD83C\uDDFF(?:\uD83C[\uDDE6\uDDF2\uDDFC])|\uD83C\uDDFC(?:\uD83C[\uDDEB\uDDF8])|\uD83C\uDDFA(?:\uD83C[\uDDE6\uDDEC\uDDF2\uDDF3\uDDF8\uDDFE\uDDFF])|\uD83C\uDDEE(?:\uD83C[\uDDE8-\uDDEA\uDDF1-\uDDF4\uDDF6-\uDDF9])|\uD83C\uDDEF(?:\uD83C[\uDDEA\uDDF2\uDDF4\uDDF5])|(?:\uD83C[\uDFC3\uDFC4\uDFCA]|\uD83D[\uDC6E\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4-\uDEB6]|\uD83E[\uDD26\uDD37-\uDD39\uDD3D\uDD3E\uDDB8\uDDB9\uDDCD-\uDDCF\uDDD6-\uDDDD])(?:\uD83C[\uDFFB-\uDFFF])|(?:\u26F9|\uD83C[\uDFCB\uDFCC]|\uD83D\uDD75)(?:\uD83C[\uDFFB-\uDFFF])|(?:[\u261D\u270A-\u270D]|\uD83C[\uDF85\uDFC2\uDFC7]|\uD83D[\uDC42\uDC43\uDC46-\uDC50\uDC66\uDC67\uDC6B-\uDC6D\uDC70\uDC72\uDC74-\uDC76\uDC78\uDC7C\uDC83\uDC85\uDCAA\uDD74\uDD7A\uDD90\uDD95\uDD96\uDE4C\uDE4F\uDEC0\uDECC]|\uD83E[\uDD0F\uDD18-\uDD1C\uDD1E\uDD1F\uDD30-\uDD36\uDDB5\uDDB6\uDDBB\uDDD2-\uDDD5])(?:\uD83C[\uDFFB-\uDFFF])|(?:[\u231A\u231B\u23E9-\u23EC\u23F0\u23F3\u25FD\u25FE\u2614\u2615\u2648-\u2653\u267F\u2693\u26A1\u26AA\u26AB\u26BD\u26BE\u26C4\u26C5\u26CE\u26D4\u26EA\u26F2\u26F3\u26F5\u26FA\u26FD\u2705\u270A\u270B\u2728\u274C\u274E\u2753-\u2755\u2757\u2795-\u2797\u27B0\u27BF\u2B1B\u2B1C\u2B50\u2B55]|\uD83C[\uDC04\uDCCF\uDD8E\uDD91-\uDD9A\uDDE6-\uDDFF\uDE01\uDE1A\uDE2F\uDE32-\uDE36\uDE38-\uDE3A\uDE50\uDE51\uDF00-\uDF20\uDF2D-\uDF35\uDF37-\uDF7C\uDF7E-\uDF93\uDFA0-\uDFCA\uDFCF-\uDFD3\uDFE0-\uDFF0\uDFF4\uDFF8-\uDFFF]|\uD83D[\uDC00-\uDC3E\uDC40\uDC42-\uDCFC\uDCFF-\uDD3D\uDD4B-\uDD4E\uDD50-\uDD67\uDD7A\uDD95\uDD96\uDDA4\uDDFB-\uDE4F\uDE80-\uDEC5\uDECC\uDED0-\uDED2\uDED5\uDEEB\uDEEC\uDEF4-\uDEFA\uDFE0-\uDFEB]|\uD83E[\uDD0D-\uDD3A\uDD3C-\uDD45\uDD47-\uDD71\uDD73-\uDD76\uDD7A-\uDDA2\uDDA5-\uDDAA\uDDAE-\uDDCA\uDDCD-\uDDFF\uDE70-\uDE73\uDE78-\uDE7A\uDE80-\uDE82\uDE90-\uDE95])|(?:[#\*0-9\xA9\xAE\u203C\u2049\u2122\u2139\u2194-\u2199\u21A9\u21AA\u231A\u231B\u2328\u23CF\u23E9-\u23F3\u23F8-\u23FA\u24C2\u25AA\u25AB\u25B6\u25C0\u25FB-\u25FE\u2600-\u2604\u260E\u2611\u2614\u2615\u2618\u261D\u2620\u2622\u2623\u2626\u262A\u262E\u262F\u2638-\u263A\u2640\u2642\u2648-\u2653\u265F\u2660\u2663\u2665\u2666\u2668\u267B\u267E\u267F\u2692-\u2697\u2699\u269B\u269C\u26A0\u26A1\u26AA\u26AB\u26B0\u26B1\u26BD\u26BE\u26C4\u26C5\u26C8\u26CE\u26CF\u26D1\u26D3\u26D4\u26E9\u26EA\u26F0-\u26F5\u26F7-\u26FA\u26FD\u2702\u2705\u2708-\u270D\u270F\u2712\u2714\u2716\u271D\u2721\u2728\u2733\u2734\u2744\u2747\u274C\u274E\u2753-\u2755\u2757\u2763\u2764\u2795-\u2797\u27A1\u27B0\u27BF\u2934\u2935\u2B05-\u2B07\u2B1B\u2B1C\u2B50\u2B55\u3030\u303D\u3297\u3299]|\uD83C[\uDC04\uDCCF\uDD70\uDD71\uDD7E\uDD7F\uDD8E\uDD91-\uDD9A\uDDE6-\uDDFF\uDE01\uDE02\uDE1A\uDE2F\uDE32-\uDE3A\uDE50\uDE51\uDF00-\uDF21\uDF24-\uDF93\uDF96\uDF97\uDF99-\uDF9B\uDF9E-\uDFF0\uDFF3-\uDFF5\uDFF7-\uDFFF]|\uD83D[\uDC00-\uDCFD\uDCFF-\uDD3D\uDD49-\uDD4E\uDD50-\uDD67\uDD6F\uDD70\uDD73-\uDD7A\uDD87\uDD8A-\uDD8D\uDD90\uDD95\uDD96\uDDA4\uDDA5\uDDA8\uDDB1\uDDB2\uDDBC\uDDC2-\uDDC4\uDDD1-\uDDD3\uDDDC-\uDDDE\uDDE1\uDDE3\uDDE8\uDDEF\uDDF3\uDDFA-\uDE4F\uDE80-\uDEC5\uDECB-\uDED2\uDED5\uDEE0-\uDEE5\uDEE9\uDEEB\uDEEC\uDEF0\uDEF3-\uDEFA\uDFE0-\uDFEB]|\uD83E[\uDD0D-\uDD3A\uDD3C-\uDD45\uDD47-\uDD71\uDD73-\uDD76\uDD7A-\uDDA2\uDDA5-\uDDAA\uDDAE-\uDDCA\uDDCD-\uDDFF\uDE70-\uDE73\uDE78-\uDE7A\uDE80-\uDE82\uDE90-\uDE95])\uFE0F|(?:[\u261D\u26F9\u270A-\u270D]|\uD83C[\uDF85\uDFC2-\uDFC4\uDFC7\uDFCA-\uDFCC]|\uD83D[\uDC42\uDC43\uDC46-\uDC50\uDC66-\uDC78\uDC7C\uDC81-\uDC83\uDC85-\uDC87\uDC8F\uDC91\uDCAA\uDD74\uDD75\uDD7A\uDD90\uDD95\uDD96\uDE45-\uDE47\uDE4B-\uDE4F\uDEA3\uDEB4-\uDEB6\uDEC0\uDECC]|\uD83E[\uDD0F\uDD18-\uDD1F\uDD26\uDD30-\uDD39\uDD3C-\uDD3E\uDDB5\uDDB6\uDDB8\uDDB9\uDDBB\uDDCD-\uDDCF\uDDD1-\uDDDD])/g;
+},{"repeat-string":493}],34:[function(require,module,exports){
+module.exports = function() {
+	return /[\xA9\xAE\u203C\u2049\u2122\u2139\u2194-\u2199\u21A9\u21AA\u231A\u231B\u2328\u23CF\u23E9-\u23F3\u23F8-\u23FA\u24C2\u25AA\u25AB\u25B6\u25C0\u25FB-\u25FE\u2600-\u2604\u260E\u2611\u2614\u2615\u2618\u261D\u2620\u2622\u2623\u2626\u262A\u262E\u262F\u2638-\u263A\u2648-\u2653\u2660\u2663\u2665\u2666\u2668\u267B\u267F\u2692-\u2694\u2696\u2697\u2699\u269B\u269C\u26A0\u26A1\u26AA\u26AB\u26B0\u26B1\u26BD\u26BE\u26C4\u26C5\u26C8\u26CE\u26CF\u26D1\u26D3\u26D4\u26E9\u26EA\u26F0-\u26F5\u26F7-\u26FA\u26FD\u2702\u2705\u2708-\u270D\u270F\u2712\u2714\u2716\u271D\u2721\u2728\u2733\u2734\u2744\u2747\u274C\u274E\u2753-\u2755\u2757\u2763\u2764\u2795-\u2797\u27A1\u27B0\u27BF\u2934\u2935\u2B05-\u2B07\u2B1B\u2B1C\u2B50\u2B55\u3030\u303D\u3297\u3299]|\uD83C[\uDC04\uDCCF\uDD70\uDD71\uDD7E\uDD7F\uDD8E\uDD91-\uDD9A\uDE01\uDE02\uDE1A\uDE2F\uDE32-\uDE3A\uDE50\uDE51\uDF00-\uDF21\uDF24-\uDF93\uDF96\uDF97\uDF99-\uDF9B\uDF9E-\uDFF0\uDFF3-\uDFF5\uDFF7-\uDFFF]|\uD83D[\uDC00-\uDCFD\uDCFF-\uDD3D\uDD49-\uDD4E\uDD50-\uDD67\uDD6F\uDD70\uDD73-\uDD79\uDD87\uDD8A-\uDD8D\uDD90\uDD95\uDD96\uDDA5\uDDA8\uDDB1\uDDB2\uDDBC\uDDC2-\uDDC4\uDDD1-\uDDD3\uDDDC-\uDDDE\uDDE1\uDDE3\uDDEF\uDDF3\uDDFA-\uDE4F\uDE80-\uDEC5\uDECB-\uDED0\uDEE0-\uDEE5\uDEE9\uDEEB\uDEEC\uDEF0\uDEF3]|\uD83E[\uDD10-\uDD18\uDD80-\uDD84\uDDC0]|\uD83C\uDDFF\uD83C[\uDDE6\uDDF2\uDDFC]|\uD83C\uDDFE\uD83C[\uDDEA\uDDF9]|\uD83C\uDDFD\uD83C\uDDF0|\uD83C\uDDFC\uD83C[\uDDEB\uDDF8]|\uD83C\uDDFB\uD83C[\uDDE6\uDDE8\uDDEA\uDDEC\uDDEE\uDDF3\uDDFA]|\uD83C\uDDFA\uD83C[\uDDE6\uDDEC\uDDF2\uDDF8\uDDFE\uDDFF]|\uD83C\uDDF9\uD83C[\uDDE6\uDDE8\uDDE9\uDDEB-\uDDED\uDDEF-\uDDF4\uDDF7\uDDF9\uDDFB\uDDFC\uDDFF]|\uD83C\uDDF8\uD83C[\uDDE6-\uDDEA\uDDEC-\uDDF4\uDDF7-\uDDF9\uDDFB\uDDFD-\uDDFF]|\uD83C\uDDF7\uD83C[\uDDEA\uDDF4\uDDF8\uDDFA\uDDFC]|\uD83C\uDDF6\uD83C\uDDE6|\uD83C\uDDF5\uD83C[\uDDE6\uDDEA-\uDDED\uDDF0-\uDDF3\uDDF7-\uDDF9\uDDFC\uDDFE]|\uD83C\uDDF4\uD83C\uDDF2|\uD83C\uDDF3\uD83C[\uDDE6\uDDE8\uDDEA-\uDDEC\uDDEE\uDDF1\uDDF4\uDDF5\uDDF7\uDDFA\uDDFF]|\uD83C\uDDF2\uD83C[\uDDE6\uDDE8-\uDDED\uDDF0-\uDDFF]|\uD83C\uDDF1\uD83C[\uDDE6-\uDDE8\uDDEE\uDDF0\uDDF7-\uDDFB\uDDFE]|\uD83C\uDDF0\uD83C[\uDDEA\uDDEC-\uDDEE\uDDF2\uDDF3\uDDF5\uDDF7\uDDFC\uDDFE\uDDFF]|\uD83C\uDDEF\uD83C[\uDDEA\uDDF2\uDDF4\uDDF5]|\uD83C\uDDEE\uD83C[\uDDE8-\uDDEA\uDDF1-\uDDF4\uDDF6-\uDDF9]|\uD83C\uDDED\uD83C[\uDDF0\uDDF2\uDDF3\uDDF7\uDDF9\uDDFA]|\uD83C\uDDEC\uD83C[\uDDE6\uDDE7\uDDE9-\uDDEE\uDDF1-\uDDF3\uDDF5-\uDDFA\uDDFC\uDDFE]|\uD83C\uDDEB\uD83C[\uDDEE-\uDDF0\uDDF2\uDDF4\uDDF7]|\uD83C\uDDEA\uD83C[\uDDE6\uDDE8\uDDEA\uDDEC\uDDED\uDDF7-\uDDFA]|\uD83C\uDDE9\uD83C[\uDDEA\uDDEC\uDDEF\uDDF0\uDDF2\uDDF4\uDDFF]|\uD83C\uDDE8\uD83C[\uDDE6\uDDE8\uDDE9\uDDEB-\uDDEE\uDDF0-\uDDF5\uDDF7\uDDFA-\uDDFF]|\uD83C\uDDE7\uD83C[\uDDE6\uDDE7\uDDE9-\uDDEF\uDDF1-\uDDF4\uDDF6-\uDDF9\uDDFB\uDDFC\uDDFE\uDDFF]|\uD83C\uDDE6\uD83C[\uDDE8-\uDDEC\uDDEE\uDDF1\uDDF2\uDDF4\uDDF6-\uDDFA\uDDFC\uDDFD\uDDFF]|[#\*0-9]\u20E3/g;
 };
 
 },{}],35:[function(require,module,exports){
@@ -3195,12 +3192,7 @@ function slugger (string, maintainCase) {
 
 BananaSlug.slug = slugger
 
-},{"emoji-regex":99}],99:[function(require,module,exports){
-module.exports = function() {
-	return /[\xA9\xAE\u203C\u2049\u2122\u2139\u2194-\u2199\u21A9\u21AA\u231A\u231B\u2328\u23CF\u23E9-\u23F3\u23F8-\u23FA\u24C2\u25AA\u25AB\u25B6\u25C0\u25FB-\u25FE\u2600-\u2604\u260E\u2611\u2614\u2615\u2618\u261D\u2620\u2622\u2623\u2626\u262A\u262E\u262F\u2638-\u263A\u2648-\u2653\u2660\u2663\u2665\u2666\u2668\u267B\u267F\u2692-\u2694\u2696\u2697\u2699\u269B\u269C\u26A0\u26A1\u26AA\u26AB\u26B0\u26B1\u26BD\u26BE\u26C4\u26C5\u26C8\u26CE\u26CF\u26D1\u26D3\u26D4\u26E9\u26EA\u26F0-\u26F5\u26F7-\u26FA\u26FD\u2702\u2705\u2708-\u270D\u270F\u2712\u2714\u2716\u271D\u2721\u2728\u2733\u2734\u2744\u2747\u274C\u274E\u2753-\u2755\u2757\u2763\u2764\u2795-\u2797\u27A1\u27B0\u27BF\u2934\u2935\u2B05-\u2B07\u2B1B\u2B1C\u2B50\u2B55\u3030\u303D\u3297\u3299]|\uD83C[\uDC04\uDCCF\uDD70\uDD71\uDD7E\uDD7F\uDD8E\uDD91-\uDD9A\uDE01\uDE02\uDE1A\uDE2F\uDE32-\uDE3A\uDE50\uDE51\uDF00-\uDF21\uDF24-\uDF93\uDF96\uDF97\uDF99-\uDF9B\uDF9E-\uDFF0\uDFF3-\uDFF5\uDFF7-\uDFFF]|\uD83D[\uDC00-\uDCFD\uDCFF-\uDD3D\uDD49-\uDD4E\uDD50-\uDD67\uDD6F\uDD70\uDD73-\uDD79\uDD87\uDD8A-\uDD8D\uDD90\uDD95\uDD96\uDDA5\uDDA8\uDDB1\uDDB2\uDDBC\uDDC2-\uDDC4\uDDD1-\uDDD3\uDDDC-\uDDDE\uDDE1\uDDE3\uDDEF\uDDF3\uDDFA-\uDE4F\uDE80-\uDEC5\uDECB-\uDED0\uDEE0-\uDEE5\uDEE9\uDEEB\uDEEC\uDEF0\uDEF3]|\uD83E[\uDD10-\uDD18\uDD80-\uDD84\uDDC0]|\uD83C\uDDFF\uD83C[\uDDE6\uDDF2\uDDFC]|\uD83C\uDDFE\uD83C[\uDDEA\uDDF9]|\uD83C\uDDFD\uD83C\uDDF0|\uD83C\uDDFC\uD83C[\uDDEB\uDDF8]|\uD83C\uDDFB\uD83C[\uDDE6\uDDE8\uDDEA\uDDEC\uDDEE\uDDF3\uDDFA]|\uD83C\uDDFA\uD83C[\uDDE6\uDDEC\uDDF2\uDDF8\uDDFE\uDDFF]|\uD83C\uDDF9\uD83C[\uDDE6\uDDE8\uDDE9\uDDEB-\uDDED\uDDEF-\uDDF4\uDDF7\uDDF9\uDDFB\uDDFC\uDDFF]|\uD83C\uDDF8\uD83C[\uDDE6-\uDDEA\uDDEC-\uDDF4\uDDF7-\uDDF9\uDDFB\uDDFD-\uDDFF]|\uD83C\uDDF7\uD83C[\uDDEA\uDDF4\uDDF8\uDDFA\uDDFC]|\uD83C\uDDF6\uD83C\uDDE6|\uD83C\uDDF5\uD83C[\uDDE6\uDDEA-\uDDED\uDDF0-\uDDF3\uDDF7-\uDDF9\uDDFC\uDDFE]|\uD83C\uDDF4\uD83C\uDDF2|\uD83C\uDDF3\uD83C[\uDDE6\uDDE8\uDDEA-\uDDEC\uDDEE\uDDF1\uDDF4\uDDF5\uDDF7\uDDFA\uDDFF]|\uD83C\uDDF2\uD83C[\uDDE6\uDDE8-\uDDED\uDDF0-\uDDFF]|\uD83C\uDDF1\uD83C[\uDDE6-\uDDE8\uDDEE\uDDF0\uDDF7-\uDDFB\uDDFE]|\uD83C\uDDF0\uD83C[\uDDEA\uDDEC-\uDDEE\uDDF2\uDDF3\uDDF5\uDDF7\uDDFC\uDDFE\uDDFF]|\uD83C\uDDEF\uD83C[\uDDEA\uDDF2\uDDF4\uDDF5]|\uD83C\uDDEE\uD83C[\uDDE8-\uDDEA\uDDF1-\uDDF4\uDDF6-\uDDF9]|\uD83C\uDDED\uD83C[\uDDF0\uDDF2\uDDF3\uDDF7\uDDF9\uDDFA]|\uD83C\uDDEC\uD83C[\uDDE6\uDDE7\uDDE9-\uDDEE\uDDF1-\uDDF3\uDDF5-\uDDFA\uDDFC\uDDFE]|\uD83C\uDDEB\uD83C[\uDDEE-\uDDF0\uDDF2\uDDF4\uDDF7]|\uD83C\uDDEA\uD83C[\uDDE6\uDDE8\uDDEA\uDDEC\uDDED\uDDF7-\uDDFA]|\uD83C\uDDE9\uD83C[\uDDEA\uDDEC\uDDEF\uDDF0\uDDF2\uDDF4\uDDFF]|\uD83C\uDDE8\uD83C[\uDDE6\uDDE8\uDDE9\uDDEB-\uDDEE\uDDF0-\uDDF5\uDDF7\uDDFA-\uDDFF]|\uD83C\uDDE7\uD83C[\uDDE6\uDDE7\uDDE9-\uDDEF\uDDF1-\uDDF4\uDDF6-\uDDF9\uDDFB\uDDFC\uDDFE\uDDFF]|\uD83C\uDDE6\uD83C[\uDDE8-\uDDEC\uDDEE\uDDF1\uDDF2\uDDF4\uDDF6-\uDDFA\uDDFC\uDDFD\uDDFF]|[#\*0-9]\u20E3/g;
-};
-
-},{}],100:[function(require,module,exports){
+},{"emoji-regex":34}],99:[function(require,module,exports){
 'use strict'
 
 module.exports = isElement
@@ -3247,11 +3239,11 @@ function isElement(node, tagNames) {
   return tagNames.indexOf(name) !== -1
 }
 
-},{}],101:[function(require,module,exports){
+},{}],100:[function(require,module,exports){
 'use strict'
 module.exports = require('./lib')
 
-},{"./lib":103}],102:[function(require,module,exports){
+},{"./lib":102}],101:[function(require,module,exports){
 module.exports={
   "strip": [
     "script"
@@ -3262,10 +3254,6 @@ module.exports={
     "id"
   ],
   "ancestors": {
-    "li": [
-      "ol",
-      "ul"
-    ],
     "tbody": [
       "table"
     ],
@@ -3314,8 +3302,6 @@ module.exports={
     "h4",
     "h5",
     "h6",
-    "h7",
-    "h8",
     "br",
     "b",
     "i",
@@ -3486,7 +3472,7 @@ module.exports={
   }
 }
 
-},{}],103:[function(require,module,exports){
+},{}],102:[function(require,module,exports){
 'use strict'
 
 var xtend = require('xtend')
@@ -3821,10 +3807,10 @@ function handleComment(schema) {
 
 // See <https://html.spec.whatwg.org/multipage/parsing.html#serialising-html-fragments>
 function handleCommentValue(schema, value) {
-  var val = typeof value === 'string' ? value : ''
-  var index = val.indexOf(commentEnd)
+  var result = typeof value === 'string' ? value : ''
+  var index = result.indexOf(commentEnd)
 
-  return index === -1 ? val : val.slice(0, index)
+  return index === -1 ? result : result.slice(0, index)
 }
 
 // Sanitize `value`.
@@ -3862,9 +3848,9 @@ function data(prop) {
   return prop.length > 4 && prop.slice(0, 4).toLowerCase() === 'data'
 }
 
-},{"./github.json":102,"xtend":542}],104:[function(require,module,exports){
-arguments[4][101][0].apply(exports,arguments)
-},{"./lib":110,"dup":101}],105:[function(require,module,exports){
+},{"./github.json":101,"xtend":542}],103:[function(require,module,exports){
+arguments[4][100][0].apply(exports,arguments)
+},{"./lib":109,"dup":100}],104:[function(require,module,exports){
 'use strict'
 
 var one = require('./one')
@@ -3885,7 +3871,7 @@ function all(ctx, parent) {
   return results.join('')
 }
 
-},{"./one":119}],106:[function(require,module,exports){
+},{"./one":118}],105:[function(require,module,exports){
 'use strict'
 
 var xtend = require('xtend')
@@ -3914,7 +3900,7 @@ function serializeComment(ctx, node) {
   }
 }
 
-},{"stringify-entities":503,"xtend":542}],107:[function(require,module,exports){
+},{"stringify-entities":502,"xtend":542}],106:[function(require,module,exports){
 'use strict'
 
 // Characters.
@@ -3987,7 +3973,7 @@ module.exports = {
   ]
 }
 
-},{}],108:[function(require,module,exports){
+},{}],107:[function(require,module,exports){
 'use strict'
 
 var xtend = require('xtend')
@@ -4039,7 +4025,7 @@ function quote(ctx, value) {
   )
 }
 
-},{"ccount":6,"stringify-entities":503,"xtend":542}],109:[function(require,module,exports){
+},{"ccount":6,"stringify-entities":502,"xtend":542}],108:[function(require,module,exports){
 'use strict'
 
 var xtend = require('xtend')
@@ -4288,7 +4274,7 @@ function serializeAttributeValue(ctx, key, value, info) {
   return value
 }
 
-},{"./all":105,"./constants":107,"ccount":6,"comma-separated-tokens":11,"property-information/find":348,"property-information/svg":365,"space-separated-tokens":497,"stringify-entities":503,"xtend":542}],110:[function(require,module,exports){
+},{"./all":104,"./constants":106,"ccount":6,"comma-separated-tokens":11,"property-information/find":377,"property-information/svg":394,"space-separated-tokens":495,"stringify-entities":502,"xtend":542}],109:[function(require,module,exports){
 'use strict'
 
 var html = require('property-information/html')
@@ -4362,7 +4348,7 @@ function toHtml(node, options) {
   )
 }
 
-},{"./omission":112,"./one":119,"html-void-elements":124,"property-information/html":349,"property-information/svg":365}],111:[function(require,module,exports){
+},{"./omission":111,"./one":118,"html-void-elements":313,"property-information/html":378,"property-information/svg":394}],110:[function(require,module,exports){
 'use strict'
 
 var convert = require('unist-util-is/convert')
@@ -4546,12 +4532,12 @@ function cells(node, index, parent) {
   return !next || element(next, tableCell)
 }
 
-},{"./omission":113,"./util/siblings":117,"./util/white-space-start":118,"hast-util-is-element":100,"unist-util-is/convert":526}],112:[function(require,module,exports){
+},{"./omission":112,"./util/siblings":116,"./util/white-space-start":117,"hast-util-is-element":99,"unist-util-is/convert":525}],111:[function(require,module,exports){
 'use strict'
 exports.opening = require('./opening')
 exports.closing = require('./closing')
 
-},{"./closing":111,"./opening":114}],113:[function(require,module,exports){
+},{"./closing":110,"./opening":113}],112:[function(require,module,exports){
 'use strict'
 
 module.exports = omission
@@ -4572,7 +4558,7 @@ function omission(handlers) {
   }
 }
 
-},{}],114:[function(require,module,exports){
+},{}],113:[function(require,module,exports){
 'use strict'
 
 var convert = require('unist-util-is/convert')
@@ -4675,7 +4661,7 @@ function tbody(node, index, parent) {
   return head && element(head, tableRow)
 }
 
-},{"./closing":111,"./omission":113,"./util/first":115,"./util/place":116,"./util/siblings":117,"./util/white-space-start":118,"hast-util-is-element":100,"unist-util-is/convert":526}],115:[function(require,module,exports){
+},{"./closing":110,"./omission":112,"./util/first":114,"./util/place":115,"./util/siblings":116,"./util/white-space-start":117,"hast-util-is-element":99,"unist-util-is/convert":525}],114:[function(require,module,exports){
 'use strict'
 
 var after = require('./siblings').after
@@ -4687,7 +4673,7 @@ function first(parent, includeWhiteSpace) {
   return after(parent, -1, includeWhiteSpace)
 }
 
-},{"./siblings":117}],116:[function(require,module,exports){
+},{"./siblings":116}],115:[function(require,module,exports){
 'use strict'
 
 module.exports = place
@@ -4697,7 +4683,7 @@ function place(parent, child) {
   return parent && parent.children && parent.children.indexOf(child)
 }
 
-},{}],117:[function(require,module,exports){
+},{}],116:[function(require,module,exports){
 'use strict'
 
 var whiteSpace = require('hast-util-whitespace')
@@ -4726,7 +4712,7 @@ function siblings(increment) {
   }
 }
 
-},{"hast-util-whitespace":122}],118:[function(require,module,exports){
+},{"hast-util-whitespace":121}],117:[function(require,module,exports){
 'use strict'
 
 var convert = require('unist-util-is/convert')
@@ -4741,7 +4727,7 @@ function whiteSpaceStart(node) {
   return isText(node) && whiteSpace(node.value.charAt(0))
 }
 
-},{"hast-util-whitespace":122,"unist-util-is/convert":526}],119:[function(require,module,exports){
+},{"hast-util-whitespace":121,"unist-util-is/convert":525}],118:[function(require,module,exports){
 'use strict'
 
 module.exports = serialize
@@ -4771,7 +4757,7 @@ function serialize(ctx, node, index, parent) {
   return handlers[type](ctx, node, index, parent)
 }
 
-},{"./all":105,"./comment":106,"./doctype":108,"./element":109,"./raw":120,"./text":121}],120:[function(require,module,exports){
+},{"./all":104,"./comment":105,"./doctype":107,"./element":108,"./raw":119,"./text":120}],119:[function(require,module,exports){
 'use strict'
 
 var text = require('./text')
@@ -4782,7 +4768,7 @@ function serializeRaw(ctx, node) {
   return ctx.dangerous ? node.value : text(ctx, node)
 }
 
-},{"./text":121}],121:[function(require,module,exports){
+},{"./text":120}],120:[function(require,module,exports){
 'use strict'
 
 var xtend = require('xtend')
@@ -4803,7 +4789,7 @@ function isLiteral(node) {
   return node && (node.tagName === 'script' || node.tagName === 'style')
 }
 
-},{"stringify-entities":503,"xtend":542}],122:[function(require,module,exports){
+},{"stringify-entities":502,"xtend":542}],121:[function(require,module,exports){
 'use strict'
 
 module.exports = interElementWhiteSpace
@@ -4826,1734 +4812,7 @@ function interElementWhiteSpace(node) {
   return value.replace(re, '') === ''
 }
 
-},{}],123:[function(require,module,exports){
-module.exports={
-  "*": [
-    "accesskey",
-    "autocapitalize",
-    "autofocus",
-    "class",
-    "contenteditable",
-    "dir",
-    "draggable",
-    "enterkeyhint",
-    "hidden",
-    "id",
-    "inputmode",
-    "is",
-    "itemid",
-    "itemprop",
-    "itemref",
-    "itemscope",
-    "itemtype",
-    "lang",
-    "nonce",
-    "slot",
-    "spellcheck",
-    "style",
-    "tabindex",
-    "title",
-    "translate"
-  ],
-  "a": [
-    "accesskey",
-    "charset",
-    "coords",
-    "download",
-    "href",
-    "hreflang",
-    "name",
-    "ping",
-    "referrerpolicy",
-    "rel",
-    "rev",
-    "shape",
-    "tabindex",
-    "target",
-    "type"
-  ],
-  "abbr": [
-    "title"
-  ],
-  "applet": [
-    "align",
-    "alt",
-    "archive",
-    "code",
-    "codebase",
-    "height",
-    "hspace",
-    "name",
-    "object",
-    "vspace",
-    "width"
-  ],
-  "area": [
-    "accesskey",
-    "alt",
-    "coords",
-    "download",
-    "href",
-    "hreflang",
-    "nohref",
-    "ping",
-    "referrerpolicy",
-    "rel",
-    "shape",
-    "tabindex",
-    "target",
-    "type"
-  ],
-  "audio": [
-    "autoplay",
-    "controls",
-    "crossorigin",
-    "loop",
-    "muted",
-    "preload",
-    "src"
-  ],
-  "base": [
-    "href",
-    "target"
-  ],
-  "basefont": [
-    "color",
-    "face",
-    "size"
-  ],
-  "bdo": [
-    "dir"
-  ],
-  "blockquote": [
-    "cite"
-  ],
-  "body": [
-    "alink",
-    "background",
-    "bgcolor",
-    "link",
-    "text",
-    "vlink"
-  ],
-  "br": [
-    "clear"
-  ],
-  "button": [
-    "accesskey",
-    "autofocus",
-    "disabled",
-    "form",
-    "formaction",
-    "formenctype",
-    "formmethod",
-    "formnovalidate",
-    "formtarget",
-    "name",
-    "tabindex",
-    "type",
-    "value"
-  ],
-  "canvas": [
-    "height",
-    "width"
-  ],
-  "caption": [
-    "align"
-  ],
-  "col": [
-    "align",
-    "char",
-    "charoff",
-    "span",
-    "valign",
-    "width"
-  ],
-  "colgroup": [
-    "align",
-    "char",
-    "charoff",
-    "span",
-    "valign",
-    "width"
-  ],
-  "data": [
-    "value"
-  ],
-  "del": [
-    "cite",
-    "datetime"
-  ],
-  "details": [
-    "open"
-  ],
-  "dfn": [
-    "title"
-  ],
-  "dialog": [
-    "open"
-  ],
-  "dir": [
-    "compact"
-  ],
-  "div": [
-    "align"
-  ],
-  "dl": [
-    "compact"
-  ],
-  "embed": [
-    "height",
-    "src",
-    "type",
-    "width"
-  ],
-  "fieldset": [
-    "disabled",
-    "form",
-    "name"
-  ],
-  "font": [
-    "color",
-    "face",
-    "size"
-  ],
-  "form": [
-    "accept",
-    "accept-charset",
-    "action",
-    "autocomplete",
-    "enctype",
-    "method",
-    "name",
-    "novalidate",
-    "target"
-  ],
-  "frame": [
-    "frameborder",
-    "longdesc",
-    "marginheight",
-    "marginwidth",
-    "name",
-    "noresize",
-    "scrolling",
-    "src"
-  ],
-  "frameset": [
-    "cols",
-    "rows"
-  ],
-  "h1": [
-    "align"
-  ],
-  "h2": [
-    "align"
-  ],
-  "h3": [
-    "align"
-  ],
-  "h4": [
-    "align"
-  ],
-  "h5": [
-    "align"
-  ],
-  "h6": [
-    "align"
-  ],
-  "head": [
-    "profile"
-  ],
-  "hr": [
-    "align",
-    "noshade",
-    "size",
-    "width"
-  ],
-  "html": [
-    "manifest",
-    "version"
-  ],
-  "iframe": [
-    "align",
-    "allow",
-    "allowfullscreen",
-    "allowpaymentrequest",
-    "allowusermedia",
-    "frameborder",
-    "height",
-    "longdesc",
-    "marginheight",
-    "marginwidth",
-    "name",
-    "referrerpolicy",
-    "sandbox",
-    "scrolling",
-    "src",
-    "srcdoc",
-    "width"
-  ],
-  "img": [
-    "align",
-    "alt",
-    "border",
-    "crossorigin",
-    "decoding",
-    "height",
-    "hspace",
-    "ismap",
-    "longdesc",
-    "name",
-    "referrerpolicy",
-    "sizes",
-    "src",
-    "srcset",
-    "usemap",
-    "vspace",
-    "width"
-  ],
-  "input": [
-    "accept",
-    "accesskey",
-    "align",
-    "alt",
-    "autocomplete",
-    "autofocus",
-    "checked",
-    "dirname",
-    "disabled",
-    "form",
-    "formaction",
-    "formenctype",
-    "formmethod",
-    "formnovalidate",
-    "formtarget",
-    "height",
-    "ismap",
-    "list",
-    "max",
-    "maxlength",
-    "min",
-    "minlength",
-    "multiple",
-    "name",
-    "pattern",
-    "placeholder",
-    "readonly",
-    "required",
-    "size",
-    "src",
-    "step",
-    "tabindex",
-    "title",
-    "type",
-    "usemap",
-    "value",
-    "width"
-  ],
-  "ins": [
-    "cite",
-    "datetime"
-  ],
-  "isindex": [
-    "prompt"
-  ],
-  "label": [
-    "accesskey",
-    "for",
-    "form"
-  ],
-  "legend": [
-    "accesskey",
-    "align"
-  ],
-  "li": [
-    "type",
-    "value"
-  ],
-  "link": [
-    "as",
-    "charset",
-    "color",
-    "crossorigin",
-    "href",
-    "hreflang",
-    "imagesizes",
-    "imagesrcset",
-    "integrity",
-    "media",
-    "nonce",
-    "referrerpolicy",
-    "rel",
-    "rev",
-    "sizes",
-    "target",
-    "title",
-    "type"
-  ],
-  "map": [
-    "name"
-  ],
-  "menu": [
-    "compact"
-  ],
-  "meta": [
-    "charset",
-    "content",
-    "http-equiv",
-    "name",
-    "scheme"
-  ],
-  "meter": [
-    "high",
-    "low",
-    "max",
-    "min",
-    "optimum",
-    "value"
-  ],
-  "object": [
-    "align",
-    "archive",
-    "border",
-    "classid",
-    "codebase",
-    "codetype",
-    "data",
-    "declare",
-    "form",
-    "height",
-    "hspace",
-    "name",
-    "standby",
-    "tabindex",
-    "type",
-    "typemustmatch",
-    "usemap",
-    "vspace",
-    "width"
-  ],
-  "ol": [
-    "compact",
-    "reversed",
-    "start",
-    "type"
-  ],
-  "optgroup": [
-    "disabled",
-    "label"
-  ],
-  "option": [
-    "disabled",
-    "label",
-    "selected",
-    "value"
-  ],
-  "output": [
-    "for",
-    "form",
-    "name"
-  ],
-  "p": [
-    "align"
-  ],
-  "param": [
-    "name",
-    "type",
-    "value",
-    "valuetype"
-  ],
-  "pre": [
-    "width"
-  ],
-  "progress": [
-    "max",
-    "value"
-  ],
-  "q": [
-    "cite"
-  ],
-  "script": [
-    "async",
-    "charset",
-    "crossorigin",
-    "defer",
-    "integrity",
-    "language",
-    "nomodule",
-    "nonce",
-    "referrerpolicy",
-    "src",
-    "type"
-  ],
-  "select": [
-    "autocomplete",
-    "autofocus",
-    "disabled",
-    "form",
-    "multiple",
-    "name",
-    "required",
-    "size",
-    "tabindex"
-  ],
-  "slot": [
-    "name"
-  ],
-  "source": [
-    "media",
-    "sizes",
-    "src",
-    "srcset",
-    "type"
-  ],
-  "style": [
-    "media",
-    "nonce",
-    "title",
-    "type"
-  ],
-  "table": [
-    "align",
-    "bgcolor",
-    "border",
-    "cellpadding",
-    "cellspacing",
-    "frame",
-    "rules",
-    "summary",
-    "width"
-  ],
-  "tbody": [
-    "align",
-    "char",
-    "charoff",
-    "valign"
-  ],
-  "td": [
-    "abbr",
-    "align",
-    "axis",
-    "bgcolor",
-    "char",
-    "charoff",
-    "colspan",
-    "headers",
-    "height",
-    "nowrap",
-    "rowspan",
-    "scope",
-    "valign",
-    "width"
-  ],
-  "textarea": [
-    "accesskey",
-    "autocomplete",
-    "autofocus",
-    "cols",
-    "dirname",
-    "disabled",
-    "form",
-    "maxlength",
-    "minlength",
-    "name",
-    "placeholder",
-    "readonly",
-    "required",
-    "rows",
-    "tabindex",
-    "wrap"
-  ],
-  "tfoot": [
-    "align",
-    "char",
-    "charoff",
-    "valign"
-  ],
-  "th": [
-    "abbr",
-    "align",
-    "axis",
-    "bgcolor",
-    "char",
-    "charoff",
-    "colspan",
-    "headers",
-    "height",
-    "nowrap",
-    "rowspan",
-    "scope",
-    "valign",
-    "width"
-  ],
-  "thead": [
-    "align",
-    "char",
-    "charoff",
-    "valign"
-  ],
-  "time": [
-    "datetime"
-  ],
-  "tr": [
-    "align",
-    "bgcolor",
-    "char",
-    "charoff",
-    "valign"
-  ],
-  "track": [
-    "default",
-    "kind",
-    "label",
-    "src",
-    "srclang"
-  ],
-  "ul": [
-    "compact",
-    "type"
-  ],
-  "video": [
-    "autoplay",
-    "controls",
-    "crossorigin",
-    "height",
-    "loop",
-    "muted",
-    "playsinline",
-    "poster",
-    "preload",
-    "src",
-    "width"
-  ]
-}
-
-},{}],124:[function(require,module,exports){
-module.exports=[
-  "area",
-  "base",
-  "basefont",
-  "bgsound",
-  "br",
-  "col",
-  "command",
-  "embed",
-  "frame",
-  "hr",
-  "image",
-  "img",
-  "input",
-  "isindex",
-  "keygen",
-  "link",
-  "menuitem",
-  "meta",
-  "nextid",
-  "param",
-  "source",
-  "track",
-  "wbr"
-]
-
-},{}],125:[function(require,module,exports){
-module.exports = attributeToProperty
-
-var transform = {
-  'class': 'className',
-  'for': 'htmlFor',
-  'http-equiv': 'httpEquiv'
-}
-
-function attributeToProperty (h) {
-  return function (tagName, attrs, children) {
-    for (var attr in attrs) {
-      if (attr in transform) {
-        attrs[transform[attr]] = attrs[attr]
-        delete attrs[attr]
-      }
-    }
-    return h(tagName, attrs, children)
-  }
-}
-
-},{}],126:[function(require,module,exports){
-var attrToProp = require('hyperscript-attribute-to-property')
-
-var VAR = 0, TEXT = 1, OPEN = 2, CLOSE = 3, ATTR = 4
-var ATTR_KEY = 5, ATTR_KEY_W = 6
-var ATTR_VALUE_W = 7, ATTR_VALUE = 8
-var ATTR_VALUE_SQ = 9, ATTR_VALUE_DQ = 10
-var ATTR_EQ = 11, ATTR_BREAK = 12
-var COMMENT = 13
-
-module.exports = function (h, opts) {
-  if (!opts) opts = {}
-  var concat = opts.concat || function (a, b) {
-    return String(a) + String(b)
-  }
-  if (opts.attrToProp !== false) {
-    h = attrToProp(h)
-  }
-
-  return function (strings) {
-    var state = TEXT, reg = ''
-    var arglen = arguments.length
-    var parts = []
-
-    for (var i = 0; i < strings.length; i++) {
-      if (i < arglen - 1) {
-        var arg = arguments[i+1]
-        var p = parse(strings[i])
-        var xstate = state
-        if (xstate === ATTR_VALUE_DQ) xstate = ATTR_VALUE
-        if (xstate === ATTR_VALUE_SQ) xstate = ATTR_VALUE
-        if (xstate === ATTR_VALUE_W) xstate = ATTR_VALUE
-        if (xstate === ATTR) xstate = ATTR_KEY
-        if (xstate === OPEN) {
-          if (reg === '/') {
-            p.push([ OPEN, '/', arg ])
-            reg = ''
-          } else {
-            p.push([ OPEN, arg ])
-          }
-        } else if (xstate === COMMENT && opts.comments) {
-          reg += String(arg)
-        } else if (xstate !== COMMENT) {
-          p.push([ VAR, xstate, arg ])
-        }
-        parts.push.apply(parts, p)
-      } else parts.push.apply(parts, parse(strings[i]))
-    }
-
-    var tree = [null,{},[]]
-    var stack = [[tree,-1]]
-    for (var i = 0; i < parts.length; i++) {
-      var cur = stack[stack.length-1][0]
-      var p = parts[i], s = p[0]
-      if (s === OPEN && /^\//.test(p[1])) {
-        var ix = stack[stack.length-1][1]
-        if (stack.length > 1) {
-          stack.pop()
-          stack[stack.length-1][0][2][ix] = h(
-            cur[0], cur[1], cur[2].length ? cur[2] : undefined
-          )
-        }
-      } else if (s === OPEN) {
-        var c = [p[1],{},[]]
-        cur[2].push(c)
-        stack.push([c,cur[2].length-1])
-      } else if (s === ATTR_KEY || (s === VAR && p[1] === ATTR_KEY)) {
-        var key = ''
-        var copyKey
-        for (; i < parts.length; i++) {
-          if (parts[i][0] === ATTR_KEY) {
-            key = concat(key, parts[i][1])
-          } else if (parts[i][0] === VAR && parts[i][1] === ATTR_KEY) {
-            if (typeof parts[i][2] === 'object' && !key) {
-              for (copyKey in parts[i][2]) {
-                if (parts[i][2].hasOwnProperty(copyKey) && !cur[1][copyKey]) {
-                  cur[1][copyKey] = parts[i][2][copyKey]
-                }
-              }
-            } else {
-              key = concat(key, parts[i][2])
-            }
-          } else break
-        }
-        if (parts[i][0] === ATTR_EQ) i++
-        var j = i
-        for (; i < parts.length; i++) {
-          if (parts[i][0] === ATTR_VALUE || parts[i][0] === ATTR_KEY) {
-            if (!cur[1][key]) cur[1][key] = strfn(parts[i][1])
-            else parts[i][1]==="" || (cur[1][key] = concat(cur[1][key], parts[i][1]));
-          } else if (parts[i][0] === VAR
-          && (parts[i][1] === ATTR_VALUE || parts[i][1] === ATTR_KEY)) {
-            if (!cur[1][key]) cur[1][key] = strfn(parts[i][2])
-            else parts[i][2]==="" || (cur[1][key] = concat(cur[1][key], parts[i][2]));
-          } else {
-            if (key.length && !cur[1][key] && i === j
-            && (parts[i][0] === CLOSE || parts[i][0] === ATTR_BREAK)) {
-              // https://html.spec.whatwg.org/multipage/infrastructure.html#boolean-attributes
-              // empty string is falsy, not well behaved value in browser
-              cur[1][key] = key.toLowerCase()
-            }
-            if (parts[i][0] === CLOSE) {
-              i--
-            }
-            break
-          }
-        }
-      } else if (s === ATTR_KEY) {
-        cur[1][p[1]] = true
-      } else if (s === VAR && p[1] === ATTR_KEY) {
-        cur[1][p[2]] = true
-      } else if (s === CLOSE) {
-        if (selfClosing(cur[0]) && stack.length) {
-          var ix = stack[stack.length-1][1]
-          stack.pop()
-          stack[stack.length-1][0][2][ix] = h(
-            cur[0], cur[1], cur[2].length ? cur[2] : undefined
-          )
-        }
-      } else if (s === VAR && p[1] === TEXT) {
-        if (p[2] === undefined || p[2] === null) p[2] = ''
-        else if (!p[2]) p[2] = concat('', p[2])
-        if (Array.isArray(p[2][0])) {
-          cur[2].push.apply(cur[2], p[2])
-        } else {
-          cur[2].push(p[2])
-        }
-      } else if (s === TEXT) {
-        cur[2].push(p[1])
-      } else if (s === ATTR_EQ || s === ATTR_BREAK) {
-        // no-op
-      } else {
-        throw new Error('unhandled: ' + s)
-      }
-    }
-
-    if (tree[2].length > 1 && /^\s*$/.test(tree[2][0])) {
-      tree[2].shift()
-    }
-
-    if (tree[2].length > 2
-    || (tree[2].length === 2 && /\S/.test(tree[2][1]))) {
-      if (opts.createFragment) return opts.createFragment(tree[2])
-      throw new Error(
-        'multiple root elements must be wrapped in an enclosing tag'
-      )
-    }
-    if (Array.isArray(tree[2][0]) && typeof tree[2][0][0] === 'string'
-    && Array.isArray(tree[2][0][2])) {
-      tree[2][0] = h(tree[2][0][0], tree[2][0][1], tree[2][0][2])
-    }
-    return tree[2][0]
-
-    function parse (str) {
-      var res = []
-      if (state === ATTR_VALUE_W) state = ATTR
-      for (var i = 0; i < str.length; i++) {
-        var c = str.charAt(i)
-        if (state === TEXT && c === '<') {
-          if (reg.length) res.push([TEXT, reg])
-          reg = ''
-          state = OPEN
-        } else if (c === '>' && !quot(state) && state !== COMMENT) {
-          if (state === OPEN && reg.length) {
-            res.push([OPEN,reg])
-          } else if (state === ATTR_KEY) {
-            res.push([ATTR_KEY,reg])
-          } else if (state === ATTR_VALUE && reg.length) {
-            res.push([ATTR_VALUE,reg])
-          }
-          res.push([CLOSE])
-          reg = ''
-          state = TEXT
-        } else if (state === COMMENT && /-$/.test(reg) && c === '-') {
-          if (opts.comments) {
-            res.push([ATTR_VALUE,reg.substr(0, reg.length - 1)])
-          }
-          reg = ''
-          state = TEXT
-        } else if (state === OPEN && /^!--$/.test(reg)) {
-          if (opts.comments) {
-            res.push([OPEN, reg],[ATTR_KEY,'comment'],[ATTR_EQ])
-          }
-          reg = c
-          state = COMMENT
-        } else if (state === TEXT || state === COMMENT) {
-          reg += c
-        } else if (state === OPEN && c === '/' && reg.length) {
-          // no-op, self closing tag without a space <br/>
-        } else if (state === OPEN && /\s/.test(c)) {
-          if (reg.length) {
-            res.push([OPEN, reg])
-          }
-          reg = ''
-          state = ATTR
-        } else if (state === OPEN) {
-          reg += c
-        } else if (state === ATTR && /[^\s"'=/]/.test(c)) {
-          state = ATTR_KEY
-          reg = c
-        } else if (state === ATTR && /\s/.test(c)) {
-          if (reg.length) res.push([ATTR_KEY,reg])
-          res.push([ATTR_BREAK])
-        } else if (state === ATTR_KEY && /\s/.test(c)) {
-          res.push([ATTR_KEY,reg])
-          reg = ''
-          state = ATTR_KEY_W
-        } else if (state === ATTR_KEY && c === '=') {
-          res.push([ATTR_KEY,reg],[ATTR_EQ])
-          reg = ''
-          state = ATTR_VALUE_W
-        } else if (state === ATTR_KEY) {
-          reg += c
-        } else if ((state === ATTR_KEY_W || state === ATTR) && c === '=') {
-          res.push([ATTR_EQ])
-          state = ATTR_VALUE_W
-        } else if ((state === ATTR_KEY_W || state === ATTR) && !/\s/.test(c)) {
-          res.push([ATTR_BREAK])
-          if (/[\w-]/.test(c)) {
-            reg += c
-            state = ATTR_KEY
-          } else state = ATTR
-        } else if (state === ATTR_VALUE_W && c === '"') {
-          state = ATTR_VALUE_DQ
-        } else if (state === ATTR_VALUE_W && c === "'") {
-          state = ATTR_VALUE_SQ
-        } else if (state === ATTR_VALUE_DQ && c === '"') {
-          res.push([ATTR_VALUE,reg],[ATTR_BREAK])
-          reg = ''
-          state = ATTR
-        } else if (state === ATTR_VALUE_SQ && c === "'") {
-          res.push([ATTR_VALUE,reg],[ATTR_BREAK])
-          reg = ''
-          state = ATTR
-        } else if (state === ATTR_VALUE_W && !/\s/.test(c)) {
-          state = ATTR_VALUE
-          i--
-        } else if (state === ATTR_VALUE && /\s/.test(c)) {
-          res.push([ATTR_VALUE,reg],[ATTR_BREAK])
-          reg = ''
-          state = ATTR
-        } else if (state === ATTR_VALUE || state === ATTR_VALUE_SQ
-        || state === ATTR_VALUE_DQ) {
-          reg += c
-        }
-      }
-      if (state === TEXT && reg.length) {
-        res.push([TEXT,reg])
-        reg = ''
-      } else if (state === ATTR_VALUE && reg.length) {
-        res.push([ATTR_VALUE,reg])
-        reg = ''
-      } else if (state === ATTR_VALUE_DQ && reg.length) {
-        res.push([ATTR_VALUE,reg])
-        reg = ''
-      } else if (state === ATTR_VALUE_SQ && reg.length) {
-        res.push([ATTR_VALUE,reg])
-        reg = ''
-      } else if (state === ATTR_KEY) {
-        res.push([ATTR_KEY,reg])
-        reg = ''
-      }
-      return res
-    }
-  }
-
-  function strfn (x) {
-    if (typeof x === 'function') return x
-    else if (typeof x === 'string') return x
-    else if (x && typeof x === 'object') return x
-    else if (x === null || x === undefined) return x
-    else return concat('', x)
-  }
-}
-
-function quot (state) {
-  return state === ATTR_VALUE_SQ || state === ATTR_VALUE_DQ
-}
-
-var closeRE = RegExp('^(' + [
-  'area', 'base', 'basefont', 'bgsound', 'br', 'col', 'command', 'embed',
-  'frame', 'hr', 'img', 'input', 'isindex', 'keygen', 'link', 'meta', 'param',
-  'source', 'track', 'wbr', '!--',
-  // SVG TAGS
-  'animate', 'animateTransform', 'circle', 'cursor', 'desc', 'ellipse',
-  'feBlend', 'feColorMatrix', 'feComposite',
-  'feConvolveMatrix', 'feDiffuseLighting', 'feDisplacementMap',
-  'feDistantLight', 'feFlood', 'feFuncA', 'feFuncB', 'feFuncG', 'feFuncR',
-  'feGaussianBlur', 'feImage', 'feMergeNode', 'feMorphology',
-  'feOffset', 'fePointLight', 'feSpecularLighting', 'feSpotLight', 'feTile',
-  'feTurbulence', 'font-face-format', 'font-face-name', 'font-face-uri',
-  'glyph', 'glyphRef', 'hkern', 'image', 'line', 'missing-glyph', 'mpath',
-  'path', 'polygon', 'polyline', 'rect', 'set', 'stop', 'tref', 'use', 'view',
-  'vkern'
-].join('|') + ')(?:[\.#][a-zA-Z0-9\u007F-\uFFFF_:-]+)*$')
-function selfClosing (tag) { return closeRE.test(tag) }
-
-},{"hyperscript-attribute-to-property":125}],127:[function(require,module,exports){
-if (typeof Object.create === 'function') {
-  // implementation from standard node.js 'util' module
-  module.exports = function inherits(ctor, superCtor) {
-    if (superCtor) {
-      ctor.super_ = superCtor
-      ctor.prototype = Object.create(superCtor.prototype, {
-        constructor: {
-          value: ctor,
-          enumerable: false,
-          writable: true,
-          configurable: true
-        }
-      })
-    }
-  };
-} else {
-  // old school shim for old browsers
-  module.exports = function inherits(ctor, superCtor) {
-    if (superCtor) {
-      ctor.super_ = superCtor
-      var TempCtor = function () {}
-      TempCtor.prototype = superCtor.prototype
-      ctor.prototype = new TempCtor()
-      ctor.prototype.constructor = ctor
-    }
-  }
-}
-
-},{}],128:[function(require,module,exports){
-var inserted = {};
-
-module.exports = function (css, options) {
-    if (inserted[css]) return;
-    inserted[css] = true;
-    
-    var elem = document.createElement('style');
-    elem.setAttribute('type', 'text/css');
-
-    if ('textContent' in elem) {
-      elem.textContent = css;
-    } else {
-      elem.styleSheet.cssText = css;
-    }
-    
-    var head = document.getElementsByTagName('head')[0];
-    if (options && options.prepend) {
-        head.insertBefore(elem, head.childNodes[0]);
-    } else {
-        head.appendChild(elem);
-    }
-};
-
-},{}],129:[function(require,module,exports){
-'use strict';
-
-module.exports = url => {
-	if (typeof url !== 'string') {
-		throw new TypeError(`Expected a \`string\`, got \`${typeof url}\``);
-	}
-
-	// Don't match Windows paths `c:\`
-	if (/^[a-zA-Z]:\\/.test(url)) {
-		return false;
-	}
-
-	// Scheme: https://tools.ietf.org/html/rfc3986#section-3.1
-	// Absolute URL: https://tools.ietf.org/html/rfc3986#section-4.3
-	return /^[a-zA-Z][a-zA-Z\d+\-.]*:/.test(url);
-};
-
-},{}],130:[function(require,module,exports){
-'use strict'
-
-module.exports = alphabetical
-
-// Check if the given character code, or the character code at the first
-// character, is alphabetical.
-function alphabetical(character) {
-  var code = typeof character === 'string' ? character.charCodeAt(0) : character
-
-  return (
-    (code >= 97 && code <= 122) /* a-z */ ||
-    (code >= 65 && code <= 90) /* A-Z */
-  )
-}
-
-},{}],131:[function(require,module,exports){
-'use strict';
-module.exports = function (str) {
-	if (typeof str !== 'string') {
-		throw new TypeError('Expected a string');
-	}
-
-	return !/[^0-9a-z\xDF-\xFF]/.test(str.toLowerCase());
-};
-
-},{}],132:[function(require,module,exports){
-'use strict'
-
-var alphabetical = require('is-alphabetical')
-var decimal = require('is-decimal')
-
-module.exports = alphanumerical
-
-// Check if the given character code, or the character code at the first
-// character, is alphanumerical.
-function alphanumerical(character) {
-  return alphabetical(character) || decimal(character)
-}
-
-},{"is-alphabetical":130,"is-decimal":133}],133:[function(require,module,exports){
-'use strict'
-
-module.exports = decimal
-
-// Check if the given character code, or the character code at the first
-// character, is decimal.
-function decimal(character) {
-  var code = typeof character === 'string' ? character.charCodeAt(0) : character
-
-  return code >= 48 && code <= 57 /* 0-9 */
-}
-
-},{}],134:[function(require,module,exports){
-/* eslint-disable yoda */
-'use strict';
-
-const isFullwidthCodePoint = codePoint => {
-	if (Number.isNaN(codePoint)) {
-		return false;
-	}
-
-	// Code points are derived from:
-	// http://www.unix.org/Public/UNIDATA/EastAsianWidth.txt
-	if (
-		codePoint >= 0x1100 && (
-			codePoint <= 0x115F || // Hangul Jamo
-			codePoint === 0x2329 || // LEFT-POINTING ANGLE BRACKET
-			codePoint === 0x232A || // RIGHT-POINTING ANGLE BRACKET
-			// CJK Radicals Supplement .. Enclosed CJK Letters and Months
-			(0x2E80 <= codePoint && codePoint <= 0x3247 && codePoint !== 0x303F) ||
-			// Enclosed CJK Letters and Months .. CJK Unified Ideographs Extension A
-			(0x3250 <= codePoint && codePoint <= 0x4DBF) ||
-			// CJK Unified Ideographs .. Yi Radicals
-			(0x4E00 <= codePoint && codePoint <= 0xA4C6) ||
-			// Hangul Jamo Extended-A
-			(0xA960 <= codePoint && codePoint <= 0xA97C) ||
-			// Hangul Syllables
-			(0xAC00 <= codePoint && codePoint <= 0xD7A3) ||
-			// CJK Compatibility Ideographs
-			(0xF900 <= codePoint && codePoint <= 0xFAFF) ||
-			// Vertical Forms
-			(0xFE10 <= codePoint && codePoint <= 0xFE19) ||
-			// CJK Compatibility Forms .. Small Form Variants
-			(0xFE30 <= codePoint && codePoint <= 0xFE6B) ||
-			// Halfwidth and Fullwidth Forms
-			(0xFF01 <= codePoint && codePoint <= 0xFF60) ||
-			(0xFFE0 <= codePoint && codePoint <= 0xFFE6) ||
-			// Kana Supplement
-			(0x1B000 <= codePoint && codePoint <= 0x1B001) ||
-			// Enclosed Ideographic Supplement
-			(0x1F200 <= codePoint && codePoint <= 0x1F251) ||
-			// CJK Unified Ideographs Extension B .. Tertiary Ideographic Plane
-			(0x20000 <= codePoint && codePoint <= 0x3FFFD)
-		)
-	) {
-		return true;
-	}
-
-	return false;
-};
-
-module.exports = isFullwidthCodePoint;
-module.exports.default = isFullwidthCodePoint;
-
-},{}],135:[function(require,module,exports){
-'use strict'
-
-module.exports = hexadecimal
-
-// Check if the given character code, or the character code at the first
-// character, is hexadecimal.
-function hexadecimal(character) {
-  var code = typeof character === 'string' ? character.charCodeAt(0) : character
-
-  return (
-    (code >= 97 /* a */ && code <= 102) /* z */ ||
-    (code >= 65 /* A */ && code <= 70) /* Z */ ||
-    (code >= 48 /* A */ && code <= 57) /* Z */
-  )
-}
-
-},{}],136:[function(require,module,exports){
-'use strict';
-
-module.exports = value => {
-	if (Object.prototype.toString.call(value) !== '[object Object]') {
-		return false;
-	}
-
-	const prototype = Object.getPrototypeOf(value);
-	return prototype === null || prototype === Object.prototype;
-};
-
-},{}],137:[function(require,module,exports){
-'use strict'
-
-module.exports = whitespace
-
-var fromCode = String.fromCharCode
-var re = /\s/
-
-// Check if the given character code, or the character code at the first
-// character, is a whitespace character.
-function whitespace(character) {
-  return re.test(
-    typeof character === 'number' ? fromCode(character) : character.charAt(0)
-  )
-}
-
-},{}],138:[function(require,module,exports){
-'use strict'
-
-module.exports = wordCharacter
-
-var fromCode = String.fromCharCode
-var re = /\w/
-
-// Check if the given character code, or the character code at the first
-// character, is a word character.
-function wordCharacter(character) {
-  return re.test(
-    typeof character === 'number' ? fromCode(character) : character.charAt(0)
-  )
-}
-
-},{}],139:[function(require,module,exports){
-'use strict'
-
-module.exports = longestStreak
-
-// Get the count of the longest repeating streak of `character` in `value`.
-function longestStreak(value, character) {
-  var count = 0
-  var maximum = 0
-  var expected
-  var index
-
-  if (typeof character !== 'string' || character.length !== 1) {
-    throw new Error('Expected character')
-  }
-
-  value = String(value)
-  index = value.indexOf(character)
-  expected = index
-
-  while (index !== -1) {
-    count++
-
-    if (index === expected) {
-      if (count > maximum) {
-        maximum = count
-      }
-    } else {
-      count = 1
-    }
-
-    expected = index + 1
-    index = value.indexOf(character, expected)
-  }
-
-  return maximum
-}
-
-},{}],140:[function(require,module,exports){
-'use strict'
-
-var low = require('./lib/core.js')
-
-module.exports = low
-
-low.registerLanguage('1c', require('highlight.js/lib/languages/1c'))
-low.registerLanguage('abnf', require('highlight.js/lib/languages/abnf'))
-low.registerLanguage(
-  'accesslog',
-  require('highlight.js/lib/languages/accesslog')
-)
-low.registerLanguage(
-  'actionscript',
-  require('highlight.js/lib/languages/actionscript')
-)
-low.registerLanguage('ada', require('highlight.js/lib/languages/ada'))
-low.registerLanguage(
-  'angelscript',
-  require('highlight.js/lib/languages/angelscript')
-)
-low.registerLanguage('apache', require('highlight.js/lib/languages/apache'))
-low.registerLanguage(
-  'applescript',
-  require('highlight.js/lib/languages/applescript')
-)
-low.registerLanguage('arcade', require('highlight.js/lib/languages/arcade'))
-low.registerLanguage('c-like', require('highlight.js/lib/languages/c-like'))
-low.registerLanguage('cpp', require('highlight.js/lib/languages/cpp'))
-low.registerLanguage('arduino', require('highlight.js/lib/languages/arduino'))
-low.registerLanguage('armasm', require('highlight.js/lib/languages/armasm'))
-low.registerLanguage('xml', require('highlight.js/lib/languages/xml'))
-low.registerLanguage('asciidoc', require('highlight.js/lib/languages/asciidoc'))
-low.registerLanguage('aspectj', require('highlight.js/lib/languages/aspectj'))
-low.registerLanguage(
-  'autohotkey',
-  require('highlight.js/lib/languages/autohotkey')
-)
-low.registerLanguage('autoit', require('highlight.js/lib/languages/autoit'))
-low.registerLanguage('avrasm', require('highlight.js/lib/languages/avrasm'))
-low.registerLanguage('awk', require('highlight.js/lib/languages/awk'))
-low.registerLanguage('axapta', require('highlight.js/lib/languages/axapta'))
-low.registerLanguage('bash', require('highlight.js/lib/languages/bash'))
-low.registerLanguage('basic', require('highlight.js/lib/languages/basic'))
-low.registerLanguage('bnf', require('highlight.js/lib/languages/bnf'))
-low.registerLanguage(
-  'brainfuck',
-  require('highlight.js/lib/languages/brainfuck')
-)
-low.registerLanguage('c', require('highlight.js/lib/languages/c'))
-low.registerLanguage('cal', require('highlight.js/lib/languages/cal'))
-low.registerLanguage(
-  'capnproto',
-  require('highlight.js/lib/languages/capnproto')
-)
-low.registerLanguage('ceylon', require('highlight.js/lib/languages/ceylon'))
-low.registerLanguage('clean', require('highlight.js/lib/languages/clean'))
-low.registerLanguage('clojure', require('highlight.js/lib/languages/clojure'))
-low.registerLanguage(
-  'clojure-repl',
-  require('highlight.js/lib/languages/clojure-repl')
-)
-low.registerLanguage('cmake', require('highlight.js/lib/languages/cmake'))
-low.registerLanguage(
-  'coffeescript',
-  require('highlight.js/lib/languages/coffeescript')
-)
-low.registerLanguage('coq', require('highlight.js/lib/languages/coq'))
-low.registerLanguage('cos', require('highlight.js/lib/languages/cos'))
-low.registerLanguage('crmsh', require('highlight.js/lib/languages/crmsh'))
-low.registerLanguage('crystal', require('highlight.js/lib/languages/crystal'))
-low.registerLanguage('csharp', require('highlight.js/lib/languages/csharp'))
-low.registerLanguage('csp', require('highlight.js/lib/languages/csp'))
-low.registerLanguage('css', require('highlight.js/lib/languages/css'))
-low.registerLanguage('d', require('highlight.js/lib/languages/d'))
-low.registerLanguage('markdown', require('highlight.js/lib/languages/markdown'))
-low.registerLanguage('dart', require('highlight.js/lib/languages/dart'))
-low.registerLanguage('delphi', require('highlight.js/lib/languages/delphi'))
-low.registerLanguage('diff', require('highlight.js/lib/languages/diff'))
-low.registerLanguage('django', require('highlight.js/lib/languages/django'))
-low.registerLanguage('dns', require('highlight.js/lib/languages/dns'))
-low.registerLanguage(
-  'dockerfile',
-  require('highlight.js/lib/languages/dockerfile')
-)
-low.registerLanguage('dos', require('highlight.js/lib/languages/dos'))
-low.registerLanguage('dsconfig', require('highlight.js/lib/languages/dsconfig'))
-low.registerLanguage('dts', require('highlight.js/lib/languages/dts'))
-low.registerLanguage('dust', require('highlight.js/lib/languages/dust'))
-low.registerLanguage('ebnf', require('highlight.js/lib/languages/ebnf'))
-low.registerLanguage('elixir', require('highlight.js/lib/languages/elixir'))
-low.registerLanguage('elm', require('highlight.js/lib/languages/elm'))
-low.registerLanguage('ruby', require('highlight.js/lib/languages/ruby'))
-low.registerLanguage('erb', require('highlight.js/lib/languages/erb'))
-low.registerLanguage(
-  'erlang-repl',
-  require('highlight.js/lib/languages/erlang-repl')
-)
-low.registerLanguage('erlang', require('highlight.js/lib/languages/erlang'))
-low.registerLanguage('excel', require('highlight.js/lib/languages/excel'))
-low.registerLanguage('fix', require('highlight.js/lib/languages/fix'))
-low.registerLanguage('flix', require('highlight.js/lib/languages/flix'))
-low.registerLanguage('fortran', require('highlight.js/lib/languages/fortran'))
-low.registerLanguage('fsharp', require('highlight.js/lib/languages/fsharp'))
-low.registerLanguage('gams', require('highlight.js/lib/languages/gams'))
-low.registerLanguage('gauss', require('highlight.js/lib/languages/gauss'))
-low.registerLanguage('gcode', require('highlight.js/lib/languages/gcode'))
-low.registerLanguage('gherkin', require('highlight.js/lib/languages/gherkin'))
-low.registerLanguage('glsl', require('highlight.js/lib/languages/glsl'))
-low.registerLanguage('gml', require('highlight.js/lib/languages/gml'))
-low.registerLanguage('go', require('highlight.js/lib/languages/go'))
-low.registerLanguage('golo', require('highlight.js/lib/languages/golo'))
-low.registerLanguage('gradle', require('highlight.js/lib/languages/gradle'))
-low.registerLanguage('groovy', require('highlight.js/lib/languages/groovy'))
-low.registerLanguage('haml', require('highlight.js/lib/languages/haml'))
-low.registerLanguage(
-  'handlebars',
-  require('highlight.js/lib/languages/handlebars')
-)
-low.registerLanguage('haskell', require('highlight.js/lib/languages/haskell'))
-low.registerLanguage('haxe', require('highlight.js/lib/languages/haxe'))
-low.registerLanguage('hsp', require('highlight.js/lib/languages/hsp'))
-low.registerLanguage('htmlbars', require('highlight.js/lib/languages/htmlbars'))
-low.registerLanguage('http', require('highlight.js/lib/languages/http'))
-low.registerLanguage('hy', require('highlight.js/lib/languages/hy'))
-low.registerLanguage('inform7', require('highlight.js/lib/languages/inform7'))
-low.registerLanguage('ini', require('highlight.js/lib/languages/ini'))
-low.registerLanguage('irpf90', require('highlight.js/lib/languages/irpf90'))
-low.registerLanguage('isbl', require('highlight.js/lib/languages/isbl'))
-low.registerLanguage('java', require('highlight.js/lib/languages/java'))
-low.registerLanguage(
-  'javascript',
-  require('highlight.js/lib/languages/javascript')
-)
-low.registerLanguage(
-  'jboss-cli',
-  require('highlight.js/lib/languages/jboss-cli')
-)
-low.registerLanguage('json', require('highlight.js/lib/languages/json'))
-low.registerLanguage('julia', require('highlight.js/lib/languages/julia'))
-low.registerLanguage(
-  'julia-repl',
-  require('highlight.js/lib/languages/julia-repl')
-)
-low.registerLanguage('kotlin', require('highlight.js/lib/languages/kotlin'))
-low.registerLanguage('lasso', require('highlight.js/lib/languages/lasso'))
-low.registerLanguage('latex', require('highlight.js/lib/languages/latex'))
-low.registerLanguage('ldif', require('highlight.js/lib/languages/ldif'))
-low.registerLanguage('leaf', require('highlight.js/lib/languages/leaf'))
-low.registerLanguage('less', require('highlight.js/lib/languages/less'))
-low.registerLanguage('lisp', require('highlight.js/lib/languages/lisp'))
-low.registerLanguage(
-  'livecodeserver',
-  require('highlight.js/lib/languages/livecodeserver')
-)
-low.registerLanguage(
-  'livescript',
-  require('highlight.js/lib/languages/livescript')
-)
-low.registerLanguage('llvm', require('highlight.js/lib/languages/llvm'))
-low.registerLanguage('lsl', require('highlight.js/lib/languages/lsl'))
-low.registerLanguage('lua', require('highlight.js/lib/languages/lua'))
-low.registerLanguage('makefile', require('highlight.js/lib/languages/makefile'))
-low.registerLanguage(
-  'mathematica',
-  require('highlight.js/lib/languages/mathematica')
-)
-low.registerLanguage('matlab', require('highlight.js/lib/languages/matlab'))
-low.registerLanguage('maxima', require('highlight.js/lib/languages/maxima'))
-low.registerLanguage('mel', require('highlight.js/lib/languages/mel'))
-low.registerLanguage('mercury', require('highlight.js/lib/languages/mercury'))
-low.registerLanguage('mipsasm', require('highlight.js/lib/languages/mipsasm'))
-low.registerLanguage('mizar', require('highlight.js/lib/languages/mizar'))
-low.registerLanguage('perl', require('highlight.js/lib/languages/perl'))
-low.registerLanguage(
-  'mojolicious',
-  require('highlight.js/lib/languages/mojolicious')
-)
-low.registerLanguage('monkey', require('highlight.js/lib/languages/monkey'))
-low.registerLanguage(
-  'moonscript',
-  require('highlight.js/lib/languages/moonscript')
-)
-low.registerLanguage('n1ql', require('highlight.js/lib/languages/n1ql'))
-low.registerLanguage('nginx', require('highlight.js/lib/languages/nginx'))
-low.registerLanguage('nim', require('highlight.js/lib/languages/nim'))
-low.registerLanguage('nix', require('highlight.js/lib/languages/nix'))
-low.registerLanguage('nsis', require('highlight.js/lib/languages/nsis'))
-low.registerLanguage(
-  'objectivec',
-  require('highlight.js/lib/languages/objectivec')
-)
-low.registerLanguage('ocaml', require('highlight.js/lib/languages/ocaml'))
-low.registerLanguage('openscad', require('highlight.js/lib/languages/openscad'))
-low.registerLanguage('oxygene', require('highlight.js/lib/languages/oxygene'))
-low.registerLanguage('parser3', require('highlight.js/lib/languages/parser3'))
-low.registerLanguage('pf', require('highlight.js/lib/languages/pf'))
-low.registerLanguage('pgsql', require('highlight.js/lib/languages/pgsql'))
-low.registerLanguage('php', require('highlight.js/lib/languages/php'))
-low.registerLanguage(
-  'php-template',
-  require('highlight.js/lib/languages/php-template')
-)
-low.registerLanguage(
-  'plaintext',
-  require('highlight.js/lib/languages/plaintext')
-)
-low.registerLanguage('pony', require('highlight.js/lib/languages/pony'))
-low.registerLanguage(
-  'powershell',
-  require('highlight.js/lib/languages/powershell')
-)
-low.registerLanguage(
-  'processing',
-  require('highlight.js/lib/languages/processing')
-)
-low.registerLanguage('profile', require('highlight.js/lib/languages/profile'))
-low.registerLanguage('prolog', require('highlight.js/lib/languages/prolog'))
-low.registerLanguage(
-  'properties',
-  require('highlight.js/lib/languages/properties')
-)
-low.registerLanguage('protobuf', require('highlight.js/lib/languages/protobuf'))
-low.registerLanguage('puppet', require('highlight.js/lib/languages/puppet'))
-low.registerLanguage(
-  'purebasic',
-  require('highlight.js/lib/languages/purebasic')
-)
-low.registerLanguage('python', require('highlight.js/lib/languages/python'))
-low.registerLanguage(
-  'python-repl',
-  require('highlight.js/lib/languages/python-repl')
-)
-low.registerLanguage('q', require('highlight.js/lib/languages/q'))
-low.registerLanguage('qml', require('highlight.js/lib/languages/qml'))
-low.registerLanguage('r', require('highlight.js/lib/languages/r'))
-low.registerLanguage('reasonml', require('highlight.js/lib/languages/reasonml'))
-low.registerLanguage('rib', require('highlight.js/lib/languages/rib'))
-low.registerLanguage('roboconf', require('highlight.js/lib/languages/roboconf'))
-low.registerLanguage('routeros', require('highlight.js/lib/languages/routeros'))
-low.registerLanguage('rsl', require('highlight.js/lib/languages/rsl'))
-low.registerLanguage(
-  'ruleslanguage',
-  require('highlight.js/lib/languages/ruleslanguage')
-)
-low.registerLanguage('rust', require('highlight.js/lib/languages/rust'))
-low.registerLanguage('sas', require('highlight.js/lib/languages/sas'))
-low.registerLanguage('scala', require('highlight.js/lib/languages/scala'))
-low.registerLanguage('scheme', require('highlight.js/lib/languages/scheme'))
-low.registerLanguage('scilab', require('highlight.js/lib/languages/scilab'))
-low.registerLanguage('scss', require('highlight.js/lib/languages/scss'))
-low.registerLanguage('shell', require('highlight.js/lib/languages/shell'))
-low.registerLanguage('smali', require('highlight.js/lib/languages/smali'))
-low.registerLanguage(
-  'smalltalk',
-  require('highlight.js/lib/languages/smalltalk')
-)
-low.registerLanguage('sml', require('highlight.js/lib/languages/sml'))
-low.registerLanguage('sqf', require('highlight.js/lib/languages/sqf'))
-low.registerLanguage('sql', require('highlight.js/lib/languages/sql'))
-low.registerLanguage('stan', require('highlight.js/lib/languages/stan'))
-low.registerLanguage('stata', require('highlight.js/lib/languages/stata'))
-low.registerLanguage('step21', require('highlight.js/lib/languages/step21'))
-low.registerLanguage('stylus', require('highlight.js/lib/languages/stylus'))
-low.registerLanguage('subunit', require('highlight.js/lib/languages/subunit'))
-low.registerLanguage('swift', require('highlight.js/lib/languages/swift'))
-low.registerLanguage(
-  'taggerscript',
-  require('highlight.js/lib/languages/taggerscript')
-)
-low.registerLanguage('yaml', require('highlight.js/lib/languages/yaml'))
-low.registerLanguage('tap', require('highlight.js/lib/languages/tap'))
-low.registerLanguage('tcl', require('highlight.js/lib/languages/tcl'))
-low.registerLanguage('thrift', require('highlight.js/lib/languages/thrift'))
-low.registerLanguage('tp', require('highlight.js/lib/languages/tp'))
-low.registerLanguage('twig', require('highlight.js/lib/languages/twig'))
-low.registerLanguage(
-  'typescript',
-  require('highlight.js/lib/languages/typescript')
-)
-low.registerLanguage('vala', require('highlight.js/lib/languages/vala'))
-low.registerLanguage('vbnet', require('highlight.js/lib/languages/vbnet'))
-low.registerLanguage('vbscript', require('highlight.js/lib/languages/vbscript'))
-low.registerLanguage(
-  'vbscript-html',
-  require('highlight.js/lib/languages/vbscript-html')
-)
-low.registerLanguage('verilog', require('highlight.js/lib/languages/verilog'))
-low.registerLanguage('vhdl', require('highlight.js/lib/languages/vhdl'))
-low.registerLanguage('vim', require('highlight.js/lib/languages/vim'))
-low.registerLanguage('x86asm', require('highlight.js/lib/languages/x86asm'))
-low.registerLanguage('xl', require('highlight.js/lib/languages/xl'))
-low.registerLanguage('xquery', require('highlight.js/lib/languages/xquery'))
-low.registerLanguage('zephir', require('highlight.js/lib/languages/zephir'))
-
-},{"./lib/core.js":141,"highlight.js/lib/languages/1c":143,"highlight.js/lib/languages/abnf":144,"highlight.js/lib/languages/accesslog":145,"highlight.js/lib/languages/actionscript":146,"highlight.js/lib/languages/ada":147,"highlight.js/lib/languages/angelscript":148,"highlight.js/lib/languages/apache":149,"highlight.js/lib/languages/applescript":150,"highlight.js/lib/languages/arcade":151,"highlight.js/lib/languages/arduino":152,"highlight.js/lib/languages/armasm":153,"highlight.js/lib/languages/asciidoc":154,"highlight.js/lib/languages/aspectj":155,"highlight.js/lib/languages/autohotkey":156,"highlight.js/lib/languages/autoit":157,"highlight.js/lib/languages/avrasm":158,"highlight.js/lib/languages/awk":159,"highlight.js/lib/languages/axapta":160,"highlight.js/lib/languages/bash":161,"highlight.js/lib/languages/basic":162,"highlight.js/lib/languages/bnf":163,"highlight.js/lib/languages/brainfuck":164,"highlight.js/lib/languages/c":166,"highlight.js/lib/languages/c-like":165,"highlight.js/lib/languages/cal":167,"highlight.js/lib/languages/capnproto":168,"highlight.js/lib/languages/ceylon":169,"highlight.js/lib/languages/clean":170,"highlight.js/lib/languages/clojure":172,"highlight.js/lib/languages/clojure-repl":171,"highlight.js/lib/languages/cmake":173,"highlight.js/lib/languages/coffeescript":174,"highlight.js/lib/languages/coq":175,"highlight.js/lib/languages/cos":176,"highlight.js/lib/languages/cpp":177,"highlight.js/lib/languages/crmsh":178,"highlight.js/lib/languages/crystal":179,"highlight.js/lib/languages/csharp":180,"highlight.js/lib/languages/csp":181,"highlight.js/lib/languages/css":182,"highlight.js/lib/languages/d":183,"highlight.js/lib/languages/dart":184,"highlight.js/lib/languages/delphi":185,"highlight.js/lib/languages/diff":186,"highlight.js/lib/languages/django":187,"highlight.js/lib/languages/dns":188,"highlight.js/lib/languages/dockerfile":189,"highlight.js/lib/languages/dos":190,"highlight.js/lib/languages/dsconfig":191,"highlight.js/lib/languages/dts":192,"highlight.js/lib/languages/dust":193,"highlight.js/lib/languages/ebnf":194,"highlight.js/lib/languages/elixir":195,"highlight.js/lib/languages/elm":196,"highlight.js/lib/languages/erb":197,"highlight.js/lib/languages/erlang":199,"highlight.js/lib/languages/erlang-repl":198,"highlight.js/lib/languages/excel":200,"highlight.js/lib/languages/fix":201,"highlight.js/lib/languages/flix":202,"highlight.js/lib/languages/fortran":203,"highlight.js/lib/languages/fsharp":204,"highlight.js/lib/languages/gams":205,"highlight.js/lib/languages/gauss":206,"highlight.js/lib/languages/gcode":207,"highlight.js/lib/languages/gherkin":208,"highlight.js/lib/languages/glsl":209,"highlight.js/lib/languages/gml":210,"highlight.js/lib/languages/go":211,"highlight.js/lib/languages/golo":212,"highlight.js/lib/languages/gradle":213,"highlight.js/lib/languages/groovy":214,"highlight.js/lib/languages/haml":215,"highlight.js/lib/languages/handlebars":216,"highlight.js/lib/languages/haskell":217,"highlight.js/lib/languages/haxe":218,"highlight.js/lib/languages/hsp":219,"highlight.js/lib/languages/htmlbars":220,"highlight.js/lib/languages/http":221,"highlight.js/lib/languages/hy":222,"highlight.js/lib/languages/inform7":223,"highlight.js/lib/languages/ini":224,"highlight.js/lib/languages/irpf90":225,"highlight.js/lib/languages/isbl":226,"highlight.js/lib/languages/java":227,"highlight.js/lib/languages/javascript":228,"highlight.js/lib/languages/jboss-cli":229,"highlight.js/lib/languages/json":230,"highlight.js/lib/languages/julia":232,"highlight.js/lib/languages/julia-repl":231,"highlight.js/lib/languages/kotlin":233,"highlight.js/lib/languages/lasso":234,"highlight.js/lib/languages/latex":235,"highlight.js/lib/languages/ldif":236,"highlight.js/lib/languages/leaf":237,"highlight.js/lib/languages/less":238,"highlight.js/lib/languages/lisp":239,"highlight.js/lib/languages/livecodeserver":240,"highlight.js/lib/languages/livescript":241,"highlight.js/lib/languages/llvm":242,"highlight.js/lib/languages/lsl":243,"highlight.js/lib/languages/lua":244,"highlight.js/lib/languages/makefile":245,"highlight.js/lib/languages/markdown":246,"highlight.js/lib/languages/mathematica":247,"highlight.js/lib/languages/matlab":248,"highlight.js/lib/languages/maxima":249,"highlight.js/lib/languages/mel":250,"highlight.js/lib/languages/mercury":251,"highlight.js/lib/languages/mipsasm":252,"highlight.js/lib/languages/mizar":253,"highlight.js/lib/languages/mojolicious":254,"highlight.js/lib/languages/monkey":255,"highlight.js/lib/languages/moonscript":256,"highlight.js/lib/languages/n1ql":257,"highlight.js/lib/languages/nginx":258,"highlight.js/lib/languages/nim":259,"highlight.js/lib/languages/nix":260,"highlight.js/lib/languages/nsis":261,"highlight.js/lib/languages/objectivec":262,"highlight.js/lib/languages/ocaml":263,"highlight.js/lib/languages/openscad":264,"highlight.js/lib/languages/oxygene":265,"highlight.js/lib/languages/parser3":266,"highlight.js/lib/languages/perl":267,"highlight.js/lib/languages/pf":268,"highlight.js/lib/languages/pgsql":269,"highlight.js/lib/languages/php":271,"highlight.js/lib/languages/php-template":270,"highlight.js/lib/languages/plaintext":272,"highlight.js/lib/languages/pony":273,"highlight.js/lib/languages/powershell":274,"highlight.js/lib/languages/processing":275,"highlight.js/lib/languages/profile":276,"highlight.js/lib/languages/prolog":277,"highlight.js/lib/languages/properties":278,"highlight.js/lib/languages/protobuf":279,"highlight.js/lib/languages/puppet":280,"highlight.js/lib/languages/purebasic":281,"highlight.js/lib/languages/python":283,"highlight.js/lib/languages/python-repl":282,"highlight.js/lib/languages/q":284,"highlight.js/lib/languages/qml":285,"highlight.js/lib/languages/r":286,"highlight.js/lib/languages/reasonml":287,"highlight.js/lib/languages/rib":288,"highlight.js/lib/languages/roboconf":289,"highlight.js/lib/languages/routeros":290,"highlight.js/lib/languages/rsl":291,"highlight.js/lib/languages/ruby":292,"highlight.js/lib/languages/ruleslanguage":293,"highlight.js/lib/languages/rust":294,"highlight.js/lib/languages/sas":295,"highlight.js/lib/languages/scala":296,"highlight.js/lib/languages/scheme":297,"highlight.js/lib/languages/scilab":298,"highlight.js/lib/languages/scss":299,"highlight.js/lib/languages/shell":300,"highlight.js/lib/languages/smali":301,"highlight.js/lib/languages/smalltalk":302,"highlight.js/lib/languages/sml":303,"highlight.js/lib/languages/sqf":304,"highlight.js/lib/languages/sql":305,"highlight.js/lib/languages/stan":306,"highlight.js/lib/languages/stata":307,"highlight.js/lib/languages/step21":308,"highlight.js/lib/languages/stylus":309,"highlight.js/lib/languages/subunit":310,"highlight.js/lib/languages/swift":311,"highlight.js/lib/languages/taggerscript":312,"highlight.js/lib/languages/tap":313,"highlight.js/lib/languages/tcl":314,"highlight.js/lib/languages/thrift":315,"highlight.js/lib/languages/tp":316,"highlight.js/lib/languages/twig":317,"highlight.js/lib/languages/typescript":318,"highlight.js/lib/languages/vala":319,"highlight.js/lib/languages/vbnet":320,"highlight.js/lib/languages/vbscript":322,"highlight.js/lib/languages/vbscript-html":321,"highlight.js/lib/languages/verilog":323,"highlight.js/lib/languages/vhdl":324,"highlight.js/lib/languages/vim":325,"highlight.js/lib/languages/x86asm":326,"highlight.js/lib/languages/xl":327,"highlight.js/lib/languages/xml":328,"highlight.js/lib/languages/xquery":329,"highlight.js/lib/languages/yaml":330,"highlight.js/lib/languages/zephir":331}],141:[function(require,module,exports){
-'use strict'
-
-var high = require('highlight.js/lib/core')
-var fault = require('fault')
-
-exports.highlight = highlight
-exports.highlightAuto = highlightAuto
-exports.registerLanguage = registerLanguage
-exports.listLanguages = listLanguages
-exports.registerAlias = registerAlias
-
-Emitter.prototype.addText = text
-Emitter.prototype.addKeyword = addKeyword
-Emitter.prototype.addSublanguage = addSublanguage
-Emitter.prototype.openNode = open
-Emitter.prototype.closeNode = close
-Emitter.prototype.closeAllNodes = noop
-Emitter.prototype.finalize = noop
-Emitter.prototype.toHTML = toHtmlNoop
-
-var defaultPrefix = 'hljs-'
-
-// Highlighting `value` in the language `name`.
-function highlight(name, value, options) {
-  var before = high.configure({})
-  var settings = options || {}
-  var prefix = settings.prefix
-  var result
-
-  if (typeof name !== 'string') {
-    throw fault('Expected `string` for name, got `%s`', name)
-  }
-
-  if (!high.getLanguage(name)) {
-    throw fault('Unknown language: `%s` is not registered', name)
-  }
-
-  if (typeof value !== 'string') {
-    throw fault('Expected `string` for value, got `%s`', value)
-  }
-
-  if (prefix === null || prefix === undefined) {
-    prefix = defaultPrefix
-  }
-
-  high.configure({__emitter: Emitter, classPrefix: prefix})
-
-  result = high.highlight(name, value, true)
-
-  high.configure(before)
-
-  /* istanbul ignore if - Highlight.js seems to use this (currently) for broken
-   * grammars, so let’s keep it in there just to be sure. */
-  if (result.errorRaised) {
-    throw result.errorRaised
-  }
-
-  return {
-    relevance: result.relevance,
-    language: result.language,
-    value: result.emitter.rootNode.children
-  }
-}
-
-function highlightAuto(value, options) {
-  var settings = options || {}
-  var subset = settings.subset || high.listLanguages()
-  var prefix = settings.prefix
-  var length = subset.length
-  var index = -1
-  var result
-  var secondBest
-  var current
-  var name
-
-  if (prefix === null || prefix === undefined) {
-    prefix = defaultPrefix
-  }
-
-  if (typeof value !== 'string') {
-    throw fault('Expected `string` for value, got `%s`', value)
-  }
-
-  secondBest = {relevance: 0, language: null, value: []}
-  result = {relevance: 0, language: null, value: []}
-
-  while (++index < length) {
-    name = subset[index]
-
-    if (!high.getLanguage(name)) {
-      continue
-    }
-
-    current = highlight(name, value, options)
-    current.language = name
-
-    if (current.relevance > secondBest.relevance) {
-      secondBest = current
-    }
-
-    if (current.relevance > result.relevance) {
-      secondBest = result
-      result = current
-    }
-  }
-
-  if (secondBest.language) {
-    result.secondBest = secondBest
-  }
-
-  return result
-}
-
-// Register a language.
-function registerLanguage(name, syntax) {
-  high.registerLanguage(name, syntax)
-}
-
-// Get a list of all registered languages.
-function listLanguages() {
-  return high.listLanguages()
-}
-
-// Register more aliases for an already registered language.
-function registerAlias(name, alias) {
-  var map = name
-  var key
-
-  if (alias) {
-    map = {}
-    map[name] = alias
-  }
-
-  for (key in map) {
-    high.registerAliases(map[key], {languageName: key})
-  }
-}
-
-function Emitter(options) {
-  this.options = options
-  this.rootNode = {children: []}
-  this.stack = [this.rootNode]
-}
-
-function addKeyword(value, name) {
-  this.openNode(name)
-  this.addText(value)
-  this.closeNode()
-}
-
-function addSublanguage(other, name) {
-  var stack = this.stack
-  var current = stack[stack.length - 1]
-  var results = other.rootNode.children
-  var node = name
-    ? {
-        type: 'element',
-        tagName: 'span',
-        properties: {className: [name]},
-        children: results
-      }
-    : results
-
-  current.children = current.children.concat(node)
-}
-
-function text(value) {
-  var stack = this.stack
-  var current
-  var tail
-
-  if (value === '') return
-
-  current = stack[stack.length - 1]
-  tail = current.children[current.children.length - 1]
-
-  if (tail && tail.type === 'text') {
-    tail.value += value
-  } else {
-    current.children.push({type: 'text', value: value})
-  }
-}
-
-function open(name) {
-  var stack = this.stack
-  var className = this.options.classPrefix + name
-  var current = stack[stack.length - 1]
-  var child = {
-    type: 'element',
-    tagName: 'span',
-    properties: {className: [className]},
-    children: []
-  }
-
-  current.children.push(child)
-  stack.push(child)
-}
-
-function close() {
-  this.stack.pop()
-}
-
-function toHtmlNoop() {
-  return ''
-}
-
-function noop() {}
-
-},{"fault":95,"highlight.js/lib/core":142}],142:[function(require,module,exports){
+},{}],122:[function(require,module,exports){
 // https://github.com/substack/deep-freeze/blob/master/index.js
 /** @param {any} obj */
 function deepFreeze(obj) {
@@ -8635,7 +6894,7 @@ var highlight = HLJS({});
 
 module.exports = highlight;
 
-},{}],143:[function(require,module,exports){
+},{}],123:[function(require,module,exports){
 /*
 Language: 1C:Enterprise
 Author: Stanislav Belov <stbelov@gmail.com>
@@ -9158,7 +7417,7 @@ function _1c(hljs) {
 
 module.exports = _1c;
 
-},{}],144:[function(require,module,exports){
+},{}],124:[function(require,module,exports){
 /*
 Language: Augmented Backus-Naur Form
 Author: Alex McKibben <alex@nullscope.net>
@@ -9237,7 +7496,7 @@ function abnf(hljs) {
 
 module.exports = abnf;
 
-},{}],145:[function(require,module,exports){
+},{}],125:[function(require,module,exports){
 /*
  Language: Apache Access Log
  Author: Oleg Efimov <efimovov@gmail.com>
@@ -9314,7 +7573,7 @@ function accesslog(hljs) {
 
 module.exports = accesslog;
 
-},{}],146:[function(require,module,exports){
+},{}],126:[function(require,module,exports){
 /*
 Language: ActionScript
 Author: Alexander Myadzel <myadzel@gmail.com>
@@ -9399,7 +7658,7 @@ function actionscript(hljs) {
 
 module.exports = actionscript;
 
-},{}],147:[function(require,module,exports){
+},{}],127:[function(require,module,exports){
 /*
 Language: Ada
 Author: Lars Schulna <kartoffelbrei.mit.muskatnuss@gmail.org>
@@ -9586,7 +7845,7 @@ function ada(hljs) {
 
 module.exports = ada;
 
-},{}],148:[function(require,module,exports){
+},{}],128:[function(require,module,exports){
 /*
 Language: AngelScript
 Author: Melissa Geels <melissa@nimble.tools>
@@ -9705,7 +7964,7 @@ function angelscript(hljs) {
 
 module.exports = angelscript;
 
-},{}],149:[function(require,module,exports){
+},{}],129:[function(require,module,exports){
 /*
 Language: Apache config
 Author: Ruslan Keba <rukeba@gmail.com>
@@ -9783,7 +8042,7 @@ function apache(hljs) {
 
 module.exports = apache;
 
-},{}],150:[function(require,module,exports){
+},{}],130:[function(require,module,exports){
 /*
 Language: AppleScript
 Authors: Nathan Grigg <nathan@nathanamy.org>, Dr. Drang <drdrang@gmail.com>
@@ -9881,7 +8140,7 @@ function applescript(hljs) {
 
 module.exports = applescript;
 
-},{}],151:[function(require,module,exports){
+},{}],131:[function(require,module,exports){
 /*
  Language: ArcGIS Arcade
  Category: scripting
@@ -10031,7 +8290,7 @@ function arcade(hljs) {
 
 module.exports = arcade;
 
-},{}],152:[function(require,module,exports){
+},{}],132:[function(require,module,exports){
 /*
 Language: Arduino
 Author: Stefania Mellai <s.mellai@arduino.cc>
@@ -10144,7 +8403,7 @@ function arduino(hljs) {
 
 module.exports = arduino;
 
-},{}],153:[function(require,module,exports){
+},{}],133:[function(require,module,exports){
 /*
 Language: ARM Assembly
 Author: Dan Panzarella <alsoelp@gmail.com>
@@ -10257,7 +8516,7 @@ function armasm(hljs) {
 
 module.exports = armasm;
 
-},{}],154:[function(require,module,exports){
+},{}],134:[function(require,module,exports){
 /*
 Language: AsciiDoc
 Requires: xml.js
@@ -10459,7 +8718,7 @@ function asciidoc(hljs) {
 
 module.exports = asciidoc;
 
-},{}],155:[function(require,module,exports){
+},{}],135:[function(require,module,exports){
 /*
 Language: AspectJ
 Author: Hakan Ozler <ozler.hakan@gmail.com>
@@ -10616,7 +8875,7 @@ function aspectj(hljs) {
 
 module.exports = aspectj;
 
-},{}],156:[function(require,module,exports){
+},{}],136:[function(require,module,exports){
 /*
 Language: AutoHotkey
 Author: Seongwon Lee <dlimpid@gmail.com>
@@ -10686,7 +8945,7 @@ function autohotkey(hljs) {
 
 module.exports = autohotkey;
 
-},{}],157:[function(require,module,exports){
+},{}],137:[function(require,module,exports){
 /*
 Language: AutoIt
 Author: Manh Tuan <junookyo@gmail.com>
@@ -10834,7 +9093,7 @@ function autoit(hljs) {
 
 module.exports = autoit;
 
-},{}],158:[function(require,module,exports){
+},{}],138:[function(require,module,exports){
 /*
 Language: AVR Assembly
 Author: Vladimir Ermakov <vooon341@gmail.com>
@@ -10908,7 +9167,7 @@ function avrasm(hljs) {
 
 module.exports = avrasm;
 
-},{}],159:[function(require,module,exports){
+},{}],139:[function(require,module,exports){
 /*
 Language: Awk
 Author: Matthew Daly <matthewbdaly@gmail.com>
@@ -10973,7 +9232,7 @@ function awk(hljs) {
 
 module.exports = awk;
 
-},{}],160:[function(require,module,exports){
+},{}],140:[function(require,module,exports){
 /*
 Language: Microsoft Axapta (now Dynamics 365)
 Author: Dmitri Roudakov <dmitri@roudakov.ru>
@@ -11016,7 +9275,7 @@ function axapta(hljs) {
 
 module.exports = axapta;
 
-},{}],161:[function(require,module,exports){
+},{}],141:[function(require,module,exports){
 /*
 Language: Bash
 Author: vah <vahtenberg@gmail.com>
@@ -11143,7 +9402,7 @@ function bash(hljs) {
 
 module.exports = bash;
 
-},{}],162:[function(require,module,exports){
+},{}],142:[function(require,module,exports){
 /*
 Language: BASIC
 Author: Raphaël Assénat <raph@raphnet.net>
@@ -11206,7 +9465,7 @@ function basic(hljs) {
 
 module.exports = basic;
 
-},{}],163:[function(require,module,exports){
+},{}],143:[function(require,module,exports){
 /*
 Language: Backus–Naur Form
 Website: https://en.wikipedia.org/wiki/Backus–Naur_form
@@ -11244,7 +9503,7 @@ function bnf(hljs) {
 
 module.exports = bnf;
 
-},{}],164:[function(require,module,exports){
+},{}],144:[function(require,module,exports){
 /*
 Language: Brainfuck
 Author: Evgeny Stepanischev <imbolk@gmail.com>
@@ -11292,7 +9551,7 @@ function brainfuck(hljs) {
 
 module.exports = brainfuck;
 
-},{}],165:[function(require,module,exports){
+},{}],145:[function(require,module,exports){
 /*
 Language: C-like foundation grammar for C/C++ grammars
 Author: Ivan Sagalaev <maniac@softwaremaniacs.org>
@@ -11536,7 +9795,7 @@ function cLike(hljs) {
 
 module.exports = cLike;
 
-},{}],166:[function(require,module,exports){
+},{}],146:[function(require,module,exports){
 /*
 Language: C
 Category: common, system
@@ -11563,7 +9822,7 @@ function c(hljs) {
 
 module.exports = c;
 
-},{}],167:[function(require,module,exports){
+},{}],147:[function(require,module,exports){
 /*
 Language: C/AL
 Author: Kenneth Fuglsang Christensen <kfuglsang@gmail.com>
@@ -11655,7 +9914,7 @@ function cal(hljs) {
 
 module.exports = cal;
 
-},{}],168:[function(require,module,exports){
+},{}],148:[function(require,module,exports){
 /*
 Language: Cap’n Proto
 Author: Oleg Efimov <efimovov@gmail.com>
@@ -11717,7 +9976,7 @@ function capnproto(hljs) {
 
 module.exports = capnproto;
 
-},{}],169:[function(require,module,exports){
+},{}],149:[function(require,module,exports){
 /*
 Language: Ceylon
 Author: Lucas Werkmeister <mail@lucaswerkmeister.de>
@@ -11795,7 +10054,7 @@ function ceylon(hljs) {
 
 module.exports = ceylon;
 
-},{}],170:[function(require,module,exports){
+},{}],150:[function(require,module,exports){
 /*
 Language: Clean
 Author: Camil Staps <info@camilstaps.nl>
@@ -11834,7 +10093,7 @@ function clean(hljs) {
 
 module.exports = clean;
 
-},{}],171:[function(require,module,exports){
+},{}],151:[function(require,module,exports){
 /*
 Language: Clojure REPL
 Description: Clojure REPL sessions
@@ -11863,7 +10122,7 @@ function clojureRepl(hljs) {
 
 module.exports = clojureRepl;
 
-},{}],172:[function(require,module,exports){
+},{}],152:[function(require,module,exports){
 /*
 Language: Clojure
 Description: Clojure syntax (based on lisp.js)
@@ -11990,7 +10249,7 @@ function clojure(hljs) {
 
 module.exports = clojure;
 
-},{}],173:[function(require,module,exports){
+},{}],153:[function(require,module,exports){
 /*
 Language: CMake
 Description: CMake is an open-source cross-platform system for build automation.
@@ -12055,7 +10314,7 @@ function cmake(hljs) {
 
 module.exports = cmake;
 
-},{}],174:[function(require,module,exports){
+},{}],154:[function(require,module,exports){
 const KEYWORDS = [
   "as", // for exports
   "in",
@@ -12374,7 +10633,7 @@ function coffeescript(hljs) {
 
 module.exports = coffeescript;
 
-},{}],175:[function(require,module,exports){
+},{}],155:[function(require,module,exports){
 /*
 Language: Coq
 Author: Stephan Boyer <stephan@stephanboyer.com>
@@ -12453,7 +10712,7 @@ function coq(hljs) {
 
 module.exports = coq;
 
-},{}],176:[function(require,module,exports){
+},{}],156:[function(require,module,exports){
 /*
 Language: Caché Object Script
 Author: Nikita Savchenko <zitros.lab@gmail.com>
@@ -12589,7 +10848,7 @@ function cos (hljs) {
 
 module.exports = cos;
 
-},{}],177:[function(require,module,exports){
+},{}],157:[function(require,module,exports){
 /*
 Language: C++
 Category: common, system
@@ -12609,7 +10868,7 @@ function cpp(hljs) {
 
 module.exports = cpp;
 
-},{}],178:[function(require,module,exports){
+},{}],158:[function(require,module,exports){
 /*
 Language: crmsh
 Author: Kristoffer Gronlund <kgronlund@suse.com>
@@ -12716,7 +10975,7 @@ function crmsh(hljs) {
 
 module.exports = crmsh;
 
-},{}],179:[function(require,module,exports){
+},{}],159:[function(require,module,exports){
 /*
 Language: Crystal
 Author: TSUYUSATO Kitsune <make.just.on@gmail.com>
@@ -12915,7 +11174,7 @@ function crystal(hljs) {
 
 module.exports = crystal;
 
-},{}],180:[function(require,module,exports){
+},{}],160:[function(require,module,exports){
 /*
 Language: C#
 Author: Jason Diamond <jason@diamond.name>
@@ -13134,7 +11393,7 @@ function csharp(hljs) {
 
 module.exports = csharp;
 
-},{}],181:[function(require,module,exports){
+},{}],161:[function(require,module,exports){
 /*
 Language: CSP
 Description: Content Security Policy definition highlighting
@@ -13170,7 +11429,7 @@ function csp(hljs) {
 
 module.exports = csp;
 
-},{}],182:[function(require,module,exports){
+},{}],162:[function(require,module,exports){
 /*
 Language: CSS
 Category: common, css
@@ -13306,7 +11565,7 @@ function css(hljs) {
 
 module.exports = css;
 
-},{}],183:[function(require,module,exports){
+},{}],163:[function(require,module,exports){
 /*
 Language: D
 Author: Aleksandar Ruzicic <aleksandar@ruzicic.info>
@@ -13578,7 +11837,7 @@ function d(hljs) {
 
 module.exports = d;
 
-},{}],184:[function(require,module,exports){
+},{}],164:[function(require,module,exports){
 /*
 Language: Dart
 Requires: markdown.js
@@ -13758,7 +12017,7 @@ function dart(hljs) {
 
 module.exports = dart;
 
-},{}],185:[function(require,module,exports){
+},{}],165:[function(require,module,exports){
 /*
 Language: Delphi
 Website: https://www.embarcadero.com/products/delphi
@@ -13857,7 +12116,7 @@ function delphi(hljs) {
 
 module.exports = delphi;
 
-},{}],186:[function(require,module,exports){
+},{}],166:[function(require,module,exports){
 /*
 Language: Diff
 Description: Unified and context diff
@@ -13910,7 +12169,7 @@ function diff(hljs) {
 
 module.exports = diff;
 
-},{}],187:[function(require,module,exports){
+},{}],167:[function(require,module,exports){
 /*
 Language: Django
 Description: Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design.
@@ -13988,7 +12247,7 @@ function django(hljs) {
 
 module.exports = django;
 
-},{}],188:[function(require,module,exports){
+},{}],168:[function(require,module,exports){
 /*
 Language: DNS Zone
 Author: Tim Schumacher <tim@datenknoten.me>
@@ -14029,7 +12288,7 @@ function dns(hljs) {
 
 module.exports = dns;
 
-},{}],189:[function(require,module,exports){
+},{}],169:[function(require,module,exports){
 /*
 Language: Dockerfile
 Requires: bash.js
@@ -14064,7 +12323,7 @@ function dockerfile(hljs) {
 
 module.exports = dockerfile;
 
-},{}],190:[function(require,module,exports){
+},{}],170:[function(require,module,exports){
 /*
 Language: Batch file (DOS)
 Author: Alexander Makarov <sam@rmcreative.ru>
@@ -14127,7 +12386,7 @@ function dos(hljs) {
 
 module.exports = dos;
 
-},{}],191:[function(require,module,exports){
+},{}],171:[function(require,module,exports){
 /*
  Language: dsconfig
  Description: dsconfig batch configuration language for LDAP directory servers
@@ -14183,7 +12442,7 @@ function dsconfig(hljs) {
 
 module.exports = dsconfig;
 
-},{}],192:[function(require,module,exports){
+},{}],172:[function(require,module,exports){
 /*
 Language: Device Tree
 Description: *.dts files used in the Linux kernel
@@ -14319,7 +12578,7 @@ function dts(hljs) {
 
 module.exports = dts;
 
-},{}],193:[function(require,module,exports){
+},{}],173:[function(require,module,exports){
 /*
 Language: Dust
 Requires: xml.js
@@ -14364,7 +12623,7 @@ function dust(hljs) {
 
 module.exports = dust;
 
-},{}],194:[function(require,module,exports){
+},{}],174:[function(require,module,exports){
 /*
 Language: Extended Backus-Naur Form
 Author: Alex McKibben <alex@nullscope.net>
@@ -14414,7 +12673,7 @@ function ebnf(hljs) {
 
 module.exports = ebnf;
 
-},{}],195:[function(require,module,exports){
+},{}],175:[function(require,module,exports){
 /*
 Language: Elixir
 Author: Josh Adams <josh@isotope11.com>
@@ -14599,7 +12858,7 @@ function elixir(hljs) {
 
 module.exports = elixir;
 
-},{}],196:[function(require,module,exports){
+},{}],176:[function(require,module,exports){
 /*
 Language: Elm
 Author: Janis Voigtlaender <janis.voigtlaender@gmail.com>
@@ -14700,7 +12959,7 @@ function elm(hljs) {
 
 module.exports = elm;
 
-},{}],197:[function(require,module,exports){
+},{}],177:[function(require,module,exports){
 /*
 Language: ERB (Embedded Ruby)
 Requires: xml.js, ruby.js
@@ -14729,7 +12988,7 @@ function erb(hljs) {
 
 module.exports = erb;
 
-},{}],198:[function(require,module,exports){
+},{}],178:[function(require,module,exports){
 /*
 Language: Erlang REPL
 Author: Sergey Ignatov <sergey@ignatov.spb.su>
@@ -14786,7 +13045,7 @@ function erlangRepl(hljs) {
 
 module.exports = erlangRepl;
 
-},{}],199:[function(require,module,exports){
+},{}],179:[function(require,module,exports){
 /*
 Language: Erlang
 Description: Erlang is a general-purpose functional language, with strict evaluation, single assignment, and dynamic typing.
@@ -14945,7 +13204,7 @@ function erlang(hljs) {
 
 module.exports = erlang;
 
-},{}],200:[function(require,module,exports){
+},{}],180:[function(require,module,exports){
 /*
 Language: Excel formulae
 Author: Victor Zhou <OiCMudkips@users.noreply.github.com>
@@ -15004,7 +13263,7 @@ function excel(hljs) {
 
 module.exports = excel;
 
-},{}],201:[function(require,module,exports){
+},{}],181:[function(require,module,exports){
 /*
 Language: FIX
 Author: Brent Bradbury <brent@brentium.com>
@@ -15042,7 +13301,7 @@ function fix(hljs) {
 
 module.exports = fix;
 
-},{}],202:[function(require,module,exports){
+},{}],182:[function(require,module,exports){
 /*
  Language: Flix
  Category: functional
@@ -15098,7 +13357,7 @@ function flix (hljs) {
 
 module.exports = flix;
 
-},{}],203:[function(require,module,exports){
+},{}],183:[function(require,module,exports){
 /*
 Language: Fortran
 Author: Anthony Scemama <scemama@irsamc.ups-tlse.fr>
@@ -15207,7 +13466,7 @@ function fortran(hljs) {
 
 module.exports = fortran;
 
-},{}],204:[function(require,module,exports){
+},{}],184:[function(require,module,exports){
 /*
 Language: F#
 Author: Jonas Follesø <jonas@follesoe.no>
@@ -15277,7 +13536,7 @@ function fsharp(hljs) {
 
 module.exports = fsharp;
 
-},{}],205:[function(require,module,exports){
+},{}],185:[function(require,module,exports){
 /*
  Language: GAMS
  Author: Stefan Bechert <stefan.bechert@gmx.net>
@@ -15444,7 +13703,7 @@ function gams (hljs) {
 
 module.exports = gams;
 
-},{}],206:[function(require,module,exports){
+},{}],186:[function(require,module,exports){
 /*
 Language: GAUSS
 Author: Matt Evans <matt@aptech.com>
@@ -15746,7 +14005,7 @@ function gauss(hljs) {
 
 module.exports = gauss;
 
-},{}],207:[function(require,module,exports){
+},{}],187:[function(require,module,exports){
 /*
  Language: G-code (ISO 6983)
  Contributors: Adam Joseph Cook <adam.joseph.cook@gmail.com>
@@ -15825,7 +14084,7 @@ function gcode(hljs) {
 
 module.exports = gcode;
 
-},{}],208:[function(require,module,exports){
+},{}],188:[function(require,module,exports){
 /*
  Language: Gherkin
  Author: Sam Pikesley (@pikesley) <sam.pikesley@theodi.org>
@@ -15873,7 +14132,7 @@ function gherkin (hljs) {
 
 module.exports = gherkin;
 
-},{}],209:[function(require,module,exports){
+},{}],189:[function(require,module,exports){
 /*
 Language: GLSL
 Description: OpenGL Shading Language
@@ -16002,7 +14261,7 @@ function glsl(hljs) {
 
 module.exports = glsl;
 
-},{}],210:[function(require,module,exports){
+},{}],190:[function(require,module,exports){
 /*
 Language: GML
 Author: Meseta <meseta@gmail.com>
@@ -16887,7 +15146,7 @@ function gml(hljs) {
 
 module.exports = gml;
 
-},{}],211:[function(require,module,exports){
+},{}],191:[function(require,module,exports){
 /*
 Language: Go
 Author: Stephan Kountso aka StepLg <steplg@gmail.com>
@@ -16954,7 +15213,7 @@ function go(hljs) {
 
 module.exports = go;
 
-},{}],212:[function(require,module,exports){
+},{}],192:[function(require,module,exports){
 /*
 Language: Golo
 Author: Philippe Charriere <ph.charriere@gmail.com>
@@ -16988,7 +15247,7 @@ function golo(hljs) {
 
 module.exports = golo;
 
-},{}],213:[function(require,module,exports){
+},{}],193:[function(require,module,exports){
 /*
 Language: Gradle
 Description: Gradle is an open-source build automation tool focused on flexibility and performance.
@@ -17034,7 +15293,7 @@ function gradle(hljs) {
 
 module.exports = gradle;
 
-},{}],214:[function(require,module,exports){
+},{}],194:[function(require,module,exports){
 /**
  * @param {string} value
  * @returns {RegExp}
@@ -17195,7 +15454,7 @@ function groovy(hljs) {
 
 module.exports = groovy;
 
-},{}],215:[function(require,module,exports){
+},{}],195:[function(require,module,exports){
 /*
 Language: HAML
 Requires: ruby.js
@@ -17314,7 +15573,7 @@ function haml(hljs) {
 
 module.exports = haml;
 
-},{}],216:[function(require,module,exports){
+},{}],196:[function(require,module,exports){
 /**
  * @param {string} value
  * @returns {RegExp}
@@ -17586,7 +15845,7 @@ function handlebars(hljs) {
 
 module.exports = handlebars;
 
-},{}],217:[function(require,module,exports){
+},{}],197:[function(require,module,exports){
 /*
 Language: Haskell
 Author: Jeremy Hull <sourdrums@gmail.com>
@@ -17720,7 +15979,7 @@ function haskell(hljs) {
 
 module.exports = haskell;
 
-},{}],218:[function(require,module,exports){
+},{}],198:[function(require,module,exports){
 /*
 Language: Haxe
 Description: Haxe is an open source toolkit based on a modern, high level, strictly typed programming language.
@@ -17842,7 +16101,7 @@ function haxe(hljs) {
 
 module.exports = haxe;
 
-},{}],219:[function(require,module,exports){
+},{}],199:[function(require,module,exports){
 /*
 Language: HSP
 Author: prince <MC.prince.0203@gmail.com>
@@ -17901,7 +16160,7 @@ function hsp(hljs) {
 
 module.exports = hsp;
 
-},{}],220:[function(require,module,exports){
+},{}],200:[function(require,module,exports){
 /**
  * @param {string} value
  * @returns {RegExp}
@@ -18201,7 +16460,7 @@ function htmlbars(hljs) {
 
 module.exports = htmlbars;
 
-},{}],221:[function(require,module,exports){
+},{}],201:[function(require,module,exports){
 /*
 Language: HTTP
 Description: HTTP request and response headers with automatic body highlighting
@@ -18254,7 +16513,7 @@ function http(hljs) {
 
 module.exports = http;
 
-},{}],222:[function(require,module,exports){
+},{}],202:[function(require,module,exports){
 /*
 Language: Hy
 Description: Hy is a wonderful dialect of Lisp that’s embedded in Python.
@@ -18363,7 +16622,7 @@ function hy(hljs) {
 
 module.exports = hy;
 
-},{}],223:[function(require,module,exports){
+},{}],203:[function(require,module,exports){
 /*
 Language: Inform 7
 Author: Bruno Dias <bruno.r.dias@gmail.com>
@@ -18431,7 +16690,7 @@ function inform7(hljs) {
 
 module.exports = inform7;
 
-},{}],224:[function(require,module,exports){
+},{}],204:[function(require,module,exports){
 /**
  * @param {string} value
  * @returns {RegExp}
@@ -18576,7 +16835,7 @@ function ini(hljs) {
 
 module.exports = ini;
 
-},{}],225:[function(require,module,exports){
+},{}],205:[function(require,module,exports){
 /*
 Language: IRPF90
 Author: Anthony Scemama <scemama@irsamc.ups-tlse.fr>
@@ -18665,7 +16924,7 @@ function irpf90(hljs) {
 
 module.exports = irpf90;
 
-},{}],226:[function(require,module,exports){
+},{}],206:[function(require,module,exports){
 /*
 Language: ISBL
 Author: Dmitriy Tarasov <dimatar@gmail.com>
@@ -21847,7 +20106,7 @@ function isbl(hljs) {
 
 module.exports = isbl;
 
-},{}],227:[function(require,module,exports){
+},{}],207:[function(require,module,exports){
 /**
  * @param {string} value
  * @returns {RegExp}
@@ -22041,7 +20300,7 @@ function java(hljs) {
 
 module.exports = java;
 
-},{}],228:[function(require,module,exports){
+},{}],208:[function(require,module,exports){
 const IDENT_RE = '[A-Za-z$_][0-9A-Za-z$_]*';
 const KEYWORDS = [
   "as", // for exports
@@ -22497,7 +20756,7 @@ function javascript(hljs) {
 
 module.exports = javascript;
 
-},{}],229:[function(require,module,exports){
+},{}],209:[function(require,module,exports){
 /*
  Language: JBoss CLI
  Author: Raphaël Parrëe <rparree@edc4it.com>
@@ -22556,7 +20815,7 @@ function jbossCli (hljs) {
 
 module.exports = jbossCli;
 
-},{}],230:[function(require,module,exports){
+},{}],210:[function(require,module,exports){
 /*
 Language: JSON
 Description: JSON (JavaScript Object Notation) is a lightweight data-interchange format.
@@ -22612,7 +20871,7 @@ function json(hljs) {
 
 module.exports = json;
 
-},{}],231:[function(require,module,exports){
+},{}],211:[function(require,module,exports){
 /*
 Language: Julia REPL
 Description: Julia REPL sessions
@@ -22664,7 +20923,7 @@ function juliaRepl(hljs) {
 
 module.exports = juliaRepl;
 
-},{}],232:[function(require,module,exports){
+},{}],212:[function(require,module,exports){
 /*
 Language: Julia
 Description: Julia is a high-level, high-performance, dynamic programming language.
@@ -22839,7 +21098,7 @@ function julia(hljs) {
 
 module.exports = julia;
 
-},{}],233:[function(require,module,exports){
+},{}],213:[function(require,module,exports){
 /*
  Language: Kotlin
  Description: Kotlin is an OSS statically typed programming language that targets the JVM, Android, JavaScript and Native.
@@ -23069,7 +21328,7 @@ function kotlin(hljs) {
 
 module.exports = kotlin;
 
-},{}],234:[function(require,module,exports){
+},{}],214:[function(require,module,exports){
 /*
 Language: Lasso
 Author: Eric Knibbe <eric@lassosoft.com>
@@ -23242,7 +21501,7 @@ function lasso(hljs) {
 
 module.exports = lasso;
 
-},{}],235:[function(require,module,exports){
+},{}],215:[function(require,module,exports){
 /*
 Language: LaTeX
 Author: Vladimir Moskva <vladmos@gmail.com>
@@ -23316,7 +21575,7 @@ function latex(hljs) {
 
 module.exports = latex;
 
-},{}],236:[function(require,module,exports){
+},{}],216:[function(require,module,exports){
 /*
 Language: LDIF
 Contributors: Jacob Childress <jacobc@gmail.com>
@@ -23349,7 +21608,7 @@ function ldif(hljs) {
 
 module.exports = ldif;
 
-},{}],237:[function(require,module,exports){
+},{}],217:[function(require,module,exports){
 /*
 Language: Leaf
 Author: Hale Chan <halechan@qq.com>
@@ -23399,7 +21658,7 @@ function leaf (hljs) {
 
 module.exports = leaf;
 
-},{}],238:[function(require,module,exports){
+},{}],218:[function(require,module,exports){
 /*
 Language: Less
 Description: It's CSS, with just a little more.
@@ -23551,7 +21810,7 @@ function less(hljs) {
 
 module.exports = less;
 
-},{}],239:[function(require,module,exports){
+},{}],219:[function(require,module,exports){
 /*
 Language: Lisp
 Description: Generic lisp syntax
@@ -23661,7 +21920,7 @@ function lisp(hljs) {
 
 module.exports = lisp;
 
-},{}],240:[function(require,module,exports){
+},{}],220:[function(require,module,exports){
 /*
 Language: LiveCode
 Author: Ralf Bitter <rabit@revigniter.com>
@@ -23835,7 +22094,7 @@ function livecodeserver(hljs) {
 
 module.exports = livecodeserver;
 
-},{}],241:[function(require,module,exports){
+},{}],221:[function(require,module,exports){
 const KEYWORDS = [
   "as", // for exports
   "in",
@@ -24172,7 +22431,7 @@ function livescript(hljs) {
 
 module.exports = livescript;
 
-},{}],242:[function(require,module,exports){
+},{}],222:[function(require,module,exports){
 /*
 Language: LLVM IR
 Author: Michael Rodler <contact@f0rki.at>
@@ -24272,7 +22531,7 @@ function llvm(hljs) {
 
 module.exports = llvm;
 
-},{}],243:[function(require,module,exports){
+},{}],223:[function(require,module,exports){
 /*
 Language: LSL (Linden Scripting Language)
 Description: The Linden Scripting Language is used in Second Life by Linden Labs.
@@ -24368,7 +22627,7 @@ function lsl(hljs) {
 
 module.exports = lsl;
 
-},{}],244:[function(require,module,exports){
+},{}],224:[function(require,module,exports){
 /*
 Language: Lua
 Description: Lua is a powerful, efficient, lightweight, embeddable scripting language.
@@ -24446,7 +22705,7 @@ function lua(hljs) {
 
 module.exports = lua;
 
-},{}],245:[function(require,module,exports){
+},{}],225:[function(require,module,exports){
 /*
 Language: Makefile
 Author: Ivan Sagalaev <maniac@softwaremaniacs.org>
@@ -24534,7 +22793,7 @@ function makefile(hljs) {
 
 module.exports = makefile;
 
-},{}],246:[function(require,module,exports){
+},{}],226:[function(require,module,exports){
 /*
 Language: Markdown
 Requires: xml.js
@@ -24693,7 +22952,7 @@ function markdown(hljs) {
 
 module.exports = markdown;
 
-},{}],247:[function(require,module,exports){
+},{}],227:[function(require,module,exports){
 /*
 Language: Mathematica
 Description: Wolfram Mathematica (usually termed Mathematica) is a modern technical computing system spanning most areas of technical computing.
@@ -24756,7 +23015,7 @@ function mathematica(hljs) {
 
 module.exports = mathematica;
 
-},{}],248:[function(require,module,exports){
+},{}],228:[function(require,module,exports){
 /*
 Language: Matlab
 Author: Denis Bardadym <bardadymchik@gmail.com>
@@ -24864,7 +23123,7 @@ function matlab(hljs) {
 
 module.exports = matlab;
 
-},{}],249:[function(require,module,exports){
+},{}],229:[function(require,module,exports){
 /*
 Language: Maxima
 Author: Robert Dodier <robert.dodier@gmail.com>
@@ -25281,7 +23540,7 @@ function maxima(hljs) {
 
 module.exports = maxima;
 
-},{}],250:[function(require,module,exports){
+},{}],230:[function(require,module,exports){
 /*
 Language: MEL
 Description: Maya Embedded Language
@@ -25518,7 +23777,7 @@ function mel(hljs) {
 
 module.exports = mel;
 
-},{}],251:[function(require,module,exports){
+},{}],231:[function(require,module,exports){
 /*
 Language: Mercury
 Author: mucaho <mkucko@gmail.com>
@@ -25613,7 +23872,7 @@ function mercury(hljs) {
 
 module.exports = mercury;
 
-},{}],252:[function(require,module,exports){
+},{}],232:[function(require,module,exports){
 /*
 Language: MIPS Assembly
 Author: Nebuleon Fumika <nebuleon.fumika@gmail.com>
@@ -25712,7 +23971,7 @@ function mipsasm(hljs) {
 
 module.exports = mipsasm;
 
-},{}],253:[function(require,module,exports){
+},{}],233:[function(require,module,exports){
 /*
 Language: Mizar
 Description: The Mizar Language is a formal language derived from the mathematical vernacular.
@@ -25743,7 +24002,7 @@ function mizar(hljs) {
 
 module.exports = mizar;
 
-},{}],254:[function(require,module,exports){
+},{}],234:[function(require,module,exports){
 /*
 Language: Mojolicious
 Requires: xml.js, perl.js
@@ -25780,7 +24039,7 @@ function mojolicious(hljs) {
 
 module.exports = mojolicious;
 
-},{}],255:[function(require,module,exports){
+},{}],235:[function(require,module,exports){
 /*
 Language: Monkey
 Description: Monkey2 is an easy to use, cross platform, games oriented programming language from Blitz Research.
@@ -25866,7 +24125,7 @@ function monkey(hljs) {
 
 module.exports = monkey;
 
-},{}],256:[function(require,module,exports){
+},{}],236:[function(require,module,exports){
 /*
 Language: MoonScript
 Author: Billy Quith <chinbillybilbo@gmail.com>
@@ -25991,7 +24250,7 @@ function moonscript(hljs) {
 
 module.exports = moonscript;
 
-},{}],257:[function(require,module,exports){
+},{}],237:[function(require,module,exports){
 /*
  Language: N1QL
  Author: Andres Täht <andres.taht@gmail.com>
@@ -26072,7 +24331,7 @@ function n1ql(hljs) {
 
 module.exports = n1ql;
 
-},{}],258:[function(require,module,exports){
+},{}],238:[function(require,module,exports){
 /*
 Language: Nginx config
 Author: Peter Leonov <gojpeg@yandex.ru>
@@ -26177,7 +24436,7 @@ function nginx(hljs) {
 
 module.exports = nginx;
 
-},{}],259:[function(require,module,exports){
+},{}],239:[function(require,module,exports){
 /*
 Language: Nim
 Description: Nim is a statically typed compiled systems programming language.
@@ -26243,7 +24502,7 @@ function nim(hljs) {
 
 module.exports = nim;
 
-},{}],260:[function(require,module,exports){
+},{}],240:[function(require,module,exports){
 /*
 Language: Nix
 Author: Domen Kožar <domen@dev.si>
@@ -26304,7 +24563,7 @@ function nix(hljs) {
 
 module.exports = nix;
 
-},{}],261:[function(require,module,exports){
+},{}],241:[function(require,module,exports){
 /*
 Language: NSIS
 Description: Nullsoft Scriptable Install System
@@ -26421,7 +24680,7 @@ function nsis(hljs) {
 
 module.exports = nsis;
 
-},{}],262:[function(require,module,exports){
+},{}],242:[function(require,module,exports){
 /*
 Language: Objective-C
 Author: Valerii Hiora <valerii.hiora@gmail.com>
@@ -26532,7 +24791,7 @@ function objectivec(hljs) {
 
 module.exports = objectivec;
 
-},{}],263:[function(require,module,exports){
+},{}],243:[function(require,module,exports){
 /*
 Language: OCaml
 Author: Mehdi Dogguy <mehdi@dogguy.org>
@@ -26616,7 +24875,7 @@ function ocaml(hljs) {
 
 module.exports = ocaml;
 
-},{}],264:[function(require,module,exports){
+},{}],244:[function(require,module,exports){
 /*
 Language: OpenSCAD
 Author: Dan Panzarella <alsoelp@gmail.com>
@@ -26685,7 +24944,7 @@ function openscad(hljs) {
 
 module.exports = openscad;
 
-},{}],265:[function(require,module,exports){
+},{}],245:[function(require,module,exports){
 /*
 Language: Oxygene
 Author: Carlo Kok <ck@remobjects.com>
@@ -26768,7 +25027,7 @@ function oxygene(hljs) {
 
 module.exports = oxygene;
 
-},{}],266:[function(require,module,exports){
+},{}],246:[function(require,module,exports){
 /*
 Language: Parser3
 Requires: xml.js
@@ -26828,7 +25087,7 @@ function parser3(hljs) {
 
 module.exports = parser3;
 
-},{}],267:[function(require,module,exports){
+},{}],247:[function(require,module,exports){
 /*
 Language: Perl
 Author: Peter Leonov <gojpeg@yandex.ru>
@@ -26998,7 +25257,7 @@ function perl(hljs) {
 
 module.exports = perl;
 
-},{}],268:[function(require,module,exports){
+},{}],248:[function(require,module,exports){
 /*
 Language: Packet Filter config
 Description: pf.conf — packet filter configuration file (OpenBSD)
@@ -27058,7 +25317,7 @@ function pf(hljs) {
 
 module.exports = pf;
 
-},{}],269:[function(require,module,exports){
+},{}],249:[function(require,module,exports){
 /*
 Language: PostgreSQL and PL/pgSQL
 Author: Egor Rogov (e.rogov@postgrespro.ru)
@@ -27566,7 +25825,7 @@ function pgsql(hljs) {
 
 module.exports = pgsql;
 
-},{}],270:[function(require,module,exports){
+},{}],250:[function(require,module,exports){
 /*
 Language: PHP Template
 Requires: xml.js, php.js
@@ -27600,7 +25859,7 @@ function phpTemplate(hljs) {
 
 module.exports = phpTemplate;
 
-},{}],271:[function(require,module,exports){
+},{}],251:[function(require,module,exports){
 /*
 Language: PHP
 Author: Victor Karamzin <Victor.Karamzin@enterra-inc.com>
@@ -27764,7 +26023,7 @@ function php(hljs) {
 
 module.exports = php;
 
-},{}],272:[function(require,module,exports){
+},{}],252:[function(require,module,exports){
 /*
 Language: Plain text
 Author: Egor Rogov (e.rogov@postgrespro.ru)
@@ -27782,7 +26041,7 @@ function plaintext(hljs) {
 
 module.exports = plaintext;
 
-},{}],273:[function(require,module,exports){
+},{}],253:[function(require,module,exports){
 /*
 Language: Pony
 Author: Joe Eli McIlvain <joe.eli.mac@gmail.com>
@@ -27869,7 +26128,7 @@ function pony(hljs) {
 
 module.exports = pony;
 
-},{}],274:[function(require,module,exports){
+},{}],254:[function(require,module,exports){
 /*
 Language: PowerShell
 Description: PowerShell is a task-based command-line shell and scripting language built on .NET.
@@ -28114,7 +26373,7 @@ function powershell(hljs) {
 
 module.exports = powershell;
 
-},{}],275:[function(require,module,exports){
+},{}],255:[function(require,module,exports){
 /*
 Language: Processing
 Description: Processing is a flexible software sketchbook and a language for learning how to code within the context of the visual arts.
@@ -28174,7 +26433,7 @@ function processing(hljs) {
 
 module.exports = processing;
 
-},{}],276:[function(require,module,exports){
+},{}],256:[function(require,module,exports){
 /*
 Language: Python profiler
 Description: Python profiler results
@@ -28214,7 +26473,7 @@ function profile(hljs) {
 
 module.exports = profile;
 
-},{}],277:[function(require,module,exports){
+},{}],257:[function(require,module,exports){
 /*
 Language: Prolog
 Description: Prolog is a general purpose logic programming language associated with artificial intelligence and computational linguistics.
@@ -28313,7 +26572,7 @@ function prolog(hljs) {
 
 module.exports = prolog;
 
-},{}],278:[function(require,module,exports){
+},{}],258:[function(require,module,exports){
 /*
 Language: .properties
 Contributors: Valentin Aitken <valentin@nalisbg.com>, Egor Rogov <e.rogov@postgrespro.ru>
@@ -28394,7 +26653,7 @@ function properties(hljs) {
 
 module.exports = properties;
 
-},{}],279:[function(require,module,exports){
+},{}],259:[function(require,module,exports){
 /*
 Language: Protocol Buffers
 Author: Dan Tao <daniel.tao@gmail.com>
@@ -28443,7 +26702,7 @@ function protobuf(hljs) {
 
 module.exports = protobuf;
 
-},{}],280:[function(require,module,exports){
+},{}],260:[function(require,module,exports){
 /*
 Language: Puppet
 Author: Jose Molina Colmenero <gaudy41@gmail.com>
@@ -28569,7 +26828,7 @@ function puppet(hljs) {
 
 module.exports = puppet;
 
-},{}],281:[function(require,module,exports){
+},{}],261:[function(require,module,exports){
 /*
 Language: PureBASIC
 Author: Tristano Ajmone <tajmone@gmail.com>
@@ -28666,7 +26925,7 @@ function purebasic(hljs) {
 
 module.exports = purebasic;
 
-},{}],282:[function(require,module,exports){
+},{}],262:[function(require,module,exports){
 /*
 Language: Python REPL
 Requires: python.js
@@ -28699,7 +26958,7 @@ function pythonRepl(hljs) {
 
 module.exports = pythonRepl;
 
-},{}],283:[function(require,module,exports){
+},{}],263:[function(require,module,exports){
 /*
 Language: Python
 Description: Python is an interpreted, object-oriented, high-level programming language with dynamic semantics.
@@ -28840,7 +27099,7 @@ function python(hljs) {
 
 module.exports = python;
 
-},{}],284:[function(require,module,exports){
+},{}],264:[function(require,module,exports){
 /*
 Language: Q
 Description: Q is a vector-based functional paradigm programming language built into the kdb+ database.
@@ -28874,7 +27133,7 @@ function q(hljs) {
 
 module.exports = q;
 
-},{}],285:[function(require,module,exports){
+},{}],265:[function(require,module,exports){
 /*
 Language: QML
 Requires: javascript.js, xml.js
@@ -29057,7 +27316,7 @@ function qml(hljs) {
 
 module.exports = qml;
 
-},{}],286:[function(require,module,exports){
+},{}],266:[function(require,module,exports){
 /*
 Language: R
 Description: R is a free software environment for statistical computing and graphics.
@@ -29139,7 +27398,7 @@ function r(hljs) {
 
 module.exports = r;
 
-},{}],287:[function(require,module,exports){
+},{}],267:[function(require,module,exports){
 /*
 Language: ReasonML
 Description: Reason lets you write simple, fast and quality type safe code while leveraging both the JavaScript & OCaml ecosystems.
@@ -29450,7 +27709,7 @@ function reasonml(hljs) {
 
 module.exports = reasonml;
 
-},{}],288:[function(require,module,exports){
+},{}],268:[function(require,module,exports){
 /*
 Language: RenderMan RIB
 Author: Konstantin Evdokimenko <qewerty@gmail.com>
@@ -29489,7 +27748,7 @@ function rib(hljs) {
 
 module.exports = rib;
 
-},{}],289:[function(require,module,exports){
+},{}],269:[function(require,module,exports){
 /*
 Language: Roboconf
 Author: Vincent Zurczak <vzurczak@linagora.com>
@@ -29568,7 +27827,7 @@ function roboconf(hljs) {
 
 module.exports = roboconf;
 
-},{}],290:[function(require,module,exports){
+},{}],270:[function(require,module,exports){
 /*
 Language: Microtik RouterOS script
 Author: Ivan Dementev <ivan_div@mail.ru>
@@ -29726,7 +27985,7 @@ function routeros(hljs) {
 
 module.exports = routeros;
 
-},{}],291:[function(require,module,exports){
+},{}],271:[function(require,module,exports){
 /*
 Language: RenderMan RSL
 Author: Konstantin Evdokimenko <qewerty@gmail.com>
@@ -29774,7 +28033,7 @@ function rsl(hljs) {
 
 module.exports = rsl;
 
-},{}],292:[function(require,module,exports){
+},{}],272:[function(require,module,exports){
 /*
 Language: Ruby
 Description: Ruby is a dynamic, open source programming language with a focus on simplicity and productivity.
@@ -29972,7 +28231,7 @@ function ruby(hljs) {
 
 module.exports = ruby;
 
-},{}],293:[function(require,module,exports){
+},{}],273:[function(require,module,exports){
 /*
 Language: Oracle Rules Language
 Author: Jason Jacobson <jason.a.jacobson@gmail.com>
@@ -30045,7 +28304,7 @@ function ruleslanguage(hljs) {
 
 module.exports = ruleslanguage;
 
-},{}],294:[function(require,module,exports){
+},{}],274:[function(require,module,exports){
 /*
 Language: Rust
 Author: Andrey Vlasovskikh <andrey.vlasovskikh@gmail.com>
@@ -30165,7 +28424,7 @@ function rust(hljs) {
 
 module.exports = rust;
 
-},{}],295:[function(require,module,exports){
+},{}],275:[function(require,module,exports){
 /*
 Language: SAS
 Author: Mauricio Caceres <mauricio.caceres.bravo@gmail.com>
@@ -30301,7 +28560,7 @@ function sas(hljs) {
 
 module.exports = sas;
 
-},{}],296:[function(require,module,exports){
+},{}],276:[function(require,module,exports){
 /*
 Language: Scala
 Category: functional
@@ -30428,7 +28687,7 @@ function scala(hljs) {
 
 module.exports = scala;
 
-},{}],297:[function(require,module,exports){
+},{}],277:[function(require,module,exports){
 /*
 Language: Scheme
 Description: Scheme is a programming language in the Lisp family.
@@ -30575,7 +28834,7 @@ function scheme(hljs) {
 
 module.exports = scheme;
 
-},{}],298:[function(require,module,exports){
+},{}],278:[function(require,module,exports){
 /*
 Language: Scilab
 Author: Sylvestre Ledru <sylvestre.ledru@scilab-enterprises.com>
@@ -30642,7 +28901,7 @@ function scilab(hljs) {
 
 module.exports = scilab;
 
-},{}],299:[function(require,module,exports){
+},{}],279:[function(require,module,exports){
 /*
 Language: SCSS
 Description: Scss is an extension of the syntax of CSS.
@@ -30768,7 +29027,7 @@ function scss(hljs) {
 
 module.exports = scss;
 
-},{}],300:[function(require,module,exports){
+},{}],280:[function(require,module,exports){
 /*
 Language: Shell Session
 Requires: bash.js
@@ -30794,7 +29053,7 @@ function shell(hljs) {
 
 module.exports = shell;
 
-},{}],301:[function(require,module,exports){
+},{}],281:[function(require,module,exports){
 /*
 Language: Smali
 Author: Dennis Titze <dennis.titze@gmail.com>
@@ -30861,7 +29120,7 @@ function smali(hljs) {
 
 module.exports = smali;
 
-},{}],302:[function(require,module,exports){
+},{}],282:[function(require,module,exports){
 /*
 Language: Smalltalk
 Description: Smalltalk is an object-oriented, dynamically typed reflective programming language.
@@ -30922,7 +29181,7 @@ function smalltalk(hljs) {
 
 module.exports = smalltalk;
 
-},{}],303:[function(require,module,exports){
+},{}],283:[function(require,module,exports){
 /*
 Language: SML (Standard ML)
 Author: Edwin Dalorzo <edwin@dalorzo.org>
@@ -31000,7 +29259,7 @@ function sml(hljs) {
 
 module.exports = sml;
 
-},{}],304:[function(require,module,exports){
+},{}],284:[function(require,module,exports){
 /*
 Language: SQF
 Author: Søren Enevoldsen <senevoldsen90@gmail.com>
@@ -31440,7 +29699,7 @@ function sqf(hljs) {
 
 module.exports = sqf;
 
-},{}],305:[function(require,module,exports){
+},{}],285:[function(require,module,exports){
 /*
  Language: SQL
  Contributors: Nikolay Lisienko <info@neor.ru>, Heiko August <post@auge8472.de>, Travis Odom <travis.a.odom@gmail.com>, Vadimtro <vadimtro@yahoo.com>, Benjamin Auder <benjamin.auder@gmail.com>
@@ -31612,7 +29871,7 @@ function sql(hljs) {
 
 module.exports = sql;
 
-},{}],306:[function(require,module,exports){
+},{}],286:[function(require,module,exports){
 /*
 Language: Stan
 Description: The Stan probabilistic programming language
@@ -31844,7 +30103,7 @@ function stan(hljs) {
 
 module.exports = stan;
 
-},{}],307:[function(require,module,exports){
+},{}],287:[function(require,module,exports){
 /*
 Language: Stata
 Author: Brian Quistorff <bquistorff@gmail.com>
@@ -31899,7 +30158,7 @@ function stata(hljs) {
 
 module.exports = stata;
 
-},{}],308:[function(require,module,exports){
+},{}],288:[function(require,module,exports){
 /*
 Language: STEP Part 21
 Contributors: Adam Joseph Cook <adam.joseph.cook@gmail.com>
@@ -31957,7 +30216,7 @@ function step21(hljs) {
 
 module.exports = step21;
 
-},{}],309:[function(require,module,exports){
+},{}],289:[function(require,module,exports){
 /*
 Language: Stylus
 Author: Bryant Williams <b.n.williams@gmail.com>
@@ -32414,7 +30673,7 @@ function stylus(hljs) {
 
 module.exports = stylus;
 
-},{}],310:[function(require,module,exports){
+},{}],290:[function(require,module,exports){
 /*
 Language: SubUnit
 Author: Sergey Bronnikov <sergeyb@bronevichok.ru>
@@ -32458,7 +30717,7 @@ function subunit(hljs) {
 
 module.exports = subunit;
 
-},{}],311:[function(require,module,exports){
+},{}],291:[function(require,module,exports){
 /*
 Language: Swift
 Description: Swift is a general-purpose programming language built using a modern approach to safety, performance, and software design patterns.
@@ -32603,7 +30862,7 @@ function swift(hljs) {
 
 module.exports = swift;
 
-},{}],312:[function(require,module,exports){
+},{}],292:[function(require,module,exports){
 /*
 Language: Tagger Script
 Author: Philipp Wolfer <ph.wolfer@gmail.com>
@@ -32657,7 +30916,7 @@ function taggerscript(hljs) {
 
 module.exports = taggerscript;
 
-},{}],313:[function(require,module,exports){
+},{}],293:[function(require,module,exports){
 /*
 Language: Test Anything Protocol
 Description: TAP, the Test Anything Protocol, is a simple text-based interface between testing modules in a test harness.
@@ -32705,7 +30964,7 @@ function tap(hljs) {
 
 module.exports = tap;
 
-},{}],314:[function(require,module,exports){
+},{}],294:[function(require,module,exports){
 /*
 Language: Tcl
 Description: Tcl is a very simple programming language.
@@ -32776,7 +31035,7 @@ function tcl(hljs) {
 
 module.exports = tcl;
 
-},{}],315:[function(require,module,exports){
+},{}],295:[function(require,module,exports){
 /*
 Language: Thrift
 Author: Oleg Efimov <efimovov@gmail.com>
@@ -32823,7 +31082,7 @@ function thrift(hljs) {
 
 module.exports = thrift;
 
-},{}],316:[function(require,module,exports){
+},{}],296:[function(require,module,exports){
 /*
 Language: TP
 Author: Jay Strybis <jay.strybis@gmail.com>
@@ -32918,7 +31177,7 @@ function tp(hljs) {
 
 module.exports = tp;
 
-},{}],317:[function(require,module,exports){
+},{}],297:[function(require,module,exports){
 /*
 Language: Twig
 Requires: xml.js
@@ -32997,7 +31256,7 @@ function twig(hljs) {
 
 module.exports = twig;
 
-},{}],318:[function(require,module,exports){
+},{}],298:[function(require,module,exports){
 const IDENT_RE = '[A-Za-z$_][0-9A-Za-z$_]*';
 const KEYWORDS = [
   "as", // for exports
@@ -33367,7 +31626,7 @@ function typescript(hljs) {
 
 module.exports = typescript;
 
-},{}],319:[function(require,module,exports){
+},{}],299:[function(require,module,exports){
 /*
 Language: Vala
 Author: Antono Vasiljev <antono.vasiljev@gmail.com>
@@ -33428,7 +31687,7 @@ function vala(hljs) {
 
 module.exports = vala;
 
-},{}],320:[function(require,module,exports){
+},{}],300:[function(require,module,exports){
 /*
 Language: Visual Basic .NET
 Description: Visual Basic .NET (VB.NET) is a multi-paradigm, object-oriented programming language, implemented on the .NET Framework.
@@ -33495,7 +31754,7 @@ function vbnet(hljs) {
 
 module.exports = vbnet;
 
-},{}],321:[function(require,module,exports){
+},{}],301:[function(require,module,exports){
 /*
 Language: VBScript in HTML
 Requires: xml.js, vbscript.js
@@ -33520,7 +31779,7 @@ function vbscriptHtml(hljs) {
 
 module.exports = vbscriptHtml;
 
-},{}],322:[function(require,module,exports){
+},{}],302:[function(require,module,exports){
 /*
 Language: VBScript
 Description: VBScript ("Microsoft Visual Basic Scripting Edition") is an Active Scripting language developed by Microsoft that is modeled on Visual Basic.
@@ -33572,7 +31831,7 @@ function vbscript(hljs) {
 
 module.exports = vbscript;
 
-},{}],323:[function(require,module,exports){
+},{}],303:[function(require,module,exports){
 /*
 Language: Verilog
 Author: Jon Evans <jon@craftyjon.com>
@@ -33684,7 +31943,7 @@ function verilog(hljs) {
 
 module.exports = verilog;
 
-},{}],324:[function(require,module,exports){
+},{}],304:[function(require,module,exports){
 /*
 Language: VHDL
 Author: Igor Kalnitsky <igor@kalnitsky.org>
@@ -33757,7 +32016,7 @@ function vhdl(hljs) {
 
 module.exports = vhdl;
 
-},{}],325:[function(require,module,exports){
+},{}],305:[function(require,module,exports){
 /*
 Language: Vim Script
 Author: Jun Yang <yangjvn@126.com>
@@ -33879,7 +32138,7 @@ function vim(hljs) {
 
 module.exports = vim;
 
-},{}],326:[function(require,module,exports){
+},{}],306:[function(require,module,exports){
 /*
 Language: Intel x86 Assembly
 Author: innocenat <innocenat@gmail.com>
@@ -34027,7 +32286,7 @@ function x86asm(hljs) {
 
 module.exports = x86asm;
 
-},{}],327:[function(require,module,exports){
+},{}],307:[function(require,module,exports){
 /*
 Language: XL
 Author: Christophe de Dinechin <christophe@taodyne.com>
@@ -34111,7 +32370,7 @@ function xl(hljs) {
 
 module.exports = xl;
 
-},{}],328:[function(require,module,exports){
+},{}],308:[function(require,module,exports){
 /*
 Language: HTML, XML
 Website: https://www.w3.org/XML/
@@ -34254,7 +32513,7 @@ function xml(hljs) {
 
 module.exports = xml;
 
-},{}],329:[function(require,module,exports){
+},{}],309:[function(require,module,exports){
 /*
 Language: XQuery
 Author: Dirk Kirsten <dk@basex.org>
@@ -34430,7 +32689,7 @@ function xquery(hljs) {
 
 module.exports = xquery;
 
-},{}],330:[function(require,module,exports){
+},{}],310:[function(require,module,exports){
 /*
 Language: YAML
 Description: Yet Another Markdown Language
@@ -34608,7 +32867,7 @@ function yaml(hljs) {
 
 module.exports = yaml;
 
-},{}],331:[function(require,module,exports){
+},{}],311:[function(require,module,exports){
 /*
  Language: Zephir
  Description: Zephir, an open source, high-level language designed to ease the creation and maintainability of extensions for PHP with a focus on type and memory safety.
@@ -34729,7 +32988,1734 @@ function zephir(hljs) {
 
 module.exports = zephir;
 
-},{}],332:[function(require,module,exports){
+},{}],312:[function(require,module,exports){
+module.exports={
+  "*": [
+    "accesskey",
+    "autocapitalize",
+    "autofocus",
+    "class",
+    "contenteditable",
+    "dir",
+    "draggable",
+    "enterkeyhint",
+    "hidden",
+    "id",
+    "inputmode",
+    "is",
+    "itemid",
+    "itemprop",
+    "itemref",
+    "itemscope",
+    "itemtype",
+    "lang",
+    "nonce",
+    "slot",
+    "spellcheck",
+    "style",
+    "tabindex",
+    "title",
+    "translate"
+  ],
+  "a": [
+    "accesskey",
+    "charset",
+    "coords",
+    "download",
+    "href",
+    "hreflang",
+    "name",
+    "ping",
+    "referrerpolicy",
+    "rel",
+    "rev",
+    "shape",
+    "tabindex",
+    "target",
+    "type"
+  ],
+  "abbr": [
+    "title"
+  ],
+  "applet": [
+    "align",
+    "alt",
+    "archive",
+    "code",
+    "codebase",
+    "height",
+    "hspace",
+    "name",
+    "object",
+    "vspace",
+    "width"
+  ],
+  "area": [
+    "accesskey",
+    "alt",
+    "coords",
+    "download",
+    "href",
+    "hreflang",
+    "nohref",
+    "ping",
+    "referrerpolicy",
+    "rel",
+    "shape",
+    "tabindex",
+    "target",
+    "type"
+  ],
+  "audio": [
+    "autoplay",
+    "controls",
+    "crossorigin",
+    "loop",
+    "muted",
+    "preload",
+    "src"
+  ],
+  "base": [
+    "href",
+    "target"
+  ],
+  "basefont": [
+    "color",
+    "face",
+    "size"
+  ],
+  "bdo": [
+    "dir"
+  ],
+  "blockquote": [
+    "cite"
+  ],
+  "body": [
+    "alink",
+    "background",
+    "bgcolor",
+    "link",
+    "text",
+    "vlink"
+  ],
+  "br": [
+    "clear"
+  ],
+  "button": [
+    "accesskey",
+    "autofocus",
+    "disabled",
+    "form",
+    "formaction",
+    "formenctype",
+    "formmethod",
+    "formnovalidate",
+    "formtarget",
+    "name",
+    "tabindex",
+    "type",
+    "value"
+  ],
+  "canvas": [
+    "height",
+    "width"
+  ],
+  "caption": [
+    "align"
+  ],
+  "col": [
+    "align",
+    "char",
+    "charoff",
+    "span",
+    "valign",
+    "width"
+  ],
+  "colgroup": [
+    "align",
+    "char",
+    "charoff",
+    "span",
+    "valign",
+    "width"
+  ],
+  "data": [
+    "value"
+  ],
+  "del": [
+    "cite",
+    "datetime"
+  ],
+  "details": [
+    "open"
+  ],
+  "dfn": [
+    "title"
+  ],
+  "dialog": [
+    "open"
+  ],
+  "dir": [
+    "compact"
+  ],
+  "div": [
+    "align"
+  ],
+  "dl": [
+    "compact"
+  ],
+  "embed": [
+    "height",
+    "src",
+    "type",
+    "width"
+  ],
+  "fieldset": [
+    "disabled",
+    "form",
+    "name"
+  ],
+  "font": [
+    "color",
+    "face",
+    "size"
+  ],
+  "form": [
+    "accept",
+    "accept-charset",
+    "action",
+    "autocomplete",
+    "enctype",
+    "method",
+    "name",
+    "novalidate",
+    "target"
+  ],
+  "frame": [
+    "frameborder",
+    "longdesc",
+    "marginheight",
+    "marginwidth",
+    "name",
+    "noresize",
+    "scrolling",
+    "src"
+  ],
+  "frameset": [
+    "cols",
+    "rows"
+  ],
+  "h1": [
+    "align"
+  ],
+  "h2": [
+    "align"
+  ],
+  "h3": [
+    "align"
+  ],
+  "h4": [
+    "align"
+  ],
+  "h5": [
+    "align"
+  ],
+  "h6": [
+    "align"
+  ],
+  "head": [
+    "profile"
+  ],
+  "hr": [
+    "align",
+    "noshade",
+    "size",
+    "width"
+  ],
+  "html": [
+    "manifest",
+    "version"
+  ],
+  "iframe": [
+    "align",
+    "allow",
+    "allowfullscreen",
+    "allowpaymentrequest",
+    "allowusermedia",
+    "frameborder",
+    "height",
+    "longdesc",
+    "marginheight",
+    "marginwidth",
+    "name",
+    "referrerpolicy",
+    "sandbox",
+    "scrolling",
+    "src",
+    "srcdoc",
+    "width"
+  ],
+  "img": [
+    "align",
+    "alt",
+    "border",
+    "crossorigin",
+    "decoding",
+    "height",
+    "hspace",
+    "ismap",
+    "longdesc",
+    "name",
+    "referrerpolicy",
+    "sizes",
+    "src",
+    "srcset",
+    "usemap",
+    "vspace",
+    "width"
+  ],
+  "input": [
+    "accept",
+    "accesskey",
+    "align",
+    "alt",
+    "autocomplete",
+    "autofocus",
+    "checked",
+    "dirname",
+    "disabled",
+    "form",
+    "formaction",
+    "formenctype",
+    "formmethod",
+    "formnovalidate",
+    "formtarget",
+    "height",
+    "ismap",
+    "list",
+    "max",
+    "maxlength",
+    "min",
+    "minlength",
+    "multiple",
+    "name",
+    "pattern",
+    "placeholder",
+    "readonly",
+    "required",
+    "size",
+    "src",
+    "step",
+    "tabindex",
+    "title",
+    "type",
+    "usemap",
+    "value",
+    "width"
+  ],
+  "ins": [
+    "cite",
+    "datetime"
+  ],
+  "isindex": [
+    "prompt"
+  ],
+  "label": [
+    "accesskey",
+    "for",
+    "form"
+  ],
+  "legend": [
+    "accesskey",
+    "align"
+  ],
+  "li": [
+    "type",
+    "value"
+  ],
+  "link": [
+    "as",
+    "charset",
+    "color",
+    "crossorigin",
+    "href",
+    "hreflang",
+    "imagesizes",
+    "imagesrcset",
+    "integrity",
+    "media",
+    "nonce",
+    "referrerpolicy",
+    "rel",
+    "rev",
+    "sizes",
+    "target",
+    "title",
+    "type"
+  ],
+  "map": [
+    "name"
+  ],
+  "menu": [
+    "compact"
+  ],
+  "meta": [
+    "charset",
+    "content",
+    "http-equiv",
+    "name",
+    "scheme"
+  ],
+  "meter": [
+    "high",
+    "low",
+    "max",
+    "min",
+    "optimum",
+    "value"
+  ],
+  "object": [
+    "align",
+    "archive",
+    "border",
+    "classid",
+    "codebase",
+    "codetype",
+    "data",
+    "declare",
+    "form",
+    "height",
+    "hspace",
+    "name",
+    "standby",
+    "tabindex",
+    "type",
+    "typemustmatch",
+    "usemap",
+    "vspace",
+    "width"
+  ],
+  "ol": [
+    "compact",
+    "reversed",
+    "start",
+    "type"
+  ],
+  "optgroup": [
+    "disabled",
+    "label"
+  ],
+  "option": [
+    "disabled",
+    "label",
+    "selected",
+    "value"
+  ],
+  "output": [
+    "for",
+    "form",
+    "name"
+  ],
+  "p": [
+    "align"
+  ],
+  "param": [
+    "name",
+    "type",
+    "value",
+    "valuetype"
+  ],
+  "pre": [
+    "width"
+  ],
+  "progress": [
+    "max",
+    "value"
+  ],
+  "q": [
+    "cite"
+  ],
+  "script": [
+    "async",
+    "charset",
+    "crossorigin",
+    "defer",
+    "integrity",
+    "language",
+    "nomodule",
+    "nonce",
+    "referrerpolicy",
+    "src",
+    "type"
+  ],
+  "select": [
+    "autocomplete",
+    "autofocus",
+    "disabled",
+    "form",
+    "multiple",
+    "name",
+    "required",
+    "size",
+    "tabindex"
+  ],
+  "slot": [
+    "name"
+  ],
+  "source": [
+    "media",
+    "sizes",
+    "src",
+    "srcset",
+    "type"
+  ],
+  "style": [
+    "media",
+    "nonce",
+    "title",
+    "type"
+  ],
+  "table": [
+    "align",
+    "bgcolor",
+    "border",
+    "cellpadding",
+    "cellspacing",
+    "frame",
+    "rules",
+    "summary",
+    "width"
+  ],
+  "tbody": [
+    "align",
+    "char",
+    "charoff",
+    "valign"
+  ],
+  "td": [
+    "abbr",
+    "align",
+    "axis",
+    "bgcolor",
+    "char",
+    "charoff",
+    "colspan",
+    "headers",
+    "height",
+    "nowrap",
+    "rowspan",
+    "scope",
+    "valign",
+    "width"
+  ],
+  "textarea": [
+    "accesskey",
+    "autocomplete",
+    "autofocus",
+    "cols",
+    "dirname",
+    "disabled",
+    "form",
+    "maxlength",
+    "minlength",
+    "name",
+    "placeholder",
+    "readonly",
+    "required",
+    "rows",
+    "tabindex",
+    "wrap"
+  ],
+  "tfoot": [
+    "align",
+    "char",
+    "charoff",
+    "valign"
+  ],
+  "th": [
+    "abbr",
+    "align",
+    "axis",
+    "bgcolor",
+    "char",
+    "charoff",
+    "colspan",
+    "headers",
+    "height",
+    "nowrap",
+    "rowspan",
+    "scope",
+    "valign",
+    "width"
+  ],
+  "thead": [
+    "align",
+    "char",
+    "charoff",
+    "valign"
+  ],
+  "time": [
+    "datetime"
+  ],
+  "tr": [
+    "align",
+    "bgcolor",
+    "char",
+    "charoff",
+    "valign"
+  ],
+  "track": [
+    "default",
+    "kind",
+    "label",
+    "src",
+    "srclang"
+  ],
+  "ul": [
+    "compact",
+    "type"
+  ],
+  "video": [
+    "autoplay",
+    "controls",
+    "crossorigin",
+    "height",
+    "loop",
+    "muted",
+    "playsinline",
+    "poster",
+    "preload",
+    "src",
+    "width"
+  ]
+}
+
+},{}],313:[function(require,module,exports){
+module.exports=[
+  "area",
+  "base",
+  "basefont",
+  "bgsound",
+  "br",
+  "col",
+  "command",
+  "embed",
+  "frame",
+  "hr",
+  "image",
+  "img",
+  "input",
+  "isindex",
+  "keygen",
+  "link",
+  "menuitem",
+  "meta",
+  "nextid",
+  "param",
+  "source",
+  "track",
+  "wbr"
+]
+
+},{}],314:[function(require,module,exports){
+module.exports = attributeToProperty
+
+var transform = {
+  'class': 'className',
+  'for': 'htmlFor',
+  'http-equiv': 'httpEquiv'
+}
+
+function attributeToProperty (h) {
+  return function (tagName, attrs, children) {
+    for (var attr in attrs) {
+      if (attr in transform) {
+        attrs[transform[attr]] = attrs[attr]
+        delete attrs[attr]
+      }
+    }
+    return h(tagName, attrs, children)
+  }
+}
+
+},{}],315:[function(require,module,exports){
+var attrToProp = require('hyperscript-attribute-to-property')
+
+var VAR = 0, TEXT = 1, OPEN = 2, CLOSE = 3, ATTR = 4
+var ATTR_KEY = 5, ATTR_KEY_W = 6
+var ATTR_VALUE_W = 7, ATTR_VALUE = 8
+var ATTR_VALUE_SQ = 9, ATTR_VALUE_DQ = 10
+var ATTR_EQ = 11, ATTR_BREAK = 12
+var COMMENT = 13
+
+module.exports = function (h, opts) {
+  if (!opts) opts = {}
+  var concat = opts.concat || function (a, b) {
+    return String(a) + String(b)
+  }
+  if (opts.attrToProp !== false) {
+    h = attrToProp(h)
+  }
+
+  return function (strings) {
+    var state = TEXT, reg = ''
+    var arglen = arguments.length
+    var parts = []
+
+    for (var i = 0; i < strings.length; i++) {
+      if (i < arglen - 1) {
+        var arg = arguments[i+1]
+        var p = parse(strings[i])
+        var xstate = state
+        if (xstate === ATTR_VALUE_DQ) xstate = ATTR_VALUE
+        if (xstate === ATTR_VALUE_SQ) xstate = ATTR_VALUE
+        if (xstate === ATTR_VALUE_W) xstate = ATTR_VALUE
+        if (xstate === ATTR) xstate = ATTR_KEY
+        if (xstate === OPEN) {
+          if (reg === '/') {
+            p.push([ OPEN, '/', arg ])
+            reg = ''
+          } else {
+            p.push([ OPEN, arg ])
+          }
+        } else if (xstate === COMMENT && opts.comments) {
+          reg += String(arg)
+        } else if (xstate !== COMMENT) {
+          p.push([ VAR, xstate, arg ])
+        }
+        parts.push.apply(parts, p)
+      } else parts.push.apply(parts, parse(strings[i]))
+    }
+
+    var tree = [null,{},[]]
+    var stack = [[tree,-1]]
+    for (var i = 0; i < parts.length; i++) {
+      var cur = stack[stack.length-1][0]
+      var p = parts[i], s = p[0]
+      if (s === OPEN && /^\//.test(p[1])) {
+        var ix = stack[stack.length-1][1]
+        if (stack.length > 1) {
+          stack.pop()
+          stack[stack.length-1][0][2][ix] = h(
+            cur[0], cur[1], cur[2].length ? cur[2] : undefined
+          )
+        }
+      } else if (s === OPEN) {
+        var c = [p[1],{},[]]
+        cur[2].push(c)
+        stack.push([c,cur[2].length-1])
+      } else if (s === ATTR_KEY || (s === VAR && p[1] === ATTR_KEY)) {
+        var key = ''
+        var copyKey
+        for (; i < parts.length; i++) {
+          if (parts[i][0] === ATTR_KEY) {
+            key = concat(key, parts[i][1])
+          } else if (parts[i][0] === VAR && parts[i][1] === ATTR_KEY) {
+            if (typeof parts[i][2] === 'object' && !key) {
+              for (copyKey in parts[i][2]) {
+                if (parts[i][2].hasOwnProperty(copyKey) && !cur[1][copyKey]) {
+                  cur[1][copyKey] = parts[i][2][copyKey]
+                }
+              }
+            } else {
+              key = concat(key, parts[i][2])
+            }
+          } else break
+        }
+        if (parts[i][0] === ATTR_EQ) i++
+        var j = i
+        for (; i < parts.length; i++) {
+          if (parts[i][0] === ATTR_VALUE || parts[i][0] === ATTR_KEY) {
+            if (!cur[1][key]) cur[1][key] = strfn(parts[i][1])
+            else parts[i][1]==="" || (cur[1][key] = concat(cur[1][key], parts[i][1]));
+          } else if (parts[i][0] === VAR
+          && (parts[i][1] === ATTR_VALUE || parts[i][1] === ATTR_KEY)) {
+            if (!cur[1][key]) cur[1][key] = strfn(parts[i][2])
+            else parts[i][2]==="" || (cur[1][key] = concat(cur[1][key], parts[i][2]));
+          } else {
+            if (key.length && !cur[1][key] && i === j
+            && (parts[i][0] === CLOSE || parts[i][0] === ATTR_BREAK)) {
+              // https://html.spec.whatwg.org/multipage/infrastructure.html#boolean-attributes
+              // empty string is falsy, not well behaved value in browser
+              cur[1][key] = key.toLowerCase()
+            }
+            if (parts[i][0] === CLOSE) {
+              i--
+            }
+            break
+          }
+        }
+      } else if (s === ATTR_KEY) {
+        cur[1][p[1]] = true
+      } else if (s === VAR && p[1] === ATTR_KEY) {
+        cur[1][p[2]] = true
+      } else if (s === CLOSE) {
+        if (selfClosing(cur[0]) && stack.length) {
+          var ix = stack[stack.length-1][1]
+          stack.pop()
+          stack[stack.length-1][0][2][ix] = h(
+            cur[0], cur[1], cur[2].length ? cur[2] : undefined
+          )
+        }
+      } else if (s === VAR && p[1] === TEXT) {
+        if (p[2] === undefined || p[2] === null) p[2] = ''
+        else if (!p[2]) p[2] = concat('', p[2])
+        if (Array.isArray(p[2][0])) {
+          cur[2].push.apply(cur[2], p[2])
+        } else {
+          cur[2].push(p[2])
+        }
+      } else if (s === TEXT) {
+        cur[2].push(p[1])
+      } else if (s === ATTR_EQ || s === ATTR_BREAK) {
+        // no-op
+      } else {
+        throw new Error('unhandled: ' + s)
+      }
+    }
+
+    if (tree[2].length > 1 && /^\s*$/.test(tree[2][0])) {
+      tree[2].shift()
+    }
+
+    if (tree[2].length > 2
+    || (tree[2].length === 2 && /\S/.test(tree[2][1]))) {
+      if (opts.createFragment) return opts.createFragment(tree[2])
+      throw new Error(
+        'multiple root elements must be wrapped in an enclosing tag'
+      )
+    }
+    if (Array.isArray(tree[2][0]) && typeof tree[2][0][0] === 'string'
+    && Array.isArray(tree[2][0][2])) {
+      tree[2][0] = h(tree[2][0][0], tree[2][0][1], tree[2][0][2])
+    }
+    return tree[2][0]
+
+    function parse (str) {
+      var res = []
+      if (state === ATTR_VALUE_W) state = ATTR
+      for (var i = 0; i < str.length; i++) {
+        var c = str.charAt(i)
+        if (state === TEXT && c === '<') {
+          if (reg.length) res.push([TEXT, reg])
+          reg = ''
+          state = OPEN
+        } else if (c === '>' && !quot(state) && state !== COMMENT) {
+          if (state === OPEN && reg.length) {
+            res.push([OPEN,reg])
+          } else if (state === ATTR_KEY) {
+            res.push([ATTR_KEY,reg])
+          } else if (state === ATTR_VALUE && reg.length) {
+            res.push([ATTR_VALUE,reg])
+          }
+          res.push([CLOSE])
+          reg = ''
+          state = TEXT
+        } else if (state === COMMENT && /-$/.test(reg) && c === '-') {
+          if (opts.comments) {
+            res.push([ATTR_VALUE,reg.substr(0, reg.length - 1)])
+          }
+          reg = ''
+          state = TEXT
+        } else if (state === OPEN && /^!--$/.test(reg)) {
+          if (opts.comments) {
+            res.push([OPEN, reg],[ATTR_KEY,'comment'],[ATTR_EQ])
+          }
+          reg = c
+          state = COMMENT
+        } else if (state === TEXT || state === COMMENT) {
+          reg += c
+        } else if (state === OPEN && c === '/' && reg.length) {
+          // no-op, self closing tag without a space <br/>
+        } else if (state === OPEN && /\s/.test(c)) {
+          if (reg.length) {
+            res.push([OPEN, reg])
+          }
+          reg = ''
+          state = ATTR
+        } else if (state === OPEN) {
+          reg += c
+        } else if (state === ATTR && /[^\s"'=/]/.test(c)) {
+          state = ATTR_KEY
+          reg = c
+        } else if (state === ATTR && /\s/.test(c)) {
+          if (reg.length) res.push([ATTR_KEY,reg])
+          res.push([ATTR_BREAK])
+        } else if (state === ATTR_KEY && /\s/.test(c)) {
+          res.push([ATTR_KEY,reg])
+          reg = ''
+          state = ATTR_KEY_W
+        } else if (state === ATTR_KEY && c === '=') {
+          res.push([ATTR_KEY,reg],[ATTR_EQ])
+          reg = ''
+          state = ATTR_VALUE_W
+        } else if (state === ATTR_KEY) {
+          reg += c
+        } else if ((state === ATTR_KEY_W || state === ATTR) && c === '=') {
+          res.push([ATTR_EQ])
+          state = ATTR_VALUE_W
+        } else if ((state === ATTR_KEY_W || state === ATTR) && !/\s/.test(c)) {
+          res.push([ATTR_BREAK])
+          if (/[\w-]/.test(c)) {
+            reg += c
+            state = ATTR_KEY
+          } else state = ATTR
+        } else if (state === ATTR_VALUE_W && c === '"') {
+          state = ATTR_VALUE_DQ
+        } else if (state === ATTR_VALUE_W && c === "'") {
+          state = ATTR_VALUE_SQ
+        } else if (state === ATTR_VALUE_DQ && c === '"') {
+          res.push([ATTR_VALUE,reg],[ATTR_BREAK])
+          reg = ''
+          state = ATTR
+        } else if (state === ATTR_VALUE_SQ && c === "'") {
+          res.push([ATTR_VALUE,reg],[ATTR_BREAK])
+          reg = ''
+          state = ATTR
+        } else if (state === ATTR_VALUE_W && !/\s/.test(c)) {
+          state = ATTR_VALUE
+          i--
+        } else if (state === ATTR_VALUE && /\s/.test(c)) {
+          res.push([ATTR_VALUE,reg],[ATTR_BREAK])
+          reg = ''
+          state = ATTR
+        } else if (state === ATTR_VALUE || state === ATTR_VALUE_SQ
+        || state === ATTR_VALUE_DQ) {
+          reg += c
+        }
+      }
+      if (state === TEXT && reg.length) {
+        res.push([TEXT,reg])
+        reg = ''
+      } else if (state === ATTR_VALUE && reg.length) {
+        res.push([ATTR_VALUE,reg])
+        reg = ''
+      } else if (state === ATTR_VALUE_DQ && reg.length) {
+        res.push([ATTR_VALUE,reg])
+        reg = ''
+      } else if (state === ATTR_VALUE_SQ && reg.length) {
+        res.push([ATTR_VALUE,reg])
+        reg = ''
+      } else if (state === ATTR_KEY) {
+        res.push([ATTR_KEY,reg])
+        reg = ''
+      }
+      return res
+    }
+  }
+
+  function strfn (x) {
+    if (typeof x === 'function') return x
+    else if (typeof x === 'string') return x
+    else if (x && typeof x === 'object') return x
+    else if (x === null || x === undefined) return x
+    else return concat('', x)
+  }
+}
+
+function quot (state) {
+  return state === ATTR_VALUE_SQ || state === ATTR_VALUE_DQ
+}
+
+var closeRE = RegExp('^(' + [
+  'area', 'base', 'basefont', 'bgsound', 'br', 'col', 'command', 'embed',
+  'frame', 'hr', 'img', 'input', 'isindex', 'keygen', 'link', 'meta', 'param',
+  'source', 'track', 'wbr', '!--',
+  // SVG TAGS
+  'animate', 'animateTransform', 'circle', 'cursor', 'desc', 'ellipse',
+  'feBlend', 'feColorMatrix', 'feComposite',
+  'feConvolveMatrix', 'feDiffuseLighting', 'feDisplacementMap',
+  'feDistantLight', 'feFlood', 'feFuncA', 'feFuncB', 'feFuncG', 'feFuncR',
+  'feGaussianBlur', 'feImage', 'feMergeNode', 'feMorphology',
+  'feOffset', 'fePointLight', 'feSpecularLighting', 'feSpotLight', 'feTile',
+  'feTurbulence', 'font-face-format', 'font-face-name', 'font-face-uri',
+  'glyph', 'glyphRef', 'hkern', 'image', 'line', 'missing-glyph', 'mpath',
+  'path', 'polygon', 'polyline', 'rect', 'set', 'stop', 'tref', 'use', 'view',
+  'vkern'
+].join('|') + ')(?:[\.#][a-zA-Z0-9\u007F-\uFFFF_:-]+)*$')
+function selfClosing (tag) { return closeRE.test(tag) }
+
+},{"hyperscript-attribute-to-property":314}],316:[function(require,module,exports){
+if (typeof Object.create === 'function') {
+  // implementation from standard node.js 'util' module
+  module.exports = function inherits(ctor, superCtor) {
+    if (superCtor) {
+      ctor.super_ = superCtor
+      ctor.prototype = Object.create(superCtor.prototype, {
+        constructor: {
+          value: ctor,
+          enumerable: false,
+          writable: true,
+          configurable: true
+        }
+      })
+    }
+  };
+} else {
+  // old school shim for old browsers
+  module.exports = function inherits(ctor, superCtor) {
+    if (superCtor) {
+      ctor.super_ = superCtor
+      var TempCtor = function () {}
+      TempCtor.prototype = superCtor.prototype
+      ctor.prototype = new TempCtor()
+      ctor.prototype.constructor = ctor
+    }
+  }
+}
+
+},{}],317:[function(require,module,exports){
+var inserted = {};
+
+module.exports = function (css, options) {
+    if (inserted[css]) return;
+    inserted[css] = true;
+    
+    var elem = document.createElement('style');
+    elem.setAttribute('type', 'text/css');
+
+    if ('textContent' in elem) {
+      elem.textContent = css;
+    } else {
+      elem.styleSheet.cssText = css;
+    }
+    
+    var head = document.getElementsByTagName('head')[0];
+    if (options && options.prepend) {
+        head.insertBefore(elem, head.childNodes[0]);
+    } else {
+        head.appendChild(elem);
+    }
+};
+
+},{}],318:[function(require,module,exports){
+'use strict';
+
+module.exports = url => {
+	if (typeof url !== 'string') {
+		throw new TypeError(`Expected a \`string\`, got \`${typeof url}\``);
+	}
+
+	// Don't match Windows paths `c:\`
+	if (/^[a-zA-Z]:\\/.test(url)) {
+		return false;
+	}
+
+	// Scheme: https://tools.ietf.org/html/rfc3986#section-3.1
+	// Absolute URL: https://tools.ietf.org/html/rfc3986#section-4.3
+	return /^[a-zA-Z][a-zA-Z\d+\-.]*:/.test(url);
+};
+
+},{}],319:[function(require,module,exports){
+'use strict'
+
+module.exports = alphabetical
+
+// Check if the given character code, or the character code at the first
+// character, is alphabetical.
+function alphabetical(character) {
+  var code = typeof character === 'string' ? character.charCodeAt(0) : character
+
+  return (
+    (code >= 97 && code <= 122) /* a-z */ ||
+    (code >= 65 && code <= 90) /* A-Z */
+  )
+}
+
+},{}],320:[function(require,module,exports){
+'use strict';
+module.exports = function (str) {
+	if (typeof str !== 'string') {
+		throw new TypeError('Expected a string');
+	}
+
+	return !/[^0-9a-z\xDF-\xFF]/.test(str.toLowerCase());
+};
+
+},{}],321:[function(require,module,exports){
+'use strict'
+
+var alphabetical = require('is-alphabetical')
+var decimal = require('is-decimal')
+
+module.exports = alphanumerical
+
+// Check if the given character code, or the character code at the first
+// character, is alphanumerical.
+function alphanumerical(character) {
+  return alphabetical(character) || decimal(character)
+}
+
+},{"is-alphabetical":319,"is-decimal":322}],322:[function(require,module,exports){
+'use strict'
+
+module.exports = decimal
+
+// Check if the given character code, or the character code at the first
+// character, is decimal.
+function decimal(character) {
+  var code = typeof character === 'string' ? character.charCodeAt(0) : character
+
+  return code >= 48 && code <= 57 /* 0-9 */
+}
+
+},{}],323:[function(require,module,exports){
+/* eslint-disable yoda */
+'use strict';
+
+const isFullwidthCodePoint = codePoint => {
+	if (Number.isNaN(codePoint)) {
+		return false;
+	}
+
+	// Code points are derived from:
+	// http://www.unix.org/Public/UNIDATA/EastAsianWidth.txt
+	if (
+		codePoint >= 0x1100 && (
+			codePoint <= 0x115F || // Hangul Jamo
+			codePoint === 0x2329 || // LEFT-POINTING ANGLE BRACKET
+			codePoint === 0x232A || // RIGHT-POINTING ANGLE BRACKET
+			// CJK Radicals Supplement .. Enclosed CJK Letters and Months
+			(0x2E80 <= codePoint && codePoint <= 0x3247 && codePoint !== 0x303F) ||
+			// Enclosed CJK Letters and Months .. CJK Unified Ideographs Extension A
+			(0x3250 <= codePoint && codePoint <= 0x4DBF) ||
+			// CJK Unified Ideographs .. Yi Radicals
+			(0x4E00 <= codePoint && codePoint <= 0xA4C6) ||
+			// Hangul Jamo Extended-A
+			(0xA960 <= codePoint && codePoint <= 0xA97C) ||
+			// Hangul Syllables
+			(0xAC00 <= codePoint && codePoint <= 0xD7A3) ||
+			// CJK Compatibility Ideographs
+			(0xF900 <= codePoint && codePoint <= 0xFAFF) ||
+			// Vertical Forms
+			(0xFE10 <= codePoint && codePoint <= 0xFE19) ||
+			// CJK Compatibility Forms .. Small Form Variants
+			(0xFE30 <= codePoint && codePoint <= 0xFE6B) ||
+			// Halfwidth and Fullwidth Forms
+			(0xFF01 <= codePoint && codePoint <= 0xFF60) ||
+			(0xFFE0 <= codePoint && codePoint <= 0xFFE6) ||
+			// Kana Supplement
+			(0x1B000 <= codePoint && codePoint <= 0x1B001) ||
+			// Enclosed Ideographic Supplement
+			(0x1F200 <= codePoint && codePoint <= 0x1F251) ||
+			// CJK Unified Ideographs Extension B .. Tertiary Ideographic Plane
+			(0x20000 <= codePoint && codePoint <= 0x3FFFD)
+		)
+	) {
+		return true;
+	}
+
+	return false;
+};
+
+module.exports = isFullwidthCodePoint;
+module.exports.default = isFullwidthCodePoint;
+
+},{}],324:[function(require,module,exports){
+'use strict'
+
+module.exports = hexadecimal
+
+// Check if the given character code, or the character code at the first
+// character, is hexadecimal.
+function hexadecimal(character) {
+  var code = typeof character === 'string' ? character.charCodeAt(0) : character
+
+  return (
+    (code >= 97 /* a */ && code <= 102) /* z */ ||
+    (code >= 65 /* A */ && code <= 70) /* Z */ ||
+    (code >= 48 /* A */ && code <= 57) /* Z */
+  )
+}
+
+},{}],325:[function(require,module,exports){
+'use strict';
+
+module.exports = value => {
+	if (Object.prototype.toString.call(value) !== '[object Object]') {
+		return false;
+	}
+
+	const prototype = Object.getPrototypeOf(value);
+	return prototype === null || prototype === Object.prototype;
+};
+
+},{}],326:[function(require,module,exports){
+'use strict'
+
+module.exports = whitespace
+
+var fromCode = String.fromCharCode
+var re = /\s/
+
+// Check if the given character code, or the character code at the first
+// character, is a whitespace character.
+function whitespace(character) {
+  return re.test(
+    typeof character === 'number' ? fromCode(character) : character.charAt(0)
+  )
+}
+
+},{}],327:[function(require,module,exports){
+'use strict'
+
+module.exports = wordCharacter
+
+var fromCode = String.fromCharCode
+var re = /\w/
+
+// Check if the given character code, or the character code at the first
+// character, is a word character.
+function wordCharacter(character) {
+  return re.test(
+    typeof character === 'number' ? fromCode(character) : character.charAt(0)
+  )
+}
+
+},{}],328:[function(require,module,exports){
+'use strict'
+
+module.exports = longestStreak
+
+// Get the count of the longest repeating streak of `character` in `value`.
+function longestStreak(value, character) {
+  var count = 0
+  var maximum = 0
+  var expected
+  var index
+
+  if (typeof character !== 'string' || character.length !== 1) {
+    throw new Error('Expected character')
+  }
+
+  value = String(value)
+  index = value.indexOf(character)
+  expected = index
+
+  while (index !== -1) {
+    count++
+
+    if (index === expected) {
+      if (count > maximum) {
+        maximum = count
+      }
+    } else {
+      count = 1
+    }
+
+    expected = index + 1
+    index = value.indexOf(character, expected)
+  }
+
+  return maximum
+}
+
+},{}],329:[function(require,module,exports){
+'use strict'
+
+var low = require('./lib/core.js')
+
+module.exports = low
+
+low.registerLanguage('1c', require('highlight.js/lib/languages/1c'))
+low.registerLanguage('abnf', require('highlight.js/lib/languages/abnf'))
+low.registerLanguage(
+  'accesslog',
+  require('highlight.js/lib/languages/accesslog')
+)
+low.registerLanguage(
+  'actionscript',
+  require('highlight.js/lib/languages/actionscript')
+)
+low.registerLanguage('ada', require('highlight.js/lib/languages/ada'))
+low.registerLanguage(
+  'angelscript',
+  require('highlight.js/lib/languages/angelscript')
+)
+low.registerLanguage('apache', require('highlight.js/lib/languages/apache'))
+low.registerLanguage(
+  'applescript',
+  require('highlight.js/lib/languages/applescript')
+)
+low.registerLanguage('arcade', require('highlight.js/lib/languages/arcade'))
+low.registerLanguage('c-like', require('highlight.js/lib/languages/c-like'))
+low.registerLanguage('cpp', require('highlight.js/lib/languages/cpp'))
+low.registerLanguage('arduino', require('highlight.js/lib/languages/arduino'))
+low.registerLanguage('armasm', require('highlight.js/lib/languages/armasm'))
+low.registerLanguage('xml', require('highlight.js/lib/languages/xml'))
+low.registerLanguage('asciidoc', require('highlight.js/lib/languages/asciidoc'))
+low.registerLanguage('aspectj', require('highlight.js/lib/languages/aspectj'))
+low.registerLanguage(
+  'autohotkey',
+  require('highlight.js/lib/languages/autohotkey')
+)
+low.registerLanguage('autoit', require('highlight.js/lib/languages/autoit'))
+low.registerLanguage('avrasm', require('highlight.js/lib/languages/avrasm'))
+low.registerLanguage('awk', require('highlight.js/lib/languages/awk'))
+low.registerLanguage('axapta', require('highlight.js/lib/languages/axapta'))
+low.registerLanguage('bash', require('highlight.js/lib/languages/bash'))
+low.registerLanguage('basic', require('highlight.js/lib/languages/basic'))
+low.registerLanguage('bnf', require('highlight.js/lib/languages/bnf'))
+low.registerLanguage(
+  'brainfuck',
+  require('highlight.js/lib/languages/brainfuck')
+)
+low.registerLanguage('c', require('highlight.js/lib/languages/c'))
+low.registerLanguage('cal', require('highlight.js/lib/languages/cal'))
+low.registerLanguage(
+  'capnproto',
+  require('highlight.js/lib/languages/capnproto')
+)
+low.registerLanguage('ceylon', require('highlight.js/lib/languages/ceylon'))
+low.registerLanguage('clean', require('highlight.js/lib/languages/clean'))
+low.registerLanguage('clojure', require('highlight.js/lib/languages/clojure'))
+low.registerLanguage(
+  'clojure-repl',
+  require('highlight.js/lib/languages/clojure-repl')
+)
+low.registerLanguage('cmake', require('highlight.js/lib/languages/cmake'))
+low.registerLanguage(
+  'coffeescript',
+  require('highlight.js/lib/languages/coffeescript')
+)
+low.registerLanguage('coq', require('highlight.js/lib/languages/coq'))
+low.registerLanguage('cos', require('highlight.js/lib/languages/cos'))
+low.registerLanguage('crmsh', require('highlight.js/lib/languages/crmsh'))
+low.registerLanguage('crystal', require('highlight.js/lib/languages/crystal'))
+low.registerLanguage('csharp', require('highlight.js/lib/languages/csharp'))
+low.registerLanguage('csp', require('highlight.js/lib/languages/csp'))
+low.registerLanguage('css', require('highlight.js/lib/languages/css'))
+low.registerLanguage('d', require('highlight.js/lib/languages/d'))
+low.registerLanguage('markdown', require('highlight.js/lib/languages/markdown'))
+low.registerLanguage('dart', require('highlight.js/lib/languages/dart'))
+low.registerLanguage('delphi', require('highlight.js/lib/languages/delphi'))
+low.registerLanguage('diff', require('highlight.js/lib/languages/diff'))
+low.registerLanguage('django', require('highlight.js/lib/languages/django'))
+low.registerLanguage('dns', require('highlight.js/lib/languages/dns'))
+low.registerLanguage(
+  'dockerfile',
+  require('highlight.js/lib/languages/dockerfile')
+)
+low.registerLanguage('dos', require('highlight.js/lib/languages/dos'))
+low.registerLanguage('dsconfig', require('highlight.js/lib/languages/dsconfig'))
+low.registerLanguage('dts', require('highlight.js/lib/languages/dts'))
+low.registerLanguage('dust', require('highlight.js/lib/languages/dust'))
+low.registerLanguage('ebnf', require('highlight.js/lib/languages/ebnf'))
+low.registerLanguage('elixir', require('highlight.js/lib/languages/elixir'))
+low.registerLanguage('elm', require('highlight.js/lib/languages/elm'))
+low.registerLanguage('ruby', require('highlight.js/lib/languages/ruby'))
+low.registerLanguage('erb', require('highlight.js/lib/languages/erb'))
+low.registerLanguage(
+  'erlang-repl',
+  require('highlight.js/lib/languages/erlang-repl')
+)
+low.registerLanguage('erlang', require('highlight.js/lib/languages/erlang'))
+low.registerLanguage('excel', require('highlight.js/lib/languages/excel'))
+low.registerLanguage('fix', require('highlight.js/lib/languages/fix'))
+low.registerLanguage('flix', require('highlight.js/lib/languages/flix'))
+low.registerLanguage('fortran', require('highlight.js/lib/languages/fortran'))
+low.registerLanguage('fsharp', require('highlight.js/lib/languages/fsharp'))
+low.registerLanguage('gams', require('highlight.js/lib/languages/gams'))
+low.registerLanguage('gauss', require('highlight.js/lib/languages/gauss'))
+low.registerLanguage('gcode', require('highlight.js/lib/languages/gcode'))
+low.registerLanguage('gherkin', require('highlight.js/lib/languages/gherkin'))
+low.registerLanguage('glsl', require('highlight.js/lib/languages/glsl'))
+low.registerLanguage('gml', require('highlight.js/lib/languages/gml'))
+low.registerLanguage('go', require('highlight.js/lib/languages/go'))
+low.registerLanguage('golo', require('highlight.js/lib/languages/golo'))
+low.registerLanguage('gradle', require('highlight.js/lib/languages/gradle'))
+low.registerLanguage('groovy', require('highlight.js/lib/languages/groovy'))
+low.registerLanguage('haml', require('highlight.js/lib/languages/haml'))
+low.registerLanguage(
+  'handlebars',
+  require('highlight.js/lib/languages/handlebars')
+)
+low.registerLanguage('haskell', require('highlight.js/lib/languages/haskell'))
+low.registerLanguage('haxe', require('highlight.js/lib/languages/haxe'))
+low.registerLanguage('hsp', require('highlight.js/lib/languages/hsp'))
+low.registerLanguage('htmlbars', require('highlight.js/lib/languages/htmlbars'))
+low.registerLanguage('http', require('highlight.js/lib/languages/http'))
+low.registerLanguage('hy', require('highlight.js/lib/languages/hy'))
+low.registerLanguage('inform7', require('highlight.js/lib/languages/inform7'))
+low.registerLanguage('ini', require('highlight.js/lib/languages/ini'))
+low.registerLanguage('irpf90', require('highlight.js/lib/languages/irpf90'))
+low.registerLanguage('isbl', require('highlight.js/lib/languages/isbl'))
+low.registerLanguage('java', require('highlight.js/lib/languages/java'))
+low.registerLanguage(
+  'javascript',
+  require('highlight.js/lib/languages/javascript')
+)
+low.registerLanguage(
+  'jboss-cli',
+  require('highlight.js/lib/languages/jboss-cli')
+)
+low.registerLanguage('json', require('highlight.js/lib/languages/json'))
+low.registerLanguage('julia', require('highlight.js/lib/languages/julia'))
+low.registerLanguage(
+  'julia-repl',
+  require('highlight.js/lib/languages/julia-repl')
+)
+low.registerLanguage('kotlin', require('highlight.js/lib/languages/kotlin'))
+low.registerLanguage('lasso', require('highlight.js/lib/languages/lasso'))
+low.registerLanguage('latex', require('highlight.js/lib/languages/latex'))
+low.registerLanguage('ldif', require('highlight.js/lib/languages/ldif'))
+low.registerLanguage('leaf', require('highlight.js/lib/languages/leaf'))
+low.registerLanguage('less', require('highlight.js/lib/languages/less'))
+low.registerLanguage('lisp', require('highlight.js/lib/languages/lisp'))
+low.registerLanguage(
+  'livecodeserver',
+  require('highlight.js/lib/languages/livecodeserver')
+)
+low.registerLanguage(
+  'livescript',
+  require('highlight.js/lib/languages/livescript')
+)
+low.registerLanguage('llvm', require('highlight.js/lib/languages/llvm'))
+low.registerLanguage('lsl', require('highlight.js/lib/languages/lsl'))
+low.registerLanguage('lua', require('highlight.js/lib/languages/lua'))
+low.registerLanguage('makefile', require('highlight.js/lib/languages/makefile'))
+low.registerLanguage(
+  'mathematica',
+  require('highlight.js/lib/languages/mathematica')
+)
+low.registerLanguage('matlab', require('highlight.js/lib/languages/matlab'))
+low.registerLanguage('maxima', require('highlight.js/lib/languages/maxima'))
+low.registerLanguage('mel', require('highlight.js/lib/languages/mel'))
+low.registerLanguage('mercury', require('highlight.js/lib/languages/mercury'))
+low.registerLanguage('mipsasm', require('highlight.js/lib/languages/mipsasm'))
+low.registerLanguage('mizar', require('highlight.js/lib/languages/mizar'))
+low.registerLanguage('perl', require('highlight.js/lib/languages/perl'))
+low.registerLanguage(
+  'mojolicious',
+  require('highlight.js/lib/languages/mojolicious')
+)
+low.registerLanguage('monkey', require('highlight.js/lib/languages/monkey'))
+low.registerLanguage(
+  'moonscript',
+  require('highlight.js/lib/languages/moonscript')
+)
+low.registerLanguage('n1ql', require('highlight.js/lib/languages/n1ql'))
+low.registerLanguage('nginx', require('highlight.js/lib/languages/nginx'))
+low.registerLanguage('nim', require('highlight.js/lib/languages/nim'))
+low.registerLanguage('nix', require('highlight.js/lib/languages/nix'))
+low.registerLanguage('nsis', require('highlight.js/lib/languages/nsis'))
+low.registerLanguage(
+  'objectivec',
+  require('highlight.js/lib/languages/objectivec')
+)
+low.registerLanguage('ocaml', require('highlight.js/lib/languages/ocaml'))
+low.registerLanguage('openscad', require('highlight.js/lib/languages/openscad'))
+low.registerLanguage('oxygene', require('highlight.js/lib/languages/oxygene'))
+low.registerLanguage('parser3', require('highlight.js/lib/languages/parser3'))
+low.registerLanguage('pf', require('highlight.js/lib/languages/pf'))
+low.registerLanguage('pgsql', require('highlight.js/lib/languages/pgsql'))
+low.registerLanguage('php', require('highlight.js/lib/languages/php'))
+low.registerLanguage(
+  'php-template',
+  require('highlight.js/lib/languages/php-template')
+)
+low.registerLanguage(
+  'plaintext',
+  require('highlight.js/lib/languages/plaintext')
+)
+low.registerLanguage('pony', require('highlight.js/lib/languages/pony'))
+low.registerLanguage(
+  'powershell',
+  require('highlight.js/lib/languages/powershell')
+)
+low.registerLanguage(
+  'processing',
+  require('highlight.js/lib/languages/processing')
+)
+low.registerLanguage('profile', require('highlight.js/lib/languages/profile'))
+low.registerLanguage('prolog', require('highlight.js/lib/languages/prolog'))
+low.registerLanguage(
+  'properties',
+  require('highlight.js/lib/languages/properties')
+)
+low.registerLanguage('protobuf', require('highlight.js/lib/languages/protobuf'))
+low.registerLanguage('puppet', require('highlight.js/lib/languages/puppet'))
+low.registerLanguage(
+  'purebasic',
+  require('highlight.js/lib/languages/purebasic')
+)
+low.registerLanguage('python', require('highlight.js/lib/languages/python'))
+low.registerLanguage(
+  'python-repl',
+  require('highlight.js/lib/languages/python-repl')
+)
+low.registerLanguage('q', require('highlight.js/lib/languages/q'))
+low.registerLanguage('qml', require('highlight.js/lib/languages/qml'))
+low.registerLanguage('r', require('highlight.js/lib/languages/r'))
+low.registerLanguage('reasonml', require('highlight.js/lib/languages/reasonml'))
+low.registerLanguage('rib', require('highlight.js/lib/languages/rib'))
+low.registerLanguage('roboconf', require('highlight.js/lib/languages/roboconf'))
+low.registerLanguage('routeros', require('highlight.js/lib/languages/routeros'))
+low.registerLanguage('rsl', require('highlight.js/lib/languages/rsl'))
+low.registerLanguage(
+  'ruleslanguage',
+  require('highlight.js/lib/languages/ruleslanguage')
+)
+low.registerLanguage('rust', require('highlight.js/lib/languages/rust'))
+low.registerLanguage('sas', require('highlight.js/lib/languages/sas'))
+low.registerLanguage('scala', require('highlight.js/lib/languages/scala'))
+low.registerLanguage('scheme', require('highlight.js/lib/languages/scheme'))
+low.registerLanguage('scilab', require('highlight.js/lib/languages/scilab'))
+low.registerLanguage('scss', require('highlight.js/lib/languages/scss'))
+low.registerLanguage('shell', require('highlight.js/lib/languages/shell'))
+low.registerLanguage('smali', require('highlight.js/lib/languages/smali'))
+low.registerLanguage(
+  'smalltalk',
+  require('highlight.js/lib/languages/smalltalk')
+)
+low.registerLanguage('sml', require('highlight.js/lib/languages/sml'))
+low.registerLanguage('sqf', require('highlight.js/lib/languages/sqf'))
+low.registerLanguage('sql', require('highlight.js/lib/languages/sql'))
+low.registerLanguage('stan', require('highlight.js/lib/languages/stan'))
+low.registerLanguage('stata', require('highlight.js/lib/languages/stata'))
+low.registerLanguage('step21', require('highlight.js/lib/languages/step21'))
+low.registerLanguage('stylus', require('highlight.js/lib/languages/stylus'))
+low.registerLanguage('subunit', require('highlight.js/lib/languages/subunit'))
+low.registerLanguage('swift', require('highlight.js/lib/languages/swift'))
+low.registerLanguage(
+  'taggerscript',
+  require('highlight.js/lib/languages/taggerscript')
+)
+low.registerLanguage('yaml', require('highlight.js/lib/languages/yaml'))
+low.registerLanguage('tap', require('highlight.js/lib/languages/tap'))
+low.registerLanguage('tcl', require('highlight.js/lib/languages/tcl'))
+low.registerLanguage('thrift', require('highlight.js/lib/languages/thrift'))
+low.registerLanguage('tp', require('highlight.js/lib/languages/tp'))
+low.registerLanguage('twig', require('highlight.js/lib/languages/twig'))
+low.registerLanguage(
+  'typescript',
+  require('highlight.js/lib/languages/typescript')
+)
+low.registerLanguage('vala', require('highlight.js/lib/languages/vala'))
+low.registerLanguage('vbnet', require('highlight.js/lib/languages/vbnet'))
+low.registerLanguage('vbscript', require('highlight.js/lib/languages/vbscript'))
+low.registerLanguage(
+  'vbscript-html',
+  require('highlight.js/lib/languages/vbscript-html')
+)
+low.registerLanguage('verilog', require('highlight.js/lib/languages/verilog'))
+low.registerLanguage('vhdl', require('highlight.js/lib/languages/vhdl'))
+low.registerLanguage('vim', require('highlight.js/lib/languages/vim'))
+low.registerLanguage('x86asm', require('highlight.js/lib/languages/x86asm'))
+low.registerLanguage('xl', require('highlight.js/lib/languages/xl'))
+low.registerLanguage('xquery', require('highlight.js/lib/languages/xquery'))
+low.registerLanguage('zephir', require('highlight.js/lib/languages/zephir'))
+
+},{"./lib/core.js":330,"highlight.js/lib/languages/1c":123,"highlight.js/lib/languages/abnf":124,"highlight.js/lib/languages/accesslog":125,"highlight.js/lib/languages/actionscript":126,"highlight.js/lib/languages/ada":127,"highlight.js/lib/languages/angelscript":128,"highlight.js/lib/languages/apache":129,"highlight.js/lib/languages/applescript":130,"highlight.js/lib/languages/arcade":131,"highlight.js/lib/languages/arduino":132,"highlight.js/lib/languages/armasm":133,"highlight.js/lib/languages/asciidoc":134,"highlight.js/lib/languages/aspectj":135,"highlight.js/lib/languages/autohotkey":136,"highlight.js/lib/languages/autoit":137,"highlight.js/lib/languages/avrasm":138,"highlight.js/lib/languages/awk":139,"highlight.js/lib/languages/axapta":140,"highlight.js/lib/languages/bash":141,"highlight.js/lib/languages/basic":142,"highlight.js/lib/languages/bnf":143,"highlight.js/lib/languages/brainfuck":144,"highlight.js/lib/languages/c":146,"highlight.js/lib/languages/c-like":145,"highlight.js/lib/languages/cal":147,"highlight.js/lib/languages/capnproto":148,"highlight.js/lib/languages/ceylon":149,"highlight.js/lib/languages/clean":150,"highlight.js/lib/languages/clojure":152,"highlight.js/lib/languages/clojure-repl":151,"highlight.js/lib/languages/cmake":153,"highlight.js/lib/languages/coffeescript":154,"highlight.js/lib/languages/coq":155,"highlight.js/lib/languages/cos":156,"highlight.js/lib/languages/cpp":157,"highlight.js/lib/languages/crmsh":158,"highlight.js/lib/languages/crystal":159,"highlight.js/lib/languages/csharp":160,"highlight.js/lib/languages/csp":161,"highlight.js/lib/languages/css":162,"highlight.js/lib/languages/d":163,"highlight.js/lib/languages/dart":164,"highlight.js/lib/languages/delphi":165,"highlight.js/lib/languages/diff":166,"highlight.js/lib/languages/django":167,"highlight.js/lib/languages/dns":168,"highlight.js/lib/languages/dockerfile":169,"highlight.js/lib/languages/dos":170,"highlight.js/lib/languages/dsconfig":171,"highlight.js/lib/languages/dts":172,"highlight.js/lib/languages/dust":173,"highlight.js/lib/languages/ebnf":174,"highlight.js/lib/languages/elixir":175,"highlight.js/lib/languages/elm":176,"highlight.js/lib/languages/erb":177,"highlight.js/lib/languages/erlang":179,"highlight.js/lib/languages/erlang-repl":178,"highlight.js/lib/languages/excel":180,"highlight.js/lib/languages/fix":181,"highlight.js/lib/languages/flix":182,"highlight.js/lib/languages/fortran":183,"highlight.js/lib/languages/fsharp":184,"highlight.js/lib/languages/gams":185,"highlight.js/lib/languages/gauss":186,"highlight.js/lib/languages/gcode":187,"highlight.js/lib/languages/gherkin":188,"highlight.js/lib/languages/glsl":189,"highlight.js/lib/languages/gml":190,"highlight.js/lib/languages/go":191,"highlight.js/lib/languages/golo":192,"highlight.js/lib/languages/gradle":193,"highlight.js/lib/languages/groovy":194,"highlight.js/lib/languages/haml":195,"highlight.js/lib/languages/handlebars":196,"highlight.js/lib/languages/haskell":197,"highlight.js/lib/languages/haxe":198,"highlight.js/lib/languages/hsp":199,"highlight.js/lib/languages/htmlbars":200,"highlight.js/lib/languages/http":201,"highlight.js/lib/languages/hy":202,"highlight.js/lib/languages/inform7":203,"highlight.js/lib/languages/ini":204,"highlight.js/lib/languages/irpf90":205,"highlight.js/lib/languages/isbl":206,"highlight.js/lib/languages/java":207,"highlight.js/lib/languages/javascript":208,"highlight.js/lib/languages/jboss-cli":209,"highlight.js/lib/languages/json":210,"highlight.js/lib/languages/julia":212,"highlight.js/lib/languages/julia-repl":211,"highlight.js/lib/languages/kotlin":213,"highlight.js/lib/languages/lasso":214,"highlight.js/lib/languages/latex":215,"highlight.js/lib/languages/ldif":216,"highlight.js/lib/languages/leaf":217,"highlight.js/lib/languages/less":218,"highlight.js/lib/languages/lisp":219,"highlight.js/lib/languages/livecodeserver":220,"highlight.js/lib/languages/livescript":221,"highlight.js/lib/languages/llvm":222,"highlight.js/lib/languages/lsl":223,"highlight.js/lib/languages/lua":224,"highlight.js/lib/languages/makefile":225,"highlight.js/lib/languages/markdown":226,"highlight.js/lib/languages/mathematica":227,"highlight.js/lib/languages/matlab":228,"highlight.js/lib/languages/maxima":229,"highlight.js/lib/languages/mel":230,"highlight.js/lib/languages/mercury":231,"highlight.js/lib/languages/mipsasm":232,"highlight.js/lib/languages/mizar":233,"highlight.js/lib/languages/mojolicious":234,"highlight.js/lib/languages/monkey":235,"highlight.js/lib/languages/moonscript":236,"highlight.js/lib/languages/n1ql":237,"highlight.js/lib/languages/nginx":238,"highlight.js/lib/languages/nim":239,"highlight.js/lib/languages/nix":240,"highlight.js/lib/languages/nsis":241,"highlight.js/lib/languages/objectivec":242,"highlight.js/lib/languages/ocaml":243,"highlight.js/lib/languages/openscad":244,"highlight.js/lib/languages/oxygene":245,"highlight.js/lib/languages/parser3":246,"highlight.js/lib/languages/perl":247,"highlight.js/lib/languages/pf":248,"highlight.js/lib/languages/pgsql":249,"highlight.js/lib/languages/php":251,"highlight.js/lib/languages/php-template":250,"highlight.js/lib/languages/plaintext":252,"highlight.js/lib/languages/pony":253,"highlight.js/lib/languages/powershell":254,"highlight.js/lib/languages/processing":255,"highlight.js/lib/languages/profile":256,"highlight.js/lib/languages/prolog":257,"highlight.js/lib/languages/properties":258,"highlight.js/lib/languages/protobuf":259,"highlight.js/lib/languages/puppet":260,"highlight.js/lib/languages/purebasic":261,"highlight.js/lib/languages/python":263,"highlight.js/lib/languages/python-repl":262,"highlight.js/lib/languages/q":264,"highlight.js/lib/languages/qml":265,"highlight.js/lib/languages/r":266,"highlight.js/lib/languages/reasonml":267,"highlight.js/lib/languages/rib":268,"highlight.js/lib/languages/roboconf":269,"highlight.js/lib/languages/routeros":270,"highlight.js/lib/languages/rsl":271,"highlight.js/lib/languages/ruby":272,"highlight.js/lib/languages/ruleslanguage":273,"highlight.js/lib/languages/rust":274,"highlight.js/lib/languages/sas":275,"highlight.js/lib/languages/scala":276,"highlight.js/lib/languages/scheme":277,"highlight.js/lib/languages/scilab":278,"highlight.js/lib/languages/scss":279,"highlight.js/lib/languages/shell":280,"highlight.js/lib/languages/smali":281,"highlight.js/lib/languages/smalltalk":282,"highlight.js/lib/languages/sml":283,"highlight.js/lib/languages/sqf":284,"highlight.js/lib/languages/sql":285,"highlight.js/lib/languages/stan":286,"highlight.js/lib/languages/stata":287,"highlight.js/lib/languages/step21":288,"highlight.js/lib/languages/stylus":289,"highlight.js/lib/languages/subunit":290,"highlight.js/lib/languages/swift":291,"highlight.js/lib/languages/taggerscript":292,"highlight.js/lib/languages/tap":293,"highlight.js/lib/languages/tcl":294,"highlight.js/lib/languages/thrift":295,"highlight.js/lib/languages/tp":296,"highlight.js/lib/languages/twig":297,"highlight.js/lib/languages/typescript":298,"highlight.js/lib/languages/vala":299,"highlight.js/lib/languages/vbnet":300,"highlight.js/lib/languages/vbscript":302,"highlight.js/lib/languages/vbscript-html":301,"highlight.js/lib/languages/verilog":303,"highlight.js/lib/languages/vhdl":304,"highlight.js/lib/languages/vim":305,"highlight.js/lib/languages/x86asm":306,"highlight.js/lib/languages/xl":307,"highlight.js/lib/languages/xml":308,"highlight.js/lib/languages/xquery":309,"highlight.js/lib/languages/yaml":310,"highlight.js/lib/languages/zephir":311}],330:[function(require,module,exports){
+'use strict'
+
+var high = require('highlight.js/lib/core')
+var fault = require('fault')
+
+exports.highlight = highlight
+exports.highlightAuto = highlightAuto
+exports.registerLanguage = registerLanguage
+exports.listLanguages = listLanguages
+exports.registerAlias = registerAlias
+
+Emitter.prototype.addText = text
+Emitter.prototype.addKeyword = addKeyword
+Emitter.prototype.addSublanguage = addSublanguage
+Emitter.prototype.openNode = open
+Emitter.prototype.closeNode = close
+Emitter.prototype.closeAllNodes = noop
+Emitter.prototype.finalize = noop
+Emitter.prototype.toHTML = toHtmlNoop
+
+var defaultPrefix = 'hljs-'
+
+// Highlighting `value` in the language `name`.
+function highlight(name, value, options) {
+  var before = high.configure({})
+  var settings = options || {}
+  var prefix = settings.prefix
+  var result
+
+  if (typeof name !== 'string') {
+    throw fault('Expected `string` for name, got `%s`', name)
+  }
+
+  if (!high.getLanguage(name)) {
+    throw fault('Unknown language: `%s` is not registered', name)
+  }
+
+  if (typeof value !== 'string') {
+    throw fault('Expected `string` for value, got `%s`', value)
+  }
+
+  if (prefix === null || prefix === undefined) {
+    prefix = defaultPrefix
+  }
+
+  high.configure({__emitter: Emitter, classPrefix: prefix})
+
+  result = high.highlight(name, value, true)
+
+  high.configure(before)
+
+  /* istanbul ignore if - Highlight.js seems to use this (currently) for broken
+   * grammars, so let’s keep it in there just to be sure. */
+  if (result.errorRaised) {
+    throw result.errorRaised
+  }
+
+  return {
+    relevance: result.relevance,
+    language: result.language,
+    value: result.emitter.rootNode.children
+  }
+}
+
+function highlightAuto(value, options) {
+  var settings = options || {}
+  var subset = settings.subset || high.listLanguages()
+  var prefix = settings.prefix
+  var length = subset.length
+  var index = -1
+  var result
+  var secondBest
+  var current
+  var name
+
+  if (prefix === null || prefix === undefined) {
+    prefix = defaultPrefix
+  }
+
+  if (typeof value !== 'string') {
+    throw fault('Expected `string` for value, got `%s`', value)
+  }
+
+  secondBest = {relevance: 0, language: null, value: []}
+  result = {relevance: 0, language: null, value: []}
+
+  while (++index < length) {
+    name = subset[index]
+
+    if (!high.getLanguage(name)) {
+      continue
+    }
+
+    current = highlight(name, value, options)
+    current.language = name
+
+    if (current.relevance > secondBest.relevance) {
+      secondBest = current
+    }
+
+    if (current.relevance > result.relevance) {
+      secondBest = result
+      result = current
+    }
+  }
+
+  if (secondBest.language) {
+    result.secondBest = secondBest
+  }
+
+  return result
+}
+
+// Register a language.
+function registerLanguage(name, syntax) {
+  high.registerLanguage(name, syntax)
+}
+
+// Get a list of all registered languages.
+function listLanguages() {
+  return high.listLanguages()
+}
+
+// Register more aliases for an already registered language.
+function registerAlias(name, alias) {
+  var map = name
+  var key
+
+  if (alias) {
+    map = {}
+    map[name] = alias
+  }
+
+  for (key in map) {
+    high.registerAliases(map[key], {languageName: key})
+  }
+}
+
+function Emitter(options) {
+  this.options = options
+  this.rootNode = {children: []}
+  this.stack = [this.rootNode]
+}
+
+function addKeyword(value, name) {
+  this.openNode(name)
+  this.addText(value)
+  this.closeNode()
+}
+
+function addSublanguage(other, name) {
+  var stack = this.stack
+  var current = stack[stack.length - 1]
+  var results = other.rootNode.children
+  var node = name
+    ? {
+        type: 'element',
+        tagName: 'span',
+        properties: {className: [name]},
+        children: results
+      }
+    : results
+
+  current.children = current.children.concat(node)
+}
+
+function text(value) {
+  var stack = this.stack
+  var current
+  var tail
+
+  if (value === '') return
+
+  current = stack[stack.length - 1]
+  tail = current.children[current.children.length - 1]
+
+  if (tail && tail.type === 'text') {
+    tail.value += value
+  } else {
+    current.children.push({type: 'text', value: value})
+  }
+}
+
+function open(name) {
+  var stack = this.stack
+  var className = this.options.classPrefix + name
+  var current = stack[stack.length - 1]
+  var child = {
+    type: 'element',
+    tagName: 'span',
+    properties: {className: [className]},
+    children: []
+  }
+
+  current.children.push(child)
+  stack.push(child)
+}
+
+function close() {
+  this.stack.pop()
+}
+
+function toHtmlNoop() {
+  return ''
+}
+
+function noop() {}
+
+},{"fault":95,"highlight.js/lib/core":122}],331:[function(require,module,exports){
 'use strict'
 
 module.exports = escapes
@@ -34788,7 +34774,7 @@ function escapes(options) {
   return settings.gfm ? gfm : defaults
 }
 
-},{}],333:[function(require,module,exports){
+},{}],332:[function(require,module,exports){
 'use strict'
 
 var repeat = require('repeat-string')
@@ -35039,7 +35025,7 @@ function toAlignment(value) {
     : x
 }
 
-},{"repeat-string":495}],334:[function(require,module,exports){
+},{"repeat-string":493}],333:[function(require,module,exports){
 'use strict'; // A valid output which means nothing has been parsed.
 // Used as error return / invalid output
 
@@ -35350,7 +35336,7 @@ function parse(value, indexNext, userConfig) {
 }
 
 module.exports = parse;
-},{}],335:[function(require,module,exports){
+},{}],334:[function(require,module,exports){
 'use strict'
 
 var visit = require('unist-util-visit')
@@ -35413,7 +35399,7 @@ function mergeable(node, commonmark) {
   return commonmark && node.type === 'blockquote'
 }
 
-},{"unist-util-visit":532}],336:[function(require,module,exports){
+},{"unist-util-visit":532}],335:[function(require,module,exports){
 'use strict'
 
 var visit = require('unist-util-visit')
@@ -35466,7 +35452,884 @@ function normalise(identifier) {
   return identifier.toUpperCase()
 }
 
-},{"unist-util-visit":532}],337:[function(require,module,exports){
+},{"unist-util-visit":532}],336:[function(require,module,exports){
+arguments[4][100][0].apply(exports,arguments)
+},{"./lib":362,"dup":100}],337:[function(require,module,exports){
+'use strict'
+
+module.exports = all
+
+var one = require('./one')
+
+function all(h, parent) {
+  var nodes = parent.children || []
+  var length = nodes.length
+  var values = []
+  var index = -1
+  var result
+  var head
+
+  while (++index < length) {
+    result = one(h, nodes[index], parent)
+
+    if (result) {
+      if (index && nodes[index - 1].type === 'break') {
+        if (result.value) {
+          result.value = result.value.replace(/^\s+/, '')
+        }
+
+        head = result.children && result.children[0]
+
+        if (head && head.value) {
+          head.value = head.value.replace(/^\s+/, '')
+        }
+      }
+
+      values = values.concat(result)
+    }
+  }
+
+  return values
+}
+
+},{"./one":363}],338:[function(require,module,exports){
+'use strict'
+
+module.exports = generateFootnotes
+
+var thematicBreak = require('./handlers/thematic-break')
+var list = require('./handlers/list')
+var wrap = require('./wrap')
+
+function generateFootnotes(h) {
+  var footnoteById = h.footnoteById
+  var footnoteOrder = h.footnoteOrder
+  var length = footnoteOrder.length
+  var index = -1
+  var listItems = []
+  var def
+  var backReference
+  var content
+  var tail
+
+  while (++index < length) {
+    def = footnoteById[footnoteOrder[index].toUpperCase()]
+
+    if (!def) {
+      continue
+    }
+
+    content = def.children.concat()
+    tail = content[content.length - 1]
+    backReference = {
+      type: 'link',
+      url: '#fnref-' + def.identifier,
+      data: {hProperties: {className: ['footnote-backref']}},
+      children: [{type: 'text', value: '↩'}]
+    }
+
+    if (!tail || tail.type !== 'paragraph') {
+      tail = {type: 'paragraph', children: []}
+      content.push(tail)
+    }
+
+    tail.children.push(backReference)
+
+    listItems.push({
+      type: 'listItem',
+      data: {hProperties: {id: 'fn-' + def.identifier}},
+      children: content,
+      position: def.position
+    })
+  }
+
+  if (listItems.length === 0) {
+    return null
+  }
+
+  return h(
+    null,
+    'div',
+    {className: ['footnotes']},
+    wrap(
+      [
+        thematicBreak(h),
+        list(h, {type: 'list', ordered: true, children: listItems})
+      ],
+      true
+    )
+  )
+}
+
+},{"./handlers/list":355,"./handlers/thematic-break":361,"./wrap":365}],339:[function(require,module,exports){
+'use strict'
+
+module.exports = blockquote
+
+var wrap = require('../wrap')
+var all = require('../all')
+
+function blockquote(h, node) {
+  return h(node, 'blockquote', wrap(all(h, node), true))
+}
+
+},{"../all":337,"../wrap":365}],340:[function(require,module,exports){
+'use strict'
+
+module.exports = hardBreak
+
+var u = require('unist-builder')
+
+function hardBreak(h, node) {
+  return [h(node, 'br'), u('text', '\n')]
+}
+
+},{"unist-builder":522}],341:[function(require,module,exports){
+'use strict'
+
+module.exports = code
+
+var detab = require('detab')
+var u = require('unist-builder')
+
+function code(h, node) {
+  var value = node.value ? detab(node.value + '\n') : ''
+  var lang = node.lang && node.lang.match(/^[^ \t]+(?=[ \t]|$)/)
+  var props = {}
+
+  if (lang) {
+    props.className = ['language-' + lang]
+  }
+
+  return h(node.position, 'pre', [h(node, 'code', props, [u('text', value)])])
+}
+
+},{"detab":33,"unist-builder":522}],342:[function(require,module,exports){
+'use strict'
+
+module.exports = strikethrough
+
+var all = require('../all')
+
+function strikethrough(h, node) {
+  return h(node, 'del', all(h, node))
+}
+
+},{"../all":337}],343:[function(require,module,exports){
+'use strict'
+
+module.exports = emphasis
+
+var all = require('../all')
+
+function emphasis(h, node) {
+  return h(node, 'em', all(h, node))
+}
+
+},{"../all":337}],344:[function(require,module,exports){
+'use strict'
+
+module.exports = footnoteReference
+
+var u = require('unist-builder')
+
+function footnoteReference(h, node) {
+  var footnoteOrder = h.footnoteOrder
+  var identifier = String(node.identifier)
+
+  if (footnoteOrder.indexOf(identifier) === -1) {
+    footnoteOrder.push(identifier)
+  }
+
+  return h(node.position, 'sup', {id: 'fnref-' + identifier}, [
+    h(node, 'a', {href: '#fn-' + identifier, className: ['footnote-ref']}, [
+      u('text', node.label || identifier)
+    ])
+  ])
+}
+
+},{"unist-builder":522}],345:[function(require,module,exports){
+'use strict'
+
+module.exports = footnote
+
+var footnoteReference = require('./footnote-reference')
+
+function footnote(h, node) {
+  var footnoteById = h.footnoteById
+  var footnoteOrder = h.footnoteOrder
+  var identifier = 1
+
+  while (identifier in footnoteById) {
+    identifier++
+  }
+
+  identifier = String(identifier)
+
+  // No need to check if `identifier` exists in `footnoteOrder`, it’s guaranteed
+  // to not exist because we just generated it.
+  footnoteOrder.push(identifier)
+
+  footnoteById[identifier] = {
+    type: 'footnoteDefinition',
+    identifier: identifier,
+    children: [{type: 'paragraph', children: node.children}],
+    position: node.position
+  }
+
+  return footnoteReference(h, {
+    type: 'footnoteReference',
+    identifier: identifier,
+    position: node.position
+  })
+}
+
+},{"./footnote-reference":344}],346:[function(require,module,exports){
+'use strict'
+
+module.exports = heading
+
+var all = require('../all')
+
+function heading(h, node) {
+  return h(node, 'h' + node.depth, all(h, node))
+}
+
+},{"../all":337}],347:[function(require,module,exports){
+'use strict'
+
+module.exports = html
+
+var u = require('unist-builder')
+
+// Return either a `raw` node in dangerous mode, otherwise nothing.
+function html(h, node) {
+  return h.dangerous ? h.augment(node, u('raw', node.value)) : null
+}
+
+},{"unist-builder":522}],348:[function(require,module,exports){
+'use strict'
+
+module.exports = imageReference
+
+var normalize = require('mdurl/encode')
+var revert = require('../revert')
+
+function imageReference(h, node) {
+  var def = h.definition(node.identifier)
+  var props
+
+  if (!def) {
+    return revert(h, node)
+  }
+
+  props = {src: normalize(def.url || ''), alt: node.alt}
+
+  if (def.title !== null && def.title !== undefined) {
+    props.title = def.title
+  }
+
+  return h(node, 'img', props)
+}
+
+},{"../revert":364,"mdurl/encode":372}],349:[function(require,module,exports){
+'use strict'
+
+var normalize = require('mdurl/encode')
+
+module.exports = image
+
+function image(h, node) {
+  var props = {src: normalize(node.url), alt: node.alt}
+
+  if (node.title !== null && node.title !== undefined) {
+    props.title = node.title
+  }
+
+  return h(node, 'img', props)
+}
+
+},{"mdurl/encode":372}],350:[function(require,module,exports){
+'use strict'
+
+module.exports = {
+  blockquote: require('./blockquote'),
+  break: require('./break'),
+  code: require('./code'),
+  delete: require('./delete'),
+  emphasis: require('./emphasis'),
+  footnoteReference: require('./footnote-reference'),
+  footnote: require('./footnote'),
+  heading: require('./heading'),
+  html: require('./html'),
+  imageReference: require('./image-reference'),
+  image: require('./image'),
+  inlineCode: require('./inline-code'),
+  linkReference: require('./link-reference'),
+  link: require('./link'),
+  listItem: require('./list-item'),
+  list: require('./list'),
+  paragraph: require('./paragraph'),
+  root: require('./root'),
+  strong: require('./strong'),
+  table: require('./table'),
+  text: require('./text'),
+  thematicBreak: require('./thematic-break'),
+  toml: ignore,
+  yaml: ignore,
+  definition: ignore,
+  footnoteDefinition: ignore
+}
+
+// Return nothing for nodes that are ignored.
+function ignore() {
+  return null
+}
+
+},{"./blockquote":339,"./break":340,"./code":341,"./delete":342,"./emphasis":343,"./footnote":345,"./footnote-reference":344,"./heading":346,"./html":347,"./image":349,"./image-reference":348,"./inline-code":351,"./link":353,"./link-reference":352,"./list":355,"./list-item":354,"./paragraph":356,"./root":357,"./strong":358,"./table":359,"./text":360,"./thematic-break":361}],351:[function(require,module,exports){
+'use strict'
+
+module.exports = inlineCode
+
+var collapse = require('collapse-white-space')
+var u = require('unist-builder')
+
+function inlineCode(h, node) {
+  return h(node, 'code', [u('text', collapse(node.value))])
+}
+
+},{"collapse-white-space":10,"unist-builder":522}],352:[function(require,module,exports){
+'use strict'
+
+module.exports = linkReference
+
+var normalize = require('mdurl/encode')
+var revert = require('../revert')
+var all = require('../all')
+
+function linkReference(h, node) {
+  var def = h.definition(node.identifier)
+  var props
+
+  if (!def) {
+    return revert(h, node)
+  }
+
+  props = {href: normalize(def.url || '')}
+
+  if (def.title !== null && def.title !== undefined) {
+    props.title = def.title
+  }
+
+  return h(node, 'a', props, all(h, node))
+}
+
+},{"../all":337,"../revert":364,"mdurl/encode":372}],353:[function(require,module,exports){
+'use strict'
+
+var normalize = require('mdurl/encode')
+var all = require('../all')
+
+module.exports = link
+
+function link(h, node) {
+  var props = {href: normalize(node.url)}
+
+  if (node.title !== null && node.title !== undefined) {
+    props.title = node.title
+  }
+
+  return h(node, 'a', props, all(h, node))
+}
+
+},{"../all":337,"mdurl/encode":372}],354:[function(require,module,exports){
+'use strict'
+
+module.exports = listItem
+
+var u = require('unist-builder')
+var wrap = require('../wrap')
+var all = require('../all')
+
+function listItem(h, node, parent) {
+  var children = node.children
+  var head = children[0]
+  var raw = all(h, node)
+  var loose = parent ? listLoose(parent) : listItemLoose(node)
+  var props = {}
+  var result
+  var container
+  var index
+  var length
+  var child
+
+  // Tight lists should not render `paragraph` nodes as `p` elements.
+  if (loose) {
+    result = raw
+  } else {
+    result = []
+    length = raw.length
+    index = -1
+
+    while (++index < length) {
+      child = raw[index]
+
+      if (child.tagName === 'p') {
+        result = result.concat(child.children)
+      } else {
+        result.push(child)
+      }
+    }
+  }
+
+  if (typeof node.checked === 'boolean') {
+    if (loose && (!head || head.type !== 'paragraph')) {
+      result.unshift(h(null, 'p', []))
+    }
+
+    container = loose ? result[0].children : result
+
+    if (container.length !== 0) {
+      container.unshift(u('text', ' '))
+    }
+
+    container.unshift(
+      h(null, 'input', {
+        type: 'checkbox',
+        checked: node.checked,
+        disabled: true
+      })
+    )
+
+    // According to github-markdown-css, this class hides bullet.
+    // See: <https://github.com/sindresorhus/github-markdown-css>.
+    props.className = ['task-list-item']
+  }
+
+  if (loose && result.length !== 0) {
+    result = wrap(result, true)
+  }
+
+  return h(node, 'li', props, result)
+}
+
+function listLoose(node) {
+  var loose = node.spread
+  var children = node.children
+  var length = children.length
+  var index = -1
+
+  while (!loose && ++index < length) {
+    loose = listItemLoose(children[index])
+  }
+
+  return loose
+}
+
+function listItemLoose(node) {
+  var spread = node.spread
+
+  return spread === undefined || spread === null
+    ? node.children.length > 1
+    : spread
+}
+
+},{"../all":337,"../wrap":365,"unist-builder":522}],355:[function(require,module,exports){
+'use strict'
+
+module.exports = list
+
+var wrap = require('../wrap')
+var all = require('../all')
+
+function list(h, node) {
+  var props = {}
+  var name = node.ordered ? 'ol' : 'ul'
+  var items
+  var index = -1
+  var length
+
+  if (typeof node.start === 'number' && node.start !== 1) {
+    props.start = node.start
+  }
+
+  items = all(h, node)
+  length = items.length
+
+  // Like GitHub, add a class for custom styling.
+  while (++index < length) {
+    if (
+      items[index].properties.className &&
+      items[index].properties.className.indexOf('task-list-item') !== -1
+    ) {
+      props.className = ['contains-task-list']
+      break
+    }
+  }
+
+  return h(node, name, props, wrap(items, true))
+}
+
+},{"../all":337,"../wrap":365}],356:[function(require,module,exports){
+'use strict'
+
+module.exports = paragraph
+
+var all = require('../all')
+
+function paragraph(h, node) {
+  return h(node, 'p', all(h, node))
+}
+
+},{"../all":337}],357:[function(require,module,exports){
+'use strict'
+
+module.exports = root
+
+var u = require('unist-builder')
+var wrap = require('../wrap')
+var all = require('../all')
+
+function root(h, node) {
+  return h.augment(node, u('root', wrap(all(h, node))))
+}
+
+},{"../all":337,"../wrap":365,"unist-builder":522}],358:[function(require,module,exports){
+'use strict'
+
+module.exports = strong
+
+var all = require('../all')
+
+function strong(h, node) {
+  return h(node, 'strong', all(h, node))
+}
+
+},{"../all":337}],359:[function(require,module,exports){
+'use strict'
+
+module.exports = table
+
+var position = require('unist-util-position')
+var wrap = require('../wrap')
+var all = require('../all')
+
+function table(h, node) {
+  var rows = node.children
+  var index = rows.length
+  var align = node.align
+  var alignLength = align.length
+  var result = []
+  var pos
+  var row
+  var out
+  var name
+  var cell
+
+  while (index--) {
+    row = rows[index].children
+    name = index === 0 ? 'th' : 'td'
+    pos = alignLength
+    out = []
+
+    while (pos--) {
+      cell = row[pos]
+      out[pos] = h(cell, name, {align: align[pos]}, cell ? all(h, cell) : [])
+    }
+
+    result[index] = h(rows[index], 'tr', wrap(out, true))
+  }
+
+  return h(
+    node,
+    'table',
+    wrap(
+      [
+        h(result[0].position, 'thead', wrap([result[0]], true)),
+        h(
+          {
+            start: position.start(result[1]),
+            end: position.end(result[result.length - 1])
+          },
+          'tbody',
+          wrap(result.slice(1), true)
+        )
+      ],
+      true
+    )
+  )
+}
+
+},{"../all":337,"../wrap":365,"unist-util-position":527}],360:[function(require,module,exports){
+'use strict'
+
+module.exports = text
+
+var u = require('unist-builder')
+var trimLines = require('trim-lines')
+
+function text(h, node) {
+  return h.augment(node, u('text', trimLines(node.value)))
+}
+
+},{"trim-lines":503,"unist-builder":522}],361:[function(require,module,exports){
+'use strict'
+
+module.exports = thematicBreak
+
+function thematicBreak(h, node) {
+  return h(node, 'hr')
+}
+
+},{}],362:[function(require,module,exports){
+'use strict'
+
+module.exports = toHast
+
+var u = require('unist-builder')
+var visit = require('unist-util-visit')
+var position = require('unist-util-position')
+var generated = require('unist-util-generated')
+var definitions = require('mdast-util-definitions')
+var one = require('./one')
+var footer = require('./footer')
+var handlers = require('./handlers')
+
+var own = {}.hasOwnProperty
+
+var deprecationWarningIssued = false
+
+// Factory to transform.
+function factory(tree, options) {
+  var settings = options || {}
+
+  // Issue a warning if the deprecated tag 'allowDangerousHTML' is used
+  if (settings.allowDangerousHTML !== undefined && !deprecationWarningIssued) {
+    deprecationWarningIssued = true
+    console.warn(
+      'mdast-util-to-hast: deprecation: `allowDangerousHTML` is nonstandard, use `allowDangerousHtml` instead'
+    )
+  }
+
+  var dangerous = settings.allowDangerousHtml || settings.allowDangerousHTML
+  var footnoteById = {}
+
+  h.dangerous = dangerous
+  h.definition = definitions(tree, settings)
+  h.footnoteById = footnoteById
+  h.footnoteOrder = []
+  h.augment = augment
+  h.handlers = Object.assign({}, handlers, settings.handlers)
+  h.unknownHandler = settings.unknownHandler
+
+  visit(tree, 'footnoteDefinition', onfootnotedefinition)
+
+  return h
+
+  // Finalise the created `right`, a hast node, from `left`, an mdast node.
+  function augment(left, right) {
+    var data
+    var ctx
+
+    // Handle `data.hName`, `data.hProperties, `data.hChildren`.
+    if (left && 'data' in left) {
+      data = left.data
+
+      if (right.type === 'element' && data.hName) {
+        right.tagName = data.hName
+      }
+
+      if (right.type === 'element' && data.hProperties) {
+        right.properties = Object.assign({}, right.properties, data.hProperties)
+      }
+
+      if (right.children && data.hChildren) {
+        right.children = data.hChildren
+      }
+    }
+
+    ctx = left && left.position ? left : {position: left}
+
+    if (!generated(ctx)) {
+      right.position = {
+        start: position.start(ctx),
+        end: position.end(ctx)
+      }
+    }
+
+    return right
+  }
+
+  // Create an element for `node`.
+  function h(node, tagName, props, children) {
+    if (
+      (children === undefined || children === null) &&
+      typeof props === 'object' &&
+      'length' in props
+    ) {
+      children = props
+      props = {}
+    }
+
+    return augment(node, {
+      type: 'element',
+      tagName: tagName,
+      properties: props || {},
+      children: children || []
+    })
+  }
+
+  function onfootnotedefinition(definition) {
+    var id = String(definition.identifier).toUpperCase()
+
+    // Mimick CM behavior of link definitions.
+    // See: <https://github.com/syntax-tree/mdast-util-definitions/blob/8d48e57/index.js#L26>.
+    if (!own.call(footnoteById, id)) {
+      footnoteById[id] = definition
+    }
+  }
+}
+
+// Transform `tree`, which is an mdast node, to a hast node.
+function toHast(tree, options) {
+  var h = factory(tree, options)
+  var node = one(h, tree)
+  var foot = footer(h)
+
+  if (foot) {
+    node.children = node.children.concat(u('text', '\n'), foot)
+  }
+
+  return node
+}
+
+},{"./footer":338,"./handlers":350,"./one":363,"mdast-util-definitions":335,"unist-builder":522,"unist-util-generated":524,"unist-util-position":527,"unist-util-visit":532}],363:[function(require,module,exports){
+'use strict'
+
+module.exports = one
+
+var u = require('unist-builder')
+var all = require('./all')
+
+var own = {}.hasOwnProperty
+
+// Transform an unknown node.
+function unknown(h, node) {
+  if (text(node)) {
+    return h.augment(node, u('text', node.value))
+  }
+
+  return h(node, 'div', all(h, node))
+}
+
+// Visit a node.
+function one(h, node, parent) {
+  var type = node && node.type
+  var fn = own.call(h.handlers, type) ? h.handlers[type] : h.unknownHandler
+
+  // Fail on non-nodes.
+  if (!type) {
+    throw new Error('Expected node, got `' + node + '`')
+  }
+
+  return (typeof fn === 'function' ? fn : unknown)(h, node, parent)
+}
+
+// Check if the node should be renderered as a text node.
+function text(node) {
+  var data = node.data || {}
+
+  if (
+    own.call(data, 'hName') ||
+    own.call(data, 'hProperties') ||
+    own.call(data, 'hChildren')
+  ) {
+    return false
+  }
+
+  return 'value' in node
+}
+
+},{"./all":337,"unist-builder":522}],364:[function(require,module,exports){
+'use strict'
+
+module.exports = revert
+
+var u = require('unist-builder')
+var all = require('./all')
+
+// Return the content of a reference without definition as Markdown.
+function revert(h, node) {
+  var subtype = node.referenceType
+  var suffix = ']'
+  var contents
+  var head
+  var tail
+
+  if (subtype === 'collapsed') {
+    suffix += '[]'
+  } else if (subtype === 'full') {
+    suffix += '[' + (node.label || node.identifier) + ']'
+  }
+
+  if (node.type === 'imageReference') {
+    return u('text', '![' + node.alt + suffix)
+  }
+
+  contents = all(h, node)
+  head = contents[0]
+
+  if (head && head.type === 'text') {
+    head.value = '[' + head.value
+  } else {
+    contents.unshift(u('text', '['))
+  }
+
+  tail = contents[contents.length - 1]
+
+  if (tail && tail.type === 'text') {
+    tail.value += suffix
+  } else {
+    contents.push(u('text', suffix))
+  }
+
+  return contents
+}
+
+},{"./all":337,"unist-builder":522}],365:[function(require,module,exports){
+'use strict'
+
+module.exports = wrap
+
+var u = require('unist-builder')
+
+// Wrap `nodes` with line feeds between each entry.
+// Optionally adds line feeds at the start and end.
+function wrap(nodes, loose) {
+  var result = []
+  var index = -1
+  var length = nodes.length
+
+  if (loose) {
+    result.push(u('text', '\n'))
+  }
+
+  while (++index < length) {
+    if (index) {
+      result.push(u('text', '\n'))
+    }
+
+    result.push(nodes[index])
+  }
+
+  if (loose && nodes.length !== 0) {
+    result.push(u('text', '\n'))
+  }
+
+  return result
+}
+
+},{"unist-builder":522}],366:[function(require,module,exports){
 'use strict'
 
 module.exports = toString
@@ -35498,12 +36361,12 @@ function all(values) {
   return result.join('')
 }
 
-},{}],338:[function(require,module,exports){
+},{}],367:[function(require,module,exports){
 'use strict'
 
 module.exports = require('./lib')
 
-},{"./lib":340}],339:[function(require,module,exports){
+},{"./lib":369}],368:[function(require,module,exports){
 'use strict'
 
 var extend = require('extend')
@@ -35661,7 +36524,7 @@ function listItem() {
   return {type: LIST_ITEM, spread: false, children: []}
 }
 
-},{"extend":94}],340:[function(require,module,exports){
+},{"extend":94}],369:[function(require,module,exports){
 'use strict'
 
 module.exports = toc
@@ -35689,7 +36552,7 @@ function toc(node, options) {
   return result
 }
 
-},{"./contents":339,"./search":341,"./to-expression":342}],341:[function(require,module,exports){
+},{"./contents":368,"./search":370,"./to-expression":371}],370:[function(require,module,exports){
 'use strict'
 
 module.exports = search
@@ -35782,7 +36645,7 @@ function isClosingHeading(node, depth) {
   return depth && heading(node) && node.depth <= depth
 }
 
-},{"./to-expression":342,"github-slugger":98,"mdast-util-to-string":337,"unist-util-is/convert":526,"unist-util-visit":532}],342:[function(require,module,exports){
+},{"./to-expression":371,"github-slugger":98,"mdast-util-to-string":366,"unist-util-is/convert":525,"unist-util-visit":532}],371:[function(require,module,exports){
 'use strict'
 
 module.exports = toExpression
@@ -35792,7 +36655,7 @@ function toExpression(value) {
   return new RegExp('^(' + value + ')$', 'i')
 }
 
-},{}],343:[function(require,module,exports){
+},{}],372:[function(require,module,exports){
 
 'use strict';
 
@@ -35892,7 +36755,7 @@ encode.componentChars = "-_.!~*'()";
 
 module.exports = encode;
 
-},{}],344:[function(require,module,exports){
+},{}],373:[function(require,module,exports){
 'use strict'
 
 /* eslint-env browser */
@@ -35924,7 +36787,7 @@ function decodeEntity(characters) {
   return char === entity ? false : char
 }
 
-},{}],345:[function(require,module,exports){
+},{}],374:[function(require,module,exports){
 'use strict'
 
 var legacy = require('character-entities-legacy')
@@ -36377,7 +37240,7 @@ function disallowed(code) {
   )
 }
 
-},{"./decode-entity":344,"character-entities-legacy":8,"character-reference-invalid":9,"is-alphanumerical":132,"is-decimal":133,"is-hexadecimal":135}],346:[function(require,module,exports){
+},{"./decode-entity":373,"character-entities-legacy":8,"character-reference-invalid":9,"is-alphanumerical":321,"is-decimal":322,"is-hexadecimal":324}],375:[function(require,module,exports){
 (function (process){
 // .dirname, .basename, and .extname methods are extracted from Node.js v8.11.1,
 // backported and transplited with Babel, with backwards-compat fixes
@@ -36683,7 +37546,7 @@ var substr = 'ab'.substr(-1) === 'b'
 ;
 
 }).call(this,require('_process'))
-},{"_process":347}],347:[function(require,module,exports){
+},{"_process":376}],376:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -36869,7 +37732,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],348:[function(require,module,exports){
+},{}],377:[function(require,module,exports){
 'use strict'
 
 var normalize = require('./normalize')
@@ -36936,7 +37799,7 @@ function camelcase($0) {
   return $0.charAt(1).toUpperCase()
 }
 
-},{"./lib/util/defined-info":356,"./lib/util/info":357,"./normalize":364}],349:[function(require,module,exports){
+},{"./lib/util/defined-info":385,"./lib/util/info":386,"./normalize":393}],378:[function(require,module,exports){
 'use strict'
 
 var merge = require('./lib/util/merge')
@@ -36948,7 +37811,7 @@ var html = require('./lib/html')
 
 module.exports = merge([xml, xlink, xmlns, aria, html])
 
-},{"./lib/aria":350,"./lib/html":351,"./lib/util/merge":358,"./lib/xlink":361,"./lib/xml":362,"./lib/xmlns":363}],350:[function(require,module,exports){
+},{"./lib/aria":379,"./lib/html":380,"./lib/util/merge":387,"./lib/xlink":390,"./lib/xml":391,"./lib/xmlns":392}],379:[function(require,module,exports){
 'use strict'
 
 var types = require('./util/types')
@@ -37017,7 +37880,7 @@ function ariaTransform(_, prop) {
   return prop === 'role' ? prop : 'aria-' + prop.slice(4).toLowerCase()
 }
 
-},{"./util/create":355,"./util/types":360}],351:[function(require,module,exports){
+},{"./util/create":384,"./util/types":389}],380:[function(require,module,exports){
 'use strict'
 
 var types = require('./util/types')
@@ -37327,7 +38190,7 @@ module.exports = create({
   }
 })
 
-},{"./util/case-insensitive-transform":353,"./util/create":355,"./util/types":360}],352:[function(require,module,exports){
+},{"./util/case-insensitive-transform":382,"./util/create":384,"./util/types":389}],381:[function(require,module,exports){
 'use strict'
 
 var types = require('./util/types')
@@ -37896,7 +38759,7 @@ module.exports = create({
   }
 })
 
-},{"./util/case-sensitive-transform":354,"./util/create":355,"./util/types":360}],353:[function(require,module,exports){
+},{"./util/case-sensitive-transform":383,"./util/create":384,"./util/types":389}],382:[function(require,module,exports){
 'use strict'
 
 var caseSensitiveTransform = require('./case-sensitive-transform')
@@ -37907,7 +38770,7 @@ function caseInsensitiveTransform(attributes, property) {
   return caseSensitiveTransform(attributes, property.toLowerCase())
 }
 
-},{"./case-sensitive-transform":354}],354:[function(require,module,exports){
+},{"./case-sensitive-transform":383}],383:[function(require,module,exports){
 'use strict'
 
 module.exports = caseSensitiveTransform
@@ -37916,7 +38779,7 @@ function caseSensitiveTransform(attributes, attribute) {
   return attribute in attributes ? attributes[attribute] : attribute
 }
 
-},{}],355:[function(require,module,exports){
+},{}],384:[function(require,module,exports){
 'use strict'
 
 var normalize = require('../../normalize')
@@ -37957,7 +38820,7 @@ function create(definition) {
   return new Schema(property, normal, space)
 }
 
-},{"../../normalize":364,"./defined-info":356,"./schema":359}],356:[function(require,module,exports){
+},{"../../normalize":393,"./defined-info":385,"./schema":388}],385:[function(require,module,exports){
 'use strict'
 
 var Info = require('./info')
@@ -37999,7 +38862,7 @@ function mark(values, key, value) {
   }
 }
 
-},{"./info":357,"./types":360}],357:[function(require,module,exports){
+},{"./info":386,"./types":389}],386:[function(require,module,exports){
 'use strict'
 
 module.exports = Info
@@ -38024,7 +38887,7 @@ function Info(property, attribute) {
   this.attribute = attribute
 }
 
-},{}],358:[function(require,module,exports){
+},{}],387:[function(require,module,exports){
 'use strict'
 
 var xtend = require('xtend')
@@ -38054,7 +38917,7 @@ function merge(definitions) {
   )
 }
 
-},{"./schema":359,"xtend":542}],359:[function(require,module,exports){
+},{"./schema":388,"xtend":542}],388:[function(require,module,exports){
 'use strict'
 
 module.exports = Schema
@@ -38074,7 +38937,7 @@ function Schema(property, normal, space) {
   }
 }
 
-},{}],360:[function(require,module,exports){
+},{}],389:[function(require,module,exports){
 'use strict'
 
 var powers = 0
@@ -38091,7 +38954,7 @@ function increment() {
   return Math.pow(2, ++powers)
 }
 
-},{}],361:[function(require,module,exports){
+},{}],390:[function(require,module,exports){
 'use strict'
 
 var create = require('./util/create')
@@ -38114,7 +38977,7 @@ function xlinkTransform(_, prop) {
   return 'xlink:' + prop.slice(5).toLowerCase()
 }
 
-},{"./util/create":355}],362:[function(require,module,exports){
+},{"./util/create":384}],391:[function(require,module,exports){
 'use strict'
 
 var create = require('./util/create')
@@ -38133,7 +38996,7 @@ function xmlTransform(_, prop) {
   return 'xml:' + prop.slice(3).toLowerCase()
 }
 
-},{"./util/create":355}],363:[function(require,module,exports){
+},{"./util/create":384}],392:[function(require,module,exports){
 'use strict'
 
 var create = require('./util/create')
@@ -38151,7 +39014,7 @@ module.exports = create({
   }
 })
 
-},{"./util/case-insensitive-transform":353,"./util/create":355}],364:[function(require,module,exports){
+},{"./util/case-insensitive-transform":382,"./util/create":384}],393:[function(require,module,exports){
 'use strict'
 
 module.exports = normalize
@@ -38160,7 +39023,7 @@ function normalize(value) {
   return value.toLowerCase()
 }
 
-},{}],365:[function(require,module,exports){
+},{}],394:[function(require,module,exports){
 'use strict'
 
 var merge = require('./lib/util/merge')
@@ -38172,11 +39035,11 @@ var svg = require('./lib/svg')
 
 module.exports = merge([xml, xlink, xmlns, aria, svg])
 
-},{"./lib/aria":350,"./lib/svg":352,"./lib/util/merge":358,"./lib/xlink":361,"./lib/xml":362,"./lib/xmlns":363}],366:[function(require,module,exports){
+},{"./lib/aria":379,"./lib/svg":381,"./lib/util/merge":387,"./lib/xlink":390,"./lib/xml":391,"./lib/xmlns":392}],395:[function(require,module,exports){
 'use strict';
 
 module.exports = ['onabort', 'onautocomplete', 'onautocompleteerror', 'onblur', 'oncancel', 'oncanplay', 'oncanplaythrough', 'onchange', 'onclick', 'onclose', 'oncontextmenu', 'oncuechange', 'ondblclick', 'ondrag', 'ondragend', 'ondragenter', 'ondragexit', 'ondragleave', 'ondragover', 'ondragstart', 'ondrop', 'ondurationchange', 'onemptied', 'onended', 'onerror', 'onfocus', 'oninput', 'oninvalid', 'onkeydown', 'onkeypress', 'onkeyup', 'onload', 'onloadeddata', 'onloadedmetadata', 'onloadstart', 'onmousedown', 'onmouseenter', 'onmouseleave', 'onmousemove', 'onmouseout', 'onmouseover', 'onmouseup', 'onmousewheel', 'onpause', 'onplay', 'onplaying', 'onprogress', 'onratechange', 'onreset', 'onresize', 'onscroll', 'onseeked', 'onseeking', 'onselect', 'onshow', 'onsort', 'onstalled', 'onsubmit', 'onsuspend', 'ontimeupdate', 'ontoggle', 'onvolumechange', 'onwaiting'];
-},{}],367:[function(require,module,exports){
+},{}],396:[function(require,module,exports){
 'use strict';
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -38560,7 +39423,7 @@ function remarkAttr(userConfig) {
 function isRemarkParser(parser) {
   return Boolean(parser && parser.prototype && parser.prototype.inlineTokenizers && parser.prototype.inlineTokenizers.link && parser.prototype.inlineTokenizers.link.locator);
 }
-},{"./dom-event-handler.js":366,"html-element-attributes":123,"is-whitespace-character":137,"md-attr-parser":334}],368:[function(require,module,exports){
+},{"./dom-event-handler.js":395,"html-element-attributes":312,"is-whitespace-character":326,"md-attr-parser":333}],397:[function(require,module,exports){
 "use strict";
 
 var uuFilter = require("unist-util-filter");
@@ -38590,7 +39453,7 @@ function is(node) {
   return node.type === "root" || node.type === "heading";
 }
 
-},{"mdast-util-toc":338,"unist-util-filter":524,"unist-util-parents":527}],369:[function(require,module,exports){
+},{"mdast-util-toc":367,"unist-util-filter":523,"unist-util-parents":526}],398:[function(require,module,exports){
 var visit = require('unist-util-visit')
 var definitions = require('mdast-util-definitions')
 var spaceSeparated = require('space-separated-tokens').parse
@@ -38667,7 +39530,7 @@ function externalLinks(options) {
   }
 }
 
-},{"extend":94,"is-absolute-url":129,"mdast-util-definitions":336,"space-separated-tokens":497,"unist-util-visit":532}],370:[function(require,module,exports){
+},{"extend":94,"is-absolute-url":318,"mdast-util-definitions":335,"space-separated-tokens":495,"unist-util-visit":532}],399:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38715,7 +39578,7 @@ function attacher({
 }
 
 module.exports = exports.default;
-},{"lowlight":140,"unist-util-visit":532}],371:[function(require,module,exports){
+},{"lowlight":329,"unist-util-visit":532}],400:[function(require,module,exports){
 'use strict'
 
 var xtend = require('xtend')
@@ -38757,886 +39620,7 @@ function plugin(options) {
   }
 }
 
-},{"hast-util-sanitize":101,"hast-util-to-html":104,"mdast-util-to-hast":373,"xtend":542}],372:[function(require,module,exports){
-arguments[4][336][0].apply(exports,arguments)
-},{"dup":336,"unist-util-visit":532}],373:[function(require,module,exports){
-arguments[4][101][0].apply(exports,arguments)
-},{"./lib":399,"dup":101}],374:[function(require,module,exports){
-'use strict'
-
-module.exports = all
-
-var one = require('./one')
-
-function all(h, parent) {
-  var nodes = parent.children || []
-  var length = nodes.length
-  var values = []
-  var index = -1
-  var result
-  var head
-
-  while (++index < length) {
-    result = one(h, nodes[index], parent)
-
-    if (result) {
-      if (index && nodes[index - 1].type === 'break') {
-        if (result.value) {
-          result.value = result.value.replace(/^\s+/, '')
-        }
-
-        head = result.children && result.children[0]
-
-        if (head && head.value) {
-          head.value = head.value.replace(/^\s+/, '')
-        }
-      }
-
-      values = values.concat(result)
-    }
-  }
-
-  return values
-}
-
-},{"./one":400}],375:[function(require,module,exports){
-'use strict'
-
-module.exports = generateFootnotes
-
-var thematicBreak = require('./handlers/thematic-break')
-var list = require('./handlers/list')
-var wrap = require('./wrap')
-
-function generateFootnotes(h) {
-  var footnoteById = h.footnoteById
-  var footnoteOrder = h.footnoteOrder
-  var length = footnoteOrder.length
-  var index = -1
-  var listItems = []
-  var def
-  var backReference
-  var content
-  var tail
-
-  while (++index < length) {
-    def = footnoteById[footnoteOrder[index].toUpperCase()]
-
-    if (!def) {
-      continue
-    }
-
-    content = def.children.concat()
-    tail = content[content.length - 1]
-    backReference = {
-      type: 'link',
-      url: '#fnref-' + def.identifier,
-      data: {hProperties: {className: ['footnote-backref']}},
-      children: [{type: 'text', value: '↩'}]
-    }
-
-    if (!tail || tail.type !== 'paragraph') {
-      tail = {type: 'paragraph', children: []}
-      content.push(tail)
-    }
-
-    tail.children.push(backReference)
-
-    listItems.push({
-      type: 'listItem',
-      data: {hProperties: {id: 'fn-' + def.identifier}},
-      children: content,
-      position: def.position
-    })
-  }
-
-  if (listItems.length === 0) {
-    return null
-  }
-
-  return h(
-    null,
-    'div',
-    {className: ['footnotes']},
-    wrap(
-      [
-        thematicBreak(h),
-        list(h, {type: 'list', ordered: true, children: listItems})
-      ],
-      true
-    )
-  )
-}
-
-},{"./handlers/list":392,"./handlers/thematic-break":398,"./wrap":402}],376:[function(require,module,exports){
-'use strict'
-
-module.exports = blockquote
-
-var wrap = require('../wrap')
-var all = require('../all')
-
-function blockquote(h, node) {
-  return h(node, 'blockquote', wrap(all(h, node), true))
-}
-
-},{"../all":374,"../wrap":402}],377:[function(require,module,exports){
-'use strict'
-
-module.exports = hardBreak
-
-var u = require('unist-builder')
-
-function hardBreak(h, node) {
-  return [h(node, 'br'), u('text', '\n')]
-}
-
-},{"unist-builder":523}],378:[function(require,module,exports){
-'use strict'
-
-module.exports = code
-
-var detab = require('detab')
-var u = require('unist-builder')
-
-function code(h, node) {
-  var value = node.value ? detab(node.value + '\n') : ''
-  var lang = node.lang && node.lang.match(/^[^ \t]+(?=[ \t]|$)/)
-  var props = {}
-
-  if (lang) {
-    props.className = ['language-' + lang]
-  }
-
-  return h(node.position, 'pre', [h(node, 'code', props, [u('text', value)])])
-}
-
-},{"detab":33,"unist-builder":523}],379:[function(require,module,exports){
-'use strict'
-
-module.exports = strikethrough
-
-var all = require('../all')
-
-function strikethrough(h, node) {
-  return h(node, 'del', all(h, node))
-}
-
-},{"../all":374}],380:[function(require,module,exports){
-'use strict'
-
-module.exports = emphasis
-
-var all = require('../all')
-
-function emphasis(h, node) {
-  return h(node, 'em', all(h, node))
-}
-
-},{"../all":374}],381:[function(require,module,exports){
-'use strict'
-
-module.exports = footnoteReference
-
-var u = require('unist-builder')
-
-function footnoteReference(h, node) {
-  var footnoteOrder = h.footnoteOrder
-  var identifier = String(node.identifier)
-
-  if (footnoteOrder.indexOf(identifier) === -1) {
-    footnoteOrder.push(identifier)
-  }
-
-  return h(node.position, 'sup', {id: 'fnref-' + identifier}, [
-    h(node, 'a', {href: '#fn-' + identifier, className: ['footnote-ref']}, [
-      u('text', node.label || identifier)
-    ])
-  ])
-}
-
-},{"unist-builder":523}],382:[function(require,module,exports){
-'use strict'
-
-module.exports = footnote
-
-var footnoteReference = require('./footnote-reference')
-
-function footnote(h, node) {
-  var footnoteById = h.footnoteById
-  var footnoteOrder = h.footnoteOrder
-  var identifier = 1
-
-  while (identifier in footnoteById) {
-    identifier++
-  }
-
-  identifier = String(identifier)
-
-  // No need to check if `identifier` exists in `footnoteOrder`, it’s guaranteed
-  // to not exist because we just generated it.
-  footnoteOrder.push(identifier)
-
-  footnoteById[identifier] = {
-    type: 'footnoteDefinition',
-    identifier: identifier,
-    children: [{type: 'paragraph', children: node.children}],
-    position: node.position
-  }
-
-  return footnoteReference(h, {
-    type: 'footnoteReference',
-    identifier: identifier,
-    position: node.position
-  })
-}
-
-},{"./footnote-reference":381}],383:[function(require,module,exports){
-'use strict'
-
-module.exports = heading
-
-var all = require('../all')
-
-function heading(h, node) {
-  return h(node, 'h' + node.depth, all(h, node))
-}
-
-},{"../all":374}],384:[function(require,module,exports){
-'use strict'
-
-module.exports = html
-
-var u = require('unist-builder')
-
-// Return either a `raw` node in dangerous mode, otherwise nothing.
-function html(h, node) {
-  return h.dangerous ? h.augment(node, u('raw', node.value)) : null
-}
-
-},{"unist-builder":523}],385:[function(require,module,exports){
-'use strict'
-
-module.exports = imageReference
-
-var normalize = require('mdurl/encode')
-var revert = require('../revert')
-
-function imageReference(h, node) {
-  var def = h.definition(node.identifier)
-  var props
-
-  if (!def) {
-    return revert(h, node)
-  }
-
-  props = {src: normalize(def.url || ''), alt: node.alt}
-
-  if (def.title !== null && def.title !== undefined) {
-    props.title = def.title
-  }
-
-  return h(node, 'img', props)
-}
-
-},{"../revert":401,"mdurl/encode":343}],386:[function(require,module,exports){
-'use strict'
-
-var normalize = require('mdurl/encode')
-
-module.exports = image
-
-function image(h, node) {
-  var props = {src: normalize(node.url), alt: node.alt}
-
-  if (node.title !== null && node.title !== undefined) {
-    props.title = node.title
-  }
-
-  return h(node, 'img', props)
-}
-
-},{"mdurl/encode":343}],387:[function(require,module,exports){
-'use strict'
-
-module.exports = {
-  blockquote: require('./blockquote'),
-  break: require('./break'),
-  code: require('./code'),
-  delete: require('./delete'),
-  emphasis: require('./emphasis'),
-  footnoteReference: require('./footnote-reference'),
-  footnote: require('./footnote'),
-  heading: require('./heading'),
-  html: require('./html'),
-  imageReference: require('./image-reference'),
-  image: require('./image'),
-  inlineCode: require('./inline-code'),
-  linkReference: require('./link-reference'),
-  link: require('./link'),
-  listItem: require('./list-item'),
-  list: require('./list'),
-  paragraph: require('./paragraph'),
-  root: require('./root'),
-  strong: require('./strong'),
-  table: require('./table'),
-  text: require('./text'),
-  thematicBreak: require('./thematic-break'),
-  toml: ignore,
-  yaml: ignore,
-  definition: ignore,
-  footnoteDefinition: ignore
-}
-
-// Return nothing for nodes that are ignored.
-function ignore() {
-  return null
-}
-
-},{"./blockquote":376,"./break":377,"./code":378,"./delete":379,"./emphasis":380,"./footnote":382,"./footnote-reference":381,"./heading":383,"./html":384,"./image":386,"./image-reference":385,"./inline-code":388,"./link":390,"./link-reference":389,"./list":392,"./list-item":391,"./paragraph":393,"./root":394,"./strong":395,"./table":396,"./text":397,"./thematic-break":398}],388:[function(require,module,exports){
-'use strict'
-
-module.exports = inlineCode
-
-var collapse = require('collapse-white-space')
-var u = require('unist-builder')
-
-function inlineCode(h, node) {
-  return h(node, 'code', [u('text', collapse(node.value))])
-}
-
-},{"collapse-white-space":10,"unist-builder":523}],389:[function(require,module,exports){
-'use strict'
-
-module.exports = linkReference
-
-var normalize = require('mdurl/encode')
-var revert = require('../revert')
-var all = require('../all')
-
-function linkReference(h, node) {
-  var def = h.definition(node.identifier)
-  var props
-
-  if (!def) {
-    return revert(h, node)
-  }
-
-  props = {href: normalize(def.url || '')}
-
-  if (def.title !== null && def.title !== undefined) {
-    props.title = def.title
-  }
-
-  return h(node, 'a', props, all(h, node))
-}
-
-},{"../all":374,"../revert":401,"mdurl/encode":343}],390:[function(require,module,exports){
-'use strict'
-
-var normalize = require('mdurl/encode')
-var all = require('../all')
-
-module.exports = link
-
-function link(h, node) {
-  var props = {href: normalize(node.url)}
-
-  if (node.title !== null && node.title !== undefined) {
-    props.title = node.title
-  }
-
-  return h(node, 'a', props, all(h, node))
-}
-
-},{"../all":374,"mdurl/encode":343}],391:[function(require,module,exports){
-'use strict'
-
-module.exports = listItem
-
-var u = require('unist-builder')
-var wrap = require('../wrap')
-var all = require('../all')
-
-function listItem(h, node, parent) {
-  var children = node.children
-  var head = children[0]
-  var raw = all(h, node)
-  var loose = parent ? listLoose(parent) : listItemLoose(node)
-  var props = {}
-  var result
-  var container
-  var index
-  var length
-  var child
-
-  // Tight lists should not render `paragraph` nodes as `p` elements.
-  if (loose) {
-    result = raw
-  } else {
-    result = []
-    length = raw.length
-    index = -1
-
-    while (++index < length) {
-      child = raw[index]
-
-      if (child.tagName === 'p') {
-        result = result.concat(child.children)
-      } else {
-        result.push(child)
-      }
-    }
-  }
-
-  if (typeof node.checked === 'boolean') {
-    if (loose && (!head || head.type !== 'paragraph')) {
-      result.unshift(h(null, 'p', []))
-    }
-
-    container = loose ? result[0].children : result
-
-    if (container.length !== 0) {
-      container.unshift(u('text', ' '))
-    }
-
-    container.unshift(
-      h(null, 'input', {
-        type: 'checkbox',
-        checked: node.checked,
-        disabled: true
-      })
-    )
-
-    // According to github-markdown-css, this class hides bullet.
-    // See: <https://github.com/sindresorhus/github-markdown-css>.
-    props.className = ['task-list-item']
-  }
-
-  if (loose && result.length !== 0) {
-    result = wrap(result, true)
-  }
-
-  return h(node, 'li', props, result)
-}
-
-function listLoose(node) {
-  var loose = node.spread
-  var children = node.children
-  var length = children.length
-  var index = -1
-
-  while (!loose && ++index < length) {
-    loose = listItemLoose(children[index])
-  }
-
-  return loose
-}
-
-function listItemLoose(node) {
-  var spread = node.spread
-
-  return spread === undefined || spread === null
-    ? node.children.length > 1
-    : spread
-}
-
-},{"../all":374,"../wrap":402,"unist-builder":523}],392:[function(require,module,exports){
-'use strict'
-
-module.exports = list
-
-var wrap = require('../wrap')
-var all = require('../all')
-
-function list(h, node) {
-  var props = {}
-  var name = node.ordered ? 'ol' : 'ul'
-  var items
-  var index = -1
-  var length
-
-  if (typeof node.start === 'number' && node.start !== 1) {
-    props.start = node.start
-  }
-
-  items = all(h, node)
-  length = items.length
-
-  // Like GitHub, add a class for custom styling.
-  while (++index < length) {
-    if (
-      items[index].properties.className &&
-      items[index].properties.className.indexOf('task-list-item') !== -1
-    ) {
-      props.className = ['contains-task-list']
-      break
-    }
-  }
-
-  return h(node, name, props, wrap(items, true))
-}
-
-},{"../all":374,"../wrap":402}],393:[function(require,module,exports){
-'use strict'
-
-module.exports = paragraph
-
-var all = require('../all')
-
-function paragraph(h, node) {
-  return h(node, 'p', all(h, node))
-}
-
-},{"../all":374}],394:[function(require,module,exports){
-'use strict'
-
-module.exports = root
-
-var u = require('unist-builder')
-var wrap = require('../wrap')
-var all = require('../all')
-
-function root(h, node) {
-  return h.augment(node, u('root', wrap(all(h, node))))
-}
-
-},{"../all":374,"../wrap":402,"unist-builder":523}],395:[function(require,module,exports){
-'use strict'
-
-module.exports = strong
-
-var all = require('../all')
-
-function strong(h, node) {
-  return h(node, 'strong', all(h, node))
-}
-
-},{"../all":374}],396:[function(require,module,exports){
-'use strict'
-
-module.exports = table
-
-var position = require('unist-util-position')
-var wrap = require('../wrap')
-var all = require('../all')
-
-function table(h, node) {
-  var rows = node.children
-  var index = rows.length
-  var align = node.align
-  var alignLength = align.length
-  var result = []
-  var pos
-  var row
-  var out
-  var name
-  var cell
-
-  while (index--) {
-    row = rows[index].children
-    name = index === 0 ? 'th' : 'td'
-    pos = alignLength
-    out = []
-
-    while (pos--) {
-      cell = row[pos]
-      out[pos] = h(cell, name, {align: align[pos]}, cell ? all(h, cell) : [])
-    }
-
-    result[index] = h(rows[index], 'tr', wrap(out, true))
-  }
-
-  return h(
-    node,
-    'table',
-    wrap(
-      [
-        h(result[0].position, 'thead', wrap([result[0]], true)),
-        h(
-          {
-            start: position.start(result[1]),
-            end: position.end(result[result.length - 1])
-          },
-          'tbody',
-          wrap(result.slice(1), true)
-        )
-      ],
-      true
-    )
-  )
-}
-
-},{"../all":374,"../wrap":402,"unist-util-position":528}],397:[function(require,module,exports){
-'use strict'
-
-module.exports = text
-
-var u = require('unist-builder')
-var trimLines = require('trim-lines')
-
-function text(h, node) {
-  return h.augment(node, u('text', trimLines(node.value)))
-}
-
-},{"trim-lines":504,"unist-builder":523}],398:[function(require,module,exports){
-'use strict'
-
-module.exports = thematicBreak
-
-function thematicBreak(h, node) {
-  return h(node, 'hr')
-}
-
-},{}],399:[function(require,module,exports){
-'use strict'
-
-module.exports = toHast
-
-var u = require('unist-builder')
-var visit = require('unist-util-visit')
-var position = require('unist-util-position')
-var generated = require('unist-util-generated')
-var definitions = require('mdast-util-definitions')
-var one = require('./one')
-var footer = require('./footer')
-var handlers = require('./handlers')
-
-var own = {}.hasOwnProperty
-
-var deprecationWarningIssued = false
-
-// Factory to transform.
-function factory(tree, options) {
-  var settings = options || {}
-
-  // Issue a warning if the deprecated tag 'allowDangerousHTML' is used
-  if (settings.allowDangerousHTML !== undefined && !deprecationWarningIssued) {
-    deprecationWarningIssued = true
-    console.warn(
-      'mdast-util-to-hast: deprecation: `allowDangerousHTML` is nonstandard, use `allowDangerousHtml` instead'
-    )
-  }
-
-  var dangerous = settings.allowDangerousHtml || settings.allowDangerousHTML
-  var footnoteById = {}
-
-  h.dangerous = dangerous
-  h.definition = definitions(tree, settings)
-  h.footnoteById = footnoteById
-  h.footnoteOrder = []
-  h.augment = augment
-  h.handlers = Object.assign({}, handlers, settings.handlers)
-  h.unknownHandler = settings.unknownHandler
-
-  visit(tree, 'footnoteDefinition', onfootnotedefinition)
-
-  return h
-
-  // Finalise the created `right`, a hast node, from `left`, an mdast node.
-  function augment(left, right) {
-    var data
-    var ctx
-
-    // Handle `data.hName`, `data.hProperties, `data.hChildren`.
-    if (left && 'data' in left) {
-      data = left.data
-
-      if (right.type === 'element' && data.hName) {
-        right.tagName = data.hName
-      }
-
-      if (right.type === 'element' && data.hProperties) {
-        right.properties = Object.assign({}, right.properties, data.hProperties)
-      }
-
-      if (right.children && data.hChildren) {
-        right.children = data.hChildren
-      }
-    }
-
-    ctx = left && left.position ? left : {position: left}
-
-    if (!generated(ctx)) {
-      right.position = {
-        start: position.start(ctx),
-        end: position.end(ctx)
-      }
-    }
-
-    return right
-  }
-
-  // Create an element for `node`.
-  function h(node, tagName, props, children) {
-    if (
-      (children === undefined || children === null) &&
-      typeof props === 'object' &&
-      'length' in props
-    ) {
-      children = props
-      props = {}
-    }
-
-    return augment(node, {
-      type: 'element',
-      tagName: tagName,
-      properties: props || {},
-      children: children || []
-    })
-  }
-
-  function onfootnotedefinition(definition) {
-    var id = String(definition.identifier).toUpperCase()
-
-    // Mimick CM behavior of link definitions.
-    // See: <https://github.com/syntax-tree/mdast-util-definitions/blob/8d48e57/index.js#L26>.
-    if (!own.call(footnoteById, id)) {
-      footnoteById[id] = definition
-    }
-  }
-}
-
-// Transform `tree`, which is an mdast node, to a hast node.
-function toHast(tree, options) {
-  var h = factory(tree, options)
-  var node = one(h, tree)
-  var foot = footer(h)
-
-  if (foot) {
-    node.children = node.children.concat(u('text', '\n'), foot)
-  }
-
-  return node
-}
-
-},{"./footer":375,"./handlers":387,"./one":400,"mdast-util-definitions":372,"unist-builder":523,"unist-util-generated":525,"unist-util-position":528,"unist-util-visit":532}],400:[function(require,module,exports){
-'use strict'
-
-module.exports = one
-
-var u = require('unist-builder')
-var all = require('./all')
-
-var own = {}.hasOwnProperty
-
-// Transform an unknown node.
-function unknown(h, node) {
-  if (text(node)) {
-    return h.augment(node, u('text', node.value))
-  }
-
-  return h(node, 'div', all(h, node))
-}
-
-// Visit a node.
-function one(h, node, parent) {
-  var type = node && node.type
-  var fn = own.call(h.handlers, type) ? h.handlers[type] : h.unknownHandler
-
-  // Fail on non-nodes.
-  if (!type) {
-    throw new Error('Expected node, got `' + node + '`')
-  }
-
-  return (typeof fn === 'function' ? fn : unknown)(h, node, parent)
-}
-
-// Check if the node should be renderered as a text node.
-function text(node) {
-  var data = node.data || {}
-
-  if (
-    own.call(data, 'hName') ||
-    own.call(data, 'hProperties') ||
-    own.call(data, 'hChildren')
-  ) {
-    return false
-  }
-
-  return 'value' in node
-}
-
-},{"./all":374,"unist-builder":523}],401:[function(require,module,exports){
-'use strict'
-
-module.exports = revert
-
-var u = require('unist-builder')
-var all = require('./all')
-
-// Return the content of a reference without definition as Markdown.
-function revert(h, node) {
-  var subtype = node.referenceType
-  var suffix = ']'
-  var contents
-  var head
-  var tail
-
-  if (subtype === 'collapsed') {
-    suffix += '[]'
-  } else if (subtype === 'full') {
-    suffix += '[' + (node.label || node.identifier) + ']'
-  }
-
-  if (node.type === 'imageReference') {
-    return u('text', '![' + node.alt + suffix)
-  }
-
-  contents = all(h, node)
-  head = contents[0]
-
-  if (head && head.type === 'text') {
-    head.value = '[' + head.value
-  } else {
-    contents.unshift(u('text', '['))
-  }
-
-  tail = contents[contents.length - 1]
-
-  if (tail && tail.type === 'text') {
-    tail.value += suffix
-  } else {
-    contents.push(u('text', suffix))
-  }
-
-  return contents
-}
-
-},{"./all":374,"unist-builder":523}],402:[function(require,module,exports){
-'use strict'
-
-module.exports = wrap
-
-var u = require('unist-builder')
-
-// Wrap `nodes` with line feeds between each entry.
-// Optionally adds line feeds at the start and end.
-function wrap(nodes, loose) {
-  var result = []
-  var index = -1
-  var length = nodes.length
-
-  if (loose) {
-    result.push(u('text', '\n'))
-  }
-
-  while (++index < length) {
-    if (index) {
-      result.push(u('text', '\n'))
-    }
-
-    result.push(nodes[index])
-  }
-
-  if (loose && nodes.length !== 0) {
-    result.push(u('text', '\n'))
-  }
-
-  return result
-}
-
-},{"unist-builder":523}],403:[function(require,module,exports){
+},{"hast-util-sanitize":100,"hast-util-to-html":103,"mdast-util-to-hast":336,"xtend":542}],401:[function(require,module,exports){
 'use strict'
 
 var unherit = require('unherit')
@@ -39655,7 +39639,7 @@ function parse(options) {
   this.Parser = Local
 }
 
-},{"./lib/parser.js":418,"unherit":520,"xtend":542}],404:[function(require,module,exports){
+},{"./lib/parser.js":416,"unherit":519,"xtend":542}],402:[function(require,module,exports){
 'use strict'
 
 module.exports = [
@@ -39727,7 +39711,7 @@ module.exports = [
   'ul'
 ]
 
-},{}],405:[function(require,module,exports){
+},{}],403:[function(require,module,exports){
 'use strict'
 
 var xtend = require('xtend')
@@ -39787,7 +39771,7 @@ function factory(ctx) {
   }
 }
 
-},{"parse-entities":345,"xtend":542}],406:[function(require,module,exports){
+},{"parse-entities":374,"xtend":542}],404:[function(require,module,exports){
 'use strict'
 
 module.exports = {
@@ -39798,7 +39782,7 @@ module.exports = {
   blocks: require('./block-elements')
 }
 
-},{"./block-elements":404}],407:[function(require,module,exports){
+},{"./block-elements":402}],405:[function(require,module,exports){
 'use strict'
 
 module.exports = locate
@@ -39817,7 +39801,7 @@ function locate(value, fromIndex) {
   return index
 }
 
-},{}],408:[function(require,module,exports){
+},{}],406:[function(require,module,exports){
 'use strict'
 
 module.exports = locate
@@ -39826,7 +39810,7 @@ function locate(value, fromIndex) {
   return value.indexOf('`', fromIndex)
 }
 
-},{}],409:[function(require,module,exports){
+},{}],407:[function(require,module,exports){
 'use strict'
 
 module.exports = locate
@@ -39835,7 +39819,7 @@ function locate(value, fromIndex) {
   return value.indexOf('~~', fromIndex)
 }
 
-},{}],410:[function(require,module,exports){
+},{}],408:[function(require,module,exports){
 'use strict'
 
 var decimal = require('is-decimal')
@@ -39888,7 +39872,7 @@ function isGfmAtext(code) {
   )
 }
 
-},{"is-alphabetical":130,"is-decimal":133}],411:[function(require,module,exports){
+},{"is-alphabetical":319,"is-decimal":322}],409:[function(require,module,exports){
 'use strict'
 
 module.exports = locate
@@ -39908,7 +39892,7 @@ function locate(value, fromIndex) {
   return underscore < asterisk ? underscore : asterisk
 }
 
-},{}],412:[function(require,module,exports){
+},{}],410:[function(require,module,exports){
 'use strict'
 
 module.exports = locate
@@ -39917,7 +39901,7 @@ function locate(value, fromIndex) {
   return value.indexOf('\\', fromIndex)
 }
 
-},{}],413:[function(require,module,exports){
+},{}],411:[function(require,module,exports){
 'use strict'
 
 module.exports = locate
@@ -39935,7 +39919,7 @@ function locate(value, fromIndex) {
   return link < image ? link : image
 }
 
-},{}],414:[function(require,module,exports){
+},{}],412:[function(require,module,exports){
 'use strict'
 
 module.exports = locate
@@ -39955,7 +39939,7 @@ function locate(value, fromIndex) {
   return underscore < asterisk ? underscore : asterisk
 }
 
-},{}],415:[function(require,module,exports){
+},{}],413:[function(require,module,exports){
 'use strict'
 
 module.exports = locate
@@ -39964,7 +39948,7 @@ function locate(value, fromIndex) {
   return value.indexOf('<', fromIndex)
 }
 
-},{}],416:[function(require,module,exports){
+},{}],414:[function(require,module,exports){
 'use strict'
 
 module.exports = locate
@@ -39995,7 +39979,7 @@ function locate(value, fromIndex) {
   return min
 }
 
-},{}],417:[function(require,module,exports){
+},{}],415:[function(require,module,exports){
 'use strict'
 
 var xtend = require('xtend')
@@ -40039,7 +40023,7 @@ function parse() {
   return node
 }
 
-},{"unist-util-remove-position":529,"xtend":542}],418:[function(require,module,exports){
+},{"unist-util-remove-position":528,"xtend":542}],416:[function(require,module,exports){
 'use strict'
 
 var xtend = require('xtend')
@@ -40188,7 +40172,7 @@ function keys(value) {
   return result
 }
 
-},{"./decode":405,"./defaults":406,"./parse":417,"./set-options":419,"./tokenize/auto-link":420,"./tokenize/blank-line":421,"./tokenize/blockquote":422,"./tokenize/break":423,"./tokenize/code-fenced":424,"./tokenize/code-indented":425,"./tokenize/code-inline":426,"./tokenize/definition":427,"./tokenize/delete":428,"./tokenize/email":429,"./tokenize/emphasis":430,"./tokenize/escape":431,"./tokenize/heading-atx":432,"./tokenize/heading-setext":433,"./tokenize/html-block":434,"./tokenize/html-inline":435,"./tokenize/link":436,"./tokenize/list":437,"./tokenize/paragraph":438,"./tokenize/reference":439,"./tokenize/strong":440,"./tokenize/table":441,"./tokenize/text":442,"./tokenize/thematic-break":443,"./tokenize/url":444,"./tokenizer":445,"./unescape":446,"state-toggle":498,"vfile-location":533,"xtend":542}],419:[function(require,module,exports){
+},{"./decode":403,"./defaults":404,"./parse":415,"./set-options":417,"./tokenize/auto-link":418,"./tokenize/blank-line":419,"./tokenize/blockquote":420,"./tokenize/break":421,"./tokenize/code-fenced":422,"./tokenize/code-indented":423,"./tokenize/code-inline":424,"./tokenize/definition":425,"./tokenize/delete":426,"./tokenize/email":427,"./tokenize/emphasis":428,"./tokenize/escape":429,"./tokenize/heading-atx":430,"./tokenize/heading-setext":431,"./tokenize/html-block":432,"./tokenize/html-inline":433,"./tokenize/link":434,"./tokenize/list":435,"./tokenize/paragraph":436,"./tokenize/reference":437,"./tokenize/strong":438,"./tokenize/table":439,"./tokenize/text":440,"./tokenize/thematic-break":441,"./tokenize/url":442,"./tokenizer":443,"./unescape":444,"state-toggle":496,"vfile-location":533,"xtend":542}],417:[function(require,module,exports){
 'use strict'
 
 var xtend = require('xtend')
@@ -40236,7 +40220,7 @@ function setOptions(options) {
   return self
 }
 
-},{"./defaults":406,"markdown-escapes":332,"xtend":542}],420:[function(require,module,exports){
+},{"./defaults":404,"markdown-escapes":331,"xtend":542}],418:[function(require,module,exports){
 'use strict'
 
 var whitespace = require('is-whitespace-character')
@@ -40371,7 +40355,7 @@ function autoLink(eat, value, silent) {
   })
 }
 
-},{"../locate/tag":415,"is-whitespace-character":137,"parse-entities":345}],421:[function(require,module,exports){
+},{"../locate/tag":413,"is-whitespace-character":326,"parse-entities":374}],419:[function(require,module,exports){
 'use strict'
 
 // A line containing no characters, or a line containing only spaces (U+0020) or
@@ -40416,7 +40400,7 @@ function blankLine(eat, value, silent) {
   eat(subvalue)
 }
 
-},{}],422:[function(require,module,exports){
+},{}],420:[function(require,module,exports){
 'use strict'
 
 var trim = require('trim')
@@ -40542,7 +40526,7 @@ function blockquote(eat, value, silent) {
   return add({type: 'blockquote', children: contents})
 }
 
-},{"../util/interrupt":449,"trim":506}],423:[function(require,module,exports){
+},{"../util/interrupt":447,"trim":505}],421:[function(require,module,exports){
 'use strict'
 
 var locate = require('../locate/break')
@@ -40586,7 +40570,7 @@ function hardBreak(eat, value, silent) {
   }
 }
 
-},{"../locate/break":407}],424:[function(require,module,exports){
+},{"../locate/break":405}],422:[function(require,module,exports){
 'use strict'
 
 module.exports = fencedCode
@@ -40841,7 +40825,7 @@ function fencedCode(eat, value, silent) {
   })
 }
 
-},{}],425:[function(require,module,exports){
+},{}],423:[function(require,module,exports){
 'use strict'
 
 var repeat = require('repeat-string')
@@ -40941,7 +40925,7 @@ function indentedCode(eat, value, silent) {
   }
 }
 
-},{"repeat-string":495,"trim-trailing-lines":505}],426:[function(require,module,exports){
+},{"repeat-string":493,"trim-trailing-lines":504}],424:[function(require,module,exports){
 'use strict'
 
 var locate = require('../locate/code-inline')
@@ -41052,7 +41036,7 @@ function inlineCode(eat, value, silent) {
   })
 }
 
-},{"../locate/code-inline":408}],427:[function(require,module,exports){
+},{"../locate/code-inline":406}],425:[function(require,module,exports){
 'use strict'
 
 var whitespace = require('is-whitespace-character')
@@ -41327,7 +41311,7 @@ function isUnclosedURLCharacter(character) {
   )
 }
 
-},{"../util/normalize":450,"is-whitespace-character":137}],428:[function(require,module,exports){
+},{"../util/normalize":448,"is-whitespace-character":326}],426:[function(require,module,exports){
 'use strict'
 
 var whitespace = require('is-whitespace-character')
@@ -41389,7 +41373,7 @@ function strikethrough(eat, value, silent) {
   }
 }
 
-},{"../locate/delete":409,"is-whitespace-character":137}],429:[function(require,module,exports){
+},{"../locate/delete":407,"is-whitespace-character":326}],427:[function(require,module,exports){
 'use strict'
 
 var decode = require('parse-entities')
@@ -41505,7 +41489,7 @@ function email(eat, value, silent) {
   })
 }
 
-},{"../locate/email":410,"is-alphabetical":130,"is-decimal":133,"parse-entities":345}],430:[function(require,module,exports){
+},{"../locate/email":408,"is-alphabetical":319,"is-decimal":322,"parse-entities":374}],428:[function(require,module,exports){
 'use strict'
 
 var trim = require('trim')
@@ -41593,7 +41577,7 @@ function emphasis(eat, value, silent) {
   }
 }
 
-},{"../locate/emphasis":411,"is-whitespace-character":137,"is-word-character":138,"trim":506}],431:[function(require,module,exports){
+},{"../locate/emphasis":409,"is-whitespace-character":326,"is-word-character":327,"trim":505}],429:[function(require,module,exports){
 'use strict'
 
 var locate = require('../locate/escape')
@@ -41629,7 +41613,7 @@ function escape(eat, value, silent) {
   }
 }
 
-},{"../locate/escape":412}],432:[function(require,module,exports){
+},{"../locate/escape":410}],430:[function(require,module,exports){
 'use strict'
 
 module.exports = atxHeading
@@ -41766,7 +41750,7 @@ function atxHeading(eat, value, silent) {
   })
 }
 
-},{}],433:[function(require,module,exports){
+},{}],431:[function(require,module,exports){
 'use strict'
 
 module.exports = setextHeading
@@ -41870,7 +41854,7 @@ function setextHeading(eat, value, silent) {
   })
 }
 
-},{}],434:[function(require,module,exports){
+},{}],432:[function(require,module,exports){
 'use strict'
 
 var openCloseTag = require('../util/html').openCloseTag
@@ -41983,7 +41967,7 @@ function blockHtml(eat, value, silent) {
   return eat(subvalue)({type: 'html', value: subvalue})
 }
 
-},{"../util/html":448}],435:[function(require,module,exports){
+},{"../util/html":446}],433:[function(require,module,exports){
 'use strict'
 
 var alphabetical = require('is-alphabetical')
@@ -42044,7 +42028,7 @@ function inlineHTML(eat, value, silent) {
   return eat(subvalue)({type: 'html', value: subvalue})
 }
 
-},{"../locate/tag":415,"../util/html":448,"is-alphabetical":130}],436:[function(require,module,exports){
+},{"../locate/tag":413,"../util/html":446,"is-alphabetical":319}],434:[function(require,module,exports){
 'use strict'
 
 var whitespace = require('is-whitespace-character')
@@ -42413,7 +42397,7 @@ function link(eat, value, silent) {
   return eat(subvalue)(node)
 }
 
-},{"../locate/link":413,"is-whitespace-character":137}],437:[function(require,module,exports){
+},{"../locate/link":411,"is-whitespace-character":326}],435:[function(require,module,exports){
 'use strict'
 
 var trim = require('trim')
@@ -42861,7 +42845,7 @@ function normalListItem(ctx, value, position) {
   }
 }
 
-},{"../util/get-indentation":447,"../util/interrupt":449,"../util/remove-indentation":451,"is-decimal":133,"repeat-string":495,"trim":506}],438:[function(require,module,exports){
+},{"../util/get-indentation":445,"../util/interrupt":447,"../util/remove-indentation":449,"is-decimal":322,"repeat-string":493,"trim":505}],436:[function(require,module,exports){
 'use strict'
 
 var trim = require('trim')
@@ -42961,7 +42945,7 @@ function paragraph(eat, value, silent) {
   })
 }
 
-},{"../util/interrupt":449,"trim":506,"trim-trailing-lines":505}],439:[function(require,module,exports){
+},{"../util/interrupt":447,"trim":505,"trim-trailing-lines":504}],437:[function(require,module,exports){
 'use strict'
 
 var whitespace = require('is-whitespace-character')
@@ -43151,7 +43135,7 @@ function reference(eat, value, silent) {
   return eat(subvalue)(node)
 }
 
-},{"../locate/link":413,"../util/normalize":450,"is-whitespace-character":137}],440:[function(require,module,exports){
+},{"../locate/link":411,"../util/normalize":448,"is-whitespace-character":326}],438:[function(require,module,exports){
 'use strict'
 
 var trim = require('trim')
@@ -43238,7 +43222,7 @@ function strong(eat, value, silent) {
   }
 }
 
-},{"../locate/strong":414,"is-whitespace-character":137,"trim":506}],441:[function(require,module,exports){
+},{"../locate/strong":412,"is-whitespace-character":326,"trim":505}],439:[function(require,module,exports){
 'use strict'
 
 var whitespace = require('is-whitespace-character')
@@ -43472,7 +43456,7 @@ function table(eat, value, silent) {
   return table
 }
 
-},{"is-whitespace-character":137}],442:[function(require,module,exports){
+},{"is-whitespace-character":326}],440:[function(require,module,exports){
 'use strict'
 
 module.exports = text
@@ -43531,7 +43515,7 @@ function text(eat, value, silent) {
   }
 }
 
-},{}],443:[function(require,module,exports){
+},{}],441:[function(require,module,exports){
 'use strict'
 
 module.exports = thematicBreak
@@ -43603,7 +43587,7 @@ function thematicBreak(eat, value, silent) {
   }
 }
 
-},{}],444:[function(require,module,exports){
+},{}],442:[function(require,module,exports){
 'use strict'
 
 var ccount = require('ccount')
@@ -43815,7 +43799,7 @@ function url(eat, value, silent) {
   return eat(content)({type: 'link', title: null, url: url, children: children})
 }
 
-},{"../locate/url":416,"ccount":6,"is-alphabetical":130,"is-decimal":133,"is-whitespace-character":137,"parse-entities":345}],445:[function(require,module,exports){
+},{"../locate/url":414,"ccount":6,"is-alphabetical":319,"is-decimal":322,"is-whitespace-character":326,"parse-entities":374}],443:[function(require,module,exports){
 'use strict'
 
 module.exports = factory
@@ -44135,7 +44119,7 @@ function mergeBlockquote(previous, node) {
   return previous
 }
 
-},{}],446:[function(require,module,exports){
+},{}],444:[function(require,module,exports){
 'use strict'
 
 module.exports = factory
@@ -44173,7 +44157,7 @@ function factory(ctx, key) {
   }
 }
 
-},{}],447:[function(require,module,exports){
+},{}],445:[function(require,module,exports){
 'use strict'
 
 module.exports = indentation
@@ -44212,7 +44196,7 @@ function indentation(value) {
   return {indent: indent, stops: stops}
 }
 
-},{}],448:[function(require,module,exports){
+},{}],446:[function(require,module,exports){
 'use strict'
 
 var attributeName = '[a-zA-Z_:][a-zA-Z0-9:._-]*'
@@ -44248,7 +44232,7 @@ exports.tag = new RegExp(
     ')'
 )
 
-},{}],449:[function(require,module,exports){
+},{}],447:[function(require,module,exports){
 'use strict'
 
 module.exports = interrupt
@@ -44285,7 +44269,7 @@ function interrupt(interruptors, tokenizers, ctx, parameters) {
   return false
 }
 
-},{}],450:[function(require,module,exports){
+},{}],448:[function(require,module,exports){
 'use strict'
 
 var collapseWhiteSpace = require('collapse-white-space')
@@ -44298,7 +44282,7 @@ function normalize(value) {
   return collapseWhiteSpace(value).toLowerCase()
 }
 
-},{"collapse-white-space":10}],451:[function(require,module,exports){
+},{"collapse-white-space":10}],449:[function(require,module,exports){
 'use strict'
 
 var trim = require('trim')
@@ -44364,7 +44348,7 @@ function indentation(value, maximum) {
   return values.join(lineFeed)
 }
 
-},{"./get-indentation":447,"repeat-string":495,"trim":506}],452:[function(require,module,exports){
+},{"./get-indentation":445,"repeat-string":493,"trim":505}],450:[function(require,module,exports){
 'use strict'
 
 var toString = require('mdast-util-to-string')
@@ -44395,7 +44379,7 @@ function transformer(ast) {
   }
 }
 
-},{"github-slugger":98,"mdast-util-to-string":337,"unist-util-visit":532}],453:[function(require,module,exports){
+},{"github-slugger":98,"mdast-util-to-string":366,"unist-util-visit":532}],451:[function(require,module,exports){
 'use strict'
 
 var unherit = require('unherit')
@@ -44415,7 +44399,7 @@ function stringify(options) {
   this.Compiler = Local
 }
 
-},{"./lib/compiler.js":454,"unherit":520,"xtend":542}],454:[function(require,module,exports){
+},{"./lib/compiler.js":452,"unherit":519,"xtend":542}],452:[function(require,module,exports){
 'use strict'
 
 var xtend = require('xtend')
@@ -44477,7 +44461,7 @@ proto.visitors = {
   tableCell: require('./visitors/table-cell')
 }
 
-},{"./defaults":455,"./macro/all":457,"./macro/block":458,"./macro/compile":459,"./macro/one":460,"./macro/ordered-items":461,"./macro/unordered-items":462,"./set-options":463,"./util/enter-link-reference":467,"./visitors/blockquote":472,"./visitors/break":473,"./visitors/code":474,"./visitors/definition":475,"./visitors/delete":476,"./visitors/emphasis":477,"./visitors/heading":478,"./visitors/html":479,"./visitors/image":481,"./visitors/image-reference":480,"./visitors/inline-code":482,"./visitors/link":484,"./visitors/link-reference":483,"./visitors/list":486,"./visitors/list-item":485,"./visitors/paragraph":487,"./visitors/root":488,"./visitors/strong":489,"./visitors/table":491,"./visitors/table-cell":490,"./visitors/text":492,"./visitors/thematic-break":493,"state-toggle":498,"xtend":542}],455:[function(require,module,exports){
+},{"./defaults":453,"./macro/all":455,"./macro/block":456,"./macro/compile":457,"./macro/one":458,"./macro/ordered-items":459,"./macro/unordered-items":460,"./set-options":461,"./util/enter-link-reference":465,"./visitors/blockquote":470,"./visitors/break":471,"./visitors/code":472,"./visitors/definition":473,"./visitors/delete":474,"./visitors/emphasis":475,"./visitors/heading":476,"./visitors/html":477,"./visitors/image":479,"./visitors/image-reference":478,"./visitors/inline-code":480,"./visitors/link":482,"./visitors/link-reference":481,"./visitors/list":484,"./visitors/list-item":483,"./visitors/paragraph":485,"./visitors/root":486,"./visitors/strong":487,"./visitors/table":489,"./visitors/table-cell":488,"./visitors/text":490,"./visitors/thematic-break":491,"state-toggle":496,"xtend":542}],453:[function(require,module,exports){
 'use strict'
 
 module.exports = {
@@ -44507,7 +44491,7 @@ function stringLength(value) {
   return value.length
 }
 
-},{}],456:[function(require,module,exports){
+},{}],454:[function(require,module,exports){
 'use strict'
 
 var decimal = require('is-decimal')
@@ -44806,7 +44790,7 @@ function protocol(value) {
   return tail === mailto || tail.slice(-5) === https || tail.slice(-4) === http
 }
 
-},{"./util/entity-prefix-length":468,"is-alphanumeric":131,"is-decimal":133,"is-whitespace-character":137,"markdown-escapes":332}],457:[function(require,module,exports){
+},{"./util/entity-prefix-length":466,"is-alphanumeric":320,"is-decimal":322,"is-whitespace-character":326,"markdown-escapes":331}],455:[function(require,module,exports){
 'use strict'
 
 module.exports = all
@@ -44826,7 +44810,7 @@ function all(parent) {
   return results
 }
 
-},{}],458:[function(require,module,exports){
+},{}],456:[function(require,module,exports){
 'use strict'
 
 module.exports = block
@@ -44888,7 +44872,7 @@ function block(node) {
   return values.join('')
 }
 
-},{}],459:[function(require,module,exports){
+},{}],457:[function(require,module,exports){
 'use strict'
 
 var compact = require('mdast-util-compact')
@@ -44900,7 +44884,7 @@ function compile() {
   return this.visit(compact(this.tree, this.options.commonmark))
 }
 
-},{"mdast-util-compact":335}],460:[function(require,module,exports){
+},{"mdast-util-compact":334}],458:[function(require,module,exports){
 'use strict'
 
 module.exports = one
@@ -44922,7 +44906,7 @@ function one(node, parent) {
   return visitors[node.type].call(self, node, parent)
 }
 
-},{}],461:[function(require,module,exports){
+},{}],459:[function(require,module,exports){
 'use strict'
 
 module.exports = orderedItems
@@ -44967,7 +44951,7 @@ function orderedItems(node) {
   return values.join(node.spread ? blank : lineFeed)
 }
 
-},{}],462:[function(require,module,exports){
+},{}],460:[function(require,module,exports){
 'use strict'
 
 module.exports = unorderedItems
@@ -44993,7 +44977,7 @@ function unorderedItems(node) {
   return values.join(node.spread ? blank : lineFeed)
 }
 
-},{}],463:[function(require,module,exports){
+},{}],461:[function(require,module,exports){
 'use strict'
 
 var xtend = require('xtend')
@@ -45155,7 +45139,7 @@ function raise(value, name) {
   throw new Error('Invalid value `' + value + '` for setting `' + name + '`')
 }
 
-},{"./defaults":455,"./escape":456,"./util/identity":469,"stringify-entities":503,"xtend":542}],464:[function(require,module,exports){
+},{"./defaults":453,"./escape":454,"./util/identity":467,"stringify-entities":502,"xtend":542}],462:[function(require,module,exports){
 'use strict'
 
 var entityPrefixLength = require('./entity-prefix-length')
@@ -45224,7 +45208,7 @@ function copy(value, identifier) {
   return result.join('')
 }
 
-},{"./entity-prefix-length":468}],465:[function(require,module,exports){
+},{"./entity-prefix-length":466}],463:[function(require,module,exports){
 'use strict'
 
 module.exports = enclose
@@ -45243,7 +45227,7 @@ function enclose(title) {
   return delimiter + title + delimiter
 }
 
-},{}],466:[function(require,module,exports){
+},{}],464:[function(require,module,exports){
 'use strict'
 
 var count = require('ccount')
@@ -45278,7 +45262,7 @@ function enclose(uri, always) {
   return uri
 }
 
-},{"ccount":6}],467:[function(require,module,exports){
+},{"ccount":6}],465:[function(require,module,exports){
 'use strict'
 
 var identity = require('./identity')
@@ -45313,7 +45297,7 @@ function enter(compiler, node) {
   }
 }
 
-},{"./identity":469}],468:[function(require,module,exports){
+},{"./identity":467}],466:[function(require,module,exports){
 'use strict'
 
 var decode = require('parse-entities')
@@ -45338,7 +45322,7 @@ function length(value) {
   return prefix.length - decode(prefix).length
 }
 
-},{"parse-entities":345}],469:[function(require,module,exports){
+},{"parse-entities":374}],467:[function(require,module,exports){
 'use strict'
 
 module.exports = identity
@@ -45347,7 +45331,7 @@ function identity(value) {
   return value
 }
 
-},{}],470:[function(require,module,exports){
+},{}],468:[function(require,module,exports){
 'use strict'
 
 module.exports = label
@@ -45376,7 +45360,7 @@ function label(node) {
   )
 }
 
-},{}],471:[function(require,module,exports){
+},{}],469:[function(require,module,exports){
 'use strict'
 
 var repeat = require('repeat-string')
@@ -45404,7 +45388,7 @@ function pad(value, level) {
   return values.join(lineFeed)
 }
 
-},{"repeat-string":495}],472:[function(require,module,exports){
+},{"repeat-string":493}],470:[function(require,module,exports){
 'use strict'
 
 module.exports = blockquote
@@ -45428,7 +45412,7 @@ function blockquote(node) {
   return greaterThan + result.join(lineFeed + greaterThan)
 }
 
-},{}],473:[function(require,module,exports){
+},{}],471:[function(require,module,exports){
 'use strict'
 
 module.exports = lineBreak
@@ -45444,7 +45428,7 @@ function lineBreak() {
   return this.options.commonmark ? commonmark : normal
 }
 
-},{}],474:[function(require,module,exports){
+},{}],472:[function(require,module,exports){
 'use strict'
 
 var streak = require('longest-streak')
@@ -45539,7 +45523,7 @@ function code(node, parent) {
   return fence + info + lineFeed + value + lineFeed + fence
 }
 
-},{"../util/pad":471,"longest-streak":139,"repeat-string":495}],475:[function(require,module,exports){
+},{"../util/pad":469,"longest-streak":328,"repeat-string":493}],473:[function(require,module,exports){
 'use strict'
 
 var uri = require('../util/enclose-uri')
@@ -45577,7 +45561,7 @@ function definition(node) {
   )
 }
 
-},{"../util/enclose-title":465,"../util/enclose-uri":466}],476:[function(require,module,exports){
+},{"../util/enclose-title":463,"../util/enclose-uri":464}],474:[function(require,module,exports){
 'use strict'
 
 module.exports = strikethrough
@@ -45590,7 +45574,7 @@ function strikethrough(node) {
   return fence + this.all(node).join('') + fence
 }
 
-},{}],477:[function(require,module,exports){
+},{}],475:[function(require,module,exports){
 'use strict'
 
 module.exports = emphasis
@@ -45630,7 +45614,7 @@ function emphasis(node) {
   return marker + content + marker
 }
 
-},{}],478:[function(require,module,exports){
+},{}],476:[function(require,module,exports){
 'use strict'
 
 var repeat = require('repeat-string')
@@ -45683,7 +45667,7 @@ function heading(node) {
   return prefix + space + content + (closeAtx ? space + prefix : '')
 }
 
-},{"repeat-string":495}],479:[function(require,module,exports){
+},{"repeat-string":493}],477:[function(require,module,exports){
 'use strict'
 
 module.exports = html
@@ -45692,7 +45676,7 @@ function html(node) {
   return node.value
 }
 
-},{}],480:[function(require,module,exports){
+},{}],478:[function(require,module,exports){
 'use strict'
 
 var label = require('../util/label')
@@ -45713,7 +45697,7 @@ function imageReference(node) {
   )
 }
 
-},{"../util/label":470}],481:[function(require,module,exports){
+},{"../util/label":468}],479:[function(require,module,exports){
 'use strict'
 
 var uri = require('../util/enclose-uri')
@@ -45762,7 +45746,7 @@ function image(node) {
   )
 }
 
-},{"../util/enclose-title":465,"../util/enclose-uri":466}],482:[function(require,module,exports){
+},{"../util/enclose-title":463,"../util/enclose-uri":464}],480:[function(require,module,exports){
 'use strict'
 
 var streak = require('longest-streak')
@@ -45827,7 +45811,7 @@ function ws(code) {
   return code === lineFeed || code === space
 }
 
-},{"longest-streak":139,"repeat-string":495}],483:[function(require,module,exports){
+},{"longest-streak":328,"repeat-string":493}],481:[function(require,module,exports){
 'use strict'
 
 var copy = require('../util/copy-identifier-encoding')
@@ -45856,7 +45840,7 @@ function linkReference(node) {
   return leftSquareBracket + value + rightSquareBracket + label(node)
 }
 
-},{"../util/copy-identifier-encoding":464,"../util/label":470}],484:[function(require,module,exports){
+},{"../util/copy-identifier-encoding":462,"../util/label":468}],482:[function(require,module,exports){
 'use strict'
 
 var uri = require('../util/enclose-uri')
@@ -45923,7 +45907,7 @@ function link(node) {
   )
 }
 
-},{"../util/enclose-title":465,"../util/enclose-uri":466}],485:[function(require,module,exports){
+},{"../util/enclose-title":463,"../util/enclose-uri":464}],483:[function(require,module,exports){
 'use strict'
 
 var repeat = require('repeat-string')
@@ -46000,7 +45984,7 @@ function listItem(node, parent, position, bullet) {
     : marker
 }
 
-},{"../util/pad":471,"repeat-string":495}],486:[function(require,module,exports){
+},{"../util/pad":469,"repeat-string":493}],484:[function(require,module,exports){
 'use strict'
 
 module.exports = list
@@ -46010,7 +45994,7 @@ function list(node) {
   return fn.call(this, node)
 }
 
-},{}],487:[function(require,module,exports){
+},{}],485:[function(require,module,exports){
 'use strict'
 
 module.exports = paragraph
@@ -46019,7 +46003,7 @@ function paragraph(node) {
   return this.all(node).join('')
 }
 
-},{}],488:[function(require,module,exports){
+},{}],486:[function(require,module,exports){
 'use strict'
 
 module.exports = root
@@ -46038,7 +46022,7 @@ function root(node) {
   return doc
 }
 
-},{}],489:[function(require,module,exports){
+},{}],487:[function(require,module,exports){
 'use strict'
 
 var repeat = require('repeat-string')
@@ -46058,7 +46042,7 @@ function strong(node) {
   return marker + this.all(node).join('') + marker
 }
 
-},{"repeat-string":495}],490:[function(require,module,exports){
+},{"repeat-string":493}],488:[function(require,module,exports){
 'use strict'
 
 module.exports = tableCell
@@ -46069,7 +46053,7 @@ function tableCell(node) {
   return this.all(node).join('').replace(lineFeed, ' ')
 }
 
-},{}],491:[function(require,module,exports){
+},{}],489:[function(require,module,exports){
 'use strict'
 
 var markdownTable = require('markdown-table')
@@ -46120,7 +46104,7 @@ function table(node) {
   })
 }
 
-},{"markdown-table":333}],492:[function(require,module,exports){
+},{"markdown-table":332}],490:[function(require,module,exports){
 'use strict'
 
 module.exports = text
@@ -46141,7 +46125,7 @@ function text(node, parent) {
   return this.encode(this.escape(node.value, node, parent), node)
 }
 
-},{}],493:[function(require,module,exports){
+},{}],491:[function(require,module,exports){
 'use strict'
 
 var repeat = require('repeat-string')
@@ -46174,7 +46158,7 @@ function thematic() {
   return options.ruleSpaces ? rule.split('').join(space) : rule
 }
 
-},{"repeat-string":495}],494:[function(require,module,exports){
+},{"repeat-string":493}],492:[function(require,module,exports){
 'use strict'
 
 var unified = require('unified')
@@ -46183,7 +46167,7 @@ var stringify = require('remark-stringify')
 
 module.exports = unified().use(parse).use(stringify).freeze()
 
-},{"remark-parse":403,"remark-stringify":453,"unified":521}],495:[function(require,module,exports){
+},{"remark-parse":401,"remark-stringify":451,"unified":520}],493:[function(require,module,exports){
 /*!
  * repeat-string <https://github.com/jonschlinkert/repeat-string>
  *
@@ -46255,7 +46239,7 @@ function repeat(str, num) {
   return res;
 }
 
-},{}],496:[function(require,module,exports){
+},{}],494:[function(require,module,exports){
 'use strict';
 
 var path = require('path');
@@ -46275,7 +46259,7 @@ function replaceExt(npath, ext) {
 
 module.exports = replaceExt;
 
-},{"path":346}],497:[function(require,module,exports){
+},{"path":375}],495:[function(require,module,exports){
 'use strict'
 
 exports.parse = parse
@@ -46294,7 +46278,7 @@ function stringify(values) {
   return values.join(space).trim()
 }
 
-},{}],498:[function(require,module,exports){
+},{}],496:[function(require,module,exports){
 'use strict'
 
 module.exports = factory
@@ -46319,7 +46303,7 @@ function factory(key, state, ctx) {
   }
 }
 
-},{}],499:[function(require,module,exports){
+},{}],497:[function(require,module,exports){
 'use strict';
 const stripAnsi = require('strip-ansi');
 const isFullwidthCodePoint = require('is-fullwidth-code-point');
@@ -46364,7 +46348,7 @@ module.exports = stringWidth;
 // TODO: remove this in the next major version
 module.exports.default = stringWidth;
 
-},{"emoji-regex":34,"is-fullwidth-code-point":134,"strip-ansi":501}],500:[function(require,module,exports){
+},{"emoji-regex":499,"is-fullwidth-code-point":323,"strip-ansi":500}],498:[function(require,module,exports){
 'use strict';
 
 module.exports = ({onlyFirst = false} = {}) => {
@@ -46376,13 +46360,21 @@ module.exports = ({onlyFirst = false} = {}) => {
 	return new RegExp(pattern, onlyFirst ? undefined : 'g');
 };
 
-},{}],501:[function(require,module,exports){
+},{}],499:[function(require,module,exports){
+"use strict";
+
+module.exports = function () {
+  // https://mths.be/emoji
+  return /\uD83C\uDFF4\uDB40\uDC67\uDB40\uDC62(?:\uDB40\uDC65\uDB40\uDC6E\uDB40\uDC67|\uDB40\uDC73\uDB40\uDC63\uDB40\uDC74|\uDB40\uDC77\uDB40\uDC6C\uDB40\uDC73)\uDB40\uDC7F|\uD83D\uDC68(?:\uD83C\uDFFC\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68\uD83C\uDFFB|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFF\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFE])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFE\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFD])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFD\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB\uDFFC])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\u200D(?:\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83D\uDC68|(?:\uD83D[\uDC68\uDC69])\u200D(?:\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67]))|\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67])|(?:\uD83D[\uDC68\uDC69])\u200D(?:\uD83D[\uDC66\uDC67])|[\u2695\u2696\u2708]\uFE0F|\uD83D[\uDC66\uDC67]|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|(?:\uD83C\uDFFB\u200D[\u2695\u2696\u2708]|\uD83C\uDFFF\u200D[\u2695\u2696\u2708]|\uD83C\uDFFE\u200D[\u2695\u2696\u2708]|\uD83C\uDFFD\u200D[\u2695\u2696\u2708]|\uD83C\uDFFC\u200D[\u2695\u2696\u2708])\uFE0F|\uD83C\uDFFB\u200D(?:\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C[\uDFFB-\uDFFF])|(?:\uD83E\uDDD1\uD83C\uDFFB\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFC\u200D\uD83E\uDD1D\u200D\uD83D\uDC69)\uD83C\uDFFB|\uD83E\uDDD1(?:\uD83C\uDFFF\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1(?:\uD83C[\uDFFB-\uDFFF])|\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1)|(?:\uD83E\uDDD1\uD83C\uDFFE\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFF\u200D\uD83E\uDD1D\u200D(?:\uD83D[\uDC68\uDC69]))(?:\uD83C[\uDFFB-\uDFFE])|(?:\uD83E\uDDD1\uD83C\uDFFC\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFD\u200D\uD83E\uDD1D\u200D\uD83D\uDC69)(?:\uD83C[\uDFFB\uDFFC])|\uD83D\uDC69(?:\uD83C\uDFFE\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFD\uDFFF])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFC\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB\uDFFD-\uDFFF])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFB\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFC-\uDFFF])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFD\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB\uDFFC\uDFFE\uDFFF])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\u200D(?:\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D(?:\uD83D[\uDC68\uDC69])|\uD83D[\uDC68\uDC69])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFF\u200D(?:\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD]))|\uD83D\uDC69\u200D\uD83D\uDC69\u200D(?:\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67]))|(?:\uD83E\uDDD1\uD83C\uDFFD\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFE\u200D\uD83E\uDD1D\u200D\uD83D\uDC69)(?:\uD83C[\uDFFB-\uDFFD])|\uD83D\uDC69\u200D\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC69\u200D\uD83D\uDC69\u200D(?:\uD83D[\uDC66\uDC67])|(?:\uD83D\uDC41\uFE0F\u200D\uD83D\uDDE8|\uD83D\uDC69(?:\uD83C\uDFFF\u200D[\u2695\u2696\u2708]|\uD83C\uDFFE\u200D[\u2695\u2696\u2708]|\uD83C\uDFFC\u200D[\u2695\u2696\u2708]|\uD83C\uDFFB\u200D[\u2695\u2696\u2708]|\uD83C\uDFFD\u200D[\u2695\u2696\u2708]|\u200D[\u2695\u2696\u2708])|(?:(?:\u26F9|\uD83C[\uDFCB\uDFCC]|\uD83D\uDD75)\uFE0F|\uD83D\uDC6F|\uD83E[\uDD3C\uDDDE\uDDDF])\u200D[\u2640\u2642]|(?:\u26F9|\uD83C[\uDFCB\uDFCC]|\uD83D\uDD75)(?:\uD83C[\uDFFB-\uDFFF])\u200D[\u2640\u2642]|(?:\uD83C[\uDFC3\uDFC4\uDFCA]|\uD83D[\uDC6E\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4-\uDEB6]|\uD83E[\uDD26\uDD37-\uDD39\uDD3D\uDD3E\uDDB8\uDDB9\uDDCD-\uDDCF\uDDD6-\uDDDD])(?:(?:\uD83C[\uDFFB-\uDFFF])\u200D[\u2640\u2642]|\u200D[\u2640\u2642])|\uD83C\uDFF4\u200D\u2620)\uFE0F|\uD83D\uDC69\u200D\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67])|\uD83C\uDFF3\uFE0F\u200D\uD83C\uDF08|\uD83D\uDC15\u200D\uD83E\uDDBA|\uD83D\uDC69\u200D\uD83D\uDC66|\uD83D\uDC69\u200D\uD83D\uDC67|\uD83C\uDDFD\uD83C\uDDF0|\uD83C\uDDF4\uD83C\uDDF2|\uD83C\uDDF6\uD83C\uDDE6|[#\*0-9]\uFE0F\u20E3|\uD83C\uDDE7(?:\uD83C[\uDDE6\uDDE7\uDDE9-\uDDEF\uDDF1-\uDDF4\uDDF6-\uDDF9\uDDFB\uDDFC\uDDFE\uDDFF])|\uD83C\uDDF9(?:\uD83C[\uDDE6\uDDE8\uDDE9\uDDEB-\uDDED\uDDEF-\uDDF4\uDDF7\uDDF9\uDDFB\uDDFC\uDDFF])|\uD83C\uDDEA(?:\uD83C[\uDDE6\uDDE8\uDDEA\uDDEC\uDDED\uDDF7-\uDDFA])|\uD83E\uDDD1(?:\uD83C[\uDFFB-\uDFFF])|\uD83C\uDDF7(?:\uD83C[\uDDEA\uDDF4\uDDF8\uDDFA\uDDFC])|\uD83D\uDC69(?:\uD83C[\uDFFB-\uDFFF])|\uD83C\uDDF2(?:\uD83C[\uDDE6\uDDE8-\uDDED\uDDF0-\uDDFF])|\uD83C\uDDE6(?:\uD83C[\uDDE8-\uDDEC\uDDEE\uDDF1\uDDF2\uDDF4\uDDF6-\uDDFA\uDDFC\uDDFD\uDDFF])|\uD83C\uDDF0(?:\uD83C[\uDDEA\uDDEC-\uDDEE\uDDF2\uDDF3\uDDF5\uDDF7\uDDFC\uDDFE\uDDFF])|\uD83C\uDDED(?:\uD83C[\uDDF0\uDDF2\uDDF3\uDDF7\uDDF9\uDDFA])|\uD83C\uDDE9(?:\uD83C[\uDDEA\uDDEC\uDDEF\uDDF0\uDDF2\uDDF4\uDDFF])|\uD83C\uDDFE(?:\uD83C[\uDDEA\uDDF9])|\uD83C\uDDEC(?:\uD83C[\uDDE6\uDDE7\uDDE9-\uDDEE\uDDF1-\uDDF3\uDDF5-\uDDFA\uDDFC\uDDFE])|\uD83C\uDDF8(?:\uD83C[\uDDE6-\uDDEA\uDDEC-\uDDF4\uDDF7-\uDDF9\uDDFB\uDDFD-\uDDFF])|\uD83C\uDDEB(?:\uD83C[\uDDEE-\uDDF0\uDDF2\uDDF4\uDDF7])|\uD83C\uDDF5(?:\uD83C[\uDDE6\uDDEA-\uDDED\uDDF0-\uDDF3\uDDF7-\uDDF9\uDDFC\uDDFE])|\uD83C\uDDFB(?:\uD83C[\uDDE6\uDDE8\uDDEA\uDDEC\uDDEE\uDDF3\uDDFA])|\uD83C\uDDF3(?:\uD83C[\uDDE6\uDDE8\uDDEA-\uDDEC\uDDEE\uDDF1\uDDF4\uDDF5\uDDF7\uDDFA\uDDFF])|\uD83C\uDDE8(?:\uD83C[\uDDE6\uDDE8\uDDE9\uDDEB-\uDDEE\uDDF0-\uDDF5\uDDF7\uDDFA-\uDDFF])|\uD83C\uDDF1(?:\uD83C[\uDDE6-\uDDE8\uDDEE\uDDF0\uDDF7-\uDDFB\uDDFE])|\uD83C\uDDFF(?:\uD83C[\uDDE6\uDDF2\uDDFC])|\uD83C\uDDFC(?:\uD83C[\uDDEB\uDDF8])|\uD83C\uDDFA(?:\uD83C[\uDDE6\uDDEC\uDDF2\uDDF3\uDDF8\uDDFE\uDDFF])|\uD83C\uDDEE(?:\uD83C[\uDDE8-\uDDEA\uDDF1-\uDDF4\uDDF6-\uDDF9])|\uD83C\uDDEF(?:\uD83C[\uDDEA\uDDF2\uDDF4\uDDF5])|(?:\uD83C[\uDFC3\uDFC4\uDFCA]|\uD83D[\uDC6E\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4-\uDEB6]|\uD83E[\uDD26\uDD37-\uDD39\uDD3D\uDD3E\uDDB8\uDDB9\uDDCD-\uDDCF\uDDD6-\uDDDD])(?:\uD83C[\uDFFB-\uDFFF])|(?:\u26F9|\uD83C[\uDFCB\uDFCC]|\uD83D\uDD75)(?:\uD83C[\uDFFB-\uDFFF])|(?:[\u261D\u270A-\u270D]|\uD83C[\uDF85\uDFC2\uDFC7]|\uD83D[\uDC42\uDC43\uDC46-\uDC50\uDC66\uDC67\uDC6B-\uDC6D\uDC70\uDC72\uDC74-\uDC76\uDC78\uDC7C\uDC83\uDC85\uDCAA\uDD74\uDD7A\uDD90\uDD95\uDD96\uDE4C\uDE4F\uDEC0\uDECC]|\uD83E[\uDD0F\uDD18-\uDD1C\uDD1E\uDD1F\uDD30-\uDD36\uDDB5\uDDB6\uDDBB\uDDD2-\uDDD5])(?:\uD83C[\uDFFB-\uDFFF])|(?:[\u231A\u231B\u23E9-\u23EC\u23F0\u23F3\u25FD\u25FE\u2614\u2615\u2648-\u2653\u267F\u2693\u26A1\u26AA\u26AB\u26BD\u26BE\u26C4\u26C5\u26CE\u26D4\u26EA\u26F2\u26F3\u26F5\u26FA\u26FD\u2705\u270A\u270B\u2728\u274C\u274E\u2753-\u2755\u2757\u2795-\u2797\u27B0\u27BF\u2B1B\u2B1C\u2B50\u2B55]|\uD83C[\uDC04\uDCCF\uDD8E\uDD91-\uDD9A\uDDE6-\uDDFF\uDE01\uDE1A\uDE2F\uDE32-\uDE36\uDE38-\uDE3A\uDE50\uDE51\uDF00-\uDF20\uDF2D-\uDF35\uDF37-\uDF7C\uDF7E-\uDF93\uDFA0-\uDFCA\uDFCF-\uDFD3\uDFE0-\uDFF0\uDFF4\uDFF8-\uDFFF]|\uD83D[\uDC00-\uDC3E\uDC40\uDC42-\uDCFC\uDCFF-\uDD3D\uDD4B-\uDD4E\uDD50-\uDD67\uDD7A\uDD95\uDD96\uDDA4\uDDFB-\uDE4F\uDE80-\uDEC5\uDECC\uDED0-\uDED2\uDED5\uDEEB\uDEEC\uDEF4-\uDEFA\uDFE0-\uDFEB]|\uD83E[\uDD0D-\uDD3A\uDD3C-\uDD45\uDD47-\uDD71\uDD73-\uDD76\uDD7A-\uDDA2\uDDA5-\uDDAA\uDDAE-\uDDCA\uDDCD-\uDDFF\uDE70-\uDE73\uDE78-\uDE7A\uDE80-\uDE82\uDE90-\uDE95])|(?:[#\*0-9\xA9\xAE\u203C\u2049\u2122\u2139\u2194-\u2199\u21A9\u21AA\u231A\u231B\u2328\u23CF\u23E9-\u23F3\u23F8-\u23FA\u24C2\u25AA\u25AB\u25B6\u25C0\u25FB-\u25FE\u2600-\u2604\u260E\u2611\u2614\u2615\u2618\u261D\u2620\u2622\u2623\u2626\u262A\u262E\u262F\u2638-\u263A\u2640\u2642\u2648-\u2653\u265F\u2660\u2663\u2665\u2666\u2668\u267B\u267E\u267F\u2692-\u2697\u2699\u269B\u269C\u26A0\u26A1\u26AA\u26AB\u26B0\u26B1\u26BD\u26BE\u26C4\u26C5\u26C8\u26CE\u26CF\u26D1\u26D3\u26D4\u26E9\u26EA\u26F0-\u26F5\u26F7-\u26FA\u26FD\u2702\u2705\u2708-\u270D\u270F\u2712\u2714\u2716\u271D\u2721\u2728\u2733\u2734\u2744\u2747\u274C\u274E\u2753-\u2755\u2757\u2763\u2764\u2795-\u2797\u27A1\u27B0\u27BF\u2934\u2935\u2B05-\u2B07\u2B1B\u2B1C\u2B50\u2B55\u3030\u303D\u3297\u3299]|\uD83C[\uDC04\uDCCF\uDD70\uDD71\uDD7E\uDD7F\uDD8E\uDD91-\uDD9A\uDDE6-\uDDFF\uDE01\uDE02\uDE1A\uDE2F\uDE32-\uDE3A\uDE50\uDE51\uDF00-\uDF21\uDF24-\uDF93\uDF96\uDF97\uDF99-\uDF9B\uDF9E-\uDFF0\uDFF3-\uDFF5\uDFF7-\uDFFF]|\uD83D[\uDC00-\uDCFD\uDCFF-\uDD3D\uDD49-\uDD4E\uDD50-\uDD67\uDD6F\uDD70\uDD73-\uDD7A\uDD87\uDD8A-\uDD8D\uDD90\uDD95\uDD96\uDDA4\uDDA5\uDDA8\uDDB1\uDDB2\uDDBC\uDDC2-\uDDC4\uDDD1-\uDDD3\uDDDC-\uDDDE\uDDE1\uDDE3\uDDE8\uDDEF\uDDF3\uDDFA-\uDE4F\uDE80-\uDEC5\uDECB-\uDED2\uDED5\uDEE0-\uDEE5\uDEE9\uDEEB\uDEEC\uDEF0\uDEF3-\uDEFA\uDFE0-\uDFEB]|\uD83E[\uDD0D-\uDD3A\uDD3C-\uDD45\uDD47-\uDD71\uDD73-\uDD76\uDD7A-\uDDA2\uDDA5-\uDDAA\uDDAE-\uDDCA\uDDCD-\uDDFF\uDE70-\uDE73\uDE78-\uDE7A\uDE80-\uDE82\uDE90-\uDE95])\uFE0F|(?:[\u261D\u26F9\u270A-\u270D]|\uD83C[\uDF85\uDFC2-\uDFC4\uDFC7\uDFCA-\uDFCC]|\uD83D[\uDC42\uDC43\uDC46-\uDC50\uDC66-\uDC78\uDC7C\uDC81-\uDC83\uDC85-\uDC87\uDC8F\uDC91\uDCAA\uDD74\uDD75\uDD7A\uDD90\uDD95\uDD96\uDE45-\uDE47\uDE4B-\uDE4F\uDEA3\uDEB4-\uDEB6\uDEC0\uDECC]|\uD83E[\uDD0F\uDD18-\uDD1F\uDD26\uDD30-\uDD39\uDD3C-\uDD3E\uDDB5\uDDB6\uDDB8\uDDB9\uDDBB\uDDCD-\uDDCF\uDDD1-\uDDDD])/g;
+};
+
+},{}],500:[function(require,module,exports){
 'use strict';
 const ansiRegex = require('ansi-regex');
 
 module.exports = string => typeof string === 'string' ? string.replace(ansiRegex(), '') : string;
 
-},{"ansi-regex":500}],502:[function(require,module,exports){
+},{"ansi-regex":498}],501:[function(require,module,exports){
 module.exports=[
   "cent",
   "copy",
@@ -46394,7 +46386,7 @@ module.exports=[
   "times"
 ]
 
-},{}],503:[function(require,module,exports){
+},{}],502:[function(require,module,exports){
 'use strict'
 
 var entities = require('character-entities-html4')
@@ -46555,7 +46547,7 @@ function construct() {
   return chars
 }
 
-},{"./dangerous.json":502,"character-entities-html4":7,"character-entities-legacy":8,"is-alphanumerical":132,"is-decimal":133,"is-hexadecimal":135}],504:[function(require,module,exports){
+},{"./dangerous.json":501,"character-entities-html4":7,"character-entities-legacy":8,"is-alphanumerical":321,"is-decimal":322,"is-hexadecimal":324}],503:[function(require,module,exports){
 'use strict'
 
 module.exports = trimLines
@@ -46567,7 +46559,7 @@ function trimLines(value) {
   return String(value).replace(ws, newline)
 }
 
-},{}],505:[function(require,module,exports){
+},{}],504:[function(require,module,exports){
 'use strict'
 
 module.exports = trimTrailingLines
@@ -46586,7 +46578,7 @@ function trimTrailingLines(value) {
   return val.slice(0, index + 1)
 }
 
-},{}],506:[function(require,module,exports){
+},{}],505:[function(require,module,exports){
 
 exports = module.exports = trim;
 
@@ -46602,7 +46594,7 @@ exports.right = function(str){
   return str.replace(/\s*$/, '');
 };
 
-},{}],507:[function(require,module,exports){
+},{}],506:[function(require,module,exports){
 'use strict'
 
 var wrap = require('./wrap.js')
@@ -46678,7 +46670,7 @@ function trough() {
   }
 }
 
-},{"./wrap.js":508}],508:[function(require,module,exports){
+},{"./wrap.js":507}],507:[function(require,module,exports){
 'use strict'
 
 var slice = [].slice
@@ -46744,7 +46736,7 @@ function wrap(fn, callback) {
   }
 }
 
-},{}],509:[function(require,module,exports){
+},{}],508:[function(require,module,exports){
 "use strict";
 
 var isPrototype = require("../prototype/is");
@@ -46765,7 +46757,7 @@ module.exports = function (value) {
 	return !isPrototype(value);
 };
 
-},{"../prototype/is":516}],510:[function(require,module,exports){
+},{"../prototype/is":515}],509:[function(require,module,exports){
 "use strict";
 
 var isValue       = require("../value/is")
@@ -46788,7 +46780,7 @@ module.exports = function (value, defaultMessage, inputOptions) {
 	throw new TypeError(resolveMessage(errorMessage, value));
 };
 
-},{"../object/is":513,"../string/coerce":517,"../value/is":519,"./to-short-string":512}],511:[function(require,module,exports){
+},{"../object/is":512,"../string/coerce":516,"../value/is":518,"./to-short-string":511}],510:[function(require,module,exports){
 "use strict";
 
 module.exports = function (value) {
@@ -46800,7 +46792,7 @@ module.exports = function (value) {
 	}
 };
 
-},{}],512:[function(require,module,exports){
+},{}],511:[function(require,module,exports){
 "use strict";
 
 var safeToString = require("./safe-to-string");
@@ -46831,7 +46823,7 @@ module.exports = function (value) {
 	return string;
 };
 
-},{"./safe-to-string":511}],513:[function(require,module,exports){
+},{"./safe-to-string":510}],512:[function(require,module,exports){
 "use strict";
 
 var isValue = require("../value/is");
@@ -46844,7 +46836,7 @@ module.exports = function (value) {
 	return hasOwnProperty.call(possibleTypes, typeof value);
 };
 
-},{"../value/is":519}],514:[function(require,module,exports){
+},{"../value/is":518}],513:[function(require,module,exports){
 "use strict";
 
 var resolveException = require("../lib/resolve-exception")
@@ -46855,7 +46847,7 @@ module.exports = function (value/*, options*/) {
 	return resolveException(value, "%v is not a plain function", arguments[1]);
 };
 
-},{"../lib/resolve-exception":510,"./is":515}],515:[function(require,module,exports){
+},{"../lib/resolve-exception":509,"./is":514}],514:[function(require,module,exports){
 "use strict";
 
 var isFunction = require("../function/is");
@@ -46868,7 +46860,7 @@ module.exports = function (value) {
 	return true;
 };
 
-},{"../function/is":509}],516:[function(require,module,exports){
+},{"../function/is":508}],515:[function(require,module,exports){
 "use strict";
 
 var isObject = require("../object/is");
@@ -46883,7 +46875,7 @@ module.exports = function (value) {
 	}
 };
 
-},{"../object/is":513}],517:[function(require,module,exports){
+},{"../object/is":512}],516:[function(require,module,exports){
 "use strict";
 
 var isValue  = require("../value/is")
@@ -46908,7 +46900,7 @@ module.exports = function (value) {
 	}
 };
 
-},{"../object/is":513,"../value/is":519}],518:[function(require,module,exports){
+},{"../object/is":512,"../value/is":518}],517:[function(require,module,exports){
 "use strict";
 
 var resolveException = require("../lib/resolve-exception")
@@ -46919,7 +46911,7 @@ module.exports = function (value/*, options*/) {
 	return resolveException(value, "Cannot use %v", arguments[1]);
 };
 
-},{"../lib/resolve-exception":510,"./is":519}],519:[function(require,module,exports){
+},{"../lib/resolve-exception":509,"./is":518}],518:[function(require,module,exports){
 "use strict";
 
 // ES3 safe
@@ -46927,7 +46919,7 @@ var _undefined = void 0;
 
 module.exports = function (value) { return value !== _undefined && value !== null; };
 
-},{}],520:[function(require,module,exports){
+},{}],519:[function(require,module,exports){
 'use strict'
 
 var xtend = require('xtend')
@@ -46974,7 +46966,7 @@ function unherit(Super) {
   }
 }
 
-},{"inherits":127,"xtend":542}],521:[function(require,module,exports){
+},{"inherits":316,"xtend":542}],520:[function(require,module,exports){
 (function (process){
 'use strict'
 
@@ -47451,7 +47443,7 @@ function assertDone(name, asyncName, complete) {
 }
 
 }).call(this,require('_process'))
-},{"_process":347,"bail":3,"extend":94,"is-buffer":522,"is-plain-obj":136,"trough":507,"vfile":540}],522:[function(require,module,exports){
+},{"_process":376,"bail":3,"extend":94,"is-buffer":521,"is-plain-obj":325,"trough":506,"vfile":540}],521:[function(require,module,exports){
 /*!
  * Determine if an object is a Buffer
  *
@@ -47464,7 +47456,7 @@ module.exports = function isBuffer (obj) {
     typeof obj.constructor.isBuffer === 'function' && obj.constructor.isBuffer(obj)
 }
 
-},{}],523:[function(require,module,exports){
+},{}],522:[function(require,module,exports){
 'use strict'
 
 module.exports = u
@@ -47491,7 +47483,7 @@ function u(type, props, value) {
   return node
 }
 
-},{}],524:[function(require,module,exports){
+},{}],523:[function(require,module,exports){
 'use strict'
 
 var flatmap = require('flatmap')
@@ -47547,7 +47539,7 @@ function filter(tree, opts, test) {
   }
 }
 
-},{"flatmap":96,"unist-util-is/convert":526}],525:[function(require,module,exports){
+},{"flatmap":96,"unist-util-is/convert":525}],524:[function(require,module,exports){
 'use strict'
 
 module.exports = generated
@@ -47564,7 +47556,7 @@ function optional(value) {
   return value && typeof value === 'object' ? value : {}
 }
 
-},{}],526:[function(require,module,exports){
+},{}],525:[function(require,module,exports){
 'use strict'
 
 module.exports = convert
@@ -47653,7 +47645,7 @@ function ok() {
   return true
 }
 
-},{}],527:[function(require,module,exports){
+},{}],526:[function(require,module,exports){
 'use strict'
 
 var WeakMap = require('es6-weak-map')
@@ -47724,7 +47716,7 @@ function wrapNode(node, parent) {
   }
 }
 
-},{"es6-weak-map":87}],528:[function(require,module,exports){
+},{"es6-weak-map":87}],527:[function(require,module,exports){
 'use strict'
 
 var start = factory('start')
@@ -47755,7 +47747,7 @@ function factory(type) {
   }
 }
 
-},{}],529:[function(require,module,exports){
+},{}],528:[function(require,module,exports){
 'use strict'
 
 var visit = require('unist-util-visit')
@@ -47775,7 +47767,7 @@ function soft(node) {
   node.position = undefined
 }
 
-},{"unist-util-visit":532}],530:[function(require,module,exports){
+},{"unist-util-visit":532}],529:[function(require,module,exports){
 'use strict'
 
 var own = {}.hasOwnProperty
@@ -47827,12 +47819,19 @@ function index(value) {
   return value && typeof value === 'number' ? value : 1
 }
 
+},{}],530:[function(require,module,exports){
+module.exports = identity
+function identity(d) {
+  return d
+}
+
 },{}],531:[function(require,module,exports){
 'use strict'
 
 module.exports = visitParents
 
 var convert = require('unist-util-is/convert')
+var color = require('./color')
 
 var CONTINUE = true
 var SKIP = 'skip'
@@ -47845,7 +47844,7 @@ visitParents.EXIT = EXIT
 function visitParents(tree, test, visitor, reverse) {
   var is
 
-  if (typeof test === 'function' && typeof visitor !== 'function') {
+  if (func(test) && !func(visitor)) {
     reverse = visitor
     visitor = test
     test = null
@@ -47853,38 +47852,57 @@ function visitParents(tree, test, visitor, reverse) {
 
   is = convert(test)
 
-  one(tree, null, [])
+  one(tree, null, [])()
 
-  // Visit a single node.
-  function one(node, index, parents) {
-    var result = []
-    var subresult
+  function one(child, index, parents) {
+    var value = object(child) ? child : {}
+    var name
 
-    if (!test || is(node, index, parents[parents.length - 1] || null)) {
-      result = toResult(visitor(node, parents))
+    if (string(value.type)) {
+      name = string(value.tagName)
+        ? value.tagName
+        : string(value.name)
+        ? value.name
+        : undefined
 
-      if (result[0] === EXIT) {
+      node.displayName =
+        'node (' + color(value.type + (name ? '<' + name + '>' : '')) + ')'
+    }
+
+    return node
+
+    function node() {
+      var result = []
+      var subresult
+
+      if (!test || is(child, index, parents[parents.length - 1] || null)) {
+        result = toResult(visitor(child, parents))
+
+        if (result[0] === EXIT) {
+          return result
+        }
+      }
+
+      if (!child.children || result[0] === SKIP) {
         return result
       }
-    }
 
-    if (node.children && result[0] !== SKIP) {
-      subresult = toResult(all(node.children, parents.concat(node)))
+      subresult = toResult(children(child.children, parents.concat(child)))
       return subresult[0] === EXIT ? subresult : result
     }
-
-    return result
   }
 
   // Visit children in `parent`.
-  function all(children, parents) {
+  function children(children, parents) {
     var min = -1
     var step = reverse ? -1 : 1
     var index = (reverse ? children.length : min) + step
+    var child
     var result
 
     while (index > min && index < children.length) {
-      result = one(children[index], index, parents)
+      child = children[index]
+      result = one(child, index, parents)()
 
       if (result[0] === EXIT) {
         return result
@@ -47896,7 +47914,7 @@ function visitParents(tree, test, visitor, reverse) {
 }
 
 function toResult(value) {
-  if (value !== null && typeof value === 'object' && 'length' in value) {
+  if (object(value) && 'length' in value) {
     return value
   }
 
@@ -47907,7 +47925,19 @@ function toResult(value) {
   return [value]
 }
 
-},{"unist-util-is/convert":526}],532:[function(require,module,exports){
+function func(d) {
+  return typeof d === 'function'
+}
+
+function string(d) {
+  return typeof d === 'string'
+}
+
+function object(d) {
+  return typeof d === 'object' && d !== null
+}
+
+},{"./color":530,"unist-util-is/convert":525}],532:[function(require,module,exports){
 'use strict'
 
 module.exports = visit
@@ -48110,7 +48140,7 @@ function parseOrigin(origin) {
   return result
 }
 
-},{"unist-util-stringify-position":530}],535:[function(require,module,exports){
+},{"unist-util-stringify-position":529}],535:[function(require,module,exports){
 (function (process){
 'use strict'
 
@@ -48443,7 +48473,7 @@ function plural(value, count) {
 }
 
 }).call(this,require('_process'))
-},{"_process":347,"repeat-string":495,"string-width":499,"supports-color":536,"unist-util-stringify-position":530,"vfile-sort":537,"vfile-statistics":538}],536:[function(require,module,exports){
+},{"_process":376,"repeat-string":493,"string-width":497,"supports-color":536,"unist-util-stringify-position":529,"vfile-sort":537,"vfile-statistics":538}],536:[function(require,module,exports){
 'use strict';
 module.exports = {
 	stdout: false,
@@ -48713,7 +48743,7 @@ function assertPath(path, name) {
 }
 
 }).call(this,require('_process'))
-},{"_process":347,"is-buffer":541,"path":346,"replace-ext":496}],540:[function(require,module,exports){
+},{"_process":376,"is-buffer":541,"path":375,"replace-ext":494}],540:[function(require,module,exports){
 'use strict'
 
 var VMessage = require('vfile-message')
@@ -48765,8 +48795,8 @@ function info() {
 }
 
 },{"./core.js":539,"vfile-message":534}],541:[function(require,module,exports){
-arguments[4][522][0].apply(exports,arguments)
-},{"dup":522}],542:[function(require,module,exports){
+arguments[4][521][0].apply(exports,arguments)
+},{"dup":521}],542:[function(require,module,exports){
 module.exports = extend
 
 var hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -49169,7 +49199,7 @@ function AppInfo(styl, url, title, package, protocol) {
         else if (i === 'chat' ) {
             content.innerHTML = '<iframe src="https://gitter.im/wizardamigosinstitute/program/~embed" frameborder="0" allowfullscreen="allowfullscreen"></iframe>'
         } else if (i === 'supplyTree') {
-            content.append( SupplyTree(package, protocol) )
+            content.append( SupplyTree(vers, package, protocol) )
         } else {
             getInfo(package[i], i, loadPage)
         }
@@ -49241,7 +49271,7 @@ function AppInfo(styl, url, title, package, protocol) {
                 </div>
             </div>`
 
-            const title = bel`<h1 class=${css["package-title"]}>About ${package.title}</h1>`
+            const title = bel`<h1 class=${css["package-title"]}>About</h1>`
             introHeader.innerHTML = ''
             
             introHeader.append(info)
@@ -49871,7 +49901,6 @@ const Graphic = require('Graphic')
 function OpenWindow(styl, url, package, content, protocol) {
     const css = style
 
-    console.log(package.title);
     let title = package.title.split(' ').join('').toLowerCase()
 
     // icons
@@ -49988,9 +50017,13 @@ const style = csjs`
     .window {
         width: 100vw;
         height: 100vh;
+        min-width: 768px;
         left: 0;
         top: 0;
         transform: none;
+    }
+    .panel-body {
+        height: 100%;
     }
 }
 `
@@ -50000,9 +50033,33 @@ module.exports = OpenWindow
 const bel = require('bel')
 const csjs = require('csjs-inject')
 
-function SupplyTree(app, protocol) {
-    console.log(app);
+function SupplyTree(ver, app, protocol) {
     const css = style
+    let url = `${app.link}/dist/${ver}`
+    // elements
+    let contributorsList = bel`<div class="${css.contributors}"></div>`
+
+    getVersion(`${url}/version.json`).then( data => {
+        let contributors = data.supplytree.contributors
+        contributors.map( file => getVersion(`${url}/${file.url}`).then( res => {
+        let list = bel`
+            <div class="${css.list}">
+                <a href="${res.url}" target="_blank">
+                    <div class=${css.avatar}>
+                        <img src="${res.avatar}" alt="${res.name}">
+                    </div>
+                    <p class="${css.name}">${res.name}</p>
+                </a>
+            </div>
+            `
+        contributorsList.append(list)
+        }))
+    })
+
+    async function getVersion(data) {
+        return await fetch(data).then( res => res.json())
+    }
+
     const el = bel`
     <section class=${css.supplytree}>
         <div class="${css.donate}">
@@ -50010,38 +50067,7 @@ function SupplyTree(app, protocol) {
             <button class="${css.btn} ${css.disabled}">Give grant</a>
         </div>
         <h1 class=${css.title}>Contributors</h1>
-        <div class="${css.contributors}">
-            <div class="${css.list}">
-                <a href="https://twitter.com/serapath" target="_blank">
-                    <img src="https://avatars2.githubusercontent.com/u/1771897?s=460&u=f2b59debfee46811a2f4b0ad92d52d9692c2ec44&v=4" alt="Alexander Praetorius" />
-                    <p class="${css.name}">Alexander Praetorius</p>
-                </a>
-            </div>
-            <div class="${css.list}">
-                <a href="https://twitter.com/ninabreznik" target="_blank">
-                    <img src="https://avatars3.githubusercontent.com/u/1076427?s=400&u=4707cea27a977e0a3935fdcd7e7b20bb75576648&v=4" alt="Nina Breznik" />
-                    <p class="${css.name}">Nina Breznik</p>
-                </a>
-            </div>
-            <div class="${css.list}">
-                <a href="https://github.com/fionataeyang" target="_blank">
-                    <img src="https://avatars2.githubusercontent.com/u/9526525?s=460&u=0360490c140b8edc42dabaa0dbc9d21ad94990ae&v=4" alt="Fiona Ye" />
-                    <p class="${css.name}">Fiona Ye</p>
-                </a>
-            </div>
-            <div class="${css.list}">
-                <a href="https://twitter.com/Jam10o" target="_blank">
-                    <img src="https://avatars0.githubusercontent.com/u/43032097?s=460&u=d21940b92833d8cedd12b6da582020241cda806b&v=4" alt="Joshua Mir" />
-                    <p class="${css.name}">Joshua Mir</p>
-                </a>
-            </div>
-            <div class="${css.list}">
-                <a href="https://twitter.com/RangerMauve" target="_blank">
-                    <img src="https://avatars3.githubusercontent.com/u/911495?s=460&u=c805f6453c9706f0768ee182ecaf78743bcf26a6&v=4" alt="Ranger Mauve" />
-                    <p class="${css.name}">Ranger Mauve</p>
-                </a>
-            </div>
-        </div>
+        ${contributorsList}
     </section>
     `
 
@@ -50095,15 +50121,18 @@ const style = csjs`
 .contributors {
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(auto, 130px)); 
-    justify-content: center; 
-    text-align: center;
+    justify-content: center;
     padding-bottom: 8vh;
 }
-.contributors img {
+.avatar {
     max-width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
 }
 .contributors a {
     text-decoration: none;
+    display: grid;
+    justify-items: center;
 }
 .disabled, .disabled:hover {
     background-color: rgba(0,0,0,.5);
@@ -50433,7 +50462,7 @@ function mdConvert(md, el) {
 }
 
 module.exports = mdConvert
-},{"remark":494,"remark-attr":367,"remark-external-links":369,"remark-highlight.js":370,"remark-html":371,"remark-parse":403,"remark-slug":452,"unified":521,"vfile-reporter":535}],554:[function(require,module,exports){
+},{"remark":492,"remark-attr":396,"remark-external-links":398,"remark-highlight.js":399,"remark-html":400,"remark-parse":401,"remark-slug":450,"unified":520,"vfile-reporter":535}],554:[function(require,module,exports){
 const unified = require('unified')
 const markdown = require('remark-parse')
 const html = require('remark-html')
@@ -50453,7 +50482,7 @@ function mdTocConvert(md, el) {
 }
 
 module.exports = mdTocConvert
-},{"remark-contents":368,"remark-html":371,"remark-parse":403,"unified":521,"vfile-reporter":535}],555:[function(require,module,exports){
+},{"remark-contents":397,"remark-html":400,"remark-parse":401,"unified":520,"vfile-reporter":535}],555:[function(require,module,exports){
 const bel = require('bel')
 const csjs = require('csjs-inject')
 // widgets

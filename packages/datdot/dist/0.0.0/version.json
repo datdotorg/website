@@ -11,10 +11,7 @@
     "supplytree": {
       "share": "12%",
       "contributors": [
-        { "share": "3%", "url": "contributors/alexander_praetorius.json" },
-        { "share": "3%", "url": "contributors/nina_breznik.json" },
-        { "share": "3%", "url": "contributors/fiona_ye.json" },
-        { "share": "3%", "url": "contributors/joshua_mir.json" }
+        { "share": "12%", "url": "contributors/alexander_praetorius.json" }
       ],
       "dependencies": {
         "pacman": { "url": "./packages/game/package.json", "share": "60%" },

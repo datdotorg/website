@@ -9,7 +9,7 @@ about: plan a synchronous meeting with people attending at the same time in a (v
 * https://gitter.im/playproject-io/community
 
 [**time:**][5]
-| [**place:**][3]      | Honolulu   | Ottawa     | London     | Berlin      |    Taipei    | 
+| [**place:**][3]      | Honolulu   | Ottawa     | London     | Berlin      |    Taipei    |
 |---------------------:|------------|------------|------------|-------------|--------------|
 | [**local time:**][4] | `09:00amW` | `15:00pmQ` | `20:00pmA` | `21:00pmB`  | `03:00amH`   |
 
@@ -25,7 +25,7 @@ about: plan a synchronous meeting with people attending at the same time in a (v
     * [ ] [`reponame#X6` issue name](#)
 2. [How do **roadmapping priorities** currently look like?][1]
 3. [Create new meeting and plan what issues we will do until then][2]
-  * => **[`datdot#??`????.??.??-12:00pm UTC-0](https://github.com/playproject-io/datdot/issues/??)**
+  * => **[`datdot#??` 20??.??.??-19:00Z (=UTC-0) | datdot sync](https://github.com/playproject-io/datdot/issues/??)**
 
 [1]: https://github.com/playproject-io/datdot/issues/1
 [2]: https://github.com/playproject-io/datdot/issues/new?template=meeting.md
