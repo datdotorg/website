@@ -98,6 +98,20 @@ function main(opts, done) {
 
             if ( package.status.open ) {
                 document.body.append( OpenWindow(css.current, link, result, AppInfo, loadAppContent) )
+
+                // if all windows are opened, then find last one window and bring to top level
+                let allWindows =  document.body.querySelectorAll("[class^='window']")
+
+                // only when all windows are opened and greater than 1 to deal with
+                if (allWindows.length > 1) {
+                    allWindows.forEach( (panel, index, arr) => {
+                        panel.classList.remove(css.current) 
+                        if ( arr[arr.length - 1] === panel ) {
+                            panel.classList.add(css.current) 
+                        }
+                    })
+                }
+               
             }
 
             Desktop(result, openTarget, desktopLoaded )
@@ -106,13 +120,6 @@ function main(opts, done) {
             return console.error(err)
         }
         
-    })
-
-    document.addEventListener('DOMContentLoaded', () => {
-        console.log('hello world');
-        // ! cannot get all window elements
-        let allWindows =  document.body.querySelector("[class^='window']")
-        console.log(allWindows);
     })
 
     return done(null, desktop)

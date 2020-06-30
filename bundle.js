@@ -48888,6 +48888,20 @@ function main(opts, done) {
 
             if ( package.status.open ) {
                 document.body.append( OpenWindow(css.current, link, result, AppInfo, loadAppContent) )
+
+                // if all windows are opened, then find last one window and bring to top level
+                let allWindows =  document.body.querySelectorAll("[class^='window']")
+
+                // only when all windows are opened and greater than 1 to deal with
+                if (allWindows.length > 1) {
+                    allWindows.forEach( (panel, index, arr) => {
+                        panel.classList.remove(css.current) 
+                        if ( arr[arr.length - 1] === panel ) {
+                            panel.classList.add(css.current) 
+                        }
+                    })
+                }
+               
             }
 
             Desktop(result, openTarget, desktopLoaded )
@@ -48896,13 +48910,6 @@ function main(opts, done) {
             return console.error(err)
         }
         
-    })
-
-    document.addEventListener('DOMContentLoaded', () => {
-        console.log('hello world');
-        // ! cannot get all window elements
-        let allWindows =  document.body.querySelector("[class^='window']")
-        console.log(allWindows);
     })
 
     return done(null, desktop)
@@ -49162,7 +49169,7 @@ function AppInfo(styl, url, title, package, protocol) {
         else if (i === 'chat' ) {
             content.innerHTML = '<iframe src="https://gitter.im/wizardamigosinstitute/program/~embed" frameborder="0" allowfullscreen="allowfullscreen"></iframe>'
         } else if (i === 'supplyTree') {
-            content.append( SupplyTree() )
+            content.append( SupplyTree(package, protocol) )
         } else {
             getInfo(package[i], i, loadPage)
         }
@@ -49889,12 +49896,18 @@ function OpenWindow(styl, url, package, content, protocol) {
     return protocol({item: el, app: package})
 
     function panelNav(event, status) {
-        event.preventDefault()
 
         if (status === 'close') {
             el.remove()
             package.status.open = false
-            console.log(package.status);
+            let allWindows =  document.body.querySelectorAll("[class^='window']")
+            allWindows.forEach( (panel, index, arr) => {
+                panel.classList.remove(styl) 
+
+                if ( arr[arr.length - 1] === panel ) {
+                    panel.classList.add(styl) 
+                }
+            })
         }
 
         if (status === 'minmax') {
@@ -49987,7 +50000,8 @@ module.exports = OpenWindow
 const bel = require('bel')
 const csjs = require('csjs-inject')
 
-function SupplyTree(protocol) {
+function SupplyTree(app, protocol) {
+    console.log(app);
     const css = style
     const el = bel`
     <section class=${css.supplytree}>
