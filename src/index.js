@@ -25,7 +25,8 @@ function main(opts, done) {
                 pin: true,
                 app: {
                     version: null,
-                    install: false
+                    install: false,
+                    data: null
                 }
             },
         },
@@ -37,10 +38,11 @@ function main(opts, done) {
             version: 'packages/pacman/dist/1.0.0/version.json',
             status: {
                 open: false,
-                pin: true,
+                pin: false,
                 app: {
                     version: null,
-                    install: false
+                    install: false,
+                    data: null
                 }
             }
         },
@@ -52,10 +54,11 @@ function main(opts, done) {
             version: 'packages/alarm-clock/dist/1.0.0/version.json',
             status: {
                 open: false,
-                pin: true,
+                pin: false,
                 app: {
                     version: null,
-                    install: false
+                    install: false,
+                    data: null
                 }
             }
         }
@@ -137,28 +140,32 @@ function main(opts, done) {
         let all = document.querySelectorAll("[class*='app_']")
         let excApp = document.querySelector(`.app_${title}`)
 
-        if ( !excApp )  {
-            // set all windows's level back to default
-            all.forEach ( i => { 
-                i.classList.remove(css.current)
-            })
+        // set all windows's level back to default
+        all.forEach ( i => { 
+            i.classList.remove(css.current)
+        })
 
-            document.body.appendChild( OpenWindow(css.current, url, app, AppInfo, loadAppContent) )
-            let excApp = document.querySelector(`.app_${title}`)
-            excApp.classList.add(css.current)
-
-        }  else {
-        
-            all.forEach ( i => { 
-                i.classList.remove(css.current)
-
+        // if app is existed, then bring window to top level
+        if ( app.status.open ) {
+            return all.forEach ( i => { 
                 if ( i.classList.contains(`app_${title}`) ) {
                     i.classList.add(css.current)
                 } 
             })
+        } 
 
-        }
-        
+        // if app is not existed, then create new window
+        document.body.appendChild( OpenWindow(css.current, url, app, AppInfo, loadAppContent) )
+        app.status.open = true
+
+        let appName = app.title.split(' ').join('').toLowerCase()
+        let dashName = app.title.split(' ').join('-').toLowerCase()
+        packages.map( package => {
+            
+            if (package.path.includes(appName) ||  package.path.includes(dashName) ) {
+                package.status.open = true
+            }
+        })
     }
 
     

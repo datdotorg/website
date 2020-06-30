@@ -171,8 +171,6 @@ const theme = {
     appInfoLinkFontSize: size['xx-small'],
     '// Code snippet': '---------------------',
     codeFont: font.courier,
-    contentHeight: '75vh - 29px',
-    
 }
 
 module.exports = theme
@@ -48817,7 +48815,8 @@ function main(opts, done) {
                 pin: true,
                 app: {
                     version: null,
-                    install: false
+                    install: false,
+                    data: null
                 }
             },
         },
@@ -48829,10 +48828,11 @@ function main(opts, done) {
             version: 'packages/pacman/dist/1.0.0/version.json',
             status: {
                 open: false,
-                pin: true,
+                pin: false,
                 app: {
                     version: null,
-                    install: false
+                    install: false,
+                    data: null
                 }
             }
         },
@@ -48844,10 +48844,11 @@ function main(opts, done) {
             version: 'packages/alarm-clock/dist/1.0.0/version.json',
             status: {
                 open: false,
-                pin: true,
+                pin: false,
                 app: {
                     version: null,
-                    install: false
+                    install: false,
+                    data: null
                 }
             }
         }
@@ -48929,28 +48930,32 @@ function main(opts, done) {
         let all = document.querySelectorAll("[class*='app_']")
         let excApp = document.querySelector(`.app_${title}`)
 
-        if ( !excApp )  {
-            // set all windows's level back to default
-            all.forEach ( i => { 
-                i.classList.remove(css.current)
-            })
+        // set all windows's level back to default
+        all.forEach ( i => { 
+            i.classList.remove(css.current)
+        })
 
-            document.body.appendChild( OpenWindow(css.current, url, app, AppInfo, loadAppContent) )
-            let excApp = document.querySelector(`.app_${title}`)
-            excApp.classList.add(css.current)
-
-        }  else {
-        
-            all.forEach ( i => { 
-                i.classList.remove(css.current)
-
+        // if app is existed, then bring window to top level
+        if ( app.status.open ) {
+            return all.forEach ( i => { 
                 if ( i.classList.contains(`app_${title}`) ) {
                     i.classList.add(css.current)
                 } 
             })
+        } 
 
-        }
-        
+        // if app is not existed, then create new window
+        document.body.appendChild( OpenWindow(css.current, url, app, AppInfo, loadAppContent) )
+        app.status.open = true
+
+        let appName = app.title.split(' ').join('').toLowerCase()
+        let dashName = app.title.split(' ').join('-').toLowerCase()
+        packages.map( package => {
+            
+            if (package.path.includes(appName) ||  package.path.includes(dashName) ) {
+                package.status.open = true
+            }
+        })
     }
 
     
@@ -49317,7 +49322,7 @@ const style = csjs `
 }
 /* App info */
 .content {
-    height: calc( var(--contentHeight) );
+    height: 100%;
     overflow: hidden;
     overflow-y: auto;
 }
@@ -49880,6 +49885,7 @@ function OpenWindow(styl, url, package, content, protocol) {
 
         if (status === 'close') {
             el.remove()
+            package.status.open = false
         }
 
         if (status === 'minmax') {
@@ -49935,7 +49941,7 @@ const style = csjs`
     background-color: var(--panelBodyBgColor);
     border: var(--panelBorder) solid var(--panelBorderColor);
     border-top: 0;
-    height: 100%;
+    height: calc(75vh - 29px);
 }
 .btn {
     padding: 0;
@@ -49948,6 +49954,9 @@ const style = csjs`
 .fullscreen {
     width: 100%;
     height: 100%;
+}
+.fullscreen .panel-body {
+    height: calc(100vh - 29px);
 }
 .minmax {
 }
@@ -50089,9 +50098,7 @@ const Dialog = require('Dialog')
 
 function actions({styl, title, ver, selector, url, package}, protocol) {
     let css = style
-
     // icons
-    let icon_download = Graphic('./src/node_modules/assets/svg/download.svg', css.icon)
     let icon_launch = Graphic('./src/node_modules/assets/svg/launch.svg', css.icon)
     let icon_shortcut = Graphic('./src/node_modules/assets/svg/shortcut.svg', css.icon)
     let icon_remove = Graphic('./src/node_modules/assets/svg/remove.svg', css.icon)
@@ -50119,12 +50126,20 @@ function actions({styl, title, ver, selector, url, package}, protocol) {
                                 onclick=${(e) => actionHandler(e, stop)}>
                                 ${icon_stop}Force stop
                     </button>`
-    let settings = bel`<button      class="${css.btn} ${css.settings}" 
+    let settings = bel`<button  class="${css.btn} ${css.settings}" 
                                 onclick=${(e) => actionHandler(e, settings)}>
                                 ${icon_settings}Settings
-                    </button>`                
+                    </button>`
     
-    
+    if (package.title === 'DatDot') {
+        shortcut.classList.add(css.active)
+        shortcut.classList.add(css.disabled)
+        shortcut.setAttribute('disabled', true)
+    }
+   
+    if (package.status.pin) {
+        shortcut.classList.add(css.active)
+    }
     
     let el = bel`<aside class=${css.actions}>${launch}${shortcut}${settings}${remove}</aside>`
 
@@ -50154,6 +50169,16 @@ function actions({styl, title, ver, selector, url, package}, protocol) {
         if (el.classList[1].includes('shortcut')) {
             event.stopPropagation()
             console.log(`${title} v${ver} is pinned to desktop`);
+            // the package is pin on desktop when installed for default, cannot allow to remove.
+            if (shortcut.classList.contains(css.disabled)) return
+            
+            shortcut.classList.toggle(css.active)
+            package.status.pin = !package.status.pin
+            
+            let appname = package.title.split(' ').join('').toLowerCase()
+            let applist = document.querySelector(`[class*="${appname}"]`)
+            applist.remove()
+
         }
 
         if (el.classList[1].includes('settings')) {
@@ -50183,7 +50208,7 @@ function actions({styl, title, ver, selector, url, package}, protocol) {
                 title: package.title,
                 version: ver
             }
-            protocol(package.versions.latest, removeApp )
+            protocol( package.versions.latest, removeApp )
         }
         
     }
@@ -50205,7 +50230,8 @@ const style = csjs`
     color: var(--btnColor);
     background-color: var(--btnBgColor);
     margin: 5px 5px 0 0;
-    transition: color 0.45s, background-color 0.45s ease-in-out;
+    border: 1px solid var(--btnBgColor);
+    transition: color 0.45s, border-color .45s, background-color 0.45s ease-in-out;
  }
  .btn svg {
     transition: fill 0.45s ease-in-out;
@@ -50213,6 +50239,7 @@ const style = csjs`
  .btn:hover {
      color: var(--btnHoverColor);
      background-color: var(--btnHoverBgColor);
+     border-color: var(--btnHoverBgColor);
  }
  .btn:hover svg {
     fill: white;
@@ -50233,9 +50260,11 @@ const style = csjs`
 .remove {
     color: var(--actionRemoveColor);
     background-color: var(--actionRemoveBgColor);
+    border-color: var(--actionRemoveBgColor);
 }
 .remove:hover {
     background-color: var(--actionRemoveHoverBgColor);
+    border-color: var(--actionRemoveBgColor);
 }
 .remove svg {
     fill: var(--actionRemoveColor);
@@ -50256,6 +50285,17 @@ const style = csjs`
     padding: 4px 6px;
     margin-left: 5px;
     border-radius: 4px;
+}
+.active, .active:focus, .disabled, .disabled:hover {
+    color: #888888;
+    background-color: white;
+    border: 1px solid #888888;
+}
+.active svg, .active:focus svg, .disabled:hover svg {
+    fill: #888888;
+}
+.disabled {
+    cursor: not-allowed
 }
 `
 
@@ -50489,18 +50529,19 @@ const Graphic = require('Graphic')
 
 
 function removeApp(packages, remove, arr) {
-
     let css = style
-    let appName = remove.title.toLowerCase()
+    let appName = remove.title.split(' ').join('').toLowerCase()
+    let dashName = remove.title.split(' ').join('-').toLowerCase()
     // elements
     let el = document.querySelector(`.${appName}`)
     let appicon = el.querySelector('[class^="icon"]')
     let name = el.querySelector('[class^="app-name"]')
 
     packages.map( package => {
-        if ( package.path.includes(appName) ) {
+        if ( package.path.includes(appName) ||  package.path.includes(dashName) ) {
             package.status.app.install = false
-            package.status.app.version = ''
+            package.status.app.version = null
+            package.status.app.data = null
         }
         return package
     })
@@ -50531,16 +50572,16 @@ const csjs = require('csjs-inject')
 const Graphic = require('Graphic')
 
 function updateApp(packages, app) {
-    console.log(packages);
     let css = style
-    let appName = app.title.toLowerCase()
+    let appName = app.title.split(' ').join('').toLowerCase()
+    let dashName = app.title.split(' ').join('-').toLowerCase()
     // elements
     let el = document.querySelector(`.${appName}`)
     let appicon = el.querySelector('[class^="icon"]')
     let name = el.querySelector('[class^="app-name"]')
 
     packages.map( package => {
-        if ( package.path.includes(appName) ) {
+        if ( package.path.includes(appName) ||  package.path.includes(dashName) ) {
             package.status = app.status
             // set package url
             let url = `${app.link}/dist/${app.status.app.version}`
@@ -50552,7 +50593,6 @@ function updateApp(packages, app) {
             } else {
                 var newicon = bel`<div class=${css.icon}><img src="${url}/${icon}"></div>`
             }
-            console.log(app.title);
             // remove install icon
             appicon.remove()
             // update app icon
