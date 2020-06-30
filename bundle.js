@@ -48814,8 +48814,8 @@ function main(opts, done) {
                 open: true,
                 pin: true,
                 app: {
-                    version: null,
                     install: false,
+                    version: null,
                     data: null
                 }
             },
@@ -48828,10 +48828,10 @@ function main(opts, done) {
             version: 'packages/pacman/dist/1.0.0/version.json',
             status: {
                 open: false,
-                pin: false,
+                pin: true,
                 app: {
-                    version: null,
                     install: false,
+                    version: null,
                     data: null
                 }
             }
@@ -48844,10 +48844,10 @@ function main(opts, done) {
             version: 'packages/alarm-clock/dist/1.0.0/version.json',
             status: {
                 open: false,
-                pin: false,
+                pin: true,
                 app: {
-                    version: null,
                     install: false,
+                    version: null,
                     data: null
                 }
             }
@@ -48908,7 +48908,7 @@ function main(opts, done) {
     return done(null, desktop)
 
     // load app content
-    function loadAppContent({item, app, update, remove}) {
+    function loadAppContent({item, app, appicon, update, remove}) {
 
         if (update !== undefined && typeof update === 'object') {
             updateApp(packages, update)
@@ -48922,6 +48922,14 @@ function main(opts, done) {
             console.log('update packages', packages)
         }
 
+        if (appicon) {
+            appicon.addEventListener('click', () => {
+                // covert app.title to add on window
+                let title = app.title.split(' ').join('').toLowerCase()
+                openTarget({url: app.link, title}, app)
+            })
+        }
+
         return bel`${item}`
     }
 
@@ -48929,33 +48937,31 @@ function main(opts, done) {
     function openTarget({url, title}, app) {
         let all = document.querySelectorAll("[class*='app_']")
         let excApp = document.querySelector(`.app_${title}`)
-
         // set all windows's level back to default
         all.forEach ( i => { 
             i.classList.remove(css.current)
         })
 
         // if app is existed, then bring window to top level
-        if ( app.status.open ) {
-            return all.forEach ( i => { 
+        if ( excApp ) {
+            all.forEach ( i => { 
                 if ( i.classList.contains(`app_${title}`) ) {
                     i.classList.add(css.current)
                 } 
             })
-        } 
+        } else {
+            // if app is not existed, then create new window
+            document.body.appendChild( OpenWindow(css.current, url, app, AppInfo, loadAppContent) )
+            app.status.open = true
 
-        // if app is not existed, then create new window
-        document.body.appendChild( OpenWindow(css.current, url, app, AppInfo, loadAppContent) )
-        app.status.open = true
-
-        let appName = app.title.split(' ').join('').toLowerCase()
-        let dashName = app.title.split(' ').join('-').toLowerCase()
-        packages.map( package => {
-            
-            if (package.path.includes(appName) ||  package.path.includes(dashName) ) {
-                package.status.open = true
-            }
-        })
+            let appName = app.title.split(' ').join('').toLowerCase()
+            let dashName = app.title.split(' ').join('-').toLowerCase()
+            packages.map( package => {
+                if (package.path.includes(appName) ||  package.path.includes(dashName) ) {
+                    package.status.open = app.status.open
+                }
+            })
+        }
     }
 
     
@@ -49058,7 +49064,7 @@ function AppInfo(styl, url, title, package, protocol) {
         ${options}
     </div>`
 
-    let buttons = actions({styl, title, ver: vers, selector: selectVersion, url, package}, clearVers)
+    let buttons = actions({styl, title, ver: vers, selector: selectVersion, url, package}, clearVers, protocol)
 
     selectVersion.children[1].value = package.versions.latest
 
@@ -49133,7 +49139,7 @@ function AppInfo(styl, url, title, package, protocol) {
         console.log(`${title} v${vers} is installed`);
 
         selectVersion.remove()
-        introHeader.append( actions({styl, title, ver: vers, selector: selectVersion, url, package}, clearVers) )
+        introHeader.append( actions({styl, title, ver: vers, selector: selectVersion, url, package}, clearVers, protocol) )
         
         return protocol({update: obj})
     }
@@ -49651,7 +49657,7 @@ function Desktop(package, protocol, done) {
         ${icon}      
         <span class=${css['app-name']}>${appTitle}</span>
     </div>
-        `
+    `
 
     return  done(null, el, title)
 }
@@ -49857,6 +49863,8 @@ const Graphic = require('Graphic')
 
 function OpenWindow(styl, url, package, content, protocol) {
     const css = style
+
+    console.log(package.title);
     let title = package.title.split(' ').join('').toLowerCase()
 
     // icons
@@ -49886,6 +49894,7 @@ function OpenWindow(styl, url, package, content, protocol) {
         if (status === 'close') {
             el.remove()
             package.status.open = false
+            console.log(package.status);
         }
 
         if (status === 'minmax') {
@@ -50096,7 +50105,7 @@ const csjs = require('csjs-inject')
 const Graphic = require('Graphic')
 const Dialog = require('Dialog')
 
-function actions({styl, title, ver, selector, url, package}, protocol) {
+function actions({styl, title, ver, selector, url, package}, clearVers, protocol) {
     let css = style
     // icons
     let icon_launch = Graphic('./src/node_modules/assets/svg/launch.svg', css.icon)
@@ -50168,16 +50177,46 @@ function actions({styl, title, ver, selector, url, package}, protocol) {
 
         if (el.classList[1].includes('shortcut')) {
             event.stopPropagation()
-            console.log(`${title} v${ver} is pinned to desktop`);
+            
             // the package is pin on desktop when installed for default, cannot allow to remove.
             if (shortcut.classList.contains(css.disabled)) return
             
             shortcut.classList.toggle(css.active)
             package.status.pin = !package.status.pin
-            
+
             let appname = package.title.split(' ').join('').toLowerCase()
-            let applist = document.querySelector(`[class*="${appname}"]`)
-            applist.remove()
+
+            if (package.status.pin) {
+                console.log(`${title} is pinned to desktop`);
+                let applist = document.querySelector("[class^='app-list']")
+
+                // set package url
+                let url = `${package.link}/dist/${package.status.app.version}`
+                
+                // prepare app's icon
+                var appicon = bel`<div class=${css.icon}><img src="${url}/${package.status.app.data.icon}"></div>`
+                
+                // if icon's type is svg, then create svg
+                if (package.status.app.data.icon.includes('svg') ) {
+                    appicon = Graphic(`${url}/${package.status.app.data.icon}`, css.icon)
+                }
+
+                var pinapp = bel`
+                <div class="${css['app-icon']} ${appname}">
+                    <div class=${css.icon}>${appicon}</div>
+                    <span class="${css['app-name']}">${package.title}</span>
+                </div>
+                `
+                applist.append(pinapp)
+
+                return protocol({app: package, appicon: pinapp} )
+
+            } else {
+                console.log(`${title} is unpinned from desktop`);
+                let target = document.querySelector(`[class*="${appname}"]`)
+                target.remove()
+            }
+            
 
         }
 
@@ -50208,7 +50247,7 @@ function actions({styl, title, ver, selector, url, package}, protocol) {
                 title: package.title,
                 version: ver
             }
-            protocol( package.versions.latest, removeApp )
+            clearVers( package.versions.latest, removeApp )
         }
         
     }
@@ -50244,7 +50283,7 @@ const style = csjs`
  .btn:hover svg {
     fill: white;
 }
-.icon {
+.btn > .icon {
     margin-right: 5px;
     width: 20px;
 }
@@ -50296,6 +50335,24 @@ const style = csjs`
 }
 .disabled {
     cursor: not-allowed
+}
+.icon {
+    width: 60px;
+}
+.app-icon {
+    display: grid;
+    grid-template-rows: 60px auto;
+    text-align: center;
+    justify-items: center;
+    cursor: pointer;
+    overflow: hidden;
+    grid-gap: 7px 0;
+    width: 100%;
+}
+.app-name {
+    font-size: var(--appNameFontSize);
+    color: var(--appNameColor);
+    word-break: break-word;
 }
 `
 

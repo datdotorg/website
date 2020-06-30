@@ -24,8 +24,8 @@ function main(opts, done) {
                 open: true,
                 pin: true,
                 app: {
-                    version: null,
                     install: false,
+                    version: null,
                     data: null
                 }
             },
@@ -38,10 +38,10 @@ function main(opts, done) {
             version: 'packages/pacman/dist/1.0.0/version.json',
             status: {
                 open: false,
-                pin: false,
+                pin: true,
                 app: {
-                    version: null,
                     install: false,
+                    version: null,
                     data: null
                 }
             }
@@ -54,10 +54,10 @@ function main(opts, done) {
             version: 'packages/alarm-clock/dist/1.0.0/version.json',
             status: {
                 open: false,
-                pin: false,
+                pin: true,
                 app: {
-                    version: null,
                     install: false,
+                    version: null,
                     data: null
                 }
             }
@@ -118,7 +118,7 @@ function main(opts, done) {
     return done(null, desktop)
 
     // load app content
-    function loadAppContent({item, app, update, remove}) {
+    function loadAppContent({item, app, appicon, update, remove}) {
 
         if (update !== undefined && typeof update === 'object') {
             updateApp(packages, update)
@@ -132,6 +132,14 @@ function main(opts, done) {
             console.log('update packages', packages)
         }
 
+        if (appicon) {
+            appicon.addEventListener('click', () => {
+                // covert app.title to add on window
+                let title = app.title.split(' ').join('').toLowerCase()
+                openTarget({url: app.link, title}, app)
+            })
+        }
+
         return bel`${item}`
     }
 
@@ -139,33 +147,31 @@ function main(opts, done) {
     function openTarget({url, title}, app) {
         let all = document.querySelectorAll("[class*='app_']")
         let excApp = document.querySelector(`.app_${title}`)
-
         // set all windows's level back to default
         all.forEach ( i => { 
             i.classList.remove(css.current)
         })
 
         // if app is existed, then bring window to top level
-        if ( app.status.open ) {
-            return all.forEach ( i => { 
+        if ( excApp ) {
+            all.forEach ( i => { 
                 if ( i.classList.contains(`app_${title}`) ) {
                     i.classList.add(css.current)
                 } 
             })
-        } 
+        } else {
+            // if app is not existed, then create new window
+            document.body.appendChild( OpenWindow(css.current, url, app, AppInfo, loadAppContent) )
+            app.status.open = true
 
-        // if app is not existed, then create new window
-        document.body.appendChild( OpenWindow(css.current, url, app, AppInfo, loadAppContent) )
-        app.status.open = true
-
-        let appName = app.title.split(' ').join('').toLowerCase()
-        let dashName = app.title.split(' ').join('-').toLowerCase()
-        packages.map( package => {
-            
-            if (package.path.includes(appName) ||  package.path.includes(dashName) ) {
-                package.status.open = true
-            }
-        })
+            let appName = app.title.split(' ').join('').toLowerCase()
+            let dashName = app.title.split(' ').join('-').toLowerCase()
+            packages.map( package => {
+                if (package.path.includes(appName) ||  package.path.includes(dashName) ) {
+                    package.status.open = app.status.open
+                }
+            })
+        }
     }
 
     
