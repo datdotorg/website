@@ -38,7 +38,7 @@ function main(opts, done) {
             version: 'packages/pacman/dist/1.0.0/version.json',
             status: {
                 open: false,
-                pin: true,
+                pin: false,
                 app: {
                     install: false,
                     version: null,
@@ -54,7 +54,7 @@ function main(opts, done) {
             version: 'packages/alarm-clock/dist/1.0.0/version.json',
             status: {
                 open: false,
-                pin: true,
+                pin: false,
                 app: {
                     install: false,
                     version: null,
