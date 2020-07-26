@@ -19,13 +19,13 @@ We are very excited about it.
 **more details**
 
 <a href="https://www.loom.com/share/9a861cffba244c089efa094e15979cd2" target="_blank">
-  <img src="2020.07.20-milestone1/video1.jpeg" alt="video1">
+  <img src="/packages/datdot/blob/2020.07.20-milestone1/video1.jpeg" alt="video1">
 </a>
 <a href="https://www.loom.com/share/43670f31c0be42029d5d968da5ae3eb2" target="_blank">
-  <img src="2020.07.20-milestone1/video2.jpeg" alt="video2">
+  <img src="/packages/datdot/blob/2020.07.20-milestone1/video2.jpeg" alt="video2">
 </a>
 <a href="https://www.loom.com/share/7d0aee905e26412894904c2c6efacfac" target="_blank">
-  <img src="2020.07.20-milestone1/video3.jpeg" alt="video3">
+  <img src="/packages/datdot/blob/2020.07.20-milestone1/video3.jpeg" alt="video3">
 </a>
 ---
 
