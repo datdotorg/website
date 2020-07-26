@@ -49109,7 +49109,15 @@ function AppInfo(styl, url, title, package, protocol) {
 
    
     // display default page
-    getInfo(package.about.info, 'package', loadPage)
+    const hash = location.hash.slice(1)
+    const page = (hash === 'chat') ? 'chat'
+      : (hash === 'supplyTree') ? 'supplyTree'
+      : (hash === 'doc') ? 'doc'
+      : (hash === 'news') ? 'news'
+      : (hash === 'package') ? 'package' : 'package'
+
+    pageHandler(page)
+
 
     document.body.addEventListener('click', (e) => {
         if (e.target === triggerBtn) {
@@ -49192,7 +49200,7 @@ function AppInfo(styl, url, title, package, protocol) {
 
     // switch page
     function pageHandler(i) {
-        console.log(`${i} page loaded`);
+        console.log(`[navigate] ${i}`)
         // clear content to add new contnet
         content.innerHTML = ''
         if ( i === 'package') {
@@ -50065,7 +50073,7 @@ function SupplyTree(ver, app, protocol) {
     const el = bel`
     <section class=${css.supplytree}>
         <div class="${css.donate}">
-            <h4 class="${css.subtitle}">We would be very appreciated if you like our project</h4>
+            <h4 class="${css.subtitle}">Support the project and it's dependency tree</h4>
             <button class="${css.btn} ${css.disabled}">Give grant</a>
         </div>
         <h1 class=${css.title}>Contributors</h1>
