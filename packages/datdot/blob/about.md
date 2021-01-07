@@ -1,6 +1,6 @@
 DatDot is an autonomous hosting network for p2p data systems
 
-DatDot's strengths are that data is hosted and distributed by many computers on the network, that it can work offline or with poor connectivity, that the original uploader can add or modify data while keeping a full history, and that it can handle large amounts of data.
+DatDot's strength is that data is hosted and distributed by many computers on the network which can handle large amounts of data.
 
 Community First
 

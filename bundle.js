@@ -64468,7 +64468,7 @@ function SupplyTree(ver, app, protocol) {
     <section class=${css.supplytree}>
         <div class="${css.donate}">
             <h4 class="${css.subtitle}">Help make this project, its dependency tree and the community sustainable.</h4>
-            <a href="https://opencollective.com/datdotorg"><button class="${css.btn}">Contribute</button></a>
+            <a target="_blank" class="${css.btn}" href="https://opencollective.com/datdotorg">Contribute</a>
         </div>
         <h1 class=${css.title}>Contributors</h1>
         ${contributorsList}
@@ -64537,10 +64537,6 @@ const style = csjs`
     text-decoration: none;
     display: grid;
     justify-items: center;
-}
-.disabled, .disabled:hover {
-    background-color: rgba(0,0,0,.5);
-    cursor: not-allowed;
 }
 `
 
