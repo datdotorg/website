@@ -6,7 +6,7 @@ about: plan a synchronous meeting with people attending at the same time in a (v
 # `location`
 **space:**
 * https://talky.io/datdot
-* https://gitter.im/playproject-io/community
+* https://gitter.im/playproject-io/community/
 
 [**time:**][5]
 | [**place:**][3]      | Honolulu   | Ottawa     | London     | Berlin      |    Taipei    |

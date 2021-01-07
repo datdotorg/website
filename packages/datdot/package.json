@@ -1,7 +1,7 @@
 {
     "title": "DatDot",
     "logo": "logo-datdot.png",
-    "chat": "https://gitter.im/wizardamigosinstitute/program/~embed",
+    "chat": "https://gitter.im/playproject-io/community/~embed",
     "news": "blob/news.md",
     "about": {
       "wallet": "https://opencollective.com/wwcodeatl/donate",
@@ -17,6 +17,6 @@
             "0.4.0",
             "0.1.2",
             "0.0.0"
-        ]  
+        ]
     }
   }

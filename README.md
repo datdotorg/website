@@ -9,7 +9,7 @@ a p2p solution for hosting files with Dat protocol ([...more](https://github.com
 # community
 * follow us on [twitter](https://twitter.com/datdotorg)
 * join us on [telegram](https://t.me/joinchat/CgTftxXJvp6iYayqDjP7lQ)
-* join us on [gitter](https://gitter.im/playproject-io/community)
+* join us on [gitter](https://gitter.im/playproject-io/community/)
 
 # funding
 [![project supported by web3 foundation grants program](https://i.imgur.com/oGPIbZQ.jpg)](https://web3.foundation/grants)
