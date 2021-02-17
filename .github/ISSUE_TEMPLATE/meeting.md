@@ -15,15 +15,13 @@ about: plan a synchronous meeting with people attending at the same time in a (v
 
 # `agenda`
 1. What was done since last meeting?
-  * @nickname1
-    * [ ] [`reponame#X1` issue name](#)
-    * [ ] [`reponame#X2` issue name](#)
-    * [ ] [`reponame#X3` issue name](#)
-  * @nickname2
-    * [ ] [`reponame#X4` issue name](#)
-    * [ ] [`reponame#X5` issue name](#)
-    * [ ] [`reponame#X6` issue name](#)
+  * @serapath [`open issues`](https://github.com/search?q=type%3Aissue+org%3Aplayproject-io+assignee%3Aserapath+sort%3Ainteractions-desc+state%3Aopen&type=)
+  * @ninabreznik [`open issues`](https://github.com/search?q=type%3Aissue+org%3Aplayproject-io+assignee%3Aninabreznik+sort%3Ainteractions-desc+state%3Aopen&type=)
+  * @joshua-mir [`open issues`](https://github.com/search?q=type%3Aissue+org%3Aplayproject-io+assignee%3Ajoshua-mir+sort%3Ainteractions-desc+state%3Aopen&type=)
+  * @fionataeyang [`open issues`](https://github.com/search?q=type%3Aissue+org%3Aplayproject-io+assignee%3Afionataeyang+sort%3Ainteractions-desc+state%3Aopen&type=)
+  * @RangerMauve [`open issues`](https://github.com/search?q=type%3Aissue+org%3Aplayproject-io+assignee%3ARangerMauve+sort%3Ainteractions-desc+state%3Aopen&type=)
 2. [How do **roadmapping priorities** currently look like?][1]
+    * [all open issues](https://github.com/search?q=type%3Aissue+org%3Aplayproject-io+no%3Aassignee+sort%3Ainteractions-desc+state%3Aopen&type=)
 3. [Create new meeting and plan what issues we will do until then][2]
   * => **[`datdot#??` 20??.??.??-19:00Z (=UTC-0) | datdot sync](https://github.com/playproject-io/datdot/issues/??)**
 
