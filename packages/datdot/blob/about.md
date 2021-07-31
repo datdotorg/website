@@ -20,6 +20,6 @@ We're a small group of open source developers that provides social and technical
 
 [source code](https://github.com/playproject-io)
 
-[telegram](https://t.me/joinchat/CgTftxXJvp6iYayqDjP7lQ) or [gitter](https://gitter.im/playproject-io/community/)
+[telegram](https://t.me/joinchat/CgTftxXJvp6iYayqDjP7lQ) or cabal://b366ee787a0df84e883a2e5c24b678b24c0b88795d95a499ad694d5e797b6513?admin=3356281f14009b6312ef03221147841204a9dc3c1c5c24d32d80f008864b52d8
 
 ![](https://i.imgur.com/oGPIbZQ.jpg)
