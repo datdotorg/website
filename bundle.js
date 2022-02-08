@@ -419,7 +419,7 @@ module.exports = hyperx(belCreateElement, {comments: true})
 module.exports.default = module.exports
 module.exports.createElement = belCreateElement
 
-},{"./appendChild":4,"hyperx":316}],6:[function(require,module,exports){
+},{"./appendChild":4,"hyperx":317}],6:[function(require,module,exports){
 'use strict'
 
 module.exports = ccount
@@ -924,7 +924,7 @@ function csjsInserter() {
 module.exports = csjsInserter;
 
 }).call(this)}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"csjs":17,"insert-css":318}],13:[function(require,module,exports){
+},{"csjs":17,"insert-css":319}],13:[function(require,module,exports){
 'use strict';
 
 module.exports = require('csjs/get-css');
@@ -1547,9 +1547,12 @@ function detab(value, size) {
   return result.join('')
 }
 
-},{"repeat-string":494}],34:[function(require,module,exports){
-module.exports = function() {
-	return /[\xA9\xAE\u203C\u2049\u2122\u2139\u2194-\u2199\u21A9\u21AA\u231A\u231B\u2328\u23CF\u23E9-\u23F3\u23F8-\u23FA\u24C2\u25AA\u25AB\u25B6\u25C0\u25FB-\u25FE\u2600-\u2604\u260E\u2611\u2614\u2615\u2618\u261D\u2620\u2622\u2623\u2626\u262A\u262E\u262F\u2638-\u263A\u2648-\u2653\u2660\u2663\u2665\u2666\u2668\u267B\u267F\u2692-\u2694\u2696\u2697\u2699\u269B\u269C\u26A0\u26A1\u26AA\u26AB\u26B0\u26B1\u26BD\u26BE\u26C4\u26C5\u26C8\u26CE\u26CF\u26D1\u26D3\u26D4\u26E9\u26EA\u26F0-\u26F5\u26F7-\u26FA\u26FD\u2702\u2705\u2708-\u270D\u270F\u2712\u2714\u2716\u271D\u2721\u2728\u2733\u2734\u2744\u2747\u274C\u274E\u2753-\u2755\u2757\u2763\u2764\u2795-\u2797\u27A1\u27B0\u27BF\u2934\u2935\u2B05-\u2B07\u2B1B\u2B1C\u2B50\u2B55\u3030\u303D\u3297\u3299]|\uD83C[\uDC04\uDCCF\uDD70\uDD71\uDD7E\uDD7F\uDD8E\uDD91-\uDD9A\uDE01\uDE02\uDE1A\uDE2F\uDE32-\uDE3A\uDE50\uDE51\uDF00-\uDF21\uDF24-\uDF93\uDF96\uDF97\uDF99-\uDF9B\uDF9E-\uDFF0\uDFF3-\uDFF5\uDFF7-\uDFFF]|\uD83D[\uDC00-\uDCFD\uDCFF-\uDD3D\uDD49-\uDD4E\uDD50-\uDD67\uDD6F\uDD70\uDD73-\uDD79\uDD87\uDD8A-\uDD8D\uDD90\uDD95\uDD96\uDDA5\uDDA8\uDDB1\uDDB2\uDDBC\uDDC2-\uDDC4\uDDD1-\uDDD3\uDDDC-\uDDDE\uDDE1\uDDE3\uDDEF\uDDF3\uDDFA-\uDE4F\uDE80-\uDEC5\uDECB-\uDED0\uDEE0-\uDEE5\uDEE9\uDEEB\uDEEC\uDEF0\uDEF3]|\uD83E[\uDD10-\uDD18\uDD80-\uDD84\uDDC0]|\uD83C\uDDFF\uD83C[\uDDE6\uDDF2\uDDFC]|\uD83C\uDDFE\uD83C[\uDDEA\uDDF9]|\uD83C\uDDFD\uD83C\uDDF0|\uD83C\uDDFC\uD83C[\uDDEB\uDDF8]|\uD83C\uDDFB\uD83C[\uDDE6\uDDE8\uDDEA\uDDEC\uDDEE\uDDF3\uDDFA]|\uD83C\uDDFA\uD83C[\uDDE6\uDDEC\uDDF2\uDDF8\uDDFE\uDDFF]|\uD83C\uDDF9\uD83C[\uDDE6\uDDE8\uDDE9\uDDEB-\uDDED\uDDEF-\uDDF4\uDDF7\uDDF9\uDDFB\uDDFC\uDDFF]|\uD83C\uDDF8\uD83C[\uDDE6-\uDDEA\uDDEC-\uDDF4\uDDF7-\uDDF9\uDDFB\uDDFD-\uDDFF]|\uD83C\uDDF7\uD83C[\uDDEA\uDDF4\uDDF8\uDDFA\uDDFC]|\uD83C\uDDF6\uD83C\uDDE6|\uD83C\uDDF5\uD83C[\uDDE6\uDDEA-\uDDED\uDDF0-\uDDF3\uDDF7-\uDDF9\uDDFC\uDDFE]|\uD83C\uDDF4\uD83C\uDDF2|\uD83C\uDDF3\uD83C[\uDDE6\uDDE8\uDDEA-\uDDEC\uDDEE\uDDF1\uDDF4\uDDF5\uDDF7\uDDFA\uDDFF]|\uD83C\uDDF2\uD83C[\uDDE6\uDDE8-\uDDED\uDDF0-\uDDFF]|\uD83C\uDDF1\uD83C[\uDDE6-\uDDE8\uDDEE\uDDF0\uDDF7-\uDDFB\uDDFE]|\uD83C\uDDF0\uD83C[\uDDEA\uDDEC-\uDDEE\uDDF2\uDDF3\uDDF5\uDDF7\uDDFC\uDDFE\uDDFF]|\uD83C\uDDEF\uD83C[\uDDEA\uDDF2\uDDF4\uDDF5]|\uD83C\uDDEE\uD83C[\uDDE8-\uDDEA\uDDF1-\uDDF4\uDDF6-\uDDF9]|\uD83C\uDDED\uD83C[\uDDF0\uDDF2\uDDF3\uDDF7\uDDF9\uDDFA]|\uD83C\uDDEC\uD83C[\uDDE6\uDDE7\uDDE9-\uDDEE\uDDF1-\uDDF3\uDDF5-\uDDFA\uDDFC\uDDFE]|\uD83C\uDDEB\uD83C[\uDDEE-\uDDF0\uDDF2\uDDF4\uDDF7]|\uD83C\uDDEA\uD83C[\uDDE6\uDDE8\uDDEA\uDDEC\uDDED\uDDF7-\uDDFA]|\uD83C\uDDE9\uD83C[\uDDEA\uDDEC\uDDEF\uDDF0\uDDF2\uDDF4\uDDFF]|\uD83C\uDDE8\uD83C[\uDDE6\uDDE8\uDDE9\uDDEB-\uDDEE\uDDF0-\uDDF5\uDDF7\uDDFA-\uDDFF]|\uD83C\uDDE7\uD83C[\uDDE6\uDDE7\uDDE9-\uDDEF\uDDF1-\uDDF4\uDDF6-\uDDF9\uDDFB\uDDFC\uDDFE\uDDFF]|\uD83C\uDDE6\uD83C[\uDDE8-\uDDEC\uDDEE\uDDF1\uDDF2\uDDF4\uDDF6-\uDDFA\uDDFC\uDDFD\uDDFF]|[#\*0-9]\u20E3/g;
+},{"repeat-string":495}],34:[function(require,module,exports){
+"use strict";
+
+module.exports = function () {
+  // https://mths.be/emoji
+  return /\uD83C\uDFF4\uDB40\uDC67\uDB40\uDC62(?:\uDB40\uDC65\uDB40\uDC6E\uDB40\uDC67|\uDB40\uDC73\uDB40\uDC63\uDB40\uDC74|\uDB40\uDC77\uDB40\uDC6C\uDB40\uDC73)\uDB40\uDC7F|\uD83D\uDC68(?:\uD83C\uDFFC\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68\uD83C\uDFFB|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFF\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFE])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFE\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFD])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFD\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB\uDFFC])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\u200D(?:\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83D\uDC68|(?:\uD83D[\uDC68\uDC69])\u200D(?:\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67]))|\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67])|(?:\uD83D[\uDC68\uDC69])\u200D(?:\uD83D[\uDC66\uDC67])|[\u2695\u2696\u2708]\uFE0F|\uD83D[\uDC66\uDC67]|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|(?:\uD83C\uDFFB\u200D[\u2695\u2696\u2708]|\uD83C\uDFFF\u200D[\u2695\u2696\u2708]|\uD83C\uDFFE\u200D[\u2695\u2696\u2708]|\uD83C\uDFFD\u200D[\u2695\u2696\u2708]|\uD83C\uDFFC\u200D[\u2695\u2696\u2708])\uFE0F|\uD83C\uDFFB\u200D(?:\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C[\uDFFB-\uDFFF])|(?:\uD83E\uDDD1\uD83C\uDFFB\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFC\u200D\uD83E\uDD1D\u200D\uD83D\uDC69)\uD83C\uDFFB|\uD83E\uDDD1(?:\uD83C\uDFFF\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1(?:\uD83C[\uDFFB-\uDFFF])|\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1)|(?:\uD83E\uDDD1\uD83C\uDFFE\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFF\u200D\uD83E\uDD1D\u200D(?:\uD83D[\uDC68\uDC69]))(?:\uD83C[\uDFFB-\uDFFE])|(?:\uD83E\uDDD1\uD83C\uDFFC\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFD\u200D\uD83E\uDD1D\u200D\uD83D\uDC69)(?:\uD83C[\uDFFB\uDFFC])|\uD83D\uDC69(?:\uD83C\uDFFE\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFD\uDFFF])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFC\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB\uDFFD-\uDFFF])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFB\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFC-\uDFFF])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFD\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB\uDFFC\uDFFE\uDFFF])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\u200D(?:\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D(?:\uD83D[\uDC68\uDC69])|\uD83D[\uDC68\uDC69])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFF\u200D(?:\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD]))|\uD83D\uDC69\u200D\uD83D\uDC69\u200D(?:\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67]))|(?:\uD83E\uDDD1\uD83C\uDFFD\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFE\u200D\uD83E\uDD1D\u200D\uD83D\uDC69)(?:\uD83C[\uDFFB-\uDFFD])|\uD83D\uDC69\u200D\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC69\u200D\uD83D\uDC69\u200D(?:\uD83D[\uDC66\uDC67])|(?:\uD83D\uDC41\uFE0F\u200D\uD83D\uDDE8|\uD83D\uDC69(?:\uD83C\uDFFF\u200D[\u2695\u2696\u2708]|\uD83C\uDFFE\u200D[\u2695\u2696\u2708]|\uD83C\uDFFC\u200D[\u2695\u2696\u2708]|\uD83C\uDFFB\u200D[\u2695\u2696\u2708]|\uD83C\uDFFD\u200D[\u2695\u2696\u2708]|\u200D[\u2695\u2696\u2708])|(?:(?:\u26F9|\uD83C[\uDFCB\uDFCC]|\uD83D\uDD75)\uFE0F|\uD83D\uDC6F|\uD83E[\uDD3C\uDDDE\uDDDF])\u200D[\u2640\u2642]|(?:\u26F9|\uD83C[\uDFCB\uDFCC]|\uD83D\uDD75)(?:\uD83C[\uDFFB-\uDFFF])\u200D[\u2640\u2642]|(?:\uD83C[\uDFC3\uDFC4\uDFCA]|\uD83D[\uDC6E\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4-\uDEB6]|\uD83E[\uDD26\uDD37-\uDD39\uDD3D\uDD3E\uDDB8\uDDB9\uDDCD-\uDDCF\uDDD6-\uDDDD])(?:(?:\uD83C[\uDFFB-\uDFFF])\u200D[\u2640\u2642]|\u200D[\u2640\u2642])|\uD83C\uDFF4\u200D\u2620)\uFE0F|\uD83D\uDC69\u200D\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67])|\uD83C\uDFF3\uFE0F\u200D\uD83C\uDF08|\uD83D\uDC15\u200D\uD83E\uDDBA|\uD83D\uDC69\u200D\uD83D\uDC66|\uD83D\uDC69\u200D\uD83D\uDC67|\uD83C\uDDFD\uD83C\uDDF0|\uD83C\uDDF4\uD83C\uDDF2|\uD83C\uDDF6\uD83C\uDDE6|[#\*0-9]\uFE0F\u20E3|\uD83C\uDDE7(?:\uD83C[\uDDE6\uDDE7\uDDE9-\uDDEF\uDDF1-\uDDF4\uDDF6-\uDDF9\uDDFB\uDDFC\uDDFE\uDDFF])|\uD83C\uDDF9(?:\uD83C[\uDDE6\uDDE8\uDDE9\uDDEB-\uDDED\uDDEF-\uDDF4\uDDF7\uDDF9\uDDFB\uDDFC\uDDFF])|\uD83C\uDDEA(?:\uD83C[\uDDE6\uDDE8\uDDEA\uDDEC\uDDED\uDDF7-\uDDFA])|\uD83E\uDDD1(?:\uD83C[\uDFFB-\uDFFF])|\uD83C\uDDF7(?:\uD83C[\uDDEA\uDDF4\uDDF8\uDDFA\uDDFC])|\uD83D\uDC69(?:\uD83C[\uDFFB-\uDFFF])|\uD83C\uDDF2(?:\uD83C[\uDDE6\uDDE8-\uDDED\uDDF0-\uDDFF])|\uD83C\uDDE6(?:\uD83C[\uDDE8-\uDDEC\uDDEE\uDDF1\uDDF2\uDDF4\uDDF6-\uDDFA\uDDFC\uDDFD\uDDFF])|\uD83C\uDDF0(?:\uD83C[\uDDEA\uDDEC-\uDDEE\uDDF2\uDDF3\uDDF5\uDDF7\uDDFC\uDDFE\uDDFF])|\uD83C\uDDED(?:\uD83C[\uDDF0\uDDF2\uDDF3\uDDF7\uDDF9\uDDFA])|\uD83C\uDDE9(?:\uD83C[\uDDEA\uDDEC\uDDEF\uDDF0\uDDF2\uDDF4\uDDFF])|\uD83C\uDDFE(?:\uD83C[\uDDEA\uDDF9])|\uD83C\uDDEC(?:\uD83C[\uDDE6\uDDE7\uDDE9-\uDDEE\uDDF1-\uDDF3\uDDF5-\uDDFA\uDDFC\uDDFE])|\uD83C\uDDF8(?:\uD83C[\uDDE6-\uDDEA\uDDEC-\uDDF4\uDDF7-\uDDF9\uDDFB\uDDFD-\uDDFF])|\uD83C\uDDEB(?:\uD83C[\uDDEE-\uDDF0\uDDF2\uDDF4\uDDF7])|\uD83C\uDDF5(?:\uD83C[\uDDE6\uDDEA-\uDDED\uDDF0-\uDDF3\uDDF7-\uDDF9\uDDFC\uDDFE])|\uD83C\uDDFB(?:\uD83C[\uDDE6\uDDE8\uDDEA\uDDEC\uDDEE\uDDF3\uDDFA])|\uD83C\uDDF3(?:\uD83C[\uDDE6\uDDE8\uDDEA-\uDDEC\uDDEE\uDDF1\uDDF4\uDDF5\uDDF7\uDDFA\uDDFF])|\uD83C\uDDE8(?:\uD83C[\uDDE6\uDDE8\uDDE9\uDDEB-\uDDEE\uDDF0-\uDDF5\uDDF7\uDDFA-\uDDFF])|\uD83C\uDDF1(?:\uD83C[\uDDE6-\uDDE8\uDDEE\uDDF0\uDDF7-\uDDFB\uDDFE])|\uD83C\uDDFF(?:\uD83C[\uDDE6\uDDF2\uDDFC])|\uD83C\uDDFC(?:\uD83C[\uDDEB\uDDF8])|\uD83C\uDDFA(?:\uD83C[\uDDE6\uDDEC\uDDF2\uDDF3\uDDF8\uDDFE\uDDFF])|\uD83C\uDDEE(?:\uD83C[\uDDE8-\uDDEA\uDDF1-\uDDF4\uDDF6-\uDDF9])|\uD83C\uDDEF(?:\uD83C[\uDDEA\uDDF2\uDDF4\uDDF5])|(?:\uD83C[\uDFC3\uDFC4\uDFCA]|\uD83D[\uDC6E\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4-\uDEB6]|\uD83E[\uDD26\uDD37-\uDD39\uDD3D\uDD3E\uDDB8\uDDB9\uDDCD-\uDDCF\uDDD6-\uDDDD])(?:\uD83C[\uDFFB-\uDFFF])|(?:\u26F9|\uD83C[\uDFCB\uDFCC]|\uD83D\uDD75)(?:\uD83C[\uDFFB-\uDFFF])|(?:[\u261D\u270A-\u270D]|\uD83C[\uDF85\uDFC2\uDFC7]|\uD83D[\uDC42\uDC43\uDC46-\uDC50\uDC66\uDC67\uDC6B-\uDC6D\uDC70\uDC72\uDC74-\uDC76\uDC78\uDC7C\uDC83\uDC85\uDCAA\uDD74\uDD7A\uDD90\uDD95\uDD96\uDE4C\uDE4F\uDEC0\uDECC]|\uD83E[\uDD0F\uDD18-\uDD1C\uDD1E\uDD1F\uDD30-\uDD36\uDDB5\uDDB6\uDDBB\uDDD2-\uDDD5])(?:\uD83C[\uDFFB-\uDFFF])|(?:[\u231A\u231B\u23E9-\u23EC\u23F0\u23F3\u25FD\u25FE\u2614\u2615\u2648-\u2653\u267F\u2693\u26A1\u26AA\u26AB\u26BD\u26BE\u26C4\u26C5\u26CE\u26D4\u26EA\u26F2\u26F3\u26F5\u26FA\u26FD\u2705\u270A\u270B\u2728\u274C\u274E\u2753-\u2755\u2757\u2795-\u2797\u27B0\u27BF\u2B1B\u2B1C\u2B50\u2B55]|\uD83C[\uDC04\uDCCF\uDD8E\uDD91-\uDD9A\uDDE6-\uDDFF\uDE01\uDE1A\uDE2F\uDE32-\uDE36\uDE38-\uDE3A\uDE50\uDE51\uDF00-\uDF20\uDF2D-\uDF35\uDF37-\uDF7C\uDF7E-\uDF93\uDFA0-\uDFCA\uDFCF-\uDFD3\uDFE0-\uDFF0\uDFF4\uDFF8-\uDFFF]|\uD83D[\uDC00-\uDC3E\uDC40\uDC42-\uDCFC\uDCFF-\uDD3D\uDD4B-\uDD4E\uDD50-\uDD67\uDD7A\uDD95\uDD96\uDDA4\uDDFB-\uDE4F\uDE80-\uDEC5\uDECC\uDED0-\uDED2\uDED5\uDEEB\uDEEC\uDEF4-\uDEFA\uDFE0-\uDFEB]|\uD83E[\uDD0D-\uDD3A\uDD3C-\uDD45\uDD47-\uDD71\uDD73-\uDD76\uDD7A-\uDDA2\uDDA5-\uDDAA\uDDAE-\uDDCA\uDDCD-\uDDFF\uDE70-\uDE73\uDE78-\uDE7A\uDE80-\uDE82\uDE90-\uDE95])|(?:[#\*0-9\xA9\xAE\u203C\u2049\u2122\u2139\u2194-\u2199\u21A9\u21AA\u231A\u231B\u2328\u23CF\u23E9-\u23F3\u23F8-\u23FA\u24C2\u25AA\u25AB\u25B6\u25C0\u25FB-\u25FE\u2600-\u2604\u260E\u2611\u2614\u2615\u2618\u261D\u2620\u2622\u2623\u2626\u262A\u262E\u262F\u2638-\u263A\u2640\u2642\u2648-\u2653\u265F\u2660\u2663\u2665\u2666\u2668\u267B\u267E\u267F\u2692-\u2697\u2699\u269B\u269C\u26A0\u26A1\u26AA\u26AB\u26B0\u26B1\u26BD\u26BE\u26C4\u26C5\u26C8\u26CE\u26CF\u26D1\u26D3\u26D4\u26E9\u26EA\u26F0-\u26F5\u26F7-\u26FA\u26FD\u2702\u2705\u2708-\u270D\u270F\u2712\u2714\u2716\u271D\u2721\u2728\u2733\u2734\u2744\u2747\u274C\u274E\u2753-\u2755\u2757\u2763\u2764\u2795-\u2797\u27A1\u27B0\u27BF\u2934\u2935\u2B05-\u2B07\u2B1B\u2B1C\u2B50\u2B55\u3030\u303D\u3297\u3299]|\uD83C[\uDC04\uDCCF\uDD70\uDD71\uDD7E\uDD7F\uDD8E\uDD91-\uDD9A\uDDE6-\uDDFF\uDE01\uDE02\uDE1A\uDE2F\uDE32-\uDE3A\uDE50\uDE51\uDF00-\uDF21\uDF24-\uDF93\uDF96\uDF97\uDF99-\uDF9B\uDF9E-\uDFF0\uDFF3-\uDFF5\uDFF7-\uDFFF]|\uD83D[\uDC00-\uDCFD\uDCFF-\uDD3D\uDD49-\uDD4E\uDD50-\uDD67\uDD6F\uDD70\uDD73-\uDD7A\uDD87\uDD8A-\uDD8D\uDD90\uDD95\uDD96\uDDA4\uDDA5\uDDA8\uDDB1\uDDB2\uDDBC\uDDC2-\uDDC4\uDDD1-\uDDD3\uDDDC-\uDDDE\uDDE1\uDDE3\uDDE8\uDDEF\uDDF3\uDDFA-\uDE4F\uDE80-\uDEC5\uDECB-\uDED2\uDED5\uDEE0-\uDEE5\uDEE9\uDEEB\uDEEC\uDEF0\uDEF3-\uDEFA\uDFE0-\uDFEB]|\uD83E[\uDD0D-\uDD3A\uDD3C-\uDD45\uDD47-\uDD71\uDD73-\uDD76\uDD7A-\uDDA2\uDDA5-\uDDAA\uDDAE-\uDDCA\uDDCD-\uDDFF\uDE70-\uDE73\uDE78-\uDE7A\uDE80-\uDE82\uDE90-\uDE95])\uFE0F|(?:[\u261D\u26F9\u270A-\u270D]|\uD83C[\uDF85\uDFC2-\uDFC4\uDFC7\uDFCA-\uDFCC]|\uD83D[\uDC42\uDC43\uDC46-\uDC50\uDC66-\uDC78\uDC7C\uDC81-\uDC83\uDC85-\uDC87\uDC8F\uDC91\uDCAA\uDD74\uDD75\uDD7A\uDD90\uDD95\uDD96\uDE45-\uDE47\uDE4B-\uDE4F\uDEA3\uDEB4-\uDEB6\uDEC0\uDECC]|\uD83E[\uDD0F\uDD18-\uDD1F\uDD26\uDD30-\uDD39\uDD3C-\uDD3E\uDDB5\uDDB6\uDDB8\uDDB9\uDDBB\uDDCD-\uDDCF\uDDD1-\uDDDD])/g;
 };
 
 },{}],35:[function(require,module,exports){
@@ -3118,16 +3121,14 @@ function create(EConstructor) {
 }());
 
 },{}],97:[function(require,module,exports){
-var emoji = require('emoji-regex')
+const regex = require('./regex.js')
 
 module.exports = BananaSlug
 
-var own = Object.hasOwnProperty
-var whitespace = /\s/g
-var specials = /[\u2000-\u206F\u2E00-\u2E7F\\'!"#$%&()*+,./:;<=>?@[\]^`{|}~’]/g
+const own = Object.hasOwnProperty
 
 function BananaSlug () {
-  var self = this
+  const self = this
 
   if (!(self instanceof BananaSlug)) return new BananaSlug()
 
@@ -3141,9 +3142,9 @@ function BananaSlug () {
  * @return {string}       A unique slug string
  */
 BananaSlug.prototype.slug = function (value, maintainCase) {
-  var self = this
-  var slug = slugger(value, maintainCase === true)
-  var originalSlug = slug
+  const self = this
+  let slug = slugger(value, maintainCase === true)
+  const originalSlug = slug
 
   while (own.call(self.occurrences, slug)) {
     self.occurrences[originalSlug]++
@@ -3166,16 +3167,17 @@ BananaSlug.prototype.reset = function () {
 function slugger (string, maintainCase) {
   if (typeof string !== 'string') return ''
   if (!maintainCase) string = string.toLowerCase()
-
-  return string.trim()
-    .replace(specials, '')
-    .replace(emoji(), '')
-    .replace(whitespace, '-')
+  return string.replace(regex, '').replace(/ /g, '-')
 }
 
 BananaSlug.slug = slugger
 
-},{"emoji-regex":34}],98:[function(require,module,exports){
+},{"./regex.js":98}],98:[function(require,module,exports){
+// This module is generated by `script/`.
+/* eslint-disable no-control-regex, no-misleading-character-class, no-useless-escape */
+module.exports = /[\0-\x1F!-,\.\/:-@\[-\^`\{-\xA9\xAB-\xB4\xB6-\xB9\xBB-\xBF\xD7\xF7\u02C2-\u02C5\u02D2-\u02DF\u02E5-\u02EB\u02ED\u02EF-\u02FF\u0375\u0378\u0379\u037E\u0380-\u0385\u0387\u038B\u038D\u03A2\u03F6\u0482\u0530\u0557\u0558\u055A-\u055F\u0589-\u0590\u05BE\u05C0\u05C3\u05C6\u05C8-\u05CF\u05EB-\u05EE\u05F3-\u060F\u061B-\u061F\u066A-\u066D\u06D4\u06DD\u06DE\u06E9\u06FD\u06FE\u0700-\u070F\u074B\u074C\u07B2-\u07BF\u07F6-\u07F9\u07FB\u07FC\u07FE\u07FF\u082E-\u083F\u085C-\u085F\u086B-\u089F\u08B5\u08BE-\u08D2\u08E2\u0964\u0965\u0970\u0984\u098D\u098E\u0991\u0992\u09A9\u09B1\u09B3-\u09B5\u09BA\u09BB\u09C5\u09C6\u09C9\u09CA\u09CF-\u09D6\u09D8-\u09DB\u09DE\u09E4\u09E5\u09F2-\u09FB\u09FD\u09FF\u0A00\u0A04\u0A0B-\u0A0E\u0A11\u0A12\u0A29\u0A31\u0A34\u0A37\u0A3A\u0A3B\u0A3D\u0A43-\u0A46\u0A49\u0A4A\u0A4E-\u0A50\u0A52-\u0A58\u0A5D\u0A5F-\u0A65\u0A76-\u0A80\u0A84\u0A8E\u0A92\u0AA9\u0AB1\u0AB4\u0ABA\u0ABB\u0AC6\u0ACA\u0ACE\u0ACF\u0AD1-\u0ADF\u0AE4\u0AE5\u0AF0-\u0AF8\u0B00\u0B04\u0B0D\u0B0E\u0B11\u0B12\u0B29\u0B31\u0B34\u0B3A\u0B3B\u0B45\u0B46\u0B49\u0B4A\u0B4E-\u0B55\u0B58-\u0B5B\u0B5E\u0B64\u0B65\u0B70\u0B72-\u0B81\u0B84\u0B8B-\u0B8D\u0B91\u0B96-\u0B98\u0B9B\u0B9D\u0BA0-\u0BA2\u0BA5-\u0BA7\u0BAB-\u0BAD\u0BBA-\u0BBD\u0BC3-\u0BC5\u0BC9\u0BCE\u0BCF\u0BD1-\u0BD6\u0BD8-\u0BE5\u0BF0-\u0BFF\u0C0D\u0C11\u0C29\u0C3A-\u0C3C\u0C45\u0C49\u0C4E-\u0C54\u0C57\u0C5B-\u0C5F\u0C64\u0C65\u0C70-\u0C7F\u0C84\u0C8D\u0C91\u0CA9\u0CB4\u0CBA\u0CBB\u0CC5\u0CC9\u0CCE-\u0CD4\u0CD7-\u0CDD\u0CDF\u0CE4\u0CE5\u0CF0\u0CF3-\u0CFF\u0D04\u0D0D\u0D11\u0D45\u0D49\u0D4F-\u0D53\u0D58-\u0D5E\u0D64\u0D65\u0D70-\u0D79\u0D80\u0D81\u0D84\u0D97-\u0D99\u0DB2\u0DBC\u0DBE\u0DBF\u0DC7-\u0DC9\u0DCB-\u0DCE\u0DD5\u0DD7\u0DE0-\u0DE5\u0DF0\u0DF1\u0DF4-\u0E00\u0E3B-\u0E3F\u0E4F\u0E5A-\u0E80\u0E83\u0E85\u0E8B\u0EA4\u0EA6\u0EBE\u0EBF\u0EC5\u0EC7\u0ECE\u0ECF\u0EDA\u0EDB\u0EE0-\u0EFF\u0F01-\u0F17\u0F1A-\u0F1F\u0F2A-\u0F34\u0F36\u0F38\u0F3A-\u0F3D\u0F48\u0F6D-\u0F70\u0F85\u0F98\u0FBD-\u0FC5\u0FC7-\u0FFF\u104A-\u104F\u109E\u109F\u10C6\u10C8-\u10CC\u10CE\u10CF\u10FB\u1249\u124E\u124F\u1257\u1259\u125E\u125F\u1289\u128E\u128F\u12B1\u12B6\u12B7\u12BF\u12C1\u12C6\u12C7\u12D7\u1311\u1316\u1317\u135B\u135C\u1360-\u137F\u1390-\u139F\u13F6\u13F7\u13FE-\u1400\u166D\u166E\u1680\u169B-\u169F\u16EB-\u16ED\u16F9-\u16FF\u170D\u1715-\u171F\u1735-\u173F\u1754-\u175F\u176D\u1771\u1774-\u177F\u17D4-\u17D6\u17D8-\u17DB\u17DE\u17DF\u17EA-\u180A\u180E\u180F\u181A-\u181F\u1879-\u187F\u18AB-\u18AF\u18F6-\u18FF\u191F\u192C-\u192F\u193C-\u1945\u196E\u196F\u1975-\u197F\u19AC-\u19AF\u19CA-\u19CF\u19DA-\u19FF\u1A1C-\u1A1F\u1A5F\u1A7D\u1A7E\u1A8A-\u1A8F\u1A9A-\u1AA6\u1AA8-\u1AAF\u1ABF-\u1AFF\u1B4C-\u1B4F\u1B5A-\u1B6A\u1B74-\u1B7F\u1BF4-\u1BFF\u1C38-\u1C3F\u1C4A-\u1C4C\u1C7E\u1C7F\u1C89-\u1C8F\u1CBB\u1CBC\u1CC0-\u1CCF\u1CD3\u1CFB-\u1CFF\u1DFA\u1F16\u1F17\u1F1E\u1F1F\u1F46\u1F47\u1F4E\u1F4F\u1F58\u1F5A\u1F5C\u1F5E\u1F7E\u1F7F\u1FB5\u1FBD\u1FBF-\u1FC1\u1FC5\u1FCD-\u1FCF\u1FD4\u1FD5\u1FDC-\u1FDF\u1FED-\u1FF1\u1FF5\u1FFD-\u203E\u2041-\u2053\u2055-\u2070\u2072-\u207E\u2080-\u208F\u209D-\u20CF\u20F1-\u2101\u2103-\u2106\u2108\u2109\u2114\u2116-\u2118\u211E-\u2123\u2125\u2127\u2129\u212E\u213A\u213B\u2140-\u2144\u214A-\u214D\u214F-\u215F\u2189-\u24B5\u24EA-\u2BFF\u2C2F\u2C5F\u2CE5-\u2CEA\u2CF4-\u2CFF\u2D26\u2D28-\u2D2C\u2D2E\u2D2F\u2D68-\u2D6E\u2D70-\u2D7E\u2D97-\u2D9F\u2DA7\u2DAF\u2DB7\u2DBF\u2DC7\u2DCF\u2DD7\u2DDF\u2E00-\u2E2E\u2E30-\u3004\u3008-\u3020\u3030\u3036\u3037\u303D-\u3040\u3097\u3098\u309B\u309C\u30A0\u30FB\u3100-\u3104\u3130\u318F-\u319F\u31BB-\u31EF\u3200-\u33FF\u4DB6-\u4DFF\u9FF0-\u9FFF\uA48D-\uA4CF\uA4FE\uA4FF\uA60D-\uA60F\uA62C-\uA63F\uA673\uA67E\uA6F2-\uA716\uA720\uA721\uA789\uA78A\uA7C0\uA7C1\uA7C7-\uA7F6\uA828-\uA83F\uA874-\uA87F\uA8C6-\uA8CF\uA8DA-\uA8DF\uA8F8-\uA8FA\uA8FC\uA92E\uA92F\uA954-\uA95F\uA97D-\uA97F\uA9C1-\uA9CE\uA9DA-\uA9DF\uA9FF\uAA37-\uAA3F\uAA4E\uAA4F\uAA5A-\uAA5F\uAA77-\uAA79\uAAC3-\uAADA\uAADE\uAADF\uAAF0\uAAF1\uAAF7-\uAB00\uAB07\uAB08\uAB0F\uAB10\uAB17-\uAB1F\uAB27\uAB2F\uAB5B\uAB68-\uAB6F\uABEB\uABEE\uABEF\uABFA-\uABFF\uD7A4-\uD7AF\uD7C7-\uD7CA\uD7FC-\uD7FF\uE000-\uF8FF\uFA6E\uFA6F\uFADA-\uFAFF\uFB07-\uFB12\uFB18-\uFB1C\uFB29\uFB37\uFB3D\uFB3F\uFB42\uFB45\uFBB2-\uFBD2\uFD3E-\uFD4F\uFD90\uFD91\uFDC8-\uFDEF\uFDFC-\uFDFF\uFE10-\uFE1F\uFE30-\uFE32\uFE35-\uFE4C\uFE50-\uFE6F\uFE75\uFEFD-\uFF0F\uFF1A-\uFF20\uFF3B-\uFF3E\uFF40\uFF5B-\uFF65\uFFBF-\uFFC1\uFFC8\uFFC9\uFFD0\uFFD1\uFFD8\uFFD9\uFFDD-\uFFFF]|\uD800[\uDC0C\uDC27\uDC3B\uDC3E\uDC4E\uDC4F\uDC5E-\uDC7F\uDCFB-\uDD3F\uDD75-\uDDFC\uDDFE-\uDE7F\uDE9D-\uDE9F\uDED1-\uDEDF\uDEE1-\uDEFF\uDF20-\uDF2C\uDF4B-\uDF4F\uDF7B-\uDF7F\uDF9E\uDF9F\uDFC4-\uDFC7\uDFD0\uDFD6-\uDFFF]|\uD801[\uDC9E\uDC9F\uDCAA-\uDCAF\uDCD4-\uDCD7\uDCFC-\uDCFF\uDD28-\uDD2F\uDD64-\uDDFF\uDF37-\uDF3F\uDF56-\uDF5F\uDF68-\uDFFF]|\uD802[\uDC06\uDC07\uDC09\uDC36\uDC39-\uDC3B\uDC3D\uDC3E\uDC56-\uDC5F\uDC77-\uDC7F\uDC9F-\uDCDF\uDCF3\uDCF6-\uDCFF\uDD16-\uDD1F\uDD3A-\uDD7F\uDDB8-\uDDBD\uDDC0-\uDDFF\uDE04\uDE07-\uDE0B\uDE14\uDE18\uDE36\uDE37\uDE3B-\uDE3E\uDE40-\uDE5F\uDE7D-\uDE7F\uDE9D-\uDEBF\uDEC8\uDEE7-\uDEFF\uDF36-\uDF3F\uDF56-\uDF5F\uDF73-\uDF7F\uDF92-\uDFFF]|\uD803[\uDC49-\uDC7F\uDCB3-\uDCBF\uDCF3-\uDCFF\uDD28-\uDD2F\uDD3A-\uDEFF\uDF1D-\uDF26\uDF28-\uDF2F\uDF51-\uDFDF\uDFF7-\uDFFF]|\uD804[\uDC47-\uDC65\uDC70-\uDC7E\uDCBB-\uDCCF\uDCE9-\uDCEF\uDCFA-\uDCFF\uDD35\uDD40-\uDD43\uDD47-\uDD4F\uDD74\uDD75\uDD77-\uDD7F\uDDC5-\uDDC8\uDDCD-\uDDCF\uDDDB\uDDDD-\uDDFF\uDE12\uDE38-\uDE3D\uDE3F-\uDE7F\uDE87\uDE89\uDE8E\uDE9E\uDEA9-\uDEAF\uDEEB-\uDEEF\uDEFA-\uDEFF\uDF04\uDF0D\uDF0E\uDF11\uDF12\uDF29\uDF31\uDF34\uDF3A\uDF45\uDF46\uDF49\uDF4A\uDF4E\uDF4F\uDF51-\uDF56\uDF58-\uDF5C\uDF64\uDF65\uDF6D-\uDF6F\uDF75-\uDFFF]|\uD805[\uDC4B-\uDC4F\uDC5A-\uDC5D\uDC60-\uDC7F\uDCC6\uDCC8-\uDCCF\uDCDA-\uDD7F\uDDB6\uDDB7\uDDC1-\uDDD7\uDDDE-\uDDFF\uDE41-\uDE43\uDE45-\uDE4F\uDE5A-\uDE7F\uDEB9-\uDEBF\uDECA-\uDEFF\uDF1B\uDF1C\uDF2C-\uDF2F\uDF3A-\uDFFF]|\uD806[\uDC3B-\uDC9F\uDCEA-\uDCFE\uDD00-\uDD9F\uDDA8\uDDA9\uDDD8\uDDD9\uDDE2\uDDE5-\uDDFF\uDE3F-\uDE46\uDE48-\uDE4F\uDE9A-\uDE9C\uDE9E-\uDEBF\uDEF9-\uDFFF]|\uD807[\uDC09\uDC37\uDC41-\uDC4F\uDC5A-\uDC71\uDC90\uDC91\uDCA8\uDCB7-\uDCFF\uDD07\uDD0A\uDD37-\uDD39\uDD3B\uDD3E\uDD48-\uDD4F\uDD5A-\uDD5F\uDD66\uDD69\uDD8F\uDD92\uDD99-\uDD9F\uDDAA-\uDEDF\uDEF7-\uDFFF]|\uD808[\uDF9A-\uDFFF]|\uD809[\uDC6F-\uDC7F\uDD44-\uDFFF]|[\uD80A\uD80B\uD80E-\uD810\uD812-\uD819\uD823-\uD82B\uD82D\uD82E\uD830-\uD833\uD837\uD839\uD83D-\uD83F\uD87B-\uD87D\uD87F-\uDB3F\uDB41-\uDBFF][\uDC00-\uDFFF]|\uD80D[\uDC2F-\uDFFF]|\uD811[\uDE47-\uDFFF]|\uD81A[\uDE39-\uDE3F\uDE5F\uDE6A-\uDECF\uDEEE\uDEEF\uDEF5-\uDEFF\uDF37-\uDF3F\uDF44-\uDF4F\uDF5A-\uDF62\uDF78-\uDF7C\uDF90-\uDFFF]|\uD81B[\uDC00-\uDE3F\uDE80-\uDEFF\uDF4B-\uDF4E\uDF88-\uDF8E\uDFA0-\uDFDF\uDFE2\uDFE4-\uDFFF]|\uD821[\uDFF8-\uDFFF]|\uD822[\uDEF3-\uDFFF]|\uD82C[\uDD1F-\uDD4F\uDD53-\uDD63\uDD68-\uDD6F\uDEFC-\uDFFF]|\uD82F[\uDC6B-\uDC6F\uDC7D-\uDC7F\uDC89-\uDC8F\uDC9A-\uDC9C\uDC9F-\uDFFF]|\uD834[\uDC00-\uDD64\uDD6A-\uDD6C\uDD73-\uDD7A\uDD83\uDD84\uDD8C-\uDDA9\uDDAE-\uDE41\uDE45-\uDFFF]|\uD835[\uDC55\uDC9D\uDCA0\uDCA1\uDCA3\uDCA4\uDCA7\uDCA8\uDCAD\uDCBA\uDCBC\uDCC4\uDD06\uDD0B\uDD0C\uDD15\uDD1D\uDD3A\uDD3F\uDD45\uDD47-\uDD49\uDD51\uDEA6\uDEA7\uDEC1\uDEDB\uDEFB\uDF15\uDF35\uDF4F\uDF6F\uDF89\uDFA9\uDFC3\uDFCC\uDFCD]|\uD836[\uDC00-\uDDFF\uDE37-\uDE3A\uDE6D-\uDE74\uDE76-\uDE83\uDE85-\uDE9A\uDEA0\uDEB0-\uDFFF]|\uD838[\uDC07\uDC19\uDC1A\uDC22\uDC25\uDC2B-\uDCFF\uDD2D-\uDD2F\uDD3E\uDD3F\uDD4A-\uDD4D\uDD4F-\uDEBF\uDEFA-\uDFFF]|\uD83A[\uDCC5-\uDCCF\uDCD7-\uDCFF\uDD4C-\uDD4F\uDD5A-\uDFFF]|\uD83B[\uDC00-\uDDFF\uDE04\uDE20\uDE23\uDE25\uDE26\uDE28\uDE33\uDE38\uDE3A\uDE3C-\uDE41\uDE43-\uDE46\uDE48\uDE4A\uDE4C\uDE50\uDE53\uDE55\uDE56\uDE58\uDE5A\uDE5C\uDE5E\uDE60\uDE63\uDE65\uDE66\uDE6B\uDE73\uDE78\uDE7D\uDE7F\uDE8A\uDE9C-\uDEA0\uDEA4\uDEAA\uDEBC-\uDFFF]|\uD83C[\uDC00-\uDD2F\uDD4A-\uDD4F\uDD6A-\uDD6F\uDD8A-\uDFFF]|\uD869[\uDED7-\uDEFF]|\uD86D[\uDF35-\uDF3F]|\uD86E[\uDC1E\uDC1F]|\uD873[\uDEA2-\uDEAF]|\uD87A[\uDFE1-\uDFFF]|\uD87E[\uDE1E-\uDFFF]|\uDB40[\uDC00-\uDCFF\uDDF0-\uDFFF]/g
+
+},{}],99:[function(require,module,exports){
 'use strict'
 
 module.exports = convert
@@ -3259,7 +3261,7 @@ function element(node) {
   )
 }
 
-},{}],99:[function(require,module,exports){
+},{}],100:[function(require,module,exports){
 'use strict'
 
 var convert = require('./convert')
@@ -3296,11 +3298,11 @@ function isElement(node, test, index, parent, context) {
   return check.call(context, node, index, parent)
 }
 
-},{"./convert":98}],100:[function(require,module,exports){
+},{"./convert":99}],101:[function(require,module,exports){
 'use strict'
 module.exports = require('./lib')
 
-},{"./lib":102}],101:[function(require,module,exports){
+},{"./lib":103}],102:[function(require,module,exports){
 module.exports={
   "strip": [
     "script"
@@ -3529,7 +3531,7 @@ module.exports={
   }
 }
 
-},{}],102:[function(require,module,exports){
+},{}],103:[function(require,module,exports){
 'use strict'
 
 var xtend = require('xtend')
@@ -3905,9 +3907,9 @@ function data(prop) {
   return prop.length > 4 && prop.slice(0, 4).toLowerCase() === 'data'
 }
 
-},{"./github.json":101,"xtend":556}],103:[function(require,module,exports){
-arguments[4][100][0].apply(exports,arguments)
-},{"./lib":109,"dup":100}],104:[function(require,module,exports){
+},{"./github.json":102,"xtend":556}],104:[function(require,module,exports){
+arguments[4][101][0].apply(exports,arguments)
+},{"./lib":110,"dup":101}],105:[function(require,module,exports){
 'use strict'
 
 var one = require('./one')
@@ -3927,7 +3929,7 @@ function all(ctx, parent) {
   return results.join('')
 }
 
-},{"./one":117}],105:[function(require,module,exports){
+},{"./one":118}],106:[function(require,module,exports){
 'use strict'
 
 var xtend = require('xtend')
@@ -3946,7 +3948,7 @@ function serializeComment(ctx, node) {
   }
 }
 
-},{"stringify-entities":501,"xtend":556}],106:[function(require,module,exports){
+},{"stringify-entities":501,"xtend":556}],107:[function(require,module,exports){
 'use strict'
 
 // Maps of subsets.
@@ -3976,7 +3978,7 @@ module.exports = {
   ]
 }
 
-},{}],107:[function(require,module,exports){
+},{}],108:[function(require,module,exports){
 'use strict'
 
 var xtend = require('xtend')
@@ -4020,7 +4022,7 @@ function quote(ctx, value) {
   )
 }
 
-},{"ccount":6,"stringify-entities":501,"xtend":556}],108:[function(require,module,exports){
+},{"ccount":6,"stringify-entities":501,"xtend":556}],109:[function(require,module,exports){
 'use strict'
 
 var xtend = require('xtend')
@@ -4043,13 +4045,15 @@ function serializeElement(ctx, node, index, parent) {
     schema.space === 'svg'
       ? ctx.closeEmpty
       : ctx.voids.indexOf(node.tagName.toLowerCase()) > -1
-  var attrs = serializeAttributes(ctx, node.properties)
+  var attrs
   var content
   var last
 
   if (schema.space === 'html' && node.tagName === 'svg') {
     ctx.schema = svg
   }
+
+  attrs = serializeAttributes(ctx, node.properties)
 
   content = all(
     ctx,
@@ -4218,7 +4222,7 @@ function serializeAttribute(ctx, key, value) {
   return name + (result ? '=' + result : result)
 }
 
-},{"./all":104,"./constants":106,"ccount":6,"comma-separated-tokens":11,"property-information/find":377,"property-information/svg":394,"space-separated-tokens":495,"stringify-entities":501,"xtend":556}],109:[function(require,module,exports){
+},{"./all":105,"./constants":107,"ccount":6,"comma-separated-tokens":11,"property-information/find":378,"property-information/svg":395,"space-separated-tokens":496,"stringify-entities":501,"xtend":556}],110:[function(require,module,exports){
 'use strict'
 
 var html = require('property-information/html')
@@ -4276,7 +4280,7 @@ function toHtml(node, options) {
   )
 }
 
-},{"./omission":111,"./one":117,"html-void-elements":314,"property-information/html":378,"property-information/svg":394}],110:[function(require,module,exports){
+},{"./omission":112,"./one":118,"html-void-elements":315,"property-information/html":379,"property-information/svg":395}],111:[function(require,module,exports){
 'use strict'
 
 var element = require('hast-util-is-element')
@@ -4446,12 +4450,12 @@ function cells(node, index, parent) {
   return !next || element(next, ['td', 'th'])
 }
 
-},{"./omission":112,"./util/comment":114,"./util/siblings":115,"./util/white-space-start":116,"hast-util-is-element":99}],111:[function(require,module,exports){
+},{"./omission":113,"./util/comment":115,"./util/siblings":116,"./util/white-space-start":117,"hast-util-is-element":100}],112:[function(require,module,exports){
 'use strict'
 exports.opening = require('./opening')
 exports.closing = require('./closing')
 
-},{"./closing":110,"./opening":113}],112:[function(require,module,exports){
+},{"./closing":111,"./opening":114}],113:[function(require,module,exports){
 'use strict'
 
 module.exports = omission
@@ -4471,7 +4475,7 @@ function omission(handlers) {
   }
 }
 
-},{}],113:[function(require,module,exports){
+},{}],114:[function(require,module,exports){
 'use strict'
 
 var element = require('hast-util-is-element')
@@ -4558,14 +4562,14 @@ function tbody(node, index, parent) {
   return head && element(head, 'tr')
 }
 
-},{"./closing":110,"./omission":112,"./util/comment":114,"./util/siblings":115,"./util/white-space-start":116,"hast-util-is-element":99}],114:[function(require,module,exports){
+},{"./closing":111,"./omission":113,"./util/comment":115,"./util/siblings":116,"./util/white-space-start":117,"hast-util-is-element":100}],115:[function(require,module,exports){
 'use strict'
 
 var convert = require('unist-util-is/convert')
 
 module.exports = convert('comment')
 
-},{"unist-util-is/convert":536}],115:[function(require,module,exports){
+},{"unist-util-is/convert":536}],116:[function(require,module,exports){
 'use strict'
 
 var whiteSpace = require('hast-util-whitespace')
@@ -4594,7 +4598,7 @@ function siblings(increment) {
   }
 }
 
-},{"hast-util-whitespace":120}],116:[function(require,module,exports){
+},{"hast-util-whitespace":121}],117:[function(require,module,exports){
 'use strict'
 
 var convert = require('unist-util-is/convert')
@@ -4609,7 +4613,7 @@ function whiteSpaceStart(node) {
   return isText(node) && whiteSpace(node.value.charAt(0))
 }
 
-},{"hast-util-whitespace":120,"unist-util-is/convert":536}],117:[function(require,module,exports){
+},{"hast-util-whitespace":121,"unist-util-is/convert":536}],118:[function(require,module,exports){
 'use strict'
 
 module.exports = serialize
@@ -4637,7 +4641,7 @@ function serialize(ctx, node, index, parent) {
   return handlers[node.type](ctx, node, index, parent)
 }
 
-},{"./all":104,"./comment":105,"./doctype":107,"./element":108,"./raw":118,"./text":119}],118:[function(require,module,exports){
+},{"./all":105,"./comment":106,"./doctype":108,"./element":109,"./raw":119,"./text":120}],119:[function(require,module,exports){
 'use strict'
 
 var text = require('./text')
@@ -4648,7 +4652,7 @@ function serializeRaw(ctx, node) {
   return ctx.dangerous ? node.value : text(ctx, node)
 }
 
-},{"./text":119}],119:[function(require,module,exports){
+},{"./text":120}],120:[function(require,module,exports){
 'use strict'
 
 var xtend = require('xtend')
@@ -4663,7 +4667,7 @@ function serializeText(ctx, node, index, parent) {
     : entities(node.value, xtend(ctx.entities, {subset: ['<', '&']}))
 }
 
-},{"stringify-entities":501,"xtend":556}],120:[function(require,module,exports){
+},{"stringify-entities":501,"xtend":556}],121:[function(require,module,exports){
 'use strict'
 
 module.exports = interElementWhiteSpace
@@ -4686,7 +4690,7 @@ function interElementWhiteSpace(node) {
   return value.replace(re, '') === ''
 }
 
-},{}],121:[function(require,module,exports){
+},{}],122:[function(require,module,exports){
 function deepFreeze(obj) {
     if (obj instanceof Map) {
         obj.clear = obj.delete = obj.set = function () {
@@ -4717,6 +4721,7 @@ var deepFreezeEs6 = deepFreeze;
 var _default = deepFreeze;
 deepFreezeEs6.default = _default;
 
+/** @implements CallbackResponse */
 class Response {
   /**
    * @param {CompiledMode} mode
@@ -4726,10 +4731,11 @@ class Response {
     if (mode.data === undefined) mode.data = {};
 
     this.data = mode.data;
+    this.isMatchIgnored = false;
   }
 
   ignoreMatch() {
-    this.ignore = true;
+    this.isMatchIgnored = true;
   }
 }
 
@@ -5076,6 +5082,15 @@ function startsWith(re, lexeme) {
   return match && match.index === 0;
 }
 
+// BACKREF_RE matches an open parenthesis or backreference. To avoid
+// an incorrect parse, it additionally matches the following:
+// - [...] elements, where the meaning of parentheses and escapes change
+// - other escape sequences, so we do not misparse escape sequences as
+//   interesting elements
+// - non-matching or lookahead parentheses, which do not capture. These
+//   follow the '(' with a '?'.
+const BACKREF_RE = /\[(?:[^\\\]]|\\.)*\]|\(\??|\\([1-9][0-9]*)|\\./;
+
 // join logically computes regexps.join(separator), but fixes the
 // backreferences so they continue to match.
 // it also places each individual regular expression into it's own
@@ -5087,48 +5102,38 @@ function startsWith(re, lexeme) {
  * @returns {string}
  */
 function join(regexps, separator = "|") {
-  // backreferenceRe matches an open parenthesis or backreference. To avoid
-  // an incorrect parse, it additionally matches the following:
-  // - [...] elements, where the meaning of parentheses and escapes change
-  // - other escape sequences, so we do not misparse escape sequences as
-  //   interesting elements
-  // - non-matching or lookahead parentheses, which do not capture. These
-  //   follow the '(' with a '?'.
-  const backreferenceRe = /\[(?:[^\\\]]|\\.)*\]|\(\??|\\([1-9][0-9]*)|\\./;
   let numCaptures = 0;
-  let ret = '';
-  for (let i = 0; i < regexps.length; i++) {
+
+  return regexps.map((regex) => {
     numCaptures += 1;
     const offset = numCaptures;
-    let re = source(regexps[i]);
-    if (i > 0) {
-      ret += separator;
-    }
-    ret += "(";
+    let re = source(regex);
+    let out = '';
+
     while (re.length > 0) {
-      const match = backreferenceRe.exec(re);
-      if (match == null) {
-        ret += re;
+      const match = BACKREF_RE.exec(re);
+      if (!match) {
+        out += re;
         break;
       }
-      ret += re.substring(0, match.index);
+      out += re.substring(0, match.index);
       re = re.substring(match.index + match[0].length);
       if (match[0][0] === '\\' && match[1]) {
         // Adjust the backreference.
-        ret += '\\' + String(Number(match[1]) + offset);
+        out += '\\' + String(Number(match[1]) + offset);
       } else {
-        ret += match[0];
+        out += match[0];
         if (match[0] === '(') {
           numCaptures++;
         }
       }
     }
-    ret += ")";
-  }
-  return ret;
+    return out;
+  }).map(re => `(${re})`).join(separator);
 }
 
 // Common regexps
+const MATCH_NOTHING_RE = /\b\B/;
 const IDENT_RE = '[a-zA-Z]\\w*';
 const UNDERSCORE_IDENT_RE = '[a-zA-Z_]\\w*';
 const NUMBER_RE = '\\b\\d+(\\.\\d+)?';
@@ -5297,6 +5302,7 @@ const END_SAME_AS_BEGIN = function(mode) {
 
 var MODES = /*#__PURE__*/Object.freeze({
     __proto__: null,
+    MATCH_NOTHING_RE: MATCH_NOTHING_RE,
     IDENT_RE: IDENT_RE,
     UNDERSCORE_IDENT_RE: UNDERSCORE_IDENT_RE,
     NUMBER_RE: NUMBER_RE,
@@ -5372,6 +5378,11 @@ function beginKeywords(mode, parent) {
   mode.__beforeBegin = skipIfhasPrecedingDot;
   mode.keywords = mode.keywords || mode.beginKeywords;
   delete mode.beginKeywords;
+
+  // prevents double relevance, the keywords themselves provide
+  // relevance, the mode doesn't need to double it
+  // eslint-disable-next-line no-undefined
+  if (mode.relevance === undefined) mode.relevance = 0;
 }
 
 /**
@@ -5420,21 +5431,31 @@ const COMMON_KEYWORDS = [
   'value' // common variable name
 ];
 
+const DEFAULT_KEYWORD_CLASSNAME = "keyword";
+
 /**
  * Given raw keywords from a language definition, compile them.
  *
- * @param {string | Record<string,string>} rawKeywords
+ * @param {string | Record<string,string|string[]> | Array<string>} rawKeywords
  * @param {boolean} caseInsensitive
  */
-function compileKeywords(rawKeywords, caseInsensitive) {
+function compileKeywords(rawKeywords, caseInsensitive, className = DEFAULT_KEYWORD_CLASSNAME) {
   /** @type KeywordDict */
   const compiledKeywords = {};
 
-  if (typeof rawKeywords === 'string') { // string
-    splitAndCompile('keyword', rawKeywords);
+  // input can be a string of keywords, an array of keywords, or a object with
+  // named keys representing className (which can then point to a string or array)
+  if (typeof rawKeywords === 'string') {
+    compileList(className, rawKeywords.split(" "));
+  } else if (Array.isArray(rawKeywords)) {
+    compileList(className, rawKeywords);
   } else {
     Object.keys(rawKeywords).forEach(function(className) {
-      splitAndCompile(className, rawKeywords[className]);
+      // collapse all our objects back into the parent object
+      Object.assign(
+        compiledKeywords,
+        compileKeywords(rawKeywords[className], caseInsensitive, className)
+      );
     });
   }
   return compiledKeywords;
@@ -5447,13 +5468,13 @@ function compileKeywords(rawKeywords, caseInsensitive) {
    * Ex: "for if when while|5"
    *
    * @param {string} className
-   * @param {string} keywordList
+   * @param {Array<string>} keywordList
    */
-  function splitAndCompile(className, keywordList) {
+  function compileList(className, keywordList) {
     if (caseInsensitive) {
-      keywordList = keywordList.toLowerCase();
+      keywordList = keywordList.map(x => x.toLowerCase());
     }
-    keywordList.split(' ').forEach(function(keyword) {
+    keywordList.forEach(function(keyword) {
       const pair = keyword.split('|');
       compiledKeywords[pair[0]] = [className, scoreForKeyword(pair[0], pair[1])];
     });
@@ -5759,7 +5780,7 @@ function compileLanguage(language, { plugins }) {
    */
   function compileMode(mode, parent) {
     const cmode = /** @type CompiledMode */ (mode);
-    if (mode.compiled) return cmode;
+    if (mode.isCompiled) return cmode;
 
     [
       // do this early so compiler extensions generally don't have to worry about
@@ -5781,7 +5802,7 @@ function compileLanguage(language, { plugins }) {
       compileRelevance
     ].forEach(ext => ext(mode, parent));
 
-    mode.compiled = true;
+    mode.isCompiled = true;
 
     let keywordPattern = null;
     if (typeof mode.keywords === "object") {
@@ -5900,7 +5921,7 @@ function expandOrCloneMode(mode) {
   return mode;
 }
 
-var version = "10.5.0";
+var version = "10.7.3";
 
 // @ts-nocheck
 
@@ -5974,8 +5995,8 @@ function BuildVuePlugin(hljs) {
 
 /** @type {HLJSPlugin} */
 const mergeHTMLPlugin = {
-  "after:highlightBlock": ({ block, result, text }) => {
-    const originalStream = nodeStream(block);
+  "after:highlightElement": ({ el, result, text }) => {
+    const originalStream = nodeStream(el);
     if (!originalStream.length) return;
 
     const resultNode = document.createElement('div');
@@ -6133,6 +6154,11 @@ https://github.com/highlightjs/highlight.js/issues/2880#issuecomment-747275419
 */
 
 /**
+ * @type {Record<string, boolean>}
+ */
+const seenDeprecations = {};
+
+/**
  * @param {string} message
  */
 const error = (message) => {
@@ -6152,7 +6178,10 @@ const warn = (message, ...args) => {
  * @param {string} message
  */
 const deprecated = (version, message) => {
+  if (seenDeprecations[`${version}/${message}`]) return;
+
   console.log(`Deprecated as of ${version}. ${message}`);
+  seenDeprecations[`${version}/${message}`] = true;
 };
 
 /*
@@ -6237,8 +6266,14 @@ const HLJS = function(hljs) {
   /**
    * Core highlighting function.
    *
-   * @param {string} languageName - the language to use for highlighting
-   * @param {string} code - the code to highlight
+   * OLD API
+   * highlight(lang, code, ignoreIllegals, continuation)
+   *
+   * NEW API
+   * highlight(code, {lang, ignoreIllegals})
+   *
+   * @param {string} codeOrlanguageName - the language to use for highlighting
+   * @param {string | HighlightOptions} optionsOrCode - the code to highlight
    * @param {boolean} [ignoreIllegals] - whether to ignore illegal matches, default is to bail
    * @param {CompiledMode} [continuation] - current continuation mode, if any
    *
@@ -6250,7 +6285,24 @@ const HLJS = function(hljs) {
    * @property {CompiledMode} top - top of the current mode stack
    * @property {boolean} illegal - indicates whether any illegal matches were found
   */
-  function highlight(languageName, code, ignoreIllegals, continuation) {
+  function highlight(codeOrlanguageName, optionsOrCode, ignoreIllegals, continuation) {
+    let code = "";
+    let languageName = "";
+    if (typeof optionsOrCode === "object") {
+      code = codeOrlanguageName;
+      ignoreIllegals = optionsOrCode.ignoreIllegals;
+      languageName = optionsOrCode.language;
+      // continuation not supported at all via the new API
+      // eslint-disable-next-line no-undefined
+      continuation = undefined;
+    } else {
+      // old API
+      deprecated("10.7.0", "highlight(lang, code, ...args) has been deprecated.");
+      deprecated("10.7.0", "Please use highlight(code, options) instead.\nhttps://github.com/highlightjs/highlight.js/issues/2277");
+      languageName = codeOrlanguageName;
+      code = optionsOrCode;
+    }
+
     /** @type {BeforeHighlightContext} */
     const context = {
       code,
@@ -6262,9 +6314,9 @@ const HLJS = function(hljs) {
 
     // a before plugin can usurp the result completely by providing it's own
     // in which case we don't even need to call highlight
-    const result = context.result ?
-      context.result :
-      _highlight(context.language, context.code, ignoreIllegals, continuation);
+    const result = context.result
+      ? context.result
+      : _highlight(context.language, context.code, ignoreIllegals, continuation);
 
     result.code = context.code;
     // the plugin can change anything in result to suite it
@@ -6277,14 +6329,12 @@ const HLJS = function(hljs) {
    * private highlight that's used internally and does not fire callbacks
    *
    * @param {string} languageName - the language to use for highlighting
-   * @param {string} code - the code to highlight
-   * @param {boolean} [ignoreIllegals] - whether to ignore illegal matches, default is to bail
-   * @param {CompiledMode} [continuation] - current continuation mode, if any
+   * @param {string} codeToHighlight - the code to highlight
+   * @param {boolean?} [ignoreIllegals] - whether to ignore illegal matches, default is to bail
+   * @param {CompiledMode?} [continuation] - current continuation mode, if any
    * @returns {HighlightResult} - result of the highlight operation
   */
-  function _highlight(languageName, code, ignoreIllegals, continuation) {
-    const codeToHighlight = code;
-
+  function _highlight(languageName, codeToHighlight, ignoreIllegals, continuation) {
     /**
      * Return keyword data if a match is a keyword
      * @param {CompiledMode} mode - current mode
@@ -6316,8 +6366,14 @@ const HLJS = function(hljs) {
           buf = "";
 
           relevance += keywordRelevance;
-          const cssClass = language.classNameAliases[kind] || kind;
-          emitter.addKeyword(match[0], cssClass);
+          if (kind.startsWith("_")) {
+            // _ implied for relevance only, do not highlight
+            // by applying a class name
+            buf += match[0];
+          } else {
+            const cssClass = language.classNameAliases[kind] || kind;
+            emitter.addKeyword(match[0], cssClass);
+          }
         } else {
           buf += match[0];
         }
@@ -6387,7 +6443,7 @@ const HLJS = function(hljs) {
         if (mode["on:end"]) {
           const resp = new Response(mode);
           mode["on:end"](match, resp);
-          if (resp.ignore) matched = false;
+          if (resp.isMatchIgnored) matched = false;
         }
 
         if (matched) {
@@ -6439,7 +6495,7 @@ const HLJS = function(hljs) {
       for (const cb of beforeCallbacks) {
         if (!cb) continue;
         cb(match, resp);
-        if (resp.ignore) return doIgnore(lexeme);
+        if (resp.isMatchIgnored) return doIgnore(lexeme);
       }
 
       if (newMode && newMode.endSameAsBegin) {
@@ -6652,7 +6708,9 @@ const HLJS = function(hljs) {
       result = emitter.toHTML();
 
       return {
-        relevance: relevance,
+        // avoid possible breakage with v10 clients expecting
+        // this to always be an integer
+        relevance: Math.floor(relevance),
         value: result,
         language: languageName,
         illegal: false,
@@ -6801,12 +6859,12 @@ const HLJS = function(hljs) {
 
   /** @type {HLJSPlugin} */
   const brPlugin = {
-    "before:highlightBlock": ({ block }) => {
+    "before:highlightElement": ({ el }) => {
       if (options.useBR) {
-        block.innerHTML = block.innerHTML.replace(/\n/g, '').replace(/<br[ /]*>/g, '\n');
+        el.innerHTML = el.innerHTML.replace(/\n/g, '').replace(/<br[ /]*>/g, '\n');
       }
     },
-    "after:highlightBlock": ({ result }) => {
+    "after:highlightElement": ({ result }) => {
       if (options.useBR) {
         result.value = result.value.replace(/\n/g, "<br>");
       }
@@ -6816,7 +6874,7 @@ const HLJS = function(hljs) {
   const TAB_REPLACE_RE = /^(<[^>]+>|\t)+/gm;
   /** @type {HLJSPlugin} */
   const tabReplacePlugin = {
-    "after:highlightBlock": ({ result }) => {
+    "after:highlightElement": ({ result }) => {
       if (options.tabReplace) {
         result.value = result.value.replace(TAB_REPLACE_RE, (m) =>
           m.replace(/\t/g, options.tabReplace)
@@ -6831,21 +6889,23 @@ const HLJS = function(hljs) {
    *
    * @param {HighlightedHTMLElement} element - the HTML element to highlight
   */
-  function highlightBlock(element) {
+  function highlightElement(element) {
     /** @type HTMLElement */
     let node = null;
     const language = blockLanguage(element);
 
     if (shouldNotHighlight(language)) return;
 
-    fire("before:highlightBlock",
-      { block: element, language: language });
+    // support for v10 API
+    fire("before:highlightElement",
+      { el: element, language: language });
 
     node = element;
     const text = node.textContent;
-    const result = language ? highlight(language, text, true) : highlightAuto(text);
+    const result = language ? highlight(text, { language, ignoreIllegals: true }) : highlightAuto(text);
 
-    fire("after:highlightBlock", { block: element, result, text });
+    // support for v10 API
+    fire("after:highlightElement", { el: element, result, text });
 
     element.innerHTML = result.value;
     updateClassName(element, language, result.language);
@@ -6883,18 +6943,48 @@ const HLJS = function(hljs) {
    *
    * @type {Function & {called?: boolean}}
    */
+  // TODO: remove v12, deprecated
   const initHighlighting = () => {
     if (initHighlighting.called) return;
     initHighlighting.called = true;
 
+    deprecated("10.6.0", "initHighlighting() is deprecated.  Use highlightAll() instead.");
+
     const blocks = document.querySelectorAll('pre code');
-    blocks.forEach(highlightBlock);
+    blocks.forEach(highlightElement);
   };
 
   // Higlights all when DOMContentLoaded fires
+  // TODO: remove v12, deprecated
   function initHighlightingOnLoad() {
-    // @ts-ignore
-    window.addEventListener('DOMContentLoaded', initHighlighting, false);
+    deprecated("10.6.0", "initHighlightingOnLoad() is deprecated.  Use highlightAll() instead.");
+    wantsHighlight = true;
+  }
+
+  let wantsHighlight = false;
+
+  /**
+   * auto-highlights all pre>code elements on the page
+   */
+  function highlightAll() {
+    // if we are called too early in the loading process
+    if (document.readyState === "loading") {
+      wantsHighlight = true;
+      return;
+    }
+
+    const blocks = document.querySelectorAll('pre code');
+    blocks.forEach(highlightElement);
+  }
+
+  function boot() {
+    // if a highlight was requested before DOM was loaded, do now
+    if (wantsHighlight) highlightAll();
+  }
+
+  // make sure we are in the browser environment
+  if (typeof window !== 'undefined' && window.addEventListener) {
+    window.addEventListener('DOMContentLoaded', boot, false);
   }
 
   /**
@@ -6924,6 +7014,20 @@ const HLJS = function(hljs) {
 
     if (lang.aliases) {
       registerAliases(lang.aliases, { languageName });
+    }
+  }
+
+  /**
+   * Remove a language grammar module
+   *
+   * @param {string} languageName
+   */
+  function unregisterLanguage(languageName) {
+    delete languages[languageName];
+    for (const alias of Object.keys(aliases)) {
+      if (aliases[alias] === languageName) {
+        delete aliases[alias];
+      }
     }
   }
 
@@ -6972,7 +7076,7 @@ const HLJS = function(hljs) {
     if (typeof aliasList === 'string') {
       aliasList = [aliasList];
     }
-    aliasList.forEach(alias => { aliases[alias] = languageName; });
+    aliasList.forEach(alias => { aliases[alias.toLowerCase()] = languageName; });
   }
 
   /**
@@ -6985,9 +7089,33 @@ const HLJS = function(hljs) {
   }
 
   /**
+   * Upgrades the old highlightBlock plugins to the new
+   * highlightElement API
+   * @param {HLJSPlugin} plugin
+   */
+  function upgradePluginAPI(plugin) {
+    // TODO: remove with v12
+    if (plugin["before:highlightBlock"] && !plugin["before:highlightElement"]) {
+      plugin["before:highlightElement"] = (data) => {
+        plugin["before:highlightBlock"](
+          Object.assign({ block: data.el }, data)
+        );
+      };
+    }
+    if (plugin["after:highlightBlock"] && !plugin["after:highlightElement"]) {
+      plugin["after:highlightElement"] = (data) => {
+        plugin["after:highlightBlock"](
+          Object.assign({ block: data.el }, data)
+        );
+      };
+    }
+  }
+
+  /**
    * @param {HLJSPlugin} plugin
    */
   function addPlugin(plugin) {
+    upgradePluginAPI(plugin);
     plugins.push(plugin);
   }
 
@@ -7018,16 +7146,31 @@ const HLJS = function(hljs) {
     return fixMarkup(arg);
   }
 
+  /**
+   *
+   * @param {HighlightedHTMLElement} el
+   */
+  function deprecateHighlightBlock(el) {
+    deprecated("10.7.0", "highlightBlock will be removed entirely in v12.0");
+    deprecated("10.7.0", "Please use highlightElement now.");
+
+    return highlightElement(el);
+  }
+
   /* Interface definition */
   Object.assign(hljs, {
     highlight,
     highlightAuto,
+    highlightAll,
     fixMarkup: deprecateFixMarkup,
-    highlightBlock,
+    highlightElement,
+    // TODO: Remove with v12 API
+    highlightBlock: deprecateHighlightBlock,
     configure,
     initHighlighting,
     initHighlightingOnLoad,
     registerLanguage,
+    unregisterLanguage,
     listLanguages,
     getLanguage,
     registerAliases,
@@ -7066,7 +7209,7 @@ var highlight = HLJS({});
 
 module.exports = highlight;
 
-},{}],122:[function(require,module,exports){
+},{}],123:[function(require,module,exports){
 /*
 Language: 1C:Enterprise
 Author: Stanislav Belov <stbelov@gmail.com>
@@ -7589,7 +7732,7 @@ function _1c(hljs) {
 
 module.exports = _1c;
 
-},{}],123:[function(require,module,exports){
+},{}],124:[function(require,module,exports){
 /**
  * @param {string} value
  * @returns {RegExp}
@@ -7678,7 +7821,7 @@ function abnf(hljs) {
   return {
     name: 'Augmented Backus-Naur Form',
     illegal: regexes.unexpectedChars,
-    keywords: keywords.join(" "),
+    keywords: keywords,
     contains: [
       ruleDeclarationMode,
       commentMode,
@@ -7694,7 +7837,7 @@ function abnf(hljs) {
 
 module.exports = abnf;
 
-},{}],124:[function(require,module,exports){
+},{}],125:[function(require,module,exports){
 /**
  * @param {string} value
  * @returns {RegExp}
@@ -7774,7 +7917,7 @@ function accesslog(_hljs) {
         className: 'string',
         begin: concat(/"/, either(...HTTP_VERBS)),
         end: /"/,
-        keywords: HTTP_VERBS.join(" "),
+        keywords: HTTP_VERBS,
         illegal: /\n/,
         relevance: 5,
         contains: [
@@ -7823,7 +7966,7 @@ function accesslog(_hljs) {
 
 module.exports = accesslog;
 
-},{}],125:[function(require,module,exports){
+},{}],126:[function(require,module,exports){
 /**
  * @param {string} value
  * @returns {RegExp}
@@ -7938,7 +8081,7 @@ function actionscript(hljs) {
 
 module.exports = actionscript;
 
-},{}],126:[function(require,module,exports){
+},{}],127:[function(require,module,exports){
 /*
 Language: Ada
 Author: Lars Schulna <kartoffelbrei.mit.muskatnuss@gmail.org>
@@ -8134,7 +8277,7 @@ function ada(hljs) {
 
 module.exports = ada;
 
-},{}],127:[function(require,module,exports){
+},{}],128:[function(require,module,exports){
 /*
 Language: AngelScript
 Author: Melissa Geels <melissa@nimble.tools>
@@ -8259,7 +8402,7 @@ function angelscript(hljs) {
 
 module.exports = angelscript;
 
-},{}],128:[function(require,module,exports){
+},{}],129:[function(require,module,exports){
 /*
 Language: Apache config
 Author: Ruslan Keba <rukeba@gmail.com>
@@ -8350,7 +8493,7 @@ function apache(hljs) {
 
 module.exports = apache;
 
-},{}],129:[function(require,module,exports){
+},{}],130:[function(require,module,exports){
 /**
  * @param {string} value
  * @returns {RegExp}
@@ -8541,7 +8684,7 @@ function applescript(hljs) {
 
 module.exports = applescript;
 
-},{}],130:[function(require,module,exports){
+},{}],131:[function(require,module,exports){
 /*
  Language: ArcGIS Arcade
  Category: scripting
@@ -8620,7 +8763,6 @@ function arcade(hljs) {
 
   return {
     name: 'ArcGIS Arcade',
-    aliases: ['arcade'],
     keywords: KEYWORDS,
     contains: [
       hljs.APOS_STRING_MODE,
@@ -8709,7 +8851,7 @@ function arcade(hljs) {
 
 module.exports = arcade;
 
-},{}],131:[function(require,module,exports){
+},{}],132:[function(require,module,exports){
 /**
  * @param {string} value
  * @returns {RegExp}
@@ -8730,6 +8872,14 @@ function source(re) {
  * @param {RegExp | string } re
  * @returns {string}
  */
+function lookahead(re) {
+  return concat('(?=', re, ')');
+}
+
+/**
+ * @param {RegExp | string } re
+ * @returns {string}
+ */
 function optional(re) {
   return concat('(', re, ')?');
 }
@@ -8744,13 +8894,13 @@ function concat(...args) {
 }
 
 /*
-Language: C-like foundation grammar for C/C++ grammars
-Author: Ivan Sagalaev <maniac@softwaremaniacs.org>
-Contributors: Evgeny Stepanischev <imbolk@gmail.com>, Zaven Muradyan <megalivoithos@gmail.com>, Roel Deckers <admin@codingcat.nl>, Sam Wu <samsam2310@gmail.com>, Jordi Petit <jordi.petit@gmail.com>, Pieter Vantorre <pietervantorre@gmail.com>, Google Inc. (David Benjamin) <davidben@google.com>
+Language: C++
+Category: common, system
+Website: https://isocpp.org
 */
 
 /** @type LanguageFn */
-function cLike(hljs) {
+function cPlusPlus(hljs) {
   // added for historic reasons because `hljs.C_LINE_COMMENT_MODE` does
   // not include such support nor can we be sure all the grammars depending
   // on it would desire this behavior
@@ -8833,9 +8983,7 @@ function cLike(hljs) {
       }),
       {
         className: 'meta-string',
-        begin: /<.*?>/,
-        end: /$/,
-        illegal: '\\n'
+        begin: /<.*?>/
       },
       C_LINE_COMMENT_MODE,
       hljs.C_BLOCK_COMMENT_MODE
@@ -8850,6 +8998,122 @@ function cLike(hljs) {
 
   const FUNCTION_TITLE = optional(NAMESPACE_RE) + hljs.IDENT_RE + '\\s*\\(';
 
+  const COMMON_CPP_HINTS = [
+    'asin',
+    'atan2',
+    'atan',
+    'calloc',
+    'ceil',
+    'cosh',
+    'cos',
+    'exit',
+    'exp',
+    'fabs',
+    'floor',
+    'fmod',
+    'fprintf',
+    'fputs',
+    'free',
+    'frexp',
+    'auto_ptr',
+    'deque',
+    'list',
+    'queue',
+    'stack',
+    'vector',
+    'map',
+    'set',
+    'pair',
+    'bitset',
+    'multiset',
+    'multimap',
+    'unordered_set',
+    'fscanf',
+    'future',
+    'isalnum',
+    'isalpha',
+    'iscntrl',
+    'isdigit',
+    'isgraph',
+    'islower',
+    'isprint',
+    'ispunct',
+    'isspace',
+    'isupper',
+    'isxdigit',
+    'tolower',
+    'toupper',
+    'labs',
+    'ldexp',
+    'log10',
+    'log',
+    'malloc',
+    'realloc',
+    'memchr',
+    'memcmp',
+    'memcpy',
+    'memset',
+    'modf',
+    'pow',
+    'printf',
+    'putchar',
+    'puts',
+    'scanf',
+    'sinh',
+    'sin',
+    'snprintf',
+    'sprintf',
+    'sqrt',
+    'sscanf',
+    'strcat',
+    'strchr',
+    'strcmp',
+    'strcpy',
+    'strcspn',
+    'strlen',
+    'strncat',
+    'strncmp',
+    'strncpy',
+    'strpbrk',
+    'strrchr',
+    'strspn',
+    'strstr',
+    'tanh',
+    'tan',
+    'unordered_map',
+    'unordered_multiset',
+    'unordered_multimap',
+    'priority_queue',
+    'make_pair',
+    'array',
+    'shared_ptr',
+    'abort',
+    'terminate',
+    'abs',
+    'acos',
+    'vfprintf',
+    'vprintf',
+    'vsprintf',
+    'endl',
+    'initializer_list',
+    'unique_ptr',
+    'complex',
+    'imaginary',
+    'std',
+    'string',
+    'wstring',
+    'cin',
+    'cout',
+    'cerr',
+    'clog',
+    'stdin',
+    'stdout',
+    'stderr',
+    'stringstream',
+    'istringstream',
+    'ostringstream'
+  ];
+
   const CPP_KEYWORDS = {
     keyword: 'int float while private char char8_t char16_t char32_t catch import module export virtual operator sizeof ' +
       'dynamic_cast|10 typedef const_cast|10 const for static_cast|10 union namespace ' +
@@ -8863,19 +9127,27 @@ function cLike(hljs) {
       'atomic_uchar atomic_short atomic_ushort atomic_int atomic_uint atomic_long atomic_ulong atomic_llong ' +
       'atomic_ullong new throw return ' +
       'and and_eq bitand bitor compl not not_eq or or_eq xor xor_eq',
-    built_in: 'std string wstring cin cout cerr clog stdin stdout stderr stringstream istringstream ostringstream ' +
-      'auto_ptr deque list queue stack vector map set pair bitset multiset multimap unordered_set ' +
-      'unordered_map unordered_multiset unordered_multimap priority_queue make_pair array shared_ptr abort terminate abs acos ' +
-      'asin atan2 atan calloc ceil cosh cos exit exp fabs floor fmod fprintf fputs free frexp ' +
-      'fscanf future isalnum isalpha iscntrl isdigit isgraph islower isprint ispunct isspace isupper ' +
-      'isxdigit tolower toupper labs ldexp log10 log malloc realloc memchr memcmp memcpy memset modf pow ' +
-      'printf putchar puts scanf sinh sin snprintf sprintf sqrt sscanf strcat strchr strcmp ' +
-      'strcpy strcspn strlen strncat strncmp strncpy strpbrk strrchr strspn strstr tanh tan ' +
-      'vfprintf vprintf vsprintf endl initializer_list unique_ptr _Bool complex _Complex imaginary _Imaginary',
+    built_in: '_Bool _Complex _Imaginary',
+    _relevance_hints: COMMON_CPP_HINTS,
     literal: 'true false nullptr NULL'
   };
 
+  const FUNCTION_DISPATCH = {
+    className: "function.dispatch",
+    relevance: 0,
+    keywords: CPP_KEYWORDS,
+    begin: concat(
+      /\b/,
+      /(?!decltype)/,
+      /(?!if)/,
+      /(?!for)/,
+      /(?!while)/,
+      hljs.IDENT_RE,
+      lookahead(/\s*\(/))
+  };
+
   const EXPRESSION_CONTAINS = [
+    FUNCTION_DISPATCH,
     PREPROCESSOR,
     CPP_PRIMITIVE_TYPES,
     C_LINE_COMMENT_MODE,
@@ -8883,6 +9155,7 @@ function cLike(hljs) {
     NUMBERS,
     STRINGS
   ];
+
 
   const EXPRESSION_CONTEXT = {
     // This mode covers expression context where we can't expect a function
@@ -8935,6 +9208,21 @@ function cLike(hljs) {
         contains: [ TITLE_MODE ],
         relevance: 0
       },
+      // needed because we do not have look-behind on the below rule
+      // to prevent it from grabbing the final : in a :: pair
+      {
+        begin: /::/,
+        relevance: 0
+      },
+      // initializers
+      {
+        begin: /:/,
+        endsWithParent: true,
+        contains: [
+          STRINGS,
+          NUMBERS
+        ]
+      },
       {
         className: 'params',
         begin: /\(/,
@@ -8972,10 +9260,9 @@ function cLike(hljs) {
   };
 
   return {
+    name: 'C++',
     aliases: [
-      'c',
       'cc',
-      'h',
       'c++',
       'h++',
       'hpp',
@@ -8984,13 +9271,14 @@ function cLike(hljs) {
       'cxx'
     ],
     keywords: CPP_KEYWORDS,
-    // the base c-like language will NEVER be auto-detected, rather the
-    // derivitives: c, c++, arduino turn auto-detect back on for themselves
-    disableAutodetect: true,
     illegal: '</',
+    classNameAliases: {
+      "function.dispatch": "built_in"
+    },
     contains: [].concat(
       EXPRESSION_CONTEXT,
       FUNCTION_DECLARATION,
+      FUNCTION_DISPATCH,
       EXPRESSION_CONTAINS,
       [
         PREPROCESSOR,
@@ -9028,22 +9316,6 @@ function cLike(hljs) {
 }
 
 /*
-Language: C++
-Category: common, system
-Website: https://isocpp.org
-*/
-
-/** @type LanguageFn */
-function cPlusPlus(hljs) {
-  const lang = cLike(hljs);
-  // return auto-detection back on
-  lang.disableAutodetect = false;
-  lang.name = 'C++';
-  lang.aliases = ['cc', 'c++', 'h++', 'hpp', 'hh', 'hxx', 'cxx'];
-  return lang;
-}
-
-/*
 Language: Arduino
 Author: Stefania Mellai <s.mellai@arduino.cc>
 Description: The Arduino® Language is a superset of C++. This rules are designed to highlight the Arduino® source code. For info about language see http://www.arduino.cc.
@@ -9056,7 +9328,6 @@ function arduino(hljs) {
     keyword:
       'boolean byte word String',
     built_in:
-      'setup loop ' +
       'KeyboardController MouseController SoftwareSerial ' +
       'EthernetServer EthernetClient LiquidCrystal ' +
       'RobotControl GSMVoiceCall EthernetUDP EsploraTFT ' +
@@ -9067,7 +9338,9 @@ function arduino(hljs) {
       'WiFiUDP GSM_SMS Mailbox USBHost Firmata PImage ' +
       'Client Server GSMPIN FileIO Bridge Serial ' +
       'EEPROM Stream Mouse Audio Servo File Task ' +
-      'GPRS WiFi Wire TFT GSM SPI SD ' +
+      'GPRS WiFi Wire TFT GSM SPI SD ',
+    _:
+      'setup loop ' +
       'runShellCommandAsynchronously analogWriteResolution ' +
       'retrieveCallingNumber printFirmwareVersion ' +
       'analogReadResolution sendDigitalPortPair ' +
@@ -9145,6 +9418,7 @@ function arduino(hljs) {
   kws.keyword += ' ' + ARDUINO_KW.keyword;
   kws.literal += ' ' + ARDUINO_KW.literal;
   kws.built_in += ' ' + ARDUINO_KW.built_in;
+  kws._ += ' ' + ARDUINO_KW._;
 
   ARDUINO.name = 'Arduino';
   ARDUINO.aliases = ['ino'];
@@ -9155,7 +9429,7 @@ function arduino(hljs) {
 
 module.exports = arduino;
 
-},{}],132:[function(require,module,exports){
+},{}],133:[function(require,module,exports){
 /*
 Language: ARM Assembly
 Author: Dan Panzarella <alsoelp@gmail.com>
@@ -9288,7 +9562,7 @@ function armasm(hljs) {
 
 module.exports = armasm;
 
-},{}],133:[function(require,module,exports){
+},{}],134:[function(require,module,exports){
 /**
  * @param {string} value
  * @returns {RegExp}
@@ -9593,7 +9867,7 @@ function asciidoc(hljs) {
 
 module.exports = asciidoc;
 
-},{}],134:[function(require,module,exports){
+},{}],135:[function(require,module,exports){
 /**
  * @param {string} value
  * @returns {RegExp}
@@ -9781,7 +10055,7 @@ function aspectj(hljs) {
 
 module.exports = aspectj;
 
-},{}],135:[function(require,module,exports){
+},{}],136:[function(require,module,exports){
 /*
 Language: AutoHotkey
 Author: Seongwon Lee <dlimpid@gmail.com>
@@ -9867,7 +10141,7 @@ function autohotkey(hljs) {
 
 module.exports = autohotkey;
 
-},{}],136:[function(require,module,exports){
+},{}],137:[function(require,module,exports){
 /*
 Language: AutoIt
 Author: Manh Tuan <junookyo@gmail.com>
@@ -9878,15 +10152,32 @@ Category: scripting
 /** @type LanguageFn */
 function autoit(hljs) {
   const KEYWORDS = 'ByRef Case Const ContinueCase ContinueLoop ' +
-        'Default Dim Do Else ElseIf EndFunc EndIf EndSelect ' +
+        'Dim Do Else ElseIf EndFunc EndIf EndSelect ' +
         'EndSwitch EndWith Enum Exit ExitLoop For Func ' +
         'Global If In Local Next ReDim Return Select Static ' +
         'Step Switch Then To Until Volatile WEnd While With';
 
-  const LITERAL = 'True False And Null Not Or';
+  const DIRECTIVES = [
+    "EndRegion",
+    "forcedef",
+    "forceref",
+    "ignorefunc",
+    "include",
+    "include-once",
+    "NoTrayIcon",
+    "OnAutoItStartRegister",
+    "pragma",
+    "Region",
+    "RequireAdmin",
+    "Tidy_Off",
+    "Tidy_On",
+    "Tidy_Parameters"
+  ];
+  
+  const LITERAL = 'True False And Null Not Or Default';
 
   const BUILT_IN
-          = 'Abs ACos AdlibRegister AdlibUnRegister Asc AscW ASin Assign ATan AutoItSetOption AutoItWinGetTitle AutoItWinSetTitle Beep Binary BinaryLen BinaryMid BinaryToString BitAND BitNOT BitOR BitRotate BitShift BitXOR BlockInput Break Call CDTray Ceiling Chr ChrW ClipGet ClipPut ConsoleRead ConsoleWrite ConsoleWriteError ControlClick ControlCommand ControlDisable ControlEnable ControlFocus ControlGetFocus ControlGetHandle ControlGetPos ControlGetText ControlHide ControlListView ControlMove ControlSend ControlSetText ControlShow ControlTreeView Cos Dec DirCopy DirCreate DirGetSize DirMove DirRemove DllCall DllCallAddress DllCallbackFree DllCallbackGetPtr DllCallbackRegister DllClose DllOpen DllStructCreate DllStructGetData DllStructGetPtr DllStructGetSize DllStructSetData DriveGetDrive DriveGetFileSystem DriveGetLabel DriveGetSerial DriveGetType DriveMapAdd DriveMapDel DriveMapGet DriveSetLabel DriveSpaceFree DriveSpaceTotal DriveStatus EnvGet EnvSet EnvUpdate Eval Execute Exp FileChangeDir FileClose FileCopy FileCreateNTFSLink FileCreateShortcut FileDelete FileExists FileFindFirstFile FileFindNextFile FileFlush FileGetAttrib FileGetEncoding FileGetLongName FileGetPos FileGetShortcut FileGetShortName FileGetSize FileGetTime FileGetVersion FileInstall FileMove FileOpen FileOpenDialog FileRead FileReadLine FileReadToArray FileRecycle FileRecycleEmpty FileSaveDialog FileSelectFolder FileSetAttrib FileSetEnd FileSetPos FileSetTime FileWrite FileWriteLine Floor FtpSetProxy FuncName GUICreate GUICtrlCreateAvi GUICtrlCreateButton GUICtrlCreateCheckbox GUICtrlCreateCombo GUICtrlCreateContextMenu GUICtrlCreateDate GUICtrlCreateDummy GUICtrlCreateEdit GUICtrlCreateGraphic GUICtrlCreateGroup GUICtrlCreateIcon GUICtrlCreateInput GUICtrlCreateLabel GUICtrlCreateList GUICtrlCreateListView GUICtrlCreateListViewItem GUICtrlCreateMenu GUICtrlCreateMenuItem GUICtrlCreateMonthCal GUICtrlCreateObj GUICtrlCreatePic GUICtrlCreateProgress GUICtrlCreateRadio GUICtrlCreateSlider GUICtrlCreateTab GUICtrlCreateTabItem GUICtrlCreateTreeView GUICtrlCreateTreeViewItem GUICtrlCreateUpdown GUICtrlDelete GUICtrlGetHandle GUICtrlGetState GUICtrlRead GUICtrlRecvMsg GUICtrlRegisterListViewSort GUICtrlSendMsg GUICtrlSendToDummy GUICtrlSetBkColor GUICtrlSetColor GUICtrlSetCursor GUICtrlSetData GUICtrlSetDefBkColor GUICtrlSetDefColor GUICtrlSetFont GUICtrlSetGraphic GUICtrlSetImage GUICtrlSetLimit GUICtrlSetOnEvent GUICtrlSetPos GUICtrlSetResizing GUICtrlSetState GUICtrlSetStyle GUICtrlSetTip GUIDelete GUIGetCursorInfo GUIGetMsg GUIGetStyle GUIRegisterMsg GUISetAccelerators GUISetBkColor GUISetCoord GUISetCursor GUISetFont GUISetHelp GUISetIcon GUISetOnEvent GUISetState GUISetStyle GUIStartGroup GUISwitch Hex HotKeySet HttpSetProxy HttpSetUserAgent HWnd InetClose InetGet InetGetInfo InetGetSize InetRead IniDelete IniRead IniReadSection IniReadSectionNames IniRenameSection IniWrite IniWriteSection InputBox Int IsAdmin IsArray IsBinary IsBool IsDeclared IsDllStruct IsFloat IsFunc IsHWnd IsInt IsKeyword IsNumber IsObj IsPtr IsString Log MemGetStats Mod MouseClick MouseClickDrag MouseDown MouseGetCursor MouseGetPos MouseMove MouseUp MouseWheel MsgBox Number ObjCreate ObjCreateInterface ObjEvent ObjGet ObjName OnAutoItExitRegister OnAutoItExitUnRegister Ping PixelChecksum PixelGetColor PixelSearch ProcessClose ProcessExists ProcessGetStats ProcessList ProcessSetPriority ProcessWait ProcessWaitClose ProgressOff ProgressOn ProgressSet Ptr Random RegDelete RegEnumKey RegEnumVal RegRead RegWrite Round Run RunAs RunAsWait RunWait Send SendKeepActive SetError SetExtended ShellExecute ShellExecuteWait Shutdown Sin Sleep SoundPlay SoundSetWaveVolume SplashImageOn SplashOff SplashTextOn Sqrt SRandom StatusbarGetText StderrRead StdinWrite StdioClose StdoutRead String StringAddCR StringCompare StringFormat StringFromASCIIArray StringInStr StringIsAlNum StringIsAlpha StringIsASCII StringIsDigit StringIsFloat StringIsInt StringIsLower StringIsSpace StringIsUpper StringIsXDigit StringLeft StringLen StringLower StringMid StringRegExp StringRegExpReplace StringReplace StringReverse StringRight StringSplit StringStripCR StringStripWS StringToASCIIArray StringToBinary StringTrimLeft StringTrimRight StringUpper Tan TCPAccept TCPCloseSocket TCPConnect TCPListen TCPNameToIP TCPRecv TCPSend TCPShutdown, UDPShutdown TCPStartup, UDPStartup TimerDiff TimerInit ToolTip TrayCreateItem TrayCreateMenu TrayGetMsg TrayItemDelete TrayItemGetHandle TrayItemGetState TrayItemGetText TrayItemSetOnEvent TrayItemSetState TrayItemSetText TraySetClick TraySetIcon TraySetOnEvent TraySetPauseIcon TraySetState TraySetToolTip TrayTip UBound UDPBind UDPCloseSocket UDPOpen UDPRecv UDPSend VarGetType WinActivate WinActive WinClose WinExists WinFlash WinGetCaretPos WinGetClassList WinGetClientSize WinGetHandle WinGetPos WinGetProcess WinGetState WinGetText WinGetTitle WinKill WinList WinMenuSelectItem WinMinimizeAll WinMinimizeAllUndo WinMove WinSetOnTop WinSetState WinSetTitle WinSetTrans WinWait';
+          = 'Abs ACos AdlibRegister AdlibUnRegister Asc AscW ASin Assign ATan AutoItSetOption AutoItWinGetTitle AutoItWinSetTitle Beep Binary BinaryLen BinaryMid BinaryToString BitAND BitNOT BitOR BitRotate BitShift BitXOR BlockInput Break Call CDTray Ceiling Chr ChrW ClipGet ClipPut ConsoleRead ConsoleWrite ConsoleWriteError ControlClick ControlCommand ControlDisable ControlEnable ControlFocus ControlGetFocus ControlGetHandle ControlGetPos ControlGetText ControlHide ControlListView ControlMove ControlSend ControlSetText ControlShow ControlTreeView Cos Dec DirCopy DirCreate DirGetSize DirMove DirRemove DllCall DllCallAddress DllCallbackFree DllCallbackGetPtr DllCallbackRegister DllClose DllOpen DllStructCreate DllStructGetData DllStructGetPtr DllStructGetSize DllStructSetData DriveGetDrive DriveGetFileSystem DriveGetLabel DriveGetSerial DriveGetType DriveMapAdd DriveMapDel DriveMapGet DriveSetLabel DriveSpaceFree DriveSpaceTotal DriveStatus EnvGet EnvSet EnvUpdate Eval Execute Exp FileChangeDir FileClose FileCopy FileCreateNTFSLink FileCreateShortcut FileDelete FileExists FileFindFirstFile FileFindNextFile FileFlush FileGetAttrib FileGetEncoding FileGetLongName FileGetPos FileGetShortcut FileGetShortName FileGetSize FileGetTime FileGetVersion FileInstall FileMove FileOpen FileOpenDialog FileRead FileReadLine FileReadToArray FileRecycle FileRecycleEmpty FileSaveDialog FileSelectFolder FileSetAttrib FileSetEnd FileSetPos FileSetTime FileWrite FileWriteLine Floor FtpSetProxy FuncName GUICreate GUICtrlCreateAvi GUICtrlCreateButton GUICtrlCreateCheckbox GUICtrlCreateCombo GUICtrlCreateContextMenu GUICtrlCreateDate GUICtrlCreateDummy GUICtrlCreateEdit GUICtrlCreateGraphic GUICtrlCreateGroup GUICtrlCreateIcon GUICtrlCreateInput GUICtrlCreateLabel GUICtrlCreateList GUICtrlCreateListView GUICtrlCreateListViewItem GUICtrlCreateMenu GUICtrlCreateMenuItem GUICtrlCreateMonthCal GUICtrlCreateObj GUICtrlCreatePic GUICtrlCreateProgress GUICtrlCreateRadio GUICtrlCreateSlider GUICtrlCreateTab GUICtrlCreateTabItem GUICtrlCreateTreeView GUICtrlCreateTreeViewItem GUICtrlCreateUpdown GUICtrlDelete GUICtrlGetHandle GUICtrlGetState GUICtrlRead GUICtrlRecvMsg GUICtrlRegisterListViewSort GUICtrlSendMsg GUICtrlSendToDummy GUICtrlSetBkColor GUICtrlSetColor GUICtrlSetCursor GUICtrlSetData GUICtrlSetDefBkColor GUICtrlSetDefColor GUICtrlSetFont GUICtrlSetGraphic GUICtrlSetImage GUICtrlSetLimit GUICtrlSetOnEvent GUICtrlSetPos GUICtrlSetResizing GUICtrlSetState GUICtrlSetStyle GUICtrlSetTip GUIDelete GUIGetCursorInfo GUIGetMsg GUIGetStyle GUIRegisterMsg GUISetAccelerators GUISetBkColor GUISetCoord GUISetCursor GUISetFont GUISetHelp GUISetIcon GUISetOnEvent GUISetState GUISetStyle GUIStartGroup GUISwitch Hex HotKeySet HttpSetProxy HttpSetUserAgent HWnd InetClose InetGet InetGetInfo InetGetSize InetRead IniDelete IniRead IniReadSection IniReadSectionNames IniRenameSection IniWrite IniWriteSection InputBox Int IsAdmin IsArray IsBinary IsBool IsDeclared IsDllStruct IsFloat IsFunc IsHWnd IsInt IsKeyword IsNumber IsObj IsPtr IsString Log MemGetStats Mod MouseClick MouseClickDrag MouseDown MouseGetCursor MouseGetPos MouseMove MouseUp MouseWheel MsgBox Number ObjCreate ObjCreateInterface ObjEvent ObjGet ObjName OnAutoItExitRegister OnAutoItExitUnRegister Ping PixelChecksum PixelGetColor PixelSearch ProcessClose ProcessExists ProcessGetStats ProcessList ProcessSetPriority ProcessWait ProcessWaitClose ProgressOff ProgressOn ProgressSet Ptr Random RegDelete RegEnumKey RegEnumVal RegRead RegWrite Round Run RunAs RunAsWait RunWait Send SendKeepActive SetError SetExtended ShellExecute ShellExecuteWait Shutdown Sin Sleep SoundPlay SoundSetWaveVolume SplashImageOn SplashOff SplashTextOn Sqrt SRandom StatusbarGetText StderrRead StdinWrite StdioClose StdoutRead String StringAddCR StringCompare StringFormat StringFromASCIIArray StringInStr StringIsAlNum StringIsAlpha StringIsASCII StringIsDigit StringIsFloat StringIsInt StringIsLower StringIsSpace StringIsUpper StringIsXDigit StringLeft StringLen StringLower StringMid StringRegExp StringRegExpReplace StringReplace StringReverse StringRight StringSplit StringStripCR StringStripWS StringToASCIIArray StringToBinary StringTrimLeft StringTrimRight StringUpper Tan TCPAccept TCPCloseSocket TCPConnect TCPListen TCPNameToIP TCPRecv TCPSend TCPShutdown, UDPShutdown TCPStartup, UDPStartup TimerDiff TimerInit ToolTip TrayCreateItem TrayCreateMenu TrayGetMsg TrayItemDelete TrayItemGetHandle TrayItemGetState TrayItemGetText TrayItemSetOnEvent TrayItemSetState TrayItemSetText TraySetClick TraySetIcon TraySetOnEvent TraySetPauseIcon TraySetState TraySetToolTip TrayTip UBound UDPBind UDPCloseSocket UDPOpen UDPRecv UDPSend VarGetType WinActivate WinActive WinClose WinExists WinFlash WinGetCaretPos WinGetClassList WinGetClientSize WinGetHandle WinGetPos WinGetProcess WinGetState WinGetText WinGetTitle WinKill WinList WinMenuSelectItem WinMinimizeAll WinMinimizeAllUndo WinMove WinSetOnTop WinSetState WinSetTitle WinSetTrans WinWait WinWaitActive WinWaitClose WinWaitNotActive';
 
   const COMMENT = {
     variants: [
@@ -9936,7 +10227,7 @@ function autoit(hljs) {
     begin: '#',
     end: '$',
     keywords: {
-      'meta-keyword': 'comments include include-once NoTrayIcon OnAutoItStartRegister pragma compile RequireAdmin'
+      'meta-keyword': DIRECTIVES
     },
     contains: [
       {
@@ -10035,7 +10326,7 @@ function autoit(hljs) {
 
 module.exports = autoit;
 
-},{}],137:[function(require,module,exports){
+},{}],138:[function(require,module,exports){
 /*
 Language: AVR Assembly
 Author: Vladimir Ermakov <vooon341@gmail.com>
@@ -10117,7 +10408,7 @@ function avrasm(hljs) {
 
 module.exports = avrasm;
 
-},{}],138:[function(require,module,exports){
+},{}],139:[function(require,module,exports){
 /*
 Language: Awk
 Author: Matthew Daly <matthewbdaly@gmail.com>
@@ -10192,7 +10483,7 @@ function awk(hljs) {
 
 module.exports = awk;
 
-},{}],139:[function(require,module,exports){
+},{}],140:[function(require,module,exports){
 /*
 Language: Microsoft X++
 Description: X++ is a language used in Microsoft Dynamics 365, Dynamics AX, and Axapta.
@@ -10334,9 +10625,9 @@ function axapta(hljs) {
   ];
 
   const KEYWORDS = {
-    keyword: NORMAL_KEYWORDS.join(' '),
-    built_in: BUILT_IN_KEYWORDS.join(' '),
-    literal: LITERAL_KEYWORDS.join(' ')
+    keyword: NORMAL_KEYWORDS,
+    built_in: BUILT_IN_KEYWORDS,
+    literal: LITERAL_KEYWORDS
   };
 
   return {
@@ -10373,7 +10664,7 @@ function axapta(hljs) {
 
 module.exports = axapta;
 
-},{}],140:[function(require,module,exports){
+},{}],141:[function(require,module,exports){
 /**
  * @param {string} value
  * @returns {RegExp}
@@ -10544,7 +10835,7 @@ function bash(hljs) {
 
 module.exports = bash;
 
-},{}],141:[function(require,module,exports){
+},{}],142:[function(require,module,exports){
 /*
 Language: BASIC
 Author: Raphaël Assénat <raph@raphnet.net>
@@ -10611,7 +10902,7 @@ function basic(hljs) {
 
 module.exports = basic;
 
-},{}],142:[function(require,module,exports){
+},{}],143:[function(require,module,exports){
 /*
 Language: Backus–Naur Form
 Website: https://en.wikipedia.org/wiki/Backus–Naur_form
@@ -10651,7 +10942,7 @@ function bnf(hljs) {
 
 module.exports = bnf;
 
-},{}],143:[function(require,module,exports){
+},{}],144:[function(require,module,exports){
 /*
 Language: Brainfuck
 Author: Evgeny Stepanischev <imbolk@gmail.com>
@@ -10699,326 +10990,6 @@ function brainfuck(hljs) {
 
 module.exports = brainfuck;
 
-},{}],144:[function(require,module,exports){
-/**
- * @param {string} value
- * @returns {RegExp}
- * */
-
-/**
- * @param {RegExp | string } re
- * @returns {string}
- */
-function source(re) {
-  if (!re) return null;
-  if (typeof re === "string") return re;
-
-  return re.source;
-}
-
-/**
- * @param {RegExp | string } re
- * @returns {string}
- */
-function optional(re) {
-  return concat('(', re, ')?');
-}
-
-/**
- * @param {...(RegExp | string) } args
- * @returns {string}
- */
-function concat(...args) {
-  const joined = args.map((x) => source(x)).join("");
-  return joined;
-}
-
-/*
-Language: C-like foundation grammar for C/C++ grammars
-Author: Ivan Sagalaev <maniac@softwaremaniacs.org>
-Contributors: Evgeny Stepanischev <imbolk@gmail.com>, Zaven Muradyan <megalivoithos@gmail.com>, Roel Deckers <admin@codingcat.nl>, Sam Wu <samsam2310@gmail.com>, Jordi Petit <jordi.petit@gmail.com>, Pieter Vantorre <pietervantorre@gmail.com>, Google Inc. (David Benjamin) <davidben@google.com>
-*/
-
-/** @type LanguageFn */
-function cLike(hljs) {
-  // added for historic reasons because `hljs.C_LINE_COMMENT_MODE` does
-  // not include such support nor can we be sure all the grammars depending
-  // on it would desire this behavior
-  const C_LINE_COMMENT_MODE = hljs.COMMENT('//', '$', {
-    contains: [
-      {
-        begin: /\\\n/
-      }
-    ]
-  });
-  const DECLTYPE_AUTO_RE = 'decltype\\(auto\\)';
-  const NAMESPACE_RE = '[a-zA-Z_]\\w*::';
-  const TEMPLATE_ARGUMENT_RE = '<[^<>]+>';
-  const FUNCTION_TYPE_RE = '(' +
-    DECLTYPE_AUTO_RE + '|' +
-    optional(NAMESPACE_RE) +
-    '[a-zA-Z_]\\w*' + optional(TEMPLATE_ARGUMENT_RE) +
-  ')';
-  const CPP_PRIMITIVE_TYPES = {
-    className: 'keyword',
-    begin: '\\b[a-z\\d_]*_t\\b'
-  };
-
-  // https://en.cppreference.com/w/cpp/language/escape
-  // \\ \x \xFF \u2837 \u00323747 \374
-  const CHARACTER_ESCAPES = '\\\\(x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4,8}|[0-7]{3}|\\S)';
-  const STRINGS = {
-    className: 'string',
-    variants: [
-      {
-        begin: '(u8?|U|L)?"',
-        end: '"',
-        illegal: '\\n',
-        contains: [ hljs.BACKSLASH_ESCAPE ]
-      },
-      {
-        begin: '(u8?|U|L)?\'(' + CHARACTER_ESCAPES + "|.)",
-        end: '\'',
-        illegal: '.'
-      },
-      hljs.END_SAME_AS_BEGIN({
-        begin: /(?:u8?|U|L)?R"([^()\\ ]{0,16})\(/,
-        end: /\)([^()\\ ]{0,16})"/
-      })
-    ]
-  };
-
-  const NUMBERS = {
-    className: 'number',
-    variants: [
-      {
-        begin: '\\b(0b[01\']+)'
-      },
-      {
-        begin: '(-?)\\b([\\d\']+(\\.[\\d\']*)?|\\.[\\d\']+)((ll|LL|l|L)(u|U)?|(u|U)(ll|LL|l|L)?|f|F|b|B)'
-      },
-      {
-        begin: '(-?)(\\b0[xX][a-fA-F0-9\']+|(\\b[\\d\']+(\\.[\\d\']*)?|\\.[\\d\']+)([eE][-+]?[\\d\']+)?)'
-      }
-    ],
-    relevance: 0
-  };
-
-  const PREPROCESSOR = {
-    className: 'meta',
-    begin: /#\s*[a-z]+\b/,
-    end: /$/,
-    keywords: {
-      'meta-keyword':
-        'if else elif endif define undef warning error line ' +
-        'pragma _Pragma ifdef ifndef include'
-    },
-    contains: [
-      {
-        begin: /\\\n/,
-        relevance: 0
-      },
-      hljs.inherit(STRINGS, {
-        className: 'meta-string'
-      }),
-      {
-        className: 'meta-string',
-        begin: /<.*?>/,
-        end: /$/,
-        illegal: '\\n'
-      },
-      C_LINE_COMMENT_MODE,
-      hljs.C_BLOCK_COMMENT_MODE
-    ]
-  };
-
-  const TITLE_MODE = {
-    className: 'title',
-    begin: optional(NAMESPACE_RE) + hljs.IDENT_RE,
-    relevance: 0
-  };
-
-  const FUNCTION_TITLE = optional(NAMESPACE_RE) + hljs.IDENT_RE + '\\s*\\(';
-
-  const CPP_KEYWORDS = {
-    keyword: 'int float while private char char8_t char16_t char32_t catch import module export virtual operator sizeof ' +
-      'dynamic_cast|10 typedef const_cast|10 const for static_cast|10 union namespace ' +
-      'unsigned long volatile static protected bool template mutable if public friend ' +
-      'do goto auto void enum else break extern using asm case typeid wchar_t ' +
-      'short reinterpret_cast|10 default double register explicit signed typename try this ' +
-      'switch continue inline delete alignas alignof constexpr consteval constinit decltype ' +
-      'concept co_await co_return co_yield requires ' +
-      'noexcept static_assert thread_local restrict final override ' +
-      'atomic_bool atomic_char atomic_schar ' +
-      'atomic_uchar atomic_short atomic_ushort atomic_int atomic_uint atomic_long atomic_ulong atomic_llong ' +
-      'atomic_ullong new throw return ' +
-      'and and_eq bitand bitor compl not not_eq or or_eq xor xor_eq',
-    built_in: 'std string wstring cin cout cerr clog stdin stdout stderr stringstream istringstream ostringstream ' +
-      'auto_ptr deque list queue stack vector map set pair bitset multiset multimap unordered_set ' +
-      'unordered_map unordered_multiset unordered_multimap priority_queue make_pair array shared_ptr abort terminate abs acos ' +
-      'asin atan2 atan calloc ceil cosh cos exit exp fabs floor fmod fprintf fputs free frexp ' +
-      'fscanf future isalnum isalpha iscntrl isdigit isgraph islower isprint ispunct isspace isupper ' +
-      'isxdigit tolower toupper labs ldexp log10 log malloc realloc memchr memcmp memcpy memset modf pow ' +
-      'printf putchar puts scanf sinh sin snprintf sprintf sqrt sscanf strcat strchr strcmp ' +
-      'strcpy strcspn strlen strncat strncmp strncpy strpbrk strrchr strspn strstr tanh tan ' +
-      'vfprintf vprintf vsprintf endl initializer_list unique_ptr _Bool complex _Complex imaginary _Imaginary',
-    literal: 'true false nullptr NULL'
-  };
-
-  const EXPRESSION_CONTAINS = [
-    PREPROCESSOR,
-    CPP_PRIMITIVE_TYPES,
-    C_LINE_COMMENT_MODE,
-    hljs.C_BLOCK_COMMENT_MODE,
-    NUMBERS,
-    STRINGS
-  ];
-
-  const EXPRESSION_CONTEXT = {
-    // This mode covers expression context where we can't expect a function
-    // definition and shouldn't highlight anything that looks like one:
-    // `return some()`, `else if()`, `(x*sum(1, 2))`
-    variants: [
-      {
-        begin: /=/,
-        end: /;/
-      },
-      {
-        begin: /\(/,
-        end: /\)/
-      },
-      {
-        beginKeywords: 'new throw return else',
-        end: /;/
-      }
-    ],
-    keywords: CPP_KEYWORDS,
-    contains: EXPRESSION_CONTAINS.concat([
-      {
-        begin: /\(/,
-        end: /\)/,
-        keywords: CPP_KEYWORDS,
-        contains: EXPRESSION_CONTAINS.concat([ 'self' ]),
-        relevance: 0
-      }
-    ]),
-    relevance: 0
-  };
-
-  const FUNCTION_DECLARATION = {
-    className: 'function',
-    begin: '(' + FUNCTION_TYPE_RE + '[\\*&\\s]+)+' + FUNCTION_TITLE,
-    returnBegin: true,
-    end: /[{;=]/,
-    excludeEnd: true,
-    keywords: CPP_KEYWORDS,
-    illegal: /[^\w\s\*&:<>.]/,
-    contains: [
-      { // to prevent it from being confused as the function title
-        begin: DECLTYPE_AUTO_RE,
-        keywords: CPP_KEYWORDS,
-        relevance: 0
-      },
-      {
-        begin: FUNCTION_TITLE,
-        returnBegin: true,
-        contains: [ TITLE_MODE ],
-        relevance: 0
-      },
-      {
-        className: 'params',
-        begin: /\(/,
-        end: /\)/,
-        keywords: CPP_KEYWORDS,
-        relevance: 0,
-        contains: [
-          C_LINE_COMMENT_MODE,
-          hljs.C_BLOCK_COMMENT_MODE,
-          STRINGS,
-          NUMBERS,
-          CPP_PRIMITIVE_TYPES,
-          // Count matching parentheses.
-          {
-            begin: /\(/,
-            end: /\)/,
-            keywords: CPP_KEYWORDS,
-            relevance: 0,
-            contains: [
-              'self',
-              C_LINE_COMMENT_MODE,
-              hljs.C_BLOCK_COMMENT_MODE,
-              STRINGS,
-              NUMBERS,
-              CPP_PRIMITIVE_TYPES
-            ]
-          }
-        ]
-      },
-      CPP_PRIMITIVE_TYPES,
-      C_LINE_COMMENT_MODE,
-      hljs.C_BLOCK_COMMENT_MODE,
-      PREPROCESSOR
-    ]
-  };
-
-  return {
-    aliases: [
-      'c',
-      'cc',
-      'h',
-      'c++',
-      'h++',
-      'hpp',
-      'hh',
-      'hxx',
-      'cxx'
-    ],
-    keywords: CPP_KEYWORDS,
-    // the base c-like language will NEVER be auto-detected, rather the
-    // derivitives: c, c++, arduino turn auto-detect back on for themselves
-    disableAutodetect: true,
-    illegal: '</',
-    contains: [].concat(
-      EXPRESSION_CONTEXT,
-      FUNCTION_DECLARATION,
-      EXPRESSION_CONTAINS,
-      [
-        PREPROCESSOR,
-        { // containers: ie, `vector <int> rooms (9);`
-          begin: '\\b(deque|list|queue|priority_queue|pair|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<',
-          end: '>',
-          keywords: CPP_KEYWORDS,
-          contains: [
-            'self',
-            CPP_PRIMITIVE_TYPES
-          ]
-        },
-        {
-          begin: hljs.IDENT_RE + '::',
-          keywords: CPP_KEYWORDS
-        },
-        {
-          className: 'class',
-          beginKeywords: 'enum class struct union',
-          end: /[{;:<>=]/,
-          contains: [
-            {
-              beginKeywords: "final class struct"
-            },
-            hljs.TITLE_MODE
-          ]
-        }
-      ]),
-    exports: {
-      preprocessor: PREPROCESSOR,
-      strings: STRINGS,
-      keywords: CPP_KEYWORDS
-    }
-  };
-}
-
-module.exports = cLike;
-
 },{}],145:[function(require,module,exports){
 /**
  * @param {string} value
@@ -11040,6 +11011,14 @@ function source(re) {
  * @param {RegExp | string } re
  * @returns {string}
  */
+function lookahead(re) {
+  return concat('(?=', re, ')');
+}
+
+/**
+ * @param {RegExp | string } re
+ * @returns {string}
+ */
 function optional(re) {
   return concat('(', re, ')?');
 }
@@ -11054,13 +11033,13 @@ function concat(...args) {
 }
 
 /*
-Language: C-like foundation grammar for C/C++ grammars
-Author: Ivan Sagalaev <maniac@softwaremaniacs.org>
-Contributors: Evgeny Stepanischev <imbolk@gmail.com>, Zaven Muradyan <megalivoithos@gmail.com>, Roel Deckers <admin@codingcat.nl>, Sam Wu <samsam2310@gmail.com>, Jordi Petit <jordi.petit@gmail.com>, Pieter Vantorre <pietervantorre@gmail.com>, Google Inc. (David Benjamin) <davidben@google.com>
+Language: C++
+Category: common, system
+Website: https://isocpp.org
 */
 
 /** @type LanguageFn */
-function cLike(hljs) {
+function cPlusPlus(hljs) {
   // added for historic reasons because `hljs.C_LINE_COMMENT_MODE` does
   // not include such support nor can we be sure all the grammars depending
   // on it would desire this behavior
@@ -11143,9 +11122,502 @@ function cLike(hljs) {
       }),
       {
         className: 'meta-string',
-        begin: /<.*?>/,
-        end: /$/,
-        illegal: '\\n'
+        begin: /<.*?>/
+      },
+      C_LINE_COMMENT_MODE,
+      hljs.C_BLOCK_COMMENT_MODE
+    ]
+  };
+
+  const TITLE_MODE = {
+    className: 'title',
+    begin: optional(NAMESPACE_RE) + hljs.IDENT_RE,
+    relevance: 0
+  };
+
+  const FUNCTION_TITLE = optional(NAMESPACE_RE) + hljs.IDENT_RE + '\\s*\\(';
+
+  const COMMON_CPP_HINTS = [
+    'asin',
+    'atan2',
+    'atan',
+    'calloc',
+    'ceil',
+    'cosh',
+    'cos',
+    'exit',
+    'exp',
+    'fabs',
+    'floor',
+    'fmod',
+    'fprintf',
+    'fputs',
+    'free',
+    'frexp',
+    'auto_ptr',
+    'deque',
+    'list',
+    'queue',
+    'stack',
+    'vector',
+    'map',
+    'set',
+    'pair',
+    'bitset',
+    'multiset',
+    'multimap',
+    'unordered_set',
+    'fscanf',
+    'future',
+    'isalnum',
+    'isalpha',
+    'iscntrl',
+    'isdigit',
+    'isgraph',
+    'islower',
+    'isprint',
+    'ispunct',
+    'isspace',
+    'isupper',
+    'isxdigit',
+    'tolower',
+    'toupper',
+    'labs',
+    'ldexp',
+    'log10',
+    'log',
+    'malloc',
+    'realloc',
+    'memchr',
+    'memcmp',
+    'memcpy',
+    'memset',
+    'modf',
+    'pow',
+    'printf',
+    'putchar',
+    'puts',
+    'scanf',
+    'sinh',
+    'sin',
+    'snprintf',
+    'sprintf',
+    'sqrt',
+    'sscanf',
+    'strcat',
+    'strchr',
+    'strcmp',
+    'strcpy',
+    'strcspn',
+    'strlen',
+    'strncat',
+    'strncmp',
+    'strncpy',
+    'strpbrk',
+    'strrchr',
+    'strspn',
+    'strstr',
+    'tanh',
+    'tan',
+    'unordered_map',
+    'unordered_multiset',
+    'unordered_multimap',
+    'priority_queue',
+    'make_pair',
+    'array',
+    'shared_ptr',
+    'abort',
+    'terminate',
+    'abs',
+    'acos',
+    'vfprintf',
+    'vprintf',
+    'vsprintf',
+    'endl',
+    'initializer_list',
+    'unique_ptr',
+    'complex',
+    'imaginary',
+    'std',
+    'string',
+    'wstring',
+    'cin',
+    'cout',
+    'cerr',
+    'clog',
+    'stdin',
+    'stdout',
+    'stderr',
+    'stringstream',
+    'istringstream',
+    'ostringstream'
+  ];
+
+  const CPP_KEYWORDS = {
+    keyword: 'int float while private char char8_t char16_t char32_t catch import module export virtual operator sizeof ' +
+      'dynamic_cast|10 typedef const_cast|10 const for static_cast|10 union namespace ' +
+      'unsigned long volatile static protected bool template mutable if public friend ' +
+      'do goto auto void enum else break extern using asm case typeid wchar_t ' +
+      'short reinterpret_cast|10 default double register explicit signed typename try this ' +
+      'switch continue inline delete alignas alignof constexpr consteval constinit decltype ' +
+      'concept co_await co_return co_yield requires ' +
+      'noexcept static_assert thread_local restrict final override ' +
+      'atomic_bool atomic_char atomic_schar ' +
+      'atomic_uchar atomic_short atomic_ushort atomic_int atomic_uint atomic_long atomic_ulong atomic_llong ' +
+      'atomic_ullong new throw return ' +
+      'and and_eq bitand bitor compl not not_eq or or_eq xor xor_eq',
+    built_in: '_Bool _Complex _Imaginary',
+    _relevance_hints: COMMON_CPP_HINTS,
+    literal: 'true false nullptr NULL'
+  };
+
+  const FUNCTION_DISPATCH = {
+    className: "function.dispatch",
+    relevance: 0,
+    keywords: CPP_KEYWORDS,
+    begin: concat(
+      /\b/,
+      /(?!decltype)/,
+      /(?!if)/,
+      /(?!for)/,
+      /(?!while)/,
+      hljs.IDENT_RE,
+      lookahead(/\s*\(/))
+  };
+
+  const EXPRESSION_CONTAINS = [
+    FUNCTION_DISPATCH,
+    PREPROCESSOR,
+    CPP_PRIMITIVE_TYPES,
+    C_LINE_COMMENT_MODE,
+    hljs.C_BLOCK_COMMENT_MODE,
+    NUMBERS,
+    STRINGS
+  ];
+
+
+  const EXPRESSION_CONTEXT = {
+    // This mode covers expression context where we can't expect a function
+    // definition and shouldn't highlight anything that looks like one:
+    // `return some()`, `else if()`, `(x*sum(1, 2))`
+    variants: [
+      {
+        begin: /=/,
+        end: /;/
+      },
+      {
+        begin: /\(/,
+        end: /\)/
+      },
+      {
+        beginKeywords: 'new throw return else',
+        end: /;/
+      }
+    ],
+    keywords: CPP_KEYWORDS,
+    contains: EXPRESSION_CONTAINS.concat([
+      {
+        begin: /\(/,
+        end: /\)/,
+        keywords: CPP_KEYWORDS,
+        contains: EXPRESSION_CONTAINS.concat([ 'self' ]),
+        relevance: 0
+      }
+    ]),
+    relevance: 0
+  };
+
+  const FUNCTION_DECLARATION = {
+    className: 'function',
+    begin: '(' + FUNCTION_TYPE_RE + '[\\*&\\s]+)+' + FUNCTION_TITLE,
+    returnBegin: true,
+    end: /[{;=]/,
+    excludeEnd: true,
+    keywords: CPP_KEYWORDS,
+    illegal: /[^\w\s\*&:<>.]/,
+    contains: [
+      { // to prevent it from being confused as the function title
+        begin: DECLTYPE_AUTO_RE,
+        keywords: CPP_KEYWORDS,
+        relevance: 0
+      },
+      {
+        begin: FUNCTION_TITLE,
+        returnBegin: true,
+        contains: [ TITLE_MODE ],
+        relevance: 0
+      },
+      // needed because we do not have look-behind on the below rule
+      // to prevent it from grabbing the final : in a :: pair
+      {
+        begin: /::/,
+        relevance: 0
+      },
+      // initializers
+      {
+        begin: /:/,
+        endsWithParent: true,
+        contains: [
+          STRINGS,
+          NUMBERS
+        ]
+      },
+      {
+        className: 'params',
+        begin: /\(/,
+        end: /\)/,
+        keywords: CPP_KEYWORDS,
+        relevance: 0,
+        contains: [
+          C_LINE_COMMENT_MODE,
+          hljs.C_BLOCK_COMMENT_MODE,
+          STRINGS,
+          NUMBERS,
+          CPP_PRIMITIVE_TYPES,
+          // Count matching parentheses.
+          {
+            begin: /\(/,
+            end: /\)/,
+            keywords: CPP_KEYWORDS,
+            relevance: 0,
+            contains: [
+              'self',
+              C_LINE_COMMENT_MODE,
+              hljs.C_BLOCK_COMMENT_MODE,
+              STRINGS,
+              NUMBERS,
+              CPP_PRIMITIVE_TYPES
+            ]
+          }
+        ]
+      },
+      CPP_PRIMITIVE_TYPES,
+      C_LINE_COMMENT_MODE,
+      hljs.C_BLOCK_COMMENT_MODE,
+      PREPROCESSOR
+    ]
+  };
+
+  return {
+    name: 'C++',
+    aliases: [
+      'cc',
+      'c++',
+      'h++',
+      'hpp',
+      'hh',
+      'hxx',
+      'cxx'
+    ],
+    keywords: CPP_KEYWORDS,
+    illegal: '</',
+    classNameAliases: {
+      "function.dispatch": "built_in"
+    },
+    contains: [].concat(
+      EXPRESSION_CONTEXT,
+      FUNCTION_DECLARATION,
+      FUNCTION_DISPATCH,
+      EXPRESSION_CONTAINS,
+      [
+        PREPROCESSOR,
+        { // containers: ie, `vector <int> rooms (9);`
+          begin: '\\b(deque|list|queue|priority_queue|pair|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<',
+          end: '>',
+          keywords: CPP_KEYWORDS,
+          contains: [
+            'self',
+            CPP_PRIMITIVE_TYPES
+          ]
+        },
+        {
+          begin: hljs.IDENT_RE + '::',
+          keywords: CPP_KEYWORDS
+        },
+        {
+          className: 'class',
+          beginKeywords: 'enum class struct union',
+          end: /[{;:<>=]/,
+          contains: [
+            {
+              beginKeywords: "final class struct"
+            },
+            hljs.TITLE_MODE
+          ]
+        }
+      ]),
+    exports: {
+      preprocessor: PREPROCESSOR,
+      strings: STRINGS,
+      keywords: CPP_KEYWORDS
+    }
+  };
+}
+
+/*
+Language: C-like (deprecated, use C and C++ instead)
+Author: Ivan Sagalaev <maniac@softwaremaniacs.org>
+Contributors: Evgeny Stepanischev <imbolk@gmail.com>, Zaven Muradyan <megalivoithos@gmail.com>, Roel Deckers <admin@codingcat.nl>, Sam Wu <samsam2310@gmail.com>, Jordi Petit <jordi.petit@gmail.com>, Pieter Vantorre <pietervantorre@gmail.com>, Google Inc. (David Benjamin) <davidben@google.com>
+*/
+
+/** @type LanguageFn */
+function cLike(hljs) {
+  const lang = cPlusPlus(hljs);
+
+  const C_ALIASES = [
+    "c",
+    "h"
+  ];
+
+  const CPP_ALIASES = [
+    'cc',
+    'c++',
+    'h++',
+    'hpp',
+    'hh',
+    'hxx',
+    'cxx'
+  ];
+
+  lang.disableAutodetect = true;
+  lang.aliases = [];
+  // support users only loading c-like (legacy)
+  if (!hljs.getLanguage("c")) lang.aliases.push(...C_ALIASES);
+  if (!hljs.getLanguage("cpp")) lang.aliases.push(...CPP_ALIASES);
+
+  // if c and cpp are loaded after then they will reclaim these
+  // aliases for themselves
+
+  return lang;
+}
+
+module.exports = cLike;
+
+},{}],146:[function(require,module,exports){
+/**
+ * @param {string} value
+ * @returns {RegExp}
+ * */
+
+/**
+ * @param {RegExp | string } re
+ * @returns {string}
+ */
+function source(re) {
+  if (!re) return null;
+  if (typeof re === "string") return re;
+
+  return re.source;
+}
+
+/**
+ * @param {RegExp | string } re
+ * @returns {string}
+ */
+function optional(re) {
+  return concat('(', re, ')?');
+}
+
+/**
+ * @param {...(RegExp | string) } args
+ * @returns {string}
+ */
+function concat(...args) {
+  const joined = args.map((x) => source(x)).join("");
+  return joined;
+}
+
+/*
+Language: C
+Category: common, system
+Website: https://en.wikipedia.org/wiki/C_(programming_language)
+*/
+
+/** @type LanguageFn */
+function c(hljs) {
+  // added for historic reasons because `hljs.C_LINE_COMMENT_MODE` does
+  // not include such support nor can we be sure all the grammars depending
+  // on it would desire this behavior
+  const C_LINE_COMMENT_MODE = hljs.COMMENT('//', '$', {
+    contains: [
+      {
+        begin: /\\\n/
+      }
+    ]
+  });
+  const DECLTYPE_AUTO_RE = 'decltype\\(auto\\)';
+  const NAMESPACE_RE = '[a-zA-Z_]\\w*::';
+  const TEMPLATE_ARGUMENT_RE = '<[^<>]+>';
+  const FUNCTION_TYPE_RE = '(' +
+    DECLTYPE_AUTO_RE + '|' +
+    optional(NAMESPACE_RE) +
+    '[a-zA-Z_]\\w*' + optional(TEMPLATE_ARGUMENT_RE) +
+  ')';
+  const CPP_PRIMITIVE_TYPES = {
+    className: 'keyword',
+    begin: '\\b[a-z\\d_]*_t\\b'
+  };
+
+  // https://en.cppreference.com/w/cpp/language/escape
+  // \\ \x \xFF \u2837 \u00323747 \374
+  const CHARACTER_ESCAPES = '\\\\(x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4,8}|[0-7]{3}|\\S)';
+  const STRINGS = {
+    className: 'string',
+    variants: [
+      {
+        begin: '(u8?|U|L)?"',
+        end: '"',
+        illegal: '\\n',
+        contains: [ hljs.BACKSLASH_ESCAPE ]
+      },
+      {
+        begin: '(u8?|U|L)?\'(' + CHARACTER_ESCAPES + "|.)",
+        end: '\'',
+        illegal: '.'
+      },
+      hljs.END_SAME_AS_BEGIN({
+        begin: /(?:u8?|U|L)?R"([^()\\ ]{0,16})\(/,
+        end: /\)([^()\\ ]{0,16})"/
+      })
+    ]
+  };
+
+  const NUMBERS = {
+    className: 'number',
+    variants: [
+      {
+        begin: '\\b(0b[01\']+)'
+      },
+      {
+        begin: '(-?)\\b([\\d\']+(\\.[\\d\']*)?|\\.[\\d\']+)((ll|LL|l|L)(u|U)?|(u|U)(ll|LL|l|L)?|f|F|b|B)'
+      },
+      {
+        begin: '(-?)(\\b0[xX][a-fA-F0-9\']+|(\\b[\\d\']+(\\.[\\d\']*)?|\\.[\\d\']+)([eE][-+]?[\\d\']+)?)'
+      }
+    ],
+    relevance: 0
+  };
+
+  const PREPROCESSOR = {
+    className: 'meta',
+    begin: /#\s*[a-z]+\b/,
+    end: /$/,
+    keywords: {
+      'meta-keyword':
+        'if else elif endif define undef warning error line ' +
+        'pragma _Pragma ifdef ifndef include'
+    },
+    contains: [
+      {
+        begin: /\\\n/,
+        relevance: 0
+      },
+      hljs.inherit(STRINGS, {
+        className: 'meta-string'
+      }),
+      {
+        className: 'meta-string',
+        begin: /<.*?>/
       },
       C_LINE_COMMENT_MODE,
       hljs.C_BLOCK_COMMENT_MODE
@@ -11282,20 +11754,13 @@ function cLike(hljs) {
   };
 
   return {
+    name: "C",
     aliases: [
-      'c',
-      'cc',
-      'h',
-      'c++',
-      'h++',
-      'hpp',
-      'hh',
-      'hxx',
-      'cxx'
+      'h'
     ],
     keywords: CPP_KEYWORDS,
-    // the base c-like language will NEVER be auto-detected, rather the
-    // derivitives: c, c++, arduino turn auto-detect back on for themselves
+    // Until differentiations are added between `c` and `cpp`, `c` will
+    // not be auto-detected to avoid auto-detect conflicts between C and C++
     disableAutodetect: true,
     illegal: '</',
     contains: [].concat(
@@ -11337,30 +11802,9 @@ function cLike(hljs) {
   };
 }
 
-/*
-Language: C
-Category: common, system
-Website: https://en.wikipedia.org/wiki/C_(programming_language)
-*/
-
-/** @type LanguageFn */
-function c(hljs) {
-  const lang = cLike(hljs);
-  // Until C is actually different than C++ there is no reason to auto-detect C
-  // as it's own language since it would just fail auto-detect testing or
-  // simply match with C++.
-  //
-  // See further comments in c-like.js.
-
-  // lang.disableAutodetect = false;
-  lang.name = 'C';
-  lang.aliases = ['c', 'h'];
-  return lang;
-}
-
 module.exports = c;
 
-},{}],146:[function(require,module,exports){
+},{}],147:[function(require,module,exports){
 /*
 Language: C/AL
 Author: Kenneth Fuglsang Christensen <kfuglsang@gmail.com>
@@ -11466,7 +11910,7 @@ function cal(hljs) {
 
 module.exports = cal;
 
-},{}],147:[function(require,module,exports){
+},{}],148:[function(require,module,exports){
 /*
 Language: Cap’n Proto
 Author: Oleg Efimov <efimovov@gmail.com>
@@ -11532,7 +11976,7 @@ function capnproto(hljs) {
 
 module.exports = capnproto;
 
-},{}],148:[function(require,module,exports){
+},{}],149:[function(require,module,exports){
 /*
 Language: Ceylon
 Author: Lucas Werkmeister <mail@lucaswerkmeister.de>
@@ -11616,7 +12060,7 @@ function ceylon(hljs) {
 
 module.exports = ceylon;
 
-},{}],149:[function(require,module,exports){
+},{}],150:[function(require,module,exports){
 /*
 Language: Clean
 Author: Camil Staps <info@camilstaps.nl>
@@ -11629,7 +12073,6 @@ function clean(hljs) {
   return {
     name: 'Clean',
     aliases: [
-      'clean',
       'icl',
       'dcl'
     ],
@@ -11659,7 +12102,7 @@ function clean(hljs) {
 
 module.exports = clean;
 
-},{}],150:[function(require,module,exports){
+},{}],151:[function(require,module,exports){
 /*
 Language: Clojure REPL
 Description: Clojure REPL sessions
@@ -11673,20 +12116,22 @@ Category: lisp
 function clojureRepl(hljs) {
   return {
     name: 'Clojure REPL',
-    contains: [{
-      className: 'meta',
-      begin: /^([\w.-]+|\s*#_)?=>/,
-      starts: {
-        end: /$/,
-        subLanguage: 'clojure'
+    contains: [
+      {
+        className: 'meta',
+        begin: /^([\w.-]+|\s*#_)?=>/,
+        starts: {
+          end: /$/,
+          subLanguage: 'clojure'
+        }
       }
-    }]
+    ]
   };
 }
 
 module.exports = clojureRepl;
 
-},{}],151:[function(require,module,exports){
+},{}],152:[function(require,module,exports){
 /*
 Language: Clojure
 Description: Clojure syntax (based on lisp.js)
@@ -11697,10 +12142,10 @@ Category: lisp
 
 /** @type LanguageFn */
 function clojure(hljs) {
-  var SYMBOLSTART = 'a-zA-Z_\\-!.?+*=<>&#\'';
-  var SYMBOL_RE = '[' + SYMBOLSTART + '][' + SYMBOLSTART + '0-9/;:]*';
-  var globals = 'def defonce defprotocol defstruct defmulti defmethod defn- defn defmacro deftype defrecord';
-  var keywords = {
+  const SYMBOLSTART = 'a-zA-Z_\\-!.?+*=<>&#\'';
+  const SYMBOL_RE = '[' + SYMBOLSTART + '][' + SYMBOLSTART + '0-9/;:]*';
+  const globals = 'def defonce defprotocol defstruct defmulti defmethod defn- defn defmacro deftype defrecord';
+  const keywords = {
     $pattern: SYMBOL_RE,
     'builtin-name':
       // Clojure keywords
@@ -11734,57 +12179,73 @@ function clojure(hljs) {
       'lazy-seq spread list* str find-keyword keyword symbol gensym force rationalize'
   };
 
-  var SIMPLE_NUMBER_RE = '[-+]?\\d+(\\.\\d+)?';
+  const SIMPLE_NUMBER_RE = '[-+]?\\d+(\\.\\d+)?';
 
-  var SYMBOL = {
+  const SYMBOL = {
     begin: SYMBOL_RE,
     relevance: 0
   };
-  var NUMBER = {
-    className: 'number', begin: SIMPLE_NUMBER_RE,
+  const NUMBER = {
+    className: 'number',
+    begin: SIMPLE_NUMBER_RE,
     relevance: 0
   };
-  var STRING = hljs.inherit(hljs.QUOTE_STRING_MODE, {illegal: null});
-  var COMMENT = hljs.COMMENT(
+  const STRING = hljs.inherit(hljs.QUOTE_STRING_MODE, {
+    illegal: null
+  });
+  const COMMENT = hljs.COMMENT(
     ';',
     '$',
     {
       relevance: 0
     }
   );
-  var LITERAL = {
+  const LITERAL = {
     className: 'literal',
     begin: /\b(true|false|nil)\b/
   };
-  var COLLECTION = {
-    begin: '[\\[\\{]', end: '[\\]\\}]'
+  const COLLECTION = {
+    begin: '[\\[\\{]',
+    end: '[\\]\\}]'
   };
-  var HINT = {
+  const HINT = {
     className: 'comment',
     begin: '\\^' + SYMBOL_RE
   };
-  var HINT_COL = hljs.COMMENT('\\^\\{', '\\}');
-  var KEY = {
+  const HINT_COL = hljs.COMMENT('\\^\\{', '\\}');
+  const KEY = {
     className: 'symbol',
     begin: '[:]{1,2}' + SYMBOL_RE
   };
-  var LIST = {
-    begin: '\\(', end: '\\)'
+  const LIST = {
+    begin: '\\(',
+    end: '\\)'
   };
-  var BODY = {
+  const BODY = {
     endsWithParent: true,
     relevance: 0
   };
-  var NAME = {
+  const NAME = {
     keywords: keywords,
     className: 'name',
     begin: SYMBOL_RE,
     relevance: 0,
     starts: BODY
   };
-  var DEFAULT_CONTAINS = [LIST, STRING, HINT, HINT_COL, COMMENT, KEY, COLLECTION, NUMBER, LITERAL, SYMBOL];
+  const DEFAULT_CONTAINS = [
+    LIST,
+    STRING,
+    HINT,
+    HINT_COL,
+    COMMENT,
+    KEY,
+    COLLECTION,
+    NUMBER,
+    LITERAL,
+    SYMBOL
+  ];
 
-  var GLOBAL = {
+  const GLOBAL = {
     beginKeywords: globals,
     lexemes: SYMBOL_RE,
     end: '(\\[|#|\\d|"|:|\\{|\\)|\\(|$)',
@@ -11796,26 +12257,41 @@ function clojure(hljs) {
         excludeEnd: true,
         // we can only have a single title
         endsParent: true
-      },
+      }
     ].concat(DEFAULT_CONTAINS)
   };
 
-  LIST.contains = [hljs.COMMENT('comment', ''), GLOBAL, NAME, BODY];
+  LIST.contains = [
+    hljs.COMMENT('comment', ''),
+    GLOBAL,
+    NAME,
+    BODY
+  ];
   BODY.contains = DEFAULT_CONTAINS;
   COLLECTION.contains = DEFAULT_CONTAINS;
-  HINT_COL.contains = [COLLECTION];
+  HINT_COL.contains = [ COLLECTION ];
 
   return {
     name: 'Clojure',
-    aliases: ['clj'],
+    aliases: [ 'clj' ],
     illegal: /\S/,
-    contains: [LIST, STRING, HINT, HINT_COL, COMMENT, KEY, COLLECTION, NUMBER, LITERAL]
+    contains: [
+      LIST,
+      STRING,
+      HINT,
+      HINT_COL,
+      COMMENT,
+      KEY,
+      COLLECTION,
+      NUMBER,
+      LITERAL
+    ]
   };
 }
 
 module.exports = clojure;
 
-},{}],152:[function(require,module,exports){
+},{}],153:[function(require,module,exports){
 /*
 Language: CMake
 Description: CMake is an open-source cross-platform system for build automation.
@@ -11881,7 +12357,7 @@ function cmake(hljs) {
 
 module.exports = cmake;
 
-},{}],153:[function(require,module,exports){
+},{}],154:[function(require,module,exports){
 const KEYWORDS = [
   "as", // for exports
   "in",
@@ -11965,7 +12441,10 @@ const TYPES = [
   "Array",
   "Uint8Array",
   "Uint8ClampedArray",
-  "ArrayBuffer"
+  "ArrayBuffer",
+  "BigInt64Array",
+  "BigUint64Array",
+  "BigInt"
 ];
 
 const ERROR_TYPES = [
@@ -12063,9 +12542,9 @@ function coffeescript(hljs) {
   const excluding = (list) =>
     (kw) => !list.includes(kw);
   const KEYWORDS$1 = {
-    keyword: KEYWORDS.concat(COFFEE_KEYWORDS).filter(excluding(NOT_VALID_KEYWORDS)).join(" "),
-    literal: LITERALS.concat(COFFEE_LITERALS).join(" "),
-    built_in: BUILT_INS.concat(COFFEE_BUILT_INS).join(" ")
+    keyword: KEYWORDS.concat(COFFEE_KEYWORDS).filter(excluding(NOT_VALID_KEYWORDS)),
+    literal: LITERALS.concat(COFFEE_LITERALS),
+    built_in: BUILT_INS.concat(COFFEE_BUILT_INS)
   };
   const JS_IDENT_RE = '[A-Za-z$_][0-9A-Za-z$_]*';
   const SUBST = {
@@ -12236,7 +12715,7 @@ function coffeescript(hljs) {
 
 module.exports = coffeescript;
 
-},{}],154:[function(require,module,exports){
+},{}],155:[function(require,module,exports){
 /*
 Language: Coq
 Author: Stephan Boyer <stephan@stephanboyer.com>
@@ -12317,7 +12796,7 @@ function coq(hljs) {
 
 module.exports = coq;
 
-},{}],155:[function(require,module,exports){
+},{}],156:[function(require,module,exports){
 /*
 Language: Caché Object Script
 Author: Nikita Savchenko <zitros.lab@gmail.com>
@@ -12395,7 +12874,6 @@ function cos(hljs) {
     name: 'Caché Object Script',
     case_insensitive: true,
     aliases: [
-      "cos",
       "cls"
     ],
     keywords: COS_KEYWORDS,
@@ -12458,7 +12936,7 @@ function cos(hljs) {
 
 module.exports = cos;
 
-},{}],156:[function(require,module,exports){
+},{}],157:[function(require,module,exports){
 /**
  * @param {string} value
  * @returns {RegExp}
@@ -12479,6 +12957,14 @@ function source(re) {
  * @param {RegExp | string } re
  * @returns {string}
  */
+function lookahead(re) {
+  return concat('(?=', re, ')');
+}
+
+/**
+ * @param {RegExp | string } re
+ * @returns {string}
+ */
 function optional(re) {
   return concat('(', re, ')?');
 }
@@ -12493,13 +12979,13 @@ function concat(...args) {
 }
 
 /*
-Language: C-like foundation grammar for C/C++ grammars
-Author: Ivan Sagalaev <maniac@softwaremaniacs.org>
-Contributors: Evgeny Stepanischev <imbolk@gmail.com>, Zaven Muradyan <megalivoithos@gmail.com>, Roel Deckers <admin@codingcat.nl>, Sam Wu <samsam2310@gmail.com>, Jordi Petit <jordi.petit@gmail.com>, Pieter Vantorre <pietervantorre@gmail.com>, Google Inc. (David Benjamin) <davidben@google.com>
+Language: C++
+Category: common, system
+Website: https://isocpp.org
 */
 
 /** @type LanguageFn */
-function cLike(hljs) {
+function cpp(hljs) {
   // added for historic reasons because `hljs.C_LINE_COMMENT_MODE` does
   // not include such support nor can we be sure all the grammars depending
   // on it would desire this behavior
@@ -12582,9 +13068,7 @@ function cLike(hljs) {
       }),
       {
         className: 'meta-string',
-        begin: /<.*?>/,
-        end: /$/,
-        illegal: '\\n'
+        begin: /<.*?>/
       },
       C_LINE_COMMENT_MODE,
       hljs.C_BLOCK_COMMENT_MODE
@@ -12599,6 +13083,122 @@ function cLike(hljs) {
 
   const FUNCTION_TITLE = optional(NAMESPACE_RE) + hljs.IDENT_RE + '\\s*\\(';
 
+  const COMMON_CPP_HINTS = [
+    'asin',
+    'atan2',
+    'atan',
+    'calloc',
+    'ceil',
+    'cosh',
+    'cos',
+    'exit',
+    'exp',
+    'fabs',
+    'floor',
+    'fmod',
+    'fprintf',
+    'fputs',
+    'free',
+    'frexp',
+    'auto_ptr',
+    'deque',
+    'list',
+    'queue',
+    'stack',
+    'vector',
+    'map',
+    'set',
+    'pair',
+    'bitset',
+    'multiset',
+    'multimap',
+    'unordered_set',
+    'fscanf',
+    'future',
+    'isalnum',
+    'isalpha',
+    'iscntrl',
+    'isdigit',
+    'isgraph',
+    'islower',
+    'isprint',
+    'ispunct',
+    'isspace',
+    'isupper',
+    'isxdigit',
+    'tolower',
+    'toupper',
+    'labs',
+    'ldexp',
+    'log10',
+    'log',
+    'malloc',
+    'realloc',
+    'memchr',
+    'memcmp',
+    'memcpy',
+    'memset',
+    'modf',
+    'pow',
+    'printf',
+    'putchar',
+    'puts',
+    'scanf',
+    'sinh',
+    'sin',
+    'snprintf',
+    'sprintf',
+    'sqrt',
+    'sscanf',
+    'strcat',
+    'strchr',
+    'strcmp',
+    'strcpy',
+    'strcspn',
+    'strlen',
+    'strncat',
+    'strncmp',
+    'strncpy',
+    'strpbrk',
+    'strrchr',
+    'strspn',
+    'strstr',
+    'tanh',
+    'tan',
+    'unordered_map',
+    'unordered_multiset',
+    'unordered_multimap',
+    'priority_queue',
+    'make_pair',
+    'array',
+    'shared_ptr',
+    'abort',
+    'terminate',
+    'abs',
+    'acos',
+    'vfprintf',
+    'vprintf',
+    'vsprintf',
+    'endl',
+    'initializer_list',
+    'unique_ptr',
+    'complex',
+    'imaginary',
+    'std',
+    'string',
+    'wstring',
+    'cin',
+    'cout',
+    'cerr',
+    'clog',
+    'stdin',
+    'stdout',
+    'stderr',
+    'stringstream',
+    'istringstream',
+    'ostringstream'
+  ];
+
   const CPP_KEYWORDS = {
     keyword: 'int float while private char char8_t char16_t char32_t catch import module export virtual operator sizeof ' +
       'dynamic_cast|10 typedef const_cast|10 const for static_cast|10 union namespace ' +
@@ -12612,19 +13212,27 @@ function cLike(hljs) {
       'atomic_uchar atomic_short atomic_ushort atomic_int atomic_uint atomic_long atomic_ulong atomic_llong ' +
       'atomic_ullong new throw return ' +
       'and and_eq bitand bitor compl not not_eq or or_eq xor xor_eq',
-    built_in: 'std string wstring cin cout cerr clog stdin stdout stderr stringstream istringstream ostringstream ' +
-      'auto_ptr deque list queue stack vector map set pair bitset multiset multimap unordered_set ' +
-      'unordered_map unordered_multiset unordered_multimap priority_queue make_pair array shared_ptr abort terminate abs acos ' +
-      'asin atan2 atan calloc ceil cosh cos exit exp fabs floor fmod fprintf fputs free frexp ' +
-      'fscanf future isalnum isalpha iscntrl isdigit isgraph islower isprint ispunct isspace isupper ' +
-      'isxdigit tolower toupper labs ldexp log10 log malloc realloc memchr memcmp memcpy memset modf pow ' +
-      'printf putchar puts scanf sinh sin snprintf sprintf sqrt sscanf strcat strchr strcmp ' +
-      'strcpy strcspn strlen strncat strncmp strncpy strpbrk strrchr strspn strstr tanh tan ' +
-      'vfprintf vprintf vsprintf endl initializer_list unique_ptr _Bool complex _Complex imaginary _Imaginary',
+    built_in: '_Bool _Complex _Imaginary',
+    _relevance_hints: COMMON_CPP_HINTS,
     literal: 'true false nullptr NULL'
   };
 
+  const FUNCTION_DISPATCH = {
+    className: "function.dispatch",
+    relevance: 0,
+    keywords: CPP_KEYWORDS,
+    begin: concat(
+      /\b/,
+      /(?!decltype)/,
+      /(?!if)/,
+      /(?!for)/,
+      /(?!while)/,
+      hljs.IDENT_RE,
+      lookahead(/\s*\(/))
+  };
+
   const EXPRESSION_CONTAINS = [
+    FUNCTION_DISPATCH,
     PREPROCESSOR,
     CPP_PRIMITIVE_TYPES,
     C_LINE_COMMENT_MODE,
@@ -12632,6 +13240,7 @@ function cLike(hljs) {
     NUMBERS,
     STRINGS
   ];
+
 
   const EXPRESSION_CONTEXT = {
     // This mode covers expression context where we can't expect a function
@@ -12684,6 +13293,21 @@ function cLike(hljs) {
         contains: [ TITLE_MODE ],
         relevance: 0
       },
+      // needed because we do not have look-behind on the below rule
+      // to prevent it from grabbing the final : in a :: pair
+      {
+        begin: /::/,
+        relevance: 0
+      },
+      // initializers
+      {
+        begin: /:/,
+        endsWithParent: true,
+        contains: [
+          STRINGS,
+          NUMBERS
+        ]
+      },
       {
         className: 'params',
         begin: /\(/,
@@ -12721,10 +13345,9 @@ function cLike(hljs) {
   };
 
   return {
+    name: 'C++',
     aliases: [
-      'c',
       'cc',
-      'h',
       'c++',
       'h++',
       'hpp',
@@ -12733,13 +13356,14 @@ function cLike(hljs) {
       'cxx'
     ],
     keywords: CPP_KEYWORDS,
-    // the base c-like language will NEVER be auto-detected, rather the
-    // derivitives: c, c++, arduino turn auto-detect back on for themselves
-    disableAutodetect: true,
     illegal: '</',
+    classNameAliases: {
+      "function.dispatch": "built_in"
+    },
     contains: [].concat(
       EXPRESSION_CONTEXT,
       FUNCTION_DECLARATION,
+      FUNCTION_DISPATCH,
       EXPRESSION_CONTAINS,
       [
         PREPROCESSOR,
@@ -12776,25 +13400,9 @@ function cLike(hljs) {
   };
 }
 
-/*
-Language: C++
-Category: common, system
-Website: https://isocpp.org
-*/
-
-/** @type LanguageFn */
-function cpp(hljs) {
-  const lang = cLike(hljs);
-  // return auto-detection back on
-  lang.disableAutodetect = false;
-  lang.name = 'C++';
-  lang.aliases = ['cc', 'c++', 'h++', 'hpp', 'hh', 'hxx', 'cxx'];
-  return lang;
-}
-
 module.exports = cpp;
 
-},{}],157:[function(require,module,exports){
+},{}],158:[function(require,module,exports){
 /*
 Language: crmsh
 Author: Kristoffer Gronlund <kgronlund@suse.com>
@@ -12898,7 +13506,7 @@ function crmsh(hljs) {
 
 module.exports = crmsh;
 
-},{}],158:[function(require,module,exports){
+},{}],159:[function(require,module,exports){
 /*
 Language: Crystal
 Author: TSUYUSATO Kitsune <make.just.on@gmail.com>
@@ -13226,7 +13834,7 @@ function crystal(hljs) {
 
 module.exports = crystal;
 
-},{}],159:[function(require,module,exports){
+},{}],160:[function(require,module,exports){
 /*
 Language: C#
 Author: Jason Diamond <jason@diamond.name>
@@ -13237,29 +13845,29 @@ Category: common
 
 /** @type LanguageFn */
 function csharp(hljs) {
-  var BUILT_IN_KEYWORDS = [
-      'bool',
-      'byte',
-      'char',
-      'decimal',
-      'delegate',
-      'double',
-      'dynamic',
-      'enum',
-      'float',
-      'int',
-      'long',
-      'nint',
-      'nuint',
-      'object',
-      'sbyte',
-      'short',
-      'string',
-      'ulong',
-      'unit',
-      'ushort'
+  const BUILT_IN_KEYWORDS = [
+    'bool',
+    'byte',
+    'char',
+    'decimal',
+    'delegate',
+    'double',
+    'dynamic',
+    'enum',
+    'float',
+    'int',
+    'long',
+    'nint',
+    'nuint',
+    'object',
+    'sbyte',
+    'short',
+    'string',
+    'ulong',
+    'uint',
+    'ushort'
   ];
-  var FUNCTION_MODIFIERS = [
+  const FUNCTION_MODIFIERS = [
     'public',
     'private',
     'protected',
@@ -13276,13 +13884,13 @@ function csharp(hljs) {
     'sealed',
     'partial'
   ];
-  var LITERAL_KEYWORDS = [
-      'default',
-      'false',
-      'null',
-      'true'
+  const LITERAL_KEYWORDS = [
+    'default',
+    'false',
+    'null',
+    'true'
   ];
-  var NORMAL_KEYWORDS = [
+  const NORMAL_KEYWORDS = [
     'abstract',
     'as',
     'base',
@@ -13339,7 +13947,7 @@ function csharp(hljs) {
     'volatile',
     'while'
   ];
-  var CONTEXTUAL_KEYWORDS = [
+  const CONTEXTUAL_KEYWORDS = [
     'add',
     'alias',
     'and',
@@ -13376,47 +13984,98 @@ function csharp(hljs) {
     'yield'
   ];
 
-  var KEYWORDS = {
-    keyword: NORMAL_KEYWORDS.concat(CONTEXTUAL_KEYWORDS).join(' '),
-    built_in: BUILT_IN_KEYWORDS.join(' '),
-    literal: LITERAL_KEYWORDS.join(' ')
+  const KEYWORDS = {
+    keyword: NORMAL_KEYWORDS.concat(CONTEXTUAL_KEYWORDS),
+    built_in: BUILT_IN_KEYWORDS,
+    literal: LITERAL_KEYWORDS
   };
-  var TITLE_MODE = hljs.inherit(hljs.TITLE_MODE, {begin: '[a-zA-Z](\\.?\\w)*'});
-  var NUMBERS = {
+  const TITLE_MODE = hljs.inherit(hljs.TITLE_MODE, {
+    begin: '[a-zA-Z](\\.?\\w)*'
+  });
+  const NUMBERS = {
     className: 'number',
     variants: [
-      { begin: '\\b(0b[01\']+)' },
-      { begin: '(-?)\\b([\\d\']+(\\.[\\d\']*)?|\\.[\\d\']+)(u|U|l|L|ul|UL|f|F|b|B)' },
-      { begin: '(-?)(\\b0[xX][a-fA-F0-9\']+|(\\b[\\d\']+(\\.[\\d\']*)?|\\.[\\d\']+)([eE][-+]?[\\d\']+)?)' }
+      {
+        begin: '\\b(0b[01\']+)'
+      },
+      {
+        begin: '(-?)\\b([\\d\']+(\\.[\\d\']*)?|\\.[\\d\']+)(u|U|l|L|ul|UL|f|F|b|B)'
+      },
+      {
+        begin: '(-?)(\\b0[xX][a-fA-F0-9\']+|(\\b[\\d\']+(\\.[\\d\']*)?|\\.[\\d\']+)([eE][-+]?[\\d\']+)?)'
+      }
     ],
     relevance: 0
   };
-  var VERBATIM_STRING = {
+  const VERBATIM_STRING = {
     className: 'string',
-    begin: '@"', end: '"',
-    contains: [{begin: '""'}]
+    begin: '@"',
+    end: '"',
+    contains: [
+      {
+        begin: '""'
+      }
+    ]
   };
-  var VERBATIM_STRING_NO_LF = hljs.inherit(VERBATIM_STRING, {illegal: /\n/});
-  var SUBST = {
+  const VERBATIM_STRING_NO_LF = hljs.inherit(VERBATIM_STRING, {
+    illegal: /\n/
+  });
+  const SUBST = {
     className: 'subst',
-    begin: /\{/, end: /\}/,
+    begin: /\{/,
+    end: /\}/,
     keywords: KEYWORDS
   };
-  var SUBST_NO_LF = hljs.inherit(SUBST, {illegal: /\n/});
-  var INTERPOLATED_STRING = {
+  const SUBST_NO_LF = hljs.inherit(SUBST, {
+    illegal: /\n/
+  });
+  const INTERPOLATED_STRING = {
     className: 'string',
-    begin: /\$"/, end: '"',
+    begin: /\$"/,
+    end: '"',
     illegal: /\n/,
-    contains: [{begin: /\{\{/}, {begin: /\}\}/}, hljs.BACKSLASH_ESCAPE, SUBST_NO_LF]
+    contains: [
+      {
+        begin: /\{\{/
+      },
+      {
+        begin: /\}\}/
+      },
+      hljs.BACKSLASH_ESCAPE,
+      SUBST_NO_LF
+    ]
   };
-  var INTERPOLATED_VERBATIM_STRING = {
+  const INTERPOLATED_VERBATIM_STRING = {
     className: 'string',
-    begin: /\$@"/, end: '"',
-    contains: [{begin: /\{\{/}, {begin: /\}\}/}, {begin: '""'}, SUBST]
+    begin: /\$@"/,
+    end: '"',
+    contains: [
+      {
+        begin: /\{\{/
+      },
+      {
+        begin: /\}\}/
+      },
+      {
+        begin: '""'
+      },
+      SUBST
+    ]
   };
-  var INTERPOLATED_VERBATIM_STRING_NO_LF = hljs.inherit(INTERPOLATED_VERBATIM_STRING, {
+  const INTERPOLATED_VERBATIM_STRING_NO_LF = hljs.inherit(INTERPOLATED_VERBATIM_STRING, {
     illegal: /\n/,
-    contains: [{begin: /\{\{/}, {begin: /\}\}/}, {begin: '""'}, SUBST_NO_LF]
+    contains: [
+      {
+        begin: /\{\{/
+      },
+      {
+        begin: /\}\}/
+      },
+      {
+        begin: '""'
+      },
+      SUBST_NO_LF
+    ]
   });
   SUBST.contains = [
     INTERPOLATED_VERBATIM_STRING,
@@ -13434,9 +14093,11 @@ function csharp(hljs) {
     hljs.APOS_STRING_MODE,
     hljs.QUOTE_STRING_MODE,
     NUMBERS,
-    hljs.inherit(hljs.C_BLOCK_COMMENT_MODE, {illegal: /\n/})
+    hljs.inherit(hljs.C_BLOCK_COMMENT_MODE, {
+      illegal: /\n/
+    })
   ];
-  var STRING = {
+  const STRING = {
     variants: [
       INTERPOLATED_VERBATIM_STRING,
       INTERPOLATED_STRING,
@@ -13446,16 +14107,18 @@ function csharp(hljs) {
     ]
   };
 
-  var GENERIC_MODIFIER = {
+  const GENERIC_MODIFIER = {
     begin: "<",
     end: ">",
     contains: [
-      { beginKeywords: "in out"},
+      {
+        beginKeywords: "in out"
+      },
       TITLE_MODE
     ]
   };
-  var TYPE_IDENT_RE = hljs.IDENT_RE + '(<' + hljs.IDENT_RE + '(\\s*,\\s*' + hljs.IDENT_RE + ')*>)?(\\[\\])?';
-  var AT_IDENTIFIER = {
+  const TYPE_IDENT_RE = hljs.IDENT_RE + '(<' + hljs.IDENT_RE + '(\\s*,\\s*' + hljs.IDENT_RE + ')*>)?(\\[\\])?';
+  const AT_IDENTIFIER = {
     // prevents expressions like `@class` from incorrect flagging
     // `class` as a keyword
     begin: "@" + hljs.IDENT_RE,
@@ -13464,7 +14127,10 @@ function csharp(hljs) {
 
   return {
     name: 'C#',
-    aliases: ['cs', 'c#'],
+    aliases: [
+      'cs',
+      'c#'
+    ],
     keywords: KEYWORDS,
     illegal: /::/,
     contains: [
@@ -13478,13 +14144,15 @@ function csharp(hljs) {
               className: 'doctag',
               variants: [
                 {
-                  begin: '///', relevance: 0
+                  begin: '///',
+                  relevance: 0
                 },
                 {
                   begin: '<!--|-->'
                 },
                 {
-                  begin: '</?', end: '>'
+                  begin: '</?',
+                  end: '>'
                 }
               ]
             }
@@ -13495,7 +14163,8 @@ function csharp(hljs) {
       hljs.C_BLOCK_COMMENT_MODE,
       {
         className: 'meta',
-        begin: '#', end: '$',
+        begin: '#',
+        end: '$',
         keywords: {
           'meta-keyword': 'if else elif endif define undef warning error line region endregion pragma checksum'
         }
@@ -13508,7 +14177,9 @@ function csharp(hljs) {
         end: /[{;=]/,
         illegal: /[^\s:,]/,
         contains: [
-          { beginKeywords: "where class" },
+          {
+            beginKeywords: "where class"
+          },
           TITLE_MODE,
           GENERIC_MODIFIER,
           hljs.C_LINE_COMMENT_MODE,
@@ -13541,9 +14212,16 @@ function csharp(hljs) {
       {
         // [Attributes("")]
         className: 'meta',
-        begin: '^\\s*\\[', excludeBegin: true, end: '\\]', excludeEnd: true,
+        begin: '^\\s*\\[',
+        excludeBegin: true,
+        end: '\\]',
+        excludeEnd: true,
         contains: [
-          {className: 'meta-string', begin: /"/, end: /"/}
+          {
+            className: 'meta-string',
+            begin: /"/,
+            end: /"/
+          }
         ]
       },
       {
@@ -13554,8 +14232,10 @@ function csharp(hljs) {
       },
       {
         className: 'function',
-        begin: '(' + TYPE_IDENT_RE + '\\s+)+' + hljs.IDENT_RE + '\\s*(<.+>\\s*)?\\(', returnBegin: true,
-        end: /\s*[{;=]/, excludeEnd: true,
+        begin: '(' + TYPE_IDENT_RE + '\\s+)+' + hljs.IDENT_RE + '\\s*(<.+>\\s*)?\\(',
+        returnBegin: true,
+        end: /\s*[{;=]/,
+        excludeEnd: true,
         keywords: KEYWORDS,
         contains: [
           // prevents these from being highlighted `title`
@@ -13564,7 +14244,8 @@ function csharp(hljs) {
             relevance: 0
           },
           {
-            begin: hljs.IDENT_RE + '\\s*(<.+>\\s*)?\\(', returnBegin: true,
+            begin: hljs.IDENT_RE + '\\s*(<.+>\\s*)?\\(',
+            returnBegin: true,
             contains: [
               hljs.TITLE_MODE,
               GENERIC_MODIFIER
@@ -13573,7 +14254,8 @@ function csharp(hljs) {
           },
           {
             className: 'params',
-            begin: /\(/, end: /\)/,
+            begin: /\(/,
+            end: /\)/,
             excludeBegin: true,
             excludeEnd: true,
             keywords: KEYWORDS,
@@ -13595,7 +14277,7 @@ function csharp(hljs) {
 
 module.exports = csharp;
 
-},{}],160:[function(require,module,exports){
+},{}],161:[function(require,module,exports){
 /*
 Language: CSP
 Description: Content Security Policy definition highlighting
@@ -13634,7 +14316,468 @@ function csp(hljs) {
 
 module.exports = csp;
 
-},{}],161:[function(require,module,exports){
+},{}],162:[function(require,module,exports){
+const MODES = (hljs) => {
+  return {
+    IMPORTANT: {
+      className: 'meta',
+      begin: '!important'
+    },
+    HEXCOLOR: {
+      className: 'number',
+      begin: '#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})'
+    },
+    ATTRIBUTE_SELECTOR_MODE: {
+      className: 'selector-attr',
+      begin: /\[/,
+      end: /\]/,
+      illegal: '$',
+      contains: [
+        hljs.APOS_STRING_MODE,
+        hljs.QUOTE_STRING_MODE
+      ]
+    }
+  };
+};
+
+const TAGS = [
+  'a',
+  'abbr',
+  'address',
+  'article',
+  'aside',
+  'audio',
+  'b',
+  'blockquote',
+  'body',
+  'button',
+  'canvas',
+  'caption',
+  'cite',
+  'code',
+  'dd',
+  'del',
+  'details',
+  'dfn',
+  'div',
+  'dl',
+  'dt',
+  'em',
+  'fieldset',
+  'figcaption',
+  'figure',
+  'footer',
+  'form',
+  'h1',
+  'h2',
+  'h3',
+  'h4',
+  'h5',
+  'h6',
+  'header',
+  'hgroup',
+  'html',
+  'i',
+  'iframe',
+  'img',
+  'input',
+  'ins',
+  'kbd',
+  'label',
+  'legend',
+  'li',
+  'main',
+  'mark',
+  'menu',
+  'nav',
+  'object',
+  'ol',
+  'p',
+  'q',
+  'quote',
+  'samp',
+  'section',
+  'span',
+  'strong',
+  'summary',
+  'sup',
+  'table',
+  'tbody',
+  'td',
+  'textarea',
+  'tfoot',
+  'th',
+  'thead',
+  'time',
+  'tr',
+  'ul',
+  'var',
+  'video'
+];
+
+const MEDIA_FEATURES = [
+  'any-hover',
+  'any-pointer',
+  'aspect-ratio',
+  'color',
+  'color-gamut',
+  'color-index',
+  'device-aspect-ratio',
+  'device-height',
+  'device-width',
+  'display-mode',
+  'forced-colors',
+  'grid',
+  'height',
+  'hover',
+  'inverted-colors',
+  'monochrome',
+  'orientation',
+  'overflow-block',
+  'overflow-inline',
+  'pointer',
+  'prefers-color-scheme',
+  'prefers-contrast',
+  'prefers-reduced-motion',
+  'prefers-reduced-transparency',
+  'resolution',
+  'scan',
+  'scripting',
+  'update',
+  'width',
+  // TODO: find a better solution?
+  'min-width',
+  'max-width',
+  'min-height',
+  'max-height'
+];
+
+// https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes
+const PSEUDO_CLASSES = [
+  'active',
+  'any-link',
+  'blank',
+  'checked',
+  'current',
+  'default',
+  'defined',
+  'dir', // dir()
+  'disabled',
+  'drop',
+  'empty',
+  'enabled',
+  'first',
+  'first-child',
+  'first-of-type',
+  'fullscreen',
+  'future',
+  'focus',
+  'focus-visible',
+  'focus-within',
+  'has', // has()
+  'host', // host or host()
+  'host-context', // host-context()
+  'hover',
+  'indeterminate',
+  'in-range',
+  'invalid',
+  'is', // is()
+  'lang', // lang()
+  'last-child',
+  'last-of-type',
+  'left',
+  'link',
+  'local-link',
+  'not', // not()
+  'nth-child', // nth-child()
+  'nth-col', // nth-col()
+  'nth-last-child', // nth-last-child()
+  'nth-last-col', // nth-last-col()
+  'nth-last-of-type', //nth-last-of-type()
+  'nth-of-type', //nth-of-type()
+  'only-child',
+  'only-of-type',
+  'optional',
+  'out-of-range',
+  'past',
+  'placeholder-shown',
+  'read-only',
+  'read-write',
+  'required',
+  'right',
+  'root',
+  'scope',
+  'target',
+  'target-within',
+  'user-invalid',
+  'valid',
+  'visited',
+  'where' // where()
+];
+
+// https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements
+const PSEUDO_ELEMENTS = [
+  'after',
+  'backdrop',
+  'before',
+  'cue',
+  'cue-region',
+  'first-letter',
+  'first-line',
+  'grammar-error',
+  'marker',
+  'part',
+  'placeholder',
+  'selection',
+  'slotted',
+  'spelling-error'
+];
+
+const ATTRIBUTES = [
+  'align-content',
+  'align-items',
+  'align-self',
+  'animation',
+  'animation-delay',
+  'animation-direction',
+  'animation-duration',
+  'animation-fill-mode',
+  'animation-iteration-count',
+  'animation-name',
+  'animation-play-state',
+  'animation-timing-function',
+  'auto',
+  'backface-visibility',
+  'background',
+  'background-attachment',
+  'background-clip',
+  'background-color',
+  'background-image',
+  'background-origin',
+  'background-position',
+  'background-repeat',
+  'background-size',
+  'border',
+  'border-bottom',
+  'border-bottom-color',
+  'border-bottom-left-radius',
+  'border-bottom-right-radius',
+  'border-bottom-style',
+  'border-bottom-width',
+  'border-collapse',
+  'border-color',
+  'border-image',
+  'border-image-outset',
+  'border-image-repeat',
+  'border-image-slice',
+  'border-image-source',
+  'border-image-width',
+  'border-left',
+  'border-left-color',
+  'border-left-style',
+  'border-left-width',
+  'border-radius',
+  'border-right',
+  'border-right-color',
+  'border-right-style',
+  'border-right-width',
+  'border-spacing',
+  'border-style',
+  'border-top',
+  'border-top-color',
+  'border-top-left-radius',
+  'border-top-right-radius',
+  'border-top-style',
+  'border-top-width',
+  'border-width',
+  'bottom',
+  'box-decoration-break',
+  'box-shadow',
+  'box-sizing',
+  'break-after',
+  'break-before',
+  'break-inside',
+  'caption-side',
+  'clear',
+  'clip',
+  'clip-path',
+  'color',
+  'column-count',
+  'column-fill',
+  'column-gap',
+  'column-rule',
+  'column-rule-color',
+  'column-rule-style',
+  'column-rule-width',
+  'column-span',
+  'column-width',
+  'columns',
+  'content',
+  'counter-increment',
+  'counter-reset',
+  'cursor',
+  'direction',
+  'display',
+  'empty-cells',
+  'filter',
+  'flex',
+  'flex-basis',
+  'flex-direction',
+  'flex-flow',
+  'flex-grow',
+  'flex-shrink',
+  'flex-wrap',
+  'float',
+  'font',
+  'font-display',
+  'font-family',
+  'font-feature-settings',
+  'font-kerning',
+  'font-language-override',
+  'font-size',
+  'font-size-adjust',
+  'font-smoothing',
+  'font-stretch',
+  'font-style',
+  'font-variant',
+  'font-variant-ligatures',
+  'font-variation-settings',
+  'font-weight',
+  'height',
+  'hyphens',
+  'icon',
+  'image-orientation',
+  'image-rendering',
+  'image-resolution',
+  'ime-mode',
+  'inherit',
+  'initial',
+  'justify-content',
+  'left',
+  'letter-spacing',
+  'line-height',
+  'list-style',
+  'list-style-image',
+  'list-style-position',
+  'list-style-type',
+  'margin',
+  'margin-bottom',
+  'margin-left',
+  'margin-right',
+  'margin-top',
+  'marks',
+  'mask',
+  'max-height',
+  'max-width',
+  'min-height',
+  'min-width',
+  'nav-down',
+  'nav-index',
+  'nav-left',
+  'nav-right',
+  'nav-up',
+  'none',
+  'normal',
+  'object-fit',
+  'object-position',
+  'opacity',
+  'order',
+  'orphans',
+  'outline',
+  'outline-color',
+  'outline-offset',
+  'outline-style',
+  'outline-width',
+  'overflow',
+  'overflow-wrap',
+  'overflow-x',
+  'overflow-y',
+  'padding',
+  'padding-bottom',
+  'padding-left',
+  'padding-right',
+  'padding-top',
+  'page-break-after',
+  'page-break-before',
+  'page-break-inside',
+  'perspective',
+  'perspective-origin',
+  'pointer-events',
+  'position',
+  'quotes',
+  'resize',
+  'right',
+  'src', // @font-face
+  'tab-size',
+  'table-layout',
+  'text-align',
+  'text-align-last',
+  'text-decoration',
+  'text-decoration-color',
+  'text-decoration-line',
+  'text-decoration-style',
+  'text-indent',
+  'text-overflow',
+  'text-rendering',
+  'text-shadow',
+  'text-transform',
+  'text-underline-position',
+  'top',
+  'transform',
+  'transform-origin',
+  'transform-style',
+  'transition',
+  'transition-delay',
+  'transition-duration',
+  'transition-property',
+  'transition-timing-function',
+  'unicode-bidi',
+  'vertical-align',
+  'visibility',
+  'white-space',
+  'widows',
+  'width',
+  'word-break',
+  'word-spacing',
+  'word-wrap',
+  'z-index'
+  // reverse makes sure longer attributes `font-weight` are matched fully
+  // instead of getting false positives on say `font`
+].reverse();
+
+/**
+ * @param {string} value
+ * @returns {RegExp}
+ * */
+
+/**
+ * @param {RegExp | string } re
+ * @returns {string}
+ */
+function source(re) {
+  if (!re) return null;
+  if (typeof re === "string") return re;
+
+  return re.source;
+}
+
+/**
+ * @param {RegExp | string } re
+ * @returns {string}
+ */
+function lookahead(re) {
+  return concat('(?=', re, ')');
+}
+
+/**
+ * @param {...(RegExp | string) } args
+ * @returns {string}
+ */
+function concat(...args) {
+  const joined = args.map((x) => source(x)).join("");
+  return joined;
+}
+
 /*
 Language: CSS
 Category: common, css
@@ -13643,127 +14786,139 @@ Website: https://developer.mozilla.org/en-US/docs/Web/CSS
 
 /** @type LanguageFn */
 function css(hljs) {
-  var FUNCTION_LIKE = {
-    begin: /[\w-]+\(/, returnBegin: true,
-    contains: [
-      {
-        className: 'built_in',
-        begin: /[\w-]+/
-      },
-      {
-        begin: /\(/, end: /\)/,
-        contains: [
-          hljs.APOS_STRING_MODE,
-          hljs.QUOTE_STRING_MODE,
-          hljs.CSS_NUMBER_MODE,
-        ]
-      }
-    ]
+  const modes = MODES(hljs);
+  const FUNCTION_DISPATCH = {
+    className: "built_in",
+    begin: /[\w-]+(?=\()/
   };
-  var ATTRIBUTE = {
-    className: 'attribute',
-    begin: /\S/, end: ':', excludeEnd: true,
-    starts: {
-      endsWithParent: true, excludeEnd: true,
-      contains: [
-        FUNCTION_LIKE,
-        hljs.CSS_NUMBER_MODE,
-        hljs.QUOTE_STRING_MODE,
-        hljs.APOS_STRING_MODE,
-        hljs.C_BLOCK_COMMENT_MODE,
-        {
-          className: 'number', begin: '#[0-9A-Fa-f]+'
-        },
-        {
-          className: 'meta', begin: '!important'
-        }
-      ]
-    }
+  const VENDOR_PREFIX = {
+    begin: /-(webkit|moz|ms|o)-(?=[a-z])/
   };
-  var AT_IDENTIFIER = '@[a-z-]+'; // @font-face
-  var AT_MODIFIERS = "and or not only";
-  var AT_PROPERTY_RE = /@-?\w[\w]*(-\w+)*/; // @-webkit-keyframes
-  var IDENT_RE = '[a-zA-Z-][a-zA-Z0-9_-]*';
-  var RULE = {
-    begin: /([*]\s?)?(?:[A-Z_.\-\\]+|--[a-zA-Z0-9_-]+)\s*(\/\*\*\/)?:/, returnBegin: true, end: ';', endsWithParent: true,
-    contains: [
-      ATTRIBUTE
-    ]
-  };
+  const AT_MODIFIERS = "and or not only";
+  const AT_PROPERTY_RE = /@-?\w[\w]*(-\w+)*/; // @-webkit-keyframes
+  const IDENT_RE = '[a-zA-Z-][a-zA-Z0-9_-]*';
+  const STRINGS = [
+    hljs.APOS_STRING_MODE,
+    hljs.QUOTE_STRING_MODE
+  ];
 
   return {
     name: 'CSS',
     case_insensitive: true,
     illegal: /[=|'\$]/,
+    keywords: {
+      keyframePosition: "from to"
+    },
+    classNameAliases: {
+      // for visual continuity with `tag {}` and because we
+      // don't have a great class for this?
+      keyframePosition: "selector-tag"
+    },
     contains: [
       hljs.C_BLOCK_COMMENT_MODE,
+      VENDOR_PREFIX,
+      // to recognize keyframe 40% etc which are outside the scope of our
+      // attribute value mode
+      hljs.CSS_NUMBER_MODE,
       {
-        className: 'selector-id', begin: /#[A-Za-z0-9_-]+/
+        className: 'selector-id',
+        begin: /#[A-Za-z0-9_-]+/,
+        relevance: 0
       },
       {
-        className: 'selector-class', begin: '\\.' + IDENT_RE
+        className: 'selector-class',
+        begin: '\\.' + IDENT_RE,
+        relevance: 0
       },
+      modes.ATTRIBUTE_SELECTOR_MODE,
       {
-        className: 'selector-attr',
-        begin: /\[/, end: /\]/,
-        illegal: '$',
+        className: 'selector-pseudo',
+        variants: [
+          {
+            begin: ':(' + PSEUDO_CLASSES.join('|') + ')'
+          },
+          {
+            begin: '::(' + PSEUDO_ELEMENTS.join('|') + ')'
+          }
+        ]
+      },
+      // we may actually need this (12/2020)
+      // { // pseudo-selector params
+      //   begin: /\(/,
+      //   end: /\)/,
+      //   contains: [ hljs.CSS_NUMBER_MODE ]
+      // },
+      {
+        className: 'attribute',
+        begin: '\\b(' + ATTRIBUTES.join('|') + ')\\b'
+      },
+      // attribute values
+      {
+        begin: ':',
+        end: '[;}]',
         contains: [
-          hljs.APOS_STRING_MODE,
-          hljs.QUOTE_STRING_MODE,
+          modes.HEXCOLOR,
+          modes.IMPORTANT,
+          hljs.CSS_NUMBER_MODE,
+          ...STRINGS,
+          // needed to highlight these as strings and to avoid issues with
+          // illegal characters that might be inside urls that would tigger the
+          // languages illegal stack
+          {
+            begin: /(url|data-uri)\(/,
+            end: /\)/,
+            relevance: 0, // from keywords
+            keywords: {
+              built_in: "url data-uri"
+            },
+            contains: [
+              {
+                className: "string",
+                // any character other than `)` as in `url()` will be the start
+                // of a string, which ends with `)` (from the parent mode)
+                begin: /[^)]/,
+                endsWithParent: true,
+                excludeEnd: true
+              }
+            ]
+          },
+          FUNCTION_DISPATCH
         ]
       },
       {
-        className: 'selector-pseudo',
-        begin: /:(:)?[a-zA-Z0-9_+()"'.-]+/
-      },
-      // matching these here allows us to treat them more like regular CSS
-      // rules so everything between the {} gets regular rule highlighting,
-      // which is what we want for page and font-face
-      {
-        begin: '@(page|font-face)',
-        lexemes: AT_IDENTIFIER,
-        keywords: '@page @font-face'
-      },
-      {
-        begin: '@', end: '[{;]', // at_rule eating first "{" is a good thing
-                                 // because it doesn’t let it to be parsed as
-                                 // a rule set but instead drops parser into
-                                 // the default mode which is how it should be.
+        begin: lookahead(/@/),
+        end: '[{;]',
+        relevance: 0,
         illegal: /:/, // break on Less variables @var: ...
-        returnBegin: true,
         contains: [
           {
             className: 'keyword',
             begin: AT_PROPERTY_RE
           },
           {
-            begin: /\s/, endsWithParent: true, excludeEnd: true,
+            begin: /\s/,
+            endsWithParent: true,
+            excludeEnd: true,
             relevance: 0,
-            keywords: AT_MODIFIERS,
+            keywords: {
+              $pattern: /[a-z-]+/,
+              keyword: AT_MODIFIERS,
+              attribute: MEDIA_FEATURES.join(" ")
+            },
             contains: [
               {
-                begin: /[a-z-]+:/,
-                className:"attribute"
+                begin: /[a-z-]+(?=:)/,
+                className: "attribute"
               },
-              hljs.APOS_STRING_MODE,
-              hljs.QUOTE_STRING_MODE,
+              ...STRINGS,
               hljs.CSS_NUMBER_MODE
             ]
           }
         ]
       },
       {
-        className: 'selector-tag', begin: IDENT_RE,
-        relevance: 0
-      },
-      {
-        begin: /\{/, end: /\}/,
-        illegal: /\S/,
-        contains: [
-          hljs.C_BLOCK_COMMENT_MODE,
-          { begin: /;/ }, // empty ; rule
-          RULE,
-        ]
+        className: 'selector-tag',
+        begin: '\\b(' + TAGS.join('|') + ')\\b'
       }
     ]
   };
@@ -13771,7 +14926,7 @@ function css(hljs) {
 
 module.exports = css;
 
-},{}],162:[function(require,module,exports){
+},{}],163:[function(require,module,exports){
 /*
 Language: D
 Author: Aleksandar Ruzicic <aleksandar@ruzicic.info>
@@ -14044,7 +15199,7 @@ function d(hljs) {
 
 module.exports = d;
 
-},{}],163:[function(require,module,exports){
+},{}],164:[function(require,module,exports){
 /*
 Language: Dart
 Requires: markdown.js
@@ -14189,7 +15344,7 @@ function dart(hljs) {
           'querySelector',
           'querySelectorAll',
           'window'
-        ]).join(' '),
+        ]),
     $pattern: /[A-Za-z][A-Za-z0-9_]*\??/
   };
 
@@ -14245,7 +15400,7 @@ function dart(hljs) {
 
 module.exports = dart;
 
-},{}],164:[function(require,module,exports){
+},{}],165:[function(require,module,exports){
 /*
 Language: Delphi
 Website: https://www.embarcadero.com/products/delphi
@@ -14373,7 +15528,7 @@ function delphi(hljs) {
 
 module.exports = delphi;
 
-},{}],165:[function(require,module,exports){
+},{}],166:[function(require,module,exports){
 /*
 Language: Diff
 Description: Unified and context diff
@@ -14460,7 +15615,7 @@ function diff(hljs) {
 
 module.exports = diff;
 
-},{}],166:[function(require,module,exports){
+},{}],167:[function(require,module,exports){
 /*
 Language: Django
 Description: Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design.
@@ -14539,7 +15694,7 @@ function django(hljs) {
 
 module.exports = django;
 
-},{}],167:[function(require,module,exports){
+},{}],168:[function(require,module,exports){
 /*
 Language: DNS Zone
 Author: Tim Schumacher <tim@datenknoten.me>
@@ -14587,7 +15742,7 @@ function dns(hljs) {
 
 module.exports = dns;
 
-},{}],168:[function(require,module,exports){
+},{}],169:[function(require,module,exports){
 /*
 Language: Dockerfile
 Requires: bash.js
@@ -14623,7 +15778,7 @@ function dockerfile(hljs) {
 
 module.exports = dockerfile;
 
-},{}],169:[function(require,module,exports){
+},{}],170:[function(require,module,exports){
 /*
 Language: Batch file (DOS)
 Author: Alexander Makarov <sam@rmcreative.ru>
@@ -14695,7 +15850,7 @@ function dos(hljs) {
 
 module.exports = dos;
 
-},{}],170:[function(require,module,exports){
+},{}],171:[function(require,module,exports){
 /*
  Language: dsconfig
  Description: dsconfig batch configuration language for LDAP directory servers
@@ -14763,7 +15918,7 @@ function dsconfig(hljs) {
 
 module.exports = dsconfig;
 
-},{}],171:[function(require,module,exports){
+},{}],172:[function(require,module,exports){
 /*
 Language: Device Tree
 Description: *.dts files used in the Linux kernel
@@ -14918,7 +16073,7 @@ function dts(hljs) {
 
 module.exports = dts;
 
-},{}],172:[function(require,module,exports){
+},{}],173:[function(require,module,exports){
 /*
 Language: Dust
 Requires: xml.js
@@ -14965,7 +16120,7 @@ function dust(hljs) {
 
 module.exports = dust;
 
-},{}],173:[function(require,module,exports){
+},{}],174:[function(require,module,exports){
 /*
 Language: Extended Backus-Naur Form
 Author: Alex McKibben <alex@nullscope.net>
@@ -15020,7 +16175,7 @@ function ebnf(hljs) {
 
 module.exports = ebnf;
 
-},{}],174:[function(require,module,exports){
+},{}],175:[function(require,module,exports){
 /*
 Language: Elixir
 Author: Josh Adams <josh@isotope11.com>
@@ -15160,22 +16315,22 @@ function elixir(hljs) {
       {
         begin: /~S"""/,
         end: /"""/,
-        contains: []
+        contains: [] // override default
       },
       {
         begin: /~S"/,
         end: /"/,
-        contains: []
+        contains: [] // override default
       },
       {
         begin: /~S'''/,
         end: /'''/,
-        contains: []
+        contains: [] // override default
       },
       {
         begin: /~S'/,
         end: /'/,
-        contains: []
+        contains: [] // override default
       },
       {
         begin: /'/,
@@ -15281,7 +16436,7 @@ function elixir(hljs) {
 
 module.exports = elixir;
 
-},{}],175:[function(require,module,exports){
+},{}],176:[function(require,module,exports){
 /*
 Language: Elm
 Author: Janis Voigtlaender <janis.voigtlaender@gmail.com>
@@ -15412,7 +16567,7 @@ function elm(hljs) {
 
 module.exports = elm;
 
-},{}],176:[function(require,module,exports){
+},{}],177:[function(require,module,exports){
 /*
 Language: ERB (Embedded Ruby)
 Requires: xml.js, ruby.js
@@ -15443,7 +16598,7 @@ function erb(hljs) {
 
 module.exports = erb;
 
-},{}],177:[function(require,module,exports){
+},{}],178:[function(require,module,exports){
 /**
  * @param {string} value
  * @returns {RegExp}
@@ -15531,7 +16686,7 @@ function erlangRepl(hljs) {
 
 module.exports = erlangRepl;
 
-},{}],178:[function(require,module,exports){
+},{}],179:[function(require,module,exports){
 /*
 Language: Erlang
 Description: Erlang is a general-purpose functional language, with strict evaluation, single assignment, and dynamic typing.
@@ -15650,6 +16805,30 @@ function erlang(hljs) {
   TUPLE.contains = BASIC_MODES;
   RECORD_ACCESS.contains[1].contains = BASIC_MODES;
 
+  const DIRECTIVES = [
+    "-module",
+    "-record",
+    "-undef",
+    "-export",
+    "-ifdef",
+    "-ifndef",
+    "-author",
+    "-copyright",
+    "-doc",
+    "-vsn",
+    "-import",
+    "-include",
+    "-include_lib",
+    "-compile",
+    "-define",
+    "-else",
+    "-endif",
+    "-file",
+    "-behaviour",
+    "-behavior",
+    "-spec"
+  ];
+
   const PARAMS = {
     className: 'params',
     begin: '\\(',
@@ -15689,9 +16868,7 @@ function erlang(hljs) {
         returnBegin: true,
         keywords: {
           $pattern: '-' + hljs.IDENT_RE,
-          keyword: '-module -record -undef -export -ifdef -ifndef -author -copyright -doc -vsn ' +
-          '-import -include -include_lib -compile -define -else -endif -file -behaviour ' +
-          '-behavior -spec'
+          keyword: DIRECTIVES.map(x => `${x}|1.5`).join(" ")
         },
         contains: [PARAMS]
       },
@@ -15710,7 +16887,7 @@ function erlang(hljs) {
 
 module.exports = erlang;
 
-},{}],179:[function(require,module,exports){
+},{}],180:[function(require,module,exports){
 /*
 Language: Excel formulae
 Author: Victor Zhou <OiCMudkips@users.noreply.github.com>
@@ -15776,7 +16953,7 @@ function excel(hljs) {
 
 module.exports = excel;
 
-},{}],180:[function(require,module,exports){
+},{}],181:[function(require,module,exports){
 /*
 Language: FIX
 Author: Brent Bradbury <brent@brentium.com>
@@ -15815,7 +16992,7 @@ function fix(hljs) {
 
 module.exports = fix;
 
-},{}],181:[function(require,module,exports){
+},{}],182:[function(require,module,exports){
 /*
  Language: Flix
  Category: functional
@@ -15840,6 +17017,7 @@ function flix(hljs) {
 
   const NAME = {
     className: 'title',
+    relevance: 0,
     begin: /[^0-9\n\t "'(),.`{}\[\]:;][^\n\t "'(),.`{}\[\]:;]+|[^0-9\n\t "'(),.`{}\[\]:;=]/
   };
 
@@ -15870,7 +17048,7 @@ function flix(hljs) {
 
 module.exports = flix;
 
-},{}],182:[function(require,module,exports){
+},{}],183:[function(require,module,exports){
 /**
  * @param {string} value
  * @returns {RegExp}
@@ -16031,7 +17209,7 @@ function fortran(hljs) {
 
 module.exports = fortran;
 
-},{}],183:[function(require,module,exports){
+},{}],184:[function(require,module,exports){
 /*
 Language: F#
 Author: Jonas Follesø <jonas@follesoe.no>
@@ -16119,7 +17297,7 @@ function fsharp(hljs) {
 
 module.exports = fsharp;
 
-},{}],184:[function(require,module,exports){
+},{}],185:[function(require,module,exports){
 /**
  * @param {string} value
  * @returns {RegExp}
@@ -16329,7 +17507,7 @@ function gams(hljs) {
 
 module.exports = gams;
 
-},{}],185:[function(require,module,exports){
+},{}],186:[function(require,module,exports){
 /*
 Language: GAUSS
 Author: Matt Evans <matt@aptech.com>
@@ -16647,7 +17825,7 @@ function gauss(hljs) {
 
 module.exports = gauss;
 
-},{}],186:[function(require,module,exports){
+},{}],187:[function(require,module,exports){
 /*
  Language: G-code (ISO 6983)
  Contributors: Adam Joseph Cook <adam.joseph.cook@gmail.com>
@@ -16737,7 +17915,7 @@ function gcode(hljs) {
 
 module.exports = gcode;
 
-},{}],187:[function(require,module,exports){
+},{}],188:[function(require,module,exports){
 /*
  Language: Gherkin
  Author: Sam Pikesley (@pikesley) <sam.pikesley@theodi.org>
@@ -16788,7 +17966,7 @@ function gherkin(hljs) {
 
 module.exports = gherkin;
 
-},{}],188:[function(require,module,exports){
+},{}],189:[function(require,module,exports){
 /*
 Language: GLSL
 Description: OpenGL Shading Language
@@ -16918,7 +18096,7 @@ function glsl(hljs) {
 
 module.exports = glsl;
 
-},{}],189:[function(require,module,exports){
+},{}],190:[function(require,module,exports){
 /*
 Language: GML
 Author: Meseta <meseta@gmail.com>
@@ -16931,14 +18109,17 @@ function gml(hljs) {
   const GML_KEYWORDS = {
     keyword: 'begin end if then else while do for break continue with until ' +
       'repeat exit and or xor not return mod div switch case default var ' +
-      'globalvar enum #macro #region #endregion',
-    built_in: 'is_real is_string is_array is_undefined is_int32 is_int64 ' +
-      'is_ptr is_vec3 is_vec4 is_matrix is_bool typeof ' +
-      'variable_global_exists variable_global_get variable_global_set ' +
+      'globalvar enum function constructor delete #macro #region #endregion',
+    built_in: 'is_real is_string is_array is_undefined is_int32 is_int64 is_ptr ' +
+      'is_vec3 is_vec4 is_matrix is_bool is_method is_struct is_infinity is_nan ' +
+      'is_numeric typeof variable_global_exists variable_global_get variable_global_set ' +
       'variable_instance_exists variable_instance_get variable_instance_set ' +
-      'variable_instance_get_names array_length_1d array_length_2d ' +
-      'array_height_2d array_equals array_create array_copy random ' +
-      'random_range irandom irandom_range random_set_seed random_get_seed ' +
+      'variable_instance_get_names variable_struct_exists variable_struct_get ' +
+      'variable_struct_get_names variable_struct_names_count variable_struct_remove ' +
+      'variable_struct_set array_delete array_insert array_length array_length_1d ' +
+      'array_length_2d array_height_2d array_equals array_create ' +
+      'array_copy array_pop array_push array_resize array_sort ' +
+      'random random_range irandom irandom_range random_set_seed random_get_seed ' +
       'randomize randomise choose abs round floor ceil sign frac sqrt sqr ' +
       'exp ln log2 log10 sin cos tan arcsin arccos arctan arctan2 dsin dcos ' +
       'dtan darcsin darccos darctan darctan2 degtorad radtodeg power logn ' +
@@ -17746,7 +18927,7 @@ function gml(hljs) {
     symbol: 'argument_relative argument argument0 argument1 argument2 ' +
       'argument3 argument4 argument5 argument6 argument7 argument8 ' +
       'argument9 argument10 argument11 argument12 argument13 argument14 ' +
-      'argument15 argument_count x y xprevious yprevious xstart ystart ' +
+      'argument15 argument_count x|0 y|0 xprevious yprevious xstart ystart ' +
       'hspeed vspeed direction speed friction gravity gravity_direction ' +
       'path_index path_position path_positionprevious path_speed ' +
       'path_scale path_orientation path_endaction object_index id solid ' +
@@ -17787,10 +18968,6 @@ function gml(hljs) {
 
   return {
     name: 'GML',
-    aliases: [
-      'gml',
-      'GML'
-    ],
     case_insensitive: false, // language is case-insensitive
     keywords: GML_KEYWORDS,
 
@@ -17806,7 +18983,7 @@ function gml(hljs) {
 
 module.exports = gml;
 
-},{}],190:[function(require,module,exports){
+},{}],191:[function(require,module,exports){
 /*
 Language: Go
 Author: Stephan Kountso aka StepLg <steplg@gmail.com>
@@ -17882,7 +19059,7 @@ function go(hljs) {
 
 module.exports = go;
 
-},{}],191:[function(require,module,exports){
+},{}],192:[function(require,module,exports){
 /*
 Language: Golo
 Author: Philippe Charriere <ph.charriere@gmail.com>
@@ -17917,7 +19094,7 @@ function golo(hljs) {
 
 module.exports = golo;
 
-},{}],192:[function(require,module,exports){
+},{}],193:[function(require,module,exports){
 /*
 Language: Gradle
 Description: Gradle is an open-source build automation tool focused on flexibility and performance.
@@ -17963,7 +19140,7 @@ function gradle(hljs) {
 
 module.exports = gradle;
 
-},{}],193:[function(require,module,exports){
+},{}],194:[function(require,module,exports){
 /**
  * @param {string} value
  * @returns {RegExp}
@@ -18018,14 +19195,16 @@ function groovy(hljs) {
       '/\\*\\*',
       '\\*/',
       {
-        relevance : 0,
-        contains : [
+        relevance: 0,
+        contains: [
           {
             // eat up @'s in emails to prevent them to be recognized as doctags
-            begin: /\w+@/, relevance: 0
-          }, {
-            className : 'doctag',
-            begin : '@[A-Za-z]+'
+            begin: /\w+@/,
+            relevance: 0
+          },
+          {
+            className: 'doctag',
+            begin: '@[A-Za-z]+'
           }
         ]
       }
@@ -18034,38 +19213,40 @@ function groovy(hljs) {
   const REGEXP = {
     className: 'regexp',
     begin: /~?\/[^\/\n]+\//,
-    contains: [
-      hljs.BACKSLASH_ESCAPE
-    ]
+    contains: [ hljs.BACKSLASH_ESCAPE ]
   };
   const NUMBER = variants([
     hljs.BINARY_NUMBER_MODE,
-    hljs.C_NUMBER_MODE,
+    hljs.C_NUMBER_MODE
   ]);
   const STRING = variants([
     {
       begin: /"""/,
       end: /"""/
-    }, {
+    },
+    {
       begin: /'''/,
       end: /'''/
-    }, {
+    },
+    {
       begin: "\\$/",
       end: "/\\$",
       relevance: 10
     },
     hljs.APOS_STRING_MODE,
-    hljs.QUOTE_STRING_MODE,
-    ],
-    { className: "string" }
+    hljs.QUOTE_STRING_MODE
+  ],
+  {
+    className: "string"
+  }
   );
 
-    return {
-        name: 'Groovy',
-        keywords: {
-            built_in: 'this super',
-            literal: 'true false null',
-            keyword:
+  return {
+    name: 'Groovy',
+    keywords: {
+      built_in: 'this super',
+      literal: 'true false null',
+      keyword:
             'byte short char int long boolean float double void ' +
             // groovy specific keywords
             'def as in assert trait ' +
@@ -18073,64 +19254,69 @@ function groovy(hljs) {
             'abstract static volatile transient public private protected synchronized final ' +
             'class interface enum if else for while switch case break default continue ' +
             'throw throws try catch finally implements extends new import package return instanceof'
-        },
+    },
+    contains: [
+      hljs.SHEBANG({
+        binary: "groovy",
+        relevance: 10
+      }),
+      COMMENT,
+      STRING,
+      REGEXP,
+      NUMBER,
+      {
+        className: 'class',
+        beginKeywords: 'class interface trait enum',
+        end: /\{/,
+        illegal: ':',
         contains: [
-            hljs.SHEBANG({
-              binary: "groovy",
-              relevance: 10
-            }),
-            COMMENT,
-            STRING,
-            REGEXP,
-            NUMBER,
-            {
-                className: 'class',
-                beginKeywords: 'class interface trait enum', end: /\{/,
-                illegal: ':',
-                contains: [
-                    {beginKeywords: 'extends implements'},
-                    hljs.UNDERSCORE_TITLE_MODE
-                ]
-            },
-            {
-                className: 'meta',
-                begin: '@[A-Za-z]+',
-                relevance: 0
-            },
-            {
-              // highlight map keys and named parameters as attrs
-              className: 'attr', begin: IDENT_RE + '[ \t]*:'
-            },
-            {
-              // catch middle element of the ternary operator
-              // to avoid highlight it as a label, named parameter, or map key
-              begin: /\?/,
-              end: /:/,
-              relevance: 0,
-              contains: [
-                COMMENT,
-                STRING,
-                REGEXP,
-                NUMBER,
-                'self'
-              ]
-            },
-            {
-                // highlight labeled statements
-                className: 'symbol',
-                begin: '^[ \t]*' + lookahead(IDENT_RE + ':'),
-                excludeBegin: true,
-                end: IDENT_RE + ':',
-                relevance: 0
-            }
-        ],
-        illegal: /#|<\//
-    };
+          {
+            beginKeywords: 'extends implements'
+          },
+          hljs.UNDERSCORE_TITLE_MODE
+        ]
+      },
+      {
+        className: 'meta',
+        begin: '@[A-Za-z]+',
+        relevance: 0
+      },
+      {
+        // highlight map keys and named parameters as attrs
+        className: 'attr',
+        begin: IDENT_RE + '[ \t]*:',
+        relevance: 0
+      },
+      {
+        // catch middle element of the ternary operator
+        // to avoid highlight it as a label, named parameter, or map key
+        begin: /\?/,
+        end: /:/,
+        relevance: 0,
+        contains: [
+          COMMENT,
+          STRING,
+          REGEXP,
+          NUMBER,
+          'self'
+        ]
+      },
+      {
+        // highlight labeled statements
+        className: 'symbol',
+        begin: '^[ \t]*' + lookahead(IDENT_RE + ':'),
+        excludeBegin: true,
+        end: IDENT_RE + ':',
+        relevance: 0
+      }
+    ],
+    illegal: /#|<\//
+  };
 }
 
 module.exports = groovy;
 
-},{}],194:[function(require,module,exports){
+},{}],195:[function(require,module,exports){
 /*
 Language: HAML
 Requires: ruby.js
@@ -18249,7 +19435,7 @@ function haml(hljs) {
 
 module.exports = haml;
 
-},{}],195:[function(require,module,exports){
+},{}],196:[function(require,module,exports){
 /**
  * @param {string} value
  * @returns {RegExp}
@@ -18344,7 +19530,7 @@ function handlebars(hljs) {
       'view',
       'with',
       'yield'
-    ].join(" ")
+    ]
   };
 
   const LITERALS = {
@@ -18353,7 +19539,7 @@ function handlebars(hljs) {
       'false',
       'undefined',
       'null'
-    ].join(" ")
+    ]
   };
 
   // as defined in https://handlebarsjs.com/guide/expressions.html#literal-segments
@@ -18575,7 +19761,7 @@ function handlebars(hljs) {
 
 module.exports = handlebars;
 
-},{}],196:[function(require,module,exports){
+},{}],197:[function(require,module,exports){
 /*
 Language: Haskell
 Author: Jeremy Hull <sourdrums@gmail.com>
@@ -18750,7 +19936,7 @@ function haskell(hljs) {
 
 module.exports = haskell;
 
-},{}],197:[function(require,module,exports){
+},{}],198:[function(require,module,exports){
 /*
 Language: Haxe
 Description: Haxe is an open source toolkit based on a modern, high level, strictly typed programming language.
@@ -18909,7 +20095,7 @@ function haxe(hljs) {
 
 module.exports = haxe;
 
-},{}],198:[function(require,module,exports){
+},{}],199:[function(require,module,exports){
 /*
 Language: HSP
 Author: prince <MC.prince.0203@gmail.com>
@@ -18976,7 +20162,7 @@ function hsp(hljs) {
 
 module.exports = hsp;
 
-},{}],199:[function(require,module,exports){
+},{}],200:[function(require,module,exports){
 /**
  * @param {string} value
  * @returns {RegExp}
@@ -19071,7 +20257,7 @@ function handlebars(hljs) {
       'view',
       'with',
       'yield'
-    ].join(" ")
+    ]
   };
 
   const LITERALS = {
@@ -19080,7 +20266,7 @@ function handlebars(hljs) {
       'false',
       'undefined',
       'null'
-    ].join(" ")
+    ]
   };
 
   // as defined in https://handlebarsjs.com/guide/expressions.html#literal-segments
@@ -19330,7 +20516,7 @@ function htmlbars(hljs) {
 
 module.exports = htmlbars;
 
-},{}],200:[function(require,module,exports){
+},{}],201:[function(require,module,exports){
 /**
  * @param {string} value
  * @returns {RegExp}
@@ -19367,24 +20553,25 @@ Website: https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview
 function http(hljs) {
   const VERSION = 'HTTP/(2|1\\.[01])';
   const HEADER_NAME = /[A-Za-z][A-Za-z0-9-]*/;
-  const HEADERS_AND_BODY = [
-    {
-      className: 'attribute',
-      begin: concat('^', HEADER_NAME, '(?=\\:\\s)'),
-      starts: {
-        contains: [
-          {
-            className: "punctuation",
-            begin: /: /,
-            relevance: 0,
-            starts: {
-              end: '$',
-              relevance: 0
-            }
+  const HEADER = {
+    className: 'attribute',
+    begin: concat('^', HEADER_NAME, '(?=\\:\\s)'),
+    starts: {
+      contains: [
+        {
+          className: "punctuation",
+          begin: /: /,
+          relevance: 0,
+          starts: {
+            end: '$',
+            relevance: 0
           }
-        ]
-      }
-    },
+        }
+      ]
+    }
+  };
+  const HEADERS_AND_BODY = [
+    HEADER,
     {
       begin: '\\n\\n',
       starts: { subLanguage: [], endsWithParent: true }
@@ -19441,14 +20628,18 @@ function http(hljs) {
           illegal: /\S/,
           contains: HEADERS_AND_BODY
         }
-      }
+      },
+      // to allow headers to work even without a preamble
+      hljs.inherit(HEADER, {
+        relevance: 0
+      })
     ]
   };
 }
 
 module.exports = http;
 
-},{}],201:[function(require,module,exports){
+},{}],202:[function(require,module,exports){
 /*
 Language: Hy
 Description: Hy is a wonderful dialect of Lisp that’s embedded in Python.
@@ -19559,7 +20750,7 @@ function hy(hljs) {
 
 module.exports = hy;
 
-},{}],202:[function(require,module,exports){
+},{}],203:[function(require,module,exports){
 /*
 Language: Inform 7
 Author: Bruno Dias <bruno.r.dias@gmail.com>
@@ -19631,7 +20822,7 @@ function inform7(hljs) {
 
 module.exports = inform7;
 
-},{}],203:[function(require,module,exports){
+},{}],204:[function(require,module,exports){
 /**
  * @param {string} value
  * @returns {RegExp}
@@ -19806,7 +20997,7 @@ function ini(hljs) {
 
 module.exports = ini;
 
-},{}],204:[function(require,module,exports){
+},{}],205:[function(require,module,exports){
 /**
  * @param {string} value
  * @returns {RegExp}
@@ -19949,7 +21140,7 @@ function irpf90(hljs) {
 
 module.exports = irpf90;
 
-},{}],205:[function(require,module,exports){
+},{}],206:[function(require,module,exports){
 /*
 Language: ISBL
 Author: Dmitriy Tarasov <dimatar@gmail.com>
@@ -23141,7 +24332,6 @@ function isbl(hljs) {
 
   return {
     name: 'ISBL',
-    aliases: ["isbl"],
     case_insensitive: true,
     keywords: KEYWORDS,
     illegal: "\\$|\\?|%|,|;$|~|#|@|</",
@@ -23159,7 +24349,7 @@ function isbl(hljs) {
 
 module.exports = isbl;
 
-},{}],206:[function(require,module,exports){
+},{}],207:[function(require,module,exports){
 // https://docs.oracle.com/javase/specs/jls/se15/html/jls-3.html#jls-3.10
 var decimalDigits = '[0-9](_*[0-9])*';
 var frac = `\\.(${decimalDigits})`;
@@ -23260,6 +24450,11 @@ function java(hljs) {
       {
         className: 'class',
         beginKeywords: 'class interface enum', end: /[{;=]/, excludeEnd: true,
+        // TODO: can this be removed somehow?
+        // an extra boost because Java is more popular than other languages with
+        // this same syntax feature (this is just to preserve our tests passing
+        // for now)
+        relevance: 1,
         keywords: 'class interface enum',
         illegal: /[:"\[\]]/,
         contains: [
@@ -23337,7 +24532,7 @@ function java(hljs) {
 
 module.exports = java;
 
-},{}],207:[function(require,module,exports){
+},{}],208:[function(require,module,exports){
 const IDENT_RE = '[A-Za-z$_][0-9A-Za-z$_]*';
 const KEYWORDS = [
   "as", // for exports
@@ -23422,7 +24617,10 @@ const TYPES = [
   "Array",
   "Uint8Array",
   "Uint8ClampedArray",
-  "ArrayBuffer"
+  "ArrayBuffer",
+  "BigInt64Array",
+  "BigUint64Array",
+  "BigInt"
 ];
 
 const ERROR_TYPES = [
@@ -23566,9 +24764,9 @@ function javascript(hljs) {
   };
   const KEYWORDS$1 = {
     $pattern: IDENT_RE,
-    keyword: KEYWORDS.join(" "),
-    literal: LITERALS.join(" "),
-    built_in: BUILT_INS.join(" ")
+    keyword: KEYWORDS,
+    literal: LITERALS,
+    built_in: BUILT_INS
   };
 
   // https://tc39.es/ecma262/#sec-literals-numeric-literals
@@ -23940,7 +25138,7 @@ function javascript(hljs) {
 
 module.exports = javascript;
 
-},{}],208:[function(require,module,exports){
+},{}],209:[function(require,module,exports){
 /*
  Language: JBoss CLI
  Author: Raphaël Parrëe <rparree@edc4it.com>
@@ -24005,7 +25203,7 @@ function jbossCli(hljs) {
 
 module.exports = jbossCli;
 
-},{}],209:[function(require,module,exports){
+},{}],210:[function(require,module,exports){
 /*
 Language: JSON
 Description: JSON (JavaScript Object Notation) is a lightweight data-interchange format.
@@ -24070,7 +25268,7 @@ function json(hljs) {
 
 module.exports = json;
 
-},{}],210:[function(require,module,exports){
+},{}],211:[function(require,module,exports){
 /*
 Language: Julia REPL
 Description: Julia REPL sessions
@@ -24122,7 +25320,7 @@ function juliaRepl(hljs) {
 
 module.exports = juliaRepl;
 
-},{}],211:[function(require,module,exports){
+},{}],212:[function(require,module,exports){
 /*
 Language: Julia
 Description: Julia is a high-level, high-performance, dynamic programming language.
@@ -24448,9 +25646,9 @@ function julia(hljs) {
 
   var KEYWORDS = {
     $pattern: VARIABLE_NAME_RE,
-    keyword: KEYWORD_LIST.join(" "),
-    literal: LITERAL_LIST.join(" "),
-    built_in: BUILT_IN_LIST.join(" "),
+    keyword: KEYWORD_LIST,
+    literal: LITERAL_LIST,
+    built_in: BUILT_IN_LIST,
   };
 
   // placeholder for recursive self-reference
@@ -24540,7 +25738,7 @@ function julia(hljs) {
 
 module.exports = julia;
 
-},{}],212:[function(require,module,exports){
+},{}],213:[function(require,module,exports){
 // https://docs.oracle.com/javase/specs/jls/se15/html/jls-3.html#jls-3.10
 var decimalDigits = '[0-9](_*[0-9])*';
 var frac = `\\.(${decimalDigits})`;
@@ -24708,7 +25906,7 @@ function kotlin(hljs) {
 
   return {
     name: 'Kotlin',
-    aliases: [ 'kt' ],
+    aliases: [ 'kt', 'kts' ],
     keywords: KEYWORDS,
     contains: [
       hljs.COMMENT(
@@ -24826,7 +26024,7 @@ function kotlin(hljs) {
 
 module.exports = kotlin;
 
-},{}],213:[function(require,module,exports){
+},{}],214:[function(require,module,exports){
 /*
 Language: Lasso
 Author: Eric Knibbe <eric@lassosoft.com>
@@ -25015,7 +26213,7 @@ function lasso(hljs) {
 
 module.exports = lasso;
 
-},{}],214:[function(require,module,exports){
+},{}],215:[function(require,module,exports){
 /**
  * @param {string} value
  * @returns {RegExp}
@@ -25283,7 +26481,7 @@ function latex(hljs) {
 
   return {
     name: 'LaTeX',
-    aliases: ['TeX'],
+    aliases: ['tex'],
     contains: [
       ...VERBATIM,
       ...EVERYTHING_BUT_VERBATIM
@@ -25293,7 +26491,7 @@ function latex(hljs) {
 
 module.exports = latex;
 
-},{}],215:[function(require,module,exports){
+},{}],216:[function(require,module,exports){
 /*
 Language: LDIF
 Contributors: Jacob Childress <jacobc@gmail.com>
@@ -25337,7 +26535,7 @@ function ldif(hljs) {
 
 module.exports = ldif;
 
-},{}],216:[function(require,module,exports){
+},{}],217:[function(require,module,exports){
 /*
 Language: Leaf
 Author: Hale Chan <halechan@qq.com>
@@ -25388,7 +26586,438 @@ function leaf(hljs) {
 
 module.exports = leaf;
 
-},{}],217:[function(require,module,exports){
+},{}],218:[function(require,module,exports){
+const MODES = (hljs) => {
+  return {
+    IMPORTANT: {
+      className: 'meta',
+      begin: '!important'
+    },
+    HEXCOLOR: {
+      className: 'number',
+      begin: '#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})'
+    },
+    ATTRIBUTE_SELECTOR_MODE: {
+      className: 'selector-attr',
+      begin: /\[/,
+      end: /\]/,
+      illegal: '$',
+      contains: [
+        hljs.APOS_STRING_MODE,
+        hljs.QUOTE_STRING_MODE
+      ]
+    }
+  };
+};
+
+const TAGS = [
+  'a',
+  'abbr',
+  'address',
+  'article',
+  'aside',
+  'audio',
+  'b',
+  'blockquote',
+  'body',
+  'button',
+  'canvas',
+  'caption',
+  'cite',
+  'code',
+  'dd',
+  'del',
+  'details',
+  'dfn',
+  'div',
+  'dl',
+  'dt',
+  'em',
+  'fieldset',
+  'figcaption',
+  'figure',
+  'footer',
+  'form',
+  'h1',
+  'h2',
+  'h3',
+  'h4',
+  'h5',
+  'h6',
+  'header',
+  'hgroup',
+  'html',
+  'i',
+  'iframe',
+  'img',
+  'input',
+  'ins',
+  'kbd',
+  'label',
+  'legend',
+  'li',
+  'main',
+  'mark',
+  'menu',
+  'nav',
+  'object',
+  'ol',
+  'p',
+  'q',
+  'quote',
+  'samp',
+  'section',
+  'span',
+  'strong',
+  'summary',
+  'sup',
+  'table',
+  'tbody',
+  'td',
+  'textarea',
+  'tfoot',
+  'th',
+  'thead',
+  'time',
+  'tr',
+  'ul',
+  'var',
+  'video'
+];
+
+const MEDIA_FEATURES = [
+  'any-hover',
+  'any-pointer',
+  'aspect-ratio',
+  'color',
+  'color-gamut',
+  'color-index',
+  'device-aspect-ratio',
+  'device-height',
+  'device-width',
+  'display-mode',
+  'forced-colors',
+  'grid',
+  'height',
+  'hover',
+  'inverted-colors',
+  'monochrome',
+  'orientation',
+  'overflow-block',
+  'overflow-inline',
+  'pointer',
+  'prefers-color-scheme',
+  'prefers-contrast',
+  'prefers-reduced-motion',
+  'prefers-reduced-transparency',
+  'resolution',
+  'scan',
+  'scripting',
+  'update',
+  'width',
+  // TODO: find a better solution?
+  'min-width',
+  'max-width',
+  'min-height',
+  'max-height'
+];
+
+// https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes
+const PSEUDO_CLASSES = [
+  'active',
+  'any-link',
+  'blank',
+  'checked',
+  'current',
+  'default',
+  'defined',
+  'dir', // dir()
+  'disabled',
+  'drop',
+  'empty',
+  'enabled',
+  'first',
+  'first-child',
+  'first-of-type',
+  'fullscreen',
+  'future',
+  'focus',
+  'focus-visible',
+  'focus-within',
+  'has', // has()
+  'host', // host or host()
+  'host-context', // host-context()
+  'hover',
+  'indeterminate',
+  'in-range',
+  'invalid',
+  'is', // is()
+  'lang', // lang()
+  'last-child',
+  'last-of-type',
+  'left',
+  'link',
+  'local-link',
+  'not', // not()
+  'nth-child', // nth-child()
+  'nth-col', // nth-col()
+  'nth-last-child', // nth-last-child()
+  'nth-last-col', // nth-last-col()
+  'nth-last-of-type', //nth-last-of-type()
+  'nth-of-type', //nth-of-type()
+  'only-child',
+  'only-of-type',
+  'optional',
+  'out-of-range',
+  'past',
+  'placeholder-shown',
+  'read-only',
+  'read-write',
+  'required',
+  'right',
+  'root',
+  'scope',
+  'target',
+  'target-within',
+  'user-invalid',
+  'valid',
+  'visited',
+  'where' // where()
+];
+
+// https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements
+const PSEUDO_ELEMENTS = [
+  'after',
+  'backdrop',
+  'before',
+  'cue',
+  'cue-region',
+  'first-letter',
+  'first-line',
+  'grammar-error',
+  'marker',
+  'part',
+  'placeholder',
+  'selection',
+  'slotted',
+  'spelling-error'
+];
+
+const ATTRIBUTES = [
+  'align-content',
+  'align-items',
+  'align-self',
+  'animation',
+  'animation-delay',
+  'animation-direction',
+  'animation-duration',
+  'animation-fill-mode',
+  'animation-iteration-count',
+  'animation-name',
+  'animation-play-state',
+  'animation-timing-function',
+  'auto',
+  'backface-visibility',
+  'background',
+  'background-attachment',
+  'background-clip',
+  'background-color',
+  'background-image',
+  'background-origin',
+  'background-position',
+  'background-repeat',
+  'background-size',
+  'border',
+  'border-bottom',
+  'border-bottom-color',
+  'border-bottom-left-radius',
+  'border-bottom-right-radius',
+  'border-bottom-style',
+  'border-bottom-width',
+  'border-collapse',
+  'border-color',
+  'border-image',
+  'border-image-outset',
+  'border-image-repeat',
+  'border-image-slice',
+  'border-image-source',
+  'border-image-width',
+  'border-left',
+  'border-left-color',
+  'border-left-style',
+  'border-left-width',
+  'border-radius',
+  'border-right',
+  'border-right-color',
+  'border-right-style',
+  'border-right-width',
+  'border-spacing',
+  'border-style',
+  'border-top',
+  'border-top-color',
+  'border-top-left-radius',
+  'border-top-right-radius',
+  'border-top-style',
+  'border-top-width',
+  'border-width',
+  'bottom',
+  'box-decoration-break',
+  'box-shadow',
+  'box-sizing',
+  'break-after',
+  'break-before',
+  'break-inside',
+  'caption-side',
+  'clear',
+  'clip',
+  'clip-path',
+  'color',
+  'column-count',
+  'column-fill',
+  'column-gap',
+  'column-rule',
+  'column-rule-color',
+  'column-rule-style',
+  'column-rule-width',
+  'column-span',
+  'column-width',
+  'columns',
+  'content',
+  'counter-increment',
+  'counter-reset',
+  'cursor',
+  'direction',
+  'display',
+  'empty-cells',
+  'filter',
+  'flex',
+  'flex-basis',
+  'flex-direction',
+  'flex-flow',
+  'flex-grow',
+  'flex-shrink',
+  'flex-wrap',
+  'float',
+  'font',
+  'font-display',
+  'font-family',
+  'font-feature-settings',
+  'font-kerning',
+  'font-language-override',
+  'font-size',
+  'font-size-adjust',
+  'font-smoothing',
+  'font-stretch',
+  'font-style',
+  'font-variant',
+  'font-variant-ligatures',
+  'font-variation-settings',
+  'font-weight',
+  'height',
+  'hyphens',
+  'icon',
+  'image-orientation',
+  'image-rendering',
+  'image-resolution',
+  'ime-mode',
+  'inherit',
+  'initial',
+  'justify-content',
+  'left',
+  'letter-spacing',
+  'line-height',
+  'list-style',
+  'list-style-image',
+  'list-style-position',
+  'list-style-type',
+  'margin',
+  'margin-bottom',
+  'margin-left',
+  'margin-right',
+  'margin-top',
+  'marks',
+  'mask',
+  'max-height',
+  'max-width',
+  'min-height',
+  'min-width',
+  'nav-down',
+  'nav-index',
+  'nav-left',
+  'nav-right',
+  'nav-up',
+  'none',
+  'normal',
+  'object-fit',
+  'object-position',
+  'opacity',
+  'order',
+  'orphans',
+  'outline',
+  'outline-color',
+  'outline-offset',
+  'outline-style',
+  'outline-width',
+  'overflow',
+  'overflow-wrap',
+  'overflow-x',
+  'overflow-y',
+  'padding',
+  'padding-bottom',
+  'padding-left',
+  'padding-right',
+  'padding-top',
+  'page-break-after',
+  'page-break-before',
+  'page-break-inside',
+  'perspective',
+  'perspective-origin',
+  'pointer-events',
+  'position',
+  'quotes',
+  'resize',
+  'right',
+  'src', // @font-face
+  'tab-size',
+  'table-layout',
+  'text-align',
+  'text-align-last',
+  'text-decoration',
+  'text-decoration-color',
+  'text-decoration-line',
+  'text-decoration-style',
+  'text-indent',
+  'text-overflow',
+  'text-rendering',
+  'text-shadow',
+  'text-transform',
+  'text-underline-position',
+  'top',
+  'transform',
+  'transform-origin',
+  'transform-style',
+  'transition',
+  'transition-delay',
+  'transition-duration',
+  'transition-property',
+  'transition-timing-function',
+  'unicode-bidi',
+  'vertical-align',
+  'visibility',
+  'white-space',
+  'widows',
+  'width',
+  'word-break',
+  'word-spacing',
+  'word-wrap',
+  'z-index'
+  // reverse makes sure longer attributes `font-weight` are matched fully
+  // instead of getting false positives on say `font`
+].reverse();
+
+// some grammars use them all as a single group
+const PSEUDO_SELECTORS = PSEUDO_CLASSES.concat(PSEUDO_ELEMENTS);
+
 /*
 Language: Less
 Description: It's CSS, with just a little more.
@@ -25397,30 +27026,52 @@ Website: http://lesscss.org
 Category: common, css
 */
 
+/** @type LanguageFn */
 function less(hljs) {
-  var IDENT_RE        = '[\\w-]+'; // yes, Less identifiers may begin with a digit
-  var INTERP_IDENT_RE = '(' + IDENT_RE + '|@\\{' + IDENT_RE + '\\})';
+  const modes = MODES(hljs);
+  const PSEUDO_SELECTORS$1 = PSEUDO_SELECTORS;
+
+  const AT_MODIFIERS = "and or not only";
+  const IDENT_RE = '[\\w-]+'; // yes, Less identifiers may begin with a digit
+  const INTERP_IDENT_RE = '(' + IDENT_RE + '|@\\{' + IDENT_RE + '\\})';
 
   /* Generic Modes */
 
-  var RULES = [], VALUE = []; // forward def. for recursive modes
+  const RULES = []; const VALUE_MODES = []; // forward def. for recursive modes
 
-  var STRING_MODE = function(c) { return {
+  const STRING_MODE = function(c) {
+    return {
     // Less strings are not multiline (also include '~' for more consistent coloring of "escaped" strings)
-    className: 'string', begin: '~?' + c + '.*?' + c
-  };};
+      className: 'string',
+      begin: '~?' + c + '.*?' + c
+    };
+  };
 
-  var IDENT_MODE = function(name, begin, relevance) { return {
-    className: name, begin: begin, relevance: relevance
-  };};
+  const IDENT_MODE = function(name, begin, relevance) {
+    return {
+      className: name,
+      begin: begin,
+      relevance: relevance
+    };
+  };
 
-  var PARENS_MODE = {
+  const AT_KEYWORDS = {
+    $pattern: /[a-z-]+/,
+    keyword: AT_MODIFIERS,
+    attribute: MEDIA_FEATURES.join(" ")
+  };
+
+  const PARENS_MODE = {
     // used only to properly balance nested parens inside mixin call, def. arg list
-    begin: '\\(', end: '\\)', contains: VALUE, relevance: 0
+    begin: '\\(',
+    end: '\\)',
+    contains: VALUE_MODES,
+    keywords: AT_KEYWORDS,
+    relevance: 0
   };
 
   // generic Less highlighter (used almost everywhere except selectors):
-  VALUE.push(
+  VALUE_MODES.push(
     hljs.C_LINE_COMMENT_MODE,
     hljs.C_BLOCK_COMMENT_MODE,
     STRING_MODE("'"),
@@ -25428,97 +27079,159 @@ function less(hljs) {
     hljs.CSS_NUMBER_MODE, // fixme: it does not include dot for numbers like .5em :(
     {
       begin: '(url|data-uri)\\(',
-      starts: {className: 'string', end: '[\\)\\n]', excludeEnd: true}
+      starts: {
+        className: 'string',
+        end: '[\\)\\n]',
+        excludeEnd: true
+      }
     },
-    IDENT_MODE('number', '#[0-9A-Fa-f]+\\b'),
+    modes.HEXCOLOR,
     PARENS_MODE,
     IDENT_MODE('variable', '@@?' + IDENT_RE, 10),
-    IDENT_MODE('variable', '@\\{'  + IDENT_RE + '\\}'),
+    IDENT_MODE('variable', '@\\{' + IDENT_RE + '\\}'),
     IDENT_MODE('built_in', '~?`[^`]*?`'), // inline javascript (or whatever host language) *multiline* string
     { // @media features (it’s here to not duplicate things in AT_RULE_MODE with extra PARENS_MODE overriding):
-      className: 'attribute', begin: IDENT_RE + '\\s*:', end: ':', returnBegin: true, excludeEnd: true
+      className: 'attribute',
+      begin: IDENT_RE + '\\s*:',
+      end: ':',
+      returnBegin: true,
+      excludeEnd: true
     },
-    {
-      className: 'meta',
-      begin: '!important'
-    }
+    modes.IMPORTANT
   );
 
-  var VALUE_WITH_RULESETS = VALUE.concat({
-    begin: /\{/, end: /\}/, contains: RULES
+  const VALUE_WITH_RULESETS = VALUE_MODES.concat({
+    begin: /\{/,
+    end: /\}/,
+    contains: RULES
   });
 
-  var MIXIN_GUARD_MODE = {
-    beginKeywords: 'when', endsWithParent: true,
-    contains: [{beginKeywords: 'and not'}].concat(VALUE) // using this form to override VALUE’s 'function' match
+  const MIXIN_GUARD_MODE = {
+    beginKeywords: 'when',
+    endsWithParent: true,
+    contains: [
+      {
+        beginKeywords: 'and not'
+      }
+    ].concat(VALUE_MODES) // using this form to override VALUE’s 'function' match
   };
 
   /* Rule-Level Modes */
 
-  var RULE_MODE = {
-    begin: INTERP_IDENT_RE + '\\s*:', returnBegin: true, end: '[;}]',
+  const RULE_MODE = {
+    begin: INTERP_IDENT_RE + '\\s*:',
+    returnBegin: true,
+    end: /[;}]/,
     relevance: 0,
     contains: [
       {
+        begin: /-(webkit|moz|ms|o)-/
+      },
+      {
         className: 'attribute',
-        begin: INTERP_IDENT_RE, end: ':', excludeEnd: true,
+        begin: '\\b(' + ATTRIBUTES.join('|') + ')\\b',
+        end: /(?=:)/,
         starts: {
-          endsWithParent: true, illegal: '[<=$]',
+          endsWithParent: true,
+          illegal: '[<=$]',
           relevance: 0,
-          contains: VALUE
+          contains: VALUE_MODES
         }
       }
     ]
   };
 
-  var AT_RULE_MODE = {
+  const AT_RULE_MODE = {
     className: 'keyword',
     begin: '@(import|media|charset|font-face|(-[a-z]+-)?keyframes|supports|document|namespace|page|viewport|host)\\b',
-    starts: {end: '[;{}]', returnEnd: true, contains: VALUE, relevance: 0}
+    starts: {
+      end: '[;{}]',
+      keywords: AT_KEYWORDS,
+      returnEnd: true,
+      contains: VALUE_MODES,
+      relevance: 0
+    }
   };
 
   // variable definitions and calls
-  var VAR_RULE_MODE = {
+  const VAR_RULE_MODE = {
     className: 'variable',
     variants: [
       // using more strict pattern for higher relevance to increase chances of Less detection.
       // this is *the only* Less specific statement used in most of the sources, so...
       // (we’ll still often loose to the css-parser unless there's '//' comment,
       // simply because 1 variable just can't beat 99 properties :)
-      {begin: '@' + IDENT_RE + '\\s*:', relevance: 15},
-      {begin: '@' + IDENT_RE}
+      {
+        begin: '@' + IDENT_RE + '\\s*:',
+        relevance: 15
+      },
+      {
+        begin: '@' + IDENT_RE
+      }
     ],
-    starts: {end: '[;}]', returnEnd: true, contains: VALUE_WITH_RULESETS}
+    starts: {
+      end: '[;}]',
+      returnEnd: true,
+      contains: VALUE_WITH_RULESETS
+    }
   };
 
-  var SELECTOR_MODE = {
+  const SELECTOR_MODE = {
     // first parse unambiguous selectors (i.e. those not starting with tag)
     // then fall into the scary lookahead-discriminator variant.
     // this mode also handles mixin definitions and calls
-    variants: [{
-      begin: '[\\.#:&\\[>]', end: '[;{}]'  // mixin calls end with ';'
-      }, {
-      begin: INTERP_IDENT_RE, end: /\{/
-    }],
+    variants: [
+      {
+        begin: '[\\.#:&\\[>]',
+        end: '[;{}]' // mixin calls end with ';'
+      },
+      {
+        begin: INTERP_IDENT_RE,
+        end: /\{/
+      }
+    ],
     returnBegin: true,
-    returnEnd:   true,
+    returnEnd: true,
     illegal: '[<=\'$"]',
     relevance: 0,
     contains: [
       hljs.C_LINE_COMMENT_MODE,
       hljs.C_BLOCK_COMMENT_MODE,
       MIXIN_GUARD_MODE,
-      IDENT_MODE('keyword',  'all\\b'),
-      IDENT_MODE('variable', '@\\{'  + IDENT_RE + '\\}'),     // otherwise it’s identified as tag
-      IDENT_MODE('selector-tag',  INTERP_IDENT_RE + '%?', 0), // '%' for more consistent coloring of @keyframes "tags"
+      IDENT_MODE('keyword', 'all\\b'),
+      IDENT_MODE('variable', '@\\{' + IDENT_RE + '\\}'), // otherwise it’s identified as tag
+      {
+        begin: '\\b(' + TAGS.join('|') + ')\\b',
+        className: 'selector-tag'
+      },
+      IDENT_MODE('selector-tag', INTERP_IDENT_RE + '%?', 0), // '%' for more consistent coloring of @keyframes "tags"
       IDENT_MODE('selector-id', '#' + INTERP_IDENT_RE),
       IDENT_MODE('selector-class', '\\.' + INTERP_IDENT_RE, 0),
-      IDENT_MODE('selector-tag',  '&', 0),
-      {className: 'selector-attr', begin: '\\[', end: '\\]'},
-      {className: 'selector-pseudo', begin: /:(:)?[a-zA-Z0-9_\-+()"'.]+/},
-      {begin: '\\(', end: '\\)', contains: VALUE_WITH_RULESETS}, // argument list of parametric mixins
-      {begin: '!important'} // eat !important after mixin call or it will be colored as tag
+      IDENT_MODE('selector-tag', '&', 0),
+      modes.ATTRIBUTE_SELECTOR_MODE,
+      {
+        className: 'selector-pseudo',
+        begin: ':(' + PSEUDO_CLASSES.join('|') + ')'
+      },
+      {
+        className: 'selector-pseudo',
+        begin: '::(' + PSEUDO_ELEMENTS.join('|') + ')'
+      },
+      {
+        begin: '\\(',
+        end: '\\)',
+        contains: VALUE_WITH_RULESETS
+      }, // argument list of parametric mixins
+      {
+        begin: '!important'
+      } // eat !important after mixin call or it will be colored as tag
     ]
+  };
+
+  const PSEUDO_SELECTOR_MODE = {
+    begin: IDENT_RE + ':(:)?' + `(${PSEUDO_SELECTORS$1.join('|')})`,
+    returnBegin: true,
+    contains: [ SELECTOR_MODE ]
   };
 
   RULES.push(
@@ -25526,6 +27239,7 @@ function less(hljs) {
     hljs.C_BLOCK_COMMENT_MODE,
     AT_RULE_MODE,
     VAR_RULE_MODE,
+    PSEUDO_SELECTOR_MODE,
     RULE_MODE,
     SELECTOR_MODE
   );
@@ -25540,7 +27254,7 @@ function less(hljs) {
 
 module.exports = less;
 
-},{}],218:[function(require,module,exports){
+},{}],219:[function(require,module,exports){
 /*
 Language: Lisp
 Description: Generic lisp syntax
@@ -25653,7 +27367,7 @@ function lisp(hljs) {
 
 module.exports = lisp;
 
-},{}],219:[function(require,module,exports){
+},{}],220:[function(require,module,exports){
 /*
 Language: LiveCode
 Author: Ralf Bitter <rabit@revigniter.com>
@@ -25844,7 +27558,7 @@ function livecodeserver(hljs) {
 
 module.exports = livecodeserver;
 
-},{}],220:[function(require,module,exports){
+},{}],221:[function(require,module,exports){
 const KEYWORDS = [
   "as", // for exports
   "in",
@@ -25928,7 +27642,10 @@ const TYPES = [
   "Array",
   "Uint8Array",
   "Uint8ClampedArray",
-  "ArrayBuffer"
+  "ArrayBuffer",
+  "BigInt64Array",
+  "BigUint64Array",
+  "BigInt"
 ];
 
 const ERROR_TYPES = [
@@ -26038,9 +27755,9 @@ function livescript(hljs) {
     '__indexOf'
   ];
   const KEYWORDS$1 = {
-    keyword: KEYWORDS.concat(LIVESCRIPT_KEYWORDS).join(" "),
-    literal: LITERALS.concat(LIVESCRIPT_LITERALS).join(" "),
-    built_in: BUILT_INS.concat(LIVESCRIPT_BUILT_INS).join(" ")
+    keyword: KEYWORDS.concat(LIVESCRIPT_KEYWORDS),
+    literal: LITERALS.concat(LIVESCRIPT_LITERALS),
+    built_in: BUILT_INS.concat(LIVESCRIPT_BUILT_INS)
   };
   const JS_IDENT_RE = '[A-Za-z$_](?:-[0-9A-Za-z$_]|[0-9A-Za-z$_])*';
   const TITLE = hljs.inherit(hljs.TITLE_MODE, {
@@ -26217,7 +27934,7 @@ function livescript(hljs) {
 
 module.exports = livescript;
 
-},{}],221:[function(require,module,exports){
+},{}],222:[function(require,module,exports){
 /**
  * @param {string} value
  * @returns {RegExp}
@@ -26373,7 +28090,7 @@ function llvm(hljs) {
 
 module.exports = llvm;
 
-},{}],222:[function(require,module,exports){
+},{}],223:[function(require,module,exports){
 /*
 Language: LSL (Linden Scripting Language)
 Description: The Linden Scripting Language is used in Second Life by Linden Labs.
@@ -26470,7 +28187,7 @@ function lsl(hljs) {
 
 module.exports = lsl;
 
-},{}],223:[function(require,module,exports){
+},{}],224:[function(require,module,exports){
 /*
 Language: Lua
 Description: Lua is a powerful, efficient, lightweight, embeddable scripting language.
@@ -26554,7 +28271,7 @@ function lua(hljs) {
 
 module.exports = lua;
 
-},{}],224:[function(require,module,exports){
+},{}],225:[function(require,module,exports){
 /*
 Language: Makefile
 Author: Ivan Sagalaev <maniac@softwaremaniacs.org>
@@ -26648,7 +28365,7 @@ function makefile(hljs) {
 
 module.exports = makefile;
 
-},{}],225:[function(require,module,exports){
+},{}],226:[function(require,module,exports){
 /**
  * @param {string} value
  * @returns {RegExp}
@@ -26813,7 +28530,7 @@ function markdown(hljs) {
   };
   const BOLD = {
     className: 'strong',
-    contains: [],
+    contains: [], // defined later
     variants: [
       {
         begin: /_{2}/,
@@ -26827,7 +28544,7 @@ function markdown(hljs) {
   };
   const ITALIC = {
     className: 'emphasis',
-    contains: [],
+    contains: [], // defined later
     variants: [
       {
         begin: /\*(?!\*)/,
@@ -26908,7 +28625,7 @@ function markdown(hljs) {
 
 module.exports = markdown;
 
-},{}],226:[function(require,module,exports){
+},{}],227:[function(require,module,exports){
 const SYSTEM_SYMBOLS = [
   "AASTriangle",
   "AbelianGroup",
@@ -33707,7 +35424,7 @@ function mathematica(hljs) {
 
 module.exports = mathematica;
 
-},{}],227:[function(require,module,exports){
+},{}],228:[function(require,module,exports){
 /*
 Language: Matlab
 Author: Denis Bardadym <bardadymchik@gmail.com>
@@ -33815,7 +35532,7 @@ function matlab(hljs) {
 
 module.exports = matlab;
 
-},{}],228:[function(require,module,exports){
+},{}],229:[function(require,module,exports){
 /*
 Language: Maxima
 Author: Robert Dodier <robert.dodier@gmail.com>
@@ -34234,7 +35951,7 @@ function maxima(hljs) {
 
 module.exports = maxima;
 
-},{}],229:[function(require,module,exports){
+},{}],230:[function(require,module,exports){
 /*
 Language: MEL
 Description: Maya Embedded Language
@@ -34472,7 +36189,7 @@ function mel(hljs) {
 
 module.exports = mel;
 
-},{}],230:[function(require,module,exports){
+},{}],231:[function(require,module,exports){
 /*
 Language: Mercury
 Author: mucaho <mkucko@gmail.com>
@@ -34595,7 +36312,7 @@ function mercury(hljs) {
 
 module.exports = mercury;
 
-},{}],231:[function(require,module,exports){
+},{}],232:[function(require,module,exports){
 /*
 Language: MIPS Assembly
 Author: Nebuleon Fumika <nebuleon.fumika@gmail.com>
@@ -34706,7 +36423,7 @@ function mipsasm(hljs) {
 
 module.exports = mipsasm;
 
-},{}],232:[function(require,module,exports){
+},{}],233:[function(require,module,exports){
 /*
 Language: Mizar
 Description: The Mizar Language is a formal language derived from the mathematical vernacular.
@@ -34737,7 +36454,7 @@ function mizar(hljs) {
 
 module.exports = mizar;
 
-},{}],233:[function(require,module,exports){
+},{}],234:[function(require,module,exports){
 /*
 Language: Mojolicious
 Requires: xml.js, perl.js
@@ -34775,7 +36492,7 @@ function mojolicious(hljs) {
 
 module.exports = mojolicious;
 
-},{}],234:[function(require,module,exports){
+},{}],235:[function(require,module,exports){
 /*
 Language: Monkey
 Description: Monkey2 is an easy to use, cross platform, games oriented programming language from Blitz Research.
@@ -34866,7 +36583,7 @@ function monkey(hljs) {
 
 module.exports = monkey;
 
-},{}],235:[function(require,module,exports){
+},{}],236:[function(require,module,exports){
 /*
 Language: MoonScript
 Author: Billy Quith <chinbillybilbo@gmail.com>
@@ -35015,7 +36732,7 @@ function moonscript(hljs) {
 
 module.exports = moonscript;
 
-},{}],236:[function(require,module,exports){
+},{}],237:[function(require,module,exports){
 /*
  Language: N1QL
  Author: Andres Täht <andres.taht@gmail.com>
@@ -35094,7 +36811,7 @@ function n1ql(hljs) {
 
 module.exports = n1ql;
 
-},{}],237:[function(require,module,exports){
+},{}],238:[function(require,module,exports){
 /*
 Language: Nginx config
 Author: Peter Leonov <gojpeg@yandex.ru>
@@ -35236,7 +36953,7 @@ function nginx(hljs) {
 
 module.exports = nginx;
 
-},{}],238:[function(require,module,exports){
+},{}],239:[function(require,module,exports){
 /*
 Language: Nim
 Description: Nim is a statically typed compiled systems programming language.
@@ -35247,7 +36964,6 @@ Category: system
 function nim(hljs) {
   return {
     name: 'Nim',
-    aliases: [ 'nim' ],
     keywords: {
       keyword:
         'addr and as asm bind block break case cast const continue converter ' +
@@ -35318,7 +37034,7 @@ function nim(hljs) {
 
 module.exports = nim;
 
-},{}],239:[function(require,module,exports){
+},{}],240:[function(require,module,exports){
 /*
 Language: Nix
 Author: Domen Kožar <domen@dev.si>
@@ -35385,7 +37101,7 @@ function nix(hljs) {
 
 module.exports = nix;
 
-},{}],240:[function(require,module,exports){
+},{}],241:[function(require,module,exports){
 /*
 Language: Node REPL
 Requires: javascript.js
@@ -35424,7 +37140,7 @@ function nodeRepl(hljs) {
 
 module.exports = nodeRepl;
 
-},{}],241:[function(require,module,exports){
+},{}],242:[function(require,module,exports){
 /*
 Language: NSIS
 Description: Nullsoft Scriptable Install System
@@ -35545,7 +37261,7 @@ function nsis(hljs) {
 
 module.exports = nsis;
 
-},{}],242:[function(require,module,exports){
+},{}],243:[function(require,module,exports){
 /*
 Language: Objective-C
 Author: Valerii Hiora <valerii.hiora@gmail.com>
@@ -35668,7 +37384,7 @@ function objectivec(hljs) {
 
 module.exports = objectivec;
 
-},{}],243:[function(require,module,exports){
+},{}],244:[function(require,module,exports){
 /*
 Language: OCaml
 Author: Mehdi Dogguy <mehdi@dogguy.org>
@@ -35752,7 +37468,7 @@ function ocaml(hljs) {
 
 module.exports = ocaml;
 
-},{}],244:[function(require,module,exports){
+},{}],245:[function(require,module,exports){
 /*
 Language: OpenSCAD
 Author: Dan Panzarella <alsoelp@gmail.com>
@@ -35835,7 +37551,7 @@ function openscad(hljs) {
 
 module.exports = openscad;
 
-},{}],245:[function(require,module,exports){
+},{}],246:[function(require,module,exports){
 /*
 Language: Oxygene
 Author: Carlo Kok <ck@remobjects.com>
@@ -35938,7 +37654,7 @@ function oxygene(hljs) {
 
 module.exports = oxygene;
 
-},{}],246:[function(require,module,exports){
+},{}],247:[function(require,module,exports){
 /*
 Language: Parser3
 Requires: xml.js
@@ -35997,7 +37713,7 @@ function parser3(hljs) {
 
 module.exports = parser3;
 
-},{}],247:[function(require,module,exports){
+},{}],248:[function(require,module,exports){
 /**
  * @param {string} value
  * @returns {RegExp}
@@ -36023,6 +37739,18 @@ function concat(...args) {
   return joined;
 }
 
+/**
+ * Any of the passed expresssions may match
+ *
+ * Creates a huge this | this | that | that match
+ * @param {(RegExp | string)[] } args
+ * @returns {string}
+ */
+function either(...args) {
+  const joined = '(' + args.map((x) => source(x)).join("|") + ")";
+  return joined;
+}
+
 /*
 Language: Perl
 Author: Peter Leonov <gojpeg@yandex.ru>
@@ -36032,29 +37760,244 @@ Category: common
 
 /** @type LanguageFn */
 function perl(hljs) {
+  const KEYWORDS = [
+    'abs',
+    'accept',
+    'alarm',
+    'and',
+    'atan2',
+    'bind',
+    'binmode',
+    'bless',
+    'break',
+    'caller',
+    'chdir',
+    'chmod',
+    'chomp',
+    'chop',
+    'chown',
+    'chr',
+    'chroot',
+    'close',
+    'closedir',
+    'connect',
+    'continue',
+    'cos',
+    'crypt',
+    'dbmclose',
+    'dbmopen',
+    'defined',
+    'delete',
+    'die',
+    'do',
+    'dump',
+    'each',
+    'else',
+    'elsif',
+    'endgrent',
+    'endhostent',
+    'endnetent',
+    'endprotoent',
+    'endpwent',
+    'endservent',
+    'eof',
+    'eval',
+    'exec',
+    'exists',
+    'exit',
+    'exp',
+    'fcntl',
+    'fileno',
+    'flock',
+    'for',
+    'foreach',
+    'fork',
+    'format',
+    'formline',
+    'getc',
+    'getgrent',
+    'getgrgid',
+    'getgrnam',
+    'gethostbyaddr',
+    'gethostbyname',
+    'gethostent',
+    'getlogin',
+    'getnetbyaddr',
+    'getnetbyname',
+    'getnetent',
+    'getpeername',
+    'getpgrp',
+    'getpriority',
+    'getprotobyname',
+    'getprotobynumber',
+    'getprotoent',
+    'getpwent',
+    'getpwnam',
+    'getpwuid',
+    'getservbyname',
+    'getservbyport',
+    'getservent',
+    'getsockname',
+    'getsockopt',
+    'given',
+    'glob',
+    'gmtime',
+    'goto',
+    'grep',
+    'gt',
+    'hex',
+    'if',
+    'index',
+    'int',
+    'ioctl',
+    'join',
+    'keys',
+    'kill',
+    'last',
+    'lc',
+    'lcfirst',
+    'length',
+    'link',
+    'listen',
+    'local',
+    'localtime',
+    'log',
+    'lstat',
+    'lt',
+    'ma',
+    'map',
+    'mkdir',
+    'msgctl',
+    'msgget',
+    'msgrcv',
+    'msgsnd',
+    'my',
+    'ne',
+    'next',
+    'no',
+    'not',
+    'oct',
+    'open',
+    'opendir',
+    'or',
+    'ord',
+    'our',
+    'pack',
+    'package',
+    'pipe',
+    'pop',
+    'pos',
+    'print',
+    'printf',
+    'prototype',
+    'push',
+    'q|0',
+    'qq',
+    'quotemeta',
+    'qw',
+    'qx',
+    'rand',
+    'read',
+    'readdir',
+    'readline',
+    'readlink',
+    'readpipe',
+    'recv',
+    'redo',
+    'ref',
+    'rename',
+    'require',
+    'reset',
+    'return',
+    'reverse',
+    'rewinddir',
+    'rindex',
+    'rmdir',
+    'say',
+    'scalar',
+    'seek',
+    'seekdir',
+    'select',
+    'semctl',
+    'semget',
+    'semop',
+    'send',
+    'setgrent',
+    'sethostent',
+    'setnetent',
+    'setpgrp',
+    'setpriority',
+    'setprotoent',
+    'setpwent',
+    'setservent',
+    'setsockopt',
+    'shift',
+    'shmctl',
+    'shmget',
+    'shmread',
+    'shmwrite',
+    'shutdown',
+    'sin',
+    'sleep',
+    'socket',
+    'socketpair',
+    'sort',
+    'splice',
+    'split',
+    'sprintf',
+    'sqrt',
+    'srand',
+    'stat',
+    'state',
+    'study',
+    'sub',
+    'substr',
+    'symlink',
+    'syscall',
+    'sysopen',
+    'sysread',
+    'sysseek',
+    'system',
+    'syswrite',
+    'tell',
+    'telldir',
+    'tie',
+    'tied',
+    'time',
+    'times',
+    'tr',
+    'truncate',
+    'uc',
+    'ucfirst',
+    'umask',
+    'undef',
+    'unless',
+    'unlink',
+    'unpack',
+    'unshift',
+    'untie',
+    'until',
+    'use',
+    'utime',
+    'values',
+    'vec',
+    'wait',
+    'waitpid',
+    'wantarray',
+    'warn',
+    'when',
+    'while',
+    'write',
+    'x|0',
+    'xor',
+    'y|0'
+  ];
+
   // https://perldoc.perl.org/perlre#Modifiers
-  const REGEX_MODIFIERS = /[dualxmsipn]{0,12}/; // aa and xx are valid, making max length 12
+  const REGEX_MODIFIERS = /[dualxmsipngr]{0,12}/; // aa and xx are valid, making max length 12
   const PERL_KEYWORDS = {
     $pattern: /[\w.]+/,
-    keyword: 'getpwent getservent quotemeta msgrcv scalar kill dbmclose undef lc ' +
-    'ma syswrite tr send umask sysopen shmwrite vec qx utime local oct semctl localtime ' +
-    'readpipe do return format read sprintf dbmopen pop getpgrp not getpwnam rewinddir qq ' +
-    'fileno qw endprotoent wait sethostent bless s|0 opendir continue each sleep endgrent ' +
-    'shutdown dump chomp connect getsockname die socketpair close flock exists index shmget ' +
-    'sub for endpwent redo lstat msgctl setpgrp abs exit select print ref gethostbyaddr ' +
-    'unshift fcntl syscall goto getnetbyaddr join gmtime symlink semget splice x|0 ' +
-    'getpeername recv log setsockopt cos last reverse gethostbyname getgrnam study formline ' +
-    'endhostent times chop length gethostent getnetent pack getprotoent getservbyname rand ' +
-    'mkdir pos chmod y|0 substr endnetent printf next open msgsnd readdir use unlink ' +
-    'getsockopt getpriority rindex wantarray hex system getservbyport endservent int chr ' +
-    'untie rmdir prototype tell listen fork shmread ucfirst setprotoent else sysseek link ' +
-    'getgrgid shmctl waitpid unpack getnetbyname reset chdir grep split require caller ' +
-    'lcfirst until warn while values shift telldir getpwuid my getprotobynumber delete and ' +
-    'sort uc defined srand accept package seekdir getprotobyname semop our rename seek if q|0 ' +
-    'chroot sysread setpwent no crypt getc chown sqrt write setnetent setpriority foreach ' +
-    'tie sin msgget map stat getlogin unless elsif truncate exec keys glob tied closedir ' +
-    'ioctl socket readlink eval xor readline binmode setservent eof ord bind alarm pipe ' +
-    'atan2 getgrent exp time push setgrent gt lt or ne m|0 break given say state when'
+    keyword: KEYWORDS.join(" ")
   };
   const SUBST = {
     className: 'subst',
@@ -36091,6 +38034,48 @@ function perl(hljs) {
     SUBST,
     VAR
   ];
+  const REGEX_DELIMS = [
+    /!/,
+    /\//,
+    /\|/,
+    /\?/,
+    /'/,
+    /"/, // valid but infrequent and weird
+    /#/ // valid but infrequent and weird
+  ];
+  /**
+   * @param {string|RegExp} prefix
+   * @param {string|RegExp} open
+   * @param {string|RegExp} close
+   */
+  const PAIRED_DOUBLE_RE = (prefix, open, close = '\\1') => {
+    const middle = (close === '\\1')
+      ? close
+      : concat(close, open);
+    return concat(
+      concat("(?:", prefix, ")"),
+      open,
+      /(?:\\.|[^\\\/])*?/,
+      middle,
+      /(?:\\.|[^\\\/])*?/,
+      close,
+      REGEX_MODIFIERS
+    );
+  };
+  /**
+   * @param {string|RegExp} prefix
+   * @param {string|RegExp} open
+   * @param {string|RegExp} close
+   */
+  const PAIRED_RE = (prefix, open, close) => {
+    return concat(
+      concat("(?:", prefix, ")"),
+      open,
+      /(?:\\.|[^\\\/])*?/,
+      close,
+      REGEX_MODIFIERS
+    );
+  };
   const PERL_DEFAULT_CONTAINS = [
     VAR,
     hljs.HASH_COMMENT_MODE,
@@ -36152,12 +38137,10 @@ function perl(hljs) {
         },
         {
           begin: /\{\w+\}/,
-          contains: [],
           relevance: 0
         },
         {
           begin: '-?\\w+\\s*=>',
-          contains: [],
           relevance: 0
         }
       ]
@@ -36175,26 +38158,34 @@ function perl(hljs) {
         hljs.HASH_COMMENT_MODE,
         {
           className: 'regexp',
-          begin: concat(
-            /(s|tr|y)/,
-            /\//,
-            /(\\.|[^\\\/])*/,
-            /\//,
-            /(\\.|[^\\\/])*/,
-            /\//,
-            REGEX_MODIFIERS
-          ),
-          relevance: 10
+          variants: [
+            // allow matching common delimiters
+            { begin: PAIRED_DOUBLE_RE("s|tr|y", either(...REGEX_DELIMS)) },
+            // and then paired delmis
+            { begin: PAIRED_DOUBLE_RE("s|tr|y", "\\(", "\\)") },
+            { begin: PAIRED_DOUBLE_RE("s|tr|y", "\\[", "\\]") },
+            { begin: PAIRED_DOUBLE_RE("s|tr|y", "\\{", "\\}") }
+          ],
+          relevance: 2
         },
         {
           className: 'regexp',
-          begin: /(m|qr)?\//,
-          end: concat(
-            /\//,
-            REGEX_MODIFIERS
-          ),
-          contains: [ hljs.BACKSLASH_ESCAPE ],
-          relevance: 0 // allows empty "//" which is a common comment delimiter in other languages
+          variants: [
+            {
+              // could be a comment in many languages so do not count
+              // as relevant
+              begin: /(m|qr)\/\//,
+              relevance: 0
+            },
+            // prefix is optional with /regex/
+            { begin: PAIRED_RE("(?:m|qr)?", /\//, /\//)},
+            // allow matching common delimiters
+            { begin: PAIRED_RE("m|qr", either(...REGEX_DELIMS), /\1/)},
+            // allow common paired delmins
+            { begin: PAIRED_RE("m|qr", /\(/, /\)/)},
+            { begin: PAIRED_RE("m|qr", /\[/, /\]/)},
+            { begin: PAIRED_RE("m|qr", /\{/, /\}/)}
+          ]
         }
       ]
     },
@@ -36239,7 +38230,7 @@ function perl(hljs) {
 
 module.exports = perl;
 
-},{}],248:[function(require,module,exports){
+},{}],249:[function(require,module,exports){
 /*
 Language: Packet Filter config
 Description: pf.conf — packet filter configuration file (OpenBSD)
@@ -36300,7 +38291,7 @@ function pf(hljs) {
 
 module.exports = pf;
 
-},{}],249:[function(require,module,exports){
+},{}],250:[function(require,module,exports){
 /*
 Language: PostgreSQL and PL/pgSQL
 Author: Egor Rogov (e.rogov@postgrespro.ru)
@@ -36932,7 +38923,7 @@ function pgsql(hljs) {
 
 module.exports = pgsql;
 
-},{}],250:[function(require,module,exports){
+},{}],251:[function(require,module,exports){
 /*
 Language: PHP Template
 Requires: xml.js, php.js
@@ -36988,7 +38979,7 @@ function phpTemplate(hljs) {
 
 module.exports = phpTemplate;
 
-},{}],251:[function(require,module,exports){
+},{}],252:[function(require,module,exports){
 /*
 Language: PHP
 Author: Victor Karamzin <Victor.Karamzin@enterra-inc.com>
@@ -37051,7 +39042,17 @@ function php(hljs) {
       HEREDOC
     ]
   };
-  const NUMBER = {variants: [hljs.BINARY_NUMBER_MODE, hljs.C_NUMBER_MODE]};
+  const NUMBER = {
+    className: 'number',
+    variants: [
+      { begin: `\\b0b[01]+(?:_[01]+)*\\b` }, // Binary w/ underscore support
+      { begin: `\\b0o[0-7]+(?:_[0-7]+)*\\b` }, // Octals w/ underscore support
+      { begin: `\\b0x[\\da-f]+(?:_[\\da-f]+)*\\b` }, // Hex w/ underscore support
+      // Decimals w/ underscore support, with optional fragments and scientific exponent (e) suffix.
+      { begin: `(?:\\b\\d+(?:_\\d+)*(\\.(?:\\d+(?:_\\d+)*))?|\\B\\.\\d+)(?:e[+-]?\\d+)?` }
+    ],
+    relevance: 0
+  };
   const KEYWORDS = {
     keyword:
     // Magic constants:
@@ -37066,25 +39067,25 @@ function php(hljs) {
     // <https://www.php.net/manual/en/reserved.php>
     // <https://www.php.net/manual/en/language.types.type-juggling.php>
     'array abstract and as binary bool boolean break callable case catch class clone const continue declare ' +
-    'default do double else elseif empty enddeclare endfor endforeach endif endswitch endwhile eval extends ' +
+    'default do double else elseif empty enddeclare endfor endforeach endif endswitch endwhile enum eval extends ' +
     'final finally float for foreach from global goto if implements instanceof insteadof int integer interface ' +
-    'isset iterable list match|0 new object or private protected public real return string switch throw trait ' +
+    'isset iterable list match|0 mixed new object or private protected public real return string switch throw trait ' +
     'try unset use var void while xor yield',
     literal: 'false null true',
     built_in:
     // Standard PHP library:
     // <https://www.php.net/manual/en/book.spl.php>
     'Error|0 ' + // error is too common a name esp since PHP is case in-sensitive
-    'AppendIterator ArgumentCountError ArithmeticError ArrayIterator ArrayObject AssertionError BadFunctionCallException BadMethodCallException CachingIterator CallbackFilterIterator CompileError Countable DirectoryIterator DivisionByZeroError DomainException EmptyIterator ErrorException Exception FilesystemIterator FilterIterator GlobIterator InfiniteIterator InvalidArgumentException IteratorIterator LengthException LimitIterator LogicException MultipleIterator NoRewindIterator OutOfBoundsException OutOfRangeException OuterIterator OverflowException ParentIterator ParseError RangeException RecursiveArrayIterator RecursiveCachingIterator RecursiveCallbackFilterIterator RecursiveDirectoryIterator RecursiveFilterIterator RecursiveIterator RecursiveIteratorIterator RecursiveRegexIterator RecursiveTreeIterator RegexIterator RuntimeException SeekableIterator SplDoublyLinkedList SplFileInfo SplFileObject SplFixedArray SplHeap SplMaxHeap SplMinHeap SplObjectStorage SplObserver SplObserver SplPriorityQueue SplQueue SplStack SplSubject SplSubject SplTempFileObject TypeError UnderflowException UnexpectedValueException ' +
+    'AppendIterator ArgumentCountError ArithmeticError ArrayIterator ArrayObject AssertionError BadFunctionCallException BadMethodCallException CachingIterator CallbackFilterIterator CompileError Countable DirectoryIterator DivisionByZeroError DomainException EmptyIterator ErrorException Exception FilesystemIterator FilterIterator GlobIterator InfiniteIterator InvalidArgumentException IteratorIterator LengthException LimitIterator LogicException MultipleIterator NoRewindIterator OutOfBoundsException OutOfRangeException OuterIterator OverflowException ParentIterator ParseError RangeException RecursiveArrayIterator RecursiveCachingIterator RecursiveCallbackFilterIterator RecursiveDirectoryIterator RecursiveFilterIterator RecursiveIterator RecursiveIteratorIterator RecursiveRegexIterator RecursiveTreeIterator RegexIterator RuntimeException SeekableIterator SplDoublyLinkedList SplFileInfo SplFileObject SplFixedArray SplHeap SplMaxHeap SplMinHeap SplObjectStorage SplObserver SplObserver SplPriorityQueue SplQueue SplStack SplSubject SplSubject SplTempFileObject TypeError UnderflowException UnexpectedValueException UnhandledMatchError ' +
     // Reserved interfaces:
     // <https://www.php.net/manual/en/reserved.interfaces.php>
-    'ArrayAccess Closure Generator Iterator IteratorAggregate Serializable Throwable Traversable WeakReference ' +
+    'ArrayAccess Closure Generator Iterator IteratorAggregate Serializable Stringable Throwable Traversable WeakReference WeakMap ' +
     // Reserved classes:
     // <https://www.php.net/manual/en/reserved.classes.php>
     'Directory __PHP_Incomplete_Class parent php_user_filter self static stdClass'
   };
   return {
-    aliases: ['php', 'php3', 'php4', 'php5', 'php6', 'php7', 'php8'],
+    aliases: ['php3', 'php4', 'php5', 'php6', 'php7', 'php8'],
     case_insensitive: true,
     keywords: KEYWORDS,
     contains: [
@@ -37125,9 +39126,13 @@ function php(hljs) {
         beginKeywords: 'fn function', end: /[;{]/, excludeEnd: true,
         illegal: '[$%\\[]',
         contains: [
+          {
+            beginKeywords: 'use',
+          },
           hljs.UNDERSCORE_TITLE_MODE,
           {
-            begin: '=>' // No markup, just a relevance booster
+            begin: '=>', // No markup, just a relevance booster
+            endsParent: true
           },
           {
             className: 'params',
@@ -37147,11 +39152,13 @@ function php(hljs) {
       },
       {
         className: 'class',
-        beginKeywords: 'class interface',
+        variants: [
+          { beginKeywords: "enum", illegal: /[($"]/ },
+          { beginKeywords: "class interface trait", illegal: /[:($"]/ }
+        ],
         relevance: 0,
         end: /\{/,
         excludeEnd: true,
-        illegal: /[:($"]/,
         contains: [
           {beginKeywords: 'extends implements'},
           hljs.UNDERSCORE_TITLE_MODE
@@ -37178,7 +39185,7 @@ function php(hljs) {
 
 module.exports = php;
 
-},{}],252:[function(require,module,exports){
+},{}],253:[function(require,module,exports){
 /*
 Language: Plain text
 Author: Egor Rogov (e.rogov@postgrespro.ru)
@@ -37199,7 +39206,7 @@ function plaintext(hljs) {
 
 module.exports = plaintext;
 
-},{}],253:[function(require,module,exports){
+},{}],254:[function(require,module,exports){
 /*
 Language: Pony
 Author: Joe Eli McIlvain <joe.eli.mac@gmail.com>
@@ -37290,7 +39297,7 @@ function pony(hljs) {
 
 module.exports = pony;
 
-},{}],254:[function(require,module,exports){
+},{}],255:[function(require,module,exports){
 /*
 Language: PowerShell
 Description: PowerShell is a task-based command-line shell and scripting language built on .NET.
@@ -37317,16 +39324,16 @@ function powershell(hljs) {
     "void"
   ];
 
-  // https://msdn.microsoft.com/en-us/library/ms714428(v=vs.85).aspx
+  // https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands
   const VALID_VERBS =
     'Add|Clear|Close|Copy|Enter|Exit|Find|Format|Get|Hide|Join|Lock|' +
     'Move|New|Open|Optimize|Pop|Push|Redo|Remove|Rename|Reset|Resize|' +
     'Search|Select|Set|Show|Skip|Split|Step|Switch|Undo|Unlock|' +
     'Watch|Backup|Checkpoint|Compare|Compress|Convert|ConvertFrom|' +
     'ConvertTo|Dismount|Edit|Expand|Export|Group|Import|Initialize|' +
-    'Limit|Merge|Out|Publish|Restore|Save|Sync|Unpublish|Update|' +
-    'Approve|Assert|Complete|Confirm|Deny|Disable|Enable|Install|Invoke|Register|' +
-    'Request|Restart|Resume|Start|Stop|Submit|Suspend|Uninstall|' +
+    'Limit|Merge|Mount|Out|Publish|Restore|Save|Sync|Unpublish|Update|' +
+    'Approve|Assert|Build|Complete|Confirm|Deny|Deploy|Disable|Enable|Install|Invoke|' +
+    'Register|Request|Restart|Resume|Start|Stop|Submit|Suspend|Uninstall|' +
     'Unregister|Wait|Debug|Measure|Ping|Repair|Resolve|Test|Trace|Connect|' +
     'Disconnect|Read|Receive|Send|Write|Block|Grant|Protect|Revoke|Unblock|' +
     'Unprotect|Use|ForEach|Sort|Tee|Where';
@@ -37623,7 +39630,7 @@ function powershell(hljs) {
 
 module.exports = powershell;
 
-},{}],255:[function(require,module,exports){
+},{}],256:[function(require,module,exports){
 /*
 Language: Processing
 Description: Processing is a flexible software sketchbook and a language for learning how to code within the context of the visual arts.
@@ -37683,7 +39690,7 @@ function processing(hljs) {
 
 module.exports = processing;
 
-},{}],256:[function(require,module,exports){
+},{}],257:[function(require,module,exports){
 /*
 Language: Python profiler
 Description: Python profiler results
@@ -37728,7 +39735,7 @@ function profile(hljs) {
 
 module.exports = profile;
 
-},{}],257:[function(require,module,exports){
+},{}],258:[function(require,module,exports){
 /*
 Language: Prolog
 Description: Prolog is a general purpose logic programming language associated with artificial intelligence and computational linguistics.
@@ -37832,7 +39839,7 @@ function prolog(hljs) {
 
 module.exports = prolog;
 
-},{}],258:[function(require,module,exports){
+},{}],259:[function(require,module,exports){
 /*
 Language: .properties
 Contributors: Valentin Aitken <valentin@nalisbg.com>, Egor Rogov <e.rogov@postgrespro.ru>
@@ -37919,7 +39926,7 @@ function properties(hljs) {
 
 module.exports = properties;
 
-},{}],259:[function(require,module,exports){
+},{}],260:[function(require,module,exports){
 /*
 Language: Protocol Buffers
 Author: Dan Tao <daniel.tao@gmail.com>
@@ -37968,7 +39975,7 @@ function protobuf(hljs) {
 
 module.exports = protobuf;
 
-},{}],260:[function(require,module,exports){
+},{}],261:[function(require,module,exports){
 /*
 Language: Puppet
 Author: Jose Molina Colmenero <gaudy41@gmail.com>
@@ -38117,7 +40124,7 @@ function puppet(hljs) {
 
 module.exports = puppet;
 
-},{}],261:[function(require,module,exports){
+},{}],262:[function(require,module,exports){
 /*
 Language: PureBASIC
 Author: Tristano Ajmone <tajmone@gmail.com>
@@ -38220,7 +40227,7 @@ function purebasic(hljs) {
 
 module.exports = purebasic;
 
-},{}],262:[function(require,module,exports){
+},{}],263:[function(require,module,exports){
 /*
 Language: Python REPL
 Requires: python.js
@@ -38258,7 +40265,40 @@ function pythonRepl(hljs) {
 
 module.exports = pythonRepl;
 
-},{}],263:[function(require,module,exports){
+},{}],264:[function(require,module,exports){
+/**
+ * @param {string} value
+ * @returns {RegExp}
+ * */
+
+/**
+ * @param {RegExp | string } re
+ * @returns {string}
+ */
+function source(re) {
+  if (!re) return null;
+  if (typeof re === "string") return re;
+
+  return re.source;
+}
+
+/**
+ * @param {RegExp | string } re
+ * @returns {string}
+ */
+function lookahead(re) {
+  return concat('(?=', re, ')');
+}
+
+/**
+ * @param {...(RegExp | string) } args
+ * @returns {string}
+ */
+function concat(...args) {
+  const joined = args.map((x) => source(x)).join("");
+  return joined;
+}
+
 /*
 Language: Python
 Description: Python is an interpreted, object-oriented, high-level programming language with dynamic semantics.
@@ -38283,7 +40323,6 @@ function python(hljs) {
     'except',
     'finally',
     'for',
-    '',
     'from',
     'global',
     'if',
@@ -38300,7 +40339,7 @@ function python(hljs) {
     'try',
     'while',
     'with',
-    'yield',
+    'yield'
   ];
 
   const BUILT_INS = [
@@ -38372,7 +40411,7 @@ function python(hljs) {
     'tuple',
     'type',
     'vars',
-    'zip',
+    'zip'
   ];
 
   const LITERALS = [
@@ -38381,22 +40420,45 @@ function python(hljs) {
     'False',
     'None',
     'NotImplemented',
-    'True',
+    'True'
+  ];
+
+  // https://docs.python.org/3/library/typing.html
+  // TODO: Could these be supplemented by a CamelCase matcher in certain
+  // contexts, leaving these remaining only for relevance hinting?
+  const TYPES = [
+    "Any",
+    "Callable",
+    "Coroutine",
+    "Dict",
+    "List",
+    "Literal",
+    "Generic",
+    "Optional",
+    "Sequence",
+    "Set",
+    "Tuple",
+    "Type",
+    "Union"
   ];
 
   const KEYWORDS = {
-    keyword: RESERVED_WORDS.join(' '),
-    built_in: BUILT_INS.join(' '),
-    literal: LITERALS.join(' ')
+    $pattern: /[A-Za-z]\w+|__\w+__/,
+    keyword: RESERVED_WORDS,
+    built_in: BUILT_INS,
+    literal: LITERALS,
+    type: TYPES
   };
 
   const PROMPT = {
-    className: 'meta',  begin: /^(>>>|\.\.\.) /
+    className: 'meta',
+    begin: /^(>>>|\.\.\.) /
   };
 
   const SUBST = {
     className: 'subst',
-    begin: /\{/, end: /\}/,
+    begin: /\{/,
+    end: /\}/,
     keywords: KEYWORDS,
     illegal: /#/
   };
@@ -38408,47 +40470,81 @@ function python(hljs) {
 
   const STRING = {
     className: 'string',
-    contains: [hljs.BACKSLASH_ESCAPE],
+    contains: [ hljs.BACKSLASH_ESCAPE ],
     variants: [
       {
-        begin: /([uU]|[bB]|[rR]|[bB][rR]|[rR][bB])?'''/, end: /'''/,
-        contains: [hljs.BACKSLASH_ESCAPE, PROMPT],
+        begin: /([uU]|[bB]|[rR]|[bB][rR]|[rR][bB])?'''/,
+        end: /'''/,
+        contains: [
+          hljs.BACKSLASH_ESCAPE,
+          PROMPT
+        ],
         relevance: 10
       },
       {
-        begin: /([uU]|[bB]|[rR]|[bB][rR]|[rR][bB])?"""/, end: /"""/,
-        contains: [hljs.BACKSLASH_ESCAPE, PROMPT],
+        begin: /([uU]|[bB]|[rR]|[bB][rR]|[rR][bB])?"""/,
+        end: /"""/,
+        contains: [
+          hljs.BACKSLASH_ESCAPE,
+          PROMPT
+        ],
         relevance: 10
       },
       {
-        begin: /([fF][rR]|[rR][fF]|[fF])'''/, end: /'''/,
-        contains: [hljs.BACKSLASH_ESCAPE, PROMPT, LITERAL_BRACKET, SUBST]
+        begin: /([fF][rR]|[rR][fF]|[fF])'''/,
+        end: /'''/,
+        contains: [
+          hljs.BACKSLASH_ESCAPE,
+          PROMPT,
+          LITERAL_BRACKET,
+          SUBST
+        ]
       },
       {
-        begin: /([fF][rR]|[rR][fF]|[fF])"""/, end: /"""/,
-        contains: [hljs.BACKSLASH_ESCAPE, PROMPT, LITERAL_BRACKET, SUBST]
+        begin: /([fF][rR]|[rR][fF]|[fF])"""/,
+        end: /"""/,
+        contains: [
+          hljs.BACKSLASH_ESCAPE,
+          PROMPT,
+          LITERAL_BRACKET,
+          SUBST
+        ]
       },
       {
-        begin: /([uU]|[rR])'/, end: /'/,
+        begin: /([uU]|[rR])'/,
+        end: /'/,
         relevance: 10
       },
       {
-        begin: /([uU]|[rR])"/, end: /"/,
+        begin: /([uU]|[rR])"/,
+        end: /"/,
         relevance: 10
       },
       {
-        begin: /([bB]|[bB][rR]|[rR][bB])'/, end: /'/
+        begin: /([bB]|[bB][rR]|[rR][bB])'/,
+        end: /'/
       },
       {
-        begin: /([bB]|[bB][rR]|[rR][bB])"/, end: /"/
+        begin: /([bB]|[bB][rR]|[rR][bB])"/,
+        end: /"/
       },
       {
-        begin: /([fF][rR]|[rR][fF]|[fF])'/, end: /'/,
-        contains: [hljs.BACKSLASH_ESCAPE, LITERAL_BRACKET, SUBST]
+        begin: /([fF][rR]|[rR][fF]|[fF])'/,
+        end: /'/,
+        contains: [
+          hljs.BACKSLASH_ESCAPE,
+          LITERAL_BRACKET,
+          SUBST
+        ]
       },
       {
-        begin: /([fF][rR]|[rR][fF]|[fF])"/, end: /"/,
-        contains: [hljs.BACKSLASH_ESCAPE, LITERAL_BRACKET, SUBST]
+        begin: /([fF][rR]|[rR][fF]|[fF])"/,
+        end: /"/,
+        contains: [
+          hljs.BACKSLASH_ESCAPE,
+          LITERAL_BRACKET,
+          SUBST
+        ]
       },
       hljs.APOS_STRING_MODE,
       hljs.QUOTE_STRING_MODE
@@ -38459,7 +40555,8 @@ function python(hljs) {
   const digitpart = '[0-9](_?[0-9])*';
   const pointfloat = `(\\b(${digitpart}))?\\.(${digitpart})|\\b(${digitpart})\\.`;
   const NUMBER = {
-    className: 'number', relevance: 0,
+    className: 'number',
+    relevance: 0,
     variants: [
       // exponentfloat, pointfloat
       // https://docs.python.org/3.9/reference/lexical_analysis.html#floating-point-literals
@@ -38471,8 +40568,12 @@ function python(hljs) {
       // and we don't want to mishandle e.g. `0..hex()`; this should be safe
       // because both MUST contain a decimal point and so cannot be confused with
       // the interior part of an identifier
-      { begin: `(\\b(${digitpart})|(${pointfloat}))[eE][+-]?(${digitpart})[jJ]?\\b` },
-      { begin: `(${pointfloat})[jJ]?` },
+      {
+        begin: `(\\b(${digitpart})|(${pointfloat}))[eE][+-]?(${digitpart})[jJ]?\\b`
+      },
+      {
+        begin: `(${pointfloat})[jJ]?`
+      },
 
       // decinteger, bininteger, octinteger, hexinteger
       // https://docs.python.org/3.9/reference/lexical_analysis.html#integer-literals
@@ -38480,49 +40581,109 @@ function python(hljs) {
       // https://docs.python.org/2.7/reference/lexical_analysis.html#integer-and-long-integer-literals
       // decinteger is optionally imaginary
       // https://docs.python.org/3.9/reference/lexical_analysis.html#imaginary-literals
-      { begin: '\\b([1-9](_?[0-9])*|0+(_?0)*)[lLjJ]?\\b' },
-      { begin: '\\b0[bB](_?[01])+[lL]?\\b' },
-      { begin: '\\b0[oO](_?[0-7])+[lL]?\\b' },
-      { begin: '\\b0[xX](_?[0-9a-fA-F])+[lL]?\\b' },
+      {
+        begin: '\\b([1-9](_?[0-9])*|0+(_?0)*)[lLjJ]?\\b'
+      },
+      {
+        begin: '\\b0[bB](_?[01])+[lL]?\\b'
+      },
+      {
+        begin: '\\b0[oO](_?[0-7])+[lL]?\\b'
+      },
+      {
+        begin: '\\b0[xX](_?[0-9a-fA-F])+[lL]?\\b'
+      },
 
       // imagnumber (digitpart-based)
       // https://docs.python.org/3.9/reference/lexical_analysis.html#imaginary-literals
-      { begin: `\\b(${digitpart})[jJ]\\b` },
+      {
+        begin: `\\b(${digitpart})[jJ]\\b`
+      }
     ]
   };
-
+  const COMMENT_TYPE = {
+    className: "comment",
+    begin: lookahead(/# type:/),
+    end: /$/,
+    keywords: KEYWORDS,
+    contains: [
+      { // prevent keywords from coloring `type`
+        begin: /# type:/
+      },
+      // comment within a datatype comment includes no keywords
+      {
+        begin: /#/,
+        end: /\b\B/,
+        endsWithParent: true
+      }
+    ]
+  };
   const PARAMS = {
     className: 'params',
     variants: [
-      // Exclude params at functions without params
-      {begin: /\(\s*\)/, skip: true, className: null },
+      // Exclude params in functions without params
       {
-        begin: /\(/, end: /\)/, excludeBegin: true, excludeEnd: true,
-        keywords: KEYWORDS,
-        contains: ['self', PROMPT, NUMBER, STRING, hljs.HASH_COMMENT_MODE],
+        className: "",
+        begin: /\(\s*\)/,
+        skip: true
       },
-    ],
+      {
+        begin: /\(/,
+        end: /\)/,
+        excludeBegin: true,
+        excludeEnd: true,
+        keywords: KEYWORDS,
+        contains: [
+          'self',
+          PROMPT,
+          NUMBER,
+          STRING,
+          hljs.HASH_COMMENT_MODE
+        ]
+      }
+    ]
   };
-  SUBST.contains = [STRING, NUMBER, PROMPT];
+  SUBST.contains = [
+    STRING,
+    NUMBER,
+    PROMPT
+  ];
 
   return {
     name: 'Python',
-    aliases: ['py', 'gyp', 'ipython'],
+    aliases: [
+      'py',
+      'gyp',
+      'ipython'
+    ],
     keywords: KEYWORDS,
     illegal: /(<\/|->|\?)|=>/,
     contains: [
       PROMPT,
       NUMBER,
-      // eat "if" prior to string so that it won't accidentally be
-      // labeled as an f-string as in:
-      { begin: /\bself\b/, }, // very common convention
-      { beginKeywords: "if", relevance: 0 },
+      {
+        // very common convention
+        begin: /\bself\b/
+      },
+      {
+        // eat "if" prior to string so that it won't accidentally be
+        // labeled as an f-string
+        beginKeywords: "if",
+        relevance: 0
+      },
       STRING,
+      COMMENT_TYPE,
       hljs.HASH_COMMENT_MODE,
       {
         variants: [
-          {className: 'function', beginKeywords: 'def'},
-          {className: 'class', beginKeywords: 'class'}
+          {
+            className: 'function',
+            beginKeywords: 'def'
+          },
+          {
+            className: 'class',
+            beginKeywords: 'class'
+          }
         ],
         end: /:/,
         illegal: /[${=;\n,]/,
@@ -38530,18 +40691,21 @@ function python(hljs) {
           hljs.UNDERSCORE_TITLE_MODE,
           PARAMS,
           {
-            begin: /->/, endsWithParent: true,
-            keywords: 'None'
+            begin: /->/,
+            endsWithParent: true,
+            keywords: KEYWORDS
           }
         ]
       },
       {
         className: 'meta',
-        begin: /^[\t ]*@/, end: /(?=#)|$/,
-        contains: [NUMBER, PARAMS, STRING]
-      },
-      {
-        begin: /\b(print|exec)\(/ // don’t highlight keywords-turned-functions in Python 3
+        begin: /^[\t ]*@/,
+        end: /(?=#)|$/,
+        contains: [
+          NUMBER,
+          PARAMS,
+          STRING
+        ]
       }
     ]
   };
@@ -38549,7 +40713,7 @@ function python(hljs) {
 
 module.exports = python;
 
-},{}],264:[function(require,module,exports){
+},{}],265:[function(require,module,exports){
 /*
 Language: Q
 Description: Q is a vector-based functional paradigm programming language built into the kdb+ database.
@@ -38588,7 +40752,7 @@ function q(hljs) {
 
 module.exports = q;
 
-},{}],265:[function(require,module,exports){
+},{}],266:[function(require,module,exports){
 /**
  * @param {string} value
  * @returns {RegExp}
@@ -38815,7 +40979,7 @@ function qml(hljs) {
 
 module.exports = qml;
 
-},{}],266:[function(require,module,exports){
+},{}],267:[function(require,module,exports){
 /**
  * @param {string} value
  * @returns {RegExp}
@@ -39048,7 +41212,7 @@ function r(hljs) {
 
 module.exports = r;
 
-},{}],267:[function(require,module,exports){
+},{}],268:[function(require,module,exports){
 /*
 Language: ReasonML
 Description: Reason lets you write simple, fast and quality type safe code while leveraging both the JavaScript & OCaml ecosystems.
@@ -39371,7 +41535,7 @@ function reasonml(hljs) {
 
 module.exports = reasonml;
 
-},{}],268:[function(require,module,exports){
+},{}],269:[function(require,module,exports){
 /*
 Language: RenderMan RIB
 Author: Konstantin Evdokimenko <qewerty@gmail.com>
@@ -39410,7 +41574,7 @@ function rib(hljs) {
 
 module.exports = rib;
 
-},{}],269:[function(require,module,exports){
+},{}],270:[function(require,module,exports){
 /*
 Language: Roboconf
 Author: Vincent Zurczak <vzurczak@linagora.com>
@@ -39494,7 +41658,7 @@ function roboconf(hljs) {
 
 module.exports = roboconf;
 
-},{}],270:[function(require,module,exports){
+},{}],271:[function(require,module,exports){
 /*
 Language: Microtik RouterOS script
 Author: Ivan Dementev <ivan_div@mail.ru>
@@ -39558,7 +41722,6 @@ function routeros(hljs) {
   return {
     name: 'Microtik RouterOS script',
     aliases: [
-      'routeros',
       'mikrotik'
     ],
     case_insensitive: true,
@@ -39589,8 +41752,10 @@ function routeros(hljs) {
       QUOTE_STRING,
       APOS_STRING,
       VAR,
-      { // attribute=value
-        begin: /[\w-]+=([^\s{}[\]()]+)/,
+      // attribute=value
+      {
+        // > is to avoid matches with => in other grammars
+        begin: /[\w-]+=([^\s{}[\]()>]+)/,
         relevance: 0,
         returnBegin: true,
         contains: [
@@ -39667,7 +41832,7 @@ function routeros(hljs) {
 
 module.exports = routeros;
 
-},{}],271:[function(require,module,exports){
+},{}],272:[function(require,module,exports){
 /*
 Language: RenderMan RSL
 Author: Konstantin Evdokimenko <qewerty@gmail.com>
@@ -39718,7 +41883,7 @@ function rsl(hljs) {
 
 module.exports = rsl;
 
-},{}],272:[function(require,module,exports){
+},{}],273:[function(require,module,exports){
 /**
  * @param {string} value
  * @returns {RegExp}
@@ -39762,8 +41927,8 @@ Category: common
 */
 
 function ruby(hljs) {
-  var RUBY_METHOD_RE = '([a-zA-Z_]\\w*[!?=]?|[-+~]@|<<|>>|=~|===?|<=>|[<>]=?|\\*\\*|[-/+%^&*~`|]|\\[\\]=?)';
-  var RUBY_KEYWORDS = {
+  const RUBY_METHOD_RE = '([a-zA-Z_]\\w*[!?=]?|[-+~]@|<<|>>|=~|===?|<=>|[<>]=?|\\*\\*|[-/+%^&*~`|]|\\[\\]=?)';
+  const RUBY_KEYWORDS = {
     keyword:
       'and then defined module in return redo if BEGIN retry end for self when ' +
       'next until do begin unless END rescue else break undef not super class case ' +
@@ -39773,64 +41938,123 @@ function ruby(hljs) {
     literal:
       'true false nil'
   };
-  var YARDOCTAG = {
+  const YARDOCTAG = {
     className: 'doctag',
     begin: '@[A-Za-z]+'
   };
-  var IRB_OBJECT = {
-    begin: '#<', end: '>'
+  const IRB_OBJECT = {
+    begin: '#<',
+    end: '>'
   };
-  var COMMENT_MODES = [
+  const COMMENT_MODES = [
     hljs.COMMENT(
       '#',
       '$',
       {
-        contains: [YARDOCTAG]
+        contains: [ YARDOCTAG ]
       }
     ),
     hljs.COMMENT(
       '^=begin',
       '^=end',
       {
-        contains: [YARDOCTAG],
+        contains: [ YARDOCTAG ],
         relevance: 10
       }
     ),
     hljs.COMMENT('^__END__', '\\n$')
   ];
-  var SUBST = {
+  const SUBST = {
     className: 'subst',
-    begin: /#\{/, end: /\}/,
+    begin: /#\{/,
+    end: /\}/,
     keywords: RUBY_KEYWORDS
   };
-  var STRING = {
+  const STRING = {
     className: 'string',
-    contains: [hljs.BACKSLASH_ESCAPE, SUBST],
+    contains: [
+      hljs.BACKSLASH_ESCAPE,
+      SUBST
+    ],
     variants: [
-      {begin: /'/, end: /'/},
-      {begin: /"/, end: /"/},
-      {begin: /`/, end: /`/},
-      {begin: /%[qQwWx]?\(/, end: /\)/},
-      {begin: /%[qQwWx]?\[/, end: /\]/},
-      {begin: /%[qQwWx]?\{/, end: /\}/},
-      {begin: /%[qQwWx]?</, end: />/},
-      {begin: /%[qQwWx]?\//, end: /\//},
-      {begin: /%[qQwWx]?%/, end: /%/},
-      {begin: /%[qQwWx]?-/, end: /-/},
-      {begin: /%[qQwWx]?\|/, end: /\|/},
       {
-        // \B in the beginning suppresses recognition of ?-sequences where ?
-        // is the last character of a preceding identifier, as in: `func?4`
-        begin: /\B\?(\\\d{1,3}|\\x[A-Fa-f0-9]{1,2}|\\u[A-Fa-f0-9]{4}|\\?\S)\b/
+        begin: /'/,
+        end: /'/
+      },
+      {
+        begin: /"/,
+        end: /"/
+      },
+      {
+        begin: /`/,
+        end: /`/
+      },
+      {
+        begin: /%[qQwWx]?\(/,
+        end: /\)/
+      },
+      {
+        begin: /%[qQwWx]?\[/,
+        end: /\]/
+      },
+      {
+        begin: /%[qQwWx]?\{/,
+        end: /\}/
+      },
+      {
+        begin: /%[qQwWx]?</,
+        end: />/
+      },
+      {
+        begin: /%[qQwWx]?\//,
+        end: /\//
+      },
+      {
+        begin: /%[qQwWx]?%/,
+        end: /%/
+      },
+      {
+        begin: /%[qQwWx]?-/,
+        end: /-/
+      },
+      {
+        begin: /%[qQwWx]?\|/,
+        end: /\|/
+      },
+      // in the following expressions, \B in the beginning suppresses recognition of ?-sequences
+      // where ? is the last character of a preceding identifier, as in: `func?4`
+      {
+        begin: /\B\?(\\\d{1,3})/
+      },
+      {
+        begin: /\B\?(\\x[A-Fa-f0-9]{1,2})/
+      },
+      {
+        begin: /\B\?(\\u\{?[A-Fa-f0-9]{1,6}\}?)/
+      },
+      {
+        begin: /\B\?(\\M-\\C-|\\M-\\c|\\c\\M-|\\M-|\\C-\\M-)[\x20-\x7e]/
+      },
+      {
+        begin: /\B\?\\(c|C-)[\x20-\x7e]/
+      },
+      {
+        begin: /\B\?\\?\S/
       },
       { // heredocs
         begin: /<<[-~]?'?(\w+)\n(?:[^\n]*\n)*?\s*\1\b/,
         returnBegin: true,
         contains: [
-          { begin: /<<[-~]?'?/ },
+          {
+            begin: /<<[-~]?'?/
+          },
           hljs.END_SAME_AS_BEGIN({
-            begin: /(\w+)/, end: /(\w+)/,
-            contains: [hljs.BACKSLASH_ESCAPE, SUBST],
+            begin: /(\w+)/,
+            end: /(\w+)/,
+            contains: [
+              hljs.BACKSLASH_ESCAPE,
+              SUBST
+            ]
           })
         ]
       }
@@ -39840,45 +42064,68 @@ function ruby(hljs) {
   // Ruby syntax is underdocumented, but this grammar seems to be accurate
   // as of version 2.7.2 (confirmed with (irb and `Ripper.sexp(...)`)
   // https://docs.ruby-lang.org/en/2.7.0/doc/syntax/literals_rdoc.html#label-Numbers
-  var decimal = '[1-9](_?[0-9])*|0';
-  var digits = '[0-9](_?[0-9])*';
-  var NUMBER = {
-    className: 'number', relevance: 0,
+  const decimal = '[1-9](_?[0-9])*|0';
+  const digits = '[0-9](_?[0-9])*';
+  const NUMBER = {
+    className: 'number',
+    relevance: 0,
     variants: [
       // decimal integer/float, optionally exponential or rational, optionally imaginary
-      { begin: `\\b(${decimal})(\\.(${digits}))?([eE][+-]?(${digits})|r)?i?\\b` },
+      {
+        begin: `\\b(${decimal})(\\.(${digits}))?([eE][+-]?(${digits})|r)?i?\\b`
+      },
 
       // explicit decimal/binary/octal/hexadecimal integer,
       // optionally rational and/or imaginary
-      { begin: "\\b0[dD][0-9](_?[0-9])*r?i?\\b" },
-      { begin: "\\b0[bB][0-1](_?[0-1])*r?i?\\b" },
-      { begin: "\\b0[oO][0-7](_?[0-7])*r?i?\\b" },
-      { begin: "\\b0[xX][0-9a-fA-F](_?[0-9a-fA-F])*r?i?\\b" },
+      {
+        begin: "\\b0[dD][0-9](_?[0-9])*r?i?\\b"
+      },
+      {
+        begin: "\\b0[bB][0-1](_?[0-1])*r?i?\\b"
+      },
+      {
+        begin: "\\b0[oO][0-7](_?[0-7])*r?i?\\b"
+      },
+      {
+        begin: "\\b0[xX][0-9a-fA-F](_?[0-9a-fA-F])*r?i?\\b"
+      },
 
       // 0-prefixed implicit octal integer, optionally rational and/or imaginary
-      { begin: "\\b0(_?[0-7])+r?i?\\b" },
+      {
+        begin: "\\b0(_?[0-7])+r?i?\\b"
+      }
     ]
   };
 
-  var PARAMS = {
+  const PARAMS = {
     className: 'params',
-    begin: '\\(', end: '\\)', endsParent: true,
+    begin: '\\(',
+    end: '\\)',
+    endsParent: true,
     keywords: RUBY_KEYWORDS
   };
 
-  var RUBY_DEFAULT_CONTAINS = [
+  const RUBY_DEFAULT_CONTAINS = [
     STRING,
     {
       className: 'class',
-      beginKeywords: 'class module', end: '$|;',
+      beginKeywords: 'class module',
+      end: '$|;',
       illegal: /=/,
       contains: [
-        hljs.inherit(hljs.TITLE_MODE, {begin: '[A-Za-z_]\\w*(::\\w+)*(\\?|!)?'}),
+        hljs.inherit(hljs.TITLE_MODE, {
+          begin: '[A-Za-z_]\\w*(::\\w+)*(\\?|!)?'
+        }),
         {
           begin: '<\\s*',
-          contains: [{
-            begin: '(' + hljs.IDENT_RE + '::)?' + hljs.IDENT_RE
-          }]
+          contains: [
+            {
+              begin: '(' + hljs.IDENT_RE + '::)?' + hljs.IDENT_RE,
+              // we already get points for <, we don't need poitns
+              // for the name also
+              relevance: 0
+            }
+          ]
         }
       ].concat(COMMENT_MODES)
     },
@@ -39887,11 +42134,14 @@ function ruby(hljs) {
       // def method_name(
       // def method_name;
       // def method_name (end of line)
-      begin: concat(/def\s*/, lookahead(RUBY_METHOD_RE + "\\s*(\\(|;|$)")),
+      begin: concat(/def\s+/, lookahead(RUBY_METHOD_RE + "\\s*(\\(|;|$)")),
+      relevance: 0, // relevance comes from kewords
       keywords: "def",
       end: '$|;',
       contains: [
-        hljs.inherit(hljs.TITLE_MODE, {begin: RUBY_METHOD_RE}),
+        hljs.inherit(hljs.TITLE_MODE, {
+          begin: RUBY_METHOD_RE
+        }),
         PARAMS
       ].concat(COMMENT_MODES)
     },
@@ -39907,7 +42157,12 @@ function ruby(hljs) {
     {
       className: 'symbol',
       begin: ':(?!\\s)',
-      contains: [STRING, {begin: RUBY_METHOD_RE}],
+      contains: [
+        STRING,
+        {
+          begin: RUBY_METHOD_RE
+        }
+      ],
       relevance: 0
     },
     NUMBER,
@@ -39921,7 +42176,7 @@ function ruby(hljs) {
       className: 'params',
       begin: /\|/,
       end: /\|/,
-      relevance:0, // this could be a lot of things (in other languages) other than params
+      relevance: 0, // this could be a lot of things (in other languages) other than params
       keywords: RUBY_KEYWORDS
     },
     { // regexp container
@@ -39930,14 +42185,32 @@ function ruby(hljs) {
       contains: [
         {
           className: 'regexp',
-          contains: [hljs.BACKSLASH_ESCAPE, SUBST],
+          contains: [
+            hljs.BACKSLASH_ESCAPE,
+            SUBST
+          ],
           illegal: /\n/,
           variants: [
-            {begin: '/', end: '/[a-z]*'},
-            {begin: /%r\{/, end: /\}[a-z]*/},
-            {begin: '%r\\(', end: '\\)[a-z]*'},
-            {begin: '%r!', end: '![a-z]*'},
-            {begin: '%r\\[', end: '\\][a-z]*'}
+            {
+              begin: '/',
+              end: '/[a-z]*'
+            },
+            {
+              begin: /%r\{/,
+              end: /\}[a-z]*/
+            },
+            {
+              begin: '%r\\(',
+              end: '\\)[a-z]*'
+            },
+            {
+              begin: '%r!',
+              end: '![a-z]*'
+            },
+            {
+              begin: '%r\\[',
+              end: '\\][a-z]*'
+            }
           ]
         }
       ].concat(IRB_OBJECT, COMMENT_MODES),
@@ -39950,23 +42223,25 @@ function ruby(hljs) {
 
   // >>
   // ?>
-  var SIMPLE_PROMPT = "[>?]>";
+  const SIMPLE_PROMPT = "[>?]>";
   // irb(main):001:0>
-  var DEFAULT_PROMPT = "[\\w#]+\\(\\w+\\):\\d+:\\d+>";
-  var RVM_PROMPT = "(\\w+-)?\\d+\\.\\d+\\.\\d+(p\\d+)?[^\\d][^>]+>";
+  const DEFAULT_PROMPT = "[\\w#]+\\(\\w+\\):\\d+:\\d+>";
+  const RVM_PROMPT = "(\\w+-)?\\d+\\.\\d+\\.\\d+(p\\d+)?[^\\d][^>]+>";
 
-  var IRB_DEFAULT = [
+  const IRB_DEFAULT = [
     {
       begin: /^\s*=>/,
       starts: {
-        end: '$', contains: RUBY_DEFAULT_CONTAINS
+        end: '$',
+        contains: RUBY_DEFAULT_CONTAINS
       }
     },
     {
       className: 'meta',
-      begin: '^('+SIMPLE_PROMPT+"|"+DEFAULT_PROMPT+'|'+RVM_PROMPT+')(?=[ ])',
+      begin: '^(' + SIMPLE_PROMPT + "|" + DEFAULT_PROMPT + '|' + RVM_PROMPT + ')(?=[ ])',
       starts: {
-        end: '$', contains: RUBY_DEFAULT_CONTAINS
+        end: '$',
+        contains: RUBY_DEFAULT_CONTAINS
       }
     }
   ];
@@ -39975,12 +42250,20 @@ function ruby(hljs) {
 
   return {
     name: 'Ruby',
-    aliases: ['rb', 'gemspec', 'podspec', 'thor', 'irb'],
+    aliases: [
+      'rb',
+      'gemspec',
+      'podspec',
+      'thor',
+      'irb'
+    ],
     keywords: RUBY_KEYWORDS,
     illegal: /\/\*/,
     contains: [
-        hljs.SHEBANG({binary:"ruby"}),
-      ]
+      hljs.SHEBANG({
+        binary: "ruby"
+      })
+    ]
       .concat(IRB_DEFAULT)
       .concat(COMMENT_MODES)
       .concat(RUBY_DEFAULT_CONTAINS)
@@ -39989,7 +42272,7 @@ function ruby(hljs) {
 
 module.exports = ruby;
 
-},{}],273:[function(require,module,exports){
+},{}],274:[function(require,module,exports){
 /*
 Language: Oracle Rules Language
 Author: Jason Jacobson <jason.a.jacobson@gmail.com>
@@ -40069,7 +42352,7 @@ function ruleslanguage(hljs) {
 
 module.exports = ruleslanguage;
 
-},{}],274:[function(require,module,exports){
+},{}],275:[function(require,module,exports){
 /*
 Language: Rust
 Author: Andrey Vlasovskikh <andrey.vlasovskikh@gmail.com>
@@ -40217,7 +42500,7 @@ function rust(hljs) {
 
 module.exports = rust;
 
-},{}],275:[function(require,module,exports){
+},{}],276:[function(require,module,exports){
 /*
 Language: SAS
 Author: Mauricio Caceres <mauricio.caceres.bravo@gmail.com>
@@ -40299,10 +42582,6 @@ function sas(hljs) {
 
   return {
     name: 'SAS',
-    aliases: [
-      'sas',
-      'SAS'
-    ],
     case_insensitive: true, // SAS is case-insensitive
     keywords: {
       literal:
@@ -40356,7 +42635,7 @@ function sas(hljs) {
 
 module.exports = sas;
 
-},{}],276:[function(require,module,exports){
+},{}],277:[function(require,module,exports){
 /*
 Language: Scala
 Category: functional
@@ -40389,22 +42668,23 @@ function scala(hljs) {
     className: 'string',
     variants: [
       {
+        begin: '"""',
+        end: '"""'
+      },
+      {
         begin: '"',
         end: '"',
         illegal: '\\n',
         contains: [ hljs.BACKSLASH_ESCAPE ]
       },
       {
-        begin: '"""',
-        end: '"""',
-        relevance: 10
-      },
-      {
         begin: '[a-z]+"',
         end: '"',
         illegal: '\\n',
-        contains: [ hljs.BACKSLASH_ESCAPE,
-          SUBST ]
+        contains: [
+          hljs.BACKSLASH_ESCAPE,
+          SUBST
+        ]
       },
       {
         className: 'string',
@@ -40497,7 +42777,7 @@ function scala(hljs) {
 
 module.exports = scala;
 
-},{}],277:[function(require,module,exports){
+},{}],278:[function(require,module,exports){
 /*
 Language: Scheme
 Description: Scheme is a programming language in the Lisp family.
@@ -40706,7 +42986,7 @@ function scheme(hljs) {
 
 module.exports = scheme;
 
-},{}],278:[function(require,module,exports){
+},{}],279:[function(require,module,exports){
 /*
 Language: Scilab
 Author: Sylvestre Ledru <sylvestre.ledru@scilab-enterprises.com>
@@ -40781,7 +43061,435 @@ function scilab(hljs) {
 
 module.exports = scilab;
 
-},{}],279:[function(require,module,exports){
+},{}],280:[function(require,module,exports){
+const MODES = (hljs) => {
+  return {
+    IMPORTANT: {
+      className: 'meta',
+      begin: '!important'
+    },
+    HEXCOLOR: {
+      className: 'number',
+      begin: '#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})'
+    },
+    ATTRIBUTE_SELECTOR_MODE: {
+      className: 'selector-attr',
+      begin: /\[/,
+      end: /\]/,
+      illegal: '$',
+      contains: [
+        hljs.APOS_STRING_MODE,
+        hljs.QUOTE_STRING_MODE
+      ]
+    }
+  };
+};
+
+const TAGS = [
+  'a',
+  'abbr',
+  'address',
+  'article',
+  'aside',
+  'audio',
+  'b',
+  'blockquote',
+  'body',
+  'button',
+  'canvas',
+  'caption',
+  'cite',
+  'code',
+  'dd',
+  'del',
+  'details',
+  'dfn',
+  'div',
+  'dl',
+  'dt',
+  'em',
+  'fieldset',
+  'figcaption',
+  'figure',
+  'footer',
+  'form',
+  'h1',
+  'h2',
+  'h3',
+  'h4',
+  'h5',
+  'h6',
+  'header',
+  'hgroup',
+  'html',
+  'i',
+  'iframe',
+  'img',
+  'input',
+  'ins',
+  'kbd',
+  'label',
+  'legend',
+  'li',
+  'main',
+  'mark',
+  'menu',
+  'nav',
+  'object',
+  'ol',
+  'p',
+  'q',
+  'quote',
+  'samp',
+  'section',
+  'span',
+  'strong',
+  'summary',
+  'sup',
+  'table',
+  'tbody',
+  'td',
+  'textarea',
+  'tfoot',
+  'th',
+  'thead',
+  'time',
+  'tr',
+  'ul',
+  'var',
+  'video'
+];
+
+const MEDIA_FEATURES = [
+  'any-hover',
+  'any-pointer',
+  'aspect-ratio',
+  'color',
+  'color-gamut',
+  'color-index',
+  'device-aspect-ratio',
+  'device-height',
+  'device-width',
+  'display-mode',
+  'forced-colors',
+  'grid',
+  'height',
+  'hover',
+  'inverted-colors',
+  'monochrome',
+  'orientation',
+  'overflow-block',
+  'overflow-inline',
+  'pointer',
+  'prefers-color-scheme',
+  'prefers-contrast',
+  'prefers-reduced-motion',
+  'prefers-reduced-transparency',
+  'resolution',
+  'scan',
+  'scripting',
+  'update',
+  'width',
+  // TODO: find a better solution?
+  'min-width',
+  'max-width',
+  'min-height',
+  'max-height'
+];
+
+// https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes
+const PSEUDO_CLASSES = [
+  'active',
+  'any-link',
+  'blank',
+  'checked',
+  'current',
+  'default',
+  'defined',
+  'dir', // dir()
+  'disabled',
+  'drop',
+  'empty',
+  'enabled',
+  'first',
+  'first-child',
+  'first-of-type',
+  'fullscreen',
+  'future',
+  'focus',
+  'focus-visible',
+  'focus-within',
+  'has', // has()
+  'host', // host or host()
+  'host-context', // host-context()
+  'hover',
+  'indeterminate',
+  'in-range',
+  'invalid',
+  'is', // is()
+  'lang', // lang()
+  'last-child',
+  'last-of-type',
+  'left',
+  'link',
+  'local-link',
+  'not', // not()
+  'nth-child', // nth-child()
+  'nth-col', // nth-col()
+  'nth-last-child', // nth-last-child()
+  'nth-last-col', // nth-last-col()
+  'nth-last-of-type', //nth-last-of-type()
+  'nth-of-type', //nth-of-type()
+  'only-child',
+  'only-of-type',
+  'optional',
+  'out-of-range',
+  'past',
+  'placeholder-shown',
+  'read-only',
+  'read-write',
+  'required',
+  'right',
+  'root',
+  'scope',
+  'target',
+  'target-within',
+  'user-invalid',
+  'valid',
+  'visited',
+  'where' // where()
+];
+
+// https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements
+const PSEUDO_ELEMENTS = [
+  'after',
+  'backdrop',
+  'before',
+  'cue',
+  'cue-region',
+  'first-letter',
+  'first-line',
+  'grammar-error',
+  'marker',
+  'part',
+  'placeholder',
+  'selection',
+  'slotted',
+  'spelling-error'
+];
+
+const ATTRIBUTES = [
+  'align-content',
+  'align-items',
+  'align-self',
+  'animation',
+  'animation-delay',
+  'animation-direction',
+  'animation-duration',
+  'animation-fill-mode',
+  'animation-iteration-count',
+  'animation-name',
+  'animation-play-state',
+  'animation-timing-function',
+  'auto',
+  'backface-visibility',
+  'background',
+  'background-attachment',
+  'background-clip',
+  'background-color',
+  'background-image',
+  'background-origin',
+  'background-position',
+  'background-repeat',
+  'background-size',
+  'border',
+  'border-bottom',
+  'border-bottom-color',
+  'border-bottom-left-radius',
+  'border-bottom-right-radius',
+  'border-bottom-style',
+  'border-bottom-width',
+  'border-collapse',
+  'border-color',
+  'border-image',
+  'border-image-outset',
+  'border-image-repeat',
+  'border-image-slice',
+  'border-image-source',
+  'border-image-width',
+  'border-left',
+  'border-left-color',
+  'border-left-style',
+  'border-left-width',
+  'border-radius',
+  'border-right',
+  'border-right-color',
+  'border-right-style',
+  'border-right-width',
+  'border-spacing',
+  'border-style',
+  'border-top',
+  'border-top-color',
+  'border-top-left-radius',
+  'border-top-right-radius',
+  'border-top-style',
+  'border-top-width',
+  'border-width',
+  'bottom',
+  'box-decoration-break',
+  'box-shadow',
+  'box-sizing',
+  'break-after',
+  'break-before',
+  'break-inside',
+  'caption-side',
+  'clear',
+  'clip',
+  'clip-path',
+  'color',
+  'column-count',
+  'column-fill',
+  'column-gap',
+  'column-rule',
+  'column-rule-color',
+  'column-rule-style',
+  'column-rule-width',
+  'column-span',
+  'column-width',
+  'columns',
+  'content',
+  'counter-increment',
+  'counter-reset',
+  'cursor',
+  'direction',
+  'display',
+  'empty-cells',
+  'filter',
+  'flex',
+  'flex-basis',
+  'flex-direction',
+  'flex-flow',
+  'flex-grow',
+  'flex-shrink',
+  'flex-wrap',
+  'float',
+  'font',
+  'font-display',
+  'font-family',
+  'font-feature-settings',
+  'font-kerning',
+  'font-language-override',
+  'font-size',
+  'font-size-adjust',
+  'font-smoothing',
+  'font-stretch',
+  'font-style',
+  'font-variant',
+  'font-variant-ligatures',
+  'font-variation-settings',
+  'font-weight',
+  'height',
+  'hyphens',
+  'icon',
+  'image-orientation',
+  'image-rendering',
+  'image-resolution',
+  'ime-mode',
+  'inherit',
+  'initial',
+  'justify-content',
+  'left',
+  'letter-spacing',
+  'line-height',
+  'list-style',
+  'list-style-image',
+  'list-style-position',
+  'list-style-type',
+  'margin',
+  'margin-bottom',
+  'margin-left',
+  'margin-right',
+  'margin-top',
+  'marks',
+  'mask',
+  'max-height',
+  'max-width',
+  'min-height',
+  'min-width',
+  'nav-down',
+  'nav-index',
+  'nav-left',
+  'nav-right',
+  'nav-up',
+  'none',
+  'normal',
+  'object-fit',
+  'object-position',
+  'opacity',
+  'order',
+  'orphans',
+  'outline',
+  'outline-color',
+  'outline-offset',
+  'outline-style',
+  'outline-width',
+  'overflow',
+  'overflow-wrap',
+  'overflow-x',
+  'overflow-y',
+  'padding',
+  'padding-bottom',
+  'padding-left',
+  'padding-right',
+  'padding-top',
+  'page-break-after',
+  'page-break-before',
+  'page-break-inside',
+  'perspective',
+  'perspective-origin',
+  'pointer-events',
+  'position',
+  'quotes',
+  'resize',
+  'right',
+  'src', // @font-face
+  'tab-size',
+  'table-layout',
+  'text-align',
+  'text-align-last',
+  'text-decoration',
+  'text-decoration-color',
+  'text-decoration-line',
+  'text-decoration-style',
+  'text-indent',
+  'text-overflow',
+  'text-rendering',
+  'text-shadow',
+  'text-transform',
+  'text-underline-position',
+  'top',
+  'transform',
+  'transform-origin',
+  'transform-style',
+  'transition',
+  'transition-delay',
+  'transition-duration',
+  'transition-property',
+  'transition-timing-function',
+  'unicode-bidi',
+  'vertical-align',
+  'visibility',
+  'white-space',
+  'widows',
+  'width',
+  'word-break',
+  'word-spacing',
+  'word-wrap',
+  'z-index'
+  // reverse makes sure longer attributes `font-weight` are matched fully
+  // instead of getting false positives on say `font`
+].reverse();
+
 /*
 Language: SCSS
 Description: Scss is an extension of the syntax of CSS.
@@ -40789,36 +43497,21 @@ Author: Kurt Emch <kurt@kurtemch.com>
 Website: https://sass-lang.com
 Category: common, css
 */
+
+/** @type LanguageFn */
 function scss(hljs) {
-  var AT_IDENTIFIER = '@[a-z-]+'; // @font-face
-  var AT_MODIFIERS = "and or not only";
-  var IDENT_RE = '[a-zA-Z-][a-zA-Z0-9_-]*';
-  var VARIABLE = {
+  const modes = MODES(hljs);
+  const PSEUDO_ELEMENTS$1 = PSEUDO_ELEMENTS;
+  const PSEUDO_CLASSES$1 = PSEUDO_CLASSES;
+
+  const AT_IDENTIFIER = '@[a-z-]+'; // @font-face
+  const AT_MODIFIERS = "and or not only";
+  const IDENT_RE = '[a-zA-Z-][a-zA-Z0-9_-]*';
+  const VARIABLE = {
     className: 'variable',
     begin: '(\\$' + IDENT_RE + ')\\b'
   };
-  var HEXCOLOR = {
-    className: 'number', begin: '#[0-9A-Fa-f]+'
-  };
-  var DEF_INTERNALS = {
-    className: 'attribute',
-    begin: '[A-Z\\_\\.\\-]+', end: ':',
-    excludeEnd: true,
-    illegal: '[^\\s]',
-    starts: {
-      endsWithParent: true, excludeEnd: true,
-      contains: [
-        HEXCOLOR,
-        hljs.CSS_NUMBER_MODE,
-        hljs.QUOTE_STRING_MODE,
-        hljs.APOS_STRING_MODE,
-        hljs.C_BLOCK_COMMENT_MODE,
-        {
-          className: 'meta', begin: '!important'
-        }
-      ]
-    }
-  };
+
   return {
     name: 'SCSS',
     case_insensitive: true,
@@ -40827,50 +43520,53 @@ function scss(hljs) {
       hljs.C_LINE_COMMENT_MODE,
       hljs.C_BLOCK_COMMENT_MODE,
       {
-        className: 'selector-id', begin: '#[A-Za-z0-9_-]+',
+        className: 'selector-id',
+        begin: '#[A-Za-z0-9_-]+',
         relevance: 0
       },
       {
-        className: 'selector-class', begin: '\\.[A-Za-z0-9_-]+',
+        className: 'selector-class',
+        begin: '\\.[A-Za-z0-9_-]+',
         relevance: 0
       },
+      modes.ATTRIBUTE_SELECTOR_MODE,
       {
-        className: 'selector-attr', begin: '\\[', end: '\\]',
-        illegal: '$'
-      },
-      {
-        className: 'selector-tag', // begin: IDENT_RE, end: '[,|\\s]'
-        begin: '\\b(a|abbr|acronym|address|area|article|aside|audio|b|base|big|blockquote|body|br|button|canvas|caption|cite|code|col|colgroup|command|datalist|dd|del|details|dfn|div|dl|dt|em|embed|fieldset|figcaption|figure|footer|form|frame|frameset|(h[1-6])|head|header|hgroup|hr|html|i|iframe|img|input|ins|kbd|keygen|label|legend|li|link|map|mark|meta|meter|nav|noframes|noscript|object|ol|optgroup|option|output|p|param|pre|progress|q|rp|rt|ruby|samp|script|section|select|small|span|strike|strong|style|sub|sup|table|tbody|td|textarea|tfoot|th|thead|time|title|tr|tt|ul|var|video)\\b',
+        className: 'selector-tag',
+        begin: '\\b(' + TAGS.join('|') + ')\\b',
+        // was there, before, but why?
         relevance: 0
       },
       {
         className: 'selector-pseudo',
-        begin: ':(visited|valid|root|right|required|read-write|read-only|out-range|optional|only-of-type|only-child|nth-of-type|nth-last-of-type|nth-last-child|nth-child|not|link|left|last-of-type|last-child|lang|invalid|indeterminate|in-range|hover|focus|first-of-type|first-line|first-letter|first-child|first|enabled|empty|disabled|default|checked|before|after|active)'
+        begin: ':(' + PSEUDO_CLASSES$1.join('|') + ')'
       },
       {
         className: 'selector-pseudo',
-        begin: '::(after|before|choices|first-letter|first-line|repeat-index|repeat-item|selection|value)'
+        begin: '::(' + PSEUDO_ELEMENTS$1.join('|') + ')'
       },
       VARIABLE,
+      { // pseudo-selector params
+        begin: /\(/,
+        end: /\)/,
+        contains: [ hljs.CSS_NUMBER_MODE ]
+      },
       {
         className: 'attribute',
-        begin: '\\b(src|z-index|word-wrap|word-spacing|word-break|width|widows|white-space|visibility|vertical-align|unicode-bidi|transition-timing-function|transition-property|transition-duration|transition-delay|transition|transform-style|transform-origin|transform|top|text-underline-position|text-transform|text-shadow|text-rendering|text-overflow|text-indent|text-decoration-style|text-decoration-line|text-decoration-color|text-decoration|text-align-last|text-align|tab-size|table-layout|right|resize|quotes|position|pointer-events|perspective-origin|perspective|page-break-inside|page-break-before|page-break-after|padding-top|padding-right|padding-left|padding-bottom|padding|overflow-y|overflow-x|overflow-wrap|overflow|outline-width|outline-style|outline-offset|outline-color|outline|orphans|order|opacity|object-position|object-fit|normal|none|nav-up|nav-right|nav-left|nav-index|nav-down|min-width|min-height|max-width|max-height|mask|marks|margin-top|margin-right|margin-left|margin-bottom|margin|list-style-type|list-style-position|list-style-image|list-style|line-height|letter-spacing|left|justify-content|initial|inherit|ime-mode|image-orientation|image-resolution|image-rendering|icon|hyphens|height|font-weight|font-variant-ligatures|font-variant|font-style|font-stretch|font-size-adjust|font-size|font-language-override|font-kerning|font-feature-settings|font-family|font|float|flex-wrap|flex-shrink|flex-grow|flex-flow|flex-direction|flex-basis|flex|filter|empty-cells|display|direction|cursor|counter-reset|counter-increment|content|column-width|column-span|column-rule-width|column-rule-style|column-rule-color|column-rule|column-gap|column-fill|column-count|columns|color|clip-path|clip|clear|caption-side|break-inside|break-before|break-after|box-sizing|box-shadow|box-decoration-break|bottom|border-width|border-top-width|border-top-style|border-top-right-radius|border-top-left-radius|border-top-color|border-top|border-style|border-spacing|border-right-width|border-right-style|border-right-color|border-right|border-radius|border-left-width|border-left-style|border-left-color|border-left|border-image-width|border-image-source|border-image-slice|border-image-repeat|border-image-outset|border-image|border-color|border-collapse|border-bottom-width|border-bottom-style|border-bottom-right-radius|border-bottom-left-radius|border-bottom-color|border-bottom|border|background-size|background-repeat|background-position|background-origin|background-image|background-color|background-clip|background-attachment|background-blend-mode|background|backface-visibility|auto|animation-timing-function|animation-play-state|animation-name|animation-iteration-count|animation-fill-mode|animation-duration|animation-direction|animation-delay|animation|align-self|align-items|align-content)\\b',
-        illegal: '[^\\s]'
+        begin: '\\b(' + ATTRIBUTES.join('|') + ')\\b'
       },
       {
         begin: '\\b(whitespace|wait|w-resize|visible|vertical-text|vertical-ideographic|uppercase|upper-roman|upper-alpha|underline|transparent|top|thin|thick|text|text-top|text-bottom|tb-rl|table-header-group|table-footer-group|sw-resize|super|strict|static|square|solid|small-caps|separate|se-resize|scroll|s-resize|rtl|row-resize|ridge|right|repeat|repeat-y|repeat-x|relative|progress|pointer|overline|outside|outset|oblique|nowrap|not-allowed|normal|none|nw-resize|no-repeat|no-drop|newspaper|ne-resize|n-resize|move|middle|medium|ltr|lr-tb|lowercase|lower-roman|lower-alpha|loose|list-item|line|line-through|line-edge|lighter|left|keep-all|justify|italic|inter-word|inter-ideograph|inside|inset|inline|inline-block|inherit|inactive|ideograph-space|ideograph-parenthesis|ideograph-numeric|ideograph-alpha|horizontal|hidden|help|hand|groove|fixed|ellipsis|e-resize|double|dotted|distribute|distribute-space|distribute-letter|distribute-all-lines|disc|disabled|default|decimal|dashed|crosshair|collapse|col-resize|circle|char|center|capitalize|break-word|break-all|bottom|both|bolder|bold|block|bidi-override|below|baseline|auto|always|all-scroll|absolute|table|table-cell)\\b'
       },
       {
-        begin: ':', end: ';',
+        begin: ':',
+        end: ';',
         contains: [
           VARIABLE,
-          HEXCOLOR,
+          modes.HEXCOLOR,
           hljs.CSS_NUMBER_MODE,
           hljs.QUOTE_STRING_MODE,
           hljs.APOS_STRING_MODE,
-          {
-            className: 'meta', begin: '!important'
-          }
+          modes.IMPORTANT
         ]
       },
       // matching these here allows us to treat them more like regular CSS
@@ -40882,23 +43578,28 @@ function scss(hljs) {
         keywords: '@page @font-face'
       },
       {
-        begin: '@', end: '[{;]',
+        begin: '@',
+        end: '[{;]',
         returnBegin: true,
-        keywords: AT_MODIFIERS,
+        keywords: {
+          $pattern: /[a-z-]+/,
+          keyword: AT_MODIFIERS,
+          attribute: MEDIA_FEATURES.join(" ")
+        },
         contains: [
           {
             begin: AT_IDENTIFIER,
             className: "keyword"
           },
+          {
+            begin: /[a-z-]+(?=:)/,
+            className: "attribute"
+          },
           VARIABLE,
           hljs.QUOTE_STRING_MODE,
           hljs.APOS_STRING_MODE,
-          HEXCOLOR,
-          hljs.CSS_NUMBER_MODE,
-          // {
-          //   begin: '\\s[A-Za-z0-9_.-]+',
-          //   relevance: 0
-          // }
+          modes.HEXCOLOR,
+          hljs.CSS_NUMBER_MODE
         ]
       }
     ]
@@ -40907,7 +43608,7 @@ function scss(hljs) {
 
 module.exports = scss;
 
-},{}],280:[function(require,module,exports){
+},{}],281:[function(require,module,exports){
 /*
 Language: Shell Session
 Requires: bash.js
@@ -40939,7 +43640,7 @@ function shell(hljs) {
 
 module.exports = shell;
 
-},{}],281:[function(require,module,exports){
+},{}],282:[function(require,module,exports){
 /*
 Language: Smali
 Author: Dennis Titze <dennis.titze@gmail.com>
@@ -41013,7 +43714,6 @@ function smali(hljs) {
   ];
   return {
     name: 'Smali',
-    aliases: [ 'smali' ],
     contains: [
       {
         className: 'string',
@@ -41077,7 +43777,7 @@ function smali(hljs) {
 
 module.exports = smali;
 
-},{}],282:[function(require,module,exports){
+},{}],283:[function(require,module,exports){
 /*
 Language: Smalltalk
 Description: Smalltalk is an object-oriented, dynamically typed reflective programming language.
@@ -41142,7 +43842,7 @@ function smalltalk(hljs) {
 
 module.exports = smalltalk;
 
-},{}],283:[function(require,module,exports){
+},{}],284:[function(require,module,exports){
 /*
 Language: SML (Standard ML)
 Author: Edwin Dalorzo <edwin@dalorzo.org>
@@ -41225,7 +43925,7 @@ function sml(hljs) {
 
 module.exports = sml;
 
-},{}],284:[function(require,module,exports){
+},{}],285:[function(require,module,exports){
 /*
 Language: SQF
 Author: Søren Enevoldsen <senevoldsen90@gmail.com>
@@ -41304,7 +44004,6 @@ function sqf(hljs) {
 
   return {
     name: 'SQF',
-    aliases: [ 'sqf' ],
     case_insensitive: true,
     keywords: {
       keyword:
@@ -41676,7 +44375,7 @@ function sqf(hljs) {
 
 module.exports = sqf;
 
-},{}],285:[function(require,module,exports){
+},{}],286:[function(require,module,exports){
 /**
  * @param {string} value
  * @returns {RegExp}
@@ -42317,7 +45016,7 @@ function sql(hljs) {
   const FUNCTION_CALL = {
     begin: concat(/\b/, either(...FUNCTIONS), /\s*\(/),
     keywords: {
-      built_in: FUNCTIONS.join(" ")
+      built_in: FUNCTIONS
     }
   };
 
@@ -42344,19 +45043,19 @@ function sql(hljs) {
     keywords: {
       $pattern: /\b[\w\.]+/,
       keyword:
-        reduceRelevancy(KEYWORDS, { when: (x) => x.length < 3 }).join(" "),
-      literal: LITERALS.join(" "),
-      type: TYPES.join(" "),
-      built_in: POSSIBLE_WITHOUT_PARENS.join(" ")
+        reduceRelevancy(KEYWORDS, { when: (x) => x.length < 3 }),
+      literal: LITERALS,
+      type: TYPES,
+      built_in: POSSIBLE_WITHOUT_PARENS
     },
     contains: [
       {
         begin: either(...COMBOS),
         keywords: {
           $pattern: /[\w\.]+/,
-          keyword: KEYWORDS.concat(COMBOS).join(" "),
-          literal: LITERALS.join(" "),
-          type: TYPES.join(" ")
+          keyword: KEYWORDS.concat(COMBOS),
+          literal: LITERALS,
+          type: TYPES
         },
       },
       {
@@ -42377,7 +45076,7 @@ function sql(hljs) {
 
 module.exports = sql;
 
-},{}],286:[function(require,module,exports){
+},{}],287:[function(require,module,exports){
 /*
  Language: SQL More (mix of MySQL, Oracle, etc)
  Contributors: Nikolay Lisienko <info@neor.ru>, Heiko August <post@auge8472.de>, Travis Odom <travis.a.odom@gmail.com>, Vadimtro <vadimtro@yahoo.com>, Benjamin Auder <benjamin.auder@gmail.com>
@@ -42562,7 +45261,7 @@ function sql_more(hljs) {
 
 module.exports = sql_more;
 
-},{}],287:[function(require,module,exports){
+},{}],288:[function(require,module,exports){
 /*
 Language: Stan
 Description: The Stan probabilistic programming language
@@ -43038,9 +45737,9 @@ function stan(hljs) {
     aliases: [ 'stanfuncs' ],
     keywords: {
       $pattern: hljs.IDENT_RE,
-      title: BLOCKS.join(' '),
-      keyword: STATEMENTS.concat(VAR_TYPES).concat(SPECIAL_FUNCTIONS).join(' '),
-      built_in: FUNCTIONS.join(' ')
+      title: BLOCKS,
+      keyword: STATEMENTS.concat(VAR_TYPES).concat(SPECIAL_FUNCTIONS),
+      built_in: FUNCTIONS
     },
     contains: [
       hljs.C_LINE_COMMENT_MODE,
@@ -43086,7 +45785,7 @@ function stan(hljs) {
       },
       {
         begin: '~\\s*(' + hljs.IDENT_RE + ')\\s*\\(',
-        keywords: DISTRIBUTIONS.join(' ')
+        keywords: DISTRIBUTIONS
       },
       {
         className: 'number',
@@ -43112,7 +45811,7 @@ function stan(hljs) {
 
 module.exports = stan;
 
-},{}],288:[function(require,module,exports){
+},{}],289:[function(require,module,exports){
 /*
 Language: Stata
 Author: Brian Quistorff <bquistorff@gmail.com>
@@ -43174,7 +45873,7 @@ function stata(hljs) {
 
 module.exports = stata;
 
-},{}],289:[function(require,module,exports){
+},{}],290:[function(require,module,exports){
 /*
 Language: STEP Part 21
 Contributors: Adam Joseph Cook <adam.joseph.cook@gmail.com>
@@ -43242,7 +45941,435 @@ function step21(hljs) {
 
 module.exports = step21;
 
-},{}],290:[function(require,module,exports){
+},{}],291:[function(require,module,exports){
+const MODES = (hljs) => {
+  return {
+    IMPORTANT: {
+      className: 'meta',
+      begin: '!important'
+    },
+    HEXCOLOR: {
+      className: 'number',
+      begin: '#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})'
+    },
+    ATTRIBUTE_SELECTOR_MODE: {
+      className: 'selector-attr',
+      begin: /\[/,
+      end: /\]/,
+      illegal: '$',
+      contains: [
+        hljs.APOS_STRING_MODE,
+        hljs.QUOTE_STRING_MODE
+      ]
+    }
+  };
+};
+
+const TAGS = [
+  'a',
+  'abbr',
+  'address',
+  'article',
+  'aside',
+  'audio',
+  'b',
+  'blockquote',
+  'body',
+  'button',
+  'canvas',
+  'caption',
+  'cite',
+  'code',
+  'dd',
+  'del',
+  'details',
+  'dfn',
+  'div',
+  'dl',
+  'dt',
+  'em',
+  'fieldset',
+  'figcaption',
+  'figure',
+  'footer',
+  'form',
+  'h1',
+  'h2',
+  'h3',
+  'h4',
+  'h5',
+  'h6',
+  'header',
+  'hgroup',
+  'html',
+  'i',
+  'iframe',
+  'img',
+  'input',
+  'ins',
+  'kbd',
+  'label',
+  'legend',
+  'li',
+  'main',
+  'mark',
+  'menu',
+  'nav',
+  'object',
+  'ol',
+  'p',
+  'q',
+  'quote',
+  'samp',
+  'section',
+  'span',
+  'strong',
+  'summary',
+  'sup',
+  'table',
+  'tbody',
+  'td',
+  'textarea',
+  'tfoot',
+  'th',
+  'thead',
+  'time',
+  'tr',
+  'ul',
+  'var',
+  'video'
+];
+
+const MEDIA_FEATURES = [
+  'any-hover',
+  'any-pointer',
+  'aspect-ratio',
+  'color',
+  'color-gamut',
+  'color-index',
+  'device-aspect-ratio',
+  'device-height',
+  'device-width',
+  'display-mode',
+  'forced-colors',
+  'grid',
+  'height',
+  'hover',
+  'inverted-colors',
+  'monochrome',
+  'orientation',
+  'overflow-block',
+  'overflow-inline',
+  'pointer',
+  'prefers-color-scheme',
+  'prefers-contrast',
+  'prefers-reduced-motion',
+  'prefers-reduced-transparency',
+  'resolution',
+  'scan',
+  'scripting',
+  'update',
+  'width',
+  // TODO: find a better solution?
+  'min-width',
+  'max-width',
+  'min-height',
+  'max-height'
+];
+
+// https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes
+const PSEUDO_CLASSES = [
+  'active',
+  'any-link',
+  'blank',
+  'checked',
+  'current',
+  'default',
+  'defined',
+  'dir', // dir()
+  'disabled',
+  'drop',
+  'empty',
+  'enabled',
+  'first',
+  'first-child',
+  'first-of-type',
+  'fullscreen',
+  'future',
+  'focus',
+  'focus-visible',
+  'focus-within',
+  'has', // has()
+  'host', // host or host()
+  'host-context', // host-context()
+  'hover',
+  'indeterminate',
+  'in-range',
+  'invalid',
+  'is', // is()
+  'lang', // lang()
+  'last-child',
+  'last-of-type',
+  'left',
+  'link',
+  'local-link',
+  'not', // not()
+  'nth-child', // nth-child()
+  'nth-col', // nth-col()
+  'nth-last-child', // nth-last-child()
+  'nth-last-col', // nth-last-col()
+  'nth-last-of-type', //nth-last-of-type()
+  'nth-of-type', //nth-of-type()
+  'only-child',
+  'only-of-type',
+  'optional',
+  'out-of-range',
+  'past',
+  'placeholder-shown',
+  'read-only',
+  'read-write',
+  'required',
+  'right',
+  'root',
+  'scope',
+  'target',
+  'target-within',
+  'user-invalid',
+  'valid',
+  'visited',
+  'where' // where()
+];
+
+// https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements
+const PSEUDO_ELEMENTS = [
+  'after',
+  'backdrop',
+  'before',
+  'cue',
+  'cue-region',
+  'first-letter',
+  'first-line',
+  'grammar-error',
+  'marker',
+  'part',
+  'placeholder',
+  'selection',
+  'slotted',
+  'spelling-error'
+];
+
+const ATTRIBUTES = [
+  'align-content',
+  'align-items',
+  'align-self',
+  'animation',
+  'animation-delay',
+  'animation-direction',
+  'animation-duration',
+  'animation-fill-mode',
+  'animation-iteration-count',
+  'animation-name',
+  'animation-play-state',
+  'animation-timing-function',
+  'auto',
+  'backface-visibility',
+  'background',
+  'background-attachment',
+  'background-clip',
+  'background-color',
+  'background-image',
+  'background-origin',
+  'background-position',
+  'background-repeat',
+  'background-size',
+  'border',
+  'border-bottom',
+  'border-bottom-color',
+  'border-bottom-left-radius',
+  'border-bottom-right-radius',
+  'border-bottom-style',
+  'border-bottom-width',
+  'border-collapse',
+  'border-color',
+  'border-image',
+  'border-image-outset',
+  'border-image-repeat',
+  'border-image-slice',
+  'border-image-source',
+  'border-image-width',
+  'border-left',
+  'border-left-color',
+  'border-left-style',
+  'border-left-width',
+  'border-radius',
+  'border-right',
+  'border-right-color',
+  'border-right-style',
+  'border-right-width',
+  'border-spacing',
+  'border-style',
+  'border-top',
+  'border-top-color',
+  'border-top-left-radius',
+  'border-top-right-radius',
+  'border-top-style',
+  'border-top-width',
+  'border-width',
+  'bottom',
+  'box-decoration-break',
+  'box-shadow',
+  'box-sizing',
+  'break-after',
+  'break-before',
+  'break-inside',
+  'caption-side',
+  'clear',
+  'clip',
+  'clip-path',
+  'color',
+  'column-count',
+  'column-fill',
+  'column-gap',
+  'column-rule',
+  'column-rule-color',
+  'column-rule-style',
+  'column-rule-width',
+  'column-span',
+  'column-width',
+  'columns',
+  'content',
+  'counter-increment',
+  'counter-reset',
+  'cursor',
+  'direction',
+  'display',
+  'empty-cells',
+  'filter',
+  'flex',
+  'flex-basis',
+  'flex-direction',
+  'flex-flow',
+  'flex-grow',
+  'flex-shrink',
+  'flex-wrap',
+  'float',
+  'font',
+  'font-display',
+  'font-family',
+  'font-feature-settings',
+  'font-kerning',
+  'font-language-override',
+  'font-size',
+  'font-size-adjust',
+  'font-smoothing',
+  'font-stretch',
+  'font-style',
+  'font-variant',
+  'font-variant-ligatures',
+  'font-variation-settings',
+  'font-weight',
+  'height',
+  'hyphens',
+  'icon',
+  'image-orientation',
+  'image-rendering',
+  'image-resolution',
+  'ime-mode',
+  'inherit',
+  'initial',
+  'justify-content',
+  'left',
+  'letter-spacing',
+  'line-height',
+  'list-style',
+  'list-style-image',
+  'list-style-position',
+  'list-style-type',
+  'margin',
+  'margin-bottom',
+  'margin-left',
+  'margin-right',
+  'margin-top',
+  'marks',
+  'mask',
+  'max-height',
+  'max-width',
+  'min-height',
+  'min-width',
+  'nav-down',
+  'nav-index',
+  'nav-left',
+  'nav-right',
+  'nav-up',
+  'none',
+  'normal',
+  'object-fit',
+  'object-position',
+  'opacity',
+  'order',
+  'orphans',
+  'outline',
+  'outline-color',
+  'outline-offset',
+  'outline-style',
+  'outline-width',
+  'overflow',
+  'overflow-wrap',
+  'overflow-x',
+  'overflow-y',
+  'padding',
+  'padding-bottom',
+  'padding-left',
+  'padding-right',
+  'padding-top',
+  'page-break-after',
+  'page-break-before',
+  'page-break-inside',
+  'perspective',
+  'perspective-origin',
+  'pointer-events',
+  'position',
+  'quotes',
+  'resize',
+  'right',
+  'src', // @font-face
+  'tab-size',
+  'table-layout',
+  'text-align',
+  'text-align-last',
+  'text-decoration',
+  'text-decoration-color',
+  'text-decoration-line',
+  'text-decoration-style',
+  'text-indent',
+  'text-overflow',
+  'text-rendering',
+  'text-shadow',
+  'text-transform',
+  'text-underline-position',
+  'top',
+  'transform',
+  'transform-origin',
+  'transform-style',
+  'transition',
+  'transition-delay',
+  'transition-duration',
+  'transition-property',
+  'transition-timing-function',
+  'unicode-bidi',
+  'vertical-align',
+  'visibility',
+  'white-space',
+  'widows',
+  'width',
+  'word-break',
+  'word-spacing',
+  'word-wrap',
+  'z-index'
+  // reverse makes sure longer attributes `font-weight` are matched fully
+  // instead of getting false positives on say `font`
+].reverse();
+
 /*
 Language: Stylus
 Author: Bryant Williams <b.n.williams@gmail.com>
@@ -43251,19 +46378,17 @@ Website: https://github.com/stylus/stylus
 Category: css
 */
 
+/** @type LanguageFn */
 function stylus(hljs) {
+  const modes = MODES(hljs);
 
-  var VARIABLE = {
+  const AT_MODIFIERS = "and or not only";
+  const VARIABLE = {
     className: 'variable',
     begin: '\\$' + hljs.IDENT_RE
   };
 
-  var HEX_COLOR = {
-    className: 'number',
-    begin: '#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})'
-  };
-
-  var AT_KEYWORDS = [
+  const AT_KEYWORDS = [
     'charset',
     'css',
     'debug',
@@ -43272,6 +46397,7 @@ function stylus(hljs) {
     'for',
     'import',
     'include',
+    'keyframes',
     'media',
     'mixin',
     'page',
@@ -43279,304 +46405,10 @@ function stylus(hljs) {
     'while'
   ];
 
-  var PSEUDO_SELECTORS = [
-    'after',
-    'before',
-    'first-letter',
-    'first-line',
-    'active',
-    'first-child',
-    'focus',
-    'hover',
-    'lang',
-    'link',
-    'visited'
-  ];
-
-  var TAGS = [
-    'a',
-    'abbr',
-    'address',
-    'article',
-    'aside',
-    'audio',
-    'b',
-    'blockquote',
-    'body',
-    'button',
-    'canvas',
-    'caption',
-    'cite',
-    'code',
-    'dd',
-    'del',
-    'details',
-    'dfn',
-    'div',
-    'dl',
-    'dt',
-    'em',
-    'fieldset',
-    'figcaption',
-    'figure',
-    'footer',
-    'form',
-    'h1',
-    'h2',
-    'h3',
-    'h4',
-    'h5',
-    'h6',
-    'header',
-    'hgroup',
-    'html',
-    'i',
-    'iframe',
-    'img',
-    'input',
-    'ins',
-    'kbd',
-    'label',
-    'legend',
-    'li',
-    'mark',
-    'menu',
-    'nav',
-    'object',
-    'ol',
-    'p',
-    'q',
-    'quote',
-    'samp',
-    'section',
-    'span',
-    'strong',
-    'summary',
-    'sup',
-    'table',
-    'tbody',
-    'td',
-    'textarea',
-    'tfoot',
-    'th',
-    'thead',
-    'time',
-    'tr',
-    'ul',
-    'var',
-    'video'
-  ];
-
-  var LOOKAHEAD_TAG_END = '(?=[.\\s\\n[:,])';
-
-  var ATTRIBUTES = [
-    'align-content',
-    'align-items',
-    'align-self',
-    'animation',
-    'animation-delay',
-    'animation-direction',
-    'animation-duration',
-    'animation-fill-mode',
-    'animation-iteration-count',
-    'animation-name',
-    'animation-play-state',
-    'animation-timing-function',
-    'auto',
-    'backface-visibility',
-    'background',
-    'background-attachment',
-    'background-clip',
-    'background-color',
-    'background-image',
-    'background-origin',
-    'background-position',
-    'background-repeat',
-    'background-size',
-    'border',
-    'border-bottom',
-    'border-bottom-color',
-    'border-bottom-left-radius',
-    'border-bottom-right-radius',
-    'border-bottom-style',
-    'border-bottom-width',
-    'border-collapse',
-    'border-color',
-    'border-image',
-    'border-image-outset',
-    'border-image-repeat',
-    'border-image-slice',
-    'border-image-source',
-    'border-image-width',
-    'border-left',
-    'border-left-color',
-    'border-left-style',
-    'border-left-width',
-    'border-radius',
-    'border-right',
-    'border-right-color',
-    'border-right-style',
-    'border-right-width',
-    'border-spacing',
-    'border-style',
-    'border-top',
-    'border-top-color',
-    'border-top-left-radius',
-    'border-top-right-radius',
-    'border-top-style',
-    'border-top-width',
-    'border-width',
-    'bottom',
-    'box-decoration-break',
-    'box-shadow',
-    'box-sizing',
-    'break-after',
-    'break-before',
-    'break-inside',
-    'caption-side',
-    'clear',
-    'clip',
-    'clip-path',
-    'color',
-    'column-count',
-    'column-fill',
-    'column-gap',
-    'column-rule',
-    'column-rule-color',
-    'column-rule-style',
-    'column-rule-width',
-    'column-span',
-    'column-width',
-    'columns',
-    'content',
-    'counter-increment',
-    'counter-reset',
-    'cursor',
-    'direction',
-    'display',
-    'empty-cells',
-    'filter',
-    'flex',
-    'flex-basis',
-    'flex-direction',
-    'flex-flow',
-    'flex-grow',
-    'flex-shrink',
-    'flex-wrap',
-    'float',
-    'font',
-    'font-family',
-    'font-feature-settings',
-    'font-kerning',
-    'font-language-override',
-    'font-size',
-    'font-size-adjust',
-    'font-stretch',
-    'font-style',
-    'font-variant',
-    'font-variant-ligatures',
-    'font-weight',
-    'height',
-    'hyphens',
-    'icon',
-    'image-orientation',
-    'image-rendering',
-    'image-resolution',
-    'ime-mode',
-    'inherit',
-    'initial',
-    'justify-content',
-    'left',
-    'letter-spacing',
-    'line-height',
-    'list-style',
-    'list-style-image',
-    'list-style-position',
-    'list-style-type',
-    'margin',
-    'margin-bottom',
-    'margin-left',
-    'margin-right',
-    'margin-top',
-    'marks',
-    'mask',
-    'max-height',
-    'max-width',
-    'min-height',
-    'min-width',
-    'nav-down',
-    'nav-index',
-    'nav-left',
-    'nav-right',
-    'nav-up',
-    'none',
-    'normal',
-    'object-fit',
-    'object-position',
-    'opacity',
-    'order',
-    'orphans',
-    'outline',
-    'outline-color',
-    'outline-offset',
-    'outline-style',
-    'outline-width',
-    'overflow',
-    'overflow-wrap',
-    'overflow-x',
-    'overflow-y',
-    'padding',
-    'padding-bottom',
-    'padding-left',
-    'padding-right',
-    'padding-top',
-    'page-break-after',
-    'page-break-before',
-    'page-break-inside',
-    'perspective',
-    'perspective-origin',
-    'pointer-events',
-    'position',
-    'quotes',
-    'resize',
-    'right',
-    'tab-size',
-    'table-layout',
-    'text-align',
-    'text-align-last',
-    'text-decoration',
-    'text-decoration-color',
-    'text-decoration-line',
-    'text-decoration-style',
-    'text-indent',
-    'text-overflow',
-    'text-rendering',
-    'text-shadow',
-    'text-transform',
-    'text-underline-position',
-    'top',
-    'transform',
-    'transform-origin',
-    'transform-style',
-    'transition',
-    'transition-delay',
-    'transition-duration',
-    'transition-property',
-    'transition-timing-function',
-    'unicode-bidi',
-    'vertical-align',
-    'visibility',
-    'white-space',
-    'widows',
-    'width',
-    'word-break',
-    'word-spacing',
-    'word-wrap',
-    'z-index'
-  ];
+  const LOOKAHEAD_TAG_END = '(?=[.\\s\\n[:,(])';
 
   // illegals
-  var ILLEGAL = [
+  const ILLEGAL = [
     '\\?',
     '(\\bReturn\\b)', // monkey
     '(\\bEnd\\b)', // monkey
@@ -43587,12 +46419,12 @@ function stylus(hljs) {
     '\\*\\s', // markdown
     '===\\s', // markdown
     '\\|',
-    '%', // prolog
+    '%' // prolog
   ];
 
   return {
     name: 'Stylus',
-    aliases: ['styl'],
+    aliases: [ 'styl' ],
     case_insensitive: false,
     keywords: 'if else for in',
     illegal: '(' + ILLEGAL.join('|') + ')',
@@ -43607,7 +46439,7 @@ function stylus(hljs) {
       hljs.C_BLOCK_COMMENT_MODE,
 
       // hex colors
-      HEX_COLOR,
+      modes.HEXCOLOR,
 
       // class tag
       {
@@ -43629,12 +46461,34 @@ function stylus(hljs) {
 
       // psuedo selectors
       {
-        begin: '&?:?:\\b(' + PSEUDO_SELECTORS.join('|') + ')' + LOOKAHEAD_TAG_END
+        className: 'selector-pseudo',
+        begin: '&?:(' + PSEUDO_CLASSES.join('|') + ')' + LOOKAHEAD_TAG_END
+      },
+      {
+        className: 'selector-pseudo',
+        begin: '&?::(' + PSEUDO_ELEMENTS.join('|') + ')' + LOOKAHEAD_TAG_END
+      },
+
+      modes.ATTRIBUTE_SELECTOR_MODE,
+
+      {
+        className: "keyword",
+        begin: /@media/,
+        starts: {
+          end: /[{;}]/,
+          keywords: {
+            $pattern: /[a-z-]+/,
+            keyword: AT_MODIFIERS,
+            attribute: MEDIA_FEATURES.join(" ")
+          },
+          contains: [ hljs.CSS_NUMBER_MODE ]
+        }
       },
 
       // @ keywords
       {
-        begin: '\@(' + AT_KEYWORDS.join('|') + ')\\b'
+        className: 'keyword',
+        begin: '\@((-(o|moz|ms|webkit)-)?(' + AT_KEYWORDS.join('|') + '))\\b'
       },
 
       // variables
@@ -43642,9 +46496,6 @@ function stylus(hljs) {
 
       // dimension
       hljs.CSS_NUMBER_MODE,
-
-      // number
-      hljs.NUMBER_MODE,
 
       // functions
       //  - only from beginning of line + whitespace
@@ -43654,17 +46505,19 @@ function stylus(hljs) {
         illegal: '[\\n]',
         returnBegin: true,
         contains: [
-          {className: 'title', begin: '\\b[a-zA-Z][a-zA-Z0-9_\-]*'},
+          {
+            className: 'title',
+            begin: '\\b[a-zA-Z][a-zA-Z0-9_\-]*'
+          },
           {
             className: 'params',
             begin: /\(/,
             end: /\)/,
             contains: [
-              HEX_COLOR,
+              modes.HEXCOLOR,
               VARIABLE,
               hljs.APOS_STRING_MODE,
               hljs.CSS_NUMBER_MODE,
-              hljs.NUMBER_MODE,
               hljs.QUOTE_STRING_MODE
             ]
           }
@@ -43676,18 +46529,18 @@ function stylus(hljs) {
       //  - must have whitespace after it
       {
         className: 'attribute',
-        begin: '\\b(' + ATTRIBUTES.reverse().join('|') + ')\\b',
+        begin: '\\b(' + ATTRIBUTES.join('|') + ')\\b',
         starts: {
           // value container
           end: /;|$/,
           contains: [
-            HEX_COLOR,
+            modes.HEXCOLOR,
             VARIABLE,
             hljs.APOS_STRING_MODE,
             hljs.QUOTE_STRING_MODE,
             hljs.CSS_NUMBER_MODE,
-            hljs.NUMBER_MODE,
-            hljs.C_BLOCK_COMMENT_MODE
+            hljs.C_BLOCK_COMMENT_MODE,
+            modes.IMPORTANT
           ],
           illegal: /\./,
           relevance: 0
@@ -43699,7 +46552,7 @@ function stylus(hljs) {
 
 module.exports = stylus;
 
-},{}],291:[function(require,module,exports){
+},{}],292:[function(require,module,exports){
 /*
 Language: SubUnit
 Author: Sergey Bronnikov <sergeyb@bronevichok.ru>
@@ -43752,7 +46605,7 @@ function subunit(hljs) {
 
 module.exports = subunit;
 
-},{}],292:[function(require,module,exports){
+},{}],293:[function(require,module,exports){
 /**
  * @param {string} value
  * @returns {RegExp}
@@ -43828,6 +46681,8 @@ const keywords = [
   // will result in additional modes being created to scan for those keywords to
   // avoid conflicts with other rules
   'associatedtype',
+  'async',
+  'await',
   /as\?/, // operator
   /as!/, // operator
   'as', // operator
@@ -43847,7 +46702,7 @@ const keywords = [
   'enum',
   'extension',
   'fallthrough',
-  'fileprivate(set)',
+  /fileprivate\(set\)/,
   'fileprivate',
   'final', // contextual
   'for',
@@ -43861,7 +46716,7 @@ const keywords = [
   /init\?/,
   /init!/,
   'inout',
-  'internal(set)',
+  /internal\(set\)/,
   'internal',
   'in',
   'is', // operator
@@ -43869,7 +46724,7 @@ const keywords = [
   'let',
   'mutating', // contextual
   'nonmutating', // contextual
-  'open(set)', // contextual
+  /open\(set\)/, // contextual
   'open', // contextual
   'operator',
   'optional', // contextual
@@ -43877,10 +46732,10 @@ const keywords = [
   'postfix', // contextual
   'precedencegroup',
   'prefix', // contextual
-  'private(set)',
+  /private\(set\)/,
   'private',
   'protocol',
-  'public(set)',
+  /public\(set\)/,
   'public',
   'repeat',
   'required', // contextual
@@ -43899,8 +46754,8 @@ const keywords = [
   /try!/, // operator
   'try', // operator
   'typealias',
-  'unowned(safe)', // contextual
-  'unowned(unsafe)', // contextual
+  /unowned\(safe\)/, // contextual
+  /unowned\(unsafe\)/, // contextual
   'unowned', // contextual
   'var',
   'weak', // contextual
@@ -43912,15 +46767,22 @@ const keywords = [
 // NOTE: Contextual keywords are reserved only in specific contexts.
 // Ideally, these should be matched using modes to avoid false positives.
 
-// TODO: Create a PRECEDENCE_GROUP mode to match the remaining contextual keywords:
-// assignment associativity higherThan left lowerThan none right
-// These aren't included in the list because they result in mostly false positives.
-
 // Literals.
 const literals = [
   'false',
   'nil',
   'true'
+];
+
+// Keywords used in precedence groups.
+const precedencegroupKeywords = [
+  'assignment',
+  'associativity',
+  'higherThan',
+  'left',
+  'lowerThan',
+  'none',
+  'right'
 ];
 
 // Keywords that start with a number sign (#).
@@ -44035,7 +46897,7 @@ const identifierHead = either(
   /[\u2C00-\u2DFF\u2E80-\u2FFF]/,
   /[\u3004-\u3007\u3021-\u302F\u3031-\u303F\u3040-\uD7FF]/,
   /[\uF900-\uFD3D\uFD40-\uFDCF\uFDF0-\uFE1F\uFE30-\uFE44]/,
-  /[\uFE47-\uFFFD]/
+  /[\uFE47-\uFEFE\uFF00-\uFFFD]/ // Should be /[\uFE47-\uFFFD]/, but we have to exclude FEFF.
   // The following characters are also allowed, but the regexes aren't supported yet.
   // /[\u{10000}-\u{1FFFD}\u{20000-\u{2FFFD}\u{30000}-\u{3FFFD}\u{40000}-\u{4FFFD}]/u,
   // /[\u{50000}-\u{5FFFD}\u{60000-\u{6FFFD}\u{70000}-\u{7FFFD}\u{80000}-\u{8FFFD}]/u,
@@ -44115,6 +46977,10 @@ Category: common, system
 
 /** @type LanguageFn */
 function swift(hljs) {
+  const WHITESPACE = {
+    match: /\s+/,
+    relevance: 0
+  };
   // https://docs.swift.org/swift-book/ReferenceManual/LexicalStructure.html#ID411
   const BLOCK_COMMENT = hljs.COMMENT(
     '/\\*',
@@ -44123,6 +46989,10 @@ function swift(hljs) {
       contains: [ 'self' ]
     }
   );
+  const COMMENTS = [
+    hljs.C_LINE_COMMENT_MODE,
+    BLOCK_COMMENT
+  ];
 
   // https://docs.swift.org/swift-book/ReferenceManual/LexicalStructure.html#ID413
   // https://docs.swift.org/swift-book/ReferenceManual/zzSummaryOfTheGrammar.html
@@ -44134,7 +47004,7 @@ function swift(hljs) {
   };
   const KEYWORD_GUARD = {
     // Consume .keyword to prevent highlighting properties and methods as keywords.
-    begin: concat(/\./, either(...keywords)),
+    match: concat(/\./, either(...keywords)),
     relevance: 0
   };
   const PLAIN_KEYWORDS = keywords
@@ -44148,20 +47018,19 @@ function swift(hljs) {
     variants: [
       {
         className: 'keyword',
-        begin: either(...REGEX_KEYWORDS, ...optionalDotKeywords)
+        match: either(...REGEX_KEYWORDS, ...optionalDotKeywords)
       }
     ]
   };
   // find all the regular keywords
   const KEYWORDS = {
     $pattern: either(
-      /\b\w+(\(\w+\))?/, // kw or kw(arg)
+      /\b\w+/, // regular keywords
       /#\w+/ // number keywords
     ),
     keyword: PLAIN_KEYWORDS
-      .concat(numberSignKeywords)
-      .join(" "),
-    literal: literals.join(" ")
+      .concat(numberSignKeywords),
+    literal: literals
   };
   const KEYWORD_MODES = [
     DOT_KEYWORD,
@@ -44172,12 +47041,12 @@ function swift(hljs) {
   // https://github.com/apple/swift/tree/main/stdlib/public/core
   const BUILT_IN_GUARD = {
     // Consume .built_in to prevent highlighting properties and methods.
-    begin: concat(/\./, either(...builtIns)),
+    match: concat(/\./, either(...builtIns)),
     relevance: 0
   };
   const BUILT_IN = {
     className: 'built_in',
-    begin: concat(/\b/, either(...builtIns), /(?=\()/)
+    match: concat(/\b/, either(...builtIns), /(?=\()/)
   };
   const BUILT_INS = [
     BUILT_IN_GUARD,
@@ -44187,7 +47056,7 @@ function swift(hljs) {
   // https://docs.swift.org/swift-book/ReferenceManual/LexicalStructure.html#ID418
   const OPERATOR_GUARD = {
     // Prevent -> from being highlighting as an operator.
-    begin: /->/,
+    match: /->/,
     relevance: 0
   };
   const OPERATOR = {
@@ -44195,13 +47064,13 @@ function swift(hljs) {
     relevance: 0,
     variants: [
       {
-        begin: operator
+        match: operator
       },
       {
         // dot-operator: only operators that start with a dot are allowed to use dots as
         // characters (..., ...<, .*, etc). So there rule here is: a dot followed by one or more
         // characters that may also include dots.
-        begin: `\\.(\\.|${operatorCharacter})+`
+        match: `\\.(\\.|${operatorCharacter})+`
       }
     ]
   };
@@ -44220,19 +47089,19 @@ function swift(hljs) {
     variants: [
       // decimal floating-point-literal (subsumes decimal-literal)
       {
-        begin: `\\b(${decimalDigits})(\\.(${decimalDigits}))?` + `([eE][+-]?(${decimalDigits}))?\\b`
+        match: `\\b(${decimalDigits})(\\.(${decimalDigits}))?` + `([eE][+-]?(${decimalDigits}))?\\b`
       },
       // hexadecimal floating-point-literal (subsumes hexadecimal-literal)
       {
-        begin: `\\b0x(${hexDigits})(\\.(${hexDigits}))?` + `([pP][+-]?(${decimalDigits}))?\\b`
+        match: `\\b0x(${hexDigits})(\\.(${hexDigits}))?` + `([pP][+-]?(${decimalDigits}))?\\b`
       },
       // octal-literal
       {
-        begin: /\b0o([0-7]_*)+\b/
+        match: /\b0o([0-7]_*)+\b/
       },
       // binary-literal
       {
-        begin: /\b0b([01]_*)+\b/
+        match: /\b0b([01]_*)+\b/
       }
     ]
   };
@@ -44242,16 +47111,16 @@ function swift(hljs) {
     className: 'subst',
     variants: [
       {
-        begin: concat(/\\/, rawDelimiter, /[0\\tnr"']/)
+        match: concat(/\\/, rawDelimiter, /[0\\tnr"']/)
       },
       {
-        begin: concat(/\\/, rawDelimiter, /u\{[0-9a-fA-F]{1,8}\}/)
+        match: concat(/\\/, rawDelimiter, /u\{[0-9a-fA-F]{1,8}\}/)
       }
     ]
   });
   const ESCAPED_NEWLINE = (rawDelimiter = "") => ({
     className: 'subst',
-    begin: concat(/\\/, rawDelimiter, /[\t ]*(?:[\r\n]|\r\n)/)
+    match: concat(/\\/, rawDelimiter, /[\t ]*(?:[\r\n]|\r\n)/)
   });
   const INTERPOLATION = (rawDelimiter = "") => ({
     className: 'subst',
@@ -44292,15 +47161,15 @@ function swift(hljs) {
 
   // https://docs.swift.org/swift-book/ReferenceManual/LexicalStructure.html#ID412
   const QUOTED_IDENTIFIER = {
-    begin: concat(/`/, identifier, /`/)
+    match: concat(/`/, identifier, /`/)
   };
   const IMPLICIT_PARAMETER = {
     className: 'variable',
-    begin: /\$\d+/
+    match: /\$\d+/
   };
   const PROPERTY_WRAPPER_PROJECTION = {
     className: 'variable',
-    begin: `\\$${identifierCharacter}+`
+    match: `\\$${identifierCharacter}+`
   };
   const IDENTIFIERS = [
     QUOTED_IDENTIFIER,
@@ -44310,30 +47179,30 @@ function swift(hljs) {
 
   // https://docs.swift.org/swift-book/ReferenceManual/Attributes.html
   const AVAILABLE_ATTRIBUTE = {
-    begin: /(@|#)available\(/,
-    end: /\)/,
-    keywords: {
-      $pattern: /[@#]?\w+/,
-      keyword: availabilityKeywords
-        .concat([
-          "@available",
-          "#available"
-        ])
-        .join(' ')
-    },
-    contains: [
-      ...OPERATORS,
-      NUMBER,
-      STRING
-    ]
+    match: /(@|#)available/,
+    className: "keyword",
+    starts: {
+      contains: [
+        {
+          begin: /\(/,
+          end: /\)/,
+          keywords: availabilityKeywords,
+          contains: [
+            ...OPERATORS,
+            NUMBER,
+            STRING
+          ]
+        }
+      ]
+    }
   };
   const KEYWORD_ATTRIBUTE = {
     className: 'keyword',
-    begin: concat(/@/, either(...keywordAttributes))
+    match: concat(/@/, either(...keywordAttributes))
   };
   const USER_DEFINED_ATTRIBUTE = {
     className: 'meta',
-    begin: concat(/@/, identifier)
+    match: concat(/@/, identifier)
   };
   const ATTRIBUTES = [
     AVAILABLE_ATTRIBUTE,
@@ -44343,28 +47212,28 @@ function swift(hljs) {
 
   // https://docs.swift.org/swift-book/ReferenceManual/Types.html
   const TYPE = {
-    begin: lookahead(/\b[A-Z]/),
+    match: lookahead(/\b[A-Z]/),
     relevance: 0,
     contains: [
       { // Common Apple frameworks, for relevance boost
         className: 'type',
-        begin: concat(/(AV|CA|CF|CG|CI|CL|CM|CN|CT|MK|MP|MTK|MTL|NS|SCN|SK|UI|WK|XC)/, identifierCharacter, '+')
+        match: concat(/(AV|CA|CF|CG|CI|CL|CM|CN|CT|MK|MP|MTK|MTL|NS|SCN|SK|UI|WK|XC)/, identifierCharacter, '+')
       },
       { // Type identifier
         className: 'type',
-        begin: typeIdentifier,
+        match: typeIdentifier,
         relevance: 0
       },
       { // Optional type
-        begin: /[?!]+/,
+        match: /[?!]+/,
         relevance: 0
       },
       { // Variadic parameter
-        begin: /\.\.\./,
+        match: /\.\.\./,
         relevance: 0
       },
       { // Protocol composition
-        begin: concat(/\s+&\s+/, lookahead(typeIdentifier)),
+        match: concat(/\s+&\s+/, lookahead(typeIdentifier)),
         relevance: 0
       }
     ]
@@ -44374,6 +47243,7 @@ function swift(hljs) {
     end: />/,
     keywords: KEYWORDS,
     contains: [
+      ...COMMENTS,
       ...KEYWORD_MODES,
       ...ATTRIBUTES,
       OPERATOR_GUARD,
@@ -44381,6 +47251,165 @@ function swift(hljs) {
     ]
   };
   TYPE.contains.push(GENERIC_ARGUMENTS);
+
+  // https://docs.swift.org/swift-book/ReferenceManual/Expressions.html#ID552
+  // Prevents element names from being highlighted as keywords.
+  const TUPLE_ELEMENT_NAME = {
+    match: concat(identifier, /\s*:/),
+    keywords: "_|0",
+    relevance: 0
+  };
+  // Matches tuples as well as the parameter list of a function type.
+  const TUPLE = {
+    begin: /\(/,
+    end: /\)/,
+    relevance: 0,
+    keywords: KEYWORDS,
+    contains: [
+      'self',
+      TUPLE_ELEMENT_NAME,
+      ...COMMENTS,
+      ...KEYWORD_MODES,
+      ...BUILT_INS,
+      ...OPERATORS,
+      NUMBER,
+      STRING,
+      ...IDENTIFIERS,
+      ...ATTRIBUTES,
+      TYPE
+    ]
+  };
+
+  // https://docs.swift.org/swift-book/ReferenceManual/Declarations.html#ID362
+  // Matches both the keyword func and the function title.
+  // Grouping these lets us differentiate between the operator function <
+  // and the start of the generic parameter clause (also <).
+  const FUNC_PLUS_TITLE = {
+    beginKeywords: 'func',
+    contains: [
+      {
+        className: 'title',
+        match: either(QUOTED_IDENTIFIER.match, identifier, operator),
+        // Required to make sure the opening < of the generic parameter clause
+        // isn't parsed as a second title.
+        endsParent: true,
+        relevance: 0
+      },
+      WHITESPACE
+    ]
+  };
+  const GENERIC_PARAMETERS = {
+    begin: /</,
+    end: />/,
+    contains: [
+      ...COMMENTS,
+      TYPE
+    ]
+  };
+  const FUNCTION_PARAMETER_NAME = {
+    begin: either(
+      lookahead(concat(identifier, /\s*:/)),
+      lookahead(concat(identifier, /\s+/, identifier, /\s*:/))
+    ),
+    end: /:/,
+    relevance: 0,
+    contains: [
+      {
+        className: 'keyword',
+        match: /\b_\b/
+      },
+      {
+        className: 'params',
+        match: identifier
+      }
+    ]
+  };
+  const FUNCTION_PARAMETERS = {
+    begin: /\(/,
+    end: /\)/,
+    keywords: KEYWORDS,
+    contains: [
+      FUNCTION_PARAMETER_NAME,
+      ...COMMENTS,
+      ...KEYWORD_MODES,
+      ...OPERATORS,
+      NUMBER,
+      STRING,
+      ...ATTRIBUTES,
+      TYPE,
+      TUPLE
+    ],
+    endsParent: true,
+    illegal: /["']/
+  };
+  const FUNCTION = {
+    className: 'function',
+    match: lookahead(/\bfunc\b/),
+    contains: [
+      FUNC_PLUS_TITLE,
+      GENERIC_PARAMETERS,
+      FUNCTION_PARAMETERS,
+      WHITESPACE
+    ],
+    illegal: [
+      /\[/,
+      /%/
+    ]
+  };
+
+  // https://docs.swift.org/swift-book/ReferenceManual/Declarations.html#ID375
+  // https://docs.swift.org/swift-book/ReferenceManual/Declarations.html#ID379
+  const INIT_SUBSCRIPT = {
+    className: 'function',
+    match: /\b(subscript|init[?!]?)\s*(?=[<(])/,
+    keywords: {
+      keyword: "subscript init init? init!",
+      $pattern: /\w+[?!]?/
+    },
+    contains: [
+      GENERIC_PARAMETERS,
+      FUNCTION_PARAMETERS,
+      WHITESPACE
+    ],
+    illegal: /\[|%/
+  };
+  // https://docs.swift.org/swift-book/ReferenceManual/Declarations.html#ID380
+  const OPERATOR_DECLARATION = {
+    beginKeywords: 'operator',
+    end: hljs.MATCH_NOTHING_RE,
+    contains: [
+      {
+        className: 'title',
+        match: operator,
+        endsParent: true,
+        relevance: 0
+      }
+    ]
+  };
+
+  // https://docs.swift.org/swift-book/ReferenceManual/Declarations.html#ID550
+  const PRECEDENCEGROUP = {
+    beginKeywords: 'precedencegroup',
+    end: hljs.MATCH_NOTHING_RE,
+    contains: [
+      {
+        className: 'title',
+        match: typeIdentifier,
+        relevance: 0
+      },
+      {
+        begin: /{/,
+        end: /}/,
+        relevance: 0,
+        endsParent: true,
+        keywords: [
+          ...precedencegroupKeywords,
+          ...literals
+        ],
+        contains: [ TYPE ]
+      }
+    ]
+  };
 
   // Add supported submodes to string interpolation.
   for (const variant of STRING.variants) {
@@ -44412,42 +47441,9 @@ function swift(hljs) {
     name: 'Swift',
     keywords: KEYWORDS,
     contains: [
-      hljs.C_LINE_COMMENT_MODE,
-      BLOCK_COMMENT,
-      {
-        className: 'function',
-        beginKeywords: 'func',
-        end: /\{/,
-        excludeEnd: true,
-        contains: [
-          hljs.inherit(hljs.TITLE_MODE, {
-            begin: /[A-Za-z$_][0-9A-Za-z$_]*/
-          }),
-          {
-            begin: /</,
-            end: />/
-          },
-          {
-            className: 'params',
-            begin: /\(/,
-            end: /\)/,
-            endsParent: true,
-            keywords: KEYWORDS,
-            contains: [
-              'self',
-              ...KEYWORD_MODES,
-              NUMBER,
-              STRING,
-              hljs.C_BLOCK_COMMENT_MODE,
-              { // relevance booster
-                begin: ':'
-              }
-            ],
-            illegal: /["']/
-          }
-        ],
-        illegal: /\[|%/
-      },
+      ...COMMENTS,
+      FUNCTION,
+      INIT_SUBSCRIPT,
       {
         className: 'class',
         beginKeywords: 'struct protocol class extension enum',
@@ -44461,13 +47457,12 @@ function swift(hljs) {
           ...KEYWORD_MODES
         ]
       },
+      OPERATOR_DECLARATION,
+      PRECEDENCEGROUP,
       {
         beginKeywords: 'import',
         end: /$/,
-        contains: [
-          hljs.C_LINE_COMMENT_MODE,
-          BLOCK_COMMENT
-        ],
+        contains: [ ...COMMENTS ],
         relevance: 0
       },
       ...KEYWORD_MODES,
@@ -44477,14 +47472,15 @@ function swift(hljs) {
       STRING,
       ...IDENTIFIERS,
       ...ATTRIBUTES,
-      TYPE
+      TYPE,
+      TUPLE
     ]
   };
 }
 
 module.exports = swift;
 
-},{}],293:[function(require,module,exports){
+},{}],294:[function(require,module,exports){
 /*
 Language: Tagger Script
 Author: Philipp Wolfer <ph.wolfer@gmail.com>
@@ -44538,7 +47534,7 @@ function taggerscript(hljs) {
 
 module.exports = taggerscript;
 
-},{}],294:[function(require,module,exports){
+},{}],295:[function(require,module,exports){
 /*
 Language: Test Anything Protocol
 Description: TAP, the Test Anything Protocol, is a simple text-based interface between testing modules in a test harness.
@@ -44595,7 +47591,40 @@ function tap(hljs) {
 
 module.exports = tap;
 
-},{}],295:[function(require,module,exports){
+},{}],296:[function(require,module,exports){
+/**
+ * @param {string} value
+ * @returns {RegExp}
+ * */
+
+/**
+ * @param {RegExp | string } re
+ * @returns {string}
+ */
+function source(re) {
+  if (!re) return null;
+  if (typeof re === "string") return re;
+
+  return re.source;
+}
+
+/**
+ * @param {RegExp | string } re
+ * @returns {string}
+ */
+function optional(re) {
+  return concat('(', re, ')?');
+}
+
+/**
+ * @param {...(RegExp | string) } args
+ * @returns {string}
+ */
+function concat(...args) {
+  const joined = args.map((x) => source(x)).join("");
+  return joined;
+}
+
 /*
 Language: Tcl
 Description: Tcl is a very simple programming language.
@@ -44604,6 +47633,13 @@ Website: https://www.tcl.tk/about/language.html
 */
 
 function tcl(hljs) {
+  const TCL_IDENT = /[a-zA-Z_][a-zA-Z0-9_]*/;
+
+  const NUMBER = {
+    className: 'number',
+    variants: [hljs.BINARY_NUMBER_MODE, hljs.C_NUMBER_MODE]
+  };
+
   return {
     name: 'Tcl',
     aliases: ['tk'],
@@ -44637,15 +47673,24 @@ function tcl(hljs) {
         ]
       },
       {
-        excludeEnd: true,
+        className: "variable",
         variants: [
           {
-            begin: '\\$(\\{)?(::)?[a-zA-Z_]((::)?[a-zA-Z0-9_])*\\(([a-zA-Z0-9_])*\\)',
-            end: '[^a-zA-Z0-9_\\}\\$]'
+            begin: concat(
+              /\$/,
+              optional(/::/),
+              TCL_IDENT,
+              '(::',
+              TCL_IDENT,
+              ')*'
+            )
           },
           {
-            begin: '\\$(\\{)?(::)?[a-zA-Z_]((::)?[a-zA-Z0-9_])*',
-            end: '(\\))?[^a-zA-Z0-9_\\}\\$]'
+            begin: '\\$\\{(::)?[a-zA-Z_]((::)?[a-zA-Z0-9_])*',
+            end: '\\}',
+            contains: [
+              NUMBER
+            ]
           }
         ]
       },
@@ -44656,17 +47701,14 @@ function tcl(hljs) {
           hljs.inherit(hljs.QUOTE_STRING_MODE, {illegal: null})
         ]
       },
-      {
-        className: 'number',
-        variants: [hljs.BINARY_NUMBER_MODE, hljs.C_NUMBER_MODE]
-      }
+      NUMBER
     ]
   }
 }
 
 module.exports = tcl;
 
-},{}],296:[function(require,module,exports){
+},{}],297:[function(require,module,exports){
 /*
 Language: Thrift
 Author: Oleg Efimov <efimovov@gmail.com>
@@ -44719,7 +47761,7 @@ function thrift(hljs) {
 
 module.exports = thrift;
 
-},{}],297:[function(require,module,exports){
+},{}],298:[function(require,module,exports){
 /*
 Language: TP
 Author: Jay Strybis <jay.strybis@gmail.com>
@@ -44816,7 +47858,7 @@ function tp(hljs) {
 
 module.exports = tp;
 
-},{}],298:[function(require,module,exports){
+},{}],299:[function(require,module,exports){
 /*
 Language: Twig
 Requires: xml.js
@@ -44895,7 +47937,7 @@ function twig(hljs) {
 
 module.exports = twig;
 
-},{}],299:[function(require,module,exports){
+},{}],300:[function(require,module,exports){
 const IDENT_RE = '[A-Za-z$_][0-9A-Za-z$_]*';
 const KEYWORDS = [
   "as", // for exports
@@ -44980,7 +48022,10 @@ const TYPES = [
   "Array",
   "Uint8Array",
   "Uint8ClampedArray",
-  "ArrayBuffer"
+  "ArrayBuffer",
+  "BigInt64Array",
+  "BigUint64Array",
+  "BigInt"
 ];
 
 const ERROR_TYPES = [
@@ -45124,9 +48169,9 @@ function javascript(hljs) {
   };
   const KEYWORDS$1 = {
     $pattern: IDENT_RE,
-    keyword: KEYWORDS.join(" "),
-    literal: LITERALS.join(" "),
-    built_in: BUILT_INS.join(" ")
+    keyword: KEYWORDS,
+    literal: LITERALS,
+    built_in: BUILT_INS
   };
 
   // https://tc39.es/ecma262/#sec-literals-numeric-literals
@@ -45545,9 +48590,9 @@ function typescript(hljs) {
   ];
   const KEYWORDS$1 = {
     $pattern: IDENT_RE,
-    keyword: KEYWORDS.concat(TS_SPECIFIC_KEYWORDS).join(" "),
-    literal: LITERALS.join(" "),
-    built_in: BUILT_INS.concat(TYPES).join(" ")
+    keyword: KEYWORDS.concat(TS_SPECIFIC_KEYWORDS),
+    literal: LITERALS,
+    built_in: BUILT_INS.concat(TYPES)
   };
   const DECORATOR = {
     className: 'meta',
@@ -45583,7 +48628,7 @@ function typescript(hljs) {
 
   Object.assign(tsLanguage, {
     name: 'TypeScript',
-    aliases: ['ts']
+    aliases: ['ts', 'tsx']
   });
 
   return tsLanguage;
@@ -45591,7 +48636,7 @@ function typescript(hljs) {
 
 module.exports = typescript;
 
-},{}],300:[function(require,module,exports){
+},{}],301:[function(require,module,exports){
 /*
 Language: Vala
 Author: Antono Vasiljev <antono.vasiljev@gmail.com>
@@ -45654,7 +48699,7 @@ function vala(hljs) {
 
 module.exports = vala;
 
-},{}],301:[function(require,module,exports){
+},{}],302:[function(require,module,exports){
 /**
  * @param {string} value
  * @returns {RegExp}
@@ -45870,7 +48915,7 @@ function vbnet(hljs) {
 
 module.exports = vbnet;
 
-},{}],302:[function(require,module,exports){
+},{}],303:[function(require,module,exports){
 /*
 Language: VBScript in HTML
 Requires: xml.js, vbscript.js
@@ -45896,7 +48941,7 @@ function vbscriptHtml(hljs) {
 
 module.exports = vbscriptHtml;
 
-},{}],303:[function(require,module,exports){
+},{}],304:[function(require,module,exports){
 /**
  * @param {string} value
  * @returns {RegExp}
@@ -45971,7 +49016,7 @@ function vbscript(hljs) {
     // relevance 0 because this is acting as a beginKeywords really
     relevance:0,
     keywords: {
-      built_in: BUILT_IN_FUNCTIONS.join(" ")
+      built_in: BUILT_IN_FUNCTIONS
     }
   };
 
@@ -45985,7 +49030,7 @@ function vbscript(hljs) {
         'if then else on error option explicit new private property let get public randomize ' +
         'redim rem select case set stop sub while wend with end to elseif is or xor and not ' +
         'class_initialize class_terminate default preserve in me byval byref step resume goto',
-      built_in: BUILT_IN_OBJECTS.join(" "),
+      built_in: BUILT_IN_OBJECTS,
       literal:
         'true false null nothing empty'
     },
@@ -46007,7 +49052,7 @@ function vbscript(hljs) {
 
 module.exports = vbscript;
 
-},{}],304:[function(require,module,exports){
+},{}],305:[function(require,module,exports){
 /*
 Language: Verilog
 Author: Jon Evans <jon@craftyjon.com>
@@ -46140,7 +49185,7 @@ function verilog(hljs) {
 
 module.exports = verilog;
 
-},{}],305:[function(require,module,exports){
+},{}],306:[function(require,module,exports){
 /*
 Language: VHDL
 Author: Igor Kalnitsky <igor@kalnitsky.org>
@@ -46213,7 +49258,7 @@ function vhdl(hljs) {
 
 module.exports = vhdl;
 
-},{}],306:[function(require,module,exports){
+},{}],307:[function(require,module,exports){
 /*
 Language: Vim Script
 Author: Jun Yang <yangjvn@126.com>
@@ -46338,7 +49383,7 @@ function vim(hljs) {
 
 module.exports = vim;
 
-},{}],307:[function(require,module,exports){
+},{}],308:[function(require,module,exports){
 /*
 Language: Intel x86 Assembly
 Author: innocenat <innocenat@gmail.com>
@@ -46503,7 +49548,7 @@ function x86asm(hljs) {
 
 module.exports = x86asm;
 
-},{}],308:[function(require,module,exports){
+},{}],309:[function(require,module,exports){
 /*
 Language: XL
 Author: Christophe de Dinechin <christophe@taodyne.com>
@@ -46597,7 +49642,7 @@ function xl(hljs) {
 
 module.exports = xl;
 
-},{}],309:[function(require,module,exports){
+},{}],310:[function(require,module,exports){
 /**
  * @param {string} value
  * @returns {RegExp}
@@ -46661,7 +49706,7 @@ Audit: 2020
 /** @type LanguageFn */
 function xml(hljs) {
   // Element names can contain letters, digits, hyphens, underscores, and periods
-  const TAG_NAME_RE = concat(/[A-Z_]/, optional(/[A-Z0-9_.-]+:/), /[A-Z0-9_.-]*/);
+  const TAG_NAME_RE = concat(/[A-Z_]/, optional(/[A-Z0-9_.-]*:/), /[A-Z0-9_.-]*/);
   const XML_IDENT_RE = /[A-Za-z0-9._:-]+/;
   const XML_ENTITIES = {
     className: 'symbol',
@@ -46875,7 +49920,8 @@ function xml(hljs) {
           },
           {
             begin: />/,
-            relevance: 0
+            relevance: 0,
+            endsParent: true
           }
         ]
       }
@@ -46885,7 +49931,7 @@ function xml(hljs) {
 
 module.exports = xml;
 
-},{}],310:[function(require,module,exports){
+},{}],311:[function(require,module,exports){
 /*
 Language: XQuery
 Author: Dirk Kirsten <dk@basex.org>
@@ -47084,7 +50130,7 @@ function xquery(_hljs) {
 
 module.exports = xquery;
 
-},{}],311:[function(require,module,exports){
+},{}],312:[function(require,module,exports){
 /*
 Language: YAML
 Description: Yet Another Markdown Language
@@ -47157,7 +50203,6 @@ function yaml(hljs) {
     end: ',',
     endsWithParent: true,
     excludeEnd: true,
-    contains: [],
     keywords: LITERALS,
     relevance: 0
   };
@@ -47256,14 +50301,14 @@ function yaml(hljs) {
   return {
     name: 'YAML',
     case_insensitive: true,
-    aliases: ['yml', 'YAML'],
+    aliases: [ 'yml' ],
     contains: MODES
   };
 }
 
 module.exports = yaml;
 
-},{}],312:[function(require,module,exports){
+},{}],313:[function(require,module,exports){
 /*
  Language: Zephir
  Description: Zephir, an open source, high-level language designed to ease the creation and maintainability of extensions for PHP with a focus on type and memory safety.
@@ -47405,7 +50450,7 @@ function zephir(hljs) {
 
 module.exports = zephir;
 
-},{}],313:[function(require,module,exports){
+},{}],314:[function(require,module,exports){
 module.exports={
   "*": [
     "accesskey",
@@ -48010,7 +51055,7 @@ module.exports={
   ]
 }
 
-},{}],314:[function(require,module,exports){
+},{}],315:[function(require,module,exports){
 module.exports=[
   "area",
   "base",
@@ -48037,7 +51082,7 @@ module.exports=[
   "wbr"
 ]
 
-},{}],315:[function(require,module,exports){
+},{}],316:[function(require,module,exports){
 module.exports = attributeToProperty
 
 var transform = {
@@ -48058,7 +51103,7 @@ function attributeToProperty (h) {
   }
 }
 
-},{}],316:[function(require,module,exports){
+},{}],317:[function(require,module,exports){
 var attrToProp = require('hyperscript-attribute-to-property')
 
 var VAR = 0, TEXT = 1, OPEN = 2, CLOSE = 3, ATTR = 4
@@ -48355,7 +51400,7 @@ var closeRE = RegExp('^(' + [
 ].join('|') + ')(?:[\.#][a-zA-Z0-9\u007F-\uFFFF_:-]+)*$')
 function selfClosing (tag) { return closeRE.test(tag) }
 
-},{"hyperscript-attribute-to-property":315}],317:[function(require,module,exports){
+},{"hyperscript-attribute-to-property":316}],318:[function(require,module,exports){
 if (typeof Object.create === 'function') {
   // implementation from standard node.js 'util' module
   module.exports = function inherits(ctor, superCtor) {
@@ -48384,7 +51429,7 @@ if (typeof Object.create === 'function') {
   }
 }
 
-},{}],318:[function(require,module,exports){
+},{}],319:[function(require,module,exports){
 var inserted = {};
 
 module.exports = function (css, options) {
@@ -48408,7 +51453,7 @@ module.exports = function (css, options) {
     }
 };
 
-},{}],319:[function(require,module,exports){
+},{}],320:[function(require,module,exports){
 'use strict';
 
 module.exports = url => {
@@ -48426,7 +51471,7 @@ module.exports = url => {
 	return /^[a-zA-Z][a-zA-Z\d+\-.]*:/.test(url);
 };
 
-},{}],320:[function(require,module,exports){
+},{}],321:[function(require,module,exports){
 'use strict'
 
 module.exports = alphabetical
@@ -48442,7 +51487,7 @@ function alphabetical(character) {
   )
 }
 
-},{}],321:[function(require,module,exports){
+},{}],322:[function(require,module,exports){
 'use strict';
 module.exports = function (str) {
 	if (typeof str !== 'string') {
@@ -48452,7 +51497,7 @@ module.exports = function (str) {
 	return !/[^0-9a-z\xDF-\xFF]/.test(str.toLowerCase());
 };
 
-},{}],322:[function(require,module,exports){
+},{}],323:[function(require,module,exports){
 'use strict'
 
 var alphabetical = require('is-alphabetical')
@@ -48466,7 +51511,7 @@ function alphanumerical(character) {
   return alphabetical(character) || decimal(character)
 }
 
-},{"is-alphabetical":320,"is-decimal":323}],323:[function(require,module,exports){
+},{"is-alphabetical":321,"is-decimal":324}],324:[function(require,module,exports){
 'use strict'
 
 module.exports = decimal
@@ -48479,7 +51524,7 @@ function decimal(character) {
   return code >= 48 && code <= 57 /* 0-9 */
 }
 
-},{}],324:[function(require,module,exports){
+},{}],325:[function(require,module,exports){
 /* eslint-disable yoda */
 'use strict';
 
@@ -48531,7 +51576,7 @@ const isFullwidthCodePoint = codePoint => {
 module.exports = isFullwidthCodePoint;
 module.exports.default = isFullwidthCodePoint;
 
-},{}],325:[function(require,module,exports){
+},{}],326:[function(require,module,exports){
 'use strict'
 
 module.exports = hexadecimal
@@ -48548,7 +51593,7 @@ function hexadecimal(character) {
   )
 }
 
-},{}],326:[function(require,module,exports){
+},{}],327:[function(require,module,exports){
 'use strict';
 
 module.exports = value => {
@@ -48560,7 +51605,7 @@ module.exports = value => {
 	return prototype === null || prototype === Object.prototype;
 };
 
-},{}],327:[function(require,module,exports){
+},{}],328:[function(require,module,exports){
 'use strict'
 
 module.exports = whitespace
@@ -48576,7 +51621,7 @@ function whitespace(character) {
   )
 }
 
-},{}],328:[function(require,module,exports){
+},{}],329:[function(require,module,exports){
 'use strict'
 
 module.exports = wordCharacter
@@ -48592,7 +51637,7 @@ function wordCharacter(character) {
   )
 }
 
-},{}],329:[function(require,module,exports){
+},{}],330:[function(require,module,exports){
 'use strict'
 
 module.exports = longestStreak
@@ -48630,7 +51675,7 @@ function longestStreak(value, character) {
   return maximum
 }
 
-},{}],330:[function(require,module,exports){
+},{}],331:[function(require,module,exports){
 'use strict'
 
 var low = require('./lib/core.js')
@@ -48931,7 +51976,7 @@ low.registerLanguage('xl', require('highlight.js/lib/languages/xl'))
 low.registerLanguage('xquery', require('highlight.js/lib/languages/xquery'))
 low.registerLanguage('zephir', require('highlight.js/lib/languages/zephir'))
 
-},{"./lib/core.js":331,"highlight.js/lib/languages/1c":122,"highlight.js/lib/languages/abnf":123,"highlight.js/lib/languages/accesslog":124,"highlight.js/lib/languages/actionscript":125,"highlight.js/lib/languages/ada":126,"highlight.js/lib/languages/angelscript":127,"highlight.js/lib/languages/apache":128,"highlight.js/lib/languages/applescript":129,"highlight.js/lib/languages/arcade":130,"highlight.js/lib/languages/arduino":131,"highlight.js/lib/languages/armasm":132,"highlight.js/lib/languages/asciidoc":133,"highlight.js/lib/languages/aspectj":134,"highlight.js/lib/languages/autohotkey":135,"highlight.js/lib/languages/autoit":136,"highlight.js/lib/languages/avrasm":137,"highlight.js/lib/languages/awk":138,"highlight.js/lib/languages/axapta":139,"highlight.js/lib/languages/bash":140,"highlight.js/lib/languages/basic":141,"highlight.js/lib/languages/bnf":142,"highlight.js/lib/languages/brainfuck":143,"highlight.js/lib/languages/c":145,"highlight.js/lib/languages/c-like":144,"highlight.js/lib/languages/cal":146,"highlight.js/lib/languages/capnproto":147,"highlight.js/lib/languages/ceylon":148,"highlight.js/lib/languages/clean":149,"highlight.js/lib/languages/clojure":151,"highlight.js/lib/languages/clojure-repl":150,"highlight.js/lib/languages/cmake":152,"highlight.js/lib/languages/coffeescript":153,"highlight.js/lib/languages/coq":154,"highlight.js/lib/languages/cos":155,"highlight.js/lib/languages/cpp":156,"highlight.js/lib/languages/crmsh":157,"highlight.js/lib/languages/crystal":158,"highlight.js/lib/languages/csharp":159,"highlight.js/lib/languages/csp":160,"highlight.js/lib/languages/css":161,"highlight.js/lib/languages/d":162,"highlight.js/lib/languages/dart":163,"highlight.js/lib/languages/delphi":164,"highlight.js/lib/languages/diff":165,"highlight.js/lib/languages/django":166,"highlight.js/lib/languages/dns":167,"highlight.js/lib/languages/dockerfile":168,"highlight.js/lib/languages/dos":169,"highlight.js/lib/languages/dsconfig":170,"highlight.js/lib/languages/dts":171,"highlight.js/lib/languages/dust":172,"highlight.js/lib/languages/ebnf":173,"highlight.js/lib/languages/elixir":174,"highlight.js/lib/languages/elm":175,"highlight.js/lib/languages/erb":176,"highlight.js/lib/languages/erlang":178,"highlight.js/lib/languages/erlang-repl":177,"highlight.js/lib/languages/excel":179,"highlight.js/lib/languages/fix":180,"highlight.js/lib/languages/flix":181,"highlight.js/lib/languages/fortran":182,"highlight.js/lib/languages/fsharp":183,"highlight.js/lib/languages/gams":184,"highlight.js/lib/languages/gauss":185,"highlight.js/lib/languages/gcode":186,"highlight.js/lib/languages/gherkin":187,"highlight.js/lib/languages/glsl":188,"highlight.js/lib/languages/gml":189,"highlight.js/lib/languages/go":190,"highlight.js/lib/languages/golo":191,"highlight.js/lib/languages/gradle":192,"highlight.js/lib/languages/groovy":193,"highlight.js/lib/languages/haml":194,"highlight.js/lib/languages/handlebars":195,"highlight.js/lib/languages/haskell":196,"highlight.js/lib/languages/haxe":197,"highlight.js/lib/languages/hsp":198,"highlight.js/lib/languages/htmlbars":199,"highlight.js/lib/languages/http":200,"highlight.js/lib/languages/hy":201,"highlight.js/lib/languages/inform7":202,"highlight.js/lib/languages/ini":203,"highlight.js/lib/languages/irpf90":204,"highlight.js/lib/languages/isbl":205,"highlight.js/lib/languages/java":206,"highlight.js/lib/languages/javascript":207,"highlight.js/lib/languages/jboss-cli":208,"highlight.js/lib/languages/json":209,"highlight.js/lib/languages/julia":211,"highlight.js/lib/languages/julia-repl":210,"highlight.js/lib/languages/kotlin":212,"highlight.js/lib/languages/lasso":213,"highlight.js/lib/languages/latex":214,"highlight.js/lib/languages/ldif":215,"highlight.js/lib/languages/leaf":216,"highlight.js/lib/languages/less":217,"highlight.js/lib/languages/lisp":218,"highlight.js/lib/languages/livecodeserver":219,"highlight.js/lib/languages/livescript":220,"highlight.js/lib/languages/llvm":221,"highlight.js/lib/languages/lsl":222,"highlight.js/lib/languages/lua":223,"highlight.js/lib/languages/makefile":224,"highlight.js/lib/languages/markdown":225,"highlight.js/lib/languages/mathematica":226,"highlight.js/lib/languages/matlab":227,"highlight.js/lib/languages/maxima":228,"highlight.js/lib/languages/mel":229,"highlight.js/lib/languages/mercury":230,"highlight.js/lib/languages/mipsasm":231,"highlight.js/lib/languages/mizar":232,"highlight.js/lib/languages/mojolicious":233,"highlight.js/lib/languages/monkey":234,"highlight.js/lib/languages/moonscript":235,"highlight.js/lib/languages/n1ql":236,"highlight.js/lib/languages/nginx":237,"highlight.js/lib/languages/nim":238,"highlight.js/lib/languages/nix":239,"highlight.js/lib/languages/node-repl":240,"highlight.js/lib/languages/nsis":241,"highlight.js/lib/languages/objectivec":242,"highlight.js/lib/languages/ocaml":243,"highlight.js/lib/languages/openscad":244,"highlight.js/lib/languages/oxygene":245,"highlight.js/lib/languages/parser3":246,"highlight.js/lib/languages/perl":247,"highlight.js/lib/languages/pf":248,"highlight.js/lib/languages/pgsql":249,"highlight.js/lib/languages/php":251,"highlight.js/lib/languages/php-template":250,"highlight.js/lib/languages/plaintext":252,"highlight.js/lib/languages/pony":253,"highlight.js/lib/languages/powershell":254,"highlight.js/lib/languages/processing":255,"highlight.js/lib/languages/profile":256,"highlight.js/lib/languages/prolog":257,"highlight.js/lib/languages/properties":258,"highlight.js/lib/languages/protobuf":259,"highlight.js/lib/languages/puppet":260,"highlight.js/lib/languages/purebasic":261,"highlight.js/lib/languages/python":263,"highlight.js/lib/languages/python-repl":262,"highlight.js/lib/languages/q":264,"highlight.js/lib/languages/qml":265,"highlight.js/lib/languages/r":266,"highlight.js/lib/languages/reasonml":267,"highlight.js/lib/languages/rib":268,"highlight.js/lib/languages/roboconf":269,"highlight.js/lib/languages/routeros":270,"highlight.js/lib/languages/rsl":271,"highlight.js/lib/languages/ruby":272,"highlight.js/lib/languages/ruleslanguage":273,"highlight.js/lib/languages/rust":274,"highlight.js/lib/languages/sas":275,"highlight.js/lib/languages/scala":276,"highlight.js/lib/languages/scheme":277,"highlight.js/lib/languages/scilab":278,"highlight.js/lib/languages/scss":279,"highlight.js/lib/languages/shell":280,"highlight.js/lib/languages/smali":281,"highlight.js/lib/languages/smalltalk":282,"highlight.js/lib/languages/sml":283,"highlight.js/lib/languages/sqf":284,"highlight.js/lib/languages/sql":285,"highlight.js/lib/languages/sql_more":286,"highlight.js/lib/languages/stan":287,"highlight.js/lib/languages/stata":288,"highlight.js/lib/languages/step21":289,"highlight.js/lib/languages/stylus":290,"highlight.js/lib/languages/subunit":291,"highlight.js/lib/languages/swift":292,"highlight.js/lib/languages/taggerscript":293,"highlight.js/lib/languages/tap":294,"highlight.js/lib/languages/tcl":295,"highlight.js/lib/languages/thrift":296,"highlight.js/lib/languages/tp":297,"highlight.js/lib/languages/twig":298,"highlight.js/lib/languages/typescript":299,"highlight.js/lib/languages/vala":300,"highlight.js/lib/languages/vbnet":301,"highlight.js/lib/languages/vbscript":303,"highlight.js/lib/languages/vbscript-html":302,"highlight.js/lib/languages/verilog":304,"highlight.js/lib/languages/vhdl":305,"highlight.js/lib/languages/vim":306,"highlight.js/lib/languages/x86asm":307,"highlight.js/lib/languages/xl":308,"highlight.js/lib/languages/xml":309,"highlight.js/lib/languages/xquery":310,"highlight.js/lib/languages/yaml":311,"highlight.js/lib/languages/zephir":312}],331:[function(require,module,exports){
+},{"./lib/core.js":332,"highlight.js/lib/languages/1c":123,"highlight.js/lib/languages/abnf":124,"highlight.js/lib/languages/accesslog":125,"highlight.js/lib/languages/actionscript":126,"highlight.js/lib/languages/ada":127,"highlight.js/lib/languages/angelscript":128,"highlight.js/lib/languages/apache":129,"highlight.js/lib/languages/applescript":130,"highlight.js/lib/languages/arcade":131,"highlight.js/lib/languages/arduino":132,"highlight.js/lib/languages/armasm":133,"highlight.js/lib/languages/asciidoc":134,"highlight.js/lib/languages/aspectj":135,"highlight.js/lib/languages/autohotkey":136,"highlight.js/lib/languages/autoit":137,"highlight.js/lib/languages/avrasm":138,"highlight.js/lib/languages/awk":139,"highlight.js/lib/languages/axapta":140,"highlight.js/lib/languages/bash":141,"highlight.js/lib/languages/basic":142,"highlight.js/lib/languages/bnf":143,"highlight.js/lib/languages/brainfuck":144,"highlight.js/lib/languages/c":146,"highlight.js/lib/languages/c-like":145,"highlight.js/lib/languages/cal":147,"highlight.js/lib/languages/capnproto":148,"highlight.js/lib/languages/ceylon":149,"highlight.js/lib/languages/clean":150,"highlight.js/lib/languages/clojure":152,"highlight.js/lib/languages/clojure-repl":151,"highlight.js/lib/languages/cmake":153,"highlight.js/lib/languages/coffeescript":154,"highlight.js/lib/languages/coq":155,"highlight.js/lib/languages/cos":156,"highlight.js/lib/languages/cpp":157,"highlight.js/lib/languages/crmsh":158,"highlight.js/lib/languages/crystal":159,"highlight.js/lib/languages/csharp":160,"highlight.js/lib/languages/csp":161,"highlight.js/lib/languages/css":162,"highlight.js/lib/languages/d":163,"highlight.js/lib/languages/dart":164,"highlight.js/lib/languages/delphi":165,"highlight.js/lib/languages/diff":166,"highlight.js/lib/languages/django":167,"highlight.js/lib/languages/dns":168,"highlight.js/lib/languages/dockerfile":169,"highlight.js/lib/languages/dos":170,"highlight.js/lib/languages/dsconfig":171,"highlight.js/lib/languages/dts":172,"highlight.js/lib/languages/dust":173,"highlight.js/lib/languages/ebnf":174,"highlight.js/lib/languages/elixir":175,"highlight.js/lib/languages/elm":176,"highlight.js/lib/languages/erb":177,"highlight.js/lib/languages/erlang":179,"highlight.js/lib/languages/erlang-repl":178,"highlight.js/lib/languages/excel":180,"highlight.js/lib/languages/fix":181,"highlight.js/lib/languages/flix":182,"highlight.js/lib/languages/fortran":183,"highlight.js/lib/languages/fsharp":184,"highlight.js/lib/languages/gams":185,"highlight.js/lib/languages/gauss":186,"highlight.js/lib/languages/gcode":187,"highlight.js/lib/languages/gherkin":188,"highlight.js/lib/languages/glsl":189,"highlight.js/lib/languages/gml":190,"highlight.js/lib/languages/go":191,"highlight.js/lib/languages/golo":192,"highlight.js/lib/languages/gradle":193,"highlight.js/lib/languages/groovy":194,"highlight.js/lib/languages/haml":195,"highlight.js/lib/languages/handlebars":196,"highlight.js/lib/languages/haskell":197,"highlight.js/lib/languages/haxe":198,"highlight.js/lib/languages/hsp":199,"highlight.js/lib/languages/htmlbars":200,"highlight.js/lib/languages/http":201,"highlight.js/lib/languages/hy":202,"highlight.js/lib/languages/inform7":203,"highlight.js/lib/languages/ini":204,"highlight.js/lib/languages/irpf90":205,"highlight.js/lib/languages/isbl":206,"highlight.js/lib/languages/java":207,"highlight.js/lib/languages/javascript":208,"highlight.js/lib/languages/jboss-cli":209,"highlight.js/lib/languages/json":210,"highlight.js/lib/languages/julia":212,"highlight.js/lib/languages/julia-repl":211,"highlight.js/lib/languages/kotlin":213,"highlight.js/lib/languages/lasso":214,"highlight.js/lib/languages/latex":215,"highlight.js/lib/languages/ldif":216,"highlight.js/lib/languages/leaf":217,"highlight.js/lib/languages/less":218,"highlight.js/lib/languages/lisp":219,"highlight.js/lib/languages/livecodeserver":220,"highlight.js/lib/languages/livescript":221,"highlight.js/lib/languages/llvm":222,"highlight.js/lib/languages/lsl":223,"highlight.js/lib/languages/lua":224,"highlight.js/lib/languages/makefile":225,"highlight.js/lib/languages/markdown":226,"highlight.js/lib/languages/mathematica":227,"highlight.js/lib/languages/matlab":228,"highlight.js/lib/languages/maxima":229,"highlight.js/lib/languages/mel":230,"highlight.js/lib/languages/mercury":231,"highlight.js/lib/languages/mipsasm":232,"highlight.js/lib/languages/mizar":233,"highlight.js/lib/languages/mojolicious":234,"highlight.js/lib/languages/monkey":235,"highlight.js/lib/languages/moonscript":236,"highlight.js/lib/languages/n1ql":237,"highlight.js/lib/languages/nginx":238,"highlight.js/lib/languages/nim":239,"highlight.js/lib/languages/nix":240,"highlight.js/lib/languages/node-repl":241,"highlight.js/lib/languages/nsis":242,"highlight.js/lib/languages/objectivec":243,"highlight.js/lib/languages/ocaml":244,"highlight.js/lib/languages/openscad":245,"highlight.js/lib/languages/oxygene":246,"highlight.js/lib/languages/parser3":247,"highlight.js/lib/languages/perl":248,"highlight.js/lib/languages/pf":249,"highlight.js/lib/languages/pgsql":250,"highlight.js/lib/languages/php":252,"highlight.js/lib/languages/php-template":251,"highlight.js/lib/languages/plaintext":253,"highlight.js/lib/languages/pony":254,"highlight.js/lib/languages/powershell":255,"highlight.js/lib/languages/processing":256,"highlight.js/lib/languages/profile":257,"highlight.js/lib/languages/prolog":258,"highlight.js/lib/languages/properties":259,"highlight.js/lib/languages/protobuf":260,"highlight.js/lib/languages/puppet":261,"highlight.js/lib/languages/purebasic":262,"highlight.js/lib/languages/python":264,"highlight.js/lib/languages/python-repl":263,"highlight.js/lib/languages/q":265,"highlight.js/lib/languages/qml":266,"highlight.js/lib/languages/r":267,"highlight.js/lib/languages/reasonml":268,"highlight.js/lib/languages/rib":269,"highlight.js/lib/languages/roboconf":270,"highlight.js/lib/languages/routeros":271,"highlight.js/lib/languages/rsl":272,"highlight.js/lib/languages/ruby":273,"highlight.js/lib/languages/ruleslanguage":274,"highlight.js/lib/languages/rust":275,"highlight.js/lib/languages/sas":276,"highlight.js/lib/languages/scala":277,"highlight.js/lib/languages/scheme":278,"highlight.js/lib/languages/scilab":279,"highlight.js/lib/languages/scss":280,"highlight.js/lib/languages/shell":281,"highlight.js/lib/languages/smali":282,"highlight.js/lib/languages/smalltalk":283,"highlight.js/lib/languages/sml":284,"highlight.js/lib/languages/sqf":285,"highlight.js/lib/languages/sql":286,"highlight.js/lib/languages/sql_more":287,"highlight.js/lib/languages/stan":288,"highlight.js/lib/languages/stata":289,"highlight.js/lib/languages/step21":290,"highlight.js/lib/languages/stylus":291,"highlight.js/lib/languages/subunit":292,"highlight.js/lib/languages/swift":293,"highlight.js/lib/languages/taggerscript":294,"highlight.js/lib/languages/tap":295,"highlight.js/lib/languages/tcl":296,"highlight.js/lib/languages/thrift":297,"highlight.js/lib/languages/tp":298,"highlight.js/lib/languages/twig":299,"highlight.js/lib/languages/typescript":300,"highlight.js/lib/languages/vala":301,"highlight.js/lib/languages/vbnet":302,"highlight.js/lib/languages/vbscript":304,"highlight.js/lib/languages/vbscript-html":303,"highlight.js/lib/languages/verilog":305,"highlight.js/lib/languages/vhdl":306,"highlight.js/lib/languages/vim":307,"highlight.js/lib/languages/x86asm":308,"highlight.js/lib/languages/xl":309,"highlight.js/lib/languages/xml":310,"highlight.js/lib/languages/xquery":311,"highlight.js/lib/languages/yaml":312,"highlight.js/lib/languages/zephir":313}],332:[function(require,module,exports){
 'use strict'
 
 var high = require('highlight.js/lib/core')
@@ -48979,7 +52024,7 @@ function highlight(name, value, options) {
 
   high.configure({__emitter: Emitter, classPrefix: prefix})
 
-  result = high.highlight(name, value, true)
+  result = high.highlight(value, {language: name, ignoreIllegals: true})
 
   high.configure(before || {})
 
@@ -49140,7 +52185,7 @@ function toHtmlNoop() {
 
 function noop() {}
 
-},{"fault":95,"highlight.js/lib/core":121}],332:[function(require,module,exports){
+},{"fault":95,"highlight.js/lib/core":122}],333:[function(require,module,exports){
 'use strict'
 
 module.exports = escapes
@@ -49199,7 +52244,7 @@ function escapes(options) {
   return settings.gfm ? gfm : defaults
 }
 
-},{}],333:[function(require,module,exports){
+},{}],334:[function(require,module,exports){
 'use strict'
 
 var repeat = require('repeat-string')
@@ -49450,7 +52495,7 @@ function toAlignment(value) {
     : x
 }
 
-},{"repeat-string":494}],334:[function(require,module,exports){
+},{"repeat-string":495}],335:[function(require,module,exports){
 'use strict'; // A valid output which means nothing has been parsed.
 // Used as error return / invalid output
 
@@ -49761,7 +52806,7 @@ function parse(value, indexNext, userConfig) {
 }
 
 module.exports = parse;
-},{}],335:[function(require,module,exports){
+},{}],336:[function(require,module,exports){
 'use strict'
 
 var visit = require('unist-util-visit')
@@ -49824,7 +52869,7 @@ function mergeable(node, commonmark) {
   return commonmark && node.type === 'blockquote'
 }
 
-},{"unist-util-visit":543}],336:[function(require,module,exports){
+},{"unist-util-visit":543}],337:[function(require,module,exports){
 'use strict'
 
 var visit = require('unist-util-visit')
@@ -49877,9 +52922,9 @@ function normalise(identifier) {
   return identifier.toUpperCase()
 }
 
-},{"unist-util-visit":543}],337:[function(require,module,exports){
-arguments[4][100][0].apply(exports,arguments)
-},{"./lib":363,"dup":100}],338:[function(require,module,exports){
+},{"unist-util-visit":543}],338:[function(require,module,exports){
+arguments[4][101][0].apply(exports,arguments)
+},{"./lib":364,"dup":101}],339:[function(require,module,exports){
 'use strict'
 
 module.exports = all
@@ -49917,7 +52962,7 @@ function all(h, parent) {
   return values
 }
 
-},{"./one":364}],339:[function(require,module,exports){
+},{"./one":365}],340:[function(require,module,exports){
 'use strict'
 
 module.exports = generateFootnotes
@@ -49986,7 +53031,7 @@ function generateFootnotes(h) {
   )
 }
 
-},{"./handlers/list":356,"./handlers/thematic-break":362,"./wrap":366}],340:[function(require,module,exports){
+},{"./handlers/list":357,"./handlers/thematic-break":363,"./wrap":367}],341:[function(require,module,exports){
 'use strict'
 
 module.exports = blockquote
@@ -49998,7 +53043,7 @@ function blockquote(h, node) {
   return h(node, 'blockquote', wrap(all(h, node), true))
 }
 
-},{"../all":338,"../wrap":366}],341:[function(require,module,exports){
+},{"../all":339,"../wrap":367}],342:[function(require,module,exports){
 'use strict'
 
 module.exports = hardBreak
@@ -50009,7 +53054,7 @@ function hardBreak(h, node) {
   return [h(node, 'br'), u('text', '\n')]
 }
 
-},{"unist-builder":533}],342:[function(require,module,exports){
+},{"unist-builder":533}],343:[function(require,module,exports){
 'use strict'
 
 module.exports = code
@@ -50029,7 +53074,7 @@ function code(h, node) {
   return h(node.position, 'pre', [h(node, 'code', props, [u('text', value)])])
 }
 
-},{"detab":33,"unist-builder":533}],343:[function(require,module,exports){
+},{"detab":33,"unist-builder":533}],344:[function(require,module,exports){
 'use strict'
 
 module.exports = strikethrough
@@ -50040,7 +53085,7 @@ function strikethrough(h, node) {
   return h(node, 'del', all(h, node))
 }
 
-},{"../all":338}],344:[function(require,module,exports){
+},{"../all":339}],345:[function(require,module,exports){
 'use strict'
 
 module.exports = emphasis
@@ -50051,7 +53096,7 @@ function emphasis(h, node) {
   return h(node, 'em', all(h, node))
 }
 
-},{"../all":338}],345:[function(require,module,exports){
+},{"../all":339}],346:[function(require,module,exports){
 'use strict'
 
 module.exports = footnoteReference
@@ -50073,7 +53118,7 @@ function footnoteReference(h, node) {
   ])
 }
 
-},{"unist-builder":533}],346:[function(require,module,exports){
+},{"unist-builder":533}],347:[function(require,module,exports){
 'use strict'
 
 module.exports = footnote
@@ -50109,7 +53154,7 @@ function footnote(h, node) {
   })
 }
 
-},{"./footnote-reference":345}],347:[function(require,module,exports){
+},{"./footnote-reference":346}],348:[function(require,module,exports){
 'use strict'
 
 module.exports = heading
@@ -50120,7 +53165,7 @@ function heading(h, node) {
   return h(node, 'h' + node.depth, all(h, node))
 }
 
-},{"../all":338}],348:[function(require,module,exports){
+},{"../all":339}],349:[function(require,module,exports){
 'use strict'
 
 module.exports = html
@@ -50132,7 +53177,7 @@ function html(h, node) {
   return h.dangerous ? h.augment(node, u('raw', node.value)) : null
 }
 
-},{"unist-builder":533}],349:[function(require,module,exports){
+},{"unist-builder":533}],350:[function(require,module,exports){
 'use strict'
 
 module.exports = imageReference
@@ -50157,7 +53202,7 @@ function imageReference(h, node) {
   return h(node, 'img', props)
 }
 
-},{"../revert":365,"mdurl/encode":373}],350:[function(require,module,exports){
+},{"../revert":366,"mdurl/encode":374}],351:[function(require,module,exports){
 'use strict'
 
 var normalize = require('mdurl/encode')
@@ -50174,7 +53219,7 @@ function image(h, node) {
   return h(node, 'img', props)
 }
 
-},{"mdurl/encode":373}],351:[function(require,module,exports){
+},{"mdurl/encode":374}],352:[function(require,module,exports){
 'use strict'
 
 module.exports = {
@@ -50211,7 +53256,7 @@ function ignore() {
   return null
 }
 
-},{"./blockquote":340,"./break":341,"./code":342,"./delete":343,"./emphasis":344,"./footnote":346,"./footnote-reference":345,"./heading":347,"./html":348,"./image":350,"./image-reference":349,"./inline-code":352,"./link":354,"./link-reference":353,"./list":356,"./list-item":355,"./paragraph":357,"./root":358,"./strong":359,"./table":360,"./text":361,"./thematic-break":362}],352:[function(require,module,exports){
+},{"./blockquote":341,"./break":342,"./code":343,"./delete":344,"./emphasis":345,"./footnote":347,"./footnote-reference":346,"./heading":348,"./html":349,"./image":351,"./image-reference":350,"./inline-code":353,"./link":355,"./link-reference":354,"./list":357,"./list-item":356,"./paragraph":358,"./root":359,"./strong":360,"./table":361,"./text":362,"./thematic-break":363}],353:[function(require,module,exports){
 'use strict'
 
 module.exports = inlineCode
@@ -50223,7 +53268,7 @@ function inlineCode(h, node) {
   return h(node, 'code', [u('text', collapse(node.value))])
 }
 
-},{"collapse-white-space":10,"unist-builder":533}],353:[function(require,module,exports){
+},{"collapse-white-space":10,"unist-builder":533}],354:[function(require,module,exports){
 'use strict'
 
 module.exports = linkReference
@@ -50249,7 +53294,7 @@ function linkReference(h, node) {
   return h(node, 'a', props, all(h, node))
 }
 
-},{"../all":338,"../revert":365,"mdurl/encode":373}],354:[function(require,module,exports){
+},{"../all":339,"../revert":366,"mdurl/encode":374}],355:[function(require,module,exports){
 'use strict'
 
 var normalize = require('mdurl/encode')
@@ -50267,7 +53312,7 @@ function link(h, node) {
   return h(node, 'a', props, all(h, node))
 }
 
-},{"../all":338,"mdurl/encode":373}],355:[function(require,module,exports){
+},{"../all":339,"mdurl/encode":374}],356:[function(require,module,exports){
 'use strict'
 
 module.exports = listItem
@@ -50359,7 +53404,7 @@ function listItemLoose(node) {
     : spread
 }
 
-},{"../all":338,"../wrap":366,"unist-builder":533}],356:[function(require,module,exports){
+},{"../all":339,"../wrap":367,"unist-builder":533}],357:[function(require,module,exports){
 'use strict'
 
 module.exports = list
@@ -50395,7 +53440,7 @@ function list(h, node) {
   return h(node, name, props, wrap(items, true))
 }
 
-},{"../all":338,"../wrap":366}],357:[function(require,module,exports){
+},{"../all":339,"../wrap":367}],358:[function(require,module,exports){
 'use strict'
 
 module.exports = paragraph
@@ -50406,7 +53451,7 @@ function paragraph(h, node) {
   return h(node, 'p', all(h, node))
 }
 
-},{"../all":338}],358:[function(require,module,exports){
+},{"../all":339}],359:[function(require,module,exports){
 'use strict'
 
 module.exports = root
@@ -50419,7 +53464,7 @@ function root(h, node) {
   return h.augment(node, u('root', wrap(all(h, node))))
 }
 
-},{"../all":338,"../wrap":366,"unist-builder":533}],359:[function(require,module,exports){
+},{"../all":339,"../wrap":367,"unist-builder":533}],360:[function(require,module,exports){
 'use strict'
 
 module.exports = strong
@@ -50430,7 +53475,7 @@ function strong(h, node) {
   return h(node, 'strong', all(h, node))
 }
 
-},{"../all":338}],360:[function(require,module,exports){
+},{"../all":339}],361:[function(require,module,exports){
 'use strict'
 
 module.exports = table
@@ -50485,7 +53530,7 @@ function table(h, node) {
   )
 }
 
-},{"../all":338,"../wrap":366,"unist-util-position":538}],361:[function(require,module,exports){
+},{"../all":339,"../wrap":367,"unist-util-position":538}],362:[function(require,module,exports){
 'use strict'
 
 module.exports = text
@@ -50497,7 +53542,7 @@ function text(h, node) {
   return h.augment(node, u('text', trimLines(node.value)))
 }
 
-},{"trim-lines":514,"unist-builder":533}],362:[function(require,module,exports){
+},{"trim-lines":514,"unist-builder":533}],363:[function(require,module,exports){
 'use strict'
 
 module.exports = thematicBreak
@@ -50506,7 +53551,7 @@ function thematicBreak(h, node) {
   return h(node, 'hr')
 }
 
-},{}],363:[function(require,module,exports){
+},{}],364:[function(require,module,exports){
 'use strict'
 
 module.exports = toHast
@@ -50628,7 +53673,7 @@ function toHast(tree, options) {
   return node
 }
 
-},{"./footer":339,"./handlers":351,"./one":364,"mdast-util-definitions":336,"unist-builder":533,"unist-util-generated":535,"unist-util-position":538,"unist-util-visit":543}],364:[function(require,module,exports){
+},{"./footer":340,"./handlers":352,"./one":365,"mdast-util-definitions":337,"unist-builder":533,"unist-util-generated":535,"unist-util-position":538,"unist-util-visit":543}],365:[function(require,module,exports){
 'use strict'
 
 module.exports = one
@@ -50675,7 +53720,7 @@ function text(node) {
   return 'value' in node
 }
 
-},{"./all":338,"unist-builder":533}],365:[function(require,module,exports){
+},{"./all":339,"unist-builder":533}],366:[function(require,module,exports){
 'use strict'
 
 module.exports = revert
@@ -50721,7 +53766,7 @@ function revert(h, node) {
   return contents
 }
 
-},{"./all":338,"unist-builder":533}],366:[function(require,module,exports){
+},{"./all":339,"unist-builder":533}],367:[function(require,module,exports){
 'use strict'
 
 module.exports = wrap
@@ -50754,7 +53799,7 @@ function wrap(nodes, loose) {
   return result
 }
 
-},{"unist-builder":533}],367:[function(require,module,exports){
+},{"unist-builder":533}],368:[function(require,module,exports){
 'use strict'
 
 module.exports = toString
@@ -50785,12 +53830,12 @@ function all(values) {
   return result.join('')
 }
 
-},{}],368:[function(require,module,exports){
+},{}],369:[function(require,module,exports){
 'use strict'
 
 module.exports = require('./lib')
 
-},{"./lib":370}],369:[function(require,module,exports){
+},{"./lib":371}],370:[function(require,module,exports){
 'use strict'
 
 var extend = require('extend')
@@ -50926,7 +53971,7 @@ function one(node) {
   return copy
 }
 
-},{"extend":94}],370:[function(require,module,exports){
+},{"extend":94}],371:[function(require,module,exports){
 'use strict'
 
 module.exports = toc
@@ -50958,7 +54003,7 @@ function toc(node, options) {
   return result
 }
 
-},{"./contents":369,"./search":371,"./to-expression":372}],371:[function(require,module,exports){
+},{"./contents":370,"./search":372,"./to-expression":373}],372:[function(require,module,exports){
 'use strict'
 
 module.exports = search
@@ -51025,7 +54070,7 @@ function search(root, expression, settings) {
   }
 }
 
-},{"./to-expression":372,"github-slugger":97,"mdast-util-to-string":367,"unist-util-is/convert":536,"unist-util-visit":543}],372:[function(require,module,exports){
+},{"./to-expression":373,"github-slugger":97,"mdast-util-to-string":368,"unist-util-is/convert":536,"unist-util-visit":543}],373:[function(require,module,exports){
 'use strict'
 
 module.exports = toExpression
@@ -51035,7 +54080,7 @@ function toExpression(value) {
   return new RegExp('^(' + value + ')$', 'i')
 }
 
-},{}],373:[function(require,module,exports){
+},{}],374:[function(require,module,exports){
 
 'use strict';
 
@@ -51135,7 +54180,7 @@ encode.componentChars = "-_.!~*'()";
 
 module.exports = encode;
 
-},{}],374:[function(require,module,exports){
+},{}],375:[function(require,module,exports){
 'use strict'
 
 /* eslint-env browser */
@@ -51167,7 +54212,7 @@ function decodeEntity(characters) {
   return char === entity ? false : char
 }
 
-},{}],375:[function(require,module,exports){
+},{}],376:[function(require,module,exports){
 'use strict'
 
 var legacy = require('character-entities-legacy')
@@ -51620,7 +54665,7 @@ function disallowed(code) {
   )
 }
 
-},{"./decode-entity":374,"character-entities-legacy":8,"character-reference-invalid":9,"is-alphanumerical":322,"is-decimal":323,"is-hexadecimal":325}],376:[function(require,module,exports){
+},{"./decode-entity":375,"character-entities-legacy":8,"character-reference-invalid":9,"is-alphanumerical":323,"is-decimal":324,"is-hexadecimal":326}],377:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -51806,7 +54851,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],377:[function(require,module,exports){
+},{}],378:[function(require,module,exports){
 'use strict'
 
 var normalize = require('./normalize')
@@ -51873,7 +54918,7 @@ function camelcase($0) {
   return $0.charAt(1).toUpperCase()
 }
 
-},{"./lib/util/defined-info":385,"./lib/util/info":386,"./normalize":393}],378:[function(require,module,exports){
+},{"./lib/util/defined-info":386,"./lib/util/info":387,"./normalize":394}],379:[function(require,module,exports){
 'use strict'
 
 var merge = require('./lib/util/merge')
@@ -51885,7 +54930,7 @@ var html = require('./lib/html')
 
 module.exports = merge([xml, xlink, xmlns, aria, html])
 
-},{"./lib/aria":379,"./lib/html":380,"./lib/util/merge":387,"./lib/xlink":390,"./lib/xml":391,"./lib/xmlns":392}],379:[function(require,module,exports){
+},{"./lib/aria":380,"./lib/html":381,"./lib/util/merge":388,"./lib/xlink":391,"./lib/xml":392,"./lib/xmlns":393}],380:[function(require,module,exports){
 'use strict'
 
 var types = require('./util/types')
@@ -51954,7 +54999,7 @@ function ariaTransform(_, prop) {
   return prop === 'role' ? prop : 'aria-' + prop.slice(4).toLowerCase()
 }
 
-},{"./util/create":384,"./util/types":389}],380:[function(require,module,exports){
+},{"./util/create":385,"./util/types":390}],381:[function(require,module,exports){
 'use strict'
 
 var types = require('./util/types')
@@ -52265,7 +55310,7 @@ module.exports = create({
   }
 })
 
-},{"./util/case-insensitive-transform":382,"./util/create":384,"./util/types":389}],381:[function(require,module,exports){
+},{"./util/case-insensitive-transform":383,"./util/create":385,"./util/types":390}],382:[function(require,module,exports){
 'use strict'
 
 var types = require('./util/types')
@@ -52834,7 +55879,7 @@ module.exports = create({
   }
 })
 
-},{"./util/case-sensitive-transform":383,"./util/create":384,"./util/types":389}],382:[function(require,module,exports){
+},{"./util/case-sensitive-transform":384,"./util/create":385,"./util/types":390}],383:[function(require,module,exports){
 'use strict'
 
 var caseSensitiveTransform = require('./case-sensitive-transform')
@@ -52845,7 +55890,7 @@ function caseInsensitiveTransform(attributes, property) {
   return caseSensitiveTransform(attributes, property.toLowerCase())
 }
 
-},{"./case-sensitive-transform":383}],383:[function(require,module,exports){
+},{"./case-sensitive-transform":384}],384:[function(require,module,exports){
 'use strict'
 
 module.exports = caseSensitiveTransform
@@ -52854,7 +55899,7 @@ function caseSensitiveTransform(attributes, attribute) {
   return attribute in attributes ? attributes[attribute] : attribute
 }
 
-},{}],384:[function(require,module,exports){
+},{}],385:[function(require,module,exports){
 'use strict'
 
 var normalize = require('../../normalize')
@@ -52895,7 +55940,7 @@ function create(definition) {
   return new Schema(property, normal, space)
 }
 
-},{"../../normalize":393,"./defined-info":385,"./schema":388}],385:[function(require,module,exports){
+},{"../../normalize":394,"./defined-info":386,"./schema":389}],386:[function(require,module,exports){
 'use strict'
 
 var Info = require('./info')
@@ -52937,7 +55982,7 @@ function mark(values, key, value) {
   }
 }
 
-},{"./info":386,"./types":389}],386:[function(require,module,exports){
+},{"./info":387,"./types":390}],387:[function(require,module,exports){
 'use strict'
 
 module.exports = Info
@@ -52962,7 +56007,7 @@ function Info(property, attribute) {
   this.attribute = attribute
 }
 
-},{}],387:[function(require,module,exports){
+},{}],388:[function(require,module,exports){
 'use strict'
 
 var xtend = require('xtend')
@@ -52992,7 +56037,7 @@ function merge(definitions) {
   )
 }
 
-},{"./schema":388,"xtend":556}],388:[function(require,module,exports){
+},{"./schema":389,"xtend":556}],389:[function(require,module,exports){
 'use strict'
 
 module.exports = Schema
@@ -53012,7 +56057,7 @@ function Schema(property, normal, space) {
   }
 }
 
-},{}],389:[function(require,module,exports){
+},{}],390:[function(require,module,exports){
 'use strict'
 
 var powers = 0
@@ -53029,7 +56074,7 @@ function increment() {
   return Math.pow(2, ++powers)
 }
 
-},{}],390:[function(require,module,exports){
+},{}],391:[function(require,module,exports){
 'use strict'
 
 var create = require('./util/create')
@@ -53052,7 +56097,7 @@ function xlinkTransform(_, prop) {
   return 'xlink:' + prop.slice(5).toLowerCase()
 }
 
-},{"./util/create":384}],391:[function(require,module,exports){
+},{"./util/create":385}],392:[function(require,module,exports){
 'use strict'
 
 var create = require('./util/create')
@@ -53071,7 +56116,7 @@ function xmlTransform(_, prop) {
   return 'xml:' + prop.slice(3).toLowerCase()
 }
 
-},{"./util/create":384}],392:[function(require,module,exports){
+},{"./util/create":385}],393:[function(require,module,exports){
 'use strict'
 
 var create = require('./util/create')
@@ -53089,7 +56134,7 @@ module.exports = create({
   }
 })
 
-},{"./util/case-insensitive-transform":382,"./util/create":384}],393:[function(require,module,exports){
+},{"./util/case-insensitive-transform":383,"./util/create":385}],394:[function(require,module,exports){
 'use strict'
 
 module.exports = normalize
@@ -53098,7 +56143,7 @@ function normalize(value) {
   return value.toLowerCase()
 }
 
-},{}],394:[function(require,module,exports){
+},{}],395:[function(require,module,exports){
 'use strict'
 
 var merge = require('./lib/util/merge')
@@ -53110,11 +56155,11 @@ var svg = require('./lib/svg')
 
 module.exports = merge([xml, xlink, xmlns, aria, svg])
 
-},{"./lib/aria":379,"./lib/svg":381,"./lib/util/merge":387,"./lib/xlink":390,"./lib/xml":391,"./lib/xmlns":392}],395:[function(require,module,exports){
+},{"./lib/aria":380,"./lib/svg":382,"./lib/util/merge":388,"./lib/xlink":391,"./lib/xml":392,"./lib/xmlns":393}],396:[function(require,module,exports){
 'use strict';
 
 module.exports = ['onabort', 'onautocomplete', 'onautocompleteerror', 'onblur', 'oncancel', 'oncanplay', 'oncanplaythrough', 'onchange', 'onclick', 'onclose', 'oncontextmenu', 'oncuechange', 'ondblclick', 'ondrag', 'ondragend', 'ondragenter', 'ondragexit', 'ondragleave', 'ondragover', 'ondragstart', 'ondrop', 'ondurationchange', 'onemptied', 'onended', 'onerror', 'onfocus', 'oninput', 'oninvalid', 'onkeydown', 'onkeypress', 'onkeyup', 'onload', 'onloadeddata', 'onloadedmetadata', 'onloadstart', 'onmousedown', 'onmouseenter', 'onmouseleave', 'onmousemove', 'onmouseout', 'onmouseover', 'onmouseup', 'onmousewheel', 'onpause', 'onplay', 'onplaying', 'onprogress', 'onratechange', 'onreset', 'onresize', 'onscroll', 'onseeked', 'onseeking', 'onselect', 'onshow', 'onsort', 'onstalled', 'onsubmit', 'onsuspend', 'ontimeupdate', 'ontoggle', 'onvolumechange', 'onwaiting'];
-},{}],396:[function(require,module,exports){
+},{}],397:[function(require,module,exports){
 'use strict';
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -53498,7 +56543,7 @@ function remarkAttr(userConfig) {
 function isRemarkParser(parser) {
   return Boolean(parser && parser.prototype && parser.prototype.inlineTokenizers && parser.prototype.inlineTokenizers.link && parser.prototype.inlineTokenizers.link.locator);
 }
-},{"./dom-event-handler.js":395,"html-element-attributes":313,"is-whitespace-character":327,"md-attr-parser":334}],397:[function(require,module,exports){
+},{"./dom-event-handler.js":396,"html-element-attributes":314,"is-whitespace-character":328,"md-attr-parser":335}],398:[function(require,module,exports){
 "use strict";
 
 var uuFilter = require("unist-util-filter");
@@ -53528,7 +56573,7 @@ function is(node) {
   return node.type === "root" || node.type === "heading";
 }
 
-},{"mdast-util-toc":368,"unist-util-filter":534,"unist-util-parents":537}],398:[function(require,module,exports){
+},{"mdast-util-toc":369,"unist-util-filter":534,"unist-util-parents":537}],399:[function(require,module,exports){
 var visit = require('unist-util-visit')
 var definitions = require('mdast-util-definitions')
 var spaceSeparated = require('space-separated-tokens').parse
@@ -53605,7 +56650,7 @@ function externalLinks(options) {
   }
 }
 
-},{"extend":94,"is-absolute-url":319,"mdast-util-definitions":336,"space-separated-tokens":495,"unist-util-visit":543}],399:[function(require,module,exports){
+},{"extend":94,"is-absolute-url":320,"mdast-util-definitions":337,"space-separated-tokens":496,"unist-util-visit":543}],400:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -53653,7 +56698,7 @@ function attacher({
 }
 
 module.exports = exports.default;
-},{"lowlight":330,"unist-util-visit":543}],400:[function(require,module,exports){
+},{"lowlight":331,"unist-util-visit":543}],401:[function(require,module,exports){
 'use strict'
 
 var xtend = require('xtend')
@@ -53695,7 +56740,7 @@ function plugin(options) {
   }
 }
 
-},{"hast-util-sanitize":100,"hast-util-to-html":103,"mdast-util-to-hast":337,"xtend":556}],401:[function(require,module,exports){
+},{"hast-util-sanitize":101,"hast-util-to-html":104,"mdast-util-to-hast":338,"xtend":556}],402:[function(require,module,exports){
 'use strict'
 
 var unherit = require('unherit')
@@ -53714,7 +56759,7 @@ function parse(options) {
   this.Parser = Local
 }
 
-},{"./lib/parser.js":416,"unherit":530,"xtend":556}],402:[function(require,module,exports){
+},{"./lib/parser.js":417,"unherit":530,"xtend":556}],403:[function(require,module,exports){
 'use strict'
 
 module.exports = [
@@ -53786,7 +56831,7 @@ module.exports = [
   'ul'
 ]
 
-},{}],403:[function(require,module,exports){
+},{}],404:[function(require,module,exports){
 'use strict'
 
 var xtend = require('xtend')
@@ -53846,7 +56891,7 @@ function factory(ctx) {
   }
 }
 
-},{"parse-entities":375,"xtend":556}],404:[function(require,module,exports){
+},{"parse-entities":376,"xtend":556}],405:[function(require,module,exports){
 'use strict'
 
 module.exports = {
@@ -53857,7 +56902,7 @@ module.exports = {
   blocks: require('./block-elements')
 }
 
-},{"./block-elements":402}],405:[function(require,module,exports){
+},{"./block-elements":403}],406:[function(require,module,exports){
 'use strict'
 
 module.exports = locate
@@ -53876,7 +56921,7 @@ function locate(value, fromIndex) {
   return index
 }
 
-},{}],406:[function(require,module,exports){
+},{}],407:[function(require,module,exports){
 'use strict'
 
 module.exports = locate
@@ -53885,7 +56930,7 @@ function locate(value, fromIndex) {
   return value.indexOf('`', fromIndex)
 }
 
-},{}],407:[function(require,module,exports){
+},{}],408:[function(require,module,exports){
 'use strict'
 
 module.exports = locate
@@ -53894,7 +56939,7 @@ function locate(value, fromIndex) {
   return value.indexOf('~~', fromIndex)
 }
 
-},{}],408:[function(require,module,exports){
+},{}],409:[function(require,module,exports){
 'use strict'
 
 var decimal = require('is-decimal')
@@ -53947,7 +56992,7 @@ function isGfmAtext(code) {
   )
 }
 
-},{"is-alphabetical":320,"is-decimal":323}],409:[function(require,module,exports){
+},{"is-alphabetical":321,"is-decimal":324}],410:[function(require,module,exports){
 'use strict'
 
 module.exports = locate
@@ -53967,7 +57012,7 @@ function locate(value, fromIndex) {
   return underscore < asterisk ? underscore : asterisk
 }
 
-},{}],410:[function(require,module,exports){
+},{}],411:[function(require,module,exports){
 'use strict'
 
 module.exports = locate
@@ -53976,7 +57021,7 @@ function locate(value, fromIndex) {
   return value.indexOf('\\', fromIndex)
 }
 
-},{}],411:[function(require,module,exports){
+},{}],412:[function(require,module,exports){
 'use strict'
 
 module.exports = locate
@@ -53994,7 +57039,7 @@ function locate(value, fromIndex) {
   return link < image ? link : image
 }
 
-},{}],412:[function(require,module,exports){
+},{}],413:[function(require,module,exports){
 'use strict'
 
 module.exports = locate
@@ -54014,7 +57059,7 @@ function locate(value, fromIndex) {
   return underscore < asterisk ? underscore : asterisk
 }
 
-},{}],413:[function(require,module,exports){
+},{}],414:[function(require,module,exports){
 'use strict'
 
 module.exports = locate
@@ -54023,7 +57068,7 @@ function locate(value, fromIndex) {
   return value.indexOf('<', fromIndex)
 }
 
-},{}],414:[function(require,module,exports){
+},{}],415:[function(require,module,exports){
 'use strict'
 
 module.exports = locate
@@ -54054,7 +57099,7 @@ function locate(value, fromIndex) {
   return min
 }
 
-},{}],415:[function(require,module,exports){
+},{}],416:[function(require,module,exports){
 'use strict'
 
 var xtend = require('xtend')
@@ -54098,7 +57143,7 @@ function parse() {
   return node
 }
 
-},{"unist-util-remove-position":539,"xtend":556}],416:[function(require,module,exports){
+},{"unist-util-remove-position":539,"xtend":556}],417:[function(require,module,exports){
 'use strict'
 
 var xtend = require('xtend')
@@ -54247,7 +57292,7 @@ function keys(value) {
   return result
 }
 
-},{"./decode":403,"./defaults":404,"./parse":415,"./set-options":417,"./tokenize/auto-link":418,"./tokenize/blank-line":419,"./tokenize/blockquote":420,"./tokenize/break":421,"./tokenize/code-fenced":422,"./tokenize/code-indented":423,"./tokenize/code-inline":424,"./tokenize/definition":425,"./tokenize/delete":426,"./tokenize/email":427,"./tokenize/emphasis":428,"./tokenize/escape":429,"./tokenize/heading-atx":430,"./tokenize/heading-setext":431,"./tokenize/html-block":432,"./tokenize/html-inline":433,"./tokenize/link":434,"./tokenize/list":435,"./tokenize/paragraph":436,"./tokenize/reference":437,"./tokenize/strong":438,"./tokenize/table":439,"./tokenize/text":440,"./tokenize/thematic-break":441,"./tokenize/url":442,"./tokenizer":443,"./unescape":444,"state-toggle":496,"vfile-location":544,"xtend":556}],417:[function(require,module,exports){
+},{"./decode":404,"./defaults":405,"./parse":416,"./set-options":418,"./tokenize/auto-link":419,"./tokenize/blank-line":420,"./tokenize/blockquote":421,"./tokenize/break":422,"./tokenize/code-fenced":423,"./tokenize/code-indented":424,"./tokenize/code-inline":425,"./tokenize/definition":426,"./tokenize/delete":427,"./tokenize/email":428,"./tokenize/emphasis":429,"./tokenize/escape":430,"./tokenize/heading-atx":431,"./tokenize/heading-setext":432,"./tokenize/html-block":433,"./tokenize/html-inline":434,"./tokenize/link":435,"./tokenize/list":436,"./tokenize/paragraph":437,"./tokenize/reference":438,"./tokenize/strong":439,"./tokenize/table":440,"./tokenize/text":441,"./tokenize/thematic-break":442,"./tokenize/url":443,"./tokenizer":444,"./unescape":445,"state-toggle":497,"vfile-location":544,"xtend":556}],418:[function(require,module,exports){
 'use strict'
 
 var xtend = require('xtend')
@@ -54295,7 +57340,7 @@ function setOptions(options) {
   return self
 }
 
-},{"./defaults":404,"markdown-escapes":332,"xtend":556}],418:[function(require,module,exports){
+},{"./defaults":405,"markdown-escapes":333,"xtend":556}],419:[function(require,module,exports){
 'use strict'
 
 var whitespace = require('is-whitespace-character')
@@ -54430,7 +57475,7 @@ function autoLink(eat, value, silent) {
   })
 }
 
-},{"../locate/tag":413,"is-whitespace-character":327,"parse-entities":375}],419:[function(require,module,exports){
+},{"../locate/tag":414,"is-whitespace-character":328,"parse-entities":376}],420:[function(require,module,exports){
 'use strict'
 
 // A line containing no characters, or a line containing only spaces (U+0020) or
@@ -54475,7 +57520,7 @@ function blankLine(eat, value, silent) {
   eat(subvalue)
 }
 
-},{}],420:[function(require,module,exports){
+},{}],421:[function(require,module,exports){
 'use strict'
 
 var trim = require('trim')
@@ -54601,7 +57646,7 @@ function blockquote(eat, value, silent) {
   return add({type: 'blockquote', children: contents})
 }
 
-},{"../util/interrupt":447,"trim":516}],421:[function(require,module,exports){
+},{"../util/interrupt":448,"trim":516}],422:[function(require,module,exports){
 'use strict'
 
 var locate = require('../locate/break')
@@ -54645,7 +57690,7 @@ function hardBreak(eat, value, silent) {
   }
 }
 
-},{"../locate/break":405}],422:[function(require,module,exports){
+},{"../locate/break":406}],423:[function(require,module,exports){
 'use strict'
 
 module.exports = fencedCode
@@ -54900,7 +57945,7 @@ function fencedCode(eat, value, silent) {
   })
 }
 
-},{}],423:[function(require,module,exports){
+},{}],424:[function(require,module,exports){
 'use strict'
 
 var repeat = require('repeat-string')
@@ -55000,7 +58045,7 @@ function indentedCode(eat, value, silent) {
   }
 }
 
-},{"repeat-string":494,"trim-trailing-lines":515}],424:[function(require,module,exports){
+},{"repeat-string":495,"trim-trailing-lines":515}],425:[function(require,module,exports){
 'use strict'
 
 var locate = require('../locate/code-inline')
@@ -55111,7 +58156,7 @@ function inlineCode(eat, value, silent) {
   })
 }
 
-},{"../locate/code-inline":406}],425:[function(require,module,exports){
+},{"../locate/code-inline":407}],426:[function(require,module,exports){
 'use strict'
 
 var whitespace = require('is-whitespace-character')
@@ -55386,7 +58431,7 @@ function isUnclosedURLCharacter(character) {
   )
 }
 
-},{"../util/normalize":448,"is-whitespace-character":327}],426:[function(require,module,exports){
+},{"../util/normalize":449,"is-whitespace-character":328}],427:[function(require,module,exports){
 'use strict'
 
 var whitespace = require('is-whitespace-character')
@@ -55448,7 +58493,7 @@ function strikethrough(eat, value, silent) {
   }
 }
 
-},{"../locate/delete":407,"is-whitespace-character":327}],427:[function(require,module,exports){
+},{"../locate/delete":408,"is-whitespace-character":328}],428:[function(require,module,exports){
 'use strict'
 
 var decode = require('parse-entities')
@@ -55564,7 +58609,7 @@ function email(eat, value, silent) {
   })
 }
 
-},{"../locate/email":408,"is-alphabetical":320,"is-decimal":323,"parse-entities":375}],428:[function(require,module,exports){
+},{"../locate/email":409,"is-alphabetical":321,"is-decimal":324,"parse-entities":376}],429:[function(require,module,exports){
 'use strict'
 
 var trim = require('trim')
@@ -55652,7 +58697,7 @@ function emphasis(eat, value, silent) {
   }
 }
 
-},{"../locate/emphasis":409,"is-whitespace-character":327,"is-word-character":328,"trim":516}],429:[function(require,module,exports){
+},{"../locate/emphasis":410,"is-whitespace-character":328,"is-word-character":329,"trim":516}],430:[function(require,module,exports){
 'use strict'
 
 var locate = require('../locate/escape')
@@ -55688,7 +58733,7 @@ function escape(eat, value, silent) {
   }
 }
 
-},{"../locate/escape":410}],430:[function(require,module,exports){
+},{"../locate/escape":411}],431:[function(require,module,exports){
 'use strict'
 
 module.exports = atxHeading
@@ -55825,7 +58870,7 @@ function atxHeading(eat, value, silent) {
   })
 }
 
-},{}],431:[function(require,module,exports){
+},{}],432:[function(require,module,exports){
 'use strict'
 
 module.exports = setextHeading
@@ -55929,7 +58974,7 @@ function setextHeading(eat, value, silent) {
   })
 }
 
-},{}],432:[function(require,module,exports){
+},{}],433:[function(require,module,exports){
 'use strict'
 
 var openCloseTag = require('../util/html').openCloseTag
@@ -56042,7 +59087,7 @@ function blockHtml(eat, value, silent) {
   return eat(subvalue)({type: 'html', value: subvalue})
 }
 
-},{"../util/html":446}],433:[function(require,module,exports){
+},{"../util/html":447}],434:[function(require,module,exports){
 'use strict'
 
 var alphabetical = require('is-alphabetical')
@@ -56103,7 +59148,7 @@ function inlineHTML(eat, value, silent) {
   return eat(subvalue)({type: 'html', value: subvalue})
 }
 
-},{"../locate/tag":413,"../util/html":446,"is-alphabetical":320}],434:[function(require,module,exports){
+},{"../locate/tag":414,"../util/html":447,"is-alphabetical":321}],435:[function(require,module,exports){
 'use strict'
 
 var whitespace = require('is-whitespace-character')
@@ -56472,7 +59517,7 @@ function link(eat, value, silent) {
   return eat(subvalue)(node)
 }
 
-},{"../locate/link":411,"is-whitespace-character":327}],435:[function(require,module,exports){
+},{"../locate/link":412,"is-whitespace-character":328}],436:[function(require,module,exports){
 'use strict'
 
 var trim = require('trim')
@@ -56920,7 +59965,7 @@ function normalListItem(ctx, value, position) {
   }
 }
 
-},{"../util/get-indentation":445,"../util/interrupt":447,"../util/remove-indentation":449,"is-decimal":323,"repeat-string":494,"trim":516}],436:[function(require,module,exports){
+},{"../util/get-indentation":446,"../util/interrupt":448,"../util/remove-indentation":450,"is-decimal":324,"repeat-string":495,"trim":516}],437:[function(require,module,exports){
 'use strict'
 
 var trim = require('trim')
@@ -57020,7 +60065,7 @@ function paragraph(eat, value, silent) {
   })
 }
 
-},{"../util/interrupt":447,"trim":516,"trim-trailing-lines":515}],437:[function(require,module,exports){
+},{"../util/interrupt":448,"trim":516,"trim-trailing-lines":515}],438:[function(require,module,exports){
 'use strict'
 
 var whitespace = require('is-whitespace-character')
@@ -57210,7 +60255,7 @@ function reference(eat, value, silent) {
   return eat(subvalue)(node)
 }
 
-},{"../locate/link":411,"../util/normalize":448,"is-whitespace-character":327}],438:[function(require,module,exports){
+},{"../locate/link":412,"../util/normalize":449,"is-whitespace-character":328}],439:[function(require,module,exports){
 'use strict'
 
 var trim = require('trim')
@@ -57297,7 +60342,7 @@ function strong(eat, value, silent) {
   }
 }
 
-},{"../locate/strong":412,"is-whitespace-character":327,"trim":516}],439:[function(require,module,exports){
+},{"../locate/strong":413,"is-whitespace-character":328,"trim":516}],440:[function(require,module,exports){
 'use strict'
 
 var whitespace = require('is-whitespace-character')
@@ -57531,7 +60576,7 @@ function table(eat, value, silent) {
   return table
 }
 
-},{"is-whitespace-character":327}],440:[function(require,module,exports){
+},{"is-whitespace-character":328}],441:[function(require,module,exports){
 'use strict'
 
 module.exports = text
@@ -57590,7 +60635,7 @@ function text(eat, value, silent) {
   }
 }
 
-},{}],441:[function(require,module,exports){
+},{}],442:[function(require,module,exports){
 'use strict'
 
 module.exports = thematicBreak
@@ -57662,7 +60707,7 @@ function thematicBreak(eat, value, silent) {
   }
 }
 
-},{}],442:[function(require,module,exports){
+},{}],443:[function(require,module,exports){
 'use strict'
 
 var ccount = require('ccount')
@@ -57874,7 +60919,7 @@ function url(eat, value, silent) {
   return eat(content)({type: 'link', title: null, url: url, children: children})
 }
 
-},{"../locate/url":414,"ccount":6,"is-alphabetical":320,"is-decimal":323,"is-whitespace-character":327,"parse-entities":375}],443:[function(require,module,exports){
+},{"../locate/url":415,"ccount":6,"is-alphabetical":321,"is-decimal":324,"is-whitespace-character":328,"parse-entities":376}],444:[function(require,module,exports){
 'use strict'
 
 module.exports = factory
@@ -58194,7 +61239,7 @@ function mergeBlockquote(previous, node) {
   return previous
 }
 
-},{}],444:[function(require,module,exports){
+},{}],445:[function(require,module,exports){
 'use strict'
 
 module.exports = factory
@@ -58232,7 +61277,7 @@ function factory(ctx, key) {
   }
 }
 
-},{}],445:[function(require,module,exports){
+},{}],446:[function(require,module,exports){
 'use strict'
 
 module.exports = indentation
@@ -58271,7 +61316,7 @@ function indentation(value) {
   return {indent: indent, stops: stops}
 }
 
-},{}],446:[function(require,module,exports){
+},{}],447:[function(require,module,exports){
 'use strict'
 
 var attributeName = '[a-zA-Z_:][a-zA-Z0-9:._-]*'
@@ -58307,7 +61352,7 @@ exports.tag = new RegExp(
     ')'
 )
 
-},{}],447:[function(require,module,exports){
+},{}],448:[function(require,module,exports){
 'use strict'
 
 module.exports = interrupt
@@ -58344,7 +61389,7 @@ function interrupt(interruptors, tokenizers, ctx, parameters) {
   return false
 }
 
-},{}],448:[function(require,module,exports){
+},{}],449:[function(require,module,exports){
 'use strict'
 
 var collapseWhiteSpace = require('collapse-white-space')
@@ -58357,7 +61402,7 @@ function normalize(value) {
   return collapseWhiteSpace(value).toLowerCase()
 }
 
-},{"collapse-white-space":10}],449:[function(require,module,exports){
+},{"collapse-white-space":10}],450:[function(require,module,exports){
 'use strict'
 
 var trim = require('trim')
@@ -58423,7 +61468,7 @@ function indentation(value, maximum) {
   return values.join(lineFeed)
 }
 
-},{"./get-indentation":445,"repeat-string":494,"trim":516}],450:[function(require,module,exports){
+},{"./get-indentation":446,"repeat-string":495,"trim":516}],451:[function(require,module,exports){
 'use strict'
 
 var toString = require('mdast-util-to-string')
@@ -58454,7 +61499,7 @@ function transformer(ast) {
   }
 }
 
-},{"github-slugger":97,"mdast-util-to-string":451,"unist-util-visit":543}],451:[function(require,module,exports){
+},{"github-slugger":97,"mdast-util-to-string":452,"unist-util-visit":543}],452:[function(require,module,exports){
 'use strict'
 
 module.exports = toString
@@ -58486,7 +61531,7 @@ function all(values) {
   return result.join('')
 }
 
-},{}],452:[function(require,module,exports){
+},{}],453:[function(require,module,exports){
 'use strict'
 
 var unherit = require('unherit')
@@ -58506,7 +61551,7 @@ function stringify(options) {
   this.Compiler = Local
 }
 
-},{"./lib/compiler.js":453,"unherit":530,"xtend":556}],453:[function(require,module,exports){
+},{"./lib/compiler.js":454,"unherit":530,"xtend":556}],454:[function(require,module,exports){
 'use strict'
 
 var xtend = require('xtend')
@@ -58568,7 +61613,7 @@ proto.visitors = {
   tableCell: require('./visitors/table-cell')
 }
 
-},{"./defaults":454,"./macro/all":456,"./macro/block":457,"./macro/compile":458,"./macro/one":459,"./macro/ordered-items":460,"./macro/unordered-items":461,"./set-options":462,"./util/enter-link-reference":466,"./visitors/blockquote":471,"./visitors/break":472,"./visitors/code":473,"./visitors/definition":474,"./visitors/delete":475,"./visitors/emphasis":476,"./visitors/heading":477,"./visitors/html":478,"./visitors/image":480,"./visitors/image-reference":479,"./visitors/inline-code":481,"./visitors/link":483,"./visitors/link-reference":482,"./visitors/list":485,"./visitors/list-item":484,"./visitors/paragraph":486,"./visitors/root":487,"./visitors/strong":488,"./visitors/table":490,"./visitors/table-cell":489,"./visitors/text":491,"./visitors/thematic-break":492,"state-toggle":496,"xtend":556}],454:[function(require,module,exports){
+},{"./defaults":455,"./macro/all":457,"./macro/block":458,"./macro/compile":459,"./macro/one":460,"./macro/ordered-items":461,"./macro/unordered-items":462,"./set-options":463,"./util/enter-link-reference":467,"./visitors/blockquote":472,"./visitors/break":473,"./visitors/code":474,"./visitors/definition":475,"./visitors/delete":476,"./visitors/emphasis":477,"./visitors/heading":478,"./visitors/html":479,"./visitors/image":481,"./visitors/image-reference":480,"./visitors/inline-code":482,"./visitors/link":484,"./visitors/link-reference":483,"./visitors/list":486,"./visitors/list-item":485,"./visitors/paragraph":487,"./visitors/root":488,"./visitors/strong":489,"./visitors/table":491,"./visitors/table-cell":490,"./visitors/text":492,"./visitors/thematic-break":493,"state-toggle":497,"xtend":556}],455:[function(require,module,exports){
 'use strict'
 
 module.exports = {
@@ -58598,7 +61643,7 @@ function stringLength(value) {
   return value.length
 }
 
-},{}],455:[function(require,module,exports){
+},{}],456:[function(require,module,exports){
 'use strict'
 
 var decimal = require('is-decimal')
@@ -58897,7 +61942,7 @@ function protocol(value) {
   return tail === mailto || tail.slice(-5) === https || tail.slice(-4) === http
 }
 
-},{"./util/entity-prefix-length":467,"is-alphanumeric":321,"is-decimal":323,"is-whitespace-character":327,"markdown-escapes":332}],456:[function(require,module,exports){
+},{"./util/entity-prefix-length":468,"is-alphanumeric":322,"is-decimal":324,"is-whitespace-character":328,"markdown-escapes":333}],457:[function(require,module,exports){
 'use strict'
 
 module.exports = all
@@ -58917,7 +61962,7 @@ function all(parent) {
   return results
 }
 
-},{}],457:[function(require,module,exports){
+},{}],458:[function(require,module,exports){
 'use strict'
 
 module.exports = block
@@ -58979,7 +62024,7 @@ function block(node) {
   return values.join('')
 }
 
-},{}],458:[function(require,module,exports){
+},{}],459:[function(require,module,exports){
 'use strict'
 
 var compact = require('mdast-util-compact')
@@ -58991,7 +62036,7 @@ function compile() {
   return this.visit(compact(this.tree, this.options.commonmark))
 }
 
-},{"mdast-util-compact":335}],459:[function(require,module,exports){
+},{"mdast-util-compact":336}],460:[function(require,module,exports){
 'use strict'
 
 module.exports = one
@@ -59013,7 +62058,7 @@ function one(node, parent) {
   return visitors[node.type].call(self, node, parent)
 }
 
-},{}],460:[function(require,module,exports){
+},{}],461:[function(require,module,exports){
 'use strict'
 
 module.exports = orderedItems
@@ -59058,7 +62103,7 @@ function orderedItems(node) {
   return values.join(node.spread ? blank : lineFeed)
 }
 
-},{}],461:[function(require,module,exports){
+},{}],462:[function(require,module,exports){
 'use strict'
 
 module.exports = unorderedItems
@@ -59084,7 +62129,7 @@ function unorderedItems(node) {
   return values.join(node.spread ? blank : lineFeed)
 }
 
-},{}],462:[function(require,module,exports){
+},{}],463:[function(require,module,exports){
 'use strict'
 
 var xtend = require('xtend')
@@ -59246,7 +62291,7 @@ function raise(value, name) {
   throw new Error('Invalid value `' + value + '` for setting `' + name + '`')
 }
 
-},{"./defaults":454,"./escape":455,"./util/identity":468,"stringify-entities":501,"xtend":556}],463:[function(require,module,exports){
+},{"./defaults":455,"./escape":456,"./util/identity":469,"stringify-entities":501,"xtend":556}],464:[function(require,module,exports){
 'use strict'
 
 var entityPrefixLength = require('./entity-prefix-length')
@@ -59315,7 +62360,7 @@ function copy(value, identifier) {
   return result.join('')
 }
 
-},{"./entity-prefix-length":467}],464:[function(require,module,exports){
+},{"./entity-prefix-length":468}],465:[function(require,module,exports){
 'use strict'
 
 module.exports = enclose
@@ -59334,7 +62379,7 @@ function enclose(title) {
   return delimiter + title + delimiter
 }
 
-},{}],465:[function(require,module,exports){
+},{}],466:[function(require,module,exports){
 'use strict'
 
 var count = require('ccount')
@@ -59369,7 +62414,7 @@ function enclose(uri, always) {
   return uri
 }
 
-},{"ccount":6}],466:[function(require,module,exports){
+},{"ccount":6}],467:[function(require,module,exports){
 'use strict'
 
 var identity = require('./identity')
@@ -59404,7 +62449,7 @@ function enter(compiler, node) {
   }
 }
 
-},{"./identity":468}],467:[function(require,module,exports){
+},{"./identity":469}],468:[function(require,module,exports){
 'use strict'
 
 var decode = require('parse-entities')
@@ -59429,7 +62474,7 @@ function length(value) {
   return prefix.length - decode(prefix).length
 }
 
-},{"parse-entities":375}],468:[function(require,module,exports){
+},{"parse-entities":376}],469:[function(require,module,exports){
 'use strict'
 
 module.exports = identity
@@ -59438,7 +62483,7 @@ function identity(value) {
   return value
 }
 
-},{}],469:[function(require,module,exports){
+},{}],470:[function(require,module,exports){
 'use strict'
 
 module.exports = label
@@ -59467,7 +62512,7 @@ function label(node) {
   )
 }
 
-},{}],470:[function(require,module,exports){
+},{}],471:[function(require,module,exports){
 'use strict'
 
 var repeat = require('repeat-string')
@@ -59495,7 +62540,7 @@ function pad(value, level) {
   return values.join(lineFeed)
 }
 
-},{"repeat-string":494}],471:[function(require,module,exports){
+},{"repeat-string":495}],472:[function(require,module,exports){
 'use strict'
 
 module.exports = blockquote
@@ -59519,7 +62564,7 @@ function blockquote(node) {
   return greaterThan + result.join(lineFeed + greaterThan)
 }
 
-},{}],472:[function(require,module,exports){
+},{}],473:[function(require,module,exports){
 'use strict'
 
 module.exports = lineBreak
@@ -59535,7 +62580,7 @@ function lineBreak() {
   return this.options.commonmark ? commonmark : normal
 }
 
-},{}],473:[function(require,module,exports){
+},{}],474:[function(require,module,exports){
 'use strict'
 
 var streak = require('longest-streak')
@@ -59630,7 +62675,7 @@ function code(node, parent) {
   return fence + info + lineFeed + value + lineFeed + fence
 }
 
-},{"../util/pad":470,"longest-streak":329,"repeat-string":494}],474:[function(require,module,exports){
+},{"../util/pad":471,"longest-streak":330,"repeat-string":495}],475:[function(require,module,exports){
 'use strict'
 
 var uri = require('../util/enclose-uri')
@@ -59668,7 +62713,7 @@ function definition(node) {
   )
 }
 
-},{"../util/enclose-title":464,"../util/enclose-uri":465}],475:[function(require,module,exports){
+},{"../util/enclose-title":465,"../util/enclose-uri":466}],476:[function(require,module,exports){
 'use strict'
 
 module.exports = strikethrough
@@ -59681,7 +62726,7 @@ function strikethrough(node) {
   return fence + this.all(node).join('') + fence
 }
 
-},{}],476:[function(require,module,exports){
+},{}],477:[function(require,module,exports){
 'use strict'
 
 module.exports = emphasis
@@ -59721,7 +62766,7 @@ function emphasis(node) {
   return marker + content + marker
 }
 
-},{}],477:[function(require,module,exports){
+},{}],478:[function(require,module,exports){
 'use strict'
 
 var repeat = require('repeat-string')
@@ -59774,7 +62819,7 @@ function heading(node) {
   return prefix + space + content + (closeAtx ? space + prefix : '')
 }
 
-},{"repeat-string":494}],478:[function(require,module,exports){
+},{"repeat-string":495}],479:[function(require,module,exports){
 'use strict'
 
 module.exports = html
@@ -59783,7 +62828,7 @@ function html(node) {
   return node.value
 }
 
-},{}],479:[function(require,module,exports){
+},{}],480:[function(require,module,exports){
 'use strict'
 
 var label = require('../util/label')
@@ -59804,7 +62849,7 @@ function imageReference(node) {
   )
 }
 
-},{"../util/label":469}],480:[function(require,module,exports){
+},{"../util/label":470}],481:[function(require,module,exports){
 'use strict'
 
 var uri = require('../util/enclose-uri')
@@ -59853,7 +62898,7 @@ function image(node) {
   )
 }
 
-},{"../util/enclose-title":464,"../util/enclose-uri":465}],481:[function(require,module,exports){
+},{"../util/enclose-title":465,"../util/enclose-uri":466}],482:[function(require,module,exports){
 'use strict'
 
 var streak = require('longest-streak')
@@ -59918,7 +62963,7 @@ function ws(code) {
   return code === lineFeed || code === space
 }
 
-},{"longest-streak":329,"repeat-string":494}],482:[function(require,module,exports){
+},{"longest-streak":330,"repeat-string":495}],483:[function(require,module,exports){
 'use strict'
 
 var copy = require('../util/copy-identifier-encoding')
@@ -59947,7 +62992,7 @@ function linkReference(node) {
   return leftSquareBracket + value + rightSquareBracket + label(node)
 }
 
-},{"../util/copy-identifier-encoding":463,"../util/label":469}],483:[function(require,module,exports){
+},{"../util/copy-identifier-encoding":464,"../util/label":470}],484:[function(require,module,exports){
 'use strict'
 
 var uri = require('../util/enclose-uri')
@@ -60014,7 +63059,7 @@ function link(node) {
   )
 }
 
-},{"../util/enclose-title":464,"../util/enclose-uri":465}],484:[function(require,module,exports){
+},{"../util/enclose-title":465,"../util/enclose-uri":466}],485:[function(require,module,exports){
 'use strict'
 
 var repeat = require('repeat-string')
@@ -60091,7 +63136,7 @@ function listItem(node, parent, position, bullet) {
     : marker
 }
 
-},{"../util/pad":470,"repeat-string":494}],485:[function(require,module,exports){
+},{"../util/pad":471,"repeat-string":495}],486:[function(require,module,exports){
 'use strict'
 
 module.exports = list
@@ -60101,7 +63146,7 @@ function list(node) {
   return fn.call(this, node)
 }
 
-},{}],486:[function(require,module,exports){
+},{}],487:[function(require,module,exports){
 'use strict'
 
 module.exports = paragraph
@@ -60110,7 +63155,7 @@ function paragraph(node) {
   return this.all(node).join('')
 }
 
-},{}],487:[function(require,module,exports){
+},{}],488:[function(require,module,exports){
 'use strict'
 
 module.exports = root
@@ -60129,7 +63174,7 @@ function root(node) {
   return doc
 }
 
-},{}],488:[function(require,module,exports){
+},{}],489:[function(require,module,exports){
 'use strict'
 
 var repeat = require('repeat-string')
@@ -60149,7 +63194,7 @@ function strong(node) {
   return marker + this.all(node).join('') + marker
 }
 
-},{"repeat-string":494}],489:[function(require,module,exports){
+},{"repeat-string":495}],490:[function(require,module,exports){
 'use strict'
 
 module.exports = tableCell
@@ -60160,7 +63205,7 @@ function tableCell(node) {
   return this.all(node).join('').replace(lineFeed, ' ')
 }
 
-},{}],490:[function(require,module,exports){
+},{}],491:[function(require,module,exports){
 'use strict'
 
 var markdownTable = require('markdown-table')
@@ -60211,7 +63256,7 @@ function table(node) {
   })
 }
 
-},{"markdown-table":333}],491:[function(require,module,exports){
+},{"markdown-table":334}],492:[function(require,module,exports){
 'use strict'
 
 module.exports = text
@@ -60232,7 +63277,7 @@ function text(node, parent) {
   return this.encode(this.escape(node.value, node, parent), node)
 }
 
-},{}],492:[function(require,module,exports){
+},{}],493:[function(require,module,exports){
 'use strict'
 
 var repeat = require('repeat-string')
@@ -60265,7 +63310,7 @@ function thematic() {
   return options.ruleSpaces ? rule.split('').join(space) : rule
 }
 
-},{"repeat-string":494}],493:[function(require,module,exports){
+},{"repeat-string":495}],494:[function(require,module,exports){
 'use strict'
 
 var unified = require('unified')
@@ -60274,7 +63319,7 @@ var stringify = require('remark-stringify')
 
 module.exports = unified().use(parse).use(stringify).freeze()
 
-},{"remark-parse":401,"remark-stringify":452,"unified":531}],494:[function(require,module,exports){
+},{"remark-parse":402,"remark-stringify":453,"unified":531}],495:[function(require,module,exports){
 /*!
  * repeat-string <https://github.com/jonschlinkert/repeat-string>
  *
@@ -60346,7 +63391,7 @@ function repeat(str, num) {
   return res;
 }
 
-},{}],495:[function(require,module,exports){
+},{}],496:[function(require,module,exports){
 'use strict'
 
 exports.parse = parse
@@ -60365,7 +63410,7 @@ function stringify(values) {
   return values.join(space).trim()
 }
 
-},{}],496:[function(require,module,exports){
+},{}],497:[function(require,module,exports){
 'use strict'
 
 module.exports = factory
@@ -60390,20 +63435,24 @@ function factory(key, state, ctx) {
   }
 }
 
-},{}],497:[function(require,module,exports){
+},{}],498:[function(require,module,exports){
 'use strict';
 const stripAnsi = require('strip-ansi');
 const isFullwidthCodePoint = require('is-fullwidth-code-point');
 const emojiRegex = require('emoji-regex');
 
 const stringWidth = string => {
-	string = string.replace(emojiRegex(), '  ');
-
 	if (typeof string !== 'string' || string.length === 0) {
 		return 0;
 	}
 
 	string = stripAnsi(string);
+
+	if (string.length === 0) {
+		return 0;
+	}
+
+	string = string.replace(emojiRegex(), '  ');
 
 	let width = 0;
 
@@ -60435,24 +63484,16 @@ module.exports = stringWidth;
 // TODO: remove this in the next major version
 module.exports.default = stringWidth;
 
-},{"emoji-regex":499,"is-fullwidth-code-point":324,"strip-ansi":500}],498:[function(require,module,exports){
+},{"emoji-regex":34,"is-fullwidth-code-point":325,"strip-ansi":500}],499:[function(require,module,exports){
 'use strict';
 
 module.exports = ({onlyFirst = false} = {}) => {
 	const pattern = [
-		'[\\u001B\\u009B][[\\]()#;?]*(?:(?:(?:[a-zA-Z\\d]*(?:;[-a-zA-Z\\d\\/#&.:=?%@~_]*)*)?\\u0007)',
+		'[\\u001B\\u009B][[\\]()#;?]*(?:(?:(?:(?:;[-a-zA-Z\\d\\/#&.:=?%@~_]+)*|[a-zA-Z\\d]+(?:;[-a-zA-Z\\d\\/#&.:=?%@~_]*)*)?\\u0007)',
 		'(?:(?:\\d{1,4}(?:;\\d{0,4})*)?[\\dA-PR-TZcf-ntqry=><~]))'
 	].join('|');
 
 	return new RegExp(pattern, onlyFirst ? undefined : 'g');
-};
-
-},{}],499:[function(require,module,exports){
-"use strict";
-
-module.exports = function () {
-  // https://mths.be/emoji
-  return /\uD83C\uDFF4\uDB40\uDC67\uDB40\uDC62(?:\uDB40\uDC65\uDB40\uDC6E\uDB40\uDC67|\uDB40\uDC73\uDB40\uDC63\uDB40\uDC74|\uDB40\uDC77\uDB40\uDC6C\uDB40\uDC73)\uDB40\uDC7F|\uD83D\uDC68(?:\uD83C\uDFFC\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68\uD83C\uDFFB|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFF\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFE])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFE\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFD])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFD\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB\uDFFC])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\u200D(?:\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83D\uDC68|(?:\uD83D[\uDC68\uDC69])\u200D(?:\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67]))|\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67])|(?:\uD83D[\uDC68\uDC69])\u200D(?:\uD83D[\uDC66\uDC67])|[\u2695\u2696\u2708]\uFE0F|\uD83D[\uDC66\uDC67]|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|(?:\uD83C\uDFFB\u200D[\u2695\u2696\u2708]|\uD83C\uDFFF\u200D[\u2695\u2696\u2708]|\uD83C\uDFFE\u200D[\u2695\u2696\u2708]|\uD83C\uDFFD\u200D[\u2695\u2696\u2708]|\uD83C\uDFFC\u200D[\u2695\u2696\u2708])\uFE0F|\uD83C\uDFFB\u200D(?:\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C[\uDFFB-\uDFFF])|(?:\uD83E\uDDD1\uD83C\uDFFB\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFC\u200D\uD83E\uDD1D\u200D\uD83D\uDC69)\uD83C\uDFFB|\uD83E\uDDD1(?:\uD83C\uDFFF\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1(?:\uD83C[\uDFFB-\uDFFF])|\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1)|(?:\uD83E\uDDD1\uD83C\uDFFE\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFF\u200D\uD83E\uDD1D\u200D(?:\uD83D[\uDC68\uDC69]))(?:\uD83C[\uDFFB-\uDFFE])|(?:\uD83E\uDDD1\uD83C\uDFFC\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFD\u200D\uD83E\uDD1D\u200D\uD83D\uDC69)(?:\uD83C[\uDFFB\uDFFC])|\uD83D\uDC69(?:\uD83C\uDFFE\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFD\uDFFF])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFC\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB\uDFFD-\uDFFF])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFB\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFC-\uDFFF])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFD\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB\uDFFC\uDFFE\uDFFF])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\u200D(?:\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D(?:\uD83D[\uDC68\uDC69])|\uD83D[\uDC68\uDC69])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFF\u200D(?:\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD]))|\uD83D\uDC69\u200D\uD83D\uDC69\u200D(?:\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67]))|(?:\uD83E\uDDD1\uD83C\uDFFD\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFE\u200D\uD83E\uDD1D\u200D\uD83D\uDC69)(?:\uD83C[\uDFFB-\uDFFD])|\uD83D\uDC69\u200D\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC69\u200D\uD83D\uDC69\u200D(?:\uD83D[\uDC66\uDC67])|(?:\uD83D\uDC41\uFE0F\u200D\uD83D\uDDE8|\uD83D\uDC69(?:\uD83C\uDFFF\u200D[\u2695\u2696\u2708]|\uD83C\uDFFE\u200D[\u2695\u2696\u2708]|\uD83C\uDFFC\u200D[\u2695\u2696\u2708]|\uD83C\uDFFB\u200D[\u2695\u2696\u2708]|\uD83C\uDFFD\u200D[\u2695\u2696\u2708]|\u200D[\u2695\u2696\u2708])|(?:(?:\u26F9|\uD83C[\uDFCB\uDFCC]|\uD83D\uDD75)\uFE0F|\uD83D\uDC6F|\uD83E[\uDD3C\uDDDE\uDDDF])\u200D[\u2640\u2642]|(?:\u26F9|\uD83C[\uDFCB\uDFCC]|\uD83D\uDD75)(?:\uD83C[\uDFFB-\uDFFF])\u200D[\u2640\u2642]|(?:\uD83C[\uDFC3\uDFC4\uDFCA]|\uD83D[\uDC6E\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4-\uDEB6]|\uD83E[\uDD26\uDD37-\uDD39\uDD3D\uDD3E\uDDB8\uDDB9\uDDCD-\uDDCF\uDDD6-\uDDDD])(?:(?:\uD83C[\uDFFB-\uDFFF])\u200D[\u2640\u2642]|\u200D[\u2640\u2642])|\uD83C\uDFF4\u200D\u2620)\uFE0F|\uD83D\uDC69\u200D\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67])|\uD83C\uDFF3\uFE0F\u200D\uD83C\uDF08|\uD83D\uDC15\u200D\uD83E\uDDBA|\uD83D\uDC69\u200D\uD83D\uDC66|\uD83D\uDC69\u200D\uD83D\uDC67|\uD83C\uDDFD\uD83C\uDDF0|\uD83C\uDDF4\uD83C\uDDF2|\uD83C\uDDF6\uD83C\uDDE6|[#\*0-9]\uFE0F\u20E3|\uD83C\uDDE7(?:\uD83C[\uDDE6\uDDE7\uDDE9-\uDDEF\uDDF1-\uDDF4\uDDF6-\uDDF9\uDDFB\uDDFC\uDDFE\uDDFF])|\uD83C\uDDF9(?:\uD83C[\uDDE6\uDDE8\uDDE9\uDDEB-\uDDED\uDDEF-\uDDF4\uDDF7\uDDF9\uDDFB\uDDFC\uDDFF])|\uD83C\uDDEA(?:\uD83C[\uDDE6\uDDE8\uDDEA\uDDEC\uDDED\uDDF7-\uDDFA])|\uD83E\uDDD1(?:\uD83C[\uDFFB-\uDFFF])|\uD83C\uDDF7(?:\uD83C[\uDDEA\uDDF4\uDDF8\uDDFA\uDDFC])|\uD83D\uDC69(?:\uD83C[\uDFFB-\uDFFF])|\uD83C\uDDF2(?:\uD83C[\uDDE6\uDDE8-\uDDED\uDDF0-\uDDFF])|\uD83C\uDDE6(?:\uD83C[\uDDE8-\uDDEC\uDDEE\uDDF1\uDDF2\uDDF4\uDDF6-\uDDFA\uDDFC\uDDFD\uDDFF])|\uD83C\uDDF0(?:\uD83C[\uDDEA\uDDEC-\uDDEE\uDDF2\uDDF3\uDDF5\uDDF7\uDDFC\uDDFE\uDDFF])|\uD83C\uDDED(?:\uD83C[\uDDF0\uDDF2\uDDF3\uDDF7\uDDF9\uDDFA])|\uD83C\uDDE9(?:\uD83C[\uDDEA\uDDEC\uDDEF\uDDF0\uDDF2\uDDF4\uDDFF])|\uD83C\uDDFE(?:\uD83C[\uDDEA\uDDF9])|\uD83C\uDDEC(?:\uD83C[\uDDE6\uDDE7\uDDE9-\uDDEE\uDDF1-\uDDF3\uDDF5-\uDDFA\uDDFC\uDDFE])|\uD83C\uDDF8(?:\uD83C[\uDDE6-\uDDEA\uDDEC-\uDDF4\uDDF7-\uDDF9\uDDFB\uDDFD-\uDDFF])|\uD83C\uDDEB(?:\uD83C[\uDDEE-\uDDF0\uDDF2\uDDF4\uDDF7])|\uD83C\uDDF5(?:\uD83C[\uDDE6\uDDEA-\uDDED\uDDF0-\uDDF3\uDDF7-\uDDF9\uDDFC\uDDFE])|\uD83C\uDDFB(?:\uD83C[\uDDE6\uDDE8\uDDEA\uDDEC\uDDEE\uDDF3\uDDFA])|\uD83C\uDDF3(?:\uD83C[\uDDE6\uDDE8\uDDEA-\uDDEC\uDDEE\uDDF1\uDDF4\uDDF5\uDDF7\uDDFA\uDDFF])|\uD83C\uDDE8(?:\uD83C[\uDDE6\uDDE8\uDDE9\uDDEB-\uDDEE\uDDF0-\uDDF5\uDDF7\uDDFA-\uDDFF])|\uD83C\uDDF1(?:\uD83C[\uDDE6-\uDDE8\uDDEE\uDDF0\uDDF7-\uDDFB\uDDFE])|\uD83C\uDDFF(?:\uD83C[\uDDE6\uDDF2\uDDFC])|\uD83C\uDDFC(?:\uD83C[\uDDEB\uDDF8])|\uD83C\uDDFA(?:\uD83C[\uDDE6\uDDEC\uDDF2\uDDF3\uDDF8\uDDFE\uDDFF])|\uD83C\uDDEE(?:\uD83C[\uDDE8-\uDDEA\uDDF1-\uDDF4\uDDF6-\uDDF9])|\uD83C\uDDEF(?:\uD83C[\uDDEA\uDDF2\uDDF4\uDDF5])|(?:\uD83C[\uDFC3\uDFC4\uDFCA]|\uD83D[\uDC6E\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4-\uDEB6]|\uD83E[\uDD26\uDD37-\uDD39\uDD3D\uDD3E\uDDB8\uDDB9\uDDCD-\uDDCF\uDDD6-\uDDDD])(?:\uD83C[\uDFFB-\uDFFF])|(?:\u26F9|\uD83C[\uDFCB\uDFCC]|\uD83D\uDD75)(?:\uD83C[\uDFFB-\uDFFF])|(?:[\u261D\u270A-\u270D]|\uD83C[\uDF85\uDFC2\uDFC7]|\uD83D[\uDC42\uDC43\uDC46-\uDC50\uDC66\uDC67\uDC6B-\uDC6D\uDC70\uDC72\uDC74-\uDC76\uDC78\uDC7C\uDC83\uDC85\uDCAA\uDD74\uDD7A\uDD90\uDD95\uDD96\uDE4C\uDE4F\uDEC0\uDECC]|\uD83E[\uDD0F\uDD18-\uDD1C\uDD1E\uDD1F\uDD30-\uDD36\uDDB5\uDDB6\uDDBB\uDDD2-\uDDD5])(?:\uD83C[\uDFFB-\uDFFF])|(?:[\u231A\u231B\u23E9-\u23EC\u23F0\u23F3\u25FD\u25FE\u2614\u2615\u2648-\u2653\u267F\u2693\u26A1\u26AA\u26AB\u26BD\u26BE\u26C4\u26C5\u26CE\u26D4\u26EA\u26F2\u26F3\u26F5\u26FA\u26FD\u2705\u270A\u270B\u2728\u274C\u274E\u2753-\u2755\u2757\u2795-\u2797\u27B0\u27BF\u2B1B\u2B1C\u2B50\u2B55]|\uD83C[\uDC04\uDCCF\uDD8E\uDD91-\uDD9A\uDDE6-\uDDFF\uDE01\uDE1A\uDE2F\uDE32-\uDE36\uDE38-\uDE3A\uDE50\uDE51\uDF00-\uDF20\uDF2D-\uDF35\uDF37-\uDF7C\uDF7E-\uDF93\uDFA0-\uDFCA\uDFCF-\uDFD3\uDFE0-\uDFF0\uDFF4\uDFF8-\uDFFF]|\uD83D[\uDC00-\uDC3E\uDC40\uDC42-\uDCFC\uDCFF-\uDD3D\uDD4B-\uDD4E\uDD50-\uDD67\uDD7A\uDD95\uDD96\uDDA4\uDDFB-\uDE4F\uDE80-\uDEC5\uDECC\uDED0-\uDED2\uDED5\uDEEB\uDEEC\uDEF4-\uDEFA\uDFE0-\uDFEB]|\uD83E[\uDD0D-\uDD3A\uDD3C-\uDD45\uDD47-\uDD71\uDD73-\uDD76\uDD7A-\uDDA2\uDDA5-\uDDAA\uDDAE-\uDDCA\uDDCD-\uDDFF\uDE70-\uDE73\uDE78-\uDE7A\uDE80-\uDE82\uDE90-\uDE95])|(?:[#\*0-9\xA9\xAE\u203C\u2049\u2122\u2139\u2194-\u2199\u21A9\u21AA\u231A\u231B\u2328\u23CF\u23E9-\u23F3\u23F8-\u23FA\u24C2\u25AA\u25AB\u25B6\u25C0\u25FB-\u25FE\u2600-\u2604\u260E\u2611\u2614\u2615\u2618\u261D\u2620\u2622\u2623\u2626\u262A\u262E\u262F\u2638-\u263A\u2640\u2642\u2648-\u2653\u265F\u2660\u2663\u2665\u2666\u2668\u267B\u267E\u267F\u2692-\u2697\u2699\u269B\u269C\u26A0\u26A1\u26AA\u26AB\u26B0\u26B1\u26BD\u26BE\u26C4\u26C5\u26C8\u26CE\u26CF\u26D1\u26D3\u26D4\u26E9\u26EA\u26F0-\u26F5\u26F7-\u26FA\u26FD\u2702\u2705\u2708-\u270D\u270F\u2712\u2714\u2716\u271D\u2721\u2728\u2733\u2734\u2744\u2747\u274C\u274E\u2753-\u2755\u2757\u2763\u2764\u2795-\u2797\u27A1\u27B0\u27BF\u2934\u2935\u2B05-\u2B07\u2B1B\u2B1C\u2B50\u2B55\u3030\u303D\u3297\u3299]|\uD83C[\uDC04\uDCCF\uDD70\uDD71\uDD7E\uDD7F\uDD8E\uDD91-\uDD9A\uDDE6-\uDDFF\uDE01\uDE02\uDE1A\uDE2F\uDE32-\uDE3A\uDE50\uDE51\uDF00-\uDF21\uDF24-\uDF93\uDF96\uDF97\uDF99-\uDF9B\uDF9E-\uDFF0\uDFF3-\uDFF5\uDFF7-\uDFFF]|\uD83D[\uDC00-\uDCFD\uDCFF-\uDD3D\uDD49-\uDD4E\uDD50-\uDD67\uDD6F\uDD70\uDD73-\uDD7A\uDD87\uDD8A-\uDD8D\uDD90\uDD95\uDD96\uDDA4\uDDA5\uDDA8\uDDB1\uDDB2\uDDBC\uDDC2-\uDDC4\uDDD1-\uDDD3\uDDDC-\uDDDE\uDDE1\uDDE3\uDDE8\uDDEF\uDDF3\uDDFA-\uDE4F\uDE80-\uDEC5\uDECB-\uDED2\uDED5\uDEE0-\uDEE5\uDEE9\uDEEB\uDEEC\uDEF0\uDEF3-\uDEFA\uDFE0-\uDFEB]|\uD83E[\uDD0D-\uDD3A\uDD3C-\uDD45\uDD47-\uDD71\uDD73-\uDD76\uDD7A-\uDDA2\uDDA5-\uDDAA\uDDAE-\uDDCA\uDDCD-\uDDFF\uDE70-\uDE73\uDE78-\uDE7A\uDE80-\uDE82\uDE90-\uDE95])\uFE0F|(?:[\u261D\u26F9\u270A-\u270D]|\uD83C[\uDF85\uDFC2-\uDFC4\uDFC7\uDFCA-\uDFCC]|\uD83D[\uDC42\uDC43\uDC46-\uDC50\uDC66-\uDC78\uDC7C\uDC81-\uDC83\uDC85-\uDC87\uDC8F\uDC91\uDCAA\uDD74\uDD75\uDD7A\uDD90\uDD95\uDD96\uDE45-\uDE47\uDE4B-\uDE4F\uDEA3\uDEB4-\uDEB6\uDEC0\uDECC]|\uD83E[\uDD0F\uDD18-\uDD1F\uDD26\uDD30-\uDD39\uDD3C-\uDD3E\uDDB5\uDDB6\uDDB8\uDDB9\uDDBB\uDDCD-\uDDCF\uDDD1-\uDDDD])/g;
 };
 
 },{}],500:[function(require,module,exports){
@@ -60461,9 +63502,9 @@ const ansiRegex = require('ansi-regex');
 
 module.exports = string => typeof string === 'string' ? string.replace(ansiRegex(), '') : string;
 
-},{"ansi-regex":498}],501:[function(require,module,exports){
-arguments[4][368][0].apply(exports,arguments)
-},{"./lib":509,"dup":368}],502:[function(require,module,exports){
+},{"ansi-regex":499}],501:[function(require,module,exports){
+arguments[4][369][0].apply(exports,arguments)
+},{"./lib":509,"dup":369}],502:[function(require,module,exports){
 var entities = require('character-entities-html4')
 
 var characters = {}
@@ -61113,7 +64154,7 @@ function unherit(Super) {
   }
 }
 
-},{"inherits":317,"xtend":556}],531:[function(require,module,exports){
+},{"inherits":318,"xtend":556}],531:[function(require,module,exports){
 (function (process){(function (){
 'use strict'
 
@@ -61143,9 +64184,9 @@ function pipelineParse(p, ctx) {
 function pipelineRun(p, ctx, next) {
   p.run(ctx.tree, ctx.file, done)
 
-  function done(err, tree, file) {
-    if (err) {
-      next(err)
+  function done(error, tree, file) {
+    if (error) {
+      next(error)
     } else {
       ctx.tree = tree
       ctx.file = file
@@ -61156,14 +64197,17 @@ function pipelineRun(p, ctx, next) {
 
 function pipelineStringify(p, ctx) {
   var result = p.stringify(ctx.tree, ctx.file)
-  var file = ctx.file
 
   if (result === undefined || result === null) {
     // Empty.
   } else if (typeof result === 'string' || buffer(result)) {
-    file.contents = result
+    if ('value' in ctx.file) {
+      ctx.file.value = result
+    }
+
+    ctx.file.contents = result
   } else {
-    file.result = result
+    ctx.file.result = result
   }
 }
 
@@ -61172,8 +64216,8 @@ function unified() {
   var attachers = []
   var transformers = trough()
   var namespace = {}
-  var frozen = false
   var freezeIndex = -1
+  var frozen
 
   // Data management.
   processor.data = data
@@ -61199,10 +64243,9 @@ function unified() {
   // Create a new processor based on the processor in the current scope.
   function processor() {
     var destination = unified()
-    var length = attachers.length
     var index = -1
 
-    while (++index < length) {
+    while (++index < attachers.length) {
       destination.use.apply(null, attachers[index])
     }
 
@@ -61220,8 +64263,6 @@ function unified() {
   // In essence, always invoke this when exporting a processor.
   function freeze() {
     var values
-    var plugin
-    var options
     var transformer
 
     if (frozen) {
@@ -61230,19 +64271,16 @@ function unified() {
 
     while (++freezeIndex < attachers.length) {
       values = attachers[freezeIndex]
-      plugin = values[0]
-      options = values[1]
-      transformer = null
 
-      if (options === false) {
+      if (values[1] === false) {
         continue
       }
 
-      if (options === true) {
+      if (values[1] === true) {
         values[1] = undefined
       }
 
-      transformer = plugin.apply(processor, values.slice(1))
+      transformer = values[0].apply(processor, values.slice(1))
 
       if (typeof transformer === 'function') {
         transformers.use(transformer)
@@ -61262,9 +64300,7 @@ function unified() {
       // Set `key`.
       if (arguments.length === 2) {
         assertUnfrozen('data', frozen)
-
         namespace[key] = value
-
         return processor
       }
 
@@ -61338,16 +64374,12 @@ function unified() {
     }
 
     function addList(plugins) {
-      var length
-      var index
+      var index = -1
 
       if (plugins === null || plugins === undefined) {
         // Empty.
       } else if (typeof plugins === 'object' && 'length' in plugins) {
-        length = plugins.length
-        index = -1
-
-        while (++index < length) {
+        while (++index < plugins.length) {
           add(plugins[index])
         }
       } else {
@@ -61360,7 +64392,7 @@ function unified() {
 
       if (entry) {
         if (plain(entry[1]) && plain(value)) {
-          value = extend(entry[1], value)
+          value = extend(true, entry[1], value)
         }
 
         entry[1] = value
@@ -61371,15 +64403,11 @@ function unified() {
   }
 
   function find(plugin) {
-    var length = attachers.length
     var index = -1
-    var entry
 
-    while (++index < length) {
-      entry = attachers[index]
-
-      if (entry[0] === plugin) {
-        return entry
+    while (++index < attachers.length) {
+      if (attachers[index][0] === plugin) {
+        return attachers[index]
       }
     }
   }
@@ -61421,10 +64449,10 @@ function unified() {
     function executor(resolve, reject) {
       transformers.run(node, vfile(file), done)
 
-      function done(err, tree, file) {
+      function done(error, tree, file) {
         tree = tree || node
-        if (err) {
-          reject(err)
+        if (error) {
+          reject(error)
         } else if (resolve) {
           resolve(tree)
         } else {
@@ -61437,8 +64465,8 @@ function unified() {
   // Run transforms on a unist node representation of a file (in string or
   // vfile representation), sync.
   function runSync(node, file) {
-    var complete = false
     var result
+    var complete
 
     run(node, file, done)
 
@@ -61446,10 +64474,10 @@ function unified() {
 
     return result
 
-    function done(err, tree) {
+    function done(error, tree) {
       complete = true
-      bail(err)
       result = tree
+      bail(error)
     }
   }
 
@@ -61491,9 +64519,9 @@ function unified() {
 
       pipeline.run(processor, {file: file}, done)
 
-      function done(err) {
-        if (err) {
-          reject(err)
+      function done(error) {
+        if (error) {
+          reject(error)
         } else if (resolve) {
           resolve(file)
         } else {
@@ -61505,8 +64533,8 @@ function unified() {
 
   // Process the given document (in string or vfile representation), sync.
   function processSync(doc) {
-    var complete = false
     var file
+    var complete
 
     freeze()
     assertParser('processSync', processor.Parser)
@@ -61519,9 +64547,9 @@ function unified() {
 
     return file
 
-    function done(err) {
+    function done(error) {
       complete = true
-      bail(err)
+      bail(error)
     }
   }
 }
@@ -61590,7 +64618,7 @@ function assertDone(name, asyncName, complete) {
 }
 
 }).call(this)}).call(this,require('_process'))
-},{"_process":376,"bail":3,"extend":94,"is-buffer":532,"is-plain-obj":326,"trough":517,"vfile":550}],532:[function(require,module,exports){
+},{"_process":377,"bail":3,"extend":94,"is-buffer":532,"is-plain-obj":327,"trough":517,"vfile":550}],532:[function(require,module,exports){
 /*!
  * Determine if an object is a Buffer
  *
@@ -62479,7 +65507,7 @@ function size(value) {
 }
 
 }).call(this)}).call(this,require('_process'))
-},{"_process":376,"repeat-string":494,"string-width":497,"supports-color":547,"unist-util-stringify-position":540,"vfile-sort":548,"vfile-statistics":549}],547:[function(require,module,exports){
+},{"_process":377,"repeat-string":495,"string-width":498,"supports-color":547,"unist-util-stringify-position":540,"vfile-sort":548,"vfile-statistics":549}],547:[function(require,module,exports){
 'use strict';
 module.exports = {
 	stdout: false,
@@ -62576,8 +65604,8 @@ function statistics(files) {
 }
 
 },{}],550:[function(require,module,exports){
-arguments[4][368][0].apply(exports,arguments)
-},{"./lib":552,"dup":368}],551:[function(require,module,exports){
+arguments[4][369][0].apply(exports,arguments)
+},{"./lib":552,"dup":369}],551:[function(require,module,exports){
 'use strict'
 
 var p = require('./minpath')
@@ -64870,7 +67898,7 @@ function mdConvert(md, el) {
 }
 
 module.exports = mdConvert
-},{"remark":493,"remark-attr":396,"remark-external-links":398,"remark-highlight.js":399,"remark-html":400,"remark-parse":401,"remark-slug":450,"unified":531,"vfile-reporter":546}],568:[function(require,module,exports){
+},{"remark":494,"remark-attr":397,"remark-external-links":399,"remark-highlight.js":400,"remark-html":401,"remark-parse":402,"remark-slug":451,"unified":531,"vfile-reporter":546}],568:[function(require,module,exports){
 const unified = require('unified')
 const markdown = require('remark-parse')
 const html = require('remark-html')
@@ -64890,7 +67918,7 @@ function mdTocConvert(md, el) {
 }
 
 module.exports = mdTocConvert
-},{"remark-contents":397,"remark-html":400,"remark-parse":401,"unified":531,"vfile-reporter":546}],569:[function(require,module,exports){
+},{"remark-contents":398,"remark-html":401,"remark-parse":402,"unified":531,"vfile-reporter":546}],569:[function(require,module,exports){
 const bel = require('bel')
 const csjs = require('csjs-inject')
 // widgets
