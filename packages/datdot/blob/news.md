@@ -1,8 +1,21 @@
 # News
 
+## 2022/08/02
+### We are hiring
+
+We are looking for a senior UX/UI desiigner with vanilla.js skills. And we are also looking for a rust/substrate developer. If you are interested, please reach out to us on Twitter/Telegram/Discord (@serapath or @ninabreznik).
+
 ---
 
-## 2020.07.20 `release` Milestone 1
+## 2022/01/26
+### New grant
+
+Our Polkadot Treasury got approved and we have secured approx. $100k funding for our project. Here you can read [our full proposal](https://hackmd.io/@T6Wf5EsOQKe-6wyPjJPtuw/ryBEa-HcK).
+
+---
+
+## 2020/07/20 
+### Milestone 1
 Good news. We just finished our phase 1 which means our datdot chain is running and communicating with dat/hyper* and does the test hosting of the hypercores. 
 We are very excited about it.
 
