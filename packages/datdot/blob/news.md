@@ -1,9 +1,9 @@
 # News
 
-## 2022/08/02
-### We are hiring
+## 2022/08/02 
+### We are hiring 
 
-We are looking for a senior UX/UI designer with vanilla.js skills. And we are also looking for a rust/substrate developer with passion for [hypercore protocol](https://hypercore-protocol.org). If you are interested, please reach out to us on Twitter/Telegram/Discord ([@serapath](https://twitter.com/serapath) or [@ninabreznik](https://twitter.com/ninabreznik)).
+We are looking for a senior UX/UI designer with vanilla.js skills. And we are also looking for a rust/substrate developer with passion for [hypercore protocol](https://hypercore-protocol.org). If you are interested, please reach out to us on Twitter/Telegram/Discord ([@serapath](https://twitter.com/serapath) or [@ninabreznik](https://twitter.com/ninabreznik)). 
 
 ---
 
