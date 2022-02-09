@@ -66503,7 +66503,7 @@ function AppInfo(styl, url, title, package, protocol) {
     const content = bel`<div class=${css.content}></div>`
     const introHeader = bel`<section class=${css["intro-header"]}></section>`
     const markdown = bel`<div class=${css.markdown}></div>`
-    const download = bel`<button  class="${css.btn} ${css.download}" 
+    const download = bel`<button class="${css.btn} ${css.download}" 
                                 onclick=${(e) => installHandler(e)} type="button" value=${vers}>
                                 ${icon_download}Download
                         </button>`
@@ -66511,25 +66511,24 @@ function AppInfo(styl, url, title, package, protocol) {
     let displayVersion = bel`<span class=${css.text}>${vers}</span>`
     let triggerBtn = bel`<span class=${css.trigger} onclick=${() => selectorHandler(displayVersion)}></span>`
     const selected = bel`
-    <div class=${css.selected}>
-        ${triggerBtn}
-        ${displayVersion}
-        ${icon_arrow_down}
-    </div>`
+        <div class=${css.selected}>
+            ${triggerBtn}
+            ${displayVersion}
+            ${icon_arrow_down}
+        </div>`
 
     // versions selector
     const selectVersion = bel`
-    <div class=${css.selector}>
-        ${download}
-        ${selected}
-        ${options}
-    </div>`
+        <div class=${css.selector}>
+            ${download}
+            ${selected}
+            ${options}
+        </div>`
 
     let buttons = actions({styl, title, ver: vers, selector: selectVersion, url, package}, clearVers, protocol)
 
     selectVersion.children[1].value = package.versions.latest
 
-   
     // display default page
     const hash = location.hash.slice(1)
     const page = (hash === 'chat') ? 'chat'
@@ -66548,16 +66547,14 @@ function AppInfo(styl, url, title, package, protocol) {
         } else {
             options.classList.remove(css.on)
             icon_arrow_down.classList.remove(css.up)
-        }
-        
+        }    
     })
 
-    const el = bel `
-    <div class=${css.container}>
-        ${packageSidebar({title, container: css.container}, pageHandler)}
-        ${content}
-    </div>
-    `
+    const el = bel`
+        <div class=${css.container}>
+            ${packageSidebar({title, container: css.container}, pageHandler)}
+            ${content}
+        </div>`
     return el
 
 
@@ -66570,8 +66567,8 @@ function AppInfo(styl, url, title, package, protocol) {
         options.innerHTML = ''
         
         package.versions.all.map( 
-            ver => ver === el.textContent 
-            ? options.append(bel`<li class="${css.option} ${css["current-version"]}">${icon_checked}${ver}</li>` )
+            ver => (ver === el.textContent) ? 
+            options.append(bel`<li class="${css.option} ${css["current-version"]}">${icon_checked}${ver}</li>` )
             : options.append( bel`<li class=${css.option}>${ver}</li>`)
         )
     }
@@ -66592,8 +66589,7 @@ function AppInfo(styl, url, title, package, protocol) {
         options.innerHTML = ''
         newList.map( item => options.append(item) )
         icon_arrow_down.classList.remove(css.up)
-        options.classList.remove(css.on)
-        
+        options.classList.remove(css.on) 
     }
 
     // install init goes here
@@ -66625,16 +66621,10 @@ function AppInfo(styl, url, title, package, protocol) {
         console.log(`[navigate] ${i}`)
         // clear content to add new contnet
         content.innerHTML = ''
-        if ( i === 'package') {
-            getInfo(package.about.info, i, loadPage)
-        }
-        else if (i === 'chat' ) {
-            content.innerHTML = '<iframe src="https://gitter.im/playproject-io/community/~embed" frameborder="0" allowfullscreen="allowfullscreen"></iframe>'
-        } else if (i === 'supplyTree') {
-            content.append( SupplyTree(vers, package, protocol) )
-        } else {
-            getInfo(package[i], i, loadPage)
-        }
+        if ( i === 'package') getInfo(package.about.info, i, loadPage)
+        else if (i === 'chat' ) content.innerHTML = '<iframe src="https://gitter.im/playproject-io/community/~embed" frameborder="0" allowfullscreen="allowfullscreen"></iframe>'
+        else if (i === 'supplyTree') content.append( SupplyTree(vers, package, protocol) )
+        else getInfo(package[i], i, loadPage)
     }
 
 
@@ -67340,19 +67330,18 @@ function OpenWindow(styl, url, package, content, protocol) {
     let minmax = Graphic('./src/node_modules/assets/svg/minmax.svg', css.icon)
     
     const el = bel`
-    <div class="${css.window} app_${title} ${styl}" onclick=${ ()=> windowLevel(el)}>
-        <header class=${css["panel-header"]}>
-            <span class=${css["panel-title"]}>${package.title}</span>
-            <div class=${css["panel-nav"]}>
-                <button class="${css.btn} ${css.minmax}" onclick=${(e) => panelNav(e, "minmax")}>${minmax}</button>
-                <button class="${css.btn} ${css.close}" onclick=${(e) => panelNav(e, "close")}>${close}</button>
+        <div class="${css.window} app_${title} ${styl}" onclick=${ ()=> windowLevel(el)}>
+            <header class=${css["panel-header"]}>
+                <span class=${css["panel-title"]}>${package.title}</span>
+                <div class=${css["panel-nav"]}>
+                    <button class="${css.btn} ${css.minmax}" onclick=${(e) => panelNav(e, "minmax")}>${minmax}</button>
+                    <button class="${css.btn} ${css.close}" onclick=${(e) => panelNav(e, "close")}>${close}</button>
+                </div>
+            </header>
+            <div class=${css["panel-body"]}>
+                ${content(styl, url, title, package, protocol)}
             </div>
-        </header>
-        <div class=${css["panel-body"]}>
-            ${content(styl, url, title, package, protocol)}
-        </div>
-    </div>
-    `
+        </div>`
 
     return protocol({item: el, app: package})
 
@@ -67384,81 +67373,79 @@ function OpenWindow(styl, url, package, content, protocol) {
 }
 
 
-
 const style = csjs`
-.window {
-    position: absolute;
-    z-index: 2;
-    left: 50%;
-    top: 50%;
-    width: 960px;
-    height: 75vh;
-    max-width: 100%;
-    max-height: 100%;
-    transform: translate(-50%, -50%);
-    display: grid;
-    grid-template: 29px auto / auto;
-}
-.panel-header {
-    display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: auto 65px;
-    border: var(--panelBorder) solid var(--panelBorderColor);
-    background-color: var(--panelHeaderBgColor);
-    align-items: center;
-}
-.panel-nav {
-    display: grid;
-    grid-auto-flow: column;
-    align-items: center;
-}
-.panel-nav .icon svg {
-    width: 20px;
-}
-.panel-title {
-    font-size: var(--panelHeaderTitleSize);
-    color: var(--panelHeaderTitleColor);
-    text-align: center;
-}
-.panel-body {
-    background-color: var(--panelBodyBgColor);
-    border: var(--panelBorder) solid var(--panelBorderColor);
-    border-top: 0;
-    height: calc(75vh - 29px);
-}
-.btn {
-    padding: 0;
-    align-items: center;
-    justify-items: center;
-}
-.icon {
-    
-}
-.fullscreen {
-    width: 100%;
-    height: 100%;
-}
-.fullscreen .panel-body {
-    height: calc(100vh - 29px);
-}
-.minmax {
-}
-.close {
-}
-@media screen and (max-width: 1024px) {
     .window {
-        width: 100vw;
-        height: 100vh;
-        min-width: 768px;
-        left: 0;
-        top: 0;
-        transform: none;
+        position: absolute;
+        z-index: 2;
+        left: 50%;
+        top: 50%;
+        width: 960px;
+        height: 75vh;
+        max-width: 100%;
+        max-height: 100%;
+        transform: translate(-50%, -50%);
+        display: grid;
+        grid-template: 29px auto / auto;
+    }
+    .panel-header {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: auto 65px;
+        border: var(--panelBorder) solid var(--panelBorderColor);
+        background-color: var(--panelHeaderBgColor);
+        align-items: center;
+    }
+    .panel-nav {
+        display: grid;
+        grid-auto-flow: column;
+        align-items: center;
+    }
+    .panel-nav .icon svg {
+        width: 20px;
+    }
+    .panel-title {
+        font-size: var(--panelHeaderTitleSize);
+        color: var(--panelHeaderTitleColor);
+        text-align: center;
     }
     .panel-body {
+        background-color: var(--panelBodyBgColor);
+        border: var(--panelBorder) solid var(--panelBorderColor);
+        border-top: 0;
+        height: calc(75vh - 29px);
+    }
+    .btn {
+        padding: 0;
+        align-items: center;
+        justify-items: center;
+    }
+    .icon {
+        
+    }
+    .fullscreen {
+        width: 100%;
         height: 100%;
     }
-}
-`
+    .fullscreen .panel-body {
+        height: calc(100vh - 29px);
+    }
+    .minmax {
+    }
+    .close {
+    }
+    @media screen and (max-width: 1024px) {
+        .window {
+            width: 100vw;
+            height: 100vh;
+            min-width: 768px;
+            left: 0;
+            top: 0;
+            transform: none;
+        }
+        .panel-body {
+            height: 100%;
+        }
+    }`
 
 module.exports = OpenWindow
 },{"Graphic":561,"bel":5,"csjs-inject":14}],563:[function(require,module,exports){
@@ -67594,30 +67581,35 @@ function actions({styl, title, ver, selector, url, package}, clearVers, protocol
     let icon_settings = Graphic('./src/node_modules/assets/svg/settings.svg', css.icon)
 
     // button actions
-    let launch = bel`<button    class="${css.btn} ${css.launch}" 
-                                onclick=${(e) => actionHandler(e, launch)}>
-                                ${icon_launch}Launch
-                    </button>`
+    let launch = bel`
+        <button class="${css.btn} ${css.launch}" 
+            onclick=${(e) => actionHandler(e, launch)}>
+            ${icon_launch}Launch
+        </button>`
 
-    let shortcut = bel`<button  class="${css.btn} ${css.shortcut}" 
-                                onclick=${(e) => actionHandler(e, shortcut)}>
-                                ${icon_shortcut}Shortcut
-                        </button>`
+    let shortcut = bel`
+        <button class="${css.btn} ${css.shortcut}" 
+            onclick=${(e) => actionHandler(e, shortcut)}>
+            ${icon_shortcut}Shortcut
+        </button>`
 
     let v = bel`<span class=${css.ver}>${ver}</span>`
-    let remove = bel`<button    class="${css.btn} ${css.remove}" 
-                                onclick=${(e) => actionHandler(e, remove)}>
-                                ${icon_remove}Remove ${v}
-                    </button>`
+    let remove = bel`
+        <button class="${css.btn} ${css.remove}" 
+            onclick=${(e) => actionHandler(e, remove)}>
+            ${icon_remove}Remove ${v}
+        </button>`
 
-    let stop = bel`<button      class="${css.btn} ${css.stop}" 
-                                onclick=${(e) => actionHandler(e, stop)}>
-                                ${icon_stop}Force stop
-                    </button>`
-    let settings = bel`<button  class="${css.btn} ${css.settings}" 
-                                onclick=${(e) => actionHandler(e, settings)}>
-                                ${icon_settings}Settings
-                    </button>`
+    let stop = bel`
+        <button class="${css.btn} ${css.stop}" 
+            onclick=${(e) => actionHandler(e, stop)}>
+            ${icon_stop}Force stop
+        </button>`
+    let settings = bel`
+        <button  class="${css.btn} ${css.settings}" 
+            onclick=${(e) => actionHandler(e, settings)}>
+            ${icon_settings}Settings
+        </button>`
     
     if (package.title === 'DatDot') {
         shortcut.classList.add(css.active)
@@ -67625,9 +67617,7 @@ function actions({styl, title, ver, selector, url, package}, clearVers, protocol
         shortcut.setAttribute('disabled', true)
     }
    
-    if (package.status.pin) {
-        shortcut.classList.add(css.active)
-    }
+    if (package.status.pin) shortcut.classList.add(css.active)
     
     let el = bel`<aside class=${css.actions}>${launch}${shortcut}${settings}${remove}</aside>`
 
@@ -67734,106 +67724,105 @@ function actions({styl, title, ver, selector, url, package}, clearVers, protocol
 }
 
 const style = csjs`
-.actions {
-    grid-area: actions;
-    margin-top: 15px;
-}
-.btn {
-    display: inline-flex;
-    align-items: center;
-    outline: none;
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-size: var(--actionBtnFontSize);
-    color: var(--btnColor);
-    background-color: var(--btnBgColor);
-    margin: 5px 5px 0 0;
-    border: 1px solid var(--btnBgColor);
-    transition: color 0.45s, border-color .45s, background-color 0.45s ease-in-out;
- }
- .btn svg {
-    transition: fill 0.45s ease-in-out;
- }
- .btn:hover {
-     color: var(--btnHoverColor);
-     background-color: var(--btnHoverBgColor);
-     border-color: var(--btnHoverBgColor);
- }
- .btn:hover svg {
-    fill: white;
-}
-.btn > .icon {
-    margin-right: 5px;
-    width: 20px;
-}
-.download {
+    .actions {
+        grid-area: actions;
+        margin-top: 15px;
+    }
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        outline: none;
+        padding: 6px 12px;
+        border-radius: 4px;
+        font-size: var(--actionBtnFontSize);
+        color: var(--btnColor);
+        background-color: var(--btnBgColor);
+        margin: 5px 5px 0 0;
+        border: 1px solid var(--btnBgColor);
+        transition: color 0.45s, border-color .45s, background-color 0.45s ease-in-out;
+    }
+    .btn svg {
+        transition: fill 0.45s ease-in-out;
+    }
+    .btn:hover {
+        color: var(--btnHoverColor);
+        background-color: var(--btnHoverBgColor);
+        border-color: var(--btnHoverBgColor);
+    }
+    .btn:hover svg {
+        fill: white;
+    }
+    .btn > .icon {
+        margin-right: 5px;
+        width: 20px;
+    }
+    .download {
 
-}
-.launch {
+    }
+    .launch {
 
-}
-.shortcut {
+    }
+    .shortcut {
 
-}
-.remove {
-    color: var(--actionRemoveColor);
-    background-color: var(--actionRemoveBgColor);
-    border-color: var(--actionRemoveBgColor);
-}
-.remove:hover {
-    background-color: var(--actionRemoveHoverBgColor);
-    border-color: var(--actionRemoveBgColor);
-}
-.remove svg {
-    fill: var(--actionRemoveColor);
-}
-.update {
+    }
+    .remove {
+        color: var(--actionRemoveColor);
+        background-color: var(--actionRemoveBgColor);
+        border-color: var(--actionRemoveBgColor);
+    }
+    .remove:hover {
+        background-color: var(--actionRemoveHoverBgColor);
+        border-color: var(--actionRemoveBgColor);
+    }
+    .remove svg {
+        fill: var(--actionRemoveColor);
+    }
+    .update {
 
-}
-.stop {
+    }
+    .stop {
 
-}
-.settings {
-    
-}
-.ver {
-    font-size: 1.2rem;
-    color: black;
-    background-color: white;
-    padding: 4px 6px;
-    margin-left: 5px;
-    border-radius: 4px;
-}
-.active, .active:focus, .disabled, .disabled:hover {
-    color: #888888;
-    background-color: white;
-    border: 1px solid #888888;
-}
-.active svg, .active:focus svg, .disabled:hover svg {
-    fill: #888888;
-}
-.disabled {
-    cursor: not-allowed
-}
-.icon {
-    width: 60px;
-}
-.app-icon {
-    display: grid;
-    grid-template-rows: 60px auto;
-    text-align: center;
-    justify-items: center;
-    cursor: pointer;
-    overflow: hidden;
-    grid-gap: 7px 0;
-    width: 100%;
-}
-.app-name {
-    font-size: var(--appNameFontSize);
-    color: var(--appNameColor);
-    word-break: break-word;
-}
-`
+    }
+    .settings {
+        
+    }
+    .ver {
+        font-size: 1.2rem;
+        color: black;
+        background-color: white;
+        padding: 4px 6px;
+        margin-left: 5px;
+        border-radius: 4px;
+    }
+    .active, .active:focus, .disabled, .disabled:hover {
+        color: #888888;
+        background-color: white;
+        border: 1px solid #888888;
+    }
+    .active svg, .active:focus svg, .disabled:hover svg {
+        fill: #888888;
+    }
+    .disabled {
+        cursor: not-allowed
+    }
+    .icon {
+        width: 60px;
+    }
+    .app-icon {
+        display: grid;
+        grid-template-rows: 60px auto;
+        text-align: center;
+        justify-items: center;
+        cursor: pointer;
+        overflow: hidden;
+        grid-gap: 7px 0;
+        width: 100%;
+    }
+    .app-name {
+        font-size: var(--appNameFontSize);
+        color: var(--appNameColor);
+        word-break: break-word;
+    }`
 
 module.exports = actions
 },{"Dialog":560,"Graphic":561,"bel":5,"csjs-inject":14}],565:[function(require,module,exports){
