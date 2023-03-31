@@ -1,6 +1,7 @@
 # DatDot
-a p2p solution for hosting files with Dat protocol ([...more](https://github.com/playproject-io/datdot-substrate/issues/12))
+P2P networks are more stable and available for popular files, but accessing less popular or rare files can be unreliable due to the need for at least one node to have the requested data and to be able to connect to the peer requesting the data. Meeting this requirement can sometimes be difficult as users may have limited access to the internet or turn off their computers.
 
+**DatDot project aims** to create a system that enables peer-to-peer sharing of storage space and data seeding, eliminating the need for users to rely on renting servers for data hosting or accept the potential unreliability of P2P data sharing. To achieve this goal, our protocol is designed to automate the matchmaking process and conduct periodic checks to ensure reliable hosting and serving of data to readers.
 **related repositories**
 * https://github.com/playproject-io/datdot-substrate
 * https://github.com/playproject-io/datdot-service
@@ -9,14 +10,3 @@ a p2p solution for hosting files with Dat protocol ([...more](https://github.com
 # community
 * follow us on [twitter](https://twitter.com/datdotorg)
 * join us on [discord](https://t.co/hZ85qJ7Af2)
-<!--
-* join us on [telegram](https://t.me/joinchat/CgTftxXJvp6iYayqDjP7lQ)
-* join us on [gitter](https://gitter.im/playproject-io/community/)
--->
-
-<!--
-# funding
-[![project supported by web3 foundation grants program](https://i.imgur.com/oGPIbZQ.jpg)](https://web3.foundation/grants)
-* [accepted datdot-application-2019-11-25](https://github.com/playproject-io/datdot-application-2019-11-25) => [see merged commit](https://github.com/w3f/Web3-collaboration/commit/daafd78414e49b8fc6a57282ec7fed129fd038d8)
-* [official announcement](https://medium.com/web3foundation/wrap-up-for-winter-with-our-wave-four-grant-recipients-52c27b831a6e)
--->
