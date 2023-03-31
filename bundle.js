@@ -66555,7 +66555,6 @@ function AppInfo(styl, url, title, package, protocol) {
         </div>`
     return el
 
-
     // get version
     function selectorHandler(el) {
         options.classList.toggle(css.on)

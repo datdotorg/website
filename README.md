@@ -7,6 +7,12 @@ P2P networks are more stable and available for popular files, but accessing less
 * https://github.com/playproject-io/datdot-service
 * https://github.com/playproject-io/datdot-research
 
+
 # community
+
+**[Discord](https://discord.com/invite/3CJuGxkyyE)**
+**[Cabal](https://cabal.chat)** cabal://b366ee787a0df84e883a2e5c24b678b24c0b88795d95a499ad694d5e797b6513?admin=3356281f14009b6312ef03221147841204a9dc3c1c5c24d32d80f008864b52d8
+
+We're a small group of open source developers that provides social and technical infrastructure for the next generation internet.
+
 * follow us on [twitter](https://twitter.com/datdotorg)
-* join us on [discord](https://t.co/hZ85qJ7Af2)
