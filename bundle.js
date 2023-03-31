@@ -66620,7 +66620,7 @@ function AppInfo(styl, url, title, package, protocol) {
         // clear content to add new contnet
         content.innerHTML = ''
         if ( i === 'package') getInfo(package.about.info, i, loadPage)
-        else if (i === 'chat' ) content.innerHTML = '<iframe src="https://discord.com/widget?id=986752391917482035&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>'
+        else if (i === 'chat' ) content.innerHTML = '<iframe src="https://discord.com/widget?id=986752391917482035&theme=light" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>'
         else if (i === 'supplyTree') content.append( SupplyTree(vers, package, protocol) )
         else getInfo(package[i], i, loadPage)
     }
