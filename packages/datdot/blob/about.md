@@ -36,7 +36,7 @@ Follow us on Twitter to learn about our latest milestones, events and public ann
 
 Our work has been so far supported by the Web3 foundation and Polkadot treasury funding. 
 
-<img alt="web3" src="https://i.imgur.com/oGPIbZQ.jpg" width="300" height="120">
+<img alt="web3" src="https://upload.wikimedia.org/wikipedia/commons/7/79/WEB3_Final.jpg" width="300" height="120">
 <img alt="polkadot" src="https://cryptologos.cc/logos/polkadot-new-dot-logo.png?v=024" width="70" height="70">
 
 ---
