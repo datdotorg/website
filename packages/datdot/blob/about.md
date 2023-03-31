@@ -1,30 +1,40 @@
-**DatDot team is building an autonomous hosting network for p2p data systems.** Think of it as a Filecoin but for Hypercore protocol, built with Substrate.
+#### **DatDot enables peer-to-peer sharing of storage space and data seeding to make data sovereignity and portability more accessible and reliable for users.**
 
-[Hypercore protocol (started in 2013)](https://dat-ecosystem.org/) is a distributed ledger technology and set of data syncronization primitives with focus on immutable history.
+P2P networks are more stable and available for popular files, but accessing less popular or rare files can be unreliable due to the need for at least one node to have the requested data and to be able to connect to the peer requesting the data. Meeting this requirement can sometimes be difficult as users may have limited access to the internet or turn off their computers.
 
-Due to their P2P nature it's hard to have guarantees about the availability of p2p data systems. If we want to keep data available and up to date we have to keep our computer running or we have to rent a server.
+**DatDot project aims** to create a system that enables peer-to-peer sharing of storage space and data seeding, eliminating the need for users to rely on renting servers for data hosting or accept the potential unreliability of P2P data sharing. To achieve this goal, our protocol is designed to automate the matchmaking process and conduct periodic checks to ensure reliable hosting and serving of data to readers.
 
-**Challenges:** What if you want other people to help you host your data?
+DatDot consists of **two main building blocks**:
+- a dat logic for managing storing to and retreiving data from the peers in the network (written in JS)
+- a ledger logic for managing incentivized relationship between hosting requests and offers (written in Rust/Substrate)
 
-- what incentives do they have?
-- how to find them and trust them?
-- how to verify they are 'seeding' your data?
+---
+#### **:wave: Community**
+**[Discord](https://discord.com/invite/3CJuGxkyyE/?target="_blank)**
+**[Cabal](https://cabal.chat/?target="_blank)** cabal://b366ee787a0df84e883a2e5c24b678b24c0b88795d95a499ad694d5e797b6513?admin=3356281f14009b6312ef03221147841204a9dc3c1c5c24d32d80f008864b52d8
 
-**Solution:** A bridge between Hypercore Protocol and Substrate with a built-in incentive model which manages relationships between:
+We're a small group of open source developers that provides social and technical infrastructure for the next generation internet.
 
-- hypercore creators/publishers and
-- hosters (who keep data available/host the data)
+---
+#### **:hammer: Source code**
+**[DatDot github organization](https://github.com/datdotorg/?target="_blank)**
 
-**Community First**
+All of our code is open sourced and can be found on Github.
 
-We're a small group of open source developers that provides social and technical infrastructure for projects using hypercore protocol and substrate.
+--- 
 
-[source code](https://github.com/playproject-io)
+--- 
+#### **:newspaper: Updates**
+**[Twitter](https://twitter.com/datdotorg/?target="_blank)**
 
-[discord](https://discord.com/invite/3CJuGxkyyE) or `cabal://b366ee787a0df84e883a2e5c24b678b24c0b88795d95a499ad694d5e797b6513?admin=3356281f14009b6312ef03221147841204a9dc3c1c5c24d32d80f008864b52d8`
+Follow us on Twitter to learn about our latest milestones, events and public announcements.
 
-[twitter](https://twitter.com/datdotorg)
+---
+#### :seedling: Funding
 
-<!--
-![](https://i.imgur.com/oGPIbZQ.jpg)
--->
+Our work has been so far supported by the Web3 foundation and Polkadot treasury funding. 
+
+<img alt="project support by web3 foundation grant" src="https://i.imgur.com/oGPIbZQ.jpg" width="400" height="150">
+<img alt="polkadot" src="https://cryptologos.cc/logos/polkadot-new-dot-logo.png?v=024" width="70" height="70">
+
+---

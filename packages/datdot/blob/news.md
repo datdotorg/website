@@ -1,16 +1,16 @@
 # News
 
 ## 2022/08/02 
-### We are hiring 
+### Looking for collaborators 
 
-We are looking for a senior UX/UI designer with vanilla.js skills. And we are also looking for a rust/substrate developer with interest in the [hypercore protocol](https://hypercore-protocol.org). If you are interested, please reach out to us on Twitter/Telegram/Discord ([@serapath](https://twitter.com/serapath) or [@ninabreznik](https://twitter.com/ninabreznik)). 
+We are seeking a skilled Rust/Substrate developer with a keen interest in the p2p protocols, specially dat/hypercore protocol, to join our team. If you are passionate about contributing to an exciting open-source project that aims to build the infrastructure of the future internet, we would love to hear from you. Please reach out to us on our [Discord channel](https://discord.gg/y5EBKupyhe)
 
 ---
 
 ## 2022/01/26
 ### New grant
 
-Our [Polkadot Treasury Proposal](https://polkadot.polkassembly.io/motion/145) got approved and we have secured approx. $100k funding for our project. 
+Our [Polkadot Treasury Proposal](https://polkadot.polkassembly.io/motion/145) got approved and we have secured a new round of funding for our project. 
 
 For the past 2 years we have been building the technology and it hasn't always been easy working with 2 bleeding edge technologies - Substrate and Hypercore protocol - which have during this time introduced multiple breaking changes.
 

@@ -4,7 +4,7 @@ const theme = require('theme')
 
 const el = (err, loadPage) => {
     const vars = theme
-    const styles = csjs `
+    const styles = csjs`
     * {
         box-sizing: border-box;
     }
