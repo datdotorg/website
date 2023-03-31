@@ -9,32 +9,34 @@ DatDot consists of **two main building blocks**:
 - a ledger logic for managing incentivized relationship between hosting requests and offers (written in Rust/Substrate)
 
 ---
-#### **:wave: Community**
-**[Discord](https://discord.com/invite/3CJuGxkyyE/?target="_blank)**
-**[Cabal](https://cabal.chat/?target="_blank)** cabal://b366ee787a0df84e883a2e5c24b678b24c0b88795d95a499ad694d5e797b6513?admin=3356281f14009b6312ef03221147841204a9dc3c1c5c24d32d80f008864b52d8
+#### Community
+[Discord](https://discord.com/invite/3CJuGxkyyE)
+
+[Cabal](https://cabal.chat) 
+cabal://b366ee787a0df84e883a2e5c24b678b24c0b88795d95a499ad694d5e797b6513?admin=3356281f14009b6312ef03221147841204a9dc3c1c5c24d32d80f008864b52d8
 
 We're a small group of open source developers that provides social and technical infrastructure for the next generation internet.
 
 ---
-#### **:hammer: Source code**
-**[DatDot github organization](https://github.com/datdotorg/?target="_blank)**
+#### Source code
+[DatDot github organization](https://github.com/datdotorg)
 
 All of our code is open sourced and can be found on Github.
 
 --- 
 
 --- 
-#### **:newspaper: Updates**
-**[Twitter](https://twitter.com/datdotorg/?target="_blank)**
+#### Updates
+[Twitter](https://twitter.com/datdotorg)
 
 Follow us on Twitter to learn about our latest milestones, events and public announcements.
 
 ---
-#### :seedling: Funding
+#### Funding
 
 Our work has been so far supported by the Web3 foundation and Polkadot treasury funding. 
 
-<img alt="project support by web3 foundation grant" src="https://i.imgur.com/oGPIbZQ.jpg" width="400" height="150">
+<img alt="web3 foundation" src="https://i.imgur.com/oGPIbZQ.jpg" width="300" height="120">
 <img alt="polkadot" src="https://cryptologos.cc/logos/polkadot-new-dot-logo.png?v=024" width="70" height="70">
 
 ---

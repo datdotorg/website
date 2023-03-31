@@ -28,6 +28,7 @@
     "markdown-it-github-toc": "^3.2.4",
     "mermaid.cli": "^0.5.1",
     "remark-contents": "0.0.1",
+    "remark-extract-toc": "^1.1.0",
     "remark-graphviz": "^0.2.2",
     "remark-highlight.js": "^6.0.0",
     "remark-html": "^11.0.2",
