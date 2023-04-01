@@ -24,8 +24,6 @@ We're a small group of open source developers that provides social and technical
 All of our code is open sourced and can be found on Github.
 
 --- 
-
---- 
 #### Updates
 [Twitter](https://twitter.com/datdotorg)
 
@@ -38,5 +36,3 @@ Our work has been so far supported by the Web3 foundation and Polkadot treasury 
 
 <img alt="web3" src="https://upload.wikimedia.org/wikipedia/commons/7/79/WEB3_Final.jpg" width="150" height="70">
 <img alt="polkadot" src="https://cryptologos.cc/logos/polkadot-new-dot-logo.png?v=024" width="70" height="70">
-
----
