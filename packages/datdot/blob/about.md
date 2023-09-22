@@ -32,7 +32,5 @@ Follow us on Twitter to learn about our latest milestones, events and public ann
 ---
 #### Funding
 
-Our work has been so far supported by the Web3 foundation and Polkadot treasury funding. 
+Our work has been supported by the [Playproject](https://playproject.io/), [Private Donations](https://github.com/datdotorg/organization/blob/main/funding/private-donations.md), [Web3 foundation](https://web3.foundation/) and [Polkadot treasury(https://www.dotreasury.com/dot/proposals)]. 
 
-<img alt="web3" src="https://upload.wikimedia.org/wikipedia/commons/7/79/WEB3_Final.jpg" width="150" height="70">
-<img alt="polkadot" src="https://cryptologos.cc/logos/polkadot-new-dot-logo.png?v=024" width="70" height="70">
