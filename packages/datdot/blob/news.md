@@ -1,13 +1,23 @@
 # News
 
-## 2022/08/02 
+## 2023 - Sep 21 
+### DatDot booth at Decoded 
+
+We attended the [sub0](https://polkadot.network/ecosystem/events/sub0/) conference in Portugal where we explained how DatDot works. We gathered interesting projects on our booth and had plenty of very fruitful conversations about the p2p storage solutions in the space and what is lacking for the developers. To learn more about, you can check out the [slides](https://github.com/datdotorg/organization/blob/main/events/2023/sub0/datdot-event-Lisbon-slides.pdf), presented and discussed at the booth.
+
+<img src="/packages/datdot/blob/assets/sub0-1-2023.jpeg" alt="sub0 booth" style="width:600px;">
+<img src="/packages/datdot/blob/assets/sub0-2-2023.jpeg" alt="sub0 booth" style="width:600px;">
+<img src="/packages/datdot/blob/assets/sub0-3-2023.jpeg" alt="sub0 booth" style="width:600px;">
+
+
+## 2022 - Aug 2 
 ### Looking for collaborators 
 
 We are seeking a skilled Rust/Substrate developer with a keen interest in the p2p protocols, specially dat/hypercore protocol, to join our team. If you are passionate about contributing to an exciting open-source project that aims to build the infrastructure of the future internet, we would love to hear from you. Please reach out to us on our [Discord channel](https://discord.gg/y5EBKupyhe)
 
 ---
 
-## 2022/01/26
+## 2022 - Jan 26
 ### New grant
 
 Our [Polkadot Treasury Proposal](https://polkadot.polkassembly.io/motion/145) got approved and we have secured a new round of funding for our project. 
@@ -23,7 +33,7 @@ We have spent a few months specifying the system with the updated incentives for
 
 ---
 
-## 2021/21/01
+## 2021 - Jan 21
 ### DatDot economics
 
 We want users and service providers in our ecosystem to understand the value of common interests and responsibilities; to have solidarity with one another, and to inherently support one another in everything they do.
@@ -37,7 +47,7 @@ We do not want to encourage monopolistic or rent-seeking behavior, and instead w
 ---
 
 
-## 2020/07/20 
+## 2020 - Jul 20
 ### Milestone 1
 Good news. We just finished our phase 1 which means our datdot chain is running and communicating with dat/hyper* and does the test hosting of the hypercores. 
 We are very excited about it.
@@ -55,18 +65,18 @@ We are very excited about it.
 **more details**
 
 <a href="https://www.loom.com/share/9a861cffba244c089efa094e15979cd2" target="_blank">
-  <img src="/packages/datdot/blob/2020.07.20-milestone1/video1.jpeg" alt="video1">
+  <img src="/packages/datdot/blob/assets/video1.jpeg" alt="video1" style="width:600px;">
 </a>
 <a href="https://www.loom.com/share/43670f31c0be42029d5d968da5ae3eb2" target="_blank">
-  <img src="/packages/datdot/blob/2020.07.20-milestone1/video2.jpeg" alt="video2">
+  <img src="/packages/datdot/blob/assets/video2.jpeg" alt="video2" style="width:600px;">
 </a>
 <a href="https://www.loom.com/share/7d0aee905e26412894904c2c6efacfac" target="_blank">
-  <img src="/packages/datdot/blob/2020.07.20-milestone1/video3.jpeg" alt="video3">
+  <img src="/packages/datdot/blob/assets/video3.jpeg" alt="video3" style="width:600px;">
 </a>
 
 ---
 
-## 2019/04/12
+## 2019 - Apr 12
 ### First grant
 
 Our grant proposal for **building a bridge (between Dat Protocol and Substrate)** has been accepted! Yay! [See the proposal...](https://github.com/w3f/General-Grants-Program/blob/master/grants/speculative/datdot.md)
