@@ -5,15 +5,25 @@
 
 We attended the [sub0](https://polkadot.network/ecosystem/events/sub0/) conference in Portugal where we explained how DatDot works. We gathered interesting projects on our booth and had plenty of very fruitful conversations about the p2p storage solutions in the space and what is lacking for the developers. To learn more about, you can check out the [slides](https://github.com/datdotorg/organization/blob/main/events/2023/sub0/datdot-event-Lisbon-slides.pdf), presented and discussed at the booth.
 
-<img src="/packages/datdot/blob/assets/sub0-1-2023.jpeg" alt="sub0 booth" style="width:600px;">
-<img src="/packages/datdot/blob/assets/sub0-2-2023.jpeg" alt="sub0 booth" style="width:600px;">
-<img src="/packages/datdot/blob/assets/sub0-3-2023.jpeg" alt="sub0 booth" style="width:600px;">
+<img src="/packages/datdot/blob/assets/sub0-1-2023.jpeg" alt="sub0 booth" style="width:400px;">
+<img src="/packages/datdot/blob/assets/sub0-2-2023.jpeg" alt="sub0 booth" style="width:400px;">
+<img src="/packages/datdot/blob/assets/sub0-3-2023.jpeg" alt="sub0 booth" style="width:400px;">
+
+
+## 2023 - Jun 27 
+### Interview for Dat ecosystem
+
+Our interview titled Unlocking _Data Sovereignity with DatDot_ has been published on [Dat ecosystem blog](https://blog.dat-ecosystem.org/meet-nina-alex/). 
+
+<a href="https://www.youtube.com/watch?v=LMgJi47PbQ4" target="_blank">
+  <img src="https://blog.dat-ecosystem.org/content/images/2023/06/datdot-video-preview.png" alt="video interview" style="width:400px;">
+</a>
 
 
 ## 2022 - Aug 2 
 ### Looking for collaborators 
 
-We are seeking a skilled Rust/Substrate developer with a keen interest in the p2p protocols, specially dat/hypercore protocol, to join our team. If you are passionate about contributing to an exciting open-source project that aims to build the infrastructure of the future internet, we would love to hear from you. Please reach out to us on our [Discord channel](https://discord.gg/y5EBKupyhe)
+We are seeking a skilled Rust/Substrate developer with a keen interest in the p2p protocols, specially dat/hypercore protocol, to join our team. If you are passionate about contributing to an exciting open-source project that aims to build the infrastructure of the future internet, we would love to hear from you. Please reach out on our [Discord channel](https://discord.gg/y5EBKupyhe)
 
 ---
 
@@ -65,13 +75,13 @@ We are very excited about it.
 **more details**
 
 <a href="https://www.loom.com/share/9a861cffba244c089efa094e15979cd2" target="_blank">
-  <img src="/packages/datdot/blob/assets/video1.jpeg" alt="video1" style="width:600px;">
+  <img src="/packages/datdot/blob/assets/video1.jpeg" alt="video1" style="width:400px;">
 </a>
 <a href="https://www.loom.com/share/43670f31c0be42029d5d968da5ae3eb2" target="_blank">
-  <img src="/packages/datdot/blob/assets/video2.jpeg" alt="video2" style="width:600px;">
+  <img src="/packages/datdot/blob/assets/video2.jpeg" alt="video2" style="width:400px;">
 </a>
 <a href="https://www.loom.com/share/7d0aee905e26412894904c2c6efacfac" target="_blank">
-  <img src="/packages/datdot/blob/assets/video3.jpeg" alt="video3" style="width:600px;">
+  <img src="/packages/datdot/blob/assets/video3.jpeg" alt="video3" style="width:400px;">
 </a>
 
 ---
