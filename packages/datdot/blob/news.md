@@ -9,28 +9,32 @@ We attended the [sub0](https://polkadot.network/ecosystem/events/sub0/) conferen
 <img src="/packages/datdot/blob/assets/sub0-2-2023.jpeg" alt="sub0 booth" style="width:400px;">
 <img src="/packages/datdot/blob/assets/sub0-3-2023.jpeg" alt="sub0 booth" style="width:400px;">
 
+---
 
 ## 2023 - Jun 27 
 ### Interview for Dat ecosystem
 
-Our interview titled Unlocking _Data Sovereignity with DatDot_ has been published on [Dat ecosystem blog](https://blog.dat-ecosystem.org/meet-nina-alex/). 
+Our interview titled Unlocking _Data Sovereignity with DatDot_ has been published to the [Dat ecosystem blog](https://blog.dat-ecosystem.org/meet-nina-alex/)
 
 <a href="https://www.youtube.com/watch?v=LMgJi47PbQ4" target="_blank">
   <img src="https://blog.dat-ecosystem.org/content/images/2023/06/datdot-video-preview.png" alt="video interview" style="width:400px;">
 </a>
 
+---
 
 ## 2022 - Aug 2 
 ### Looking for collaborators 
 
-We are seeking a skilled Rust/Substrate developer with a keen interest in the p2p protocols, specially dat/hypercore protocol, to join our team. If you are passionate about contributing to an exciting open-source project that aims to build the infrastructure of the future internet, we would love to hear from you. Please reach out on our [Discord channel](https://discord.gg/y5EBKupyhe)
+We are seeking a skilled Rust/Substrate developer with a keen interest in the p2p protocols, specially dat/hypercore protocol, to join our team. If you are passionate about contributing to an exciting open-source project that aims to build the infrastructure of the future internet, we would love to hear from you. 
+
+Please reach out to us on our [Discord channel](https://discord.gg/y5EBKupyhe)
 
 ---
 
 ## 2022 - Jan 26
 ### New grant
 
-Our [Polkadot Treasury Proposal](https://polkadot.polkassembly.io/motion/145) got approved and we have secured a new round of funding for our project. 
+DatDot [Polkadot Treasury Proposal](https://polkadot.polkassembly.io/motion/145) got approved and we have secured a new round of funding for our project. 
 
 For the past 2 years we have been building the technology and it hasn't always been easy working with 2 bleeding edge technologies - Substrate and Hypercore protocol - which have during this time introduced multiple breaking changes.
 
@@ -38,7 +42,9 @@ We succesfully submitted our first milestone - a prototype of the DatDot system 
 
 After this milestone we realized that building a pallet won't be enough, we will have to also build a custom chain to support our economic model.
 
-We have spent a few months specifying the system with the updated incentives for each role in our p2p hosting network to make our economic and security model really solid. After that we started working on the implemention of the system as a combination of chain and service.js logic while refining it even further. [Read more...](https://app.subsocial.network/@DatDot/polkadot-treasury-proposal-30412)
+We have spent a few months specifying the system with the updated incentives for each role in our p2p hosting network to make our economic and security model really solid. After that we started working on the implemention of the system as a combination of chain and service.js logic while refining it even further. 
+
+Learn more about it on our [Subsocial post](https://app.subsocial.network/@DatDot/polkadot-treasury-proposal-30412)
 
 
 ---
@@ -52,10 +58,9 @@ We want things that are usually uncompensated, but are in the common good, to be
 
 We do not want to encourage monopolistic or rent-seeking behavior, and instead want to encourage generosity and positive-sum behaviour.
 
-[Read more...](https://app.subsocial.network/@DatDot/dat-dot-economics-a-first-proposal-863)
+Learn more about it on our [Subsocial post](https://app.subsocial.network/@DatDot/dat-dot-economics-a-first-proposal-863)
 
 ---
-
 
 ## 2020 - Jul 20
 ### Milestone 1
