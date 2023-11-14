@@ -1,5 +1,16 @@
 # News
 
+## 2023 - Nov 6
+### A deep dive into DatDot
+
+Our co-founder and a CTO presented at a Wizard Amigos code camp this autumn. He shared the details about the underlaying technology and the possibilities of DatDot for developers and layed out the vision for how DatDot can server the peer to peer builders.
+
+<a href="https://www.youtube.com/watch?v=eBaOIf3ZiF4&t=38s" target="_blank">
+  <img src="/packages/datdot/blob/assets/wacc2023-talk.png" alt="video wizard amigos talk" style="width:400px;">
+</a>
+
+---
+
 ## 2023 - Sep 21 
 ### DatDot booth at Decoded 
 
@@ -27,7 +38,7 @@ Our interview titled Unlocking _Data Sovereignity with DatDot_ has been publishe
 
 We are seeking a skilled Rust/Substrate developer with a keen interest in the p2p protocols, specially dat/hypercore protocol, to join our team. If you are passionate about contributing to an exciting open-source project that aims to build the infrastructure of the future internet, we would love to hear from you. 
 
-Please reach out to us on our [Discord channel](https://discord.gg/y5EBKupyhe)
+For more details, please visit our [Discord channel](https://discord.gg/y5EBKupyhe)
 
 ---
 
