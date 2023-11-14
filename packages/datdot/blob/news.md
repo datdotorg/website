@@ -3,7 +3,7 @@
 ## 2023 - Nov 6
 ### A deep dive into DatDot
 
-Our co-founder and a CTO presented at a Wizard Amigos code camp this autumn. He shared the details about the underlaying technology and the possibilities of DatDot for developers and layed out the vision for how DatDot can server the peer to peer builders.
+Our co-founder and a CTO presented at a Wizard Amigos code camp this autumn. He shared the details about the underlaying technology and the possibilities of how DatDot can serve the community of peer-to-peer builders.
 
 <a href="https://www.youtube.com/watch?v=eBaOIf3ZiF4&t=38s" target="_blank">
   <img src="/packages/datdot/blob/assets/wacc2023-talk.png" alt="video wizard amigos talk" style="width:400px;">
@@ -55,7 +55,7 @@ After this milestone we realized that building a pallet won't be enough, we will
 
 We have spent a few months specifying the system with the updated incentives for each role in our p2p hosting network to make our economic and security model really solid. After that we started working on the implemention of the system as a combination of chain and service.js logic while refining it even further. 
 
-Learn more about it on our [Subsocial post](https://app.subsocial.network/@DatDot/polkadot-treasury-proposal-30412)
+To learn more about it visit our [Subsocial post](https://app.subsocial.network/@DatDot/polkadot-treasury-proposal-30412)
 
 
 ---
@@ -69,7 +69,7 @@ We want things that are usually uncompensated, but are in the common good, to be
 
 We do not want to encourage monopolistic or rent-seeking behavior, and instead want to encourage generosity and positive-sum behaviour.
 
-Learn more about it on our [Subsocial post](https://app.subsocial.network/@DatDot/dat-dot-economics-a-first-proposal-863)
+To learn more about it visit our [Subsocial post](https://app.subsocial.network/@DatDot/dat-dot-economics-a-first-proposal-863)
 
 ---
 
